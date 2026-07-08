@@ -13,7 +13,7 @@ Inputs:
 
 | Input | Default | Meaning |
 | --- | --- | --- |
-| `image_tag` | `v0.1` | symnav-bench image tag. |
+| `image_tag` | `main` | symnav-bench image tag. |
 | `agents` | `codex:gpt-5.4:xhigh,claude:claude-opus-4-8:high` | Comma-separated run specs. |
 | `conditions` | `symnav,stock` | `symnav`, `stock`, or both. |
 | `tasks` | empty | Empty means all tasks in image. |
