@@ -21,6 +21,9 @@ on:
       symnav_ref:
         type: string
         default: main
+      deep_swe_ref:
+        type: string
+        default: main
       max_parallel:
         type: string
         default: "8"
@@ -98,6 +101,7 @@ jobs:
               --rep-start "${{ matrix.rep }}" \
               --reps 1 \
               --symnav-ref "${{ inputs.symnav_ref }}" \
+              --deep-swe-ref "${{ inputs.deep_swe_ref }}" \
               --results-dir /cells
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}

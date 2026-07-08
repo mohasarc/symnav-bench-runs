@@ -19,6 +19,7 @@ Inputs:
 | `tasks` | empty | Empty means all tasks in image. |
 | `rep` | `0` | Rep index for this dispatch. |
 | `symnav_ref` | `main` | Ref resolved by the harness. |
+| `deep_swe_ref` | `main` | DeepSWE ref checked out by each cell. |
 | `max_parallel` | `8` | GitHub Actions matrix concurrency. |
 
 Required secrets:
