@@ -1,3 +1,3 @@
 # symnav bench results
 
-No benchmark reports have been published yet.
+- Latest report: [28983408360](report/28983408360/report.md)
