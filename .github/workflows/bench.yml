@@ -1,0 +1,149 @@
+name: bench
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        type: string
+        default: v0.1
+      agents:
+        type: string
+        default: codex:gpt-5.4:xhigh,claude:claude-opus-4-8:high
+      conditions:
+        type: string
+        default: symnav,stock
+      tasks:
+        type: string
+        default: ""
+      rep:
+        type: string
+        default: "0"
+      symnav_ref:
+        type: string
+        default: main
+      max_parallel:
+        type: string
+        default: "8"
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - name: Build matrix
+        id: matrix
+        shell: bash
+        run: |
+          set -euo pipefail
+          image="ghcr.io/mohasarc/symnav-bench:${{ inputs.image_tag }}"
+          docker pull "$image"
+          if [[ -n "${{ inputs.tasks }}" ]]; then
+            tasks="${{ inputs.tasks }}"
+          else
+            tasks="$(docker run --privileged "$image" list-tasks | paste -sd, -)"
+          fi
+          python - <<'PY' "$tasks" "${{ inputs.agents }}" "${{ inputs.conditions }}" "${{ inputs.rep }}" >> "$GITHUB_OUTPUT"
+          import json
+          import re
+          import sys
+          tasks, agents, conditions, rep = sys.argv[1:]
+          rows = []
+          for task in [item for item in tasks.split(",") if item]:
+            for agent in [item for item in agents.split(",") if item]:
+              for condition in [item for item in conditions.split(",") if item]:
+                cell = re.sub(r"[^A-Za-z0-9_.-]+", "-", f"{agent}-{condition}-{task}-rep{rep}")
+                rows.append({"cell": cell, "task": task, "agent": agent, "condition": condition, "rep": rep})
+          if len(rows) > 256:
+              raise SystemExit(f"matrix has {len(rows)} jobs; GitHub cap is 256")
+          print(f"matrix={json.dumps({'include': rows})}")
+          PY
+
+  cell:
+    needs: setup
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: ${{ fromJSON(inputs.max_parallel) }}
+      matrix: ${{ fromJSON(needs.setup.outputs.matrix) }}
+    steps:
+      - name: Free disk
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android
+          docker system prune -af
+      - name: Run cell
+        run: |
+          set -euo pipefail
+          mkdir -p cells
+          docker run --privileged \
+            -e CLAUDE_CODE_OAUTH_TOKEN="${CLAUDE_CODE_OAUTH_TOKEN:-}" \
+            -e ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}" \
+            -e CODEX_AUTH_JSON_B64="${CODEX_AUTH_JSON_B64:-}" \
+            -v "$PWD/cells:/cells" \
+            ghcr.io/mohasarc/symnav-bench:${{ inputs.image_tag }} \
+              run \
+              --agent "${{ matrix.agent }}" \
+              --conditions "${{ matrix.condition }}" \
+              --tasks "${{ matrix.task }}" \
+              --rep-start "${{ matrix.rep }}" \
+              --reps 1 \
+              --symnav-ref "${{ inputs.symnav_ref }}" \
+              --results-dir /cells
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CODEX_AUTH_JSON_B64: ${{ secrets.CODEX_AUTH_JSON_B64 }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cell-${{ matrix.cell }}
+          path: cells/*
+          if-no-files-found: ignore
+
+  report:
+    needs: [setup, cell]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: results
+          path: results-branch
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+      - name: Merge cells and render report
+        run: |
+          set -euo pipefail
+          mkdir -p results-branch/cells
+          find artifacts -path '*/cell.json' -print0 | while IFS= read -r -d '' cell; do
+            dir="$(basename "$(dirname "$cell")")"
+            mkdir -p "results-branch/cells/$dir"
+            cp "$cell" "results-branch/cells/$dir/cell.json"
+            commands="$(dirname "$cell")/commands.jsonl"
+            if [[ -f "$commands" ]]; then
+              cp "$commands" "results-branch/cells/$dir/commands.jsonl"
+            fi
+          done
+          docker run --privileged \
+            -v "$PWD/results-branch:/results" \
+            ghcr.io/mohasarc/symnav-bench:${{ inputs.image_tag }} \
+            report --cells /results/cells --out /results/report/${{ github.run_id }}
+          {
+            echo "# symnav bench results"
+            echo
+            echo "- Latest report: [${{ github.run_id }}](report/${{ github.run_id }}/report.md)"
+          } > results-branch/README.md
+      - name: Commit results
+        working-directory: results-branch
+        run: |
+          set -euo pipefail
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add README.md cells report
+          git commit -m "results: add run ${{ github.run_id }}" || exit 0
+          git push origin results
