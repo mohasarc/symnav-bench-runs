@@ -47,17 +47,16 @@ jobs:
           else
             tasks="$(docker run --privileged "$image" list-tasks | paste -sd, -)"
           fi
-          python - <<'PY' "$tasks" "${{ inputs.agents }}" "${{ inputs.conditions }}" "${{ inputs.rep }}" >> "$GITHUB_OUTPUT"
+          python - <<'PY' "$tasks" "${{ inputs.conditions }}" "${{ inputs.rep }}" >> "$GITHUB_OUTPUT"
           import json
           import re
           import sys
-          tasks, agents, conditions, rep = sys.argv[1:]
+          tasks, conditions, rep = sys.argv[1:]
           rows = []
           for task in [item for item in tasks.split(",") if item]:
-            for agent in [item for item in agents.split(",") if item]:
-              for condition in [item for item in conditions.split(",") if item]:
-                cell = re.sub(r"[^A-Za-z0-9_.-]+", "-", f"{agent}-{condition}-{task}-rep{rep}")
-                rows.append({"cell": cell, "task": task, "agent": agent, "condition": condition, "rep": rep})
+            for condition in [item for item in conditions.split(",") if item]:
+              cell = re.sub(r"[^A-Za-z0-9_.-]+", "-", f"{condition}-{task}-rep{rep}")
+              rows.append({"cell": cell, "task": task, "condition": condition, "rep": rep})
           if len(rows) > 256:
               raise SystemExit(f"matrix has {len(rows)} jobs; GitHub cap is 256")
           print(f"matrix={json.dumps({'include': rows})}")
@@ -79,6 +78,13 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p cells
+          agent_flags=()
+          IFS=',' read -ra agents <<< "${{ inputs.agents }}"
+          for agent in "${agents[@]}"; do
+            if [[ -n "$agent" ]]; then
+              agent_flags+=(--agent "$agent")
+            fi
+          done
           docker run --privileged \
             -e CLAUDE_CODE_OAUTH_TOKEN="${CLAUDE_CODE_OAUTH_TOKEN:-}" \
             -e ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}" \
@@ -86,7 +92,7 @@ jobs:
             -v "$PWD/cells:/cells" \
             ghcr.io/mohasarc/symnav-bench:${{ inputs.image_tag }} \
               run \
-              --agent "${{ matrix.agent }}" \
+              "${agent_flags[@]}" \
               --conditions "${{ matrix.condition }}" \
               --tasks "${{ matrix.task }}" \
               --rep-start "${{ matrix.rep }}" \
