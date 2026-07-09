@@ -111,7 +111,16 @@ jobs:
         if: always()
         with:
           name: cell-${{ matrix.cell }}
-          path: cells/*
+          path: |
+            cells/**/cell.json
+            cells/**/commands.jsonl
+            cells/**/raw/result.json
+            cells/**/raw/exception.txt
+            cells/**/raw/trial.log
+            cells/**/raw/agent/codex.txt
+            cells/**/raw/agent/trajectory.json
+            cells/**/raw/verifier/**
+            !cells/**/raw/agent/sessions/**
           if-no-files-found: ignore
 
   report:
