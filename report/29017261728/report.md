@@ -39,8 +39,8 @@ Holes:
 
 | metric | left | right |
 | --- | ---: | ---: |
-| mean f2p | 0.482 | 0.524 |
-| solved rate | 0.125 | 0.333 |
+| mean f2p | 0.451 | 0.524 |
+| solved rate | 0.111 | 0.333 |
 | paired tasks | 3 | 3 |
 | matched solved tasks | 1 | 1 |
 | matched cost_usd_imputed | 0.193 | 0.241 |
@@ -52,23 +52,21 @@ Matched-set efficiency only includes tasks solved by both arms.
 Holes:
 - missing arm for koota-query-predicates
 - missing arm for ts-pattern-match-each
+- missing arm for valibot-recursive-schema-composition
 
 ## codex:gpt-5.4-mini:low:stock vs codex:gpt-5.4-mini:low:symnav@5ae32c2a55c0
 
 | metric | left | right |
 | --- | ---: | ---: |
-| mean f2p | 0.482 | 0.442 |
-| solved rate | 0.125 | 0.167 |
-| paired tasks | 5 | 5 |
+| mean f2p | 0.451 | 0.442 |
+| solved rate | 0.111 | 0.167 |
+| paired tasks | 6 | 6 |
 | matched solved tasks | 0 | 0 |
 | matched cost_usd_imputed | n/a | n/a |
 | matched tokens | n/a | n/a |
 | matched steps | n/a | n/a |
 
 Matched-set efficiency only includes tasks solved by both arms.
-
-Holes:
-- missing arm for valibot-recursive-schema-composition
 
 ## codex:gpt-5.4:xhigh:stock vs codex:gpt-5.4:xhigh:symnav@7f45343f6e7e
 
