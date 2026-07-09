@@ -120,6 +120,7 @@ jobs:
               -o -path '*/raw/agent/codex.txt' \
               -o -path '*/raw/agent/trajectory.json' \
               -o -path '*/raw/verifier/*' \
+              -o -path '*/raw/workspace/*' \
             \) -print0 | while IFS= read -r -d '' file; do
               target="cell-artifacts/${file#cells/}"
               mkdir -p "$(dirname "$target")"
