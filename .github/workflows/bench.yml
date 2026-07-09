@@ -50,16 +50,18 @@ jobs:
           else
             tasks="$(docker run --privileged "$image" list-tasks | paste -sd, -)"
           fi
-          python - <<'PY' "$tasks" "${{ inputs.conditions }}" "${{ inputs.rep }}" >> "$GITHUB_OUTPUT"
+          python - <<'PY' "$tasks" "${{ inputs.conditions }}" "${{ inputs.agents }}" "${{ inputs.rep }}" >> "$GITHUB_OUTPUT"
           import json
           import re
           import sys
-          tasks, conditions, rep = sys.argv[1:]
+          tasks, conditions, agents, rep = sys.argv[1:]
           rows = []
           for task in [item for item in tasks.split(",") if item]:
             for condition in [item for item in conditions.split(",") if item]:
-              cell = re.sub(r"[^A-Za-z0-9_.-]+", "-", f"{condition}-{task}-rep{rep}")
-              rows.append({"cell": cell, "task": task, "condition": condition, "rep": rep})
+              for agent in [item for item in agents.split(",") if item]:
+                agent_label = re.sub(r"[^A-Za-z0-9_.-]+", "-", agent)
+                cell = re.sub(r"[^A-Za-z0-9_.-]+", "-", f"{agent_label}-{condition}-{task}-rep{rep}")
+                rows.append({"cell": cell, "agent": agent, "task": task, "condition": condition, "rep": rep})
           if len(rows) > 256:
               raise SystemExit(f"matrix has {len(rows)} jobs; GitHub cap is 256")
           print(f"matrix={json.dumps({'include': rows})}")
@@ -68,6 +70,7 @@ jobs:
   cell:
     needs: setup
     runs-on: ubuntu-latest
+    name: cell (${{ matrix.cell }})
     strategy:
       fail-fast: false
       max-parallel: ${{ fromJSON(inputs.max_parallel) }}
@@ -81,13 +84,6 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p cells
-          agent_flags=()
-          IFS=',' read -ra agents <<< "${{ inputs.agents }}"
-          for agent in "${agents[@]}"; do
-            if [[ -n "$agent" ]]; then
-              agent_flags+=(--agent "$agent")
-            fi
-          done
           docker run --privileged \
             -e CLAUDE_CODE_OAUTH_TOKEN="${CLAUDE_CODE_OAUTH_TOKEN:-}" \
             -e ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}" \
@@ -95,7 +91,7 @@ jobs:
             -v "$PWD/cells:/cells" \
             ghcr.io/mohasarc/symnav-bench:${{ inputs.image_tag }} \
               run \
-              "${agent_flags[@]}" \
+              --agent "${{ matrix.agent }}" \
               --conditions "${{ matrix.condition }}" \
               --tasks "${{ matrix.task }}" \
               --rep-start "${{ matrix.rep }}" \
