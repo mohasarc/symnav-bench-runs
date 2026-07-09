@@ -107,20 +107,33 @@ jobs:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CODEX_AUTH_JSON_B64: ${{ secrets.CODEX_AUTH_JSON_B64 }}
+      - name: Prepare cell artifact
+        if: always()
+        run: |
+          set -euo pipefail
+          rm -rf cell-artifacts
+          mkdir -p cell-artifacts
+          find cells \
+            \( -path '*/raw/agent/sessions' -o -path '*/raw/agent/sessions/*' \) -prune \
+            -o -type f \( \
+              -name cell.json \
+              -o -name commands.jsonl \
+              -o -path '*/raw/result.json' \
+              -o -path '*/raw/exception.txt' \
+              -o -path '*/raw/trial.log' \
+              -o -path '*/raw/agent/codex.txt' \
+              -o -path '*/raw/agent/trajectory.json' \
+              -o -path '*/raw/verifier/*' \
+            \) -print0 | while IFS= read -r -d '' file; do
+              target="cell-artifacts/${file#cells/}"
+              mkdir -p "$(dirname "$target")"
+              cp "$file" "$target"
+            done
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: cell-${{ matrix.cell }}
-          path: |
-            cells/**/cell.json
-            cells/**/commands.jsonl
-            cells/**/raw/result.json
-            cells/**/raw/exception.txt
-            cells/**/raw/trial.log
-            cells/**/raw/agent/codex.txt
-            cells/**/raw/agent/trajectory.json
-            cells/**/raw/verifier/**
-            !cells/**/raw/agent/sessions/**
+          path: cell-artifacts/**
           if-no-files-found: ignore
 
   report:
