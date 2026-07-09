@@ -1,0 +1,63 @@
+name: delayed bench
+
+on:
+  workflow_dispatch:
+    inputs:
+      delay_minutes:
+        type: string
+        default: "180"
+      image_tag:
+        type: string
+        default: main
+      agents:
+        type: string
+        default: codex:gpt-5.4:low,claude:claude-sonnet-4-5:medium
+      conditions:
+        type: string
+        default: symnav,stock
+      tasks:
+        type: string
+        default: ""
+      rep:
+        type: string
+        default: "0"
+      symnav_ref:
+        type: string
+        default: main
+      deep_swe_ref:
+        type: string
+        default: main
+      max_parallel:
+        type: string
+        default: "8"
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait
+        shell: bash
+        run: |
+          set -euo pipefail
+          delay_seconds=$((10#${{ inputs.delay_minutes }} * 60))
+          sleep "$delay_seconds"
+
+      - name: Dispatch bench
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run bench.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main \
+            -f image_tag='${{ inputs.image_tag }}' \
+            -f agents='${{ inputs.agents }}' \
+            -f conditions='${{ inputs.conditions }}' \
+            -f tasks='${{ inputs.tasks }}' \
+            -f rep='${{ inputs.rep }}' \
+            -f symnav_ref='${{ inputs.symnav_ref }}' \
+            -f deep_swe_ref='${{ inputs.deep_swe_ref }}' \
+            -f max_parallel='${{ inputs.max_parallel }}'
