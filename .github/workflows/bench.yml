@@ -150,12 +150,9 @@ jobs:
           mkdir -p results-branch/cells
           find artifacts -path '*/cell.json' -print0 | while IFS= read -r -d '' cell; do
             dir="$(basename "$(dirname "$cell")")"
+            rm -rf "results-branch/cells/$dir"
             mkdir -p "results-branch/cells/$dir"
-            cp "$cell" "results-branch/cells/$dir/cell.json"
-            commands="$(dirname "$cell")/commands.jsonl"
-            if [[ -f "$commands" ]]; then
-              cp "$commands" "results-branch/cells/$dir/commands.jsonl"
-            fi
+            cp -R "$(dirname "$cell")/." "results-branch/cells/$dir/"
           done
           docker run --privileged \
             -v "$PWD/results-branch:/results" \
