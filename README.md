@@ -1,3 +1,3 @@
 # symnav bench results
 
-- Latest report: [29133665186](report/29133665186/report.md)
+- Latest report: [29146824283](report/29146824283/report.md)

