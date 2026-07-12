@@ -156,6 +156,9 @@ jobs:
     needs: [cell]
     if: always()
     runs-on: ubuntu-latest
+    concurrency:
+      group: results-publication
+      cancel-in-progress: false
     steps:
       - uses: actions/download-artifact@v4
         with:
