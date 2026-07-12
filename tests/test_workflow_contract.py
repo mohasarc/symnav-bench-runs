@@ -73,10 +73,15 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn("studies", workflow)
         self.assertIn("actions: write", batch_workflow)
         self.assertIn("gh workflow run pages.yml", batch_workflow)
+        self.assertIn("results_sha", batch_workflow)
+        self.assertLess(batch_workflow.index("git push origin results"), batch_workflow.index("gh workflow run pages.yml"))
+        self.assertIn("inputs.results_sha || 'results'", workflow)
 
-    def test_pages_skips_manifest_only_dashboards(self) -> None:
+    def test_pages_includes_provisional_dashboards_even_without_attempts(self) -> None:
         workflow = self.workflow("pages.yml")
-        self.assertIn('if not payload.get("attempts"):', workflow)
+        self.assertNotIn('if not payload.get("attempts"):', workflow)
+        self.assertIn('provisional = not configurations', workflow)
+        self.assertIn('status = "provisional"', workflow)
 
     def test_fixture_suite_never_exceeds_github_matrix_limit(self) -> None:
         suite = json.loads((ROOT / "tests/fixtures/studies/dry-run/suite.json").read_text())

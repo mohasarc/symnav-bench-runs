@@ -36,6 +36,17 @@ class BatchEvidenceTest(unittest.TestCase):
             self.assertNotEqual(result.returncode, 0)
             self.assertIn("missing slots: slot-b", result.stderr)
 
+    def test_accepts_partial_evidence_when_publication_allows_missing_slots(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            batch = self.write_batch(root, ("slot-a", "slot-b"))
+            self.write_attempt(root, "artifact-a", "slot-a")
+
+            result = self.validate(batch, root / "artifacts", "--allow-missing")
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn("validated 1 attempt records for 2 planned slots", result.stdout)
+
     def test_rejects_unplanned_and_duplicate_slot_evidence(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -64,9 +75,17 @@ class BatchEvidenceTest(unittest.TestCase):
             self.assertIn("metadata mismatch", result.stderr)
             self.assertIn("task expected task-slot-a, got wrong-task", result.stderr)
 
-    def validate(self, batch: Path, artifacts: Path) -> subprocess.CompletedProcess[str]:
+    def validate(self, batch: Path, artifacts: Path, *extra_arguments: str) -> subprocess.CompletedProcess[str]:
         return subprocess.run(
-            [sys.executable, str(VALIDATOR), "--batch", str(batch), "--artifacts", str(artifacts)],
+            [
+                sys.executable,
+                str(VALIDATOR),
+                "--batch",
+                str(batch),
+                "--artifacts",
+                str(artifacts),
+                *extra_arguments,
+            ],
             text=True,
             capture_output=True,
             check=False,

@@ -24,7 +24,7 @@ class BatchEvidenceValidator:
         self.batch_path = batch_path
         self.artifacts_path = artifacts_path
 
-    def validate(self) -> tuple[int, int]:
+    def validate(self, allow_missing: bool = False) -> tuple[int, int]:
         expected = self.expected_slots()
         actual: Counter[str] = Counter()
         errors: list[str] = []
@@ -47,7 +47,7 @@ class BatchEvidenceValidator:
         missing = sorted(set(expected) - set(actual))
         unexpected = sorted(set(actual) - set(expected))
         duplicates = sorted(slot_id for slot_id, count in actual.items() if count > 1)
-        if missing:
+        if missing and not allow_missing:
             errors.append(f"missing slots: {', '.join(missing)}")
         if unexpected:
             errors.append(f"unexpected slots: {', '.join(unexpected)}")
@@ -116,9 +116,12 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--batch", type=Path, required=True)
     parser.add_argument("--artifacts", type=Path, required=True)
+    parser.add_argument("--allow-missing", action="store_true")
     arguments = parser.parse_args()
     try:
-        attempts, slots = BatchEvidenceValidator(arguments.batch, arguments.artifacts).validate()
+        attempts, slots = BatchEvidenceValidator(arguments.batch, arguments.artifacts).validate(
+            allow_missing=arguments.allow_missing
+        )
     except (json.JSONDecodeError, OSError, TypeError, ValueError) as error:
         print(error, file=sys.stderr)
         return 1

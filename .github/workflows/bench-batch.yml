@@ -198,7 +198,8 @@ jobs:
             <<< "$selection" > "$study_dir/batches/${{ inputs.batch_id }}.json"
           python scripts/validate-batch-evidence.py \
             --batch "$study_dir/batches/${{ inputs.batch_id }}.json" \
-            --artifacts artifacts
+            --artifacts artifacts \
+            --allow-missing
           artifacts=()
           while IFS= read -r directory; do
             artifacts+=(--artifact "/artifacts/${directory#artifacts/}")
@@ -266,6 +267,7 @@ jobs:
               --study-dir "/results/studies/${{ inputs.study }}"
 
       - name: Commit normalized results
+        id: publish_results
         working-directory: results
         run: |
           set -euo pipefail
@@ -277,8 +279,9 @@ jobs:
           fi
           git commit -m "results: merge ${{ inputs.batch_id }} run ${{ github.run_id }} attempt ${{ github.run_attempt }}" || true
           git push origin results
+          echo "results_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Deploy study dashboards
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME"
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME" -f results_sha="${{ steps.publish_results.outputs.results_sha }}"
