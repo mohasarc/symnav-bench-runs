@@ -153,14 +153,65 @@ jobs:
           retention-days: 14
 
   report:
-    needs: [cell]
+    needs: [setup, cell]
     if: always()
     runs-on: ubuntu-latest
     concurrency:
       group: results-publication
       cancel-in-progress: false
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: results
+          path: results
+          fetch-depth: 0
       - uses: actions/download-artifact@v4
         with:
           pattern: attempt-*
           path: artifacts
+      - name: Refresh serialized results head
+        working-directory: results
+        run: |
+          set -euo pipefail
+          git fetch origin results
+          git merge --ff-only origin/results
+
+      - name: Merge normalized attempts
+        shell: bash
+        run: |
+          set -euo pipefail
+          study_dir="results/studies/${{ inputs.study }}"
+          mkdir -p "$study_dir/batches"
+          cp "studies/${{ inputs.study }}/manifest.yml" "$study_dir/manifest.yml"
+          cp "studies/${{ inputs.study }}/suite.json" "$study_dir/suite.json"
+          image='${{ needs.setup.outputs.image }}'
+          selection=$(docker run --rm -v "$PWD:/workspace:ro" "$image" batch-matrix \
+            --study "/workspace/studies/${{ inputs.study }}/manifest.yml" \
+            --suite "/workspace/studies/${{ inputs.study }}/suite.json" \
+            --configuration '${{ inputs.configuration }}' \
+            --mode run-all)
+          jq --arg batch '${{ inputs.batch_id }}' '.batches[] | select(.batch_id == $batch)' \
+            <<< "$selection" > "$study_dir/batches/${{ inputs.batch_id }}.json"
+          artifacts=()
+          while IFS= read -r directory; do
+            artifacts+=(--artifact "/artifacts/${directory#artifacts/}")
+          done < <(find artifacts -mindepth 1 -maxdepth 1 -type d | sort)
+          if ((${#artifacts[@]})); then
+            docker run --rm \
+              -v "$PWD/results:/results" \
+              -v "$PWD/artifacts:/artifacts:ro" \
+              "$image" merge-results \
+                --study-dir "/results/studies/${{ inputs.study }}" \
+                "${artifacts[@]}"
+          fi
+
+      - name: Commit normalized results
+        working-directory: results
+        run: |
+          set -euo pipefail
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add "studies/${{ inputs.study }}"
+          git commit -m "results: merge ${{ inputs.batch_id }} run ${{ github.run_id }} attempt ${{ github.run_attempt }}" || true
+          git push origin results

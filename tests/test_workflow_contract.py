@@ -43,7 +43,7 @@ class WorkflowContractTest(unittest.TestCase):
         workflow = self.workflow("bench-batch.yml")
         self.assertIn("if: always()", workflow)
         self.assertIn("actions/upload-artifact@v4", workflow)
-        self.assertIn("needs: [cell]", workflow)
+        self.assertIn("needs: [setup, cell]", workflow)
 
     def test_publication_is_serial_and_release_assets_are_immutable(self) -> None:
         workflow = self.workflow("bench-batch.yml")
