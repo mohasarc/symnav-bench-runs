@@ -45,12 +45,14 @@ class WorkflowContractTest(unittest.TestCase):
         workflow = self.workflow("bench-batch.yml")
         self.assertIn("if: always()", workflow)
         self.assertIn("actions/upload-artifact@v4", workflow)
+        self.assertIn("if-no-files-found: error", workflow)
         self.assertIn("needs: [setup, cell]", workflow)
 
     def test_publication_is_serial_and_release_assets_are_immutable(self) -> None:
         workflow = self.workflow("bench-batch.yml")
         self.assertIn("cancel-in-progress: false", workflow)
         self.assertIn("git fetch origin results", workflow)
+        self.assertIn("validate-batch-evidence.py", workflow)
         self.assertIn("merge-results", workflow)
         self.assertIn('sudo chown -R "$(id -u):$(id -g)" "$study_dir"', workflow)
         self.assertIn("raw-archive", workflow)
@@ -65,6 +67,10 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn("studies", workflow)
         self.assertIn("actions: write", batch_workflow)
         self.assertIn("gh workflow run pages.yml", batch_workflow)
+
+    def test_pages_skips_manifest_only_dashboards(self) -> None:
+        workflow = self.workflow("pages.yml")
+        self.assertIn('if not payload.get("attempts"):', workflow)
 
     def test_fixture_suite_never_exceeds_github_matrix_limit(self) -> None:
         suite = json.loads((ROOT / "tests/fixtures/studies/dry-run/suite.json").read_text())
