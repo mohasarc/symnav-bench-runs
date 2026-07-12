@@ -59,9 +59,12 @@ class WorkflowContractTest(unittest.TestCase):
 
     def test_pages_deploys_stable_study_tree(self) -> None:
         workflow = self.workflow("pages.yml")
+        batch_workflow = self.workflow("bench-batch.yml")
         self.assertIn("actions/upload-pages-artifact", workflow)
         self.assertIn("actions/deploy-pages", workflow)
         self.assertIn("studies", workflow)
+        self.assertIn("actions: write", batch_workflow)
+        self.assertIn("gh workflow run pages.yml", batch_workflow)
 
     def test_fixture_suite_never_exceeds_github_matrix_limit(self) -> None:
         suite = json.loads((ROOT / "tests/fixtures/studies/dry-run/suite.json").read_text())

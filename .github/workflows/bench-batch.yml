@@ -16,7 +16,7 @@ on:
 permissions:
   contents: write
   packages: read
-  actions: read
+  actions: write
 
 jobs:
   setup:
@@ -274,3 +274,8 @@ jobs:
           fi
           git commit -m "results: merge ${{ inputs.batch_id }} run ${{ github.run_id }} attempt ${{ github.run_attempt }}" || true
           git push origin results
+
+      - name: Deploy study dashboards
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME"
