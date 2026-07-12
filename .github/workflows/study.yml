@@ -82,7 +82,7 @@ jobs:
           jq -r '.[]' <<< "$BATCH_IDS" | while IFS= read -r batch_id; do
             gh workflow run bench-batch.yml \
               --repo "$GITHUB_REPOSITORY" \
-              --ref "$GITHUB_SHA" \
+              --ref "$GITHUB_REF_NAME" \
               -f study='${{ inputs.study }}' \
               -f configuration='${{ inputs.configuration }}' \
               -f batch_id="$batch_id"

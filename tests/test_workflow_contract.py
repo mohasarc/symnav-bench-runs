@@ -25,6 +25,8 @@ class WorkflowContractTest(unittest.TestCase):
         workflow = self.workflow("study.yml")
         self.assertIn("batch-matrix", workflow)
         self.assertIn("bench-batch.yml", workflow)
+        self.assertIn('--ref "$GITHUB_REF_NAME"', workflow)
+        self.assertNotIn('--ref "$GITHUB_SHA"', workflow)
         self.assertIn("run-next", workflow)
         self.assertIn("run-all", workflow)
         self.assertIn("resume", workflow)
