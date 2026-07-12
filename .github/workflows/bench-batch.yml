@@ -206,6 +206,50 @@ jobs:
                 "${artifacts[@]}"
           fi
 
+      - name: Build and upload immutable raw archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          image='${{ needs.setup.outputs.image }}'
+          asset='${{ inputs.study }}-${{ inputs.batch_id }}-${{ github.run_id }}-${{ github.run_attempt }}.tar.gz'
+          artifacts=()
+          while IFS= read -r directory; do
+            artifacts+=(--artifact "/artifacts/${directory#artifacts/}")
+          done < <(find artifacts -mindepth 1 -maxdepth 1 -type d | sort)
+          if ((${#artifacts[@]} == 0)); then
+            exit 0
+          fi
+          docker run --rm \
+            -v "$PWD:/publication" \
+            -v "$PWD/artifacts:/artifacts:ro" \
+            "$image" raw-archive \
+              --archive "/publication/$asset" \
+              "${artifacts[@]}" > pointers.json
+          sha256sum "$asset" > "$asset.sha256"
+          python - "results/studies/${{ inputs.study }}" pointers.json <<'PY'
+          import json, pathlib, sys
+          study = pathlib.Path(sys.argv[1])
+          pointers = json.load(open(sys.argv[2]))
+          for attempt_id, pointer in pointers.items():
+              matches = list(study.glob(f"attempts/*/{attempt_id}.json"))
+              if len(matches) != 1:
+                  raise SystemExit(f"expected one normalized attempt for {attempt_id}")
+              data = json.loads(matches[0].read_text())
+              data["artifact"] = pointer
+              matches[0].write_text(json.dumps(data, indent=2, sort_keys=True) + "\n")
+          PY
+          gh release view benchmark-raw >/dev/null 2>&1 || \
+            gh release create benchmark-raw --title 'Benchmark raw archives' --notes 'Immutable raw benchmark evidence.'
+          for upload in "$asset" "$asset.sha256"; do
+            if gh release view benchmark-raw --json assets --jq '.assets[].name' | grep -Fxq "$upload"; then
+              echo "release asset already exists: $upload" >&2
+              exit 1
+            fi
+            gh release upload benchmark-raw "$upload"
+          done
+
       - name: Commit normalized results
         working-directory: results
         run: |
