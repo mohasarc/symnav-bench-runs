@@ -1,0 +1,154 @@
+name: study batch
+
+on:
+  workflow_dispatch:
+    inputs:
+      study:
+        type: string
+        required: true
+      configuration:
+        type: string
+        required: true
+      batch_id:
+        type: string
+        required: true
+
+permissions:
+  contents: write
+  packages: read
+  actions: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      image: ${{ steps.plan.outputs.image }}
+      image_digest: ${{ steps.plan.outputs.image_digest }}
+      symnav_bench_sha: ${{ steps.plan.outputs.symnav_bench_sha }}
+      agent_spec: ${{ steps.plan.outputs.agent_spec }}
+      agent_version: ${{ steps.plan.outputs.agent_version }}
+      deep_swe_sha: ${{ steps.plan.outputs.deep_swe_sha }}
+      symnav_sha: ${{ steps.plan.outputs.symnav_sha }}
+      protocol_fingerprint: ${{ steps.plan.outputs.protocol_fingerprint }}
+      suite_fingerprint: ${{ steps.plan.outputs.suite_fingerprint }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build immutable batch matrix
+        id: plan
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="studies/${{ inputs.study }}"
+          image_reference=$(jq -r .image_reference "$root/execution.json")
+          image_digest=$(jq -r .image_digest "$root/execution.json")
+          symnav_bench_sha=$(jq -r .symnav_bench_sha "$root/execution.json")
+          image="$image_reference@$image_digest"
+          docker pull "$image"
+          metadata=$(docker run --rm --entrypoint python -v "$PWD:/workspace:ro" "$image" -c '
+          import json, sys, yaml
+          manifest = yaml.safe_load(open(sys.argv[1]))
+          suite = json.load(open(sys.argv[2]))
+          configuration = next(item for item in manifest["configurations"] if item["id"] == sys.argv[3])
+          print(json.dumps({
+            "agent_spec": ":".join((configuration["agent"], configuration["model"], configuration["effort"])),
+            "agent_version": configuration["agent_version"],
+            "deep_swe_sha": manifest["protocol"]["deep_swe_sha"],
+            "symnav_sha": manifest["protocol"]["symnav"]["sha"],
+            "protocol_fingerprint": manifest["protocol_fingerprint"],
+            "suite_fingerprint": suite["fingerprint"],
+          }))' "/workspace/$root/manifest.yml" "/workspace/$root/suite.json" '${{ inputs.configuration }}')
+          selection=$(docker run --rm -v "$PWD:/workspace:ro" "$image" batch-matrix \
+            --study "/workspace/$root/manifest.yml" \
+            --suite "/workspace/$root/suite.json" \
+            --configuration '${{ inputs.configuration }}' \
+            --mode run-all)
+          matrix=$(jq -c --arg batch '${{ inputs.batch_id }}' '.batches[] | select(.batch_id == $batch) | .matrix' <<< "$selection")
+          [[ $(jq '.include | length' <<< "$matrix") -le 256 ]]
+          echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
+          echo "image=$image" >> "$GITHUB_OUTPUT"
+          echo "image_digest=$image_digest" >> "$GITHUB_OUTPUT"
+          echo "symnav_bench_sha=$symnav_bench_sha" >> "$GITHUB_OUTPUT"
+          jq -r 'to_entries[] | "\(.key)=\(.value)"' <<< "$metadata" >> "$GITHUB_OUTPUT"
+
+  cell:
+    needs: setup
+    runs-on: ubuntu-latest
+    name: cell (${{ matrix.task }}, ${{ matrix.condition }}, r${{ matrix.repetition }})
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix: ${{ fromJSON(needs.setup.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: mohasarc/symnav
+          ref: ${{ needs.setup.outputs.symnav_sha }}
+          path: symnav-product
+      - name: Run declared slot
+        shell: bash
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CODEX_AUTH_JSON_B64: ${{ secrets.CODEX_AUTH_JSON_B64 }}
+        run: |
+          set -euo pipefail
+          mkdir -p attempts
+          repetition=$((10#${{ matrix.repetition }} - 1))
+          docker run --rm --privileged \
+            -e CLAUDE_CODE_OAUTH_TOKEN \
+            -e ANTHROPIC_API_KEY \
+            -e CODEX_AUTH_JSON_B64 \
+            -e SYMNAV_BENCH_STUDY_ID='${{ matrix.study_id }}' \
+            -e SYMNAV_BENCH_CONFIGURATION_ID='${{ matrix.configuration_id }}' \
+            -e SYMNAV_BENCH_BATCH_ID='${{ matrix.batch_id }}' \
+            -e SYMNAV_BENCH_IMAGE_DIGEST='${{ needs.setup.outputs.image_digest }}' \
+            -e SYMNAV_BENCH_SHA='${{ needs.setup.outputs.symnav_bench_sha }}' \
+            -e SYMNAV_BENCH_PROTOCOL_FINGERPRINT='${{ needs.setup.outputs.protocol_fingerprint }}' \
+            -e SYMNAV_BENCH_SUITE_FINGERPRINT='${{ needs.setup.outputs.suite_fingerprint }}' \
+            -e SYMNAV_BENCH_STUDY_MANIFEST='/study/manifest.yml' \
+            -e SYMNAV_BENCH_SUITE_MANIFEST='/study/suite.json' \
+            -e SYMNAV_BENCH_SYMNAV_CHECKOUT='/symnav-product' \
+            -e GITHUB_RUN_ID \
+            -e GITHUB_RUN_ATTEMPT \
+            -e GITHUB_JOB \
+            -v "$PWD/attempts:/attempts" \
+            -v "$PWD/studies/${{ inputs.study }}:/study:ro" \
+            -v "$PWD/symnav-product:/symnav-product:ro" \
+            '${{ needs.setup.outputs.image }}' run \
+              --agent '${{ needs.setup.outputs.agent_spec }}' \
+              --conditions '${{ matrix.condition }}' \
+              --tasks '${{ matrix.task }}' \
+              --rep-start "$repetition" \
+              --reps 1 \
+              --symnav-ref '${{ needs.setup.outputs.symnav_sha }}' \
+              --deep-swe-ref '${{ needs.setup.outputs.deep_swe_sha }}' \
+              --results-dir /attempts
+
+      - name: Prepare attempt evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          mkdir -p evidence
+          if [[ -d attempts ]]; then
+            cp -R attempts/. evidence/
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: attempt-${{ matrix.slot_id }}-${{ github.run_attempt }}
+          path: evidence/**
+          if-no-files-found: warn
+          retention-days: 14
+
+  report:
+    needs: [cell]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: attempt-*
+          path: artifacts
