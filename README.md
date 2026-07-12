@@ -2,10 +2,10 @@
 
 Workflow runner for `ghcr.io/mohasarc/symnav-bench`.
 
-This repo is meant for controlled benchmark dispatches. The workflow runs one
-cell per matrix job, uploads each normalized cell as an artifact, then a single
-report job writes accumulated cells and regenerated reports to the orphan
-`results` branch.
+This repo runs immutable benchmark studies. Dispatch `study coordinator` with a
+declared study ID, configuration ID, and run mode. Normalized attempts land on
+the `results` branch. Interactive dashboards deploy to GitHub Pages under the
+stable `studies/<study-id>/` path.
 
 ## Dispatch
 

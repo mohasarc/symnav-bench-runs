@@ -1,0 +1,63 @@
+name: deploy study dashboards
+
+on:
+  workflow_run:
+    workflows: [study batch]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: results
+      - name: Build stable study index
+        run: |
+          set -euo pipefail
+          mkdir -p _site/studies
+          python - <<'PY'
+          import html, json, pathlib, shutil
+          studies = pathlib.Path("studies")
+          rows = []
+          for study in sorted(path for path in studies.iterdir() if path.is_dir()):
+              dashboard = study / "dashboard"
+              data = study / "data" / "study.json"
+              if not dashboard.is_dir() or not data.is_file():
+                  continue
+              payload = json.loads(data.read_text())
+              configurations = payload.get("configurations", [])
+              provisional = any(item.get("coverage", {}).get("provisional", True) for item in configurations)
+              status = "provisional" if provisional else "complete"
+              rows.append((status, study.name))
+              shutil.copytree(dashboard, pathlib.Path("_site/studies") / study.name)
+          items = "\n".join(
+              f'<li data-status="{status}"><a href="studies/{html.escape(name)}/">{html.escape(name)}</a> — {status}</li>'
+              for status, name in rows
+          )
+          pathlib.Path("_site/index.html").write_text(
+              '<!doctype html><html><head><meta charset="utf-8"><title>symnav benchmark studies</title></head>'
+              '<body><main><h1>symnav benchmark studies</h1><p>Complete and provisional studies.</p>'
+              f'<ul>{items}</ul></main></body></html>\n'
+          )
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
