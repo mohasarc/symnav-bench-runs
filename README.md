@@ -2,16 +2,20 @@
 
 Workflow runner for `ghcr.io/mohasarc/symnav-bench`.
 
-This repo runs immutable benchmark studies. Dispatch `study coordinator` with a
+This repo runs immutable benchmark studies. Dispatch `study dispatcher` with a
 declared study ID, configuration ID, and run mode. Normalized attempts land on
 the `results` branch. Interactive dashboards deploy to GitHub Pages under the
 stable `studies/<study-id>/` path.
 
 ## Dispatch
 
-Use `study coordinator`. Public dispatch accepts only `study`, `configuration`,
+Use `study dispatcher`. Public dispatch accepts only `study`, `configuration`,
 and `mode`. Study manifests pin task suite, model, effort, agent version, harness
 image digest, DeepSWE SHA, and symnav SHA.
+
+Dispatcher is asynchronous. A green dispatcher run means child batch workflows
+were accepted. Study is finished only after every matching `study batch` run
+publishes its report.
 
 Required secrets:
 
@@ -40,7 +44,7 @@ gh workflow run study.yml \
   -f mode=run-all
 ```
 
-Confirm smoke coordinator and its two-cell child batch finish. Retry only
+Confirm smoke dispatcher and its two-cell child batch finish. Retry only
 retryable infrastructure or provider failures. Context exhaustion, agent
 timeout, and verifier failures stay scored failures.
 

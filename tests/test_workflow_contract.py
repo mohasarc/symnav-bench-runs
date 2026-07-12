@@ -23,6 +23,8 @@ class WorkflowContractTest(unittest.TestCase):
 
     def test_coordinator_dispatches_selected_batches(self) -> None:
         workflow = self.workflow("study.yml")
+        self.assertIn("name: study dispatcher", workflow)
+        self.assertIn("This run finishes after dispatch", workflow)
         self.assertIn("batch-matrix", workflow)
         self.assertIn("bench-batch.yml", workflow)
         self.assertIn('--ref "$GITHUB_REF_NAME"', workflow)

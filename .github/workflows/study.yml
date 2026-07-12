@@ -1,4 +1,4 @@
-name: study coordinator
+name: study dispatcher
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ permissions:
   packages: read
 
 jobs:
-  coordinate:
+  dispatch:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -87,3 +87,17 @@ jobs:
               -f configuration='${{ inputs.configuration }}' \
               -f batch_id="$batch_id"
           done
+
+      - name: Explain asynchronous completion
+        env:
+          BATCH_IDS: ${{ steps.selection.outputs.batch_ids }}
+        run: |
+          {
+            echo '## Child batches dispatched'
+            echo
+            echo 'This run finishes after dispatch. Study results are ready only after every matching `study batch` run publishes its report.'
+            echo
+            echo '```json'
+            echo "$BATCH_IDS"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
