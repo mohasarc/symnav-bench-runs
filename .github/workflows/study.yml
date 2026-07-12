@@ -1,0 +1,89 @@
+name: study coordinator
+
+on:
+  workflow_dispatch:
+    inputs:
+      study:
+        description: Study ID under studies/
+        type: string
+        required: true
+      configuration:
+        description: Configuration ID declared by study
+        type: string
+        required: true
+      mode:
+        description: Select one, all, or all unresolved batches
+        type: choice
+        options: [run-next, run-all, resume]
+        default: run-next
+
+permissions:
+  actions: write
+  contents: read
+  packages: read
+
+jobs:
+  coordinate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read pinned execution
+        id: execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          execution="studies/${{ inputs.study }}/execution.json"
+          python - "$execution" >> "$GITHUB_OUTPUT" <<'PY'
+          import json, sys
+          data = json.load(open(sys.argv[1]))
+          print(f"image={data['image_reference']}@{data['image_digest']}")
+          PY
+
+      - name: Read current normalized results
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p current-results
+          if git fetch origin results:refs/remotes/origin/results; then
+            git worktree add --detach current-results origin/results
+          fi
+
+      - name: Select pending batches
+        id: selection
+        shell: bash
+        run: |
+          set -euo pipefail
+          image='${{ steps.execution.outputs.image }}'
+          docker pull "$image"
+          existing=()
+          if [[ -f "current-results/studies/${{ inputs.study }}/manifest.yml" ]]; then
+            existing=(--existing-study "/workspace/current-results/studies/${{ inputs.study }}")
+          fi
+          docker run --rm \
+            -v "$PWD:/workspace:ro" \
+            "$image" batch-matrix \
+              --study "/workspace/studies/${{ inputs.study }}/manifest.yml" \
+              --suite "/workspace/studies/${{ inputs.study }}/suite.json" \
+              --configuration '${{ inputs.configuration }}' \
+              --mode '${{ inputs.mode }}' \
+              "${existing[@]}" > selection.json
+          echo "batch_ids=$(jq -c '[.batches[].batch_id]' selection.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Dispatch child batches
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BATCH_IDS: ${{ steps.selection.outputs.batch_ids }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          jq -r '.[]' <<< "$BATCH_IDS" | while IFS= read -r batch_id; do
+            gh workflow run bench-batch.yml \
+              --repo "$GITHUB_REPOSITORY" \
+              --ref "$GITHUB_SHA" \
+              -f study='${{ inputs.study }}' \
+              -f configuration='${{ inputs.configuration }}' \
+              -f batch_id="$batch_id"
+          done
