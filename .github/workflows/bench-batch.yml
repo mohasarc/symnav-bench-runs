@@ -207,6 +207,7 @@ jobs:
               "$image" merge-results \
                 --study-dir "/results/studies/${{ inputs.study }}" \
                 "${artifacts[@]}"
+            sudo chown -R "$(id -u):$(id -g)" "$study_dir"
           fi
 
       - name: Build and upload immutable raw archive

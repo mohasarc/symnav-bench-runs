@@ -52,6 +52,7 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn("cancel-in-progress: false", workflow)
         self.assertIn("git fetch origin results", workflow)
         self.assertIn("merge-results", workflow)
+        self.assertIn('sudo chown -R "$(id -u):$(id -g)" "$study_dir"', workflow)
         self.assertIn("raw-archive", workflow)
         self.assertIn("gh release view", workflow)
         self.assertNotIn("--clobber", workflow)
