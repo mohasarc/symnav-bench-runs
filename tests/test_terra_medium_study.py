@@ -12,8 +12,8 @@ STUDY = ROOT / "studies" / STUDY_ID
 SYMNAV_SHA = "80aa4bfa421a7960945005d637ffa5c74665a3ab"
 SYMNAV_BASE_SHA = "fcf17a14126537dc3c36614ef942de90f4804dbe"
 DEEP_SWE_SHA = "6db64a40f3318d8659238ff34a8cc4b491c49205"
-SYMNAV_BENCH_SHA = "bdbf5a24f3494eb1d1970f705f7e95226472de39"
-IMAGE_DIGEST = "sha256:2f482242b3242184de1f45f0448991866b35363d93e2b4da626bb7d62014a53f"
+SYMNAV_BENCH_SHA = "741e8b36a5e02714d2d2ba538f25de16a87f649e"
+IMAGE_DIGEST = "sha256:c256aa06fb909d7fa3c74acd9601900d275cb9564e3f3680f0dd8ca2a4db50ab"
 
 
 class TerraMediumStudyTest(unittest.TestCase):
@@ -73,7 +73,7 @@ class TerraMediumStudyTest(unittest.TestCase):
         self.assertEqual(
             self.execution,
             {
-                "image_reference": "ghcr.io/mohasarc/symnav-bench:sha-bdbf5a2",
+                "image_reference": "ghcr.io/mohasarc/symnav-bench:sha-741e8b3",
                 "image_digest": IMAGE_DIGEST,
                 "symnav_bench_sha": SYMNAV_BENCH_SHA,
             },
