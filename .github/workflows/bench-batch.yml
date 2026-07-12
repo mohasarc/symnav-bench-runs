@@ -250,6 +250,14 @@ jobs:
             gh release upload benchmark-raw "$upload"
           done
 
+      - name: Regenerate canonical study dashboard
+        run: |
+          set -euo pipefail
+          docker run --rm \
+            -v "$PWD/results:/results" \
+            '${{ needs.setup.outputs.image }}' study-report \
+              --study-dir "/results/studies/${{ inputs.study }}"
+
       - name: Commit normalized results
         working-directory: results
         run: |
