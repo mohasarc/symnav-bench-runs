@@ -9,18 +9,9 @@ stable `studies/<study-id>/` path.
 
 ## Dispatch
 
-Inputs:
-
-| Input | Default | Meaning |
-| --- | --- | --- |
-| `image_tag` | `main` | symnav-bench image tag. |
-| `agents` | `codex:gpt-5.4:xhigh,claude:claude-opus-4-8:high` | Comma-separated run specs. |
-| `conditions` | `symnav,stock` | `symnav`, `stock`, or both. |
-| `tasks` | empty | Empty means all tasks in image. |
-| `rep` | `0` | Rep index for this dispatch. |
-| `symnav_ref` | `main` | Ref resolved by the harness. |
-| `deep_swe_ref` | `main` | DeepSWE ref checked out by each cell. |
-| `max_parallel` | `8` | GitHub Actions matrix concurrency. |
+Use `study coordinator`. Public dispatch accepts only `study`, `configuration`,
+and `mode`. Study manifests pin task suite, model, effort, agent version, harness
+image digest, DeepSWE SHA, and symnav SHA.
 
 Required secrets:
 
