@@ -65,11 +65,13 @@ jobs:
             --mode run-all)
           matrix=$(jq -c --arg batch '${{ inputs.batch_id }}' '.batches[] | select(.batch_id == $batch) | .matrix' <<< "$selection")
           [[ $(jq '.include | length' <<< "$matrix") -le 256 ]]
-          echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
-          echo "image=$image" >> "$GITHUB_OUTPUT"
-          echo "image_digest=$image_digest" >> "$GITHUB_OUTPUT"
-          echo "symnav_bench_sha=$symnav_bench_sha" >> "$GITHUB_OUTPUT"
-          jq -r 'to_entries[] | "\(.key)=\(.value)"' <<< "$metadata" >> "$GITHUB_OUTPUT"
+          {
+            echo "matrix=$matrix"
+            echo "image=$image"
+            echo "image_digest=$image_digest"
+            echo "symnav_bench_sha=$symnav_bench_sha"
+            jq -r 'to_entries[] | "\(.key)=\(.value)"' <<< "$metadata"
+          } >> "$GITHUB_OUTPUT"
 
   cell:
     needs: setup
