@@ -87,6 +87,7 @@ jobs:
           ref: ${{ needs.setup.outputs.symnav_sha }}
           path: symnav-product
       - name: Run declared slot
+        id: run
         shell: bash
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -96,6 +97,7 @@ jobs:
           set -euo pipefail
           mkdir -p attempts
           repetition=$((10#${{ matrix.repetition }} - 1))
+          set +e
           docker run --rm --privileged \
             -e CLAUDE_CODE_OAUTH_TOKEN \
             -e ANTHROPIC_API_KEY \
@@ -125,6 +127,13 @@ jobs:
               --symnav-ref '${{ needs.setup.outputs.symnav_sha }}' \
               --deep-swe-ref '${{ needs.setup.outputs.deep_swe_sha }}' \
               --results-dir /attempts
+          status=$?
+          set -e
+          echo "exit_code=$status" >> "$GITHUB_OUTPUT"
+
+      - name: Mark retryable attempt failed
+        if: steps.run.outputs.exit_code != '0'
+        run: exit 1
 
       - name: Prepare attempt evidence
         if: always()
