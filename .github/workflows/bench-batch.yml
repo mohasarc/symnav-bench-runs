@@ -151,7 +151,7 @@ jobs:
         with:
           name: attempt-${{ matrix.slot_id }}-${{ github.run_attempt }}
           path: evidence/**
-          if-no-files-found: warn
+          if-no-files-found: error
           retention-days: 14
 
   report:
@@ -196,6 +196,9 @@ jobs:
             --mode run-all)
           jq --arg batch '${{ inputs.batch_id }}' '.batches[] | select(.batch_id == $batch)' \
             <<< "$selection" > "$study_dir/batches/${{ inputs.batch_id }}.json"
+          python scripts/validate-batch-evidence.py \
+            --batch "$study_dir/batches/${{ inputs.batch_id }}.json" \
+            --artifacts artifacts
           artifacts=()
           while IFS= read -r directory; do
             artifacts+=(--artifact "/artifacts/${directory#artifacts/}")

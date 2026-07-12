@@ -58,6 +58,10 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn("raw-archive", workflow)
         self.assertIn("gh release view", workflow)
         self.assertNotIn("--clobber", workflow)
+        self.assertLess(workflow.index("validate-batch-evidence.py"), workflow.index("merge-results"))
+        self.assertLess(workflow.index("merge-results"), workflow.index("raw-archive"))
+        self.assertLess(workflow.index("raw-archive"), workflow.index("study-report"))
+        self.assertLess(workflow.index("study-report"), workflow.index("Commit normalized results"))
 
     def test_pages_deploys_stable_study_tree(self) -> None:
         workflow = self.workflow("pages.yml")
