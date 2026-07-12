@@ -20,3 +20,44 @@ Required secrets:
 
 Keep the repo private before publishing result artifacts that should not be
 public.
+
+## Terra-medium PR #94 study
+
+Production study ID: `deepswe-ts-codex-terra-medium-pr94`
+
+Smoke study ID: `deepswe-ts-codex-terra-medium-pr94-smoke`
+
+Configuration ID: `codex-gpt-5.6-terra-medium`
+
+Run smoke before full dispatch:
+
+```bash
+gh workflow run study.yml \
+  --repo mohasarc/symnav-bench-runs \
+  --ref main \
+  -f study=deepswe-ts-codex-terra-medium-pr94-smoke \
+  -f configuration=codex-gpt-5.6-terra-medium \
+  -f mode=run-all
+```
+
+Confirm smoke coordinator and its two-cell child batch finish. Retry only
+retryable infrastructure or provider failures. Context exhaustion, agent
+timeout, and verifier failures stay scored failures.
+
+Dispatch both 140-slot production batches after smoke:
+
+```bash
+gh workflow run study.yml \
+  --repo mohasarc/symnav-bench-runs \
+  --ref main \
+  -f study=deepswe-ts-codex-terra-medium-pr94 \
+  -f configuration=codex-gpt-5.6-terra-medium \
+  -f mode=run-all
+```
+
+Use `resume` to dispatch only batches with unresolved retryable slots. Results
+and dashboard data publish from serialized batch report jobs. Stable dashboard
+paths are:
+
+- `https://mohasarc.github.io/symnav-bench-runs/studies/deepswe-ts-codex-terra-medium-pr94-smoke/`
+- `https://mohasarc.github.io/symnav-bench-runs/studies/deepswe-ts-codex-terra-medium-pr94/`
