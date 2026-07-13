@@ -15,6 +15,7 @@ class MergeArtifactSelector:
 
     def select(self) -> list[Path]:
         selected: list[Path] = []
+        selected_attempts: dict[tuple[str, str], dict[str, Any]] = {}
         errors: list[str] = []
         for artifact_dir in sorted(path for path in self.artifacts_dir.iterdir() if path.is_dir()):
             attempt_paths = sorted(artifact_dir.rglob("attempt.json"))
@@ -26,9 +27,16 @@ class MergeArtifactSelector:
             identity = self.mapping(source_data.get("identity"), f"{source}: identity")
             slot_id = self.string(identity.get("slot_id"), f"{source}: identity slot_id")
             attempt_id = self.string(identity.get("attempt_id"), f"{source}: identity attempt_id")
+            attempt_key = (slot_id, attempt_id)
+            previous = selected_attempts.get(attempt_key)
+            if previous is not None:
+                if self.without_archive_pointer(previous) != self.without_archive_pointer(source_data):
+                    errors.append(f"duplicate artifact has different immutable content: {source}")
+                continue
             target = self.study_dir / "attempts" / slot_id / f"{attempt_id}.json"
             if not target.exists():
                 selected.append(artifact_dir)
+                selected_attempts[attempt_key] = source_data
                 continue
             if self.same_immutable_attempt(target, source_data):
                 continue

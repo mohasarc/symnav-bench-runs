@@ -1,0 +1,107 @@
+name: recover study report
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Failed study-batch run containing the attempt artifacts
+        required: true
+        type: string
+      study:
+        required: true
+        type: string
+      configuration:
+        required: true
+        type: string
+      batch_id:
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  packages: read
+  actions: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: results-publication
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: results
+          path: results
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ inputs.source_run_id }}
+          github-token: ${{ github.token }}
+          pattern: attempt-*
+          path: artifacts
+      - name: Refresh serialized results head
+        working-directory: results
+        run: |
+          set -euo pipefail
+          git fetch origin results
+          git merge --ff-only origin/results
+      - name: Merge normalized attempts and regenerate report
+        shell: bash
+        run: |
+          set -euo pipefail
+          scripts/migrate-legacy-results.sh results
+          study_dir="results/studies/${{ inputs.study }}"
+          mkdir -p "$study_dir/batches"
+          cp "studies/${{ inputs.study }}/manifest.yml" "$study_dir/manifest.yml"
+          cp "studies/${{ inputs.study }}/suite.json" "$study_dir/suite.json"
+          image_reference=$(jq -r .image_reference "studies/${{ inputs.study }}/execution.json")
+          image_digest=$(jq -r .image_digest "studies/${{ inputs.study }}/execution.json")
+          image="$image_reference@$image_digest"
+          docker pull "$image"
+          selection=$(docker run --rm -v "$PWD:/workspace:ro" "$image" batch-matrix \
+            --study "/workspace/studies/${{ inputs.study }}/manifest.yml" \
+            --suite "/workspace/studies/${{ inputs.study }}/suite.json" \
+            --configuration '${{ inputs.configuration }}' \
+            --mode run-all)
+          jq --arg batch '${{ inputs.batch_id }}' '.batches[] | select(.batch_id == $batch)' \
+            <<< "$selection" > "$study_dir/batches/${{ inputs.batch_id }}.json"
+          python scripts/validate-batch-evidence.py \
+            --batch "$study_dir/batches/${{ inputs.batch_id }}.json" \
+            --artifacts artifacts \
+            --allow-missing
+          merge_artifacts=()
+          while IFS= read -r directory; do
+            merge_artifacts+=(--artifact "/artifacts/${directory#artifacts/}")
+          done < <(python scripts/select-merge-artifacts.py \
+            --study-dir "$study_dir" \
+            --artifacts artifacts)
+          if ((${#merge_artifacts[@]})); then
+            docker run --rm \
+              -v "$PWD/results:/results" \
+              -v "$PWD/artifacts:/artifacts:ro" \
+              "$image" merge-results \
+                --study-dir "/results/studies/${{ inputs.study }}" \
+                "${merge_artifacts[@]}"
+            sudo chown -R "$(id -u):$(id -g)" "$study_dir"
+          fi
+          docker run --rm \
+            -v "$PWD/results:/results" \
+            "$image" study-report \
+              --study-dir "/results/studies/${{ inputs.study }}"
+      - name: Commit normalized results
+        id: publish_results
+        working-directory: results
+        run: |
+          set -euo pipefail
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add "studies/${{ inputs.study }}"
+          git commit -m "results: recover report from ${{ inputs.source_run_id }}" || true
+          git push origin results
+          echo "results_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Deploy study dashboards
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME" -f results_sha="${{ steps.publish_results.outputs.results_sha }}"

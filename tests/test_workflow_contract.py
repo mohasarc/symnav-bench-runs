@@ -92,6 +92,15 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn('provisional = not configurations', workflow)
         self.assertIn('status = "provisional"', workflow)
 
+    def test_report_recovery_reuses_existing_artifacts_without_cells(self) -> None:
+        workflow = self.workflow("recover-report.yml")
+        self.assertIn("source_run_id", workflow)
+        self.assertIn("run-id: ${{ inputs.source_run_id }}", workflow)
+        self.assertIn("validate-batch-evidence.py", workflow)
+        self.assertIn("select-merge-artifacts.py", workflow)
+        self.assertIn("study-report", workflow)
+        self.assertNotIn("Run declared slot", workflow)
+
     def test_fixture_suite_never_exceeds_github_matrix_limit(self) -> None:
         suite = json.loads((ROOT / "tests/fixtures/studies/dry-run/suite.json").read_text())
         self.assertLessEqual(len(suite["tasks"]) * 2 * 4, 256)

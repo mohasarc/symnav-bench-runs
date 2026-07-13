@@ -38,6 +38,17 @@ class MergeArtifactSelectionTest(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(result.stdout.strip(), str(root / "artifacts" / "artifact-a"))
 
+    def test_selects_one_copy_of_a_repeated_artifact_attempt(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.write_attempt(root / "artifacts" / "artifact-a")
+            self.write_attempt(root / "artifacts" / "artifact-a-rerun")
+
+            result = self.select(root / "study", root / "artifacts")
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(result.stdout.strip(), str(root / "artifacts" / "artifact-a"))
+
     def test_rejects_conflicting_existing_attempt(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
