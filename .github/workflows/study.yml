@@ -94,6 +94,7 @@ jobs:
         env:
           BATCH_IDS: ${{ steps.selection.outputs.batch_ids }}
         run: |
+          # shellcheck disable=SC2016
           {
             echo '## Child batches dispatched'
             echo
