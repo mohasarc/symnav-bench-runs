@@ -47,18 +47,28 @@ class BatchEvidenceTest(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertIn("validated 1 attempt records for 2 planned slots", result.stdout)
 
-    def test_rejects_unplanned_and_duplicate_slot_evidence(self) -> None:
+    def test_accepts_repeated_attempt_evidence_for_a_rerun_slot(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             batch = self.write_batch(root, ("slot-a",))
             self.write_attempt(root, "artifact-a", "slot-a")
             self.write_attempt(root, "artifact-a-copy", "slot-a")
+
+            result = self.validate(batch, root / "artifacts")
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn("validated 2 attempt records for 1 planned slots", result.stdout)
+
+    def test_rejects_unplanned_slot_evidence(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            batch = self.write_batch(root, ("slot-a",))
+            self.write_attempt(root, "artifact-a", "slot-a")
             self.write_attempt(root, "artifact-wrong", "slot-wrong")
 
             result = self.validate(batch, root / "artifacts")
 
             self.assertNotEqual(result.returncode, 0)
-            self.assertIn("duplicate slots: slot-a", result.stderr)
             self.assertIn("unexpected slots: slot-wrong", result.stderr)
 
     def test_rejects_attempt_metadata_that_disagrees_with_matrix(self) -> None:

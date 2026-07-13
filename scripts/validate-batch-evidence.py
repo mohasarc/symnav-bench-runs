@@ -46,13 +46,10 @@ class BatchEvidenceValidator:
                 errors.append(str(error))
         missing = sorted(set(expected) - set(actual))
         unexpected = sorted(set(actual) - set(expected))
-        duplicates = sorted(slot_id for slot_id, count in actual.items() if count > 1)
         if missing and not allow_missing:
             errors.append(f"missing slots: {', '.join(missing)}")
         if unexpected:
             errors.append(f"unexpected slots: {', '.join(unexpected)}")
-        if duplicates:
-            errors.append(f"duplicate slots: {', '.join(duplicates)}")
         if errors:
             raise ValueError("batch evidence validation failed\n" + "\n".join(errors))
         return len(attempt_paths), len(expected)

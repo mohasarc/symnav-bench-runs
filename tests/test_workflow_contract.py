@@ -82,7 +82,9 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn("gh workflow run pages.yml", batch_workflow)
         self.assertIn("results_sha", batch_workflow)
         self.assertLess(batch_workflow.index("git push origin results"), batch_workflow.index("gh workflow run pages.yml"))
-        self.assertIn("inputs.results_sha || 'results'", workflow)
+        self.assertIn("ref: results", workflow)
+        self.assertIn("Check out requested results revision", workflow)
+        self.assertIn('git checkout --detach "${{ inputs.results_sha }}"', workflow)
 
     def test_pages_includes_provisional_dashboards_even_without_attempts(self) -> None:
         workflow = self.workflow("pages.yml")
