@@ -200,17 +200,19 @@ jobs:
             --batch "$study_dir/batches/${{ inputs.batch_id }}.json" \
             --artifacts artifacts \
             --allow-missing
-          artifacts=()
+          merge_artifacts=()
           while IFS= read -r directory; do
-            artifacts+=(--artifact "/artifacts/${directory#artifacts/}")
-          done < <(find artifacts -mindepth 1 -maxdepth 1 -type d | sort)
-          if ((${#artifacts[@]})); then
+            merge_artifacts+=(--artifact "/artifacts/${directory#artifacts/}")
+          done < <(python scripts/select-merge-artifacts.py \
+            --study-dir "$study_dir" \
+            --artifacts artifacts)
+          if ((${#merge_artifacts[@]})); then
             docker run --rm \
               -v "$PWD/results:/results" \
               -v "$PWD/artifacts:/artifacts:ro" \
               "$image" merge-results \
                 --study-dir "/results/studies/${{ inputs.study }}" \
-                "${artifacts[@]}"
+                "${merge_artifacts[@]}"
             sudo chown -R "$(id -u):$(id -g)" "$study_dir"
           fi
 

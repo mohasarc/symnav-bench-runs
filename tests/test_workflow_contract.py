@@ -55,6 +55,7 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn("cancel-in-progress: false", workflow)
         self.assertIn("git fetch origin results", workflow)
         self.assertIn("validate-batch-evidence.py", workflow)
+        self.assertIn("select-merge-artifacts.py", workflow)
         self.assertIn("merge-results", workflow)
         self.assertIn('sudo chown -R "$(id -u):$(id -g)" "$study_dir"', workflow)
         self.assertIn("raw-archive", workflow)
