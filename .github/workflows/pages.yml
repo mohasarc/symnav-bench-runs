@@ -56,7 +56,14 @@ jobs:
           pathlib.Path("_site/index.html").write_text(
               '<!doctype html><html><head><meta charset="utf-8"><title>symnav benchmark studies</title></head>'
               '<body><main><h1>symnav benchmark studies</h1><p>Complete and provisional studies.</p>'
-              f'<ul>{items}</ul></main></body></html>\n'
+            f'<ul>{items}</ul></main></body></html>\n'
+          )
+          pathlib.Path("_site/studies.json").write_text(
+              json.dumps(
+                  {"studies": [{"id": name, "status": status} for status, name in rows]},
+                  indent=2,
+              )
+              + "\n"
           )
           PY
       - uses: actions/configure-pages@v5

@@ -77,6 +77,7 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn("actions/upload-pages-artifact", workflow)
         self.assertIn("actions/deploy-pages", workflow)
         self.assertIn("studies", workflow)
+        self.assertIn('pathlib.Path("_site/studies.json")', workflow)
         self.assertIn("actions: write", batch_workflow)
         self.assertIn("gh workflow run pages.yml", batch_workflow)
         self.assertIn("results_sha", batch_workflow)
