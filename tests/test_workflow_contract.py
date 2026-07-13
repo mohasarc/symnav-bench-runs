@@ -26,6 +26,7 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn("name: study dispatcher", workflow)
         self.assertIn("This run finishes after dispatch", workflow)
         self.assertIn("batch-matrix", workflow)
+        self.assertIn("slot_ids", workflow)
         self.assertIn("bench-batch.yml", workflow)
         self.assertIn('--ref "$GITHUB_REF_NAME"', workflow)
         self.assertNotIn('--ref "$GITHUB_SHA"', workflow)
@@ -44,6 +45,8 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn("symnav_sha", workflow)
         self.assertIn("protocol_fingerprint", workflow)
         self.assertIn("suite_fingerprint", workflow)
+        self.assertIn("requested_slot_ids", workflow)
+        self.assertIn("slot_ids must be unique strings", workflow)
 
     def test_retryable_cell_is_red_but_evidence_and_report_always_run(self) -> None:
         workflow = self.workflow("bench-batch.yml")

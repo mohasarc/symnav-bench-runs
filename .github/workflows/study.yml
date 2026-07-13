@@ -70,29 +70,32 @@ jobs:
               --configuration '${{ inputs.configuration }}' \
               --mode '${{ inputs.mode }}' \
               "${existing[@]}" > selection.json
-          echo "batch_ids=$(jq -c '[.batches[].batch_id]' selection.json)" >> "$GITHUB_OUTPUT"
+          echo "batches=$(jq -c '[.batches[] | {batch_id, slot_ids: [.matrix.include[].slot_id]}]' selection.json)" >> "$GITHUB_OUTPUT"
 
       - name: Dispatch child batches
         env:
           GH_TOKEN: ${{ github.token }}
           STUDY: ${{ inputs.study }}
           CONFIGURATION: ${{ inputs.configuration }}
-          BATCH_IDS: ${{ steps.selection.outputs.batch_ids }}
+          BATCHES: ${{ steps.selection.outputs.batches }}
         shell: bash
         run: |
           set -euo pipefail
-          jq -r '.[]' <<< "$BATCH_IDS" | while IFS= read -r batch_id; do
+          jq -c '.[]' <<< "$BATCHES" | while IFS= read -r batch; do
+            batch_id=$(jq -r .batch_id <<< "$batch")
+            slot_ids=$(jq -c .slot_ids <<< "$batch")
             gh workflow run bench-batch.yml \
               --repo "$GITHUB_REPOSITORY" \
               --ref "$GITHUB_REF_NAME" \
               -f study="$STUDY" \
               -f configuration="$CONFIGURATION" \
-              -f batch_id="$batch_id"
+              -f batch_id="$batch_id" \
+              -f slot_ids="$slot_ids"
           done
 
       - name: Explain asynchronous completion
         env:
-          BATCH_IDS: ${{ steps.selection.outputs.batch_ids }}
+          BATCHES: ${{ steps.selection.outputs.batches }}
         run: |
           # shellcheck disable=SC2016
           {
@@ -101,6 +104,6 @@ jobs:
             echo 'This run finishes after dispatch. Study results are ready only after every matching `study batch` run publishes its report.'
             echo
             echo '```json'
-            echo "$BATCH_IDS"
+            echo "$BATCHES"
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"

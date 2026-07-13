@@ -12,6 +12,10 @@ on:
       batch_id:
         type: string
         required: true
+      slot_ids:
+        type: string
+        required: false
+        default: '[]'
 
 permissions:
   contents: write
@@ -37,6 +41,8 @@ jobs:
       - name: Build immutable batch matrix
         id: plan
         shell: bash
+        env:
+          SLOT_IDS: ${{ inputs.slot_ids }}
         run: |
           set -euo pipefail
           root="studies/${{ inputs.study }}"
@@ -64,6 +70,12 @@ jobs:
             --configuration '${{ inputs.configuration }}' \
             --mode run-all)
           matrix=$(jq -c --arg batch '${{ inputs.batch_id }}' '.batches[] | select(.batch_id == $batch) | .matrix' <<< "$selection")
+          requested_slot_ids=$(jq -ce 'if type == "array" and all(.[]; type == "string") and length == (unique | length) then . else error("slot_ids must be unique strings") end' <<< "$SLOT_IDS")
+          if [[ $(jq 'length' <<< "$requested_slot_ids") -gt 0 ]]; then
+            matrix=$(jq -c --argjson slot_ids "$requested_slot_ids" '.include |= map(select(.slot_id as $slot_id | $slot_ids | index($slot_id)))' <<< "$matrix")
+            [[ $(jq '.include | length' <<< "$matrix") -eq $(jq 'length' <<< "$requested_slot_ids") ]]
+          fi
+          [[ $(jq '.include | length' <<< "$matrix") -gt 0 ]]
           [[ $(jq '.include | length' <<< "$matrix") -le 256 ]]
           {
             echo "matrix=$matrix"
