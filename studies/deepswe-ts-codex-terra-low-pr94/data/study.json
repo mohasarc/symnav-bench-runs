@@ -1543,6 +1543,60 @@
     },
     {
       "adoption": {
+        "command_counts": {},
+        "first_symnav_step": null,
+        "patch_calls": 0,
+        "read_calls": 6,
+        "read_symnav_skill": false,
+        "search_calls": 0,
+        "symnav_calls": 0,
+        "symnav_calls_per_agent_step": 0.0,
+        "symnav_failures": 0,
+        "symnav_timeouts": 0,
+        "used_symnav": false
+      },
+      "artifacts": {
+        "archive_path": null,
+        "archive_sha256": null,
+        "archive_url": null,
+        "direct_urls": {}
+      },
+      "attempt_id": "cde53652673249c382dd8be9c6b09068",
+      "condition": "stock",
+      "configuration_id": "codex-gpt-5.6-terra-low",
+      "detail": null,
+      "outcome": "passed",
+      "repetition": 3,
+      "retry_reason": null,
+      "rewards": {
+        "f2p": 1.0,
+        "f2p_passed": 7,
+        "f2p_total": 7,
+        "p2p": 1.0,
+        "p2p_passed": 31,
+        "p2p_total": 31,
+        "partial": 1.0,
+        "reward": 1
+      },
+      "scored_failure_reason": null,
+      "slot_id": "7f608e2d627e97fd92e9bb5f8d34ae17d0d3cc493b4f91b062424880f75e1c55",
+      "task": "claude-code-by-agents-recursive-delegation",
+      "timing": {
+        "finished_at": "2026-07-13T17:00:49.144662Z",
+        "started_at": "2026-07-13T16:54:29.048868Z"
+      },
+      "usage": {
+        "cost_usd_imputed": 0.6304295,
+        "n_agent_steps": 31,
+        "n_cache_tokens": 1045248,
+        "n_input_tokens": 1137101,
+        "n_output_tokens": 9299,
+        "peak_context_tokens": 55990
+      },
+      "written_at": "2026-07-13T17:00:49.565394+00:00"
+    },
+    {
+      "adoption": {
         "command_counts": {
           "overview": 1
         },
@@ -12313,6 +12367,60 @@
         "command_counts": {},
         "first_symnav_step": null,
         "patch_calls": 0,
+        "read_calls": 8,
+        "read_symnav_skill": false,
+        "search_calls": 0,
+        "symnav_calls": 0,
+        "symnav_calls_per_agent_step": 0.0,
+        "symnav_failures": 0,
+        "symnav_timeouts": 0,
+        "used_symnav": false
+      },
+      "artifacts": {
+        "archive_path": null,
+        "archive_sha256": null,
+        "archive_url": null,
+        "direct_urls": {}
+      },
+      "attempt_id": "efeed6eb05d54df3bf11337b979d35cf",
+      "condition": "symnav",
+      "configuration_id": "codex-gpt-5.6-terra-low",
+      "detail": null,
+      "outcome": "failed",
+      "repetition": 1,
+      "retry_reason": null,
+      "rewards": {
+        "f2p": 0.9230769230769231,
+        "f2p_passed": 12,
+        "f2p_total": 13,
+        "p2p": 0.9545454545454546,
+        "p2p_passed": 21,
+        "p2p_total": 22,
+        "partial": 0.9428571428571428,
+        "reward": 0
+      },
+      "scored_failure_reason": "verifier",
+      "slot_id": "d54ba0367614e938b613ae55ad24dcd4578af9e040fce6524e3bf9b201c8607e",
+      "task": "quill-shared-toolbar-focus",
+      "timing": {
+        "finished_at": "2026-07-13T17:01:52.961214Z",
+        "started_at": "2026-07-13T16:54:21.264851Z"
+      },
+      "usage": {
+        "cost_usd_imputed": 0.7790315,
+        "n_agent_steps": 29,
+        "n_cache_tokens": 1121536,
+        "n_input_tokens": 1257173,
+        "n_output_tokens": 10637,
+        "peak_context_tokens": 64574
+      },
+      "written_at": "2026-07-13T17:01:53.439898+00:00"
+    },
+    {
+      "adoption": {
+        "command_counts": {},
+        "first_symnav_step": null,
+        "patch_calls": 0,
         "read_calls": 5,
         "read_symnav_skill": false,
         "search_calls": 1,
@@ -15374,7 +15482,7 @@
       "losses": 12,
       "material_improvement": false,
       "primary": true,
-      "randomization_p_value": null,
+      "randomization_p_value": 0.06318936810631894,
       "study_id": "deepswe-ts-codex-terra-low-pr94",
       "suite_fingerprint": "b617b742723ec09d9aae3898768ba424d07d87de280d0707af797a0807722478",
       "symnav_revision": {
@@ -15598,7 +15706,11 @@
         }
       ],
       "ties": 17,
-      "uplift": null,
+      "uplift": {
+        "lower_95": -0.20714285714285716,
+        "upper_95": -0.007142857142857143,
+        "value": -0.10714285714285714
+      },
       "wins": 6
     }
   ],
@@ -15608,8 +15720,8 @@
         "mean_command_counts": {},
         "mean_first_symnav_step": null,
         "mean_patch_calls": 0,
-        "mean_read_calls": 5.326190476190476,
-        "mean_search_calls": 1.7904761904761906,
+        "mean_read_calls": 5.328571428571428,
+        "mean_search_calls": 1.7857142857142858,
         "mean_symnav_calls": 0,
         "mean_symnav_calls_per_agent_step": 0.0,
         "mean_symnav_failures": 0,
@@ -15623,33 +15735,31 @@
       "condition": "stock",
       "configuration_key": "codex:gpt-5.6-terra:low:0.144.1",
       "coverage": {
-        "complete_tasks": 33,
-        "pilot": true,
+        "complete_tasks": 35,
+        "pilot": false,
         "planned_slots": 140,
-        "provisional": true,
+        "provisional": false,
         "retryable_attempts": 1,
-        "scored_slots": 139,
+        "scored_slots": 140,
         "total_tasks": 35,
-        "unresolved_slot_ids": [
-          "7f608e2d627e97fd92e9bb5f8d34ae17d0d3cc493b4f91b062424880f75e1c55"
-        ]
+        "unresolved_slot_ids": []
       },
       "effort": "low",
       "full_symnav": false,
       "id": "codex-gpt-5.6-terra-low",
       "label": "codex \u00b7 gpt-5.6-terra \u00b7 low \u00b7 stock",
       "metrics": {
-        "cost": 113.911198,
-        "cost_per_success": 2.1905999615384615,
-        "f2p": 0.8266706195500232,
-        "p2p": 0.9846234999022113,
-        "partial": 0.9593832225926988,
-        "performance_score": 0.3712121212121212,
+        "cost": 114.5416275,
+        "cost_per_success": 2.161162783018868,
+        "f2p": 0.8277839467845273,
+        "p2p": 0.9851774817259811,
+        "partial": 0.9582347935465854,
+        "performance_score": 0.37857142857142856,
         "repetition_scores": [
-          0.3939393939393939,
-          0.36363636363636365,
-          0.36363636363636365,
-          0.36363636363636365
+          0.4,
+          0.37142857142857144,
+          0.37142857142857144,
+          0.37142857142857144
         ]
       },
       "model": "gpt-5.6-terra"
@@ -15658,19 +15768,19 @@
       "adoption": {
         "mean_command_counts": {
           "context": 0.02142857142857143,
-          "overview": 0.7714285714285715,
+          "overview": 0.7642857142857142,
           "resolve": 0.2785714285714286
         },
         "mean_first_symnav_step": 8.294270833333334,
         "mean_patch_calls": 0.014285714285714285,
-        "mean_read_calls": 5.197619047619048,
-        "mean_search_calls": 1.5714285714285714,
-        "mean_symnav_calls": 1.0714285714285714,
-        "mean_symnav_calls_per_agent_step": 0.03538135760939858,
+        "mean_read_calls": 5.2214285714285715,
+        "mean_search_calls": 1.55,
+        "mean_symnav_calls": 1.0642857142857143,
+        "mean_symnav_calls_per_agent_step": 0.03514461518515616,
         "mean_symnav_failures": 0,
         "mean_symnav_timeouts": 0.10714285714285714,
         "read_symnav_skill_rate": 0,
-        "used_symnav_rate": 0.8642857142857143
+        "used_symnav_rate": 0.8571428571428571
       },
       "agent": "codex",
       "agent_version": "0.144.1",
@@ -15678,44 +15788,42 @@
       "condition": "symnav",
       "configuration_key": "codex:gpt-5.6-terra:low:0.144.1",
       "coverage": {
-        "complete_tasks": 33,
-        "pilot": true,
+        "complete_tasks": 35,
+        "pilot": false,
         "planned_slots": 140,
-        "provisional": true,
+        "provisional": false,
         "retryable_attempts": 1,
-        "scored_slots": 139,
+        "scored_slots": 140,
         "total_tasks": 35,
-        "unresolved_slot_ids": [
-          "d54ba0367614e938b613ae55ad24dcd4578af9e040fce6524e3bf9b201c8607e"
-        ]
+        "unresolved_slot_ids": []
       },
       "effort": "low",
       "full_symnav": true,
       "id": "codex-gpt-5.6-terra-low",
       "label": "codex \u00b7 gpt-5.6-terra \u00b7 low \u00b7 symnav",
       "metrics": {
-        "cost": 126.220077,
-        "cost_per_success": 3.3215809736842106,
-        "f2p": 0.8493410698148117,
-        "p2p": 0.998313268318766,
-        "partial": 0.9756693596253546,
-        "performance_score": 0.25757575757575757,
+        "cost": 126.9991085,
+        "cost_per_success": 3.3420818026315793,
+        "f2p": 0.8447633383528664,
+        "p2p": 0.9974356270122391,
+        "partial": 0.9715494778508446,
+        "performance_score": 0.2714285714285714,
         "repetition_scores": [
-          0.36363636363636365,
-          0.30303030303030304,
-          0.21212121212121213,
-          0.15151515151515152
+          0.37142857142857144,
+          0.3142857142857143,
+          0.22857142857142856,
+          0.17142857142857143
         ]
       },
       "model": "gpt-5.6-terra"
     }
   ],
   "coverage": {
-    "complete_tasks": 33,
-    "pilot": true,
+    "complete_tasks": 35,
+    "pilot": false,
     "planned_slots": 280,
-    "provisional": true,
-    "scored_slots": 278,
+    "provisional": false,
+    "scored_slots": 280,
     "total_tasks": 35
   },
   "official_references": [],
@@ -15921,8 +16029,8 @@
         "mean_command_counts": {},
         "mean_first_symnav_step": null,
         "mean_patch_calls": 0,
-        "mean_read_calls": 5.666666666666667,
-        "mean_search_calls": 0.6666666666666666,
+        "mean_read_calls": 5.75,
+        "mean_search_calls": 0.5,
         "mean_symnav_calls": 0,
         "mean_symnav_calls_per_agent_step": 0.0,
         "mean_symnav_failures": 0,
@@ -15930,23 +16038,23 @@
         "read_symnav_skill_rate": 0,
         "used_symnav_rate": 0
       },
-      "complete": false,
+      "complete": true,
       "condition": "stock",
       "configuration_id": "codex-gpt-5.6-terra-low",
       "configuration_key": "codex:gpt-5.6-terra:low:0.144.1",
       "failure_counts": {},
       "full_symnav": false,
       "metrics": {
-        "cost": 0.6258706666666667,
+        "cost": 0.627010375,
         "duration": null,
         "f2p": 1.0,
         "failures": 0,
-        "median_cost": 0.6289435,
-        "output_tokens": 8922.0,
+        "median_cost": 0.6296865,
+        "output_tokens": 9016.25,
         "p2p": 1.0,
         "partial": 1.0,
         "performance_score": 1,
-        "steps": 24.333333333333332
+        "steps": 26.0
       },
       "task": "claude-code-by-agents-recursive-delegation",
       "trials": [
@@ -15961,8 +16069,8 @@
           "repetition": 2
         },
         {
-          "attempt_id": null,
-          "outcome": null,
+          "attempt_id": "cde53652673249c382dd8be9c6b09068",
+          "outcome": "passed",
           "repetition": 3
         },
         {
@@ -19452,44 +19560,44 @@
     {
       "adoption": {
         "mean_command_counts": {
-          "overview": 1
+          "overview": 0.75
         },
         "mean_first_symnav_step": 9.0,
         "mean_patch_calls": 0,
-        "mean_read_calls": 4.666666666666667,
-        "mean_search_calls": 3,
-        "mean_symnav_calls": 1,
-        "mean_symnav_calls_per_agent_step": 0.03314393939393939,
+        "mean_read_calls": 5.5,
+        "mean_search_calls": 2.25,
+        "mean_symnav_calls": 0.75,
+        "mean_symnav_calls_per_agent_step": 0.024857954545454544,
         "mean_symnav_failures": 0,
         "mean_symnav_timeouts": 0,
         "read_symnav_skill_rate": 0,
-        "used_symnav_rate": 1
+        "used_symnav_rate": 0.75
       },
-      "complete": false,
+      "complete": true,
       "condition": "symnav",
       "configuration_id": "codex-gpt-5.6-terra-low",
       "configuration_key": "codex:gpt-5.6-terra:low:0.144.1",
       "failure_counts": {
-        "verifier": 3
+        "verifier": 4
       },
       "full_symnav": true,
       "metrics": {
-        "cost": 0.8421558333333333,
+        "cost": 0.82637475,
         "duration": null,
-        "f2p": 0.4102564102564103,
-        "failures": 3,
-        "median_cost": 0.8037865,
-        "output_tokens": 9489.333333333334,
-        "p2p": 0.9696969696969697,
-        "partial": 0.7619047619047619,
+        "f2p": 0.5384615384615385,
+        "failures": 4,
+        "median_cost": 0.791409,
+        "output_tokens": 9776.25,
+        "p2p": 0.9659090909090909,
+        "partial": 0.8071428571428572,
         "performance_score": 0,
-        "steps": 32.666666666666664
+        "steps": 31.75
       },
       "task": "quill-shared-toolbar-focus",
       "trials": [
         {
-          "attempt_id": null,
-          "outcome": null,
+          "attempt_id": "efeed6eb05d54df3bf11337b979d35cf",
+          "outcome": "failed",
           "repetition": 1
         },
         {
