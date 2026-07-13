@@ -75,6 +75,8 @@ jobs:
       - name: Dispatch child batches
         env:
           GH_TOKEN: ${{ github.token }}
+          STUDY: ${{ inputs.study }}
+          CONFIGURATION: ${{ inputs.configuration }}
           BATCH_IDS: ${{ steps.selection.outputs.batch_ids }}
         shell: bash
         run: |
@@ -83,8 +85,8 @@ jobs:
             gh workflow run bench-batch.yml \
               --repo "$GITHUB_REPOSITORY" \
               --ref "$GITHUB_REF_NAME" \
-              -f study='${{ inputs.study }}' \
-              -f configuration='${{ inputs.configuration }}' \
+              -f study="$STUDY" \
+              -f configuration="$CONFIGURATION" \
               -f batch_id="$batch_id"
           done
 

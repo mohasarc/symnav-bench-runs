@@ -32,6 +32,8 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn("run-next", workflow)
         self.assertIn("run-all", workflow)
         self.assertIn("resume", workflow)
+        self.assertIn('study="$STUDY"', workflow)
+        self.assertIn('configuration="$CONFIGURATION"', workflow)
 
     def test_child_matrix_is_bounded_and_pinned(self) -> None:
         workflow = self.workflow("bench-batch.yml")
