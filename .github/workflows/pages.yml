@@ -50,13 +50,23 @@ jobs:
               rows.append((status, study.name))
               shutil.copytree(dashboard, pathlib.Path("_site/studies") / study.name)
           items = "\n".join(
-              f'<li data-status="{status}"><a href="studies/{html.escape(name)}/">{html.escape(name)}</a> — {status}</li>'
+              '<tr>'
+              f'<td><a href="studies/{html.escape(name)}/">{html.escape(name)}</a></td>'
+              f'<td><span class="status {status}">{status}</span></td>'
+              f'<td><a class="open" href="studies/{html.escape(name)}/">Open study →</a></td>'
+              '</tr>'
               for status, name in rows
           )
           pathlib.Path("_site/index.html").write_text(
-              '<!doctype html><html><head><meta charset="utf-8"><title>symnav benchmark studies</title></head>'
-              '<body><main><h1>symnav benchmark studies</h1><p>Complete and provisional studies.</p>'
-            f'<ul>{items}</ul></main></body></html>\n'
+              '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+              '<title>Symnav benchmark studies</title>'
+              '<style>'
+              ':root{color-scheme:light;--ink:#171a20;--muted:#626a78;--paper:#f4f0e8;--surface:#fffdf8;--line:#c8c2b7;--strong:#252a35;--blue:#2457d6;--orange:#d9531e;font-family:"IBM Plex Sans","Avenir Next",ui-sans-serif,system-ui,sans-serif}'
+              '*{box-sizing:border-box}body{background:var(--paper);color:var(--ink);margin:0}header{border-bottom:2px solid var(--strong);padding:1rem max(1rem,4vw)}main{margin:0 auto;max-width:1200px;padding:1.2rem max(1rem,4vw) 3rem}.eyebrow{color:var(--blue);font:800 .68rem ui-monospace,monospace;letter-spacing:.12em;margin:0 0 .45rem;text-transform:uppercase}h1{font-size:clamp(1.6rem,4vw,3rem);letter-spacing:-.055em;line-height:.95;margin:0}p{color:var(--muted);max-width:44rem}.count{border-top:1px solid var(--strong);color:var(--ink);font:800 .7rem ui-monospace,monospace;letter-spacing:.07em;margin:2rem 0 0;padding-top:.6rem;text-transform:uppercase}table{border-collapse:collapse;border-top:2px solid var(--strong);width:100%}th,td{border-bottom:1px solid var(--line);padding:.8rem .6rem;text-align:left}th{color:var(--muted);font:800 .65rem ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase}tr:hover{background:#dfe8ff}a{color:var(--ink);font-weight:750;text-decoration-color:var(--blue);text-decoration-thickness:2px;text-underline-offset:3px}.open{color:var(--blue);font:800 .7rem ui-monospace,monospace;text-decoration:none;text-transform:uppercase}.status{border-left:3px solid var(--blue);font:800 .68rem ui-monospace,monospace;padding:.2rem .35rem;text-transform:uppercase}.status.provisional{border-color:var(--orange)}@media(max-width:560px){th:last-child,td:last-child{display:none}h1{font-size:2rem}}'
+              '</style></head><body><header><p class="eyebrow">Symnav / benchmark evidence</p><h1>Study archive</h1></header>'
+              '<main><p>Comparable model-and-tool evaluations. Open a study to inspect coverage, paired evidence, task outcomes, and raw attempt artifacts.</p>'
+              f'<p class="count">{len(rows)} published studies</p><table><thead><tr><th>Study</th><th>Status</th><th></th></tr></thead><tbody>{items}</tbody></table>'
+              '</main></body></html>\n'
           )
           pathlib.Path("_site/studies.json").write_text(
               json.dumps(
