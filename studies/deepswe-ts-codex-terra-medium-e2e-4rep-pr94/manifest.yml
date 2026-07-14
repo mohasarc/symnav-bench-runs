@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "deepswe-ts-codex-terra-medium-e2e-4rep-pr94",
+  "protocol_fingerprint": "edfda5f199bcaa13643553bfeec87f38dd9771314357360345320cb8c64594e5",
+  "protocol": {
+    "deep_swe_sha": "6db64a40f3318d8659238ff34a8cc4b491c49205",
+    "symnav": {
+      "sha": "0e126783394d17ea4a33c5792e334999da99e56c",
+      "kind": "pull_request",
+      "evaluation_sequence": 3,
+      "base_ref": "extraction-v2-e2e-phase-8",
+      "base_sha": "fcf17a14126537dc3c36614ef942de90f4804dbe",
+      "pull_request": 94
+    },
+    "repetitions": 4,
+    "wall_clock_seconds": 9000,
+    "randomization_seed": 20260714,
+    "conditions": [
+      "stock",
+      "symnav"
+    ],
+    "scoring_policy": "deepswe-pass-fraction-v1",
+    "practical_uplift_points": 5.0
+  },
+  "configurations": [
+    {
+      "id": "codex-gpt-5.6-terra-medium",
+      "agent": "codex",
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "agent_version": "0.144.1"
+    }
+  ],
+  "harness": {
+    "image": "ghcr.io/mohasarc/symnav-bench@sha256:8b815dbccc94893a7d3927d5bb6bdb162dbb1395fb8da4c47050165ba577f9a3"
+  }
+}
