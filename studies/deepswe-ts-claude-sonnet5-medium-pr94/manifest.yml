@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "deepswe-ts-claude-sonnet5-medium-pr94",
+  "protocol_fingerprint": "195fb6ff2ae5a87b488ea8749308e2ee5c56d96c96469fd9a238461708aebbbf",
+  "protocol": {
+    "deep_swe_sha": "6db64a40f3318d8659238ff34a8cc4b491c49205",
+    "symnav": {
+      "sha": "648930848df744ca74ec4e6341355bc0e295bb9a",
+      "kind": "pull_request",
+      "evaluation_sequence": 5,
+      "base_ref": "extraction-v2-e2e-phase-8",
+      "base_sha": "fcf17a14126537dc3c36614ef942de90f4804dbe",
+      "pull_request": 94
+    },
+    "repetitions": 4,
+    "wall_clock_seconds": 9000,
+    "randomization_seed": 20260715,
+    "conditions": [
+      "stock",
+      "symnav"
+    ],
+    "scoring_policy": "deepswe-pass-fraction-v1",
+    "practical_uplift_points": 5.0
+  },
+  "configurations": [
+    {
+      "id": "claude-sonnet-5-medium",
+      "agent": "claude",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "agent_version": "2.1.202"
+    }
+  ],
+  "harness": {
+    "image": "ghcr.io/mohasarc/symnav-bench@sha256:8b815dbccc94893a7d3927d5bb6bdb162dbb1395fb8da4c47050165ba577f9a3"
+  }
+}
