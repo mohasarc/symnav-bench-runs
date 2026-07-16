@@ -1,4 +1,5 @@
 import {
+  ADOPTION_FILTERS,
   METRICS,
   buildMatrix,
   buildTrialDrawer,
@@ -6,6 +7,7 @@ import {
   filterTaskRows,
   formatPerformanceScore,
   orderVersions,
+  rowsWithAdoptionFilter,
 } from "./state.js";
 
 const payload = JSON.parse(document.querySelector("#dashboard-payload").textContent);
@@ -35,7 +37,8 @@ function render() {
   view.innerHTML = `<section class="view-section"><h2>${heading}</h2><div id="view-content"></div></section>`;
   const taskRows = state.view === "matrix" ? filterTaskRows(payload.tasks, state) : payload.tasks;
   if (state.view === "matrix") {
-    renderMatrix(document.querySelector("#view-content"), taskRows);
+    const adoptionRows = rowsWithAdoptionFilter(taskRows, payload.attempts, state.adoptionFilter);
+    renderMatrix(document.querySelector("#view-content"), adoptionRows);
     return;
   }
   if (state.view === "overview") {
@@ -315,7 +318,7 @@ function renderVersions(container) {
 
 function versionIntervalPlot(estimate, direction) {
   const width = 620;
-  const svg = svgElement("svg", { viewBox: `0 0 ${width} 86`, role: "img" });
+  const svg = svgElement("svg", { viewBox: `0 0 ${width} 106`, role: "img" });
   svg.classList.add("chart");
   const scale = (value) => 24 + ((value + 0.5) / 1) * (width - 48);
   const lower = direction > 0 ? estimate.lower_95 : -estimate.upper_95;
@@ -324,6 +327,9 @@ function versionIntervalPlot(estimate, direction) {
     svgElement("line", { x1: scale(0), x2: scale(0), y1: 8, y2: 76, class: "zero-line" }),
     svgElement("line", { x1: scale(lower), x2: scale(upper), y1: 42, y2: 42, class: "interval primary" }),
     svgElement("circle", { cx: scale(estimate.value * direction), cy: 42, r: 7, class: "point primary" }),
+    chartText(scale(-0.5), 96, "−50 pp", "axis-label", "start"),
+    chartText(scale(0), 96, "no change", "axis-label", "middle"),
+    chartText(scale(0.5), 96, "+50 pp", "axis-label", "end"),
   );
   return svg;
 }
@@ -399,7 +405,6 @@ function substitutionChart(configurations) {
       y: y - 12,
       width: ((item.value ?? 0) / max) * 520,
       height: 16,
-      rx: 3,
       class: item.full ? "resource-bar primary" : "resource-bar",
     });
     const title = svgElement("title", {});
@@ -506,7 +511,7 @@ function frontierPlot(rows) {
     const title = svgElement("title", {});
     title.textContent = `${row.label}: ${formatMetric(row.score, "performance_score")} at $${row.totalCost.toFixed(2)}`;
     point.append(title);
-    svg.append(point);
+    svg.append(point, chartText(x(row.totalCost) + 8, y(row.score) - 8, row.label, "resource-label", "start"));
   }
   const xLabel = svgElement("text", { x: width / 2, y: height - 8, class: "axis-label" });
   xLabel.textContent = "Total cost (USD)";
@@ -537,7 +542,6 @@ function resourcePlot(rows) {
         y: y - 11,
         width: ((row[key] ?? 0) / max) * 430,
         height: 13,
-        rx: 3,
         class: row.full ? "resource-bar primary" : "resource-bar",
       });
       const title = svgElement("title", {});
@@ -655,6 +659,10 @@ function renderStatistics(container) {
       losses: comparison.losses,
       demonstrated: comparison.demonstrated_improvement,
       material: comparison.material_improvement,
+      "f2p uplift (secondary)": comparison.f2p_uplift?.value == null ? "Pending" : formatMetric(comparison.f2p_uplift.value, "uplift"),
+      "f2p 95% CI": comparison.f2p_uplift == null
+        ? "Pending"
+        : `${formatMetric(comparison.f2p_uplift.lower_95, "uplift")} to ${formatMetric(comparison.f2p_uplift.upper_95, "uplift")}`,
     });
     section.append(heading, evidence, deltaPlot(comparison));
     grid.append(section);
@@ -695,10 +703,16 @@ function forestPlot(comparisons) {
   }
   const width = 760;
   const left = 230;
-  const svg = svgElement("svg", { viewBox: `0 0 ${width} ${comparisons.length * 52 + 44}`, role: "img" });
+  const height = comparisons.length * 52 + 58;
+  const svg = svgElement("svg", { viewBox: `0 0 ${width} ${height}`, role: "img" });
   svg.classList.add("chart");
   const scale = (value) => left + ((value + 0.5) / 1) * (width - left - 24);
-  svg.append(svgElement("line", { x1: scale(0), x2: scale(0), y1: 12, y2: comparisons.length * 52 + 22, class: "zero-line" }));
+  svg.append(
+    svgElement("line", { x1: scale(0), x2: scale(0), y1: 12, y2: comparisons.length * 52 + 22, class: "zero-line" }),
+    chartText(scale(-0.5), height - 10, "−50 pp", "axis-label", "start"),
+    chartText(scale(0), height - 10, "no change", "axis-label", "middle"),
+    chartText(scale(0.5), height - 10, "+50 pp", "axis-label", "end"),
+  );
   comparisons.forEach((comparison, index) => {
     const y = 30 + index * 52;
     const label = svgElement("text", { x: 4, y: y + 5, class: "chart-label" });
@@ -719,6 +733,7 @@ function forestPlot(comparisons) {
         r: 6,
         class: comparison.primary ? "point primary" : "point",
       }),
+      chartText(scale(comparison.uplift.value) + 10, y + 5, formatMetric(comparison.uplift.value, "uplift"), "resource-label", "start"),
     );
   });
   section.append(svg);
@@ -726,12 +741,16 @@ function forestPlot(comparisons) {
 }
 
 function deltaPlot(comparison) {
-  const width = 520;
+  const width = 680;
   const height = Math.max(90, comparison.task_deltas.length * 18 + 30);
   const svg = svgElement("svg", { viewBox: `0 0 ${width} ${height}`, role: "img" });
   svg.classList.add("chart", "delta-chart");
-  const center = width / 2;
-  svg.append(svgElement("line", { x1: center, x2: center, y1: 8, y2: height - 8, class: "zero-line" }));
+  const left = 230;
+  const center = left + (width - left) / 2;
+  svg.append(
+    svgElement("line", { x1: center, x2: center, y1: 8, y2: height - 8, class: "zero-line" }),
+    chartText(center, height - 7, "no change", "axis-label", "middle"),
+  );
   comparison.task_deltas.forEach((task, index) => {
     const y = 18 + index * 18;
     const bar = svgElement("line", {
@@ -744,7 +763,11 @@ function deltaPlot(comparison) {
     const title = svgElement("title", {});
     title.textContent = `${task.task}: ${formatMetric(task.delta, "uplift")}`;
     bar.append(title);
-    svg.append(bar);
+    svg.append(
+      chartText(left - 8, y + 4, task.task, "resource-label", "end"),
+      bar,
+      chartText(center + task.delta * (width / 2 - 18) + (task.delta >= 0 ? 8 : -8), y + 4, formatMetric(task.delta, "uplift"), "resource-label", task.delta >= 0 ? "start" : "end"),
+    );
   });
   return svg;
 }
@@ -775,6 +798,12 @@ function svgElement(name, attributes) {
   const element = document.createElementNS("http://www.w3.org/2000/svg", name);
   for (const [key, value] of Object.entries(attributes)) element.setAttribute(key, value);
   return element;
+}
+
+function chartText(x, y, text, className, anchor) {
+  const label = svgElement("text", { x, y, class: className, "text-anchor": anchor });
+  label.textContent = text;
+  return label;
 }
 
 function emptyState(message) {
@@ -890,6 +919,13 @@ function attemptSection(title, attempts) {
       article.append(` · ${attempt.retry_reason ?? attempt.scored_failure_reason}`);
     }
     const links = artifactLinks(attempt.artifacts);
+    if (attempt.attempt_id) {
+      const trajectory = document.createElement("a");
+      trajectory.href = `./static/attempt.html?attempt=${encodeURIComponent(attempt.attempt_id)}`;
+      trajectory.textContent = "trajectory ↗";
+      trajectory.className = "trajectory-link";
+      links.prepend(trajectory);
+    }
     if (links.childElementCount) article.append(links);
     section.append(article);
   }
@@ -1010,6 +1046,7 @@ function renderFilters() {
     selectFilter("Configuration", "configurationId", configurationOptions),
     selectFilter("Condition", "condition", conditionOptions),
     selectFilter("Metric", "metric", METRICS.map(({ id, label }) => [id, label])),
+    selectFilter("Adoption", "adoptionFilter", ADOPTION_FILTERS.map(({ id, label }) => [id, label])),
     selectFilter("Matrix axes", "pivot", [
       ["tasks", "Tasks as rows"],
       ["configurations", "Configurations as rows"],
