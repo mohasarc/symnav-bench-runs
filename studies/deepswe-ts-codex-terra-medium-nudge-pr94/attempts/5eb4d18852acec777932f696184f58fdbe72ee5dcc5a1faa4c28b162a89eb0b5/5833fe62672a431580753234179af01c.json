@@ -1,0 +1,100 @@
+{
+  "adoption": {
+    "command_counts": {
+      "context": 1,
+      "overview": 2,
+      "refs": 1
+    },
+    "first_symnav_step": 7,
+    "patch_calls": 0,
+    "read_calls": 4,
+    "read_symnav_skill": false,
+    "search_calls": 1,
+    "symnav_calls": 4,
+    "symnav_calls_per_agent_step": 0.14814814814814814,
+    "symnav_failures": 0,
+    "symnav_timeouts": 0,
+    "used_symnav": true
+  },
+  "agent_version": "0.144.1",
+  "artifact": {
+    "archive": "deepswe-ts-codex-terra-medium-nudge-pr94-deepswe-ts-codex-terra-medium-nudge-pr94-codex-gpt-5.6-terra-medium-batch-002-29455084093-1.tar.gz",
+    "internal_path": "attempts/5833fe62672a431580753234179af01c",
+    "sha256": "6fc85444475a0f5e7f6390366c731cae2afb054a4b3272a2a7caf6c78b940ca3"
+  },
+  "batch_id": "deepswe-ts-codex-terra-medium-nudge-pr94-codex-gpt-5.6-terra-medium-batch-002",
+  "command_counts": {
+    "failures": 0,
+    "other": 15,
+    "read": 4,
+    "search": 1,
+    "symnav": {
+      "context": 1,
+      "overview": 2,
+      "refs": 1
+    },
+    "symnav_failures": {},
+    "symnav_skill_reads": 0,
+    "timeouts": 1
+  },
+  "disposition": {
+    "detail": "VerifierTimeoutError: Verifier execution timed out after 1800.0 seconds",
+    "outcome": "retryable_error",
+    "retry_reason": "verifier",
+    "scored_failure_reason": null
+  },
+  "exception": {
+    "exception_message": "Verifier execution timed out after 1800.0 seconds",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 373, in _verify_once\n    return await self._verify_with_separate_environment(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 437, in _verify_with_separate_environment\n    return await verifier.verify()\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/verifier/verifier.py\", line 192, in verify\n    await self._environment.exec(\n  File \"/usr/lib/python3.12/site-packages/pier/environments/docker/docker.py\", line 761, in exec\n    return await self._run_docker_compose_command(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/environments/docker/docker.py\", line 511, in _run_docker_compose_command\n    stdout_bytes, stderr_bytes = await process.communicate()\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/subprocess.py\", line 201, in communicate\n    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/subprocess.py\", line 181, in _read_stream\n    output = await stream.read()\n             ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/streams.py\", line 706, in read\n    block = await self.read(self._limit)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/streams.py\", line 713, in read\n    await self._wait_for_data('read')\n  File \"/usr/lib/python3.12/asyncio/streams.py\", line 545, in _wait_for_data\n    await self._waiter\nasyncio.exceptions.CancelledError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 339, in _verify_with_retry\n    self.result.verifier_result = await asyncio.wait_for(\n                                  ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 519, in wait_for\n    async with timeouts.timeout(timeout):\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 963, in run\n    await self._run_verification()\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 327, in _run_verification\n    await self._verify_with_retry()\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 193, in async_wrapped\n    return await copy(fn, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 112, in __call__\n    do = await self.iter(retry_state=retry_state)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 157, in iter\n    result = await action(retry_state)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/_utils.py\", line 111, in inner\n    return call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/__init__.py\", line 413, in exc_check\n    raise retry_exc.reraise()\n          ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/__init__.py\", line 184, in reraise\n    raise self.last_attempt.result()\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 116, in __call__\n    result = await fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 344, in _verify_with_retry\n    raise VerifierTimeoutError(\npier.trial.trial.VerifierTimeoutError: Verifier execution timed out after 1800.0 seconds\n",
+    "exception_type": "VerifierTimeoutError",
+    "occurred_at": "2026-07-16T00:34:01.714558"
+  },
+  "harness": {
+    "agent_name": "codex",
+    "agent_version": "0.144.1",
+    "bundle_hash": "48bda6606673bfe5a5f0f66850e4e124c1c09f47515ab87e843c6dcca9060134",
+    "bundle_id": "full",
+    "deep_swe_sha": "6db64a40f3318d8659238ff34a8cc4b491c49205",
+    "image_digest": "sha256:8b815dbccc94893a7d3927d5bb6bdb162dbb1395fb8da4c47050165ba577f9a3",
+    "image_reference": "0.1.0",
+    "pier_version": "unknown",
+    "prompt_rule_hash": "unknown",
+    "requested_effort": "medium",
+    "requested_model": "gpt-5.6-terra",
+    "symnav_bench_sha": "75cc2892cec0c3a3de59cdae08b6222b325e9831",
+    "symnav_sha": "bd90961bda064aeb40ebcaec1a71c359486f3009",
+    "task_checksum": "cc5f9fd6e7aa4990ec36fe3474b8663e2b95054a7ec6de8d211efd2414936609"
+  },
+  "identity": {
+    "attempt_id": "5833fe62672a431580753234179af01c",
+    "github_job": "cell",
+    "github_run_attempt": 1,
+    "github_run_id": "29455084093",
+    "slot_id": "5eb4d18852acec777932f696184f58fdbe72ee5dcc5a1faa4c28b162a89eb0b5"
+  },
+  "protocol_fingerprint": "936ce9995db8c813d77a6ca1149aace5c4e85d92ec547b59c697bbf9b6945ca4",
+  "rewards": {},
+  "schema_version": 3,
+  "slot": {
+    "condition": "symnav",
+    "configuration_id": "codex-gpt-5.6-terra-medium",
+    "repetition": 1,
+    "slot_id": "5eb4d18852acec777932f696184f58fdbe72ee5dcc5a1faa4c28b162a89eb0b5",
+    "study_id": "deepswe-ts-codex-terra-medium-nudge-pr94",
+    "task": "claude-code-by-agents-recursive-delegation"
+  },
+  "suite_fingerprint": "b617b742723ec09d9aae3898768ba424d07d87de280d0707af797a0807722478",
+  "timing": {
+    "finished_at": "2026-07-16T00:34:01.715786Z",
+    "started_at": "2026-07-15T23:26:43.936624Z"
+  },
+  "usage": {
+    "cost_usd_imputed": 0.603333,
+    "n_agent_steps": 27,
+    "n_cache_tokens": 1059072,
+    "n_input_tokens": 1125810,
+    "n_output_tokens": 11448,
+    "peak_context_tokens": 71789
+  },
+  "written_at": "2026-07-16T00:34:02.203247+00:00"
+}
