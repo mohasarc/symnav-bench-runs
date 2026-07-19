@@ -90,6 +90,12 @@ jobs:
             -v "$PWD/results:/results" \
             "$image" study-report \
               --study-dir "/results/studies/${{ inputs.study }}"
+          docker run --rm \
+            -v "$PWD/results:/results" \
+            -v "$PWD/artifacts:/artifacts:ro" \
+            "$image" build-trajectories \
+              --study-dir "/results/studies/${{ inputs.study }}" \
+              --raw-dir /artifacts || echo "trajectory extraction skipped (image lacks support)"
       - name: Commit normalized results
         id: publish_results
         working-directory: results
