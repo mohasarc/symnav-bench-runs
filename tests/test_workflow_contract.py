@@ -52,9 +52,14 @@ class WorkflowContractTest(unittest.TestCase):
     def test_setup_reads_metadata_via_study_metadata_command(self) -> None:
         workflow = self.workflow("bench-batch.yml")
         self.assertIn("study-metadata", workflow)
-        self.assertNotIn("--entrypoint python", workflow)
-        self.assertNotIn('manifest["protocol"]', workflow)
-        self.assertNotIn("deep_swe_sha", workflow)
+        self.assertNotIn('"deep_swe_sha":', workflow)
+        self.assertNotIn("outputs.deep_swe_sha", workflow)
+
+    def test_setup_falls_back_to_inline_extraction_for_legacy_pinned_images(self) -> None:
+        workflow = self.workflow("bench-batch.yml")
+        self.assertIn("if ! metadata=$(", workflow)
+        self.assertIn('"source_revision": manifest["protocol"]["deep_swe_sha"]', workflow)
+        self.assertLess(workflow.index("study-metadata"), workflow.index('manifest["protocol"]'))
 
     def test_cell_passes_source_revision_and_no_benchmark_flags(self) -> None:
         workflow = self.workflow("bench-batch.yml")
