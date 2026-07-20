@@ -1,0 +1,51 @@
+name: resolve suite
+
+on:
+  workflow_dispatch:
+    inputs:
+      study:
+        description: Study ID under studies/
+        type: string
+        required: true
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read pinned execution
+        id: execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          execution="studies/${{ inputs.study }}/execution.json"
+          python - "$execution" >> "$GITHUB_OUTPUT" <<'PY'
+          import json, sys
+          data = json.load(open(sys.argv[1]))
+          print(f"image={data['image_reference']}@{data['image_digest']}")
+          PY
+
+      - name: Resolve suite in pinned image
+        shell: bash
+        run: |
+          set -euo pipefail
+          image='${{ steps.execution.outputs.image }}'
+          docker pull "$image"
+          mkdir -p resolved
+          docker run --rm \
+            -v "$PWD:/workspace:ro" \
+            -v "$PWD/resolved:/out" \
+            "$image" resolve-suite \
+              --study "/workspace/studies/${{ inputs.study }}/manifest.yml" \
+              --out /out/suite.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: suite-${{ inputs.study }}
+          path: resolved/suite.json
+          if-no-files-found: error

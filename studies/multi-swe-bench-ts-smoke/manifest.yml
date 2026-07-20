@@ -1,0 +1,42 @@
+{
+  "schema_version": 2,
+  "id": "multi-swe-bench-ts-smoke",
+  "protocol_fingerprint": "8540773b1501813fdd43a5f25ad0817c2f2ac22e0269f57840bb2dadfba31cb0",
+  "protocol": {
+    "benchmark": {
+      "name": "multi-swe-bench",
+      "source": {
+        "revision": "56ff018c04a38e27ada1e9d0a6d5839a51f88f0d"
+      }
+    },
+    "symnav": {
+      "sha": "ef9fd76da7f85bccf130af09d2dd9a5a4a8309bb",
+      "kind": "pull_request",
+      "evaluation_sequence": 8,
+      "base_ref": "extraction-v2-e2e-phase-8",
+      "base_sha": "fcf17a14126537dc3c36614ef942de90f4804dbe",
+      "pull_request": 94
+    },
+    "repetitions": 1,
+    "wall_clock_seconds": 9000,
+    "randomization_seed": 20260720,
+    "conditions": [
+      "stock",
+      "symnav"
+    ],
+    "scoring_policy": "deepswe-pass-fraction-v1",
+    "practical_uplift_points": 5.0
+  },
+  "configurations": [
+    {
+      "id": "codex-gpt-5.6-terra-medium",
+      "agent": "codex",
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "agent_version": "0.144.1"
+    }
+  ],
+  "harness": {
+    "image": "ghcr.io/mohasarc/symnav-bench@sha256:e1c0e8f0ec8ff6eaf9462a972426ca177cb064e75e9c3183d7e912844533c750"
+  }
+}
