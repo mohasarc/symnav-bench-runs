@@ -9,9 +9,9 @@ from pathlib import Path
 ROOT = Path(__file__).parents[1]
 SYMNAV_SHA = "ef9fd76da7f85bccf130af09d2dd9a5a4a8309bb"
 SYMNAV_BASE_SHA = "fcf17a14126537dc3c36614ef942de90f4804dbe"
-SYMNAV_BENCH_SHA = "1092cbb33bca35ba693a94ccde341aaebb3303a3"
-IMAGE_REFERENCE = "ghcr.io/mohasarc/symnav-bench:sha-1092cbb"
-IMAGE_DIGEST = "sha256:aa90cd0035666d1a95120c2f0da878b13e79fc23d2f227c5c5cfb90192cae259"
+SYMNAV_BENCH_SHA = "7e525759a323d802e5b94961b4972d15ada2539f"
+IMAGE_REFERENCE = "ghcr.io/mohasarc/symnav-bench:sha-7e52575"
+IMAGE_DIGEST = "sha256:e1c0e8f0ec8ff6eaf9462a972426ca177cb064e75e9c3183d7e912844533c750"
 POLYBENCH_REVISION = "d56445f9940eae4e9d2974ec66820c2f1d7754e6"
 MULTI_SWE_REVISION = "56ff018c04a38e27ada1e9d0a6d5839a51f88f0d"
 CONFIGURATIONS = [
@@ -84,6 +84,10 @@ class SmokeStudyContract(unittest.TestCase):
                 "image_digest": IMAGE_DIGEST,
                 "symnav_bench_sha": SYMNAV_BENCH_SHA,
             },
+        )
+        self.assertEqual(
+            self.manifest["harness"]["image"],
+            f"ghcr.io/mohasarc/symnav-bench@{IMAGE_DIGEST}",
         )
 
     def suite_fingerprint(self, tasks: list[dict]) -> str:
