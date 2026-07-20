@@ -32,7 +32,7 @@ jobs:
       symnav_bench_sha: ${{ steps.plan.outputs.symnav_bench_sha }}
       agent_spec: ${{ steps.plan.outputs.agent_spec }}
       agent_version: ${{ steps.plan.outputs.agent_version }}
-      deep_swe_sha: ${{ steps.plan.outputs.deep_swe_sha }}
+      source_revision: ${{ steps.plan.outputs.source_revision }}
       symnav_sha: ${{ steps.plan.outputs.symnav_sha }}
       protocol_fingerprint: ${{ steps.plan.outputs.protocol_fingerprint }}
       suite_fingerprint: ${{ steps.plan.outputs.suite_fingerprint }}
@@ -51,19 +51,10 @@ jobs:
           symnav_bench_sha=$(jq -r .symnav_bench_sha "$root/execution.json")
           image="$image_reference@$image_digest"
           docker pull "$image"
-          metadata=$(docker run --rm --entrypoint python -v "$PWD:/workspace:ro" "$image" -c '
-          import json, sys, yaml
-          manifest = yaml.safe_load(open(sys.argv[1]))
-          suite = json.load(open(sys.argv[2]))
-          configuration = next(item for item in manifest["configurations"] if item["id"] == sys.argv[3])
-          print(json.dumps({
-            "agent_spec": ":".join((configuration["agent"], configuration["model"], configuration["effort"])),
-            "agent_version": configuration["agent_version"],
-            "deep_swe_sha": manifest["protocol"]["deep_swe_sha"],
-            "symnav_sha": manifest["protocol"]["symnav"]["sha"],
-            "protocol_fingerprint": manifest["protocol_fingerprint"],
-            "suite_fingerprint": suite["fingerprint"],
-          }))' "/workspace/$root/manifest.yml" "/workspace/$root/suite.json" '${{ inputs.configuration }}')
+          metadata=$(docker run --rm -v "$PWD:/workspace:ro" "$image" study-metadata \
+            --study "/workspace/$root/manifest.yml" \
+            --suite "/workspace/$root/suite.json" \
+            --configuration '${{ inputs.configuration }}')
           selection=$(docker run --rm -v "$PWD:/workspace:ro" "$image" batch-matrix \
             --study "/workspace/$root/manifest.yml" \
             --suite "/workspace/$root/suite.json" \
@@ -139,7 +130,7 @@ jobs:
               --rep-start "$repetition" \
               --reps 1 \
               --symnav-ref '${{ needs.setup.outputs.symnav_sha }}' \
-              --deep-swe-ref '${{ needs.setup.outputs.deep_swe_sha }}' \
+              --deep-swe-ref '${{ needs.setup.outputs.source_revision }}' \
               --results-dir /attempts
           status=$?
           set -e
