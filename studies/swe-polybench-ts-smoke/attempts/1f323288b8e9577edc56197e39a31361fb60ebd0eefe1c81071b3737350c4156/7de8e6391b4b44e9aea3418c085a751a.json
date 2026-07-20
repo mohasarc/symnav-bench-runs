@@ -1,0 +1,95 @@
+{
+  "adoption": {
+    "command_counts": {},
+    "first_symnav_step": null,
+    "patch_calls": 0,
+    "read_calls": 5,
+    "read_symnav_skill": false,
+    "search_calls": 0,
+    "symnav_calls": 0,
+    "symnav_calls_per_agent_step": 0.0,
+    "symnav_failures": 0,
+    "symnav_timeouts": 0,
+    "used_symnav": false
+  },
+  "agent_version": "0.144.1",
+  "artifact": {
+    "archive": "swe-polybench-ts-smoke-swe-polybench-ts-smoke-codex-gpt-5.6-terra-medium-batch-001-29783371129-1.tar.gz",
+    "internal_path": "attempts/7de8e6391b4b44e9aea3418c085a751a",
+    "sha256": "0ebae933390616e60e5830a0f9a4d024a4a33f832296b2aa6a76f05e859b0203"
+  },
+  "batch_id": "swe-polybench-ts-smoke-codex-gpt-5.6-terra-medium-batch-001",
+  "command_counts": {
+    "failures": 0,
+    "other": 13,
+    "read": 5,
+    "search": 0,
+    "symnav": {},
+    "symnav_failures": {},
+    "symnav_skill_reads": 0,
+    "timeouts": 4
+  },
+  "disposition": {
+    "detail": "FileNotFoundError: /tmp/symnav-bench-tasks-ypm1ngv3/coder__code-server-3277/tests/Dockerfile and /tmp/symnav-bench-tasks-ypm1ngv3/coder__code-server-3277/tests/docker-compose.yaml not found. Please ensure at least one of these files exist.",
+    "outcome": "retryable_error",
+    "retry_reason": "unknown",
+    "scored_failure_reason": null
+  },
+  "exception": {
+    "exception_message": "/tmp/symnav-bench-tasks-ypm1ngv3/coder__code-server-3277/tests/Dockerfile and /tmp/symnav-bench-tasks-ypm1ngv3/coder__code-server-3277/tests/docker-compose.yaml not found. Please ensure at least one of these files exist.",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 963, in run\n    await self._run_verification()\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 327, in _run_verification\n    await self._verify_with_retry()\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 193, in async_wrapped\n    return await copy(fn, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 112, in __call__\n    do = await self.iter(retry_state=retry_state)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 157, in iter\n    result = await action(retry_state)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/_utils.py\", line 111, in inner\n    return call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/__init__.py\", line 393, in <lambda>\n    self._add_action_func(lambda rs: rs.outcome.result())\n                                     ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 116, in __call__\n    result = await fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 339, in _verify_with_retry\n    self.result.verifier_result = await asyncio.wait_for(\n                                  ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 373, in _verify_once\n    return await self._verify_with_separate_environment(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 396, in _verify_with_separate_environment\n    env = EnvironmentFactory.create_environment_from_config(\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/environments/factory.py\", line 299, in create_environment_from_config\n    return cls.create_environment(\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/environments/factory.py\", line 95, in create_environment\n    return environment_class(\n           ^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/environments/docker/docker.py\", line 166, in __init__\n    super().__init__(\n  File \"/usr/lib/python3.12/site-packages/pier/environments/base.py\", line 124, in __init__\n    self._validate_definition()\n  File \"/usr/lib/python3.12/site-packages/pier/environments/docker/docker.py\", line 460, in _validate_definition\n    raise FileNotFoundError(\nFileNotFoundError: /tmp/symnav-bench-tasks-ypm1ngv3/coder__code-server-3277/tests/Dockerfile and /tmp/symnav-bench-tasks-ypm1ngv3/coder__code-server-3277/tests/docker-compose.yaml not found. Please ensure at least one of these files exist.\n",
+    "exception_type": "FileNotFoundError",
+    "occurred_at": "2026-07-20T22:25:30.661682"
+  },
+  "harness": {
+    "agent_name": "codex",
+    "agent_version": "0.144.1",
+    "benchmark": "swe-polybench",
+    "benchmark_source_revision": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "bundle_hash": null,
+    "bundle_id": null,
+    "deep_swe_sha": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "image_digest": "sha256:e1c0e8f0ec8ff6eaf9462a972426ca177cb064e75e9c3183d7e912844533c750",
+    "image_reference": "0.1.0",
+    "pier_version": "unknown",
+    "prompt_rule_hash": "unknown",
+    "requested_effort": "medium",
+    "requested_model": "gpt-5.6-terra",
+    "symnav_bench_sha": "7e525759a323d802e5b94961b4972d15ada2539f",
+    "symnav_sha": "ef9fd76da7f85bccf130af09d2dd9a5a4a8309bb",
+    "task_checksum": "7959d6c722abfafa576975ed1a510d2c963906f0f38823c1f6a45eaedba2e823",
+    "task_fit_tier": "high"
+  },
+  "identity": {
+    "attempt_id": "7de8e6391b4b44e9aea3418c085a751a",
+    "github_job": "cell",
+    "github_run_attempt": 1,
+    "github_run_id": "29783371129",
+    "slot_id": "1f323288b8e9577edc56197e39a31361fb60ebd0eefe1c81071b3737350c4156"
+  },
+  "protocol_fingerprint": "6f0bb4b4721ec85fc810784929d5f6ba18d1ac7c6aca279f903a91966eadb58a",
+  "rewards": {},
+  "schema_version": 3,
+  "slot": {
+    "condition": "stock",
+    "configuration_id": "codex-gpt-5.6-terra-medium",
+    "repetition": 1,
+    "slot_id": "1f323288b8e9577edc56197e39a31361fb60ebd0eefe1c81071b3737350c4156",
+    "study_id": "swe-polybench-ts-smoke",
+    "task": "coder__code-server-3277"
+  },
+  "suite_fingerprint": "84b18bf5a73b0f4d9b649f645d1cc960a021e7703faf8ee02c91e835a50327ae",
+  "timing": {
+    "finished_at": "2026-07-20T22:25:30.662629Z",
+    "started_at": "2026-07-20T22:20:28.863196Z"
+  },
+  "usage": {
+    "cost_usd_imputed": 0.3726145,
+    "n_agent_steps": 20,
+    "n_cache_tokens": 757248,
+    "n_input_tokens": 805663,
+    "n_output_tokens": 4151,
+    "peak_context_tokens": 51629
+  },
+  "written_at": "2026-07-20T22:25:31.320991+00:00"
+}
