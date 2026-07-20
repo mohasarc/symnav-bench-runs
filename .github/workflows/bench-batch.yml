@@ -280,6 +280,17 @@ jobs:
             '${{ needs.setup.outputs.image }}' study-report \
               --study-dir "/results/studies/${{ inputs.study }}"
 
+      - name: Extract attempt trajectories
+        continue-on-error: true
+        run: |
+          docker run --rm \
+            -v "$PWD/results:/results" \
+            -v "$PWD/artifacts:/artifacts:ro" \
+            '${{ needs.setup.outputs.image }}' build-trajectories \
+              --study-dir "/results/studies/${{ inputs.study }}" \
+              --raw-dir /artifacts
+          echo "trajectory extraction exit: $?"
+
       - name: Commit normalized results
         id: publish_results
         working-directory: results
