@@ -1,0 +1,95 @@
+{
+  "adoption": {
+    "command_counts": {},
+    "first_symnav_step": null,
+    "patch_calls": 0,
+    "read_calls": 3,
+    "read_symnav_skill": false,
+    "search_calls": 0,
+    "symnav_calls": 0,
+    "symnav_calls_per_agent_step": 0.0,
+    "symnav_failures": 0,
+    "symnav_timeouts": 0,
+    "used_symnav": false
+  },
+  "agent_version": "0.144.1",
+  "artifact": {
+    "archive": "multi-swe-bench-ts-smoke-multi-swe-bench-ts-smoke-codex-gpt-5.6-terra-medium-batch-001-29789960614-1.tar.gz",
+    "internal_path": "attempts/93162c306a7e47aa923894097a58b11c",
+    "sha256": "437255dd49daf0bdba0d4547f551cd0ccd2a82ecbbf26d9680a20ddd69c0a721"
+  },
+  "batch_id": "multi-swe-bench-ts-smoke-codex-gpt-5.6-terra-medium-batch-001",
+  "command_counts": {
+    "failures": 0,
+    "other": 13,
+    "read": 3,
+    "search": 0,
+    "symnav": {},
+    "symnav_failures": {},
+    "symnav_skill_reads": 0,
+    "timeouts": 0
+  },
+  "disposition": {
+    "detail": "RewardFileNotFoundError: No reward file found at /tmp/symnav-bench-jobs-ohe44vel/2026-07-21__00-24-59/vuejs__core-10004__phnJNhw/verifier/reward.txt or /tmp/symnav-bench-jobs-ohe44vel/2026-07-21__00-24-59/vuejs__core-10004__phnJNhw/verifier/reward.json",
+    "outcome": "retryable_error",
+    "retry_reason": "verifier",
+    "scored_failure_reason": null
+  },
+  "exception": {
+    "exception_message": "No reward file found at /tmp/symnav-bench-jobs-ohe44vel/2026-07-21__00-24-59/vuejs__core-10004__phnJNhw/verifier/reward.txt or /tmp/symnav-bench-jobs-ohe44vel/2026-07-21__00-24-59/vuejs__core-10004__phnJNhw/verifier/reward.json",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 963, in run\n    await self._run_verification()\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 327, in _run_verification\n    await self._verify_with_retry()\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 193, in async_wrapped\n    return await copy(fn, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 112, in __call__\n    do = await self.iter(retry_state=retry_state)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 157, in iter\n    result = await action(retry_state)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/_utils.py\", line 111, in inner\n    return call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/__init__.py\", line 393, in <lambda>\n    self._add_action_func(lambda rs: rs.outcome.result())\n                                     ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 116, in __call__\n    result = await fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 339, in _verify_with_retry\n    self.result.verifier_result = await asyncio.wait_for(\n                                  ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 373, in _verify_once\n    return await self._verify_with_separate_environment(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 437, in _verify_with_separate_environment\n    return await verifier.verify()\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/verifier/verifier.py\", line 213, in verify\n    raise RewardFileNotFoundError(\npier.verifier.verifier.RewardFileNotFoundError: No reward file found at /tmp/symnav-bench-jobs-ohe44vel/2026-07-21__00-24-59/vuejs__core-10004__phnJNhw/verifier/reward.txt or /tmp/symnav-bench-jobs-ohe44vel/2026-07-21__00-24-59/vuejs__core-10004__phnJNhw/verifier/reward.json\n",
+    "exception_type": "RewardFileNotFoundError",
+    "occurred_at": "2026-07-21T00:28:40.624617"
+  },
+  "harness": {
+    "agent_name": "codex",
+    "agent_version": "0.144.1",
+    "benchmark": "multi-swe-bench",
+    "benchmark_source_revision": "56ff018c04a38e27ada1e9d0a6d5839a51f88f0d",
+    "bundle_hash": null,
+    "bundle_id": null,
+    "deep_swe_sha": "56ff018c04a38e27ada1e9d0a6d5839a51f88f0d",
+    "image_digest": "sha256:a8c8f18fef78fe8c40ac7e1e28aeafa11b0a7799a4f5ec774e0c0a176edeb71d",
+    "image_reference": "0.1.0",
+    "pier_version": "unknown",
+    "prompt_rule_hash": "unknown",
+    "requested_effort": "medium",
+    "requested_model": "gpt-5.6-terra",
+    "symnav_bench_sha": "dc0c6fddb08268fa1477d174a1c1286aa2cc66d0",
+    "symnav_sha": "ef9fd76da7f85bccf130af09d2dd9a5a4a8309bb",
+    "task_checksum": "0ed94c6ca905befa979a38c831cbe4f8efc4fbd0991837effe328c423fdab73d",
+    "task_fit_tier": null
+  },
+  "identity": {
+    "attempt_id": "93162c306a7e47aa923894097a58b11c",
+    "github_job": "cell",
+    "github_run_attempt": 1,
+    "github_run_id": "29789960614",
+    "slot_id": "877021ff154209a76c9452da5e0eb7b4406403d5d6ddc85540b8afb4bacc0c35"
+  },
+  "protocol_fingerprint": "8540773b1501813fdd43a5f25ad0817c2f2ac22e0269f57840bb2dadfba31cb0",
+  "rewards": {},
+  "schema_version": 3,
+  "slot": {
+    "condition": "stock",
+    "configuration_id": "codex-gpt-5.6-terra-medium",
+    "repetition": 1,
+    "slot_id": "877021ff154209a76c9452da5e0eb7b4406403d5d6ddc85540b8afb4bacc0c35",
+    "study_id": "multi-swe-bench-ts-smoke",
+    "task": "vuejs__core-10004"
+  },
+  "suite_fingerprint": "718a040864f155889d2d69384272df41925c0cfc08721d1490c2938eee72687d",
+  "timing": {
+    "finished_at": "2026-07-21T00:28:40.625554Z",
+    "started_at": "2026-07-21T00:24:59.351373Z"
+  },
+  "usage": {
+    "cost_usd_imputed": 0.2693445,
+    "n_agent_steps": 18,
+    "n_cache_tokens": 501248,
+    "n_input_tokens": 538155,
+    "n_output_tokens": 3451,
+    "peak_context_tokens": 40599
+  },
+  "written_at": "2026-07-21T00:28:41.081757+00:00"
+}
