@@ -1,0 +1,95 @@
+{
+  "adoption": {
+    "command_counts": {},
+    "first_symnav_step": null,
+    "patch_calls": 0,
+    "read_calls": 0,
+    "read_symnav_skill": false,
+    "search_calls": 0,
+    "symnav_calls": 0,
+    "symnav_calls_per_agent_step": 0.0,
+    "symnav_failures": 0,
+    "symnav_timeouts": 0,
+    "used_symnav": false
+  },
+  "agent_version": "0.144.1",
+  "artifact": {
+    "archive": "swe-polybench-ts-smoke-swe-polybench-ts-smoke-codex-gpt-5.6-terra-medium-batch-001-29789959965-1.tar.gz",
+    "internal_path": "attempts/15c9e3c65107494ebbdf22162b883641",
+    "sha256": "6fb4a2ca5bde097ea5c032a9a8279607e540a2481b1125030657ca9476f0e4d1"
+  },
+  "batch_id": "swe-polybench-ts-smoke-codex-gpt-5.6-terra-medium-batch-001",
+  "command_counts": {
+    "failures": 0,
+    "other": 0,
+    "read": 0,
+    "search": 0,
+    "symnav": {},
+    "symnav_failures": {},
+    "symnav_skill_reads": 0,
+    "timeouts": 0
+  },
+  "disposition": {
+    "detail": "NonZeroAgentExitCodeError: Command failed (exit 126): mkdir -p \"$CODEX_HOME\" /tmp/codex-secrets /logs/agent\nstdout: OCI runtime exec failed: exec failed: unable to start container process: chdir to cwd (\"/testbed\") set in config.json failed: no such file or directory: unknown\r\n\nstderr: None",
+    "outcome": "retryable_error",
+    "retry_reason": "agent_process",
+    "scored_failure_reason": null
+  },
+  "exception": {
+    "exception_message": "Command failed (exit 126): mkdir -p \"$CODEX_HOME\" /tmp/codex-secrets /logs/agent\nstdout: OCI runtime exec failed: exec failed: unable to start container process: chdir to cwd (\"/testbed\") set in config.json failed: no such file or directory: unknown\r\n\nstderr: None",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 925, in run\n    await self._execute_agent()\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 314, in _execute_agent\n    await self._execution.run_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/trial/execution.py\", line 254, in run_agent\n    await asyncio.wait_for(\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 43, in wrapper\n    return await fn(self, instruction, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/codex.py\", line 1084, in run\n    await self.exec_as_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 386, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 349, in _exec\n    raise NonZeroAgentExitCodeError(\npier.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 126): mkdir -p \"$CODEX_HOME\" /tmp/codex-secrets /logs/agent\nstdout: OCI runtime exec failed: exec failed: unable to start container process: chdir to cwd (\"/testbed\") set in config.json failed: no such file or directory: unknown\r\n\nstderr: None\n",
+    "exception_type": "NonZeroAgentExitCodeError",
+    "occurred_at": "2026-07-21T00:24:35.358922"
+  },
+  "harness": {
+    "agent_name": "codex",
+    "agent_version": "0.144.1",
+    "benchmark": "swe-polybench",
+    "benchmark_source_revision": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "bundle_hash": null,
+    "bundle_id": null,
+    "deep_swe_sha": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "image_digest": "sha256:a8c8f18fef78fe8c40ac7e1e28aeafa11b0a7799a4f5ec774e0c0a176edeb71d",
+    "image_reference": "0.1.0",
+    "pier_version": "unknown",
+    "prompt_rule_hash": "unknown",
+    "requested_effort": "medium",
+    "requested_model": "gpt-5.6-terra",
+    "symnav_bench_sha": "dc0c6fddb08268fa1477d174a1c1286aa2cc66d0",
+    "symnav_sha": "ef9fd76da7f85bccf130af09d2dd9a5a4a8309bb",
+    "task_checksum": "d1173b986ac3c3a54c60516d312ba1e5ee727d07907cbee36e114decbe500d13",
+    "task_fit_tier": "mid"
+  },
+  "identity": {
+    "attempt_id": "15c9e3c65107494ebbdf22162b883641",
+    "github_job": "cell",
+    "github_run_attempt": 1,
+    "github_run_id": "29789959965",
+    "slot_id": "8cb31a7a6fe85ff8a4d4f669953c30daec5538d075f9319cfca3776f3f6f4b23"
+  },
+  "protocol_fingerprint": "6f0bb4b4721ec85fc810784929d5f6ba18d1ac7c6aca279f903a91966eadb58a",
+  "rewards": {},
+  "schema_version": 3,
+  "slot": {
+    "condition": "stock",
+    "configuration_id": "codex-gpt-5.6-terra-medium",
+    "repetition": 1,
+    "slot_id": "8cb31a7a6fe85ff8a4d4f669953c30daec5538d075f9319cfca3776f3f6f4b23",
+    "study_id": "swe-polybench-ts-smoke",
+    "task": "angular__angular-37484"
+  },
+  "suite_fingerprint": "b9066f7960bf2cb1779451628dfa313e0c788d3f68220931394525b45a6005ca",
+  "timing": {
+    "finished_at": "2026-07-21T00:24:59.992651Z",
+    "started_at": "2026-07-21T00:21:42.782945Z"
+  },
+  "usage": {
+    "cost_usd_imputed": null,
+    "n_agent_steps": null,
+    "n_cache_tokens": null,
+    "n_input_tokens": null,
+    "n_output_tokens": null,
+    "peak_context_tokens": null
+  },
+  "written_at": "2026-07-21T00:25:00.426594+00:00"
+}
