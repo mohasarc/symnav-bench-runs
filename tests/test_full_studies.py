@@ -9,8 +9,29 @@ from test_smoke_studies import (
 )
 
 
+FULL_SYMNAV_BENCH_SHA = "ea3fed2426392904ed67474c0c428afb5b6cc882"
+FULL_IMAGE_REFERENCE = "ghcr.io/mohasarc/symnav-bench:sha-ea3fed2"
+FULL_IMAGE_DIGEST = (
+    "sha256:a19d01206de513e3620acbf94163da9496c60cbe2f588f4bd19f71b3a84b9e6f"
+)
+
+
 class FullStudyContract(SmokeStudyContract):
     expected_task_count: int
+
+    def assert_immutable_execution_pin(self) -> None:
+        self.assertEqual(
+            self.execution,
+            {
+                "image_reference": FULL_IMAGE_REFERENCE,
+                "image_digest": FULL_IMAGE_DIGEST,
+                "symnav_bench_sha": FULL_SYMNAV_BENCH_SHA,
+            },
+        )
+        self.assertEqual(
+            self.manifest["harness"]["image"],
+            f"ghcr.io/mohasarc/symnav-bench@{FULL_IMAGE_DIGEST}",
+        )
 
     def assert_full_suite(self) -> None:
         tasks = self.suite["tasks"]
