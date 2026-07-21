@@ -41,6 +41,7 @@ class FullStudyContract(SmokeStudyContract):
         self.assertEqual(len(tasks), self.expected_task_count)
         self.assertEqual(len({task["slug"] for task in tasks}), len(tasks))
         self.assertEqual({task["language"] for task in tasks}, {"typescript"})
+        self.assertTrue(all(len(task["checksum"]) == 64 for task in tasks))
         self.assertEqual(self.suite["fingerprint"], self.suite_fingerprint(tasks))
 
 
