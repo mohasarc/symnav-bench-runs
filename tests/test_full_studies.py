@@ -131,3 +131,45 @@ class SwePolybenchR2StudyTest(SwePolybenchFullStudyTest):
         first_checksums = {t["slug"]: t["checksum"] for t in first["tasks"]}
         for task in self.suite["tasks"]:
             self.assertNotEqual(task["checksum"], first_checksums[task["slug"]])
+
+
+R3_SYMNAV_BENCH_SHA = "ed88d5cecb89ab0f1f5e82119a8722ea6b991c04"
+R3_IMAGE_REFERENCE = "ghcr.io/mohasarc/symnav-bench:sha-ed88d5c"
+R3_IMAGE_DIGEST = (
+    "sha256:c73a1758d888bb872f3e0a2d3e83b2b5b99fe45fa06fb1f8a942950d8065ecd5"
+)
+
+
+class SwePolybenchR3StudyTest(SwePolybenchFullStudyTest):
+    study_id = "swe-polybench-ts-himid-codex-terra-medium-pr94-r3"
+
+    def assert_immutable_execution_pin(self) -> None:
+        self.assertEqual(
+            self.execution,
+            {
+                "image_reference": R3_IMAGE_REFERENCE,
+                "image_digest": R3_IMAGE_DIGEST,
+                "symnav_bench_sha": R3_SYMNAV_BENCH_SHA,
+            },
+        )
+        self.assertEqual(
+            self.manifest["harness"]["image"],
+            f"ghcr.io/mohasarc/symnav-bench@{R3_IMAGE_DIGEST}",
+        )
+
+    def test_r3_suite_checksums_differ_from_r2(self) -> None:
+        import json
+
+        from test_smoke_studies import ROOT
+
+        r2 = json.loads(
+            (
+                ROOT
+                / "studies"
+                / "swe-polybench-ts-himid-codex-terra-medium-pr94-r2"
+                / "suite.json"
+            ).read_text(encoding="utf-8")
+        )
+        r2_checksums = {t["slug"]: t["checksum"] for t in r2["tasks"]}
+        for task in self.suite["tasks"]:
+            self.assertNotEqual(task["checksum"], r2_checksums[task["slug"]])

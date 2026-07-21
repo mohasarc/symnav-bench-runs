@@ -139,11 +139,17 @@ Suites resolved in CI under `sha-ea3fed2` (model-patch-first grading); execution
   files (e.g. `Dockerfile`) in the workdir; `git add -N . && git diff
   base_commit` swept them into every patch, which then failed to apply in
   the fresh verifier env. Kept for provenance; do not analyze.
-- `swe-polybench-ts-himid-codex-terra-medium-pr94-r2` — 75 tasks, 150
-  slots, pinned `sha-c671e8e` (resumes on `sha-72ba150`: best-effort
-  ripgrep for stretch archives): model.patch now diffs against a pre-agent
-  baseline tree snapshotted at install end, so baked files and injected
-  treatment files stay out of agent patches.
+- `swe-polybench-ts-himid-codex-terra-medium-pr94-r2` — PARTIALLY
+  INVALIDATED. Pinned `sha-c671e8e` (resumes on `sha-72ba150`): model.patch
+  diffs against a pre-agent baseline tree, fixing the r1 defect — but the
+  verifier ran with `allow_internet = false` and vscode/coder/tailwind/
+  angular test commands fetch dependencies at run time, so their 64 slots
+  scored all-zero on environment grounds. mui slots (20 passes, 58 partial)
+  and 2 download-free vscode passes graded genuinely. Kept for provenance.
+- `swe-polybench-ts-himid-codex-terra-medium-pr94-r3` — 75 tasks, 150
+  slots, pinned `sha-ed88d5c`: adds `[verifier.environment]` with
+  `allow_internet = true` (agent env stays offline) and a 3600s verifier
+  timeout. Analysis target for polybench.
 - `multi-swe-bench-ts-codex-terra-medium-pr94` — 201 tasks, 402 slots.
 
 Dashboards:
@@ -153,3 +159,4 @@ Dashboards:
 - `https://mohasarc.github.io/symnav-bench-runs/studies/swe-polybench-ts-himid-codex-terra-medium-pr94/`
 - `https://mohasarc.github.io/symnav-bench-runs/studies/multi-swe-bench-ts-codex-terra-medium-pr94/`
 - `https://mohasarc.github.io/symnav-bench-runs/studies/swe-polybench-ts-himid-codex-terra-medium-pr94-r2/`
+- `https://mohasarc.github.io/symnav-bench-runs/studies/swe-polybench-ts-himid-codex-terra-medium-pr94-r3/`
