@@ -91,10 +91,10 @@ if __name__ == "__main__":
     unittest.main()
 
 
-R2_SYMNAV_BENCH_SHA = "c671e8e5b8f89cb5f78e9c16ff3077cb3b35d917"
-R2_IMAGE_REFERENCE = "ghcr.io/mohasarc/symnav-bench:sha-c671e8e"
+R2_SYMNAV_BENCH_SHA = "72ba150c13332f45a7324b9860d897bcca12376e"
+R2_IMAGE_REFERENCE = "ghcr.io/mohasarc/symnav-bench:sha-72ba150"
 R2_IMAGE_DIGEST = (
-    "sha256:1eab4b1b65035dc34bd26864abd32bb2ef42b4edd3157c483d96688762da5864"
+    "sha256:9b0f3a26b49662265e2b475c8c45183943979c1baa816db9eb96e7dc2230426d"
 )
 
 

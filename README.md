@@ -140,7 +140,8 @@ Suites resolved in CI under `sha-ea3fed2` (model-patch-first grading); execution
   base_commit` swept them into every patch, which then failed to apply in
   the fresh verifier env. Kept for provenance; do not analyze.
 - `swe-polybench-ts-himid-codex-terra-medium-pr94-r2` — 75 tasks, 150
-  slots, pinned `sha-c671e8e`: model.patch now diffs against a pre-agent
+  slots, pinned `sha-c671e8e` (resumes on `sha-72ba150`: best-effort
+  ripgrep for stretch archives): model.patch now diffs against a pre-agent
   baseline tree snapshotted at install end, so baked files and injected
   treatment files stay out of agent patches.
 - `multi-swe-bench-ts-codex-terra-medium-pr94` — 201 tasks, 402 slots.
