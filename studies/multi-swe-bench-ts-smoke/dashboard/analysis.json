@@ -57,6 +57,64 @@
     },
     {
       "adoption": {
+        "command_counts": {
+          "context": 2,
+          "overview": 1
+        },
+        "first_symnav_step": 7,
+        "patch_calls": 0,
+        "read_calls": 0,
+        "read_symnav_skill": false,
+        "search_calls": 1,
+        "symnav_calls": 3,
+        "symnav_calls_per_agent_step": 0.2727272727272727,
+        "symnav_failures": 0,
+        "symnav_timeouts": 0,
+        "used_symnav": true
+      },
+      "artifacts": {
+        "archive_path": "attempts/4a2171154c3a4b14b59d6f9150de6521",
+        "archive_sha256": "18729597cb3805469dc68552f18c78236d2b6031e09be4bc25338f0dbcd75494",
+        "archive_url": "multi-swe-bench-ts-smoke-multi-swe-bench-ts-smoke-codex-gpt-5.6-terra-medium-batch-001-29793654031-1.tar.gz",
+        "direct_urls": {}
+      },
+      "attempt_id": "4a2171154c3a4b14b59d6f9150de6521",
+      "condition": "symnav",
+      "configuration_id": "codex-gpt-5.6-terra-medium",
+      "detail": "missing verifier reward",
+      "outcome": "failed",
+      "repetition": 1,
+      "retry_reason": null,
+      "rewards": {
+        "apply_failed": 1,
+        "f2p": 0.0,
+        "f2p_passed": 0,
+        "f2p_total": 5,
+        "p2p": 0.0,
+        "p2p_passed": 0,
+        "p2p_total": 37,
+        "partial": 0.0,
+        "reward": 0
+      },
+      "scored_failure_reason": "verifier",
+      "slot_id": "9c007c4887abc50cca7d162156da41256bb14c052b995f1d2f4535227fa30960",
+      "task": "darkreader__darkreader-6747",
+      "timing": {
+        "finished_at": "2026-07-21T01:47:29.363514Z",
+        "started_at": "2026-07-21T01:43:58.978056Z"
+      },
+      "usage": {
+        "cost_usd_imputed": 0.171243,
+        "n_agent_steps": 11,
+        "n_cache_tokens": 224512,
+        "n_input_tokens": 251844,
+        "n_output_tokens": 3119,
+        "peak_context_tokens": 29564
+      },
+      "written_at": "2026-07-21T01:47:29.763979+00:00"
+    },
+    {
+      "adoption": {
         "command_counts": {},
         "first_symnav_step": null,
         "patch_calls": 0,
@@ -211,16 +269,26 @@
       "f2p_task_deltas": [
         {
           "delta": 0.0,
+          "stock": 0.0,
+          "task": "darkreader__darkreader-6747",
+          "treatment": 0.0
+        },
+        {
+          "delta": 0.0,
           "stock": 1.0,
           "task": "vuejs__core-10004",
           "treatment": 1.0
         }
       ],
-      "f2p_uplift": null,
+      "f2p_uplift": {
+        "lower_95": 0.0,
+        "upper_95": 0.0,
+        "value": 0.0
+      },
       "losses": 0,
       "material_improvement": false,
       "primary": true,
-      "randomization_p_value": null,
+      "randomization_p_value": 1.0,
       "study_id": "multi-swe-bench-ts-smoke",
       "suite_fingerprint": "0c084a8962645805f6d9f5b542bd11a8aee25b87c4d3bc670489f8e58375bbc4",
       "symnav_revision": {
@@ -234,13 +302,23 @@
       "task_deltas": [
         {
           "delta": 0,
+          "stock": 0,
+          "task": "darkreader__darkreader-6747",
+          "treatment": 0
+        },
+        {
+          "delta": 0,
           "stock": 1,
           "task": "vuejs__core-10004",
           "treatment": 1
         }
       ],
-      "ties": 1,
-      "uplift": null,
+      "ties": 2,
+      "uplift": {
+        "lower_95": 0.0,
+        "upper_95": 0.0,
+        "value": 0
+      },
       "wins": 0
     }
   ],
@@ -265,10 +343,10 @@
       "condition": "stock",
       "configuration_key": "codex:gpt-5.6-terra:medium:0.144.1",
       "coverage": {
-        "complete_tasks": 1,
-        "pilot": true,
+        "complete_tasks": 2,
+        "pilot": false,
         "planned_slots": 2,
-        "provisional": true,
+        "provisional": false,
         "retryable_attempts": 0,
         "scored_slots": 2,
         "total_tasks": 2,
@@ -281,29 +359,32 @@
       "metrics": {
         "cost": 0.514815,
         "cost_per_success": 0.514815,
-        "f2p": 1.0,
-        "p2p": 1.0,
-        "partial": 1.0,
-        "performance_score": 1,
+        "f2p": 0.5,
+        "p2p": 0.5,
+        "partial": 0.5,
+        "performance_score": 0.5,
         "repetition_scores": [
-          1
+          0.5
         ]
       },
       "model": "gpt-5.6-terra"
     },
     {
       "adoption": {
-        "mean_command_counts": {},
-        "mean_first_symnav_step": null,
+        "mean_command_counts": {
+          "context": 1.0,
+          "overview": 0.5
+        },
+        "mean_first_symnav_step": 7.0,
         "mean_patch_calls": 0,
-        "mean_read_calls": 3,
-        "mean_search_calls": 2,
-        "mean_symnav_calls": 0,
-        "mean_symnav_calls_per_agent_step": 0.0,
+        "mean_read_calls": 1.5,
+        "mean_search_calls": 1.5,
+        "mean_symnav_calls": 1.5,
+        "mean_symnav_calls_per_agent_step": 0.13636363636363635,
         "mean_symnav_failures": 0,
         "mean_symnav_timeouts": 0,
         "read_symnav_skill_rate": 0,
-        "used_symnav_rate": 0
+        "used_symnav_rate": 0.5
       },
       "agent": "codex",
       "agent_version": "0.144.1",
@@ -311,41 +392,39 @@
       "condition": "symnav",
       "configuration_key": "codex:gpt-5.6-terra:medium:0.144.1",
       "coverage": {
-        "complete_tasks": 1,
-        "pilot": true,
+        "complete_tasks": 2,
+        "pilot": false,
         "planned_slots": 2,
-        "provisional": true,
+        "provisional": false,
         "retryable_attempts": 1,
-        "scored_slots": 1,
+        "scored_slots": 2,
         "total_tasks": 2,
-        "unresolved_slot_ids": [
-          "9c007c4887abc50cca7d162156da41256bb14c052b995f1d2f4535227fa30960"
-        ]
+        "unresolved_slot_ids": []
       },
       "effort": "medium",
       "full_symnav": true,
       "id": "codex-gpt-5.6-terra-medium",
       "label": "codex \u00b7 gpt-5.6-terra \u00b7 medium \u00b7 symnav",
       "metrics": {
-        "cost": 0.19085850000000001,
-        "cost_per_success": 0.19085850000000001,
-        "f2p": 1.0,
-        "p2p": 1.0,
-        "partial": 1.0,
-        "performance_score": 1,
+        "cost": 0.3621015,
+        "cost_per_success": 0.3621015,
+        "f2p": 0.5,
+        "p2p": 0.5,
+        "partial": 0.5,
+        "performance_score": 0.5,
         "repetition_scores": [
-          1
+          0.5
         ]
       },
       "model": "gpt-5.6-terra"
     }
   ],
   "coverage": {
-    "complete_tasks": 1,
-    "pilot": true,
+    "complete_tasks": 2,
+    "pilot": false,
     "planned_slots": 4,
-    "provisional": true,
-    "scored_slots": 3,
+    "provisional": false,
+    "scored_slots": 4,
     "total_tasks": 2
   },
   "official_references": [],
@@ -459,30 +538,47 @@
       ]
     },
     {
-      "adoption": null,
-      "complete": false,
+      "adoption": {
+        "mean_command_counts": {
+          "context": 2,
+          "overview": 1
+        },
+        "mean_first_symnav_step": 7.0,
+        "mean_patch_calls": 0,
+        "mean_read_calls": 0,
+        "mean_search_calls": 1,
+        "mean_symnav_calls": 3,
+        "mean_symnav_calls_per_agent_step": 0.2727272727272727,
+        "mean_symnav_failures": 0,
+        "mean_symnav_timeouts": 0,
+        "read_symnav_skill_rate": 0,
+        "used_symnav_rate": 1
+      },
+      "complete": true,
       "condition": "symnav",
       "configuration_id": "codex-gpt-5.6-terra-medium",
       "configuration_key": "codex:gpt-5.6-terra:medium:0.144.1",
-      "failure_counts": {},
+      "failure_counts": {
+        "verifier": 1
+      },
       "full_symnav": true,
       "metrics": {
-        "cost": null,
+        "cost": 0.171243,
         "duration": null,
-        "f2p": null,
-        "failures": 0,
-        "median_cost": null,
-        "output_tokens": null,
-        "p2p": null,
-        "partial": null,
-        "performance_score": null,
-        "steps": null
+        "f2p": 0.0,
+        "failures": 1,
+        "median_cost": 0.171243,
+        "output_tokens": 3119.0,
+        "p2p": 0.0,
+        "partial": 0.0,
+        "performance_score": 0,
+        "steps": 11.0
       },
       "task": "darkreader__darkreader-6747",
       "trials": [
         {
-          "attempt_id": null,
-          "outcome": null,
+          "attempt_id": "4a2171154c3a4b14b59d6f9150de6521",
+          "outcome": "failed",
           "repetition": 1
         }
       ]
