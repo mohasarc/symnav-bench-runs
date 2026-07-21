@@ -117,11 +117,16 @@ class SwePolybenchR2StudyTest(SwePolybenchFullStudyTest):
 
     def test_r2_suite_checksums_differ_from_the_invalidated_run(self) -> None:
         import json
-        from pathlib import Path
+
+        from test_smoke_studies import ROOT
 
         first = json.loads(
-            Path("studies/swe-polybench-ts-himid-codex-terra-medium-pr94/suite.json")
-            .read_text(encoding="utf-8")
+            (
+                ROOT
+                / "studies"
+                / "swe-polybench-ts-himid-codex-terra-medium-pr94"
+                / "suite.json"
+            ).read_text(encoding="utf-8")
         )
         first_checksums = {t["slug"]: t["checksum"] for t in first["tasks"]}
         for task in self.suite["tasks"]:

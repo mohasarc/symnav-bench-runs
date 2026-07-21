@@ -151,3 +151,4 @@ Dashboards:
 - `https://mohasarc.github.io/symnav-bench-runs/studies/multi-swe-bench-ts-smoke/`
 - `https://mohasarc.github.io/symnav-bench-runs/studies/swe-polybench-ts-himid-codex-terra-medium-pr94/`
 - `https://mohasarc.github.io/symnav-bench-runs/studies/multi-swe-bench-ts-codex-terra-medium-pr94/`
+- `https://mohasarc.github.io/symnav-bench-runs/studies/swe-polybench-ts-himid-codex-terra-medium-pr94-r2/`
