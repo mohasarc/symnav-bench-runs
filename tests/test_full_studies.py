@@ -9,10 +9,10 @@ from test_smoke_studies import (
 )
 
 
-FULL_SYMNAV_BENCH_SHA = "ea3fed2426392904ed67474c0c428afb5b6cc882"
-FULL_IMAGE_REFERENCE = "ghcr.io/mohasarc/symnav-bench:sha-ea3fed2"
+FULL_SYMNAV_BENCH_SHA = "5f5d1f815201aade7682695f4b7aa14557131e96"
+FULL_IMAGE_REFERENCE = "ghcr.io/mohasarc/symnav-bench:sha-5f5d1f8"
 FULL_IMAGE_DIGEST = (
-    "sha256:a19d01206de513e3620acbf94163da9496c60cbe2f588f4bd19f71b3a84b9e6f"
+    "sha256:d71e8eb4a166d843ba40a5ffa8dd9475b7090724fe7a7586a0f5fcf9acd34283"
 )
 
 

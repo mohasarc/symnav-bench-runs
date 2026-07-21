@@ -132,7 +132,7 @@ attempts); treat them as pipeline validation, not benchmark data.
 
 ## Full studies (multi-benchmark)
 
-Pinned to `sha-ea3fed2` (model-patch-first grading), suites resolved in CI:
+Suites resolved in CI under `sha-ea3fed2` (model-patch-first grading); execution re-pinned to `sha-5f5d1f8` (archive.debian.org apt fallback for EOL-stretch eval images) for resume passes — task layout identical, checksums unchanged:
 
 - `swe-polybench-ts-himid-codex-terra-medium-pr94` — 75 tasks, 150 slots.
 - `multi-swe-bench-ts-codex-terra-medium-pr94` — 201 tasks, 402 slots.
