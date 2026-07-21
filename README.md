@@ -149,8 +149,21 @@ Suites resolved in CI under `sha-ea3fed2` (model-patch-first grading); execution
 - `swe-polybench-ts-himid-codex-terra-medium-pr94-r3` — 75 tasks, 150
   slots, pinned `sha-ed88d5c`: adds `[verifier.environment]` with
   `allow_internet = true` (agent env stays offline) and a 3600s verifier
-  timeout. Analysis target for polybench.
-- `multi-swe-bench-ts-codex-terra-medium-pr94` — 201 tasks, 402 slots.
+  timeout. Analysis target for polybench. Results: 143/150 slots scored.
+  Analysis subset excludes 8 slots (code-server + tailwind: log parsers
+  don't read those repos' reporter formats; zeroed symmetrically in both
+  arms) and 7 unresolved (5 vscode verifier timeouts at 3600s, 2
+  mui-7444 cells on unauthenticated stretch-archive packages). Over the
+  135 valid slots: stock 24/68 (35.3%), symnav 30/67 (44.8%), symnav
+  W/T/L 10/53/3 across 66 paired tasks.
+- `multi-swe-bench-ts-codex-terra-medium-pr94` — 201 tasks, 402 slots,
+  complete: 402/402 resolved, stock 45/201 (22.4%), symnav 46/201
+  (22.9%). All 311 scored failures carry partial>0 — grading verified
+  sound, zero apply_failed.
+
+Known r4 backlog (harness): `--allow-unauthenticated` for stretch-archive
+apt installs; code-server/tailwind log-parser formats; longer vscode
+verifier timeout.
 
 Dashboards:
 
