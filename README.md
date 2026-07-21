@@ -124,7 +124,22 @@ paths are:
   `vuejs__core-10004`. Full suite: 201 tasks (23 of 224 excluded for empty
   fail-to-pass sets).
 
+Both smokes resolved all 4 slots end-to-end. Outcomes: vuejs passed both
+arms (F2P 2/2, P2P 2829/2829), darkreader/angular/code-server scored
+`apply_failed` under the pre-fix test-patch-first grading order. Smoke runs
+span harness pins `sha-a3ff57f`..`sha-0c974d6` (fixes landed between
+attempts); treat them as pipeline validation, not benchmark data.
+
+## Full studies (multi-benchmark)
+
+Pinned to `sha-ea3fed2` (model-patch-first grading), suites resolved in CI:
+
+- `swe-polybench-ts-himid-codex-terra-medium-pr94` — 75 tasks, 150 slots.
+- `multi-swe-bench-ts-codex-terra-medium-pr94` — 201 tasks, 402 slots.
+
 Dashboards:
 
 - `https://mohasarc.github.io/symnav-bench-runs/studies/swe-polybench-ts-smoke/`
 - `https://mohasarc.github.io/symnav-bench-runs/studies/multi-swe-bench-ts-smoke/`
+- `https://mohasarc.github.io/symnav-bench-runs/studies/swe-polybench-ts-himid-codex-terra-medium-pr94/`
+- `https://mohasarc.github.io/symnav-bench-runs/studies/multi-swe-bench-ts-codex-terra-medium-pr94/`
