@@ -89,3 +89,40 @@ class MultiSweBenchFullStudyTest(FullStudyContract):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+R2_SYMNAV_BENCH_SHA = "c671e8e5b8f89cb5f78e9c16ff3077cb3b35d917"
+R2_IMAGE_REFERENCE = "ghcr.io/mohasarc/symnav-bench:sha-c671e8e"
+R2_IMAGE_DIGEST = (
+    "sha256:1eab4b1b65035dc34bd26864abd32bb2ef42b4edd3157c483d96688762da5864"
+)
+
+
+class SwePolybenchR2StudyTest(SwePolybenchFullStudyTest):
+    study_id = "swe-polybench-ts-himid-codex-terra-medium-pr94-r2"
+
+    def assert_immutable_execution_pin(self) -> None:
+        self.assertEqual(
+            self.execution,
+            {
+                "image_reference": R2_IMAGE_REFERENCE,
+                "image_digest": R2_IMAGE_DIGEST,
+                "symnav_bench_sha": R2_SYMNAV_BENCH_SHA,
+            },
+        )
+        self.assertEqual(
+            self.manifest["harness"]["image"],
+            f"ghcr.io/mohasarc/symnav-bench@{R2_IMAGE_DIGEST}",
+        )
+
+    def test_r2_suite_checksums_differ_from_the_invalidated_run(self) -> None:
+        import json
+        from pathlib import Path
+
+        first = json.loads(
+            Path("studies/swe-polybench-ts-himid-codex-terra-medium-pr94/suite.json")
+            .read_text(encoding="utf-8")
+        )
+        first_checksums = {t["slug"]: t["checksum"] for t in first["tasks"]}
+        for task in self.suite["tasks"]:
+            self.assertNotEqual(task["checksum"], first_checksums[task["slug"]])
