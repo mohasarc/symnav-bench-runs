@@ -52,6 +52,16 @@ filtered), `multi-swe-bench` (whole TypeScript set).
 
    Deterministic: same revision and tiers produce identical bytes. Stdout
    prints planned task and slot counts — check cost before committing.
+
+   `multi-swe-bench` resolution probes ~200 Docker Hub manifests; anonymous
+   probing from one IP hits Hub rate limits (429). Run it in CI instead:
+   dispatch `resolve suite` with the study ID and download the `suite-<id>`
+   artifact. GitHub-hosted runners pass. Set `DOCKER_HUB_USERNAME` /
+   `DOCKER_HUB_TOKEN` for authenticated local probing.
+
+   Smoke studies pin a hand-picked subset of the resolved suite: keep the
+   chosen task entries, recompute `fingerprint` over
+   `{benchmark, source_revision, tasks}` (canonical JSON, sha256).
 5. Commit `manifest.yml`, `suite.json`, and `execution.json` under
    `studies/<id>/` with declaration tests, then dispatch through
    `study dispatcher` as usual.
@@ -102,3 +112,19 @@ paths are:
 
 - `https://mohasarc.github.io/symnav-bench-runs/studies/deepswe-ts-codex-terra-medium-pr94-smoke/`
 - `https://mohasarc.github.io/symnav-bench-runs/studies/deepswe-ts-codex-terra-medium-pr94/`
+
+## Multi-benchmark smoke studies
+
+2-task smoke per new benchmark, same configuration ID
+(`codex-gpt-5.6-terra-medium`), 4 slots each (2 tasks x stock/symnav x 1 rep):
+
+- `swe-polybench-ts-smoke` — `angular__angular-37484` (mid),
+  `coder__code-server-3277` (high). Full suite at this revision: 75 tasks.
+- `multi-swe-bench-ts-smoke` — `darkreader__darkreader-6747`,
+  `vuejs__core-10004`. Full suite: 201 tasks (23 of 224 excluded for empty
+  fail-to-pass sets).
+
+Dashboards:
+
+- `https://mohasarc.github.io/symnav-bench-runs/studies/swe-polybench-ts-smoke/`
+- `https://mohasarc.github.io/symnav-bench-runs/studies/multi-swe-bench-ts-smoke/`
