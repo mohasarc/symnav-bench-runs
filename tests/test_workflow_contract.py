@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -41,12 +42,44 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn("256", workflow)
         self.assertIn("image_digest", workflow)
         self.assertIn("agent_version", workflow)
-        self.assertIn("deep_swe_sha", workflow)
+        self.assertIn("source_revision", workflow)
         self.assertIn("symnav_sha", workflow)
         self.assertIn("protocol_fingerprint", workflow)
         self.assertIn("suite_fingerprint", workflow)
         self.assertIn("requested_slot_ids", workflow)
         self.assertIn("slot_ids must be unique strings", workflow)
+
+    def test_setup_reads_metadata_via_study_metadata_command(self) -> None:
+        workflow = self.workflow("bench-batch.yml")
+        self.assertIn("study-metadata", workflow)
+        self.assertNotIn('"deep_swe_sha":', workflow)
+        self.assertNotIn("outputs.deep_swe_sha", workflow)
+
+    def test_setup_falls_back_to_inline_extraction_for_legacy_pinned_images(self) -> None:
+        workflow = self.workflow("bench-batch.yml")
+        self.assertIn("if ! metadata=$(", workflow)
+        self.assertIn('"source_revision": manifest["protocol"]["deep_swe_sha"]', workflow)
+        self.assertLess(workflow.index("study-metadata"), workflow.index('manifest["protocol"]'))
+
+    def test_cell_passes_source_revision_and_no_benchmark_flags(self) -> None:
+        workflow = self.workflow("bench-batch.yml")
+        self.assertIn("--deep-swe-ref '${{ needs.setup.outputs.source_revision }}'", workflow)
+        self.assertIn('-v "$PWD/studies/${{ inputs.study }}:/study:ro"', workflow)
+        self.assertIn('-v "$PWD/symnav-product:/symnav-product:ro"', workflow)
+        self.assertIn("SYMNAV_BENCH_STUDY_MANIFEST='/study/manifest.yml'", workflow)
+        self.assertIn("SYMNAV_BENCH_SUITE_MANIFEST='/study/suite.json'", workflow)
+        self.assertIn("SYMNAV_BENCH_SYMNAV_CHECKOUT='/symnav-product'", workflow)
+        secrets = set(re.findall(r"secrets\.([A-Za-z0-9_]+)", workflow))
+        self.assertEqual(
+            secrets,
+            {"CLAUDE_CODE_OAUTH_TOKEN", "ANTHROPIC_API_KEY", "CODEX_AUTH_JSON_B64"},
+        )
+
+    def test_dispatch_and_report_workflows_are_benchmark_agnostic(self) -> None:
+        for name in ("study.yml", "recover-report.yml", "pages.yml"):
+            workflow = self.workflow(name)
+            for literal in ("deepswe", "deep_swe", "deep-swe", "polybench", "multi-swe"):
+                self.assertNotIn(literal, workflow, f"{name} hardcodes {literal}")
 
     def test_retryable_cell_is_red_but_evidence_and_report_always_run(self) -> None:
         workflow = self.workflow("bench-batch.yml")
@@ -104,6 +137,28 @@ class WorkflowContractTest(unittest.TestCase):
     def test_fixture_suite_never_exceeds_github_matrix_limit(self) -> None:
         suite = json.loads((ROOT / "tests/fixtures/studies/dry-run/suite.json").read_text())
         self.assertLessEqual(len(suite["tasks"]) * 2 * 4, 256)
+
+
+class ReadmeDeclarationTest(unittest.TestCase):
+    def readme(self) -> str:
+        return (ROOT / "README.md").read_text(encoding="utf-8")
+
+    def test_declaration_procedure_is_documented_in_order(self) -> None:
+        readme = self.readme()
+        self.assertIn("publish.yml", readme)
+        self.assertIn("resolve-suite", readme)
+        self.assertIn("execution.json", readme)
+        self.assertIn("image_digest", readme)
+        self.assertIn("manifest.yml", readme)
+        self.assertIn("suite.json", readme)
+        self.assertLess(readme.index("publish.yml"), readme.index("image_digest"))
+        self.assertLess(readme.index("image_digest"), readme.index("resolve-suite"))
+
+    def test_study_ids_follow_benchmark_first_naming(self) -> None:
+        readme = self.readme()
+        self.assertIn("swe-polybench-ts-himid-codex-terra-medium-pr94", readme)
+        self.assertIn("swe-polybench-ts-all-", readme)
+        self.assertIn("multi-swe-bench-ts-", readme)
 
 
 if __name__ == "__main__":
