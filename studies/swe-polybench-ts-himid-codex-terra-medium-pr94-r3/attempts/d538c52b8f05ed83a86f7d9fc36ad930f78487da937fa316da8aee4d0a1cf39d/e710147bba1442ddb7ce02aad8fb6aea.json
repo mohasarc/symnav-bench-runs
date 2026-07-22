@@ -1,0 +1,104 @@
+{
+  "adoption": {
+    "command_counts": {},
+    "first_symnav_step": null,
+    "patch_calls": 0,
+    "read_calls": 0,
+    "read_symnav_skill": false,
+    "search_calls": 0,
+    "symnav_calls": 0,
+    "symnav_calls_per_agent_step": 0.0,
+    "symnav_failures": 0,
+    "symnav_timeouts": 0,
+    "used_symnav": false
+  },
+  "agent_version": "0.144.1",
+  "artifact": {
+    "archive": "swe-polybench-ts-himid-codex-terra-medium-pr94-r3-swe-polybench-ts-himid-codex-terra-medium-pr94-r3-codex-gpt-5.6-terra-medium-batch-001-29823610866-4.tar.gz",
+    "internal_path": "attempts/e710147bba1442ddb7ce02aad8fb6aea",
+    "sha256": "1909e88553af0708b5b61efe499f294b46bf34b818bc7dbd227fd8ff4ef02670"
+  },
+  "batch_id": "swe-polybench-ts-himid-codex-terra-medium-pr94-r3-codex-gpt-5.6-terra-medium-batch-001",
+  "command_counts": {
+    "failures": 0,
+    "other": 0,
+    "read": 0,
+    "search": 0,
+    "symnav": {},
+    "symnav_failures": {},
+    "symnav_skill_reads": 0,
+    "timeouts": 0
+  },
+  "disposition": {
+    "detail": "NonZeroAgentExitCodeError: Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- 'Remove `EditorResolution.DISABLED`\nNow that the editor resolver is no longer doing any work when passing in an instance of `EditorInput` I think we should remove `EditorResolution.DISABLED`. If the intent of a component is to force open a text editor, it can still use the ID of the default association.\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-07-22T08:18:07.452457Z ERROR codex_login::auth::manager: Failed to refresh token: 401 Unauthorized: {\n  \"error\": {\n    \"message\": \"Your refresh token has already been used to generate a new access token. Please try signing in again.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": null,\n    \"code\": \"refresh_token_reused\"\n  }\n}\n2026-07-22T08:18:07.452536Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed because your refresh token was already used. Please log out and sign in again.\n2026-07-22T08:18:07.497442Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed because your refresh token was already used. Please log out and sign in again.\n2026-07-22T08:18:07.563944Z ERRO ... [truncated]\nstderr: None",
+    "outcome": "retryable_error",
+    "retry_reason": "agent_process",
+    "scored_failure_reason": null
+  },
+  "exception": {
+    "exception_message": "Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- 'Remove `EditorResolution.DISABLED`\nNow that the editor resolver is no longer doing any work when passing in an instance of `EditorInput` I think we should remove `EditorResolution.DISABLED`. If the intent of a component is to force open a text editor, it can still use the ID of the default association.\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-07-22T08:18:07.452457Z ERROR codex_login::auth::manager: Failed to refresh token: 401 Unauthorized: {\n  \"error\": {\n    \"message\": \"Your refresh token has already been used to generate a new access token. Please try signing in again.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": null,\n    \"code\": \"refresh_token_reused\"\n  }\n}\n2026-07-22T08:18:07.452536Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed because your refresh token was already used. Please log out and sign in again.\n2026-07-22T08:18:07.497442Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed because your refresh token was already used. Please log out and sign in again.\n2026-07-22T08:18:07.563944Z ERRO ... [truncated]\nstderr: None",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 925, in run\n    await self._execute_agent()\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 314, in _execute_agent\n    await self._execution.run_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/trial/execution.py\", line 254, in run_agent\n    await asyncio.wait_for(\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 43, in wrapper\n    return await fn(self, instruction, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/codex.py\", line 1149, in run\n    await self.exec_as_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 386, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 349, in _exec\n    raise NonZeroAgentExitCodeError(\npier.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- 'Remove `EditorResolution.DISABLED`\nNow that the editor resolver is no longer doing any work when passing in an instance of `EditorInput` I think we should remove `EditorResolution.DISABLED`. If the intent of a component is to force open a text editor, it can still use the ID of the default association.\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-07-22T08:18:07.452457Z ERROR codex_login::auth::manager: Failed to refresh token: 401 Unauthorized: {\n  \"error\": {\n    \"message\": \"Your refresh token has already been used to generate a new access token. Please try signing in again.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": null,\n    \"code\": \"refresh_token_reused\"\n  }\n}\n2026-07-22T08:18:07.452536Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed because your refresh token was already used. Please log out and sign in again.\n2026-07-22T08:18:07.497442Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed because your refresh token was already used. Please log out and sign in again.\n2026-07-22T08:18:07.563944Z ERRO ... [truncated]\nstderr: None\n",
+    "exception_type": "NonZeroAgentExitCodeError",
+    "occurred_at": "2026-07-22T08:18:11.037502"
+  },
+  "harness": {
+    "agent_name": "codex",
+    "agent_version": "0.144.1",
+    "benchmark": "swe-polybench",
+    "benchmark_source_revision": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "bundle_hash": "5fc1da33bac99bd47176fe51adbeb2fc9b577bc4ba5cbd94e102777d2f88c84e",
+    "bundle_id": "full",
+    "deep_swe_sha": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "image_digest": "sha256:c73a1758d888bb872f3e0a2d3e83b2b5b99fe45fa06fb1f8a942950d8065ecd5",
+    "image_reference": "0.1.0",
+    "pier_version": "unknown",
+    "prompt_rule_hash": "unknown",
+    "requested_effort": "medium",
+    "requested_model": "gpt-5.6-terra",
+    "symnav_bench_sha": "ed88d5cecb89ab0f1f5e82119a8722ea6b991c04",
+    "symnav_sha": "ef9fd76da7f85bccf130af09d2dd9a5a4a8309bb",
+    "task_checksum": "349598da0080c92f3b5f59e17ec9a618b7679ab6576091492bc6d6f8b1ac5905",
+    "task_fit_tier": "high"
+  },
+  "identity": {
+    "attempt_id": "e710147bba1442ddb7ce02aad8fb6aea",
+    "github_job": "cell",
+    "github_run_attempt": 4,
+    "github_run_id": "29823610866",
+    "slot_id": "d538c52b8f05ed83a86f7d9fc36ad930f78487da937fa316da8aee4d0a1cf39d"
+  },
+  "protocol_fingerprint": "6f0bb4b4721ec85fc810784929d5f6ba18d1ac7c6aca279f903a91966eadb58a",
+  "rewards": {
+    "f2p": 0.0,
+    "f2p_passed": 0,
+    "f2p_total": 1,
+    "p2p": 1.0,
+    "p2p_passed": 3,
+    "p2p_total": 3,
+    "partial": 0.75,
+    "reward": 0
+  },
+  "schema_version": 3,
+  "slot": {
+    "condition": "symnav",
+    "configuration_id": "codex-gpt-5.6-terra-medium",
+    "repetition": 1,
+    "slot_id": "d538c52b8f05ed83a86f7d9fc36ad930f78487da937fa316da8aee4d0a1cf39d",
+    "study_id": "swe-polybench-ts-himid-codex-terra-medium-pr94-r3",
+    "task": "microsoft__vscode-158371"
+  },
+  "suite_fingerprint": "8c59e90859cfd1bfff9a32eb1c7e6a5019d939cbeb08901ab7acd808d022e090",
+  "timing": {
+    "finished_at": "2026-07-22T08:22:07.438795Z",
+    "started_at": "2026-07-22T08:14:17.825048Z"
+  },
+  "usage": {
+    "cost_usd_imputed": null,
+    "n_agent_steps": 0,
+    "n_cache_tokens": null,
+    "n_input_tokens": null,
+    "n_output_tokens": null,
+    "peak_context_tokens": null
+  },
+  "written_at": "2026-07-22T08:22:07.916251+00:00"
+}
