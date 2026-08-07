@@ -165,20 +165,32 @@ r4 backlog status (harness):
 
 - Landed — stretch-archive apt installs pass `-o
   APT::Get::AllowUnauthenticated=true`. This is what killed all 8
-  `mui__material-ui-7444` cells in r3.
+  `mui__material-ui-7444` cells in r3. Verified against the pinned eval
+  image: the old snippet exits 100 with `E: There were unauthenticated
+  packages`, the patched one exits 0 with curl installed.
 - Landed — polybench wraps the instance test command in `timeout
   --kill-after=60 1800`, killing the process group so a hung Electron/xvfb
   run still reaches the grader. r3 lost `microsoft__vscode-158371` symnav to
   three consecutive 3600s verifier timeouts (~2h each) and all 7 timeouts in
-  the study were microsoft/vscode.
-- Open — code-server/tailwind/angular log-parser formats. Five tasks report
-  `p2p_passed = 0` against 16–262 p2p tests, so their 10 slots score 0 in
-  both arms regardless of the patch: `angular__angular-37484`,
-  `coder__code-server-3277`, `coder__code-server-6225`,
-  `tailwindlabs__tailwindcss-116`, `tailwindlabs__tailwindcss-211`.
+  the study were microsoft/vscode. Verified on Linux: a backgrounded
+  grandchild stops writing the instant `timeout` fires.
+- Landed — the five tasks reporting `p2p_passed = 0` against 16–262 p2p
+  tests. Three separate causes, not one parser bug:
+  - `angular__angular-37484` declares 137 p2p bazel targets but its command
+    runs one, so reward 0 was unreachable for any patch. Excluded at
+    declaration; high+mid goes 246 → 245.
+  - tailwindcss and code-server ids were corrupted by the dataset's global
+    `app` → `testbed` rewrite (`applyAtRule.test.js` recorded as
+    `testbedlyAtRule.test.js`). 34 TypeScript instances affected.
+  - code-server p2p ids come from jest's leaf `title` while its f2p ids come
+    from `fullName`; the parser emitted only `fullName`.
 
-Both landed fixes change polybench task-dir bytes, so r4 needs a re-resolved
-suite; existing studies keep their pinned checksums.
+  Verified in the pinned eval images with the dataset's gold patch:
+  `tailwindcss-116` and `code-server-3277` both reach `F2P 1/1`, full p2p,
+  reward 1. Before, both were stuck at p2p 0/N.
+
+All three landed fixes change polybench task-dir bytes, so r4 needs a
+re-resolved suite; existing studies keep their pinned checksums.
 
 ## Publication
 
