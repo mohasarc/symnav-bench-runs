@@ -1,0 +1,104 @@
+{
+  "adoption": {
+    "command_counts": {},
+    "first_symnav_step": null,
+    "patch_calls": 0,
+    "read_calls": 0,
+    "read_symnav_skill": false,
+    "search_calls": 0,
+    "symnav_calls": 0,
+    "symnav_calls_per_agent_step": 0.0,
+    "symnav_failures": 0,
+    "symnav_timeouts": 0,
+    "used_symnav": false
+  },
+  "agent_version": "0.144.1",
+  "artifact": {
+    "archive": "swe-polybench-ts-himid-codex-terra-medium-pr94-r4-swe-polybench-ts-himid-codex-terra-medium-pr94-r4-codex-gpt-5.6-terra-medium-batch-001-31222799369-1.tar.gz",
+    "internal_path": "attempts/3ec0dafea00f4f1191d150a61baaeac4",
+    "sha256": "4e0a65d8aa65304370b41d881c8d6d53812922d61280cef1cf21444cfa19913e"
+  },
+  "batch_id": "swe-polybench-ts-himid-codex-terra-medium-pr94-r4-codex-gpt-5.6-terra-medium-batch-001",
+  "command_counts": {
+    "failures": 0,
+    "other": 0,
+    "read": 0,
+    "search": 0,
+    "symnav": {},
+    "symnav_failures": {},
+    "symnav_skill_reads": 0,
+    "timeouts": 0
+  },
+  "disposition": {
+    "detail": "NonZeroAgentExitCodeError: Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- '[PaginationItem] Incorrect style sheet name?\nhttps://material-ui.com/api/pagination-item/\n\n![image](https://user-images.githubusercontent.com/7766733/74216373-7c2ea280-4ca4-11ea-873b-271a0c2889e0.png)\n\nShouldn'\"'\"'t that be `MuiPaginationItem` instead of `PaginationItem`, to be consistent with every other component?\n\nIf so, is it just the docs that are incorrect, or the implementation?\n\nOn the off chance that `PaginationItem` is correct, is that also the key to use in theme props, or should `MuiPaginationItem` be used there?\n\n- [x] The issue is present in the latest release.\n- [x] I have searched the [issues](https://github.com/mui-org/material-ui/issues) of this repository and believe that this is not a duplicate.\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-08-07T22:13:58.853858Z ERROR codex_login::auth::manager: Failed to refresh token: 401 Unauthorized: {\n  \"error\": {\n    \"message\": \"Invalid refresh token.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": null,\n    \"code\": \"invalid_refresh_token\"\n  }\n}\n2026-08-07T22:13:58.853927Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed. Please log out and sign in again.\n2026-08-07T22:13:58.896743Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed. Please log out and sign in again.\n2026-08-07T22:13:58.952777Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed. Please log out and sign in again.\n2026-08-07T22:13:59.059647Z ERROR c ... [truncated]\nstderr: None",
+    "outcome": "retryable_error",
+    "retry_reason": "agent_process",
+    "scored_failure_reason": null
+  },
+  "exception": {
+    "exception_message": "Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- '[PaginationItem] Incorrect style sheet name?\nhttps://material-ui.com/api/pagination-item/\n\n![image](https://user-images.githubusercontent.com/7766733/74216373-7c2ea280-4ca4-11ea-873b-271a0c2889e0.png)\n\nShouldn'\"'\"'t that be `MuiPaginationItem` instead of `PaginationItem`, to be consistent with every other component?\n\nIf so, is it just the docs that are incorrect, or the implementation?\n\nOn the off chance that `PaginationItem` is correct, is that also the key to use in theme props, or should `MuiPaginationItem` be used there?\n\n- [x] The issue is present in the latest release.\n- [x] I have searched the [issues](https://github.com/mui-org/material-ui/issues) of this repository and believe that this is not a duplicate.\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-08-07T22:13:58.853858Z ERROR codex_login::auth::manager: Failed to refresh token: 401 Unauthorized: {\n  \"error\": {\n    \"message\": \"Invalid refresh token.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": null,\n    \"code\": \"invalid_refresh_token\"\n  }\n}\n2026-08-07T22:13:58.853927Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed. Please log out and sign in again.\n2026-08-07T22:13:58.896743Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed. Please log out and sign in again.\n2026-08-07T22:13:58.952777Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed. Please log out and sign in again.\n2026-08-07T22:13:59.059647Z ERROR c ... [truncated]\nstderr: None",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 925, in run\n    await self._execute_agent()\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 314, in _execute_agent\n    await self._execution.run_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/trial/execution.py\", line 254, in run_agent\n    await asyncio.wait_for(\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 43, in wrapper\n    return await fn(self, instruction, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/codex.py\", line 1149, in run\n    await self.exec_as_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 386, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 349, in _exec\n    raise NonZeroAgentExitCodeError(\npier.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- '[PaginationItem] Incorrect style sheet name?\nhttps://material-ui.com/api/pagination-item/\n\n![image](https://user-images.githubusercontent.com/7766733/74216373-7c2ea280-4ca4-11ea-873b-271a0c2889e0.png)\n\nShouldn'\"'\"'t that be `MuiPaginationItem` instead of `PaginationItem`, to be consistent with every other component?\n\nIf so, is it just the docs that are incorrect, or the implementation?\n\nOn the off chance that `PaginationItem` is correct, is that also the key to use in theme props, or should `MuiPaginationItem` be used there?\n\n- [x] The issue is present in the latest release.\n- [x] I have searched the [issues](https://github.com/mui-org/material-ui/issues) of this repository and believe that this is not a duplicate.\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-08-07T22:13:58.853858Z ERROR codex_login::auth::manager: Failed to refresh token: 401 Unauthorized: {\n  \"error\": {\n    \"message\": \"Invalid refresh token.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": null,\n    \"code\": \"invalid_refresh_token\"\n  }\n}\n2026-08-07T22:13:58.853927Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed. Please log out and sign in again.\n2026-08-07T22:13:58.896743Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed. Please log out and sign in again.\n2026-08-07T22:13:58.952777Z ERROR codex_login::auth::manager: Failed to refresh token: Your access token could not be refreshed. Please log out and sign in again.\n2026-08-07T22:13:59.059647Z ERROR c ... [truncated]\nstderr: None\n",
+    "exception_type": "NonZeroAgentExitCodeError",
+    "occurred_at": "2026-08-07T22:14:01.892284"
+  },
+  "harness": {
+    "agent_name": "codex",
+    "agent_version": "0.144.1",
+    "benchmark": "swe-polybench",
+    "benchmark_source_revision": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "bundle_hash": null,
+    "bundle_id": null,
+    "deep_swe_sha": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "image_digest": "sha256:8601aa2a21545c885b2fdce2c6001e49e82cab6ba4e73a8cf3e52d6ac0d4aefd",
+    "image_reference": "0.1.0",
+    "pier_version": "unknown",
+    "prompt_rule_hash": "unknown",
+    "requested_effort": "medium",
+    "requested_model": "gpt-5.6-terra",
+    "symnav_bench_sha": "fd9577ec88896d19af7b005f32ab57c80d153cfc",
+    "symnav_sha": "ef9fd76da7f85bccf130af09d2dd9a5a4a8309bb",
+    "task_checksum": "e70f28d5c71d93ad54d85d1a2efa0240afa94dd61c34927072e5639edfb2c6d0",
+    "task_fit_tier": "high"
+  },
+  "identity": {
+    "attempt_id": "3ec0dafea00f4f1191d150a61baaeac4",
+    "github_job": "cell",
+    "github_run_attempt": 1,
+    "github_run_id": "31222799369",
+    "slot_id": "44e354a671b2d4c80c286ed7320fb92309211266695ef0c2856dfa932bba90b6"
+  },
+  "protocol_fingerprint": "6f0bb4b4721ec85fc810784929d5f6ba18d1ac7c6aca279f903a91966eadb58a",
+  "rewards": {
+    "f2p": 0.0,
+    "f2p_passed": 0,
+    "f2p_total": 2,
+    "p2p": 1.0,
+    "p2p_passed": 30,
+    "p2p_total": 30,
+    "partial": 0.9375,
+    "reward": 0
+  },
+  "schema_version": 3,
+  "slot": {
+    "condition": "stock",
+    "configuration_id": "codex-gpt-5.6-terra-medium",
+    "repetition": 1,
+    "slot_id": "44e354a671b2d4c80c286ed7320fb92309211266695ef0c2856dfa932bba90b6",
+    "study_id": "swe-polybench-ts-himid-codex-terra-medium-pr94-r4",
+    "task": "mui__material-ui-19612"
+  },
+  "suite_fingerprint": "e586ce9d8c3da8d0ca2e6152b089a86f38092ece0d19adffe42187d392e3fd56",
+  "timing": {
+    "finished_at": "2026-08-07T22:14:57.415896Z",
+    "started_at": "2026-08-07T22:11:19.062677Z"
+  },
+  "usage": {
+    "cost_usd_imputed": null,
+    "n_agent_steps": 0,
+    "n_cache_tokens": null,
+    "n_input_tokens": null,
+    "n_output_tokens": null,
+    "peak_context_tokens": null
+  },
+  "written_at": "2026-08-07T22:14:57.886867+00:00"
+}
