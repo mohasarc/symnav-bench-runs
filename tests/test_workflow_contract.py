@@ -109,8 +109,6 @@ class WorkflowContractTest(unittest.TestCase):
         batch_workflow = self.workflow("bench-batch.yml")
         self.assertIn("actions/upload-pages-artifact", workflow)
         self.assertIn("actions/deploy-pages", workflow)
-        self.assertIn("studies", workflow)
-        self.assertIn('pathlib.Path("_site/studies.json")', workflow)
         self.assertIn("actions: write", batch_workflow)
         self.assertIn("gh workflow run pages.yml", batch_workflow)
         self.assertIn("results_sha", batch_workflow)
@@ -119,11 +117,14 @@ class WorkflowContractTest(unittest.TestCase):
         self.assertIn("Check out requested results revision", workflow)
         self.assertIn('git checkout --detach "${{ inputs.results_sha }}"', workflow)
 
-    def test_pages_includes_provisional_dashboards_even_without_attempts(self) -> None:
+    def test_pages_builds_the_api_from_results_and_source_assets(self) -> None:
         workflow = self.workflow("pages.yml")
-        self.assertNotIn('if not payload.get("attempts"):', workflow)
-        self.assertIn('provisional = not configurations', workflow)
-        self.assertIn('status = "provisional"', workflow)
+        self.assertIn("scripts/build_site.py", workflow)
+        self.assertIn("path: results", workflow)
+        self.assertIn("path: source", workflow)
+        self.assertIn("source/site", workflow)
+        self.assertIn("source/catalog.json", workflow)
+        self.assertLess(workflow.index("build_site.py"), workflow.index("upload-pages-artifact"))
 
     def test_report_recovery_reuses_existing_artifacts_without_cells(self) -> None:
         workflow = self.workflow("recover-report.yml")

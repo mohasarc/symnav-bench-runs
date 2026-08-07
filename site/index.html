@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>Symnav benchmark explorer</title>
+    <link rel="stylesheet" href="./assets/explorer.css">
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="masthead-identity">
+        <p class="eyebrow">Symnav / benchmark evidence</p>
+        <h1>Study explorer</h1>
+      </div>
+      <dl class="masthead-stats" id="headline-stats"></dl>
+    </header>
+
+    <section class="controls" aria-label="Series filters">
+      <div class="control-row" id="filter-row"></div>
+      <div class="control-row control-row-secondary">
+        <div class="segmented" id="metric-switch" role="group" aria-label="Metric"></div>
+        <label class="toggle">
+          <input type="checkbox" id="zoom-toggle" checked>
+          <span>Zoom axes to data</span>
+        </label>
+        <button type="button" class="ghost-button" id="reset-filters">Reset filters</button>
+        <p class="selection-count" id="selection-count"></p>
+      </div>
+    </section>
+
+    <main id="main">
+      <section class="panel" aria-labelledby="paired-heading">
+        <div class="panel-head">
+          <h2 id="paired-heading">Paired arms</h2>
+          <p>One row per study configuration. Left marker is stock, right marker is the treatment arm; the connector shows the paired shift.</p>
+        </div>
+        <div class="chart-scroll"><div id="chart-paired"></div></div>
+      </section>
+
+      <div class="panel-grid">
+        <section class="panel" aria-labelledby="scatter-heading">
+          <div class="panel-head">
+            <h2 id="scatter-heading">Stock vs treatment</h2>
+            <p>Above the diagonal means the treatment arm scored higher. Hover a point to project it onto both axes.</p>
+          </div>
+          <div class="chart-scroll"><div id="chart-scatter"></div></div>
+        </section>
+
+        <section class="panel" aria-labelledby="uplift-heading">
+          <div class="panel-head">
+            <h2 id="uplift-heading">Uplift</h2>
+            <p>Treatment minus stock, in percentage points. Whiskers are the paired 95% interval where the study reports one.</p>
+          </div>
+          <div class="chart-scroll"><div id="chart-uplift"></div></div>
+        </section>
+      </div>
+
+      <section class="panel" aria-labelledby="table-heading">
+        <div class="panel-head">
+          <h2 id="table-heading">Series</h2>
+          <p>Every selected series, with coverage and cost. Click a row to load its task-level detail.</p>
+        </div>
+        <div class="table-scroll"><table id="series-table"></table></div>
+      </section>
+
+      <section class="panel" id="detail-panel" hidden aria-labelledby="detail-heading">
+        <div class="panel-head">
+          <h2 id="detail-heading">Task detail</h2>
+          <p id="detail-subtitle"></p>
+        </div>
+        <div id="detail-body"></div>
+      </section>
+    </main>
+
+    <p class="status" id="status" role="status"></p>
+    <script type="module" src="./assets/explorer.js"></script>
+  </body>
+</html>
