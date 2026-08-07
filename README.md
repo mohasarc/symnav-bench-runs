@@ -161,11 +161,41 @@ Suites resolved in CI under `sha-ea3fed2` (model-patch-first grading); execution
   (22.9%). All 311 scored failures carry partial>0 — grading verified
   sound, zero apply_failed.
 
-Known r4 backlog (harness): `--allow-unauthenticated` for stretch-archive
-apt installs; code-server/tailwind log-parser formats; longer vscode
-verifier timeout.
+r4 backlog status (harness):
 
-Dashboards:
+- Landed — stretch-archive apt installs pass `-o
+  APT::Get::AllowUnauthenticated=true`. This is what killed all 8
+  `mui__material-ui-7444` cells in r3.
+- Landed — polybench wraps the instance test command in `timeout
+  --kill-after=60 1800`, killing the process group so a hung Electron/xvfb
+  run still reaches the grader. r3 lost `microsoft__vscode-158371` symnav to
+  three consecutive 3600s verifier timeouts (~2h each) and all 7 timeouts in
+  the study were microsoft/vscode.
+- Open — code-server/tailwind/angular log-parser formats. Five tasks report
+  `p2p_passed = 0` against 16–262 p2p tests, so their 10 slots score 0 in
+  both arms regardless of the patch: `angular__angular-37484`,
+  `coder__code-server-3277`, `coder__code-server-6225`,
+  `tailwindlabs__tailwindcss-116`, `tailwindlabs__tailwindcss-211`.
+
+Both landed fixes change polybench task-dir bytes, so r4 needs a re-resolved
+suite; existing studies keep their pinned checksums.
+
+## Publication
+
+`scripts/build_site.py` builds the Pages tree from the `results` branch:
+`api/index.json` (one row per study — facets, arm scores, comparisons,
+coverage, validity, resolved symnav version), `api/studies/<id>.json` for
+drill-down, the explorer app from `site/`, and the per-study dashboards
+under `studies/<id>/`.
+
+`catalog.json` is the hand-maintained naming and provenance layer: symnav
+SHA to semantic version, and which studies are invalidated, pipeline-only,
+or abandoned. It is deliberately outside study manifests so renaming or
+reclassifying never disturbs a pinned protocol fingerprint.
+
+Explorer: `https://mohasarc.github.io/symnav-bench-runs/`
+
+Per-study dashboards:
 
 - `https://mohasarc.github.io/symnav-bench-runs/studies/swe-polybench-ts-smoke/`
 - `https://mohasarc.github.io/symnav-bench-runs/studies/multi-swe-bench-ts-smoke/`
