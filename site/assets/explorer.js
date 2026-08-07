@@ -1,152 +1,79 @@
-import { pairedChart, scatterChart, upliftChart, percent, points } from "./charts.js";
+import {
+  adoptionChart,
+  benchmarkGrid,
+  coverageChart,
+  frontierChart,
+  money,
+  percent,
+  points,
+  upliftChart,
+} from "./charts.js";
+import { Palette } from "./palette.js";
 import {
   FACETS,
   METRICS,
+  adoptionRate,
   applySelection,
+  costPerTask,
   defaultSelection,
   facetValues,
+  facetVisible,
   label,
   metricValue,
-  plottable,
   seriesOf,
+  studyTail,
+  upliftOf,
 } from "./series.js";
 
 const API_INDEX = "./api/index.json";
 const API_STUDY = (id) => `./api/studies/${id}.json`;
 
-class FacetMenu {
-  constructor(facet, values, selection, onChange) {
-    this.facet = facet;
-    this.values = values;
-    this.selection = selection;
-    this.onChange = onChange;
-    this.element = document.createElement("div");
-    this.element.className = "facet";
-    this.button = document.createElement("button");
-    this.button.type = "button";
-    this.button.className = "facet-button";
-    this.button.setAttribute("aria-expanded", "false");
-    this.menu = document.createElement("div");
-    this.menu.className = "facet-menu";
-    this.menu.hidden = true;
-    this.element.append(this.button, this.menu);
-    this.button.addEventListener("click", () => this.toggle());
-    this.render();
-  }
-
-  toggle() {
-    const open = this.menu.hidden;
-    for (const other of document.querySelectorAll(".facet-menu")) other.hidden = true;
-    for (const other of document.querySelectorAll(".facet-button")) {
-      other.setAttribute("aria-expanded", "false");
-    }
-    this.menu.hidden = !open;
-    this.button.setAttribute("aria-expanded", String(open));
-  }
-
-  render() {
-    const chosen = this.selection.get(this.facet.id);
-    const summary =
-      chosen.size === this.values.length
-        ? "all"
-        : chosen.size === 0
-          ? "none"
-          : chosen.size === 1
-            ? [...chosen][0]
-            : `${chosen.size} of ${this.values.length}`;
-    this.button.replaceChildren();
-    const name = document.createElement("span");
-    name.className = "facet-name";
-    name.textContent = this.facet.name;
-    const value = document.createElement("span");
-    value.className = "facet-value";
-    value.textContent = summary;
-    this.button.append(name, value);
-
-    this.menu.replaceChildren();
-    const actions = document.createElement("div");
-    actions.className = "facet-menu-actions";
-    actions.append(
-      this.action("All", () => this.values.forEach((item) => chosen.add(item.value))),
-      this.action("None", () => chosen.clear()),
-    );
-    this.menu.append(actions);
-    for (const item of this.values) {
-      const option = document.createElement("label");
-      option.className = "facet-option";
-      const box = document.createElement("input");
-      box.type = "checkbox";
-      box.checked = chosen.has(item.value);
-      box.addEventListener("change", () => {
-        if (box.checked) chosen.add(item.value);
-        else chosen.delete(item.value);
-        this.onChange();
-      });
-      const text = document.createElement("span");
-      text.textContent = String(item.value);
-      const count = document.createElement("span");
-      count.className = "facet-count";
-      count.textContent = String(item.count);
-      option.append(box, text, count);
-      this.menu.append(option);
-    }
-  }
-
-  action(text, mutate) {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "ghost-button";
-    button.textContent = text;
-    button.addEventListener("click", () => {
-      mutate();
-      this.onChange();
-    });
-    return button;
-  }
-}
-
 class Explorer {
   constructor(index) {
     this.index = index;
     this.series = seriesOf(index);
+    this.palette = new Palette(this.series);
     this.selection = defaultSelection(this.series);
+    this.muted = new Set();
     this.metric = METRICS[0].id;
     this.zoom = true;
-    this.activeKey = null;
-    this.facetMenus = [];
   }
 
   mount() {
-    this.renderHeadline();
+    this.renderStats();
     this.renderFacets();
+    this.renderLegend();
     this.renderMetricSwitch();
     document.getElementById("zoom-toggle").addEventListener("change", (event) => {
       this.zoom = event.target.checked;
-      this.renderViews();
+      this.renderCharts();
     });
-    document.getElementById("reset-filters").addEventListener("click", () => {
-      this.selection = defaultSelection(this.series);
-      this.renderFacets();
-      this.renderViews();
-    });
-    document.addEventListener("click", (event) => {
-      if (event.target.closest(".facet")) return;
-      for (const menu of document.querySelectorAll(".facet-menu")) menu.hidden = true;
-      for (const button of document.querySelectorAll(".facet-button")) {
-        button.setAttribute("aria-expanded", "false");
-      }
-    });
-    this.renderViews();
+    for (const button of document.querySelectorAll("[data-series-action]")) {
+      button.addEventListener("click", () => {
+        const visible = facetVisible(this.series, this.selection);
+        if (button.dataset.seriesAction === "none") {
+          for (const item of visible) this.muted.add(item.key);
+        } else {
+          for (const item of visible) this.muted.delete(item.key);
+        }
+        this.render();
+      });
+    }
+    this.render();
   }
 
-  renderHeadline() {
+  render() {
+    this.renderSeriesList();
+    this.renderCharts();
+  }
+
+  renderStats() {
     const studies = this.index.studies;
-    const valid = studies.filter((study) => study.validity === "valid");
     const stats = [
-      ["studies", String(studies.length)],
-      ["analysable", String(valid.length)],
-      ["benchmarks", String(new Set(studies.map((study) => study.benchmark)).size)],
-      ["symnav versions", String(this.index.symnav_versions.length)],
+      ["studies", studies.length],
+      ["benchmarks", new Set(studies.map((s) => s.benchmark)).size],
+      ["models", this.palette.models.size],
+      ["symnav versions", this.index.symnav_versions.length],
     ];
     const list = document.getElementById("headline-stats");
     list.replaceChildren();
@@ -155,28 +82,83 @@ class Explorer {
       const dt = document.createElement("dt");
       dt.textContent = term;
       const dd = document.createElement("dd");
-      dd.textContent = value;
+      dd.textContent = String(value);
       group.append(dt, dd);
       list.append(group);
     }
   }
 
   renderFacets() {
-    const row = document.getElementById("filter-row");
-    row.replaceChildren();
-    this.facetMenus = FACETS.map((facet) => {
-      const menu = new FacetMenu(
-        facet,
-        facetValues(this.series, facet),
-        this.selection,
-        () => {
-          for (const item of this.facetMenus) item.render();
-          this.renderViews();
-        },
-      );
-      row.append(menu.element);
-      return menu;
-    });
+    const host = document.getElementById("facet-list");
+    host.replaceChildren();
+    for (const facet of FACETS) {
+      const block = document.createElement("div");
+      block.className = "facet";
+      const name = document.createElement("p");
+      name.className = "facet-name";
+      name.textContent = facet.name;
+      const values = document.createElement("div");
+      values.className = "facet-values";
+      for (const item of facetValues(this.series, facet)) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "chip-toggle";
+        button.textContent = String(item.value);
+        const chosen = this.selection.get(facet.id);
+        button.setAttribute("aria-pressed", String(chosen.has(item.value)));
+        button.addEventListener("click", () => {
+          if (chosen.has(item.value)) chosen.delete(item.value);
+          else chosen.add(item.value);
+          button.setAttribute("aria-pressed", String(chosen.has(item.value)));
+          this.render();
+        });
+        values.append(button);
+      }
+      block.append(name, values);
+      host.append(block);
+    }
+  }
+
+  renderLegend() {
+    const host = document.getElementById("legend");
+    host.replaceChildren();
+    host.append(
+      this.legendGroup(
+        "model",
+        this.palette.modelEntries().map(([name, color]) => this.legendItem(name, color, "swatch")),
+      ),
+      this.legendGroup(
+        "benchmark",
+        Palette.benchmarkEntries(new Set(this.series.map((item) => item.benchmark))).map(
+          ([name, color]) => this.legendItem(name, color, "swatch bar"),
+        ),
+      ),
+      this.legendGroup("arm", [
+        this.legendItem("stock", null, "swatch hollow"),
+        this.legendItem("symnav", "var(--rule)", "swatch"),
+      ]),
+    );
+  }
+
+  legendGroup(title, items) {
+    const group = document.createElement("div");
+    group.className = "legend-group";
+    const heading = document.createElement("p");
+    heading.textContent = title;
+    group.append(heading, ...items);
+    return group;
+  }
+
+  legendItem(name, color, swatchClass) {
+    const item = document.createElement("div");
+    item.className = "legend-item";
+    const swatch = document.createElement("span");
+    swatch.className = swatchClass;
+    if (color) swatch.style.background = color;
+    const text = document.createElement("span");
+    text.textContent = name;
+    item.append(swatch, text);
+    return item;
   }
 
   renderMetricSwitch() {
@@ -190,103 +172,173 @@ class Explorer {
       button.addEventListener("click", () => {
         this.metric = metric.id;
         this.renderMetricSwitch();
-        this.renderViews();
+        this.renderCharts();
       });
       group.append(button);
     }
   }
 
+  renderSeriesList() {
+    const host = document.getElementById("series-list");
+    host.replaceChildren();
+    const visible = facetVisible(this.series, this.selection);
+    const numbered = this.numbered();
+    for (const item of visible) {
+      const row = document.createElement("label");
+      row.className = this.muted.has(item.key) ? "series-row off" : "series-row";
+      const box = document.createElement("input");
+      box.type = "checkbox";
+      box.checked = !this.muted.has(item.key);
+      box.addEventListener("change", () => {
+        if (box.checked) this.muted.delete(item.key);
+        else this.muted.add(item.key);
+        this.render();
+      });
+      const index = document.createElement("span");
+      index.className = "idx";
+      index.textContent = numbered.has(item.key) ? String(numbered.get(item.key)) : "";
+      const swatch = document.createElement("span");
+      swatch.className = "swatch";
+      swatch.style.background = this.palette.series(item.key);
+      const name = document.createElement("span");
+      name.className = "series-name";
+      name.textContent = `${item.model} · ${item.benchmark} · ${studyTail(item)}`;
+      name.title = item.studyId;
+      row.append(box, index, swatch, name);
+      host.append(row);
+    }
+  }
+
   selected() {
-    return applySelection(this.series, this.selection).sort((left, right) => {
-      const delta = metricValue(right, "symnav", this.metric) - metricValue(left, "symnav", this.metric);
-      return Number.isFinite(delta) && delta !== 0 ? delta : left.key.localeCompare(right.key);
-    });
+    return applySelection(this.series, this.selection, this.muted);
+  }
+
+  numbered() {
+    const map = new Map();
+    this.selected().forEach((item, position) => map.set(item.key, position + 1));
+    return map;
   }
 
   metricLabel() {
     return METRICS.find((metric) => metric.id === this.metric).label;
   }
 
-  renderViews() {
-    const selected = this.selected();
-    const rows = plottable(selected, this.metric);
-    const options = { zoom: this.zoom, metricLabel: this.metricLabel() };
-    document.getElementById("selection-count").textContent =
-      `${selected.length} of ${this.series.length} series`;
-    pairedChart(document.getElementById("chart-paired"), rows, options);
-    scatterChart(document.getElementById("chart-scatter"), rows, options);
-    upliftChart(document.getElementById("chart-uplift"), rows, options);
-    this.renderTable(selected, rows);
+  rows() {
+    return this.selected().map((item, position) => {
+      const stockArm = item.arms.get("stock");
+      const symnavArm = item.arms.get("symnav");
+      const scored = (stockArm?.scored_slots ?? 0) + (symnavArm?.scored_slots ?? 0);
+      const planned = (stockArm?.planned_slots ?? 0) + (symnavArm?.planned_slots ?? 0);
+      return {
+        index: position + 1,
+        key: item.key,
+        series: item,
+        color: this.palette.series(item.key),
+        benchmark: item.benchmark,
+        model: item.model,
+        shortLabel: `${item.model} · ${item.benchmark} · ${studyTail(item)}`,
+        stock: metricValue(item, "stock", this.metric),
+        treatment: metricValue(item, "symnav", this.metric),
+        uplift: upliftOf(item, this.metric),
+        adoption: adoptionRate(item),
+        scored,
+        planned,
+        coverageRatio: planned ? scored / planned : 0,
+      };
+    });
   }
 
-  renderTable(selected, rows) {
+  armRows(rows) {
+    const arms = [];
+    for (const row of rows) {
+      for (const condition of ["stock", "symnav"]) {
+        arms.push({
+          ...row,
+          condition,
+          score: metricValue(row.series, condition, this.metric),
+          cost: costPerTask(row.series, condition),
+        });
+      }
+    }
+    return arms;
+  }
+
+  renderCharts() {
+    const rows = this.rows();
+    const options = {
+      zoom: this.zoom,
+      metricLabel: this.metricLabel(),
+      modelColor: (name) => this.palette.model(name),
+      benchmarkColor: (name) => Palette.benchmark(name),
+    };
+    document.getElementById("selection-count").textContent =
+      `${rows.length} of ${this.series.length} series`;
+    frontierChart(document.getElementById("chart-frontier"), this.armRows(rows), options);
+    upliftChart(document.getElementById("chart-uplift"), rows, options);
+    benchmarkGrid(document.getElementById("chart-grid"), rows, options);
+    adoptionChart(document.getElementById("chart-adoption"), rows, options);
+    coverageChart(document.getElementById("chart-coverage"), rows);
+    this.renderTable(rows);
+  }
+
+  renderTable(rows) {
     const table = document.getElementById("series-table");
     table.replaceChildren();
     const head = document.createElement("thead");
     head.innerHTML =
       "<tr><th>#</th><th class='text'>Study</th><th class='text'>Model</th><th class='text'>Benchmark</th>" +
       "<th class='text'>Symnav</th><th>Reps</th><th>Stock</th><th>Symnav</th><th>Uplift pp</th>" +
-      "<th>W/T/L</th><th>Adoption</th><th>Coverage</th><th>Cost</th><th class='text'>Validity</th></tr>";
+      "<th>W/T/L</th><th>Adoption</th><th>$/task</th><th>Coverage</th><th class='text'>Validity</th></tr>";
     table.append(head);
     const body = document.createElement("tbody");
-    selected.forEach((series, position) => {
-      const row = rows[position];
-      const stock = series.arms.get("stock");
-      const symnav = series.arms.get("symnav");
-      const comparison = series.comparison ?? {};
-      const scored = (stock?.scored_slots ?? 0) + (symnav?.scored_slots ?? 0);
-      const planned = (stock?.planned_slots ?? 0) + (symnav?.planned_slots ?? 0);
-      const cost = (stock?.cost ?? 0) + (symnav?.cost ?? 0);
+    for (const row of rows) {
+      const item = row.series;
+      const comparison = item.comparison ?? {};
       const tr = document.createElement("tr");
-      if (series.key === this.activeKey) tr.classList.add("selected");
+      const upliftClass = Number.isFinite(row.uplift) ? (row.uplift >= 0 ? "gain" : "loss") : "";
       tr.innerHTML =
-        `<td class='numeric'>${row.index}</td>` +
-        `<td class='text'>${series.studyId}</td>` +
-        `<td class='text'>${series.model} · ${series.effort}</td>` +
-        `<td class='text'>${series.benchmark}</td>` +
-        `<td class='text'>${series.symnavVersion ? `v${series.symnavVersion}` : "—"}</td>` +
-        `<td class='numeric'>${series.repetitions ?? "—"}</td>` +
-        `<td class='numeric'>${percent(row.stock)}</td>` +
-        `<td class='numeric'>${percent(row.treatment)}</td>` +
-        `<td class='numeric'>${points(row.uplift)}</td>` +
-        `<td class='numeric'>${comparison.wins ?? "—"}/${comparison.ties ?? "—"}/${comparison.losses ?? "—"}</td>` +
-        `<td class='numeric'>${percent(symnav?.adoption_rate, 0)}</td>` +
-        `<td class='numeric'>${scored}/${planned}</td>` +
-        `<td class='numeric'>$${cost.toFixed(2)}</td>` +
-        `<td class='text'><span class='chip ${series.validity}'>${series.validity}</span></td>`;
-      tr.addEventListener("click", () => this.openDetail(series));
+        `<td class='num'>${row.index}</td>` +
+        `<td class='text'><span class='dot' style='background:${row.color}'></span>${item.studyId}</td>` +
+        `<td class='text'>${item.model} · ${item.effort}</td>` +
+        `<td class='text'>${item.benchmark}</td>` +
+        `<td class='text'>${item.symnavVersion ? `v${item.symnavVersion}` : "—"}</td>` +
+        `<td class='num'>${item.repetitions ?? "—"}</td>` +
+        `<td class='num'>${percent(row.stock)}</td>` +
+        `<td class='num'>${percent(row.treatment)}</td>` +
+        `<td class='num ${upliftClass}'>${points(row.uplift)}</td>` +
+        `<td class='num'>${comparison.wins ?? "—"}/${comparison.ties ?? "—"}/${comparison.losses ?? "—"}</td>` +
+        `<td class='num'>${percent(row.adoption, 0)}</td>` +
+        `<td class='num'>${money(costPerTask(item, "symnav"))}</td>` +
+        `<td class='num'>${row.scored}/${row.planned}</td>` +
+        `<td class='text'><span class='tag ${item.validity}'>${item.validity}</span></td>`;
+      tr.addEventListener("click", () => this.openDetail(item));
       body.append(tr);
-    });
+    }
     table.append(body);
   }
 
   async openDetail(series) {
-    this.activeKey = series.key;
     const panel = document.getElementById("detail-panel");
-    const body = document.getElementById("detail-body");
     const subtitle = document.getElementById("detail-subtitle");
     panel.hidden = false;
-    subtitle.textContent = `${label(series)} — loading task rows…`;
-    body.replaceChildren();
-    this.renderViews();
+    subtitle.textContent = `${label(series)} — loading…`;
+    document.getElementById("detail-body").replaceChildren();
     try {
       const analysis = await (await fetch(API_STUDY(series.studyId))).json();
       this.renderDetail(series, analysis);
     } catch (error) {
-      subtitle.textContent = `${label(series)} — could not load task detail (${error.message})`;
+      subtitle.textContent = `${label(series)} — could not load detail (${error.message})`;
     }
   }
 
   renderDetail(series, analysis) {
-    const subtitle = document.getElementById("detail-subtitle");
-    const body = document.getElementById("detail-body");
     const byTask = new Map();
     for (const task of analysis.tasks ?? []) {
       if (!byTask.has(task.task)) byTask.set(task.task, {});
       byTask.get(task.task)[task.condition] = task;
     }
-    subtitle.textContent =
-      `${label(series)} — ${byTask.size} tasks · ` +
+    document.getElementById("detail-subtitle").textContent =
+      `${series.studyId} — ${byTask.size} tasks · ` +
       `${analysis.coverage.scored_slots}/${analysis.coverage.planned_slots} slots scored` +
       (series.note ? ` · ${series.note}` : "");
     const grid = document.createElement("div");
@@ -300,27 +352,26 @@ class Explorer {
       name.title = task;
       item.append(name);
       for (const condition of ["stock", "symnav"]) {
-        const cell = document.createElement("span");
         const score = conditions[condition]?.metrics?.performance_score;
+        const cell = document.createElement("span");
         cell.className = `cell ${this.cellClass(score)}`;
-        cell.textContent = typeof score === "number" ? `${Math.round(score * 100)}` : "·";
+        cell.textContent = typeof score === "number" ? String(Math.round(score * 100)) : "·";
         cell.title = `${condition}: ${percent(score, 0)}`;
         item.append(cell);
       }
       grid.append(item);
     }
-    body.replaceChildren(grid);
     const link = document.createElement("p");
     link.className = "status";
     link.innerHTML = `<a href="./studies/${series.studyId}/">Open the full ${series.studyId} dashboard →</a>`;
-    body.append(link);
+    document.getElementById("detail-body").replaceChildren(grid, link);
   }
 
   cellClass(score) {
-    if (typeof score !== "number") return "hit-missing";
-    if (score >= 1) return "hit-full";
-    if (score <= 0) return "hit-none";
-    return "hit-partial";
+    if (typeof score !== "number") return "missing";
+    if (score >= 1) return "full";
+    if (score <= 0) return "none";
+    return "partial";
   }
 }
 

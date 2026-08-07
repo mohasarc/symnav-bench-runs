@@ -8,11 +8,9 @@ export const FACETS = [
   { id: "benchmark", name: "Benchmark", of: (series) => [series.benchmark] },
   { id: "model", name: "Model", of: (series) => [series.model] },
   { id: "effort", name: "Effort", of: (series) => [series.effort] },
-  { id: "agent", name: "Agent", of: (series) => [series.agent] },
-  { id: "symnavVersion", name: "Symnav version", of: (series) => [series.symnavVersion ?? "unregistered"] },
+  { id: "symnavVersion", name: "Symnav version", of: (series) => [series.symnavVersion ?? "unversioned"] },
   { id: "repetitions", name: "Repetitions", of: (series) => [String(series.repetitions ?? "?")] },
   { id: "validity", name: "Validity", of: (series) => [series.validity] },
-  { id: "study", name: "Study", of: (series) => [series.studyId] },
 ];
 
 const DEFAULT_EXCLUDED_VALIDITY = new Set([
@@ -58,7 +56,12 @@ export function seriesOf(index) {
 
 export function label(series) {
   const version = series.symnavVersion ? `v${series.symnavVersion}` : "unversioned";
-  return `${series.model} · ${series.effort} · ${series.benchmark} · ${version} · ${series.studyId}`;
+  return `${series.model} · ${series.effort} · ${series.benchmark} · ${version}`;
+}
+
+export function studyTail(series) {
+  const parts = series.studyId.split("-");
+  return parts[parts.length - 1];
 }
 
 export function metricValue(series, condition, metric) {
@@ -67,35 +70,30 @@ export function metricValue(series, condition, metric) {
   return typeof value === "number" ? value : Number.NaN;
 }
 
-export function plottable(series, metric) {
-  return series.map((item, position) => {
-    const stock = metricValue(item, "stock", metric);
-    const treatment = metricValue(item, "symnav", metric);
-    const reported = item.comparison?.uplift;
-    const uplift = typeof reported === "number"
-      ? reported
-      : Number.isFinite(stock) && Number.isFinite(treatment)
-        ? treatment - stock
-        : Number.NaN;
-    return {
-      index: position + 1,
-      key: item.key,
-      label: label(item),
-      stock,
-      treatment,
-      uplift,
-      lower: item.comparison?.lower_95 ?? null,
-      upper: item.comparison?.upper_95 ?? null,
-    };
-  });
+export function costPerTask(series, condition) {
+  const arm = series.arms.get(condition);
+  if (!arm || typeof arm.cost !== "number" || !arm.scored_slots) return Number.NaN;
+  return arm.cost / arm.scored_slots;
+}
+
+export function adoptionRate(series) {
+  const arm = series.arms.get("symnav");
+  return arm && typeof arm.adoption_rate === "number" ? arm.adoption_rate : Number.NaN;
+}
+
+export function upliftOf(series, metric) {
+  const stock = metricValue(series, "stock", metric);
+  const treatment = metricValue(series, "symnav", metric);
+  const reported = series.comparison?.uplift;
+  if (metric === "performance_score" && typeof reported === "number") return reported;
+  if (Number.isFinite(stock) && Number.isFinite(treatment)) return treatment - stock;
+  return Number.NaN;
 }
 
 export function facetValues(series, facet) {
   const counts = new Map();
   for (const item of series) {
-    for (const value of facet.of(item)) {
-      counts.set(value, (counts.get(value) ?? 0) + 1);
-    }
+    for (const value of facet.of(item)) counts.set(value, (counts.get(value) ?? 0) + 1);
   }
   return [...counts.entries()]
     .sort((left, right) => String(left[0]).localeCompare(String(right[0])))
@@ -116,7 +114,19 @@ export function defaultSelection(series) {
   return selection;
 }
 
-export function applySelection(series, selection) {
+export function applySelection(series, selection, muted) {
+  return series.filter(
+    (item) =>
+      !muted.has(item.key) &&
+      FACETS.every((facet) => {
+        const chosen = selection.get(facet.id);
+        if (!chosen) return true;
+        return facet.of(item).some((value) => chosen.has(value));
+      }),
+  );
+}
+
+export function facetVisible(series, selection) {
   return series.filter((item) =>
     FACETS.every((facet) => {
       const chosen = selection.get(facet.id);

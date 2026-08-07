@@ -1,17 +1,21 @@
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 export function percent(value, digits = 2) {
-  if (value === null || value === undefined || Number.isNaN(value)) return "—";
+  if (!Number.isFinite(value)) return "—";
   return `${(value * 100).toFixed(digits)}%`;
 }
 
 export function points(value, digits = 2) {
-  if (value === null || value === undefined || Number.isNaN(value)) return "—";
-  const sign = value > 0 ? "+" : "";
-  return `${sign}${(value * 100).toFixed(digits)}`;
+  if (!Number.isFinite(value)) return "—";
+  return `${value > 0 ? "+" : ""}${(value * 100).toFixed(digits)}`;
 }
 
-function node(tag, attributes = {}, text = null) {
+export function money(value) {
+  if (!Number.isFinite(value)) return "—";
+  return value >= 1 ? `$${value.toFixed(2)}` : `$${value.toFixed(3)}`;
+}
+
+export function node(tag, attributes = {}, text = null) {
   const element = document.createElementNS(SVG_NS, tag);
   for (const [name, value] of Object.entries(attributes)) {
     if (value === null || value === undefined) continue;
@@ -33,28 +37,22 @@ class Scale {
     const span = this.max - this.min || 1;
     return this.from + ((value - this.min) / span) * (this.to - this.from);
   }
-
-  invert(position) {
-    const span = this.to - this.from || 1;
-    return this.min + ((position - this.from) / span) * (this.max - this.min);
-  }
 }
 
 function niceTicks(min, max, count) {
   const raw = (max - min) / Math.max(count, 1);
-  const magnitude = Math.pow(10, Math.floor(Math.log10(raw || 1)));
-  const candidates = [1, 2, 2.5, 5, 10].map((factor) => factor * magnitude);
-  const step = candidates.find((candidate) => candidate >= raw) ?? magnitude * 10;
-  const first = Math.ceil(min / step) * step;
+  if (!Number.isFinite(raw) || raw <= 0) return [min];
+  const magnitude = Math.pow(10, Math.floor(Math.log10(raw)));
+  const step = [1, 2, 2.5, 5, 10].map((f) => f * magnitude).find((c) => c >= raw) ?? magnitude * 10;
   const ticks = [];
-  for (let tick = first; tick <= max + step / 1000; tick += step) {
+  for (let tick = Math.ceil(min / step) * step; tick <= max + step / 1000; tick += step) {
     ticks.push(Number(tick.toFixed(10)));
   }
   return ticks;
 }
 
-export function domainOf(values, { zoom, pad = 0.12, fallback = [0, 1] }) {
-  const usable = values.filter((value) => Number.isFinite(value));
+export function domainOf(values, { zoom, pad = 0.1, fallback = [0, 1] }) {
+  const usable = values.filter(Number.isFinite);
   if (usable.length === 0) return fallback;
   if (!zoom) return fallback;
   const min = Math.min(...usable);
@@ -64,9 +62,10 @@ export function domainOf(values, { zoom, pad = 0.12, fallback = [0, 1] }) {
 }
 
 class Crosshair {
-  constructor(layer, plot) {
+  constructor(layer, plot, format) {
     this.layer = layer;
     this.plot = plot;
+    this.format = format;
   }
 
   clear() {
@@ -74,54 +73,32 @@ class Crosshair {
   }
 
   project(x, y, xText, yText) {
-    const { left, right, top, bottom } = this.plot;
-    this.layer.appendChild(
-      node("line", { class: "crosshair", x1: left, y1: y, x2: x, y2: y }),
-    );
-    this.layer.appendChild(
-      node("line", { class: "crosshair", x1: x, y1: y, x2: x, y2: bottom }),
-    );
-    this.chip(x, bottom + 13, xText, "middle");
-    this.chip(left - 6, y, yText, "end");
-    this.layer.appendChild(
-      node("circle", { cx: x, cy: y, r: 3.5, class: "crosshair-chip" }),
-    );
-    void right;
-    void top;
+    const { left, bottom } = this.plot;
+    this.layer.appendChild(node("line", { class: "crosshair", x1: left, y1: y, x2: x, y2: y }));
+    this.layer.appendChild(node("line", { class: "crosshair", x1: x, y1: y, x2: x, y2: bottom }));
+    this.chip(x, bottom + 15, xText, "middle");
+    this.chip(left - 7, y, yText, "end");
   }
 
   chip(x, y, text, anchor) {
-    const width = text.length * 6.1 + 8;
+    const width = text.length * 6.2 + 10;
     const originX = anchor === "end" ? x - width : x - width / 2;
     this.layer.appendChild(
-      node("rect", {
-        x: originX,
-        y: y - 8,
-        width,
-        height: 15,
-        rx: 1,
-        class: "crosshair-chip",
-      }),
+      node("rect", { x: originX, y: y - 8, width, height: 16, rx: 2, class: "crosshair-chip" }),
     );
     this.layer.appendChild(
-      node("text", {
-        x: originX + width / 2,
-        y: y + 3,
-        "text-anchor": "middle",
-        class: "crosshair-chip-text",
-      }, text),
+      node(
+        "text",
+        { x: originX + width / 2, y: y + 4, "text-anchor": "middle", class: "crosshair-chip-text" },
+        text,
+      ),
     );
   }
 }
 
 function frame(container, width, height) {
   container.replaceChildren();
-  const svg = node("svg", {
-    width,
-    height,
-    viewBox: `0 0 ${width} ${height}`,
-    role: "img",
-  });
+  const svg = node("svg", { width, height, viewBox: `0 0 ${width} ${height}`, role: "img" });
   container.appendChild(svg);
   return svg;
 }
@@ -129,92 +106,189 @@ function frame(container, width, height) {
 function emptyState(container, message) {
   container.replaceChildren();
   const paragraph = document.createElement("p");
-  paragraph.className = "status";
+  paragraph.className = "empty";
   paragraph.textContent = message;
   container.appendChild(paragraph);
 }
 
-export function pairedChart(container, series, options) {
-  if (series.length === 0) return emptyState(container, "No series selected.");
-  const rowHeight = 26;
-  const labelX = 26;
-  const gutter = labelX + Math.max(...series.map((item) => item.label.length)) * 6.35 + 18;
-  const plot = {
-    left: gutter,
-    right: 210,
-    top: 26,
-    rowHeight,
-  };
-  const width = Math.max(860, plot.left + 460 + plot.right);
-  const height = plot.top + series.length * rowHeight + 44;
-  plot.bottom = plot.top + series.length * rowHeight;
+class LabelPlacer {
+  constructor(minimumGap = 15) {
+    this.placed = [];
+    this.minimumGap = minimumGap;
+  }
+
+  /** Skip an index label that would sit on top of one already drawn. */
+  accepts(x, y) {
+    const clear = this.placed.every(
+      ([other, otherY]) => Math.hypot(other - x, otherY - y) >= this.minimumGap,
+    );
+    if (clear) this.placed.push([x, y]);
+    return clear;
+  }
+}
+
+
+function marker(svg, x, y, color, condition, radius = 6) {
+  if (condition === "stock") {
+    return svg.appendChild(
+      node("circle", { cx: x, cy: y, r: radius, fill: "var(--surface)", stroke: color, "stroke-width": 2.2 }),
+    );
+  }
+  return svg.appendChild(node("circle", { cx: x, cy: y, r: radius, fill: color }));
+}
+
+/** Cost against performance, cheapest on the right. */
+export function frontierChart(container, rows, options) {
+  const usable = rows.filter((row) => Number.isFinite(row.cost) && Number.isFinite(row.score));
+  if (!usable.length) return emptyState(container, "No series reports both cost and score.");
+
+  const plot = { left: 66, right: 30, top: 22 };
+  const size = { width: 620, height: 380 };
+  const width = plot.left + size.width + plot.right;
+  const height = plot.top + size.height + 60;
+  plot.bottom = plot.top + size.height;
   const svg = frame(container, width, height);
 
-  const values = series.flatMap((item) => [item.stock, item.treatment]);
-  const [min, max] = domainOf(values, { zoom: options.zoom });
+  const [costMin, costMax] = domainOf(usable.map((r) => r.cost), { zoom: options.zoom, fallback: [0, 1] });
+  const [scoreMin, scoreMax] = domainOf(usable.map((r) => r.score), { zoom: options.zoom });
+  const x = new Scale(costMin, costMax, plot.left + size.width, plot.left);
+  const y = new Scale(scoreMin, scoreMax, plot.bottom, plot.top);
+
+  for (const tick of niceTicks(costMin, costMax, 5)) {
+    svg.appendChild(node("line", { class: "grid-line", x1: x.at(tick), y1: plot.top, x2: x.at(tick), y2: plot.bottom }));
+    svg.appendChild(
+      node("text", { x: x.at(tick), y: plot.bottom + 16, "text-anchor": "middle", class: "axis-label" }, money(tick)),
+    );
+  }
+  for (const tick of niceTicks(scoreMin, scoreMax, 5)) {
+    svg.appendChild(node("line", { class: "grid-line", x1: plot.left, y1: y.at(tick), x2: plot.left + size.width, y2: y.at(tick) }));
+    svg.appendChild(
+      node("text", { x: plot.left - 10, y: y.at(tick) + 4, "text-anchor": "end", class: "axis-label" }, percent(tick, 0)),
+    );
+  }
+
+  svg.appendChild(node("line", { class: "axis-line", x1: plot.left, y1: plot.bottom, x2: plot.left + size.width, y2: plot.bottom }));
+  svg.appendChild(node("line", { class: "axis-line", x1: plot.left, y1: plot.top, x2: plot.left, y2: plot.bottom }));
+  svg.appendChild(node("text", { x: plot.left, y: plot.bottom + 40, class: "axis-title" }, "← more expensive"));
+  svg.appendChild(
+    node("text", { x: plot.left + size.width, y: plot.bottom + 40, "text-anchor": "end", class: "axis-title" }, "cheaper per task →"),
+  );
+  svg.appendChild(
+    node("text", {
+      x: 14,
+      y: plot.top + size.height / 2,
+      class: "axis-title",
+      transform: `rotate(-90 14 ${plot.top + size.height / 2})`,
+      "text-anchor": "middle",
+    }, `${options.metricLabel} →`),
+  );
+
+  const frontier = paretoFrontier(usable);
+  if (frontier.length > 1) {
+    const steps = [];
+    frontier.forEach((row, position) => {
+      const previous = frontier[position - 1];
+      if (previous) steps.push(`${x.at(row.cost)},${y.at(previous.score)}`);
+      steps.push(`${x.at(row.cost)},${y.at(row.score)}`);
+    });
+    svg.appendChild(node("polyline", { class: "frontier", points: steps.join(" ") }));
+  }
+
+  const crosshairLayer = node("g", { class: "crosshair-layer" });
+  const crosshair = new Crosshair(crosshairLayer, { left: plot.left, bottom: plot.bottom });
+
+  const labels = new LabelPlacer();
+  for (const row of usable) {
+    const cx = x.at(row.cost);
+    const cy = y.at(row.score);
+    marker(svg, cx, cy, row.color, row.condition);
+    if (labels.accepts(cx, cy - 11)) {
+      svg.appendChild(node("text", { x: cx, y: cy - 11, "text-anchor": "middle", class: "series-index" }, String(row.index)));
+    }
+    const hit = node("circle", { class: "hit", cx, cy, r: 14 });
+    hit.addEventListener("pointerenter", () => {
+      crosshair.clear();
+      crosshair.project(cx, cy, money(row.cost), percent(row.score));
+    });
+    hit.addEventListener("pointerleave", () => crosshair.clear());
+    svg.appendChild(hit);
+  }
+  svg.appendChild(crosshairLayer);
+}
+
+function paretoFrontier(rows) {
+  const sorted = [...rows].sort((a, b) => a.cost - b.cost);
+  const frontier = [];
+  let best = -Infinity;
+  for (const row of sorted) {
+    if (row.score > best) {
+      frontier.push(row);
+      best = row.score;
+    }
+  }
+  return frontier.sort((a, b) => b.cost - a.cost);
+}
+
+/** Stock to symnav shift, one row per series. */
+export function upliftChart(container, rows, options) {
+  const usable = rows.filter((row) => Number.isFinite(row.stock) && Number.isFinite(row.treatment));
+  if (!usable.length) return emptyState(container, "No series has both arms scored.");
+  const ordered = [...usable].sort((a, b) => b.uplift - a.uplift);
+
+  const rowHeight = 30;
+  const plot = { left: 250, right: 130, top: 20 };
+  const width = 760;
+  const height = plot.top + ordered.length * rowHeight + 46;
+  plot.bottom = plot.top + ordered.length * rowHeight;
+  const svg = frame(container, width, height);
+
+  const [min, max] = domainOf(ordered.flatMap((r) => [r.stock, r.treatment]), { zoom: options.zoom });
   const scale = new Scale(min, max, plot.left, width - plot.right);
 
   for (const tick of niceTicks(min, max, 6)) {
-    const x = scale.at(tick);
-    svg.appendChild(node("line", { class: "grid-line", x1: x, y1: plot.top, x2: x, y2: plot.bottom }));
+    svg.appendChild(node("line", { class: "grid-line", x1: scale.at(tick), y1: plot.top, x2: scale.at(tick), y2: plot.bottom }));
     svg.appendChild(
-      node("text", { x, y: plot.bottom + 15, "text-anchor": "middle", class: "axis-label" }, percent(tick, 0)),
+      node("text", { x: scale.at(tick), y: plot.bottom + 16, "text-anchor": "middle", class: "axis-label" }, percent(tick, 0)),
     );
   }
   svg.appendChild(node("line", { class: "axis-line", x1: plot.left, y1: plot.bottom, x2: width - plot.right, y2: plot.bottom }));
-  svg.appendChild(
-    node("text", { x: plot.left, y: plot.bottom + 32, class: "axis-title" }, `${options.metricLabel} →`),
-  );
+  svg.appendChild(node("text", { x: plot.left, y: plot.bottom + 38, class: "axis-title" }, `${options.metricLabel} →`));
 
   const crosshairLayer = node("g", { class: "crosshair-layer" });
-  const crosshair = new Crosshair(crosshairLayer, { ...plot, right: width - plot.right });
+  const crosshair = new Crosshair(crosshairLayer, { left: plot.left, bottom: plot.bottom });
 
-  series.forEach((item, index) => {
-    const y = plot.top + index * rowHeight + rowHeight / 2;
-    const band = node("rect", {
-      class: "row-band",
-      x: 0,
-      y: y - rowHeight / 2,
-      width,
-      height: rowHeight,
-    });
+  ordered.forEach((row, position) => {
+    const y = plot.top + position * rowHeight + rowHeight / 2;
+    const band = node("rect", { class: "row-band", x: 0, y: y - rowHeight / 2, width, height: rowHeight });
     svg.appendChild(band);
-    svg.appendChild(node("text", { x: 4, y: y + 4, class: "series-index" }, String(index + 1)));
-    svg.appendChild(node("text", { x: labelX, y: y + 4, class: "series-label" }, item.label));
-
-    const hasPair = Number.isFinite(item.stock) && Number.isFinite(item.treatment);
-    if (hasPair) {
-      svg.appendChild(
-        node("line", {
-          class: "connector",
-          x1: scale.at(item.stock),
-          y1: y,
-          x2: scale.at(item.treatment),
-          y2: y,
-        }),
-      );
-    }
-    if (Number.isFinite(item.stock)) {
-      svg.appendChild(node("circle", { cx: scale.at(item.stock), cy: y, r: 5, class: "mark-stock" }));
-    }
-    if (Number.isFinite(item.treatment)) {
-      svg.appendChild(node("circle", { cx: scale.at(item.treatment), cy: y, r: 5, class: "mark-treatment" }));
-    }
-    const delta = hasPair ? item.treatment - item.stock : null;
+    svg.appendChild(node("text", { x: 8, y: y + 4, class: "series-index" }, String(row.index)));
+    svg.appendChild(node("text", { x: 26, y: y + 4, class: "series-label" }, row.shortLabel));
+    svg.appendChild(
+      node("line", {
+        x1: scale.at(row.stock),
+        y1: y,
+        x2: scale.at(row.treatment),
+        y2: y,
+        stroke: row.color,
+        "stroke-width": 2,
+        opacity: 0.55,
+      }),
+    );
+    marker(svg, scale.at(row.stock), y, row.color, "stock", 5.5);
+    marker(svg, scale.at(row.treatment), y, row.color, "symnav", 5.5);
     svg.appendChild(
       node(
         "text",
-        { x: width - plot.right + 12, y: y + 4, class: "value-label" },
-        hasPair ? `${percent(item.stock)} → ${percent(item.treatment)}  ${points(delta)}pp` : "no paired score",
+        { x: width - plot.right + 12, y: y + 4, class: row.uplift >= 0 ? "value-label gain" : "value-label loss" },
+        `${points(row.uplift)} pp`,
       ),
     );
-
     const hit = node("rect", { class: "hit", x: 0, y: y - rowHeight / 2, width, height: rowHeight });
     hit.addEventListener("pointerenter", () => {
       band.classList.add("active");
       crosshair.clear();
-      if (Number.isFinite(item.stock)) crosshair.project(scale.at(item.stock), y, percent(item.stock), `#${index + 1} stock`);
-      if (Number.isFinite(item.treatment)) crosshair.project(scale.at(item.treatment), y, percent(item.treatment), `#${index + 1} symnav`);
+      crosshair.project(scale.at(row.stock), y, percent(row.stock), `#${row.index} stock`);
+      crosshair.project(scale.at(row.treatment), y, percent(row.treatment), `#${row.index} symnav`);
     });
     hit.addEventListener("pointerleave", () => {
       band.classList.remove("active");
@@ -222,122 +296,161 @@ export function pairedChart(container, series, options) {
     });
     svg.appendChild(hit);
   });
-
   svg.appendChild(crosshairLayer);
 }
 
-export function scatterChart(container, series, options) {
-  const usable = series.filter((item) => Number.isFinite(item.stock) && Number.isFinite(item.treatment));
-  if (usable.length === 0) return emptyState(container, "No paired scores in the selection.");
-  const plot = { left: 62, right: 26, top: 20, bottom: 0 };
-  const size = 340;
-  const width = plot.left + size + plot.right;
-  const height = plot.top + size + 52;
-  plot.bottom = plot.top + size;
+/** Benchmark by model grid, one cell per arm. */
+export function benchmarkGrid(container, rows, options) {
+  if (!rows.length) return emptyState(container, "No series selected.");
+  const benchmarks = [...new Set(rows.map((r) => r.benchmark))].sort();
+  const models = [...new Set(rows.map((r) => r.model))].sort();
+  const cell = { width: 112, height: 56 };
+  const plot = { left: 150, top: 46 };
+  const width = plot.left + benchmarks.length * cell.width + 16;
+  const height = plot.top + models.length * cell.height + 20;
   const svg = frame(container, width, height);
 
-  const values = usable.flatMap((item) => [item.stock, item.treatment]);
-  const [min, max] = domainOf(values, { zoom: options.zoom });
-  const x = new Scale(min, max, plot.left, plot.left + size);
-  const y = new Scale(min, max, plot.bottom, plot.top);
+  benchmarks.forEach((benchmark, column) => {
+    const x = plot.left + column * cell.width + cell.width / 2;
+    svg.appendChild(node("rect", { x: x - 40, y: 12, width: 80, height: 3, fill: options.benchmarkColor(benchmark) }));
+    svg.appendChild(node("text", { x, y: 34, "text-anchor": "middle", class: "axis-title" }, benchmark));
+  });
 
-  for (const tick of niceTicks(min, max, 5)) {
+  models.forEach((model, row) => {
+    const y = plot.top + row * cell.height;
+    svg.appendChild(node("rect", { x: 8, y: y + cell.height / 2 - 6, width: 3, height: 12, fill: options.modelColor(model) }));
+    svg.appendChild(node("text", { x: 18, y: y + cell.height / 2 + 4, class: "series-label" }, model));
+    benchmarks.forEach((benchmark, column) => {
+      const x = plot.left + column * cell.width;
+      const match = rows.filter((r) => r.model === model && r.benchmark === benchmark);
+      svg.appendChild(node("rect", { x: x + 4, y: y + 4, width: cell.width - 8, height: cell.height - 8, class: "grid-cell" }));
+      if (!match.length) {
+        svg.appendChild(
+          node("text", { x: x + cell.width / 2, y: y + cell.height / 2 + 4, "text-anchor": "middle", class: "axis-label" }, "—"),
+        );
+        return;
+      }
+      const stock = mean(match.map((r) => r.stock));
+      const treatment = mean(match.map((r) => r.treatment));
+      svg.appendChild(
+        node("text", { x: x + 14, y: y + cell.height / 2 - 1, class: "cell-value" }, percent(stock, 1)),
+      );
+      svg.appendChild(
+        node("text", { x: x + 14, y: y + cell.height / 2 + 15, class: "cell-value strong", fill: options.benchmarkColor(benchmark) }, percent(treatment, 1)),
+      );
+      const delta = treatment - stock;
+      svg.appendChild(
+        node(
+          "text",
+          { x: x + cell.width - 14, y: y + cell.height / 2 + 7, "text-anchor": "end", class: delta >= 0 ? "value-label gain" : "value-label loss" },
+          `${points(delta)}`,
+        ),
+      );
+    });
+  });
+}
+
+function clip(text, limit) {
+  return text.length <= limit ? text : `${text.slice(0, limit - 1)}…`;
+}
+
+
+function mean(values) {
+  const usable = values.filter(Number.isFinite);
+  if (!usable.length) return Number.NaN;
+  return usable.reduce((total, value) => total + value, 0) / usable.length;
+}
+
+/** Adoption against the uplift it produced. */
+export function adoptionChart(container, rows, options) {
+  const usable = rows.filter((row) => Number.isFinite(row.adoption) && Number.isFinite(row.uplift));
+  if (!usable.length) return emptyState(container, "No series reports adoption.");
+  const plot = { left: 62, right: 26, top: 20 };
+  const size = { width: 330, height: 260 };
+  const width = plot.left + size.width + plot.right;
+  const height = plot.top + size.height + 54;
+  plot.bottom = plot.top + size.height;
+  const svg = frame(container, width, height);
+
+  const [adoptionMin, adoptionMax] = domainOf(usable.map((r) => r.adoption), { zoom: options.zoom, fallback: [0, 1] });
+  const [upliftMin, upliftMax] = domainOf(usable.flatMap((r) => [r.uplift, 0]), { zoom: options.zoom, fallback: [-0.3, 0.3] });
+  const x = new Scale(adoptionMin, adoptionMax, plot.left, plot.left + size.width);
+  const y = new Scale(upliftMin, upliftMax, plot.bottom, plot.top);
+
+  for (const tick of niceTicks(adoptionMin, adoptionMax, 4)) {
     svg.appendChild(node("line", { class: "grid-line", x1: x.at(tick), y1: plot.top, x2: x.at(tick), y2: plot.bottom }));
-    svg.appendChild(node("line", { class: "grid-line", x1: plot.left, y1: y.at(tick), x2: plot.left + size, y2: y.at(tick) }));
-    svg.appendChild(node("text", { x: x.at(tick), y: plot.bottom + 15, "text-anchor": "middle", class: "axis-label" }, percent(tick, 0)));
-    svg.appendChild(node("text", { x: plot.left - 8, y: y.at(tick) + 3, "text-anchor": "end", class: "axis-label" }, percent(tick, 0)));
+    svg.appendChild(node("text", { x: x.at(tick), y: plot.bottom + 16, "text-anchor": "middle", class: "axis-label" }, percent(tick, 0)));
   }
-
-  svg.appendChild(node("line", { class: "identity-line", x1: x.at(min), y1: y.at(min), x2: x.at(max), y2: y.at(max) }));
-  svg.appendChild(node("line", { class: "axis-line", x1: plot.left, y1: plot.bottom, x2: plot.left + size, y2: plot.bottom }));
+  for (const tick of niceTicks(upliftMin, upliftMax, 4)) {
+    svg.appendChild(node("line", { class: "grid-line", x1: plot.left, y1: y.at(tick), x2: plot.left + size.width, y2: y.at(tick) }));
+    svg.appendChild(node("text", { x: plot.left - 10, y: y.at(tick) + 4, "text-anchor": "end", class: "axis-label" }, (tick * 100).toFixed(0)));
+  }
+  if (upliftMin < 0 && upliftMax > 0) {
+    svg.appendChild(node("line", { class: "zero-line", x1: plot.left, y1: y.at(0), x2: plot.left + size.width, y2: y.at(0) }));
+  }
+  svg.appendChild(node("line", { class: "axis-line", x1: plot.left, y1: plot.bottom, x2: plot.left + size.width, y2: plot.bottom }));
   svg.appendChild(node("line", { class: "axis-line", x1: plot.left, y1: plot.top, x2: plot.left, y2: plot.bottom }));
-  svg.appendChild(node("text", { x: plot.left, y: plot.bottom + 34, class: "axis-title" }, `stock ${options.metricLabel} →`));
+  svg.appendChild(node("text", { x: plot.left, y: plot.bottom + 38, class: "axis-title" }, "symnav adoption →"));
   svg.appendChild(
     node("text", {
-      x: 12,
-      y: plot.top + size / 2,
+      x: 14,
+      y: plot.top + size.height / 2,
       class: "axis-title",
-      transform: `rotate(-90 12 ${plot.top + size / 2})`,
+      transform: `rotate(-90 14 ${plot.top + size.height / 2})`,
       "text-anchor": "middle",
-    }, `symnav ${options.metricLabel} →`),
+    }, "uplift pp →"),
   );
 
   const crosshairLayer = node("g", { class: "crosshair-layer" });
-  const crosshair = new Crosshair(crosshairLayer, { left: plot.left, right: plot.left + size, top: plot.top, bottom: plot.bottom });
-
-  usable.forEach((item) => {
-    const cx = x.at(item.stock);
-    const cy = y.at(item.treatment);
-    const mark = node("circle", { cx, cy, r: 6, class: item.treatment >= item.stock ? "mark-treatment" : "mark-stock" });
-    svg.appendChild(mark);
-    svg.appendChild(node("text", { x: cx, y: cy - 9, "text-anchor": "middle", class: "series-index" }, String(item.index)));
+  const crosshair = new Crosshair(crosshairLayer, { left: plot.left, bottom: plot.bottom });
+  const labels = new LabelPlacer(13);
+  for (const row of usable) {
+    const cx = x.at(row.adoption);
+    const cy = y.at(row.uplift);
+    marker(svg, cx, cy, row.color, "symnav", 5.5);
+    if (labels.accepts(cx, cy - 10)) {
+      svg.appendChild(node("text", { x: cx, y: cy - 10, "text-anchor": "middle", class: "series-index" }, String(row.index)));
+    }
     const hit = node("circle", { class: "hit", cx, cy, r: 13 });
     hit.addEventListener("pointerenter", () => {
       crosshair.clear();
-      crosshair.project(cx, cy, percent(item.stock), percent(item.treatment));
+      crosshair.project(cx, cy, percent(row.adoption, 0), `${points(row.uplift)} pp`);
     });
     hit.addEventListener("pointerleave", () => crosshair.clear());
     svg.appendChild(hit);
-  });
-
+  }
   svg.appendChild(crosshairLayer);
 }
 
-export function upliftChart(container, series, options) {
-  const usable = series.filter((item) => Number.isFinite(item.uplift));
-  if (usable.length === 0) return emptyState(container, "No uplift reported for the selection.");
-  const rowHeight = 24;
-  const plot = { left: 44, right: 96, top: 18 };
+/** How much of each series actually scored. */
+export function coverageChart(container, rows) {
+  if (!rows.length) return emptyState(container, "No series selected.");
+  const ordered = [...rows].sort((a, b) => b.coverageRatio - a.coverageRatio);
+  const rowHeight = 22;
+  const plot = { left: 196, right: 96, top: 14 };
   const width = 560;
-  const height = plot.top + usable.length * rowHeight + 40;
-  plot.bottom = plot.top + usable.length * rowHeight;
+  const height = plot.top + ordered.length * rowHeight + 34;
+  plot.bottom = plot.top + ordered.length * rowHeight;
   const svg = frame(container, width, height);
+  const track = width - plot.right - plot.left;
 
-  const bounds = usable.flatMap((item) => [item.uplift, item.lower ?? item.uplift, item.upper ?? item.uplift, 0]);
-  const [min, max] = domainOf(bounds, { zoom: options.zoom, pad: 0.16, fallback: [-0.3, 0.3] });
-  const scale = new Scale(min, max, plot.left, width - plot.right);
-
-  for (const tick of niceTicks(min, max, 5)) {
-    svg.appendChild(node("line", { class: "grid-line", x1: scale.at(tick), y1: plot.top, x2: scale.at(tick), y2: plot.bottom }));
-    svg.appendChild(node("text", { x: scale.at(tick), y: plot.bottom + 15, "text-anchor": "middle", class: "axis-label" }, (tick * 100).toFixed(0)));
+  for (const tick of [0, 0.25, 0.5, 0.75, 1]) {
+    const x = plot.left + tick * track;
+    svg.appendChild(node("line", { class: "grid-line", x1: x, y1: plot.top, x2: x, y2: plot.bottom }));
+    svg.appendChild(node("text", { x, y: plot.bottom + 16, "text-anchor": "middle", class: "axis-label" }, percent(tick, 0)));
   }
-  const zeroX = scale.at(0);
-  svg.appendChild(node("line", { class: "zero-line", x1: zeroX, y1: plot.top, x2: zeroX, y2: plot.bottom }));
-  svg.appendChild(node("text", { x: plot.left, y: plot.bottom + 32, class: "axis-title" }, "percentage points →"));
+  svg.appendChild(node("line", { class: "axis-line", x1: plot.left, y1: plot.bottom, x2: plot.left + track, y2: plot.bottom }));
 
-  const crosshairLayer = node("g", { class: "crosshair-layer" });
-  const crosshair = new Crosshair(crosshairLayer, { left: plot.left, right: width - plot.right, top: plot.top, bottom: plot.bottom });
-
-  usable.forEach((item, row) => {
-    const y = plot.top + row * rowHeight + rowHeight / 2;
-    const barX = Math.min(zeroX, scale.at(item.uplift));
-    const barWidth = Math.abs(scale.at(item.uplift) - zeroX);
-    svg.appendChild(node("text", { x: 6, y: y + 4, class: "series-index" }, String(item.index)));
+  ordered.forEach((row, position) => {
+    const y = plot.top + position * rowHeight + rowHeight / 2;
+    svg.appendChild(node("text", { x: 8, y: y + 4, class: "series-index" }, String(row.index)));
+    svg.appendChild(node("text", { x: 26, y: y + 4, class: "series-label" }, clip(row.shortLabel, 28)));
+    svg.appendChild(node("rect", { x: plot.left, y: y - 6, width: track, height: 12, class: "track" }));
     svg.appendChild(
-      node("rect", {
-        x: barX,
-        y: y - 7,
-        width: Math.max(barWidth, 1),
-        height: 14,
-        class: item.uplift >= 0 ? "bar-positive" : "bar-negative",
-      }),
+      node("rect", { x: plot.left, y: y - 6, width: Math.max(track * row.coverageRatio, 1), height: 12, fill: row.color, opacity: 0.85 }),
     );
-    if (Number.isFinite(item.lower) && Number.isFinite(item.upper)) {
-      svg.appendChild(node("line", { class: "whisker", x1: scale.at(item.lower), y1: y, x2: scale.at(item.upper), y2: y }));
-      svg.appendChild(node("line", { class: "whisker", x1: scale.at(item.lower), y1: y - 5, x2: scale.at(item.lower), y2: y + 5 }));
-      svg.appendChild(node("line", { class: "whisker", x1: scale.at(item.upper), y1: y - 5, x2: scale.at(item.upper), y2: y + 5 }));
-    }
     svg.appendChild(
-      node("text", { x: width - plot.right + 8, y: y + 4, class: "value-label" }, `${points(item.uplift)}pp`),
+      node("text", { x: plot.left + track + 10, y: y + 4, class: "value-label" }, `${row.scored}/${row.planned}`),
     );
-    const hit = node("rect", { class: "hit", x: 0, y: y - rowHeight / 2, width, height: rowHeight });
-    hit.addEventListener("pointerenter", () => {
-      crosshair.clear();
-      crosshair.project(scale.at(item.uplift), y, `${points(item.uplift)}pp`, `#${item.index}`);
-    });
-    hit.addEventListener("pointerleave", () => crosshair.clear());
-    svg.appendChild(hit);
   });
-
-  svg.appendChild(crosshairLayer);
 }

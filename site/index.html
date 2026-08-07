@@ -9,71 +9,104 @@
   </head>
   <body>
     <header class="masthead">
-      <div class="masthead-identity">
-        <p class="eyebrow">Symnav / benchmark evidence</p>
+      <div>
+        <p class="eyebrow">Symnav · benchmark evidence</p>
         <h1>Study explorer</h1>
+        <p class="lede">Every study that has ever run, on one canvas. Colour is the model; the ring is stock, the disc is symnav.</p>
       </div>
-      <dl class="masthead-stats" id="headline-stats"></dl>
+      <dl class="stat-row" id="headline-stats"></dl>
     </header>
 
-    <section class="controls" aria-label="Series filters">
-      <div class="control-row" id="filter-row"></div>
-      <div class="control-row control-row-secondary">
-        <div class="segmented" id="metric-switch" role="group" aria-label="Metric"></div>
-        <label class="toggle">
-          <input type="checkbox" id="zoom-toggle" checked>
-          <span>Zoom axes to data</span>
-        </label>
-        <button type="button" class="ghost-button" id="reset-filters">Reset filters</button>
-        <p class="selection-count" id="selection-count"></p>
-      </div>
-    </section>
-
-    <main id="main">
-      <section class="panel" aria-labelledby="paired-heading">
-        <div class="panel-head">
-          <h2 id="paired-heading">Paired arms</h2>
-          <p>One row per study configuration. Left marker is stock, right marker is the treatment arm; the connector shows the paired shift.</p>
-        </div>
-        <div class="chart-scroll"><div id="chart-paired"></div></div>
-      </section>
-
-      <div class="panel-grid">
-        <section class="panel" aria-labelledby="scatter-heading">
-          <div class="panel-head">
-            <h2 id="scatter-heading">Stock vs treatment</h2>
-            <p>Above the diagonal means the treatment arm scored higher. Hover a point to project it onto both axes.</p>
+    <div class="layout">
+      <aside class="rail" aria-label="Series selection">
+        <section class="rail-block">
+          <h2>Filters</h2>
+          <div id="facet-list"></div>
+        </section>
+        <section class="rail-block">
+          <div class="rail-head">
+            <h2>Series</h2>
+            <div class="rail-actions">
+              <button type="button" class="ghost" data-series-action="all">All</button>
+              <button type="button" class="ghost" data-series-action="none">None</button>
+            </div>
           </div>
-          <div class="chart-scroll"><div id="chart-scatter"></div></div>
+          <div id="series-list"></div>
+        </section>
+        <section class="rail-block">
+          <h2>Legend</h2>
+          <div id="legend"></div>
+        </section>
+      </aside>
+
+      <main>
+        <div class="toolbar">
+          <div class="segmented" id="metric-switch" role="group" aria-label="Metric"></div>
+          <label class="toggle"><input type="checkbox" id="zoom-toggle" checked><span>Zoom axes to data</span></label>
+          <p class="count" id="selection-count"></p>
+        </div>
+
+        <section class="panel wide">
+          <div class="panel-head">
+            <h3>Cost against performance</h3>
+            <p>Cheaper to the right, stronger upward — so the best trade-offs sit top-right. The step line is the frontier: nothing is both cheaper and better.</p>
+          </div>
+          <div class="scroll"><div id="chart-frontier"></div></div>
         </section>
 
-        <section class="panel" aria-labelledby="uplift-heading">
+        <section class="panel wide">
           <div class="panel-head">
-            <h2 id="uplift-heading">Uplift</h2>
-            <p>Treatment minus stock, in percentage points. Whiskers are the paired 95% interval where the study reports one.</p>
+            <h3>What symnav changed</h3>
+            <p>Each row is one study arm pair, ranked by uplift. Ring is stock, disc is symnav.</p>
           </div>
-          <div class="chart-scroll"><div id="chart-uplift"></div></div>
+          <div class="scroll"><div id="chart-uplift"></div></div>
         </section>
-      </div>
 
-      <section class="panel" aria-labelledby="table-heading">
-        <div class="panel-head">
-          <h2 id="table-heading">Series</h2>
-          <p>Every selected series, with coverage and cost. Click a row to load its task-level detail.</p>
+        <section class="panel wide">
+          <div class="panel-head">
+            <h3>Benchmark against model</h3>
+            <p>Stock over symnav in each cell, with the gap in points. Colour is the benchmark.</p>
+          </div>
+          <div class="scroll"><div id="chart-grid"></div></div>
+        </section>
+
+        <div class="grid-2">
+          <section class="panel">
+            <div class="panel-head">
+              <h3>Did reaching for it help?</h3>
+              <p>How often the agent called symnav, against the uplift that arm produced.</p>
+            </div>
+            <div class="scroll"><div id="chart-adoption"></div></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h3>Coverage</h3>
+              <p>Slots that scored. A short bar means the number above it rests on partial evidence.</p>
+            </div>
+            <div class="scroll"><div id="chart-coverage"></div></div>
+          </section>
         </div>
-        <div class="table-scroll"><table id="series-table"></table></div>
-      </section>
 
-      <section class="panel" id="detail-panel" hidden aria-labelledby="detail-heading">
-        <div class="panel-head">
-          <h2 id="detail-heading">Task detail</h2>
-          <p id="detail-subtitle"></p>
-        </div>
-        <div id="detail-body"></div>
-      </section>
-    </main>
+        <section class="panel wide">
+          <div class="panel-head">
+            <h3>Numbers</h3>
+            <p>Click a row to load that study's task-level detail.</p>
+          </div>
+          <div class="scroll"><table id="series-table"></table></div>
+        </section>
 
-    <p class="status" id="status" role="status"></p>
+        <section class="panel wide" id="detail-panel" hidden>
+          <div class="panel-head">
+            <h3>Task detail</h3>
+            <p id="detail-subtitle"></p>
+          </div>
+          <div id="detail-body"></div>
+        </section>
+
+        <p class="status" id="status" role="status"></p>
+      </main>
+    </div>
     <script type="module" src="./assets/explorer.js"></script>
   </body>
 </html>
