@@ -1,0 +1,104 @@
+{
+  "adoption": {
+    "command_counts": {},
+    "first_symnav_step": null,
+    "patch_calls": 0,
+    "read_calls": 0,
+    "read_symnav_skill": false,
+    "search_calls": 0,
+    "symnav_calls": 0,
+    "symnav_calls_per_agent_step": 0.0,
+    "symnav_failures": 0,
+    "symnav_timeouts": 0,
+    "used_symnav": false
+  },
+  "agent_version": "0.144.1",
+  "artifact": {
+    "archive": "swe-polybench-ts-himid-codex-terra-medium-v030-swe-polybench-ts-himid-codex-terra-medium-v030-codex-gpt-5.6-terra-medium-batch-001-31242140647-1.tar.gz",
+    "internal_path": "attempts/e21af5f0fa4a46b6858a383e5e1593d2",
+    "sha256": "540b847de31ddca106c1959e6e5de52ebbbdda4d4c312949da4c8e398379bb0b"
+  },
+  "batch_id": "swe-polybench-ts-himid-codex-terra-medium-v030-codex-gpt-5.6-terra-medium-batch-001",
+  "command_counts": {
+    "failures": 0,
+    "other": 0,
+    "read": 0,
+    "search": 0,
+    "symnav": {},
+    "symnav_failures": {},
+    "symnav_skill_reads": 0,
+    "timeouts": 0
+  },
+  "disposition": {
+    "detail": "NonZeroAgentExitCodeError: Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- 'editor.bracketPairColorization.independentColorPoolPerBracketType stopped working after update\n<!-- \u26a0\ufe0f\u26a0\ufe0f Do Not Delete This! bug_report_template \u26a0\ufe0f\u26a0\ufe0f -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- \ud83d\udd6e Read our guide about submitting issues: https://github.com/microsoft/vscode/wiki/Submitting-Bugs-and-Suggestions -->\n<!-- \ud83d\udd0e Search existing issues to avoid creating duplicates. -->\n<!-- \ud83e\uddea Test using the latest Insiders build to see if your issue has already been fixed: https://code.visualstudio.com/insiders/ -->\n<!-- \ud83d\udca1 Instead of creating your report here, use '\"'\"'Report Issue'\"'\"' from the '\"'\"'Help'\"'\"' menu in VS Code to pre-fill useful information. -->\n<!-- \ud83d\udd27 Launch with `code --disable-extensions` to check. -->\nDoes this issue occur when all extensions are disabled?: Yes\n\n<!-- \ud83e\ude93 If you answered No above, use '\"'\"'Help: Start Extension Bisect'\"'\"' from Command Palette to try to identify the cause. -->\n<!-- \ud83d\udce3 Issues caused by an extension need to be reported directly to the extension publisher. The '\"'\"'Help > Report Issue'\"'\"' dialog can assist with this. -->\n- VS Code Version: 1.71.0\n- OS Version: Ubuntu 20.04, Linux x64 5.15.0-46-generic snap\n\nSteps to Reproduce:\n\n1. Start VSC (possibly with extensions disabled)\n2. Open any C++ workspace or any folder with C++ files.\n3. Set \"editor.bracketPairColorization.independentColorPoolPerBracketType\": true\n4. Bracket pair colorization stopped working - all brackets are yellow regardless of the nesting level or bracket type.\n\nVersion: 1.71.0\nCommit: 784b0177c56c607789f9638da7b6bf3230d47a8c\nDate: 2022-09-01T07:25:10.472Z\nElectron: 19.0.12\nChromium: 102.0.5005.167\nNode.js: 16.14.2\nV8: 10.2.154.15-electron.0\nOS: Linux x64 5.15.0-46-generic snap\nSandboxed: No\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-08-08T06:19:18.775143Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c68a1f9c1764c-SEA, auth error: 401, auth error code: token_expired\n2026-08-08T06:19:18.798563Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c68a22cf5346b-SEA, auth error: 401, auth error code: token_expired\n{\"type\":\"thread.started\",\"thread_id\":\"019fe006-a190-7f60-a965-dda7ba2941f1\"}\n{\"type\":\"turn.started\"}\n2026-08-08T06:19:1 ... [truncated]\nstderr: None",
+    "outcome": "retryable_error",
+    "retry_reason": "provider",
+    "scored_failure_reason": null
+  },
+  "exception": {
+    "exception_message": "Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- 'editor.bracketPairColorization.independentColorPoolPerBracketType stopped working after update\n<!-- \u26a0\ufe0f\u26a0\ufe0f Do Not Delete This! bug_report_template \u26a0\ufe0f\u26a0\ufe0f -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- \ud83d\udd6e Read our guide about submitting issues: https://github.com/microsoft/vscode/wiki/Submitting-Bugs-and-Suggestions -->\n<!-- \ud83d\udd0e Search existing issues to avoid creating duplicates. -->\n<!-- \ud83e\uddea Test using the latest Insiders build to see if your issue has already been fixed: https://code.visualstudio.com/insiders/ -->\n<!-- \ud83d\udca1 Instead of creating your report here, use '\"'\"'Report Issue'\"'\"' from the '\"'\"'Help'\"'\"' menu in VS Code to pre-fill useful information. -->\n<!-- \ud83d\udd27 Launch with `code --disable-extensions` to check. -->\nDoes this issue occur when all extensions are disabled?: Yes\n\n<!-- \ud83e\ude93 If you answered No above, use '\"'\"'Help: Start Extension Bisect'\"'\"' from Command Palette to try to identify the cause. -->\n<!-- \ud83d\udce3 Issues caused by an extension need to be reported directly to the extension publisher. The '\"'\"'Help > Report Issue'\"'\"' dialog can assist with this. -->\n- VS Code Version: 1.71.0\n- OS Version: Ubuntu 20.04, Linux x64 5.15.0-46-generic snap\n\nSteps to Reproduce:\n\n1. Start VSC (possibly with extensions disabled)\n2. Open any C++ workspace or any folder with C++ files.\n3. Set \"editor.bracketPairColorization.independentColorPoolPerBracketType\": true\n4. Bracket pair colorization stopped working - all brackets are yellow regardless of the nesting level or bracket type.\n\nVersion: 1.71.0\nCommit: 784b0177c56c607789f9638da7b6bf3230d47a8c\nDate: 2022-09-01T07:25:10.472Z\nElectron: 19.0.12\nChromium: 102.0.5005.167\nNode.js: 16.14.2\nV8: 10.2.154.15-electron.0\nOS: Linux x64 5.15.0-46-generic snap\nSandboxed: No\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-08-08T06:19:18.775143Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c68a1f9c1764c-SEA, auth error: 401, auth error code: token_expired\n2026-08-08T06:19:18.798563Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c68a22cf5346b-SEA, auth error: 401, auth error code: token_expired\n{\"type\":\"thread.started\",\"thread_id\":\"019fe006-a190-7f60-a965-dda7ba2941f1\"}\n{\"type\":\"turn.started\"}\n2026-08-08T06:19:1 ... [truncated]\nstderr: None",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 925, in run\n    await self._execute_agent()\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 314, in _execute_agent\n    await self._execution.run_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/trial/execution.py\", line 254, in run_agent\n    await asyncio.wait_for(\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 43, in wrapper\n    return await fn(self, instruction, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/codex.py\", line 1149, in run\n    await self.exec_as_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 386, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 349, in _exec\n    raise NonZeroAgentExitCodeError(\npier.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- 'editor.bracketPairColorization.independentColorPoolPerBracketType stopped working after update\n<!-- \u26a0\ufe0f\u26a0\ufe0f Do Not Delete This! bug_report_template \u26a0\ufe0f\u26a0\ufe0f -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- \ud83d\udd6e Read our guide about submitting issues: https://github.com/microsoft/vscode/wiki/Submitting-Bugs-and-Suggestions -->\n<!-- \ud83d\udd0e Search existing issues to avoid creating duplicates. -->\n<!-- \ud83e\uddea Test using the latest Insiders build to see if your issue has already been fixed: https://code.visualstudio.com/insiders/ -->\n<!-- \ud83d\udca1 Instead of creating your report here, use '\"'\"'Report Issue'\"'\"' from the '\"'\"'Help'\"'\"' menu in VS Code to pre-fill useful information. -->\n<!-- \ud83d\udd27 Launch with `code --disable-extensions` to check. -->\nDoes this issue occur when all extensions are disabled?: Yes\n\n<!-- \ud83e\ude93 If you answered No above, use '\"'\"'Help: Start Extension Bisect'\"'\"' from Command Palette to try to identify the cause. -->\n<!-- \ud83d\udce3 Issues caused by an extension need to be reported directly to the extension publisher. The '\"'\"'Help > Report Issue'\"'\"' dialog can assist with this. -->\n- VS Code Version: 1.71.0\n- OS Version: Ubuntu 20.04, Linux x64 5.15.0-46-generic snap\n\nSteps to Reproduce:\n\n1. Start VSC (possibly with extensions disabled)\n2. Open any C++ workspace or any folder with C++ files.\n3. Set \"editor.bracketPairColorization.independentColorPoolPerBracketType\": true\n4. Bracket pair colorization stopped working - all brackets are yellow regardless of the nesting level or bracket type.\n\nVersion: 1.71.0\nCommit: 784b0177c56c607789f9638da7b6bf3230d47a8c\nDate: 2022-09-01T07:25:10.472Z\nElectron: 19.0.12\nChromium: 102.0.5005.167\nNode.js: 16.14.2\nV8: 10.2.154.15-electron.0\nOS: Linux x64 5.15.0-46-generic snap\nSandboxed: No\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-08-08T06:19:18.775143Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c68a1f9c1764c-SEA, auth error: 401, auth error code: token_expired\n2026-08-08T06:19:18.798563Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c68a22cf5346b-SEA, auth error: 401, auth error code: token_expired\n{\"type\":\"thread.started\",\"thread_id\":\"019fe006-a190-7f60-a965-dda7ba2941f1\"}\n{\"type\":\"turn.started\"}\n2026-08-08T06:19:1 ... [truncated]\nstderr: None\n",
+    "exception_type": "NonZeroAgentExitCodeError",
+    "occurred_at": "2026-08-08T06:19:20.905775"
+  },
+  "harness": {
+    "agent_name": "codex",
+    "agent_version": "0.144.1",
+    "benchmark": "swe-polybench",
+    "benchmark_source_revision": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "bundle_hash": null,
+    "bundle_id": null,
+    "deep_swe_sha": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "image_digest": "sha256:7c756749017c5560ee66760d45f1cb39cf46d45b7363bf3796d2587964588e03",
+    "image_reference": "0.1.0",
+    "pier_version": "unknown",
+    "prompt_rule_hash": "unknown",
+    "requested_effort": "medium",
+    "requested_model": "gpt-5.6-terra",
+    "symnav_bench_sha": "d859f23",
+    "symnav_sha": "7aa0d74c7b4afa28465e4ea4c2fdae096f590913",
+    "task_checksum": "486ae552f640a16269b884a96afa53beb612b8a5ae7f3ddf6692c10f1639c18a",
+    "task_fit_tier": "mid"
+  },
+  "identity": {
+    "attempt_id": "e21af5f0fa4a46b6858a383e5e1593d2",
+    "github_job": "cell",
+    "github_run_attempt": 1,
+    "github_run_id": "31242140647",
+    "slot_id": "fc02c2cf86d3be0810e53e1b05f65becdf480198bc4408e8e6412e7aebb03253"
+  },
+  "protocol_fingerprint": "3baa00d97f191b9a372f07c9ddaecb0d397cc1a5123865545a2da947069c82e5",
+  "rewards": {
+    "f2p": 0.0,
+    "f2p_passed": 0,
+    "f2p_total": 1,
+    "p2p": 1.0,
+    "p2p_passed": 7,
+    "p2p_total": 7,
+    "partial": 0.875,
+    "reward": 0
+  },
+  "schema_version": 3,
+  "slot": {
+    "condition": "stock",
+    "configuration_id": "codex-gpt-5.6-terra-medium",
+    "repetition": 4,
+    "slot_id": "fc02c2cf86d3be0810e53e1b05f65becdf480198bc4408e8e6412e7aebb03253",
+    "study_id": "swe-polybench-ts-himid-codex-terra-medium-v030",
+    "task": "microsoft__vscode-164226"
+  },
+  "suite_fingerprint": "e586ce9d8c3da8d0ca2e6152b089a86f38092ece0d19adffe42187d392e3fd56",
+  "timing": {
+    "finished_at": "2026-08-08T06:23:10.415844Z",
+    "started_at": "2026-08-08T06:15:57.403268Z"
+  },
+  "usage": {
+    "cost_usd_imputed": null,
+    "n_agent_steps": 0,
+    "n_cache_tokens": null,
+    "n_input_tokens": null,
+    "n_output_tokens": null,
+    "peak_context_tokens": null
+  },
+  "written_at": "2026-08-08T06:23:10.970281+00:00"
+}

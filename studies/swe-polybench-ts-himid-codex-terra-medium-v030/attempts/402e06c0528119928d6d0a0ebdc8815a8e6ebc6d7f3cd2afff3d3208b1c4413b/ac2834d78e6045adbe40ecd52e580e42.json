@@ -1,0 +1,104 @@
+{
+  "adoption": {
+    "command_counts": {},
+    "first_symnav_step": null,
+    "patch_calls": 0,
+    "read_calls": 0,
+    "read_symnav_skill": false,
+    "search_calls": 0,
+    "symnav_calls": 0,
+    "symnav_calls_per_agent_step": 0.0,
+    "symnav_failures": 0,
+    "symnav_timeouts": 0,
+    "used_symnav": false
+  },
+  "agent_version": "0.144.1",
+  "artifact": {
+    "archive": "swe-polybench-ts-himid-codex-terra-medium-v030-swe-polybench-ts-himid-codex-terra-medium-v030-codex-gpt-5.6-terra-medium-batch-001-31242140647-1.tar.gz",
+    "internal_path": "attempts/ac2834d78e6045adbe40ecd52e580e42",
+    "sha256": "540b847de31ddca106c1959e6e5de52ebbbdda4d4c312949da4c8e398379bb0b"
+  },
+  "batch_id": "swe-polybench-ts-himid-codex-terra-medium-v030-codex-gpt-5.6-terra-medium-batch-001",
+  "command_counts": {
+    "failures": 0,
+    "other": 0,
+    "read": 0,
+    "search": 0,
+    "symnav": {},
+    "symnav_failures": {},
+    "symnav_skill_reads": 0,
+    "timeouts": 0
+  },
+  "disposition": {
+    "detail": "NonZeroAgentExitCodeError: Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- 'Bug: Emoji modifiers in text treated separately when using backspace\n<!-- \u26a0\ufe0f\u26a0\ufe0f Do Not Delete This! bug_report_template \u26a0\ufe0f\u26a0\ufe0f -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- Please search existing issues to avoid creating duplicates. -->\n<!-- Also please test using the latest insiders build to make sure your issue has not already been fixed: https://code.visualstudio.com/insiders/ -->\n\n<!-- Use Help > Report Issue to prefill these. -->\n- VSCode Version: All recent versions, maybe all versions, including Monaco outside of VSCode\n- OS Version: macOS, Windows, likely Linux and all others\n\nSteps to Reproduce:\n\n1. Enter an Emoji with a modifier, such as a Fitzpatrick skin type modifier: \ud83d\udc76\ud83c\udffe\n2. Hit backspace after that character\n3. According to the Unicode specification the entire character should be removed.\n4. VSCode removes the modifier and leaves the Emoji, producing \ud83d\udc76\n\nThe relevant spec, [UTS #51](https://www.unicode.org/reports/tr51/#valid-emoji-tag-sequences), states that:\n\n> A supported emoji modifier sequence should be treated as a single grapheme cluster for editing purposes (cursor moment, deletion, and so on); word break, line break, and so on.\n\nThis is probably related to #19390, directly to [a comment about \u26a0\ufe0f](https://github.com/microsoft/vscode/issues/19390#issuecomment-399767433), but separate enough that I suppose it warrants its own issue.\n\nIt'\"'\"'s worth noting that aspects of this work as expected. The editor won'\"'\"'t let you select he modifier - it correctly forces you to select the modifier plus the Emoji it modifies as an atomic whole. As reported in #19390 though it'\"'\"'s possible to move the cursor inside the modified grapheme cluster and break it. (While the cursor bug doesn'\"'\"'t appear in the Monaco playground the backspace bug does).\n\n<!-- Launch with `code --disable-extensions` to check. -->\nDoes this issue occur when all extensions are disabled?: Yes\n\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-08-08T05:54:43.031157Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c449a9c406c81-DFW, auth error: 401, auth error code: token_expired\n2026-08-08T05:54:43.056318Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c449a8a5ea99d-DFW, auth error: 401, auth error code: token_expired\n{\"type\":\"thread.started\",\"thread_id\":\"019fdff0-1cf1-72b0-af0b-8217d6c952ea\"}\n{\"type\":\"turn.started\"}\n2026-08-08T05:54:4 ... [truncated]\nstderr: None",
+    "outcome": "retryable_error",
+    "retry_reason": "provider",
+    "scored_failure_reason": null
+  },
+  "exception": {
+    "exception_message": "Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- 'Bug: Emoji modifiers in text treated separately when using backspace\n<!-- \u26a0\ufe0f\u26a0\ufe0f Do Not Delete This! bug_report_template \u26a0\ufe0f\u26a0\ufe0f -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- Please search existing issues to avoid creating duplicates. -->\n<!-- Also please test using the latest insiders build to make sure your issue has not already been fixed: https://code.visualstudio.com/insiders/ -->\n\n<!-- Use Help > Report Issue to prefill these. -->\n- VSCode Version: All recent versions, maybe all versions, including Monaco outside of VSCode\n- OS Version: macOS, Windows, likely Linux and all others\n\nSteps to Reproduce:\n\n1. Enter an Emoji with a modifier, such as a Fitzpatrick skin type modifier: \ud83d\udc76\ud83c\udffe\n2. Hit backspace after that character\n3. According to the Unicode specification the entire character should be removed.\n4. VSCode removes the modifier and leaves the Emoji, producing \ud83d\udc76\n\nThe relevant spec, [UTS #51](https://www.unicode.org/reports/tr51/#valid-emoji-tag-sequences), states that:\n\n> A supported emoji modifier sequence should be treated as a single grapheme cluster for editing purposes (cursor moment, deletion, and so on); word break, line break, and so on.\n\nThis is probably related to #19390, directly to [a comment about \u26a0\ufe0f](https://github.com/microsoft/vscode/issues/19390#issuecomment-399767433), but separate enough that I suppose it warrants its own issue.\n\nIt'\"'\"'s worth noting that aspects of this work as expected. The editor won'\"'\"'t let you select he modifier - it correctly forces you to select the modifier plus the Emoji it modifies as an atomic whole. As reported in #19390 though it'\"'\"'s possible to move the cursor inside the modified grapheme cluster and break it. (While the cursor bug doesn'\"'\"'t appear in the Monaco playground the backspace bug does).\n\n<!-- Launch with `code --disable-extensions` to check. -->\nDoes this issue occur when all extensions are disabled?: Yes\n\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-08-08T05:54:43.031157Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c449a9c406c81-DFW, auth error: 401, auth error code: token_expired\n2026-08-08T05:54:43.056318Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c449a8a5ea99d-DFW, auth error: 401, auth error code: token_expired\n{\"type\":\"thread.started\",\"thread_id\":\"019fdff0-1cf1-72b0-af0b-8217d6c952ea\"}\n{\"type\":\"turn.started\"}\n2026-08-08T05:54:4 ... [truncated]\nstderr: None",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 925, in run\n    await self._execute_agent()\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 314, in _execute_agent\n    await self._execution.run_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/trial/execution.py\", line 254, in run_agent\n    await asyncio.wait_for(\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 43, in wrapper\n    return await fn(self, instruction, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/codex.py\", line 1149, in run\n    await self.exec_as_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 386, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 349, in _exec\n    raise NonZeroAgentExitCodeError(\npier.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- 'Bug: Emoji modifiers in text treated separately when using backspace\n<!-- \u26a0\ufe0f\u26a0\ufe0f Do Not Delete This! bug_report_template \u26a0\ufe0f\u26a0\ufe0f -->\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\n<!-- Please search existing issues to avoid creating duplicates. -->\n<!-- Also please test using the latest insiders build to make sure your issue has not already been fixed: https://code.visualstudio.com/insiders/ -->\n\n<!-- Use Help > Report Issue to prefill these. -->\n- VSCode Version: All recent versions, maybe all versions, including Monaco outside of VSCode\n- OS Version: macOS, Windows, likely Linux and all others\n\nSteps to Reproduce:\n\n1. Enter an Emoji with a modifier, such as a Fitzpatrick skin type modifier: \ud83d\udc76\ud83c\udffe\n2. Hit backspace after that character\n3. According to the Unicode specification the entire character should be removed.\n4. VSCode removes the modifier and leaves the Emoji, producing \ud83d\udc76\n\nThe relevant spec, [UTS #51](https://www.unicode.org/reports/tr51/#valid-emoji-tag-sequences), states that:\n\n> A supported emoji modifier sequence should be treated as a single grapheme cluster for editing purposes (cursor moment, deletion, and so on); word break, line break, and so on.\n\nThis is probably related to #19390, directly to [a comment about \u26a0\ufe0f](https://github.com/microsoft/vscode/issues/19390#issuecomment-399767433), but separate enough that I suppose it warrants its own issue.\n\nIt'\"'\"'s worth noting that aspects of this work as expected. The editor won'\"'\"'t let you select he modifier - it correctly forces you to select the modifier plus the Emoji it modifies as an atomic whole. As reported in #19390 though it'\"'\"'s possible to move the cursor inside the modified grapheme cluster and break it. (While the cursor bug doesn'\"'\"'t appear in the Monaco playground the backspace bug does).\n\n<!-- Launch with `code --disable-extensions` to check. -->\nDoes this issue occur when all extensions are disabled?: Yes\n\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-08-08T05:54:43.031157Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c449a9c406c81-DFW, auth error: 401, auth error code: token_expired\n2026-08-08T05:54:43.056318Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c449a8a5ea99d-DFW, auth error: 401, auth error code: token_expired\n{\"type\":\"thread.started\",\"thread_id\":\"019fdff0-1cf1-72b0-af0b-8217d6c952ea\"}\n{\"type\":\"turn.started\"}\n2026-08-08T05:54:4 ... [truncated]\nstderr: None\n",
+    "exception_type": "NonZeroAgentExitCodeError",
+    "occurred_at": "2026-08-08T05:54:44.850540"
+  },
+  "harness": {
+    "agent_name": "codex",
+    "agent_version": "0.144.1",
+    "benchmark": "swe-polybench",
+    "benchmark_source_revision": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "bundle_hash": "1512e03e01307ecf33a66a3f2c7c1f46150654a71a4137e0c446173d95e7b51f",
+    "bundle_id": "full",
+    "deep_swe_sha": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "image_digest": "sha256:7c756749017c5560ee66760d45f1cb39cf46d45b7363bf3796d2587964588e03",
+    "image_reference": "0.1.0",
+    "pier_version": "unknown",
+    "prompt_rule_hash": "unknown",
+    "requested_effort": "medium",
+    "requested_model": "gpt-5.6-terra",
+    "symnav_bench_sha": "d859f23",
+    "symnav_sha": "7aa0d74c7b4afa28465e4ea4c2fdae096f590913",
+    "task_checksum": "d7ed9320ab7e9a1e7da7116f31376343467d824ec70766682a90c2f31fd52c0a",
+    "task_fit_tier": "high"
+  },
+  "identity": {
+    "attempt_id": "ac2834d78e6045adbe40ecd52e580e42",
+    "github_job": "cell",
+    "github_run_attempt": 1,
+    "github_run_id": "31242140647",
+    "slot_id": "402e06c0528119928d6d0a0ebdc8815a8e6ebc6d7f3cd2afff3d3208b1c4413b"
+  },
+  "protocol_fingerprint": "3baa00d97f191b9a372f07c9ddaecb0d397cc1a5123865545a2da947069c82e5",
+  "rewards": {
+    "f2p": 0.0,
+    "f2p_passed": 0,
+    "f2p_total": 2,
+    "p2p": 0.9912280701754386,
+    "p2p_passed": 226,
+    "p2p_total": 228,
+    "partial": 0.9826086956521739,
+    "reward": 0
+  },
+  "schema_version": 3,
+  "slot": {
+    "condition": "symnav",
+    "configuration_id": "codex-gpt-5.6-terra-medium",
+    "repetition": 4,
+    "slot_id": "402e06c0528119928d6d0a0ebdc8815a8e6ebc6d7f3cd2afff3d3208b1c4413b",
+    "study_id": "swe-polybench-ts-himid-codex-terra-medium-v030",
+    "task": "microsoft__vscode-122991"
+  },
+  "suite_fingerprint": "e586ce9d8c3da8d0ca2e6152b089a86f38092ece0d19adffe42187d392e3fd56",
+  "timing": {
+    "finished_at": "2026-08-08T05:57:45.521267Z",
+    "started_at": "2026-08-08T05:51:53.931774Z"
+  },
+  "usage": {
+    "cost_usd_imputed": null,
+    "n_agent_steps": 0,
+    "n_cache_tokens": null,
+    "n_input_tokens": null,
+    "n_output_tokens": null,
+    "peak_context_tokens": null
+  },
+  "written_at": "2026-08-08T05:57:46.042397+00:00"
+}

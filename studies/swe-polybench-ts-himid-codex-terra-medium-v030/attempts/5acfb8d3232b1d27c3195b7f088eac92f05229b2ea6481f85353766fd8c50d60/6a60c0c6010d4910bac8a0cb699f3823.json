@@ -1,0 +1,104 @@
+{
+  "adoption": {
+    "command_counts": {},
+    "first_symnav_step": null,
+    "patch_calls": 0,
+    "read_calls": 0,
+    "read_symnav_skill": false,
+    "search_calls": 0,
+    "symnav_calls": 0,
+    "symnav_calls_per_agent_step": 0.0,
+    "symnav_failures": 0,
+    "symnav_timeouts": 0,
+    "used_symnav": false
+  },
+  "agent_version": "0.144.1",
+  "artifact": {
+    "archive": "swe-polybench-ts-himid-codex-terra-medium-v030-swe-polybench-ts-himid-codex-terra-medium-v030-codex-gpt-5.6-terra-medium-batch-001-31242140647-1.tar.gz",
+    "internal_path": "attempts/6a60c0c6010d4910bac8a0cb699f3823",
+    "sha256": "540b847de31ddca106c1959e6e5de52ebbbdda4d4c312949da4c8e398379bb0b"
+  },
+  "batch_id": "swe-polybench-ts-himid-codex-terra-medium-v030-codex-gpt-5.6-terra-medium-batch-001",
+  "command_counts": {
+    "failures": 0,
+    "other": 0,
+    "read": 0,
+    "search": 0,
+    "symnav": {},
+    "symnav_failures": {},
+    "symnav_skill_reads": 0,
+    "timeouts": 0
+  },
+  "disposition": {
+    "detail": "NonZeroAgentExitCodeError: Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- '[Switch] focused, OFF switch should have a dark grey  indicator, instead of white\nThe Switch component has a white circle focus indicator in OFF state instead of a dark grey one.\n\n- [X] This is not a v0.x issue. <!-- (v0.x is no longer maintained) -->\n- [X] I have searched the [issues](https://github.com/mui-org/material-ui/issues) of this repository and believe that this is not a duplicate.\n\n## Expected Behavior \ud83e\udd14\nThe focused switch in OFF state should look like this:\n![expected](https://user-images.githubusercontent.com/45591300/49446322-38085e00-f7d4-11e8-96a5-cf0b3798b9bc.png)\n \nhttps://material.io/design/components/selection-controls.html#switches\n\n## Current Behavior \ud83d\ude2f\n![current](https://user-images.githubusercontent.com/45591300/49446634-ef04d980-f7d4-11e8-9bd3-05202d05754b.png)\nThe focus indicator is white-ish, instead of grey. Because of this, it is nearly impossible to tell in a UI with white background, which switch is in focus.\n\n## Steps to Reproduce \ud83d\udd79\nYou can reproduce it simply by switching the \"Primary\" (the second one) switch, and hiting the \"tab\" key. \n[https://codesandbox.io/s/3yo0vqrr1p](https://codesandbox.io/s/3yo0vqrr1p)\nYou can see, the indicatot is rendered, but it is extremely hard to see, because it is almost a white color on a white backgrond.\nYou can see this behaviour better, if you set a different background color.\n\n## Context \ud83d\udd26\nI have a white form, where I would like to use switches with keyboard.\n\n## Your Environment \ud83c\udf0e\n\n| Tech         | Version |\n|--------------|---------|\n| Material-UI  | v3.6.1  |\n| React        |   16.6.3      |\n| Browser      |     any    |\n\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-08-08T06:06:53.109556Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c566dbfdda43c-SJC, auth error: 401, auth error code: token_expired\n2026-08-08T06:06:53.138870Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c566ddb1cfac2-SJC, auth error: 401, auth error code: token_expired\n{\"type\":\"thread.started\",\"thread_id\":\"019fdffb-40d3-72d2-98db-0d4186073959\"}\n{\"type\":\"turn.started\"}\n2026-08-08T06:06:5 ... [truncated]\nstderr: None",
+    "outcome": "retryable_error",
+    "retry_reason": "provider",
+    "scored_failure_reason": null
+  },
+  "exception": {
+    "exception_message": "Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- '[Switch] focused, OFF switch should have a dark grey  indicator, instead of white\nThe Switch component has a white circle focus indicator in OFF state instead of a dark grey one.\n\n- [X] This is not a v0.x issue. <!-- (v0.x is no longer maintained) -->\n- [X] I have searched the [issues](https://github.com/mui-org/material-ui/issues) of this repository and believe that this is not a duplicate.\n\n## Expected Behavior \ud83e\udd14\nThe focused switch in OFF state should look like this:\n![expected](https://user-images.githubusercontent.com/45591300/49446322-38085e00-f7d4-11e8-96a5-cf0b3798b9bc.png)\n \nhttps://material.io/design/components/selection-controls.html#switches\n\n## Current Behavior \ud83d\ude2f\n![current](https://user-images.githubusercontent.com/45591300/49446634-ef04d980-f7d4-11e8-9bd3-05202d05754b.png)\nThe focus indicator is white-ish, instead of grey. Because of this, it is nearly impossible to tell in a UI with white background, which switch is in focus.\n\n## Steps to Reproduce \ud83d\udd79\nYou can reproduce it simply by switching the \"Primary\" (the second one) switch, and hiting the \"tab\" key. \n[https://codesandbox.io/s/3yo0vqrr1p](https://codesandbox.io/s/3yo0vqrr1p)\nYou can see, the indicatot is rendered, but it is extremely hard to see, because it is almost a white color on a white backgrond.\nYou can see this behaviour better, if you set a different background color.\n\n## Context \ud83d\udd26\nI have a white form, where I would like to use switches with keyboard.\n\n## Your Environment \ud83c\udf0e\n\n| Tech         | Version |\n|--------------|---------|\n| Material-UI  | v3.6.1  |\n| React        |   16.6.3      |\n| Browser      |     any    |\n\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-08-08T06:06:53.109556Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c566dbfdda43c-SJC, auth error: 401, auth error code: token_expired\n2026-08-08T06:06:53.138870Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c566ddb1cfac2-SJC, auth error: 401, auth error code: token_expired\n{\"type\":\"thread.started\",\"thread_id\":\"019fdffb-40d3-72d2-98db-0d4186073959\"}\n{\"type\":\"turn.started\"}\n2026-08-08T06:06:5 ... [truncated]\nstderr: None",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 925, in run\n    await self._execute_agent()\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 314, in _execute_agent\n    await self._execution.run_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/trial/execution.py\", line 254, in run_agent\n    await asyncio.wait_for(\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 43, in wrapper\n    return await fn(self, instruction, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/codex.py\", line 1149, in run\n    await self.exec_as_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 386, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 349, in _exec\n    raise NonZeroAgentExitCodeError(\npier.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- '[Switch] focused, OFF switch should have a dark grey  indicator, instead of white\nThe Switch component has a white circle focus indicator in OFF state instead of a dark grey one.\n\n- [X] This is not a v0.x issue. <!-- (v0.x is no longer maintained) -->\n- [X] I have searched the [issues](https://github.com/mui-org/material-ui/issues) of this repository and believe that this is not a duplicate.\n\n## Expected Behavior \ud83e\udd14\nThe focused switch in OFF state should look like this:\n![expected](https://user-images.githubusercontent.com/45591300/49446322-38085e00-f7d4-11e8-96a5-cf0b3798b9bc.png)\n \nhttps://material.io/design/components/selection-controls.html#switches\n\n## Current Behavior \ud83d\ude2f\n![current](https://user-images.githubusercontent.com/45591300/49446634-ef04d980-f7d4-11e8-9bd3-05202d05754b.png)\nThe focus indicator is white-ish, instead of grey. Because of this, it is nearly impossible to tell in a UI with white background, which switch is in focus.\n\n## Steps to Reproduce \ud83d\udd79\nYou can reproduce it simply by switching the \"Primary\" (the second one) switch, and hiting the \"tab\" key. \n[https://codesandbox.io/s/3yo0vqrr1p](https://codesandbox.io/s/3yo0vqrr1p)\nYou can see, the indicatot is rendered, but it is extremely hard to see, because it is almost a white color on a white backgrond.\nYou can see this behaviour better, if you set a different background color.\n\n## Context \ud83d\udd26\nI have a white form, where I would like to use switches with keyboard.\n\n## Your Environment \ud83c\udf0e\n\n| Tech         | Version |\n|--------------|---------|\n| Material-UI  | v3.6.1  |\n| React        |   16.6.3      |\n| Browser      |     any    |\n\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n2026-08-08T06:06:53.109556Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c566dbfdda43c-SJC, auth error: 401, auth error code: token_expired\n2026-08-08T06:06:53.138870Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Provided authentication token is expired., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.1, cf-ray: a27c566ddb1cfac2-SJC, auth error: 401, auth error code: token_expired\n{\"type\":\"thread.started\",\"thread_id\":\"019fdffb-40d3-72d2-98db-0d4186073959\"}\n{\"type\":\"turn.started\"}\n2026-08-08T06:06:5 ... [truncated]\nstderr: None\n",
+    "exception_type": "NonZeroAgentExitCodeError",
+    "occurred_at": "2026-08-08T06:06:54.685509"
+  },
+  "harness": {
+    "agent_name": "codex",
+    "agent_version": "0.144.1",
+    "benchmark": "swe-polybench",
+    "benchmark_source_revision": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "bundle_hash": null,
+    "bundle_id": null,
+    "deep_swe_sha": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "image_digest": "sha256:7c756749017c5560ee66760d45f1cb39cf46d45b7363bf3796d2587964588e03",
+    "image_reference": "0.1.0",
+    "pier_version": "unknown",
+    "prompt_rule_hash": "unknown",
+    "requested_effort": "medium",
+    "requested_model": "gpt-5.6-terra",
+    "symnav_bench_sha": "d859f23",
+    "symnav_sha": "7aa0d74c7b4afa28465e4ea4c2fdae096f590913",
+    "task_checksum": "b24809a6c3fd31718cdf74f4a4f741a3330b7f6b047c18d63e4f12609d2ea869",
+    "task_fit_tier": "high"
+  },
+  "identity": {
+    "attempt_id": "6a60c0c6010d4910bac8a0cb699f3823",
+    "github_job": "cell",
+    "github_run_attempt": 1,
+    "github_run_id": "31242140647",
+    "slot_id": "5acfb8d3232b1d27c3195b7f088eac92f05229b2ea6481f85353766fd8c50d60"
+  },
+  "protocol_fingerprint": "3baa00d97f191b9a372f07c9ddaecb0d397cc1a5123865545a2da947069c82e5",
+  "rewards": {
+    "f2p": 0.0,
+    "f2p_passed": 0,
+    "f2p_total": 2,
+    "p2p": 1.0,
+    "p2p_passed": 2,
+    "p2p_total": 2,
+    "partial": 0.5,
+    "reward": 0
+  },
+  "schema_version": 3,
+  "slot": {
+    "condition": "stock",
+    "configuration_id": "codex-gpt-5.6-terra-medium",
+    "repetition": 3,
+    "slot_id": "5acfb8d3232b1d27c3195b7f088eac92f05229b2ea6481f85353766fd8c50d60",
+    "study_id": "swe-polybench-ts-himid-codex-terra-medium-v030",
+    "task": "mui__material-ui-15097"
+  },
+  "suite_fingerprint": "e586ce9d8c3da8d0ca2e6152b089a86f38092ece0d19adffe42187d392e3fd56",
+  "timing": {
+    "finished_at": "2026-08-08T06:07:49.417720Z",
+    "started_at": "2026-08-08T06:03:31.162449Z"
+  },
+  "usage": {
+    "cost_usd_imputed": null,
+    "n_agent_steps": 0,
+    "n_cache_tokens": null,
+    "n_input_tokens": null,
+    "n_output_tokens": null,
+    "peak_context_tokens": null
+  },
+  "written_at": "2026-08-08T06:07:49.883562+00:00"
+}
