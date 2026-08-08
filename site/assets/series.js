@@ -18,6 +18,7 @@ const DEFAULT_EXCLUDED_VALIDITY = new Set([
   "partially-invalidated",
   "pipeline-only",
   "abandoned",
+  "awaiting-credential",
 ]);
 
 export function seriesOf(index) {
