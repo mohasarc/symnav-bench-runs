@@ -97,7 +97,7 @@ jobs:
     name: cell (${{ matrix.task }}, ${{ matrix.condition }}, r${{ matrix.repetition }})
     strategy:
       fail-fast: false
-      max-parallel: 16
+      max-parallel: 8
       matrix: ${{ fromJSON(needs.setup.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
