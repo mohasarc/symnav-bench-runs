@@ -1,10 +1,10 @@
 const MODEL_HUES = [
-  { hue: 222, saturation: 72 },
-  { hue: 18, saturation: 76 },
+  { hue: 222, saturation: 70 },
+  { hue: 18, saturation: 74 },
   { hue: 268, saturation: 52 },
-  { hue: 172, saturation: 70 },
-  { hue: 338, saturation: 62 },
-  { hue: 42, saturation: 78 },
+  { hue: 172, saturation: 66 },
+  { hue: 338, saturation: 60 },
+  { hue: 42, saturation: 76 },
 ];
 
 const BENCHMARK_COLORS = {
@@ -13,48 +13,44 @@ const BENCHMARK_COLORS = {
   "multi-swe-bench": "#0f8a7e",
 };
 
-const BASE_LIGHTNESS = 46;
-const LIGHTNESS_SPREAD = 38;
+const BENCHMARK_LIGHTNESS = [34, 48, 62];
+const FALLBACK_LIGHTNESS = 48;
 const FALLBACK = "#7a6f5d";
 
-/** Colour is the model; series inside a model separate by lightness. */
+/**
+ * Hue is the model, lightness is the benchmark — so one model reads as one
+ * colour family while each benchmark stays separable inside it.
+ */
 export class Palette {
   constructor(series) {
-    this.models = new Map();
-    const models = [...new Set(series.map((item) => item.model))].sort();
-    models.forEach((model, index) => {
-      this.models.set(model, MODEL_HUES[index % MODEL_HUES.length]);
+    this.tones = new Map();
+    [...new Set(series.map((item) => item.model))].sort().forEach((model, index) => {
+      this.tones.set(model, MODEL_HUES[index % MODEL_HUES.length]);
     });
-    this.byKey = new Map();
-    for (const model of models) {
-      const members = series
-        .filter((item) => item.model === model)
-        .sort((left, right) => left.key.localeCompare(right.key));
-      members.forEach((item, position) => {
-        this.byKey.set(item.key, this.shade(model, position, members.length));
-      });
-    }
+    this.benchmarks = new Map();
+    [...new Set(series.map((item) => item.benchmark))].sort().forEach((benchmark, index) => {
+      this.benchmarks.set(benchmark, BENCHMARK_LIGHTNESS[index % BENCHMARK_LIGHTNESS.length]);
+    });
   }
 
-  shade(model, position, total) {
-    const tone = this.models.get(model) ?? { hue: 32, saturation: 12 };
-    const step = total <= 1 ? 0 : position / (total - 1) - 0.5;
-    const lightness = BASE_LIGHTNESS + step * LIGHTNESS_SPREAD;
-    const saturation = tone.saturation - Math.abs(step) * 26;
-    return `hsl(${tone.hue} ${saturation}% ${lightness}%)`;
+  of(model, benchmark) {
+    const tone = this.tones.get(model);
+    if (!tone) return FALLBACK;
+    const lightness = this.benchmarks.get(benchmark) ?? FALLBACK_LIGHTNESS;
+    return `hsl(${tone.hue} ${tone.saturation}% ${lightness}%)`;
   }
 
   model(name) {
-    const tone = this.models.get(name);
-    return tone ? `hsl(${tone.hue} ${tone.saturation}% ${BASE_LIGHTNESS}%)` : FALLBACK;
-  }
-
-  series(key) {
-    return this.byKey.get(key) ?? FALLBACK;
+    const tone = this.tones.get(name);
+    return tone ? `hsl(${tone.hue} ${tone.saturation}% ${FALLBACK_LIGHTNESS}%)` : FALLBACK;
   }
 
   modelEntries() {
-    return [...this.models.keys()].map((name) => [name, this.model(name)]);
+    return [...this.tones.keys()].map((name) => [name, this.model(name)]);
+  }
+
+  benchmarkShades(model) {
+    return [...this.benchmarks.keys()].map((benchmark) => [benchmark, this.of(model, benchmark)]);
   }
 
   static benchmark(name) {

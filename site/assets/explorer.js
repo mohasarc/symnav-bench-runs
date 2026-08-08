@@ -72,7 +72,7 @@ class Explorer {
     const stats = [
       ["studies", studies.length],
       ["benchmarks", new Set(studies.map((s) => s.benchmark)).size],
-      ["models", this.palette.models.size],
+      ["models", this.palette.tones.size],
       ["symnav versions", this.index.symnav_versions.length],
     ];
     const list = document.getElementById("headline-stats");
@@ -122,17 +122,19 @@ class Explorer {
   renderLegend() {
     const host = document.getElementById("legend");
     host.replaceChildren();
-    host.append(
-      this.legendGroup(
-        "model",
-        this.palette.modelEntries().map(([name, color]) => this.legendItem(name, color, "swatch")),
-      ),
-      this.legendGroup(
-        "benchmark",
-        Palette.benchmarkEntries(new Set(this.series.map((item) => item.benchmark))).map(
-          ([name, color]) => this.legendItem(name, color, "swatch bar"),
+    const benchmarks = [...new Set(this.series.map((item) => item.benchmark))].sort();
+    for (const [model] of this.palette.modelEntries()) {
+      host.append(
+        this.legendGroup(
+          model,
+          this.palette
+            .benchmarkShades(model)
+            .filter(([benchmark]) => benchmarks.includes(benchmark))
+            .map(([benchmark, color]) => this.legendItem(benchmark, color, "swatch")),
         ),
-      ),
+      );
+    }
+    host.append(
       this.legendGroup("arm", [
         this.legendItem("stock", null, "swatch hollow"),
         this.legendItem("symnav", "var(--rule)", "swatch"),
@@ -199,10 +201,10 @@ class Explorer {
       index.textContent = numbered.has(item.key) ? String(numbered.get(item.key)) : "";
       const swatch = document.createElement("span");
       swatch.className = "swatch";
-      swatch.style.background = this.palette.series(item.key);
+      swatch.style.background = this.palette.of(item.model, item.benchmark);
       const name = document.createElement("span");
       name.className = "series-name";
-      name.textContent = `${item.model} · ${item.benchmark} · ${studyTail(item)}`;
+      name.textContent = `${item.model} · ${item.benchmark} · ${item.symnavVersion ? `v${item.symnavVersion}` : "unversioned"} · ${studyTail(item)}`;
       name.title = item.studyId;
       row.append(box, index, swatch, name);
       host.append(row);
@@ -233,10 +235,11 @@ class Explorer {
         index: position + 1,
         key: item.key,
         series: item,
-        color: this.palette.series(item.key),
+        color: this.palette.of(item.model, item.benchmark),
         benchmark: item.benchmark,
         model: item.model,
-        shortLabel: `${item.model} · ${item.benchmark} · ${studyTail(item)}`,
+        shortLabel: `${item.model} · ${item.benchmark} · ${item.symnavVersion ? `v${item.symnavVersion}` : "unversioned"}`,
+        pointLabel: `${item.model} ${item.symnavVersion ? `v${item.symnavVersion}` : "unversioned"}`,
         stock: metricValue(item, "stock", this.metric),
         treatment: metricValue(item, "symnav", this.metric),
         uplift: upliftOf(item, this.metric),

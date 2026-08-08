@@ -111,18 +111,32 @@ function emptyState(container, message) {
   container.appendChild(paragraph);
 }
 
+const LABEL_CHAR_WIDTH = 5.4;
+const LABEL_HEIGHT = 12;
+
 class LabelPlacer {
-  constructor(minimumGap = 15) {
+  constructor(padding = 2) {
     this.placed = [];
-    this.minimumGap = minimumGap;
+    this.padding = padding;
   }
 
-  /** Skip an index label that would sit on top of one already drawn. */
-  accepts(x, y) {
+  /** Drop a label whose box would overlap one already drawn. */
+  accepts(x, y, text) {
+    const width = text.length * LABEL_CHAR_WIDTH;
+    const box = {
+      left: x - width / 2 - this.padding,
+      right: x + width / 2 + this.padding,
+      top: y - LABEL_HEIGHT,
+      bottom: y + this.padding,
+    };
     const clear = this.placed.every(
-      ([other, otherY]) => Math.hypot(other - x, otherY - y) >= this.minimumGap,
+      (other) =>
+        box.right < other.left ||
+        box.left > other.right ||
+        box.bottom < other.top ||
+        box.top > other.bottom,
     );
-    if (clear) this.placed.push([x, y]);
+    if (clear) this.placed.push(box);
     return clear;
   }
 }
@@ -183,15 +197,16 @@ export function frontierChart(container, rows, options) {
     }, `${options.metricLabel} →`),
   );
 
-  const frontier = paretoFrontier(usable);
-  if (frontier.length > 1) {
-    const steps = [];
-    frontier.forEach((row, position) => {
-      const previous = frontier[position - 1];
-      if (previous) steps.push(`${x.at(row.cost)},${y.at(previous.score)}`);
-      steps.push(`${x.at(row.cost)},${y.at(row.score)}`);
-    });
-    svg.appendChild(node("polyline", { class: "frontier", points: steps.join(" ") }));
+  for (const family of familyGroups(usable)) {
+    if (family.length < 2) continue;
+    const ordered = [...family].sort((left, right) => right.cost - left.cost);
+    svg.appendChild(
+      node("polyline", {
+        class: "family-link",
+        stroke: ordered[0].color,
+        points: ordered.map((row) => `${x.at(row.cost)},${y.at(row.score)}`).join(" "),
+      }),
+    );
   }
 
   const crosshairLayer = node("g", { class: "crosshair-layer" });
@@ -202,8 +217,10 @@ export function frontierChart(container, rows, options) {
     const cx = x.at(row.cost);
     const cy = y.at(row.score);
     marker(svg, cx, cy, row.color, row.condition);
-    if (labels.accepts(cx, cy - 11)) {
-      svg.appendChild(node("text", { x: cx, y: cy - 11, "text-anchor": "middle", class: "series-index" }, String(row.index)));
+    if (labels.accepts(cx, cy - 12, row.pointLabel)) {
+      svg.appendChild(
+        node("text", { x: cx, y: cy - 12, "text-anchor": "middle", class: "point-label" }, row.pointLabel),
+      );
     }
     const hit = node("circle", { class: "hit", cx, cy, r: 14 });
     hit.addEventListener("pointerenter", () => {
@@ -216,17 +233,15 @@ export function frontierChart(container, rows, options) {
   svg.appendChild(crosshairLayer);
 }
 
-function paretoFrontier(rows) {
-  const sorted = [...rows].sort((a, b) => a.cost - b.cost);
-  const frontier = [];
-  let best = -Infinity;
-  for (const row of sorted) {
-    if (row.score > best) {
-      frontier.push(row);
-      best = row.score;
-    }
+/** One line per model within a benchmark; never across benchmarks. */
+function familyGroups(rows) {
+  const groups = new Map();
+  for (const row of rows) {
+    const key = `${row.model}::${row.benchmark}::${row.condition}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(row);
   }
-  return frontier.sort((a, b) => b.cost - a.cost);
+  return [...groups.values()];
 }
 
 /** Stock to symnav shift, one row per series. */
@@ -403,13 +418,15 @@ export function adoptionChart(container, rows, options) {
 
   const crosshairLayer = node("g", { class: "crosshair-layer" });
   const crosshair = new Crosshair(crosshairLayer, { left: plot.left, bottom: plot.bottom });
-  const labels = new LabelPlacer(13);
+  const labels = new LabelPlacer();
   for (const row of usable) {
     const cx = x.at(row.adoption);
     const cy = y.at(row.uplift);
     marker(svg, cx, cy, row.color, "symnav", 5.5);
-    if (labels.accepts(cx, cy - 10)) {
-      svg.appendChild(node("text", { x: cx, y: cy - 10, "text-anchor": "middle", class: "series-index" }, String(row.index)));
+    if (labels.accepts(cx, cy - 11, row.pointLabel)) {
+      svg.appendChild(
+        node("text", { x: cx, y: cy - 11, "text-anchor": "middle", class: "point-label" }, row.pointLabel),
+      );
     }
     const hit = node("circle", { class: "hit", cx, cy, r: 13 });
     hit.addEventListener("pointerenter", () => {
