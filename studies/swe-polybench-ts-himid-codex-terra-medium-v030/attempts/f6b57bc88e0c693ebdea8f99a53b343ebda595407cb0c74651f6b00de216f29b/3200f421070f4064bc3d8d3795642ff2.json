@@ -1,0 +1,88 @@
+{
+  "adoption": {
+    "command_counts": {},
+    "first_symnav_step": null,
+    "patch_calls": 0,
+    "read_calls": 0,
+    "read_symnav_skill": false,
+    "search_calls": 0,
+    "symnav_calls": 0,
+    "symnav_calls_per_agent_step": 0.0,
+    "symnav_failures": 0,
+    "symnav_timeouts": 0,
+    "used_symnav": false
+  },
+  "agent_version": "0.144.1",
+  "artifact": {
+    "archive": "swe-polybench-ts-himid-codex-terra-medium-v030-swe-polybench-ts-himid-codex-terra-medium-v030-codex-gpt-5.6-terra-medium-batch-001-31245202887-1.tar.gz",
+    "internal_path": "attempts/3200f421070f4064bc3d8d3795642ff2",
+    "sha256": "ba7fd7efb8b3ad1569eeffaf84189233653d14329947df94983b9362b3a70d7f"
+  },
+  "batch_id": "swe-polybench-ts-himid-codex-terra-medium-v030-codex-gpt-5.6-terra-medium-batch-001",
+  "command_counts": {
+    "failures": 0,
+    "other": 0,
+    "read": 0,
+    "search": 0,
+    "symnav": {},
+    "symnav_failures": {},
+    "symnav_skill_reads": 0,
+    "timeouts": 0
+  },
+  "disposition": {
+    "detail": "RuntimeError: Docker compose command failed for environment swe-polybench/microsoft__vscode-122991. Command: docker compose --project-name microsoft__vscode-122991__pjb6shx --project-directory /tmp/symnav-bench-tasks-kkld5z9h/microsoft__vscode-122991/environment -f /usr/lib/python3.12/site-packages/pier/environments/docker/docker-compose-base.yaml -f /tmp/tmp1q1aj26b/microsoft__vscode-122991__pjb6sHx-docker-compose-resources.json -f /usr/lib/python3.12/site-packages/pier/environments/docker/docker-compose-build.yaml -f /tmp/symnav-bench-jobs-too9s8fp/2026-08-08__08-09-59/microsoft__vscode-122991__pjb6sHx/docker-compose-mounts.json -f /tmp/symnav-bench-jobs-too9s8fp/2026-08-08__08-09-59/microsoft__vscode-122991__pjb6sHx/docker-compose-egress-proxy.json build. Return code: 1. Stdout: Compose now can delegate build to bake for better performances\nJust set COMPOSE_BAKE=true\n#0 building with \"default\" instance using docker driver\n\n#1 [pier-egress-proxy internal] load build definition from Dockerfile\n#1 transferring dockerfile: 359B done\n#1 DONE 0.0s\n\n#2 [pier-egress-proxy internal] load metadata for docker.io/library/ubuntu:24.04\n#2 ERROR: failed to authorize: failed to fetch anonymous token: Get \"https://auth.docker.io/token?scope=repository%3Alibrary%2Fubuntu%3Apull&service=registry.docker.io\": read tcp 172.17.0.2:49248->172.64.144.78:443: read: connection reset by peer\n------\n > [pier-egress-proxy internal] load metadata for docker.io/library/ubuntu:24.04:\n------\nfailed to solve: ubuntu:24.04: failed to resolve source metadata for docker.io/library/ubuntu:24.04: failed to authorize: failed to fetch anonymous token: Get \"https://auth.docker.io/token?scope=repository%3Alibrary%2Fubuntu%3Apull&service=registry.docker.io\": read tcp 172.17.0.2:49248->172.64.144.78:443: read: connection reset by peer\n. Stderr: None. ",
+    "outcome": "retryable_error",
+    "retry_reason": "network",
+    "scored_failure_reason": null
+  },
+  "exception": {
+    "exception_message": "Docker compose command failed for environment swe-polybench/microsoft__vscode-122991. Command: docker compose --project-name microsoft__vscode-122991__pjb6shx --project-directory /tmp/symnav-bench-tasks-kkld5z9h/microsoft__vscode-122991/environment -f /usr/lib/python3.12/site-packages/pier/environments/docker/docker-compose-base.yaml -f /tmp/tmp1q1aj26b/microsoft__vscode-122991__pjb6sHx-docker-compose-resources.json -f /usr/lib/python3.12/site-packages/pier/environments/docker/docker-compose-build.yaml -f /tmp/symnav-bench-jobs-too9s8fp/2026-08-08__08-09-59/microsoft__vscode-122991__pjb6sHx/docker-compose-mounts.json -f /tmp/symnav-bench-jobs-too9s8fp/2026-08-08__08-09-59/microsoft__vscode-122991__pjb6sHx/docker-compose-egress-proxy.json build. Return code: 1. Stdout: Compose now can delegate build to bake for better performances\nJust set COMPOSE_BAKE=true\n#0 building with \"default\" instance using docker driver\n\n#1 [pier-egress-proxy internal] load build definition from Dockerfile\n#1 transferring dockerfile: 359B done\n#1 DONE 0.0s\n\n#2 [pier-egress-proxy internal] load metadata for docker.io/library/ubuntu:24.04\n#2 ERROR: failed to authorize: failed to fetch anonymous token: Get \"https://auth.docker.io/token?scope=repository%3Alibrary%2Fubuntu%3Apull&service=registry.docker.io\": read tcp 172.17.0.2:49248->172.64.144.78:443: read: connection reset by peer\n------\n > [pier-egress-proxy internal] load metadata for docker.io/library/ubuntu:24.04:\n------\nfailed to solve: ubuntu:24.04: failed to resolve source metadata for docker.io/library/ubuntu:24.04: failed to authorize: failed to fetch anonymous token: Get \"https://auth.docker.io/token?scope=repository%3Alibrary%2Fubuntu%3Apull&service=registry.docker.io\": read tcp 172.17.0.2:49248->172.64.144.78:443: read: connection reset by peer\n. Stderr: None. ",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 915, in run\n    await self._setup_environment()\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 293, in _setup_environment\n    await self._execution.start_environment(\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 193, in async_wrapped\n    return await copy(fn, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 112, in __call__\n    do = await self.iter(retry_state=retry_state)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 157, in iter\n    result = await action(retry_state)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/_utils.py\", line 111, in inner\n    return call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/tenacity/__init__.py\", line 393, in <lambda>\n    self._add_action_func(lambda rs: rs.outcome.result())\n                                     ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/usr/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 116, in __call__\n    result = await fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/trial/execution.py\", line 214, in start_environment\n    await asyncio.wait_for(\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/environments/docker/docker.py\", line 637, in start\n    await self._run_docker_compose_command(\n  File \"/usr/lib/python3.12/site-packages/pier/environments/docker/docker.py\", line 533, in _run_docker_compose_command\n    raise RuntimeError(\nRuntimeError: Docker compose command failed for environment swe-polybench/microsoft__vscode-122991. Command: docker compose --project-name microsoft__vscode-122991__pjb6shx --project-directory /tmp/symnav-bench-tasks-kkld5z9h/microsoft__vscode-122991/environment -f /usr/lib/python3.12/site-packages/pier/environments/docker/docker-compose-base.yaml -f /tmp/tmp1q1aj26b/microsoft__vscode-122991__pjb6sHx-docker-compose-resources.json -f /usr/lib/python3.12/site-packages/pier/environments/docker/docker-compose-build.yaml -f /tmp/symnav-bench-jobs-too9s8fp/2026-08-08__08-09-59/microsoft__vscode-122991__pjb6sHx/docker-compose-mounts.json -f /tmp/symnav-bench-jobs-too9s8fp/2026-08-08__08-09-59/microsoft__vscode-122991__pjb6sHx/docker-compose-egress-proxy.json build. Return code: 1. Stdout: Compose now can delegate build to bake for better performances\nJust set COMPOSE_BAKE=true\n#0 building with \"default\" instance using docker driver\n\n#1 [pier-egress-proxy internal] load build definition from Dockerfile\n#1 transferring dockerfile: 359B done\n#1 DONE 0.0s\n\n#2 [pier-egress-proxy internal] load metadata for docker.io/library/ubuntu:24.04\n#2 ERROR: failed to authorize: failed to fetch anonymous token: Get \"https://auth.docker.io/token?scope=repository%3Alibrary%2Fubuntu%3Apull&service=registry.docker.io\": read tcp 172.17.0.2:49248->172.64.144.78:443: read: connection reset by peer\n------\n > [pier-egress-proxy internal] load metadata for docker.io/library/ubuntu:24.04:\n------\nfailed to solve: ubuntu:24.04: failed to resolve source metadata for docker.io/library/ubuntu:24.04: failed to authorize: failed to fetch anonymous token: Get \"https://auth.docker.io/token?scope=repository%3Alibrary%2Fubuntu%3Apull&service=registry.docker.io\": read tcp 172.17.0.2:49248->172.64.144.78:443: read: connection reset by peer\n. Stderr: None. \n",
+    "exception_type": "RuntimeError",
+    "occurred_at": "2026-08-08T08:09:59.867604"
+  },
+  "harness": {
+    "agent_name": "codex",
+    "agent_version": "0.144.1",
+    "benchmark": "swe-polybench",
+    "benchmark_source_revision": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "bundle_hash": null,
+    "bundle_id": null,
+    "deep_swe_sha": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "image_digest": "sha256:7c756749017c5560ee66760d45f1cb39cf46d45b7363bf3796d2587964588e03",
+    "image_reference": "0.1.0",
+    "pier_version": "unknown",
+    "prompt_rule_hash": "unknown",
+    "requested_effort": "medium",
+    "requested_model": "gpt-5.6-terra",
+    "symnav_bench_sha": "d859f23",
+    "symnav_sha": "7aa0d74c7b4afa28465e4ea4c2fdae096f590913",
+    "task_checksum": "d7ed9320ab7e9a1e7da7116f31376343467d824ec70766682a90c2f31fd52c0a",
+    "task_fit_tier": "high"
+  },
+  "identity": {
+    "attempt_id": "3200f421070f4064bc3d8d3795642ff2",
+    "github_job": "cell",
+    "github_run_attempt": 1,
+    "github_run_id": "31245202887",
+    "slot_id": "f6b57bc88e0c693ebdea8f99a53b343ebda595407cb0c74651f6b00de216f29b"
+  },
+  "protocol_fingerprint": "3baa00d97f191b9a372f07c9ddaecb0d397cc1a5123865545a2da947069c82e5",
+  "rewards": {},
+  "schema_version": 3,
+  "slot": {
+    "condition": "stock",
+    "configuration_id": "codex-gpt-5.6-terra-medium",
+    "repetition": 3,
+    "slot_id": "f6b57bc88e0c693ebdea8f99a53b343ebda595407cb0c74651f6b00de216f29b",
+    "study_id": "swe-polybench-ts-himid-codex-terra-medium-v030",
+    "task": "microsoft__vscode-122991"
+  },
+  "suite_fingerprint": "e586ce9d8c3da8d0ca2e6152b089a86f38092ece0d19adffe42187d392e3fd56",
+  "timing": {
+    "finished_at": "2026-08-08T08:10:00.037881Z",
+    "started_at": "2026-08-08T08:09:59.484366Z"
+  },
+  "usage": {},
+  "written_at": "2026-08-08T08:10:00.358998+00:00"
+}
