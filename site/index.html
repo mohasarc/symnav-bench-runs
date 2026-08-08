@@ -42,6 +42,7 @@
       <main>
         <div class="toolbar">
           <div class="segmented" id="metric-switch" role="group" aria-label="Metric"></div>
+          <div class="segmented" id="grouping-switch" role="group" aria-label="Link grouping"></div>
           <label class="toggle"><input type="checkbox" id="zoom-toggle" checked><span>Zoom axes to data</span></label>
           <p class="count" id="selection-count"></p>
         </div>
@@ -49,7 +50,7 @@
         <section class="panel wide">
           <div class="panel-head">
             <h3>Cost against performance</h3>
-            <p>Cheaper to the right, stronger upward — so the best trade-offs sit top-right. Dashed lines join one model across symnav versions within a single benchmark; benchmarks are never joined, because their scores are not comparable.</p>
+            <p>Cheaper to the right, stronger upward — so the best trade-offs sit top-right. The link control chooses what the dashed lines join: one model across symnav versions, or one version's two arms. Benchmarks are never joined, because their scores are not comparable. Hover a point to isolate its group.</p>
           </div>
           <div class="scroll"><div id="chart-frontier"></div></div>
         </section>

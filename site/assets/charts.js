@@ -142,6 +142,29 @@ class LabelPlacer {
 }
 
 
+/** Lifts a whole group forward on hover and fades everything else. */
+class GroupHighlight {
+  constructor(svg) {
+    this.svg = svg;
+  }
+
+  focus(key) {
+    if (!key) return;
+    this.svg.classList.add("has-focus");
+    for (const element of this.svg.querySelectorAll("[data-group]")) {
+      element.classList.toggle("in-focus", element.getAttribute("data-group") === key);
+    }
+  }
+
+  clear() {
+    this.svg.classList.remove("has-focus");
+    for (const element of this.svg.querySelectorAll(".in-focus")) {
+      element.classList.remove("in-focus");
+    }
+  }
+}
+
+
 function marker(svg, x, y, color, condition, radius = 6) {
   if (condition === "stock") {
     return svg.appendChild(
@@ -197,12 +220,18 @@ export function frontierChart(container, rows, options) {
     }, `${options.metricLabel} →`),
   );
 
-  for (const family of familyGroups(usable)) {
-    if (family.length < 2) continue;
-    const ordered = [...family].sort((left, right) => right.cost - left.cost);
+  const grouping =
+    GROUPINGS.find((item) => item.id === options.grouping) ?? GROUPINGS[0];
+  const groups = familyGroups(usable, grouping);
+  const groupOf = new Map();
+  for (const [key, members] of groups) {
+    for (const member of members) groupOf.set(member, key);
+    if (members.length < 2) continue;
+    const ordered = [...members].sort((left, right) => right.cost - left.cost);
     svg.appendChild(
       node("polyline", {
         class: "family-link",
+        "data-group": key,
         stroke: ordered[0].color,
         points: ordered.map((row) => `${x.at(row.cost)},${y.at(row.score)}`).join(" "),
       }),
@@ -213,35 +242,59 @@ export function frontierChart(container, rows, options) {
   const crosshair = new Crosshair(crosshairLayer, { left: plot.left, bottom: plot.bottom });
 
   const labels = new LabelPlacer();
+  const highlight = new GroupHighlight(svg);
   for (const row of usable) {
     const cx = x.at(row.cost);
     const cy = y.at(row.score);
-    marker(svg, cx, cy, row.color, row.condition);
+    const key = groupOf.get(row);
+    const dot = marker(svg, cx, cy, row.color, row.condition);
+    if (key) dot.setAttribute("data-group", key);
     if (labels.accepts(cx, cy - 12, row.pointLabel)) {
-      svg.appendChild(
-        node("text", { x: cx, y: cy - 12, "text-anchor": "middle", class: "point-label" }, row.pointLabel),
-      );
+      const text = node("text", { x: cx, y: cy - 12, "text-anchor": "middle", class: "point-label" }, row.pointLabel);
+      if (key) text.setAttribute("data-group", key);
+      svg.appendChild(text);
     }
     const hit = node("circle", { class: "hit", cx, cy, r: 14 });
     hit.addEventListener("pointerenter", () => {
       crosshair.clear();
       crosshair.project(cx, cy, money(row.cost), percent(row.score));
+      highlight.focus(key);
     });
-    hit.addEventListener("pointerleave", () => crosshair.clear());
+    hit.addEventListener("pointerleave", () => {
+      crosshair.clear();
+      highlight.clear();
+    });
     svg.appendChild(hit);
   }
   svg.appendChild(crosshairLayer);
 }
 
-/** One line per model within a benchmark; never across benchmarks. */
-function familyGroups(rows) {
+export const GROUPINGS = [
+  {
+    id: "versions",
+    label: "across versions",
+    hint: "one line per model and arm, spanning symnav versions",
+    key: (row) => `${row.model}::${row.benchmark}::${row.condition}`,
+  },
+  {
+    id: "arms",
+    label: "stock ↔ symnav",
+    hint: "one line per symnav version, joining its two arms",
+    key: (row) => `${row.model}::${row.benchmark}::${row.version}`,
+  },
+  { id: "off", label: "no links", hint: "points only", key: null },
+];
+
+/** Never keyed across benchmarks — their scores are not comparable. */
+function familyGroups(rows, grouping) {
+  if (!grouping || !grouping.key) return new Map();
   const groups = new Map();
   for (const row of rows) {
-    const key = `${row.model}::${row.benchmark}::${row.condition}`;
+    const key = grouping.key(row);
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(row);
   }
-  return [...groups.values()];
+  return groups;
 }
 
 /** Stock to symnav shift, one row per series. */

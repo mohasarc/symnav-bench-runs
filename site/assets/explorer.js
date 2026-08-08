@@ -1,4 +1,5 @@
 import {
+  GROUPINGS,
   adoptionChart,
   benchmarkGrid,
   coverageChart,
@@ -37,6 +38,7 @@ class Explorer {
     this.muted = new Set();
     this.metric = METRICS[0].id;
     this.zoom = true;
+    this.grouping = GROUPINGS[0].id;
   }
 
   mount() {
@@ -44,6 +46,7 @@ class Explorer {
     this.renderFacets();
     this.renderLegend();
     this.renderMetricSwitch();
+    this.renderGroupingSwitch();
     document.getElementById("zoom-toggle").addEventListener("change", (event) => {
       this.zoom = event.target.checked;
       this.renderCharts();
@@ -180,6 +183,24 @@ class Explorer {
     }
   }
 
+  renderGroupingSwitch() {
+    const group = document.getElementById("grouping-switch");
+    group.replaceChildren();
+    for (const option of GROUPINGS) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = option.label;
+      button.title = option.hint;
+      button.setAttribute("aria-pressed", String(option.id === this.grouping));
+      button.addEventListener("click", () => {
+        this.grouping = option.id;
+        this.renderGroupingSwitch();
+        this.renderCharts();
+      });
+      group.append(button);
+    }
+  }
+
   renderSeriesList() {
     const host = document.getElementById("series-list");
     host.replaceChildren();
@@ -257,6 +278,7 @@ class Explorer {
       for (const condition of ["stock", "symnav"]) {
         arms.push({
           ...row,
+          version: row.series.symnavVersion ?? "unversioned",
           condition,
           score: metricValue(row.series, condition, this.metric),
           cost: costPerTask(row.series, condition),
@@ -273,6 +295,7 @@ class Explorer {
       metricLabel: this.metricLabel(),
       modelColor: (name) => this.palette.model(name),
       benchmarkColor: (name) => Palette.benchmark(name),
+      grouping: this.grouping,
     };
     document.getElementById("selection-count").textContent =
       `${rows.length} of ${this.series.length} series`;
