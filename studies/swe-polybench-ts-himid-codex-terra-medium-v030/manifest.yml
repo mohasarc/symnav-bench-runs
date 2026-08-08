@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "id": "swe-polybench-ts-himid-codex-terra-medium-v030",
+  "protocol_fingerprint": "3baa00d97f191b9a372f07c9ddaecb0d397cc1a5123865545a2da947069c82e5",
+  "protocol": {
+    "benchmark": {
+      "name": "swe-polybench",
+      "source": {
+        "revision": "d56445f9940eae4e9d2974ec66820c2f1d7754e6"
+      },
+      "tiers": [
+        "high",
+        "mid"
+      ]
+    },
+    "symnav": {
+      "sha": "7aa0d74c7b4afa28465e4ea4c2fdae096f590913",
+      "kind": "main",
+      "evaluation_sequence": 9,
+      "base_ref": "main",
+      "base_sha": "7aa0d74c7b4afa28465e4ea4c2fdae096f590913",
+      "pull_request": null
+    },
+    "repetitions": 4,
+    "wall_clock_seconds": 9000,
+    "randomization_seed": 20260808,
+    "conditions": [
+      "stock",
+      "symnav"
+    ],
+    "scoring_policy": "deepswe-pass-fraction-v1",
+    "practical_uplift_points": 5.0
+  },
+  "configurations": [
+    {
+      "id": "codex-gpt-5.6-terra-medium",
+      "agent": "codex",
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "agent_version": "0.144.1"
+    }
+  ],
+  "harness": {
+    "image": "ghcr.io/mohasarc/symnav-bench@sha256:7c756749017c5560ee66760d45f1cb39cf46d45b7363bf3796d2587964588e03"
+  }
+}
