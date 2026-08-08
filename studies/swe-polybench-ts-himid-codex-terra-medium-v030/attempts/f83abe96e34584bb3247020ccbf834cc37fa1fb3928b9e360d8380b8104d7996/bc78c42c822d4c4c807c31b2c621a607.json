@@ -1,0 +1,104 @@
+{
+  "adoption": {
+    "command_counts": {},
+    "first_symnav_step": null,
+    "patch_calls": 0,
+    "read_calls": 0,
+    "read_symnav_skill": false,
+    "search_calls": 0,
+    "symnav_calls": 0,
+    "symnav_calls_per_agent_step": 0.0,
+    "symnav_failures": 0,
+    "symnav_timeouts": 0,
+    "used_symnav": false
+  },
+  "agent_version": "0.144.1",
+  "artifact": {
+    "archive": "swe-polybench-ts-himid-codex-terra-medium-v030-swe-polybench-ts-himid-codex-terra-medium-v030-codex-gpt-5.6-terra-medium-batch-003-31255753748-1.tar.gz",
+    "internal_path": "attempts/bc78c42c822d4c4c807c31b2c621a607",
+    "sha256": "227078031bc6dad98bce1facdecd419dd6ec6ad8162a8bbd7803586f5e5b931f"
+  },
+  "batch_id": "swe-polybench-ts-himid-codex-terra-medium-v030-codex-gpt-5.6-terra-medium-batch-003",
+  "command_counts": {
+    "failures": 0,
+    "other": 0,
+    "read": 0,
+    "search": 0,
+    "symnav": {},
+    "symnav_failures": {},
+    "symnav_skill_reads": 0,
+    "timeouts": 0
+  },
+  "disposition": {
+    "detail": "NonZeroAgentExitCodeError: Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- '[Select] Aria error flagged by WAVE and W3C\n<!-- Provide a general summary of the issue in the Title above -->\nWAVE errors in tables, in TablePagination/TableFooter\n<!--\n  Thank you very much for contributing to Material-UI by creating an issue! \u2764\ufe0f\n  To avoid duplicate issues we ask you to check off the following list.\n-->\n\n<!-- Checked checkbox should look like this: [x] -->\n\n- [ x] The issue is present in the latest release.\n- [x ] I have searched the [issues](https://github.com/mui-org/material-ui/issues) of this repository and believe that this is not a duplicate.\n\n## Current Behavior \ud83d\ude2f\n1. Go to https://material-ui.com/components/tables/\n2. Run WAVE\n3. Should not get errors from standard components \n<!-- Describe what happens instead of the expected behavior. -->\nWAVE identifies 3 \"Broken ARIA Reference Errors\" associated with three demos\n- Sorting & Selection\n- Fixed Headers\n- Editable Example - this is a material-table which seems to inherit the accessibility bug from TableFooter \n\n\n## Expected Behavior \ud83e\udd14\nNo WAVE errors\n<!-- Describe what should happen. -->\nNo WAVE errors\n## Steps to Reproduce \ud83d\udd79\nGiven above\n<!--\n  Provide a link to a live example (you can use codesandbox.io) and an unambiguous set of steps to reproduce this bug.\n  Include code to reproduce, if relevant (which it most likely is).\n\n  You should use the official codesandbox template as a starting point: https://material-ui.com/r/issue-template\n\n  If you have an issue concerning TypeScript please start from this TypeScript playground: https://material-ui.com/r/ts-issue-template\n\n  Issues without some form of live example have a longer response time.\n-->\n\nSteps:\n\n1.\n2.\n3.\n4.\n\n## Context \ud83d\udd26\n\n<!--\n  What are you trying to accomplish? How has this issue affected you?\n  Providing context helps us come up with a solution that is most useful in the real world.\n-->\n\n## Your Environment \ud83c\udf0e\nOSX Mojave, Chrome v80, WAVE v3.0.4\n<!--\n  Include as many relevant details about the environment with which you experienced the bug.\n  If you encounter issues with typescript please include version and tsconfig.\n-->\n\n| Tech        | Version |\n| ----------- | ------- |\n| Material-UI | v4.9.6  |\n| React       |         |\n| Browser     |         |\n| TypeScript  |         |\n| etc.        |         |\n\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n{\"type\":\"thread.started\",\"thread_id\":\"019fe184-4d23-7d41-a59c-0d8bd931fb5c\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"error\",\"message\":\"You've hit your usage limit. Visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Aug 11th, 2026 8:12 PM.\"}\n{\"type\":\"turn.failed\",\"error\":{\"message\":\"You've hit your usage limit. Visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Aug 11th, 2026 8:12 PM.\"}}\n\nstderr: None",
+    "outcome": "retryable_error",
+    "retry_reason": "quota",
+    "scored_failure_reason": null
+  },
+  "exception": {
+    "exception_message": "Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- '[Select] Aria error flagged by WAVE and W3C\n<!-- Provide a general summary of the issue in the Title above -->\nWAVE errors in tables, in TablePagination/TableFooter\n<!--\n  Thank you very much for contributing to Material-UI by creating an issue! \u2764\ufe0f\n  To avoid duplicate issues we ask you to check off the following list.\n-->\n\n<!-- Checked checkbox should look like this: [x] -->\n\n- [ x] The issue is present in the latest release.\n- [x ] I have searched the [issues](https://github.com/mui-org/material-ui/issues) of this repository and believe that this is not a duplicate.\n\n## Current Behavior \ud83d\ude2f\n1. Go to https://material-ui.com/components/tables/\n2. Run WAVE\n3. Should not get errors from standard components \n<!-- Describe what happens instead of the expected behavior. -->\nWAVE identifies 3 \"Broken ARIA Reference Errors\" associated with three demos\n- Sorting & Selection\n- Fixed Headers\n- Editable Example - this is a material-table which seems to inherit the accessibility bug from TableFooter \n\n\n## Expected Behavior \ud83e\udd14\nNo WAVE errors\n<!-- Describe what should happen. -->\nNo WAVE errors\n## Steps to Reproduce \ud83d\udd79\nGiven above\n<!--\n  Provide a link to a live example (you can use codesandbox.io) and an unambiguous set of steps to reproduce this bug.\n  Include code to reproduce, if relevant (which it most likely is).\n\n  You should use the official codesandbox template as a starting point: https://material-ui.com/r/issue-template\n\n  If you have an issue concerning TypeScript please start from this TypeScript playground: https://material-ui.com/r/ts-issue-template\n\n  Issues without some form of live example have a longer response time.\n-->\n\nSteps:\n\n1.\n2.\n3.\n4.\n\n## Context \ud83d\udd26\n\n<!--\n  What are you trying to accomplish? How has this issue affected you?\n  Providing context helps us come up with a solution that is most useful in the real world.\n-->\n\n## Your Environment \ud83c\udf0e\nOSX Mojave, Chrome v80, WAVE v3.0.4\n<!--\n  Include as many relevant details about the environment with which you experienced the bug.\n  If you encounter issues with typescript please include version and tsconfig.\n-->\n\n| Tech        | Version |\n| ----------- | ------- |\n| Material-UI | v4.9.6  |\n| React       |         |\n| Browser     |         |\n| TypeScript  |         |\n| etc.        |         |\n\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n{\"type\":\"thread.started\",\"thread_id\":\"019fe184-4d23-7d41-a59c-0d8bd931fb5c\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"error\",\"message\":\"You've hit your usage limit. Visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Aug 11th, 2026 8:12 PM.\"}\n{\"type\":\"turn.failed\",\"error\":{\"message\":\"You've hit your usage limit. Visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Aug 11th, 2026 8:12 PM.\"}}\n\nstderr: None",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 925, in run\n    await self._execute_agent()\n  File \"/usr/lib/python3.12/site-packages/pier/trial/trial.py\", line 314, in _execute_agent\n    await self._execution.run_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/trial/execution.py\", line 254, in run_agent\n    await asyncio.wait_for(\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 43, in wrapper\n    return await fn(self, instruction, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/codex.py\", line 1149, in run\n    await self.exec_as_agent(\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 386, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/site-packages/pier/agents/installed/base.py\", line 349, in _exec\n    raise NonZeroAgentExitCodeError(\npier.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): if [ -s ~/.nvm/nvm.sh ]; then NVM_DIR=$HOME/.nvm . ~/.nvm/nvm.sh; fi; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.6-terra --json --enable unified_exec -c model_reasoning_effort=medium -- '[Select] Aria error flagged by WAVE and W3C\n<!-- Provide a general summary of the issue in the Title above -->\nWAVE errors in tables, in TablePagination/TableFooter\n<!--\n  Thank you very much for contributing to Material-UI by creating an issue! \u2764\ufe0f\n  To avoid duplicate issues we ask you to check off the following list.\n-->\n\n<!-- Checked checkbox should look like this: [x] -->\n\n- [ x] The issue is present in the latest release.\n- [x ] I have searched the [issues](https://github.com/mui-org/material-ui/issues) of this repository and believe that this is not a duplicate.\n\n## Current Behavior \ud83d\ude2f\n1. Go to https://material-ui.com/components/tables/\n2. Run WAVE\n3. Should not get errors from standard components \n<!-- Describe what happens instead of the expected behavior. -->\nWAVE identifies 3 \"Broken ARIA Reference Errors\" associated with three demos\n- Sorting & Selection\n- Fixed Headers\n- Editable Example - this is a material-table which seems to inherit the accessibility bug from TableFooter \n\n\n## Expected Behavior \ud83e\udd14\nNo WAVE errors\n<!-- Describe what should happen. -->\nNo WAVE errors\n## Steps to Reproduce \ud83d\udd79\nGiven above\n<!--\n  Provide a link to a live example (you can use codesandbox.io) and an unambiguous set of steps to reproduce this bug.\n  Include code to reproduce, if relevant (which it most likely is).\n\n  You should use the official codesandbox template as a starting point: https://material-ui.com/r/issue-template\n\n  If you have an issue concerning TypeScript please start from this TypeScript playground: https://material-ui.com/r/ts-issue-template\n\n  Issues without some form of live example have a longer response time.\n-->\n\nSteps:\n\n1.\n2.\n3.\n4.\n\n## Context \ud83d\udd26\n\n<!--\n  What are you trying to accomplish? How has this issue affected you?\n  Providing context helps us come up with a solution that is most useful in the real world.\n-->\n\n## Your Environment \ud83c\udf0e\nOSX Mojave, Chrome v80, WAVE v3.0.4\n<!--\n  Include as many relevant details about the environment with which you experienced the bug.\n  If you encounter issues with typescript please include version and tsconfig.\n-->\n\n| Tech        | Version |\n| ----------- | ------- |\n| Material-UI | v4.9.6  |\n| React       |         |\n| Browser     |         |\n| TypeScript  |         |\n| etc.        |         |\n\n' 2>&1 </dev/null | tee /logs/agent/codex.txt\nstdout: WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/codex-home\"))\nReading additional input from stdin...\n{\"type\":\"thread.started\",\"thread_id\":\"019fe184-4d23-7d41-a59c-0d8bd931fb5c\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"error\",\"message\":\"You've hit your usage limit. Visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Aug 11th, 2026 8:12 PM.\"}\n{\"type\":\"turn.failed\",\"error\":{\"message\":\"You've hit your usage limit. Visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Aug 11th, 2026 8:12 PM.\"}}\n\nstderr: None\n",
+    "exception_type": "NonZeroAgentExitCodeError",
+    "occurred_at": "2026-08-08T13:16:15.516895"
+  },
+  "harness": {
+    "agent_name": "codex",
+    "agent_version": "0.144.1",
+    "benchmark": "swe-polybench",
+    "benchmark_source_revision": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "bundle_hash": "1512e03e01307ecf33a66a3f2c7c1f46150654a71a4137e0c446173d95e7b51f",
+    "bundle_id": "full",
+    "deep_swe_sha": "d56445f9940eae4e9d2974ec66820c2f1d7754e6",
+    "image_digest": "sha256:7c756749017c5560ee66760d45f1cb39cf46d45b7363bf3796d2587964588e03",
+    "image_reference": "0.1.0",
+    "pier_version": "unknown",
+    "prompt_rule_hash": "unknown",
+    "requested_effort": "medium",
+    "requested_model": "gpt-5.6-terra",
+    "symnav_bench_sha": "d859f23",
+    "symnav_sha": "7aa0d74c7b4afa28465e4ea4c2fdae096f590913",
+    "task_checksum": "b9fe9d17b8989abee8b9500d6fde95bb9dad9ad359ff5114fe4127b1a6c6c1b2",
+    "task_fit_tier": "mid"
+  },
+  "identity": {
+    "attempt_id": "bc78c42c822d4c4c807c31b2c621a607",
+    "github_job": "cell",
+    "github_run_attempt": 1,
+    "github_run_id": "31255753748",
+    "slot_id": "f83abe96e34584bb3247020ccbf834cc37fa1fb3928b9e360d8380b8104d7996"
+  },
+  "protocol_fingerprint": "3baa00d97f191b9a372f07c9ddaecb0d397cc1a5123865545a2da947069c82e5",
+  "rewards": {
+    "f2p": 0.0,
+    "f2p_passed": 0,
+    "f2p_total": 2,
+    "p2p": 1.0,
+    "p2p_passed": 63,
+    "p2p_total": 63,
+    "partial": 0.9692307692307692,
+    "reward": 0
+  },
+  "schema_version": 3,
+  "slot": {
+    "condition": "symnav",
+    "configuration_id": "codex-gpt-5.6-terra-medium",
+    "repetition": 1,
+    "slot_id": "f83abe96e34584bb3247020ccbf834cc37fa1fb3928b9e360d8380b8104d7996",
+    "study_id": "swe-polybench-ts-himid-codex-terra-medium-v030",
+    "task": "mui__material-ui-20356"
+  },
+  "suite_fingerprint": "e586ce9d8c3da8d0ca2e6152b089a86f38092ece0d19adffe42187d392e3fd56",
+  "timing": {
+    "finished_at": "2026-08-08T13:17:05.776034Z",
+    "started_at": "2026-08-08T13:12:40.066411Z"
+  },
+  "usage": {
+    "cost_usd_imputed": null,
+    "n_agent_steps": 0,
+    "n_cache_tokens": null,
+    "n_input_tokens": null,
+    "n_output_tokens": null,
+    "peak_context_tokens": null
+  },
+  "written_at": "2026-08-08T13:17:06.212958+00:00"
+}
