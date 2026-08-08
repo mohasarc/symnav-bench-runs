@@ -55,6 +55,15 @@ the Pages deploy is triggered by the batch workflow when it commits results.
 - Suite fingerprint `e586ce9d8c3da8d0…`, committed under
   `studies/swe-polybench-ts-himid-codex-terra-medium-pr94-r4/suite.json`.
 
+## Harness re-pin span
+
+The suite was resolved under `sha-fd9577e`; execution is pinned to
+`sha-d859f23`. The only diff between them is `agents/install.py` and its test —
+nothing under `benchmark_sources`, so task materialization is unchanged.
+Confirmed empirically: `tailwindlabs__tailwindcss-116`,
+`coder__code-server-3277` and `microsoft__vscode-158371` all re-materialize to
+their declared checksums under the new pin.
+
 ## Fixed during the first r4 attempt
 
 `git clone symnav && git checkout <sha>` stopped working when PR 94 merged and
