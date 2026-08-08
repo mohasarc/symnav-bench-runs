@@ -1,4 +1,4 @@
-# Resuming polybench r4
+# Launching a polybench study
 
 Everything is declared, pinned, and fixed. The run is blocked on one thing only:
 the `CODEX_AUTH_JSON_B64` repository secret is stale.
@@ -33,15 +33,32 @@ if you need the CLI. This is why the secret was not updated automatically.
 
 ## Then launch
 
+The production study is **v0.3.0 at four repetitions** — run this one:
+
 ```
 gh workflow run study.yml --repo mohasarc/symnav-bench-runs \
-  -f study=swe-polybench-ts-himid-codex-terra-medium-pr94-r4 \
+  -f study=swe-polybench-ts-himid-codex-terra-medium-v030 \
   -f configuration=codex-gpt-5.6-terra-medium \
   -f mode=run-all
 ```
 
+r4 (one repetition, symnav v0.2.0) stays declared as a cheaper smoke option:
+swap the study id for `swe-polybench-ts-himid-codex-terra-medium-pr94-r4`.
+
 Results land on the `results` branch and appear in the explorer automatically;
 the Pages deploy is triggered by the batch workflow when it commits results.
+
+## What the v0.3.0 study is
+
+- 74 tasks x 2 arms x **4 repetitions** = 592 slots. Four trials is the
+  production protocol; a one-rep study can only ever score a task 0% or 100%.
+- symnav **v0.3.0**, tagged and released at
+  `7aa0d74c7b4afa28465e4ea4c2fdae096f590913`. From here on studies pin a
+  released version, not a bare sha — `package.json` carries the number and the
+  tag marks the commit, so a merged-and-deleted branch can no longer strand a
+  pin the way PR 94 did.
+- Suite is byte-identical to r4's (same dataset revision and image pin):
+  fingerprint `e586ce9d8c3da8d0…`, 74 tasks.
 
 ## What r4 is
 
