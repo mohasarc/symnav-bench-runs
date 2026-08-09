@@ -78,7 +78,11 @@ jobs:
           matrix=$(jq -c --arg batch '${{ inputs.batch_id }}' '.batches[] | select(.batch_id == $batch) | .matrix' <<< "$selection")
           requested_slot_ids=$(jq -ce 'if type == "array" and all(.[]; type == "string") and length == (unique | length) then . else error("slot_ids must be unique strings") end' <<< "$SLOT_IDS")
           if [[ $(jq 'length' <<< "$requested_slot_ids") -gt 0 ]]; then
-            matrix=$(jq -c --argjson slot_ids "$requested_slot_ids" '.include |= map(select(.slot_id as $slot_id | $slot_ids | index($slot_id)))' <<< "$matrix")
+            # Resume repacks surviving slots, so a slot the dispatcher assigned to
+            # this run can sit in another batch of the full plan. The dispatcher
+            # already chose the work; match across every batch and keep asserting
+            # that each requested slot exists somewhere in the plan.
+            matrix=$(jq -c --argjson slot_ids "$requested_slot_ids" '{include: [.batches[].matrix.include[]] | map(select(.slot_id as $slot_id | $slot_ids | index($slot_id)))}' <<< "$selection")
             [[ $(jq '.include | length' <<< "$matrix") -eq $(jq 'length' <<< "$requested_slot_ids") ]]
           fi
           [[ $(jq '.include | length' <<< "$matrix") -gt 0 ]]
